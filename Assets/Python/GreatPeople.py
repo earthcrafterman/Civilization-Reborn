@@ -951,36 +951,21 @@ iCivVikings : {
 		"Ansgar", # 9th
 		u"Haraldr Blátonn", # 10th
 		u"Sveinn Tjúguskegg", # 10th
-		"fBirgitta Birgersdotter", # 13th
-		iRenaissance, 
-		"Emanuel Swedenborg", # 18th
 	],
 	iGreatArtist : [
 		"Snorri Sturluson", # 13th 
-		"Nils Hakansson", # 14th swedish
 		iRenaissance,
 		"Johan Nordahl Brun", # 18th
 		iIndustrial,
 		"Hans Christian Andersen", # 19th
 		"Olav Duun", # 19th
-		"Johan Ludvig Runeberg", # 19th finnish
-		"fJohanna Maria Lind", # 19th
 		"Edvard Munch", # 19th
 		"Edvard Grieg", # 19th
-		iGlobal,
-		"fAstrid Lindgren", # 20th
-		"Ingmar Bergman", # 20th
 	],
 	iGreatScientist : [
 		"Tycho Brahe", # 16th
 		"fSophia Brahe", # 16th
-		"Mikael Agricola", # 16th finnish
 		u"Ole Rømer", # 17th
-		"Anders Celsius", # 18th swedish
-		u"Carl von Linné", # 18th
-		iIndustrial,
-		"Johannes Rydberg", # 19th swedish
-		u"Anders Ångström", # 19th swedish
 		iGlobal,
 		"Niels Bohr", # 20th
 	],
@@ -989,36 +974,27 @@ iCivVikings : {
 		"Leifr Eiriksson", # 10th
 		"Haakon Sigurdsson", # 10th
 		iGlobal,
-		"Ingvar Kamprad", # 20th swedish
 		"Roald Amundsen", # 20th
 	],
 	iGreatEngineer : [
 		"Hercules von Oberberg", # 16th
 		iIndustrial,
 		"Niels Abel", # 19th
-		"Alfred Nobel", # 19th swedish
 		iGlobal,
 		"Ivar Giaever", # 20th
 	],
 	iGreatStatesman : [
 		"Gorm den Gamle", # 10th
-		"Erik den Helige", # 11th
 		"fMargrete", # 14th
-		iRenaissance,
-		"Gustav Vasa", # 16th
-		"fKristina", # 17th swedish
 		iIndustrial,
 		"Nikolaj Frederik Severin Grundtvig", # 19th
-		iGlobal,
-		u"Dag Hammarskjöld", # 20th
 	],
 	iGreatGeneral : [
 		u"Eiríkr Blóðøx", # 10th
+		u"Sveinn Tjéguskegg", # 11th
 		u"Harald Harðráði", # 11th
 		"Knutr", # 11th
-		"Birger Jarl", # 13th swedish
 		iRenaissance,
-		"Gustav Vasa", # 16th swedish
 		"fIngela Gathenhielm", # 18th
 	],
 },
@@ -2326,6 +2302,53 @@ iCivTurkey : {
 		iGlobal,
 		"fKara Fatma", # 20th
 		"Ismail Enver", # 20th
+	],
+},
+iCivSweden : {
+	iGreatProphet : [
+		"fBirgitta Birgersdotter", # 13th
+		iRenaissance, 
+		"Emanuel Swedenborg", # 18th
+	],
+	iGreatArtist : [
+		"Nils Hakansson", # 14
+		"Johan Ludvig Runeberg", # 19th finnish
+		"fJohanna Maria Lind", # 19th
+		iGlobal,
+		"fAstrid Lindgren", # 20th
+		"Ingmar Bergman", # 20th
+	],
+	iGreatScientist : [
+		"Mikael Agricola", # 16th finnish
+		"Anders Celsius", # 18th
+		u"Carl von Linné", # 18th
+		iIndustrial,
+		"Johannes Rydberg", # 19th
+		u"Anders Ångström", # 19th
+	],
+	iGreatMerchant : [
+		iRenaissance,
+		"Arvid Horn", # 18th
+		iIndustrial,
+		"Sven Hedin", # 19th
+		iGlobal,
+		"Ingvar Kamprad", # 20th
+	],
+	iGreatEngineer : [
+		iRenaissance,
+		"Nicomedus Tessin", # 18th
+		iIndustrial,
+		"Alfred Nobel", # 19th
+	],
+	iGreatStatesman : [
+		"Erik den Helige", # 11th
+		iGlobal,
+		u"Dag Hammarskjöld", # 20th
+	],
+	iGreatGeneral : [
+		"Birger Jarl", # 13th
+		iRenaissance,
+		"Lennart Torstensson", # 17th
 	],
 },
 iCivNetherlands : {

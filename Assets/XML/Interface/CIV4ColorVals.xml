@@ -1162,5 +1162,19 @@
 			<fBlue>0.75</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_SWEDISH_BLUE</Type>
+			<fRed>0</fRed>
+			<fGreen>0.416</fGreen>
+			<fBlue>0.655</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_SWEDISH_YELLOW</Type>
+			<fRed>0.996</fRed>
+			<fGreen>0.8</fGreen>
+			<fBlue>0</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

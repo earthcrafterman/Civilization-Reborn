@@ -469,7 +469,7 @@ dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
-	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
+	iVikings : ["Oslo", "Nidaros", "Roskilde"],
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
@@ -525,6 +525,7 @@ dStartingLeaders = [
 	iTurkey : iMehmed,
 	iThailand : iNaresuan,
 	iCongo : iMbemba,
+	iSweden : iGustavVasa,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
@@ -541,12 +542,13 @@ dStartingLeaders = [
 	iIndia : iShahuji,
 	iPersia : iAbbas,
 	iJapan : iOdaNobunaga,
-	iVikings : iGustav,
+	iVikings : iChristian,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
 	iHolyRome : iFrancis,
 	iRussia : iPeter,
+	iSweden : iKarl,
 	iNetherlands : iWilliam,
 	iPoland : iSobieski,
 	iPortugal : iJoao,
@@ -631,11 +633,7 @@ def onTechAcquired(iPlayer, iTech):
 	
 	if iPlayer == iVikings:
 		if iEra == iRenaissance:
-			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+			if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
 				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
 			
@@ -670,11 +668,7 @@ def onPalaceMoved(iPlayer):
 			
 	elif iPlayer == iVikings:
 		if iEra >= iRenaissance:
-			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+			if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
 				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
 			
@@ -1033,19 +1027,19 @@ def specificName(iPlayer):
 			
 	elif iPlayer == iVikings:
 		if bEmpire:
-			if not isCapital(iPlayer, ["Stockholm", "Kalmar"]) or iEra > iRenaissance:
+			if iEra > iRenaissance:
 				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
 	
 		if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 			return "TXT_KEY_CIV_VIKINGS_NORWAY"
 			
-		if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-			return "TXT_KEY_CIV_VIKINGS_SWEDEN"
-			
 		if isCapital(iPlayer, ["Roskilde"]):
 			return "TXT_KEY_CIV_VIKINGS_DENMARK"
 			
-		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
+		if not pSweden.isAlive():
+			return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
+			
+		return "TXT_KEY_CIV_VIKING_SHORT_DESC"
 		
 	elif iPlayer == iArabia:
 		if bResurrected:
@@ -1134,6 +1128,10 @@ def specificName(iPlayer):
 	elif iPlayer == iThailand:
 		if iEra <= iRenaissance:
 			return "TXT_KEY_CIV_THAILAND_AYUTTHAYA"
+			
+	elif iPlayer == iSweden:
+		if iEra >= iIndustrial and (isAreaControlled(iPlayer, (58, 59), (61, 63)) and not pVikings.isAlive()) or getMaster(iVikings) == iPlayer:
+			return "TXT_KEY_CIV_SWEDEN_AND_NORWAY"
 			
 	elif iPlayer == iNetherlands:
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
@@ -1312,10 +1310,6 @@ def specificAdjective(iPlayer):
 			
 		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
 			return gc.getPlayer(iRome).getCivilizationAdjective(0)
-			
-	elif iPlayer == iVikings:
-		if bEmpire:
-			return "TXT_KEY_CIV_VIKINGS_SWEDISH"
 			
 	elif iPlayer == iArabia:
 		if (bTheocracy or controlsHolyCity(iArabia, iIslam)) and iReligion == iIslam:
@@ -1691,10 +1685,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS"
 			
 		if bEmpire:
-			if iEra <= iMedieval:
-				return "TXT_KEY_CIV_VIKINGS_KALMAR_UNION"
-				
-			if iEra == iRenaissance or isCapital(iPlayer, ["Stockholm"]):
+			if iEra == iRenaissance:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iArabia:
@@ -2032,7 +2023,7 @@ def leader(iPlayer):
 	elif iPlayer == iVikings:
 		if iEra >= iGlobal: return iGerhardsen
 		
-		if iEra >= iRenaissance: return iGustav
+		if iEra >= iRenaissance: return iChristian
 		
 	elif iPlayer == iArabia:
 		if iGameTurn >= getTurnForYear(1000): return iSaladin
@@ -2139,6 +2130,11 @@ def leader(iPlayer):
 				
 	elif iPlayer == iThailand:
 		if iEra >= iIndustrial: return iMongkut
+		
+	elif iPlayer == iSweden:
+		if iEra >= iIndustrial: return iKarl
+		
+		if bEmpire: return iGustav
 
 	elif iPlayer == iGermany:
 		if isFascist(iPlayer): return iHitler

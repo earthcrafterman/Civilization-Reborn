@@ -1154,8 +1154,15 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iMongolia:
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
+			
+	elif iPlayer == iSweden:
+		if (x, y) in vic.lSkagerrak or (x, y) in vic.lSkagerrak:
+			return 70
+		
+		if (x, y) in vic.lBalticSea or (x, y) in vic.lBalticSea:
+			return 71
 				
-		# continue with ID 70
+		# continue with ID 72
 			
 	return -1
 		

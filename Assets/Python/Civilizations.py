@@ -113,6 +113,7 @@ iCivTurkey :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], col
 iCivCongo : 	Techs([iMachinery, iCivilService, iTheology], column=6),
 iCivThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatronage]),
 iCivIran : 	Techs([iHeritage, iFirearms], column=9),
+iCivSweden : 	Techs([iHeritage, iFirearms], column=9),
 iCivNetherlands:Techs(column=10),
 iCivGermany :	Techs([iReplaceableParts], column=11),
 iCivAmerica :	Techs([iRepresentation, iChemistry], column=12),
@@ -152,6 +153,7 @@ iCivTurkey :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, ex
 iCivMughals :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration, iOptics]),
 iCivThailand :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivCongo :	Techs([iCartography, iJudiciary], column=8),
+iCivSweden :	Techs([iReplaceableParts, iMeasurement], column=11),
 iCivNetherlands:Techs([iReplaceableParts, iHydraulics], column=11),
 iCivGermany :	Techs([iReplaceableParts], column=11),
 }]

@@ -2697,5 +2697,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SWEDEN_RIKSBANK</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.35</fScale>
+			<fInterfaceScale>0.61</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Riksbank/Town_Hall.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Riksbank/button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

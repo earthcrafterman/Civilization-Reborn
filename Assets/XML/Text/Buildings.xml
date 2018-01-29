@@ -1423,4 +1423,12 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Tag>
+		<English>Riksbank</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Tag>
+		<English>The Swedish [COLOR_BUILDING_TEXT]Riksbank[COLOR_REVERT] greatly increases a city's production of wealth and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+	</TEXT>
 </Civ4GameText>

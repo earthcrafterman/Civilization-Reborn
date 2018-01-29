@@ -982,5 +982,29 @@
 			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CHRISTIAN_IV</Type>
+			<Button>Art/Leaderheads/Christian_IV/btn_christian.dds</Button>
+			<NIF>Art/Leaderheads/Christian_IV/Peter2.nif</NIF>
+			<KFM>Art/Leaderheads/Christian_IV/Peter.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Christian_IV/Peter2.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Christian_IV/Peter_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_GUSTAV_VASA</Type>
+			<Button>Art/Leaderheads/Gustav_Vasa/btn_gustav_vasa.dds</Button>
+			<NIF>Art/Leaderheads/Gustav_Vasa/SimonBolivar.nif</NIF>
+			<KFM>Art/Leaderheads/Gustav_Vasa/SimonBolivar.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Gustav_Vasa/SimonBolivar.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Gustav_Vasa/SimonBolivar_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KARL_XII</Type>
+			<Button>Art/Leaderheads/Karl_XII/btn_karl_xii.dds</Button>
+			<NIF>Art/Leaderheads/Karl_XII/george_washington.nif</NIF>
+			<KFM>Art/Leaderheads/Karl_XII/george_washington.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Karl_XII/george_washington_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Karl_XII/washington_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
