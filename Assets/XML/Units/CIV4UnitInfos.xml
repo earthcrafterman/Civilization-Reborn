@@ -14449,6 +14449,58 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_CAMP</Class>
+			<Type>UNIT_CAMP</Type>
+			<Combat>UNITCOMBAT_RECON</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_CAMP</Description>
+			<Civilopedia>TXT_KEY_UNIT_CAMP_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_CAMP_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bOnlyDefensive>1</bOnlyDefensive>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bFirstStrikeImmune>1</bFirstStrikeImmune>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>-1</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>0</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iCombat>8</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<UnitCombatCollateralImmunes>
+				<UnitCombatCollateralImmune>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iUnitCombatCollateralImmune>1</iUnitCombatCollateralImmune>
+				</UnitCombatCollateralImmune>
+			</UnitCombatCollateralImmunes>
+			<iAsset>1</iAsset>
+			<iPower>2</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>8</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CAMP</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
 			<Type>UNIT_ARGENTINE_GREAT_GENERAL</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>

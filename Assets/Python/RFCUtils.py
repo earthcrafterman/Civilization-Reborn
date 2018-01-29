@@ -192,6 +192,11 @@ class RFCUtils:
 			unit = player.initUnit(iUnit, tCoords[0], tCoords[1], iAI, DirectionTypes.DIRECTION_SOUTH)
 			if sAdj != "":
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
+				
+			# Stronger Barbarian camps after 1700 AD
+			if iUnit == iCampUnit:
+				if gc.getGame().getGameTurn() >= getTurnForYear(1700):
+					unit.setBaseCombatStr(unit.baseCombatStr() + 6)
 
 	#RiseAndFall, Religions, Congresses
 	def getHumanID(self):
