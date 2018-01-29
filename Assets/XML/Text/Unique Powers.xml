@@ -78,6 +78,16 @@
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_BOE_TITLE</Tag>
+		<English>The Power of Voortrekkers:</English>
+		<German>To be translated:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BOE</Tag>
+		<English>Additional infrastructure in new and acquired cities</English>
+		<German>To be translated</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Ethanol:</English>
 		<German>Die Macht des Ethanols:</German>

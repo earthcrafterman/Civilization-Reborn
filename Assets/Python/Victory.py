@@ -176,6 +176,10 @@ tGuayanasBR = (37, 31)
 tCaribbeanTL = (25, 33)
 tCaribbeanBR = (33, 39)
 
+# first Boer goal: Allow no European Colonies in South Africa by 1902 AD
+tBoerAfricaTL = (61, 10)
+tBoerAfricaBR = (72, 21)
+
 # first Canadian goal: connect your capital to an Atlantic and a Pacific port by 1920 AD
 lAtlanticCoast = [(34, 50), (33, 51), (35, 51), (30, 52), (31, 52), (32, 52), (30, 53), (35, 53), (30, 54), (31, 54), (32, 54), (35, 54), (36, 54), (32, 55), (33, 55), (34, 55)]
 lPacificCoast = [(11, 51), (10, 52), (11, 53), (10, 56)]
@@ -1369,6 +1373,26 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		if iGameTurn == getTurnForYear(1950):
 			expire(iBrazil, 2)
+			
+	elif iPlayer == iBoers:
+		# first goal: Allow no European Colonies in South Africa by 1902 AD
+		if iGameTurn == getTurnForYear(1902):
+			if isAreaFreeOfCivs(utils.getPlotList(tBoerAfricaTL, tBoerAfricaBR), lCivGroups[0]):
+				win(iBoers, 0)
+			else:
+				lose(iBoers, 0)
+		
+		# second goal: Secure or get by trade 5 gems resources by 1947 AD
+		if isPossible(iBoers, 1):
+			if countResources(iBoers, iGems) >= 5:
+				win(iBoers, 1)
+				
+		if iGameTurn == getTurnForYear(1947):
+			expire(iBoers, 1)
+		
+		# third goal: Build an ICBM by 1979 AD
+		if iGameTurn == getTurnForYear(1979):
+			expire(iBoers, 2)
 				
 	elif iPlayer == iCanada:
 	
@@ -1463,6 +1487,21 @@ def checkHistoricalVictory(iPlayer):
 	if gc.getGame().getWinner() == -1:
 		if countAchievedGoals(iPlayer) == 3:
 			gc.getGame().setWinner(iPlayer, 7)
+
+def onUnitBuilt(city, unit):
+	if not gc.getGame().isVictoryValid(7): return
+	
+	iPlayer = city.getOwner()
+	
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
+	
+	if iPlayer >= iNumPlayers: return
+	
+	# third goal: Build an ICBM by 1979 AD
+	if iPlayer == iBoers:
+		if isPossible(iBoers, 2):
+			if unit.getUnitType() == iICBM:
+				win(iBoers, 2)
 		
 def onCityBuilt(iPlayer, city):
 
@@ -3921,6 +3960,14 @@ def getUHVHelp(iPlayer, iGoal):
 			capital = pBrazil.getCapitalCity()
 			if capital: bNationalPark = capital.isHasRealBuilding(iNationalPark)
 			aHelp.append(getIcon(iForestPreserves >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iForestPreserve).getText(), iForestPreserves, 20)) + ' ' + getIcon(bNationalPark) + localText.getText("TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL", ()))
+
+	elif iPlayer == iBoers:
+		if iGoal == 0:
+			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tBoerAfricaTL, tBoerAfricaBR), lCivGroups[0])
+			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_AFRICAN_COLONIES", ()))
+		elif iGoal == 1:
+			iCounter = countResources(iBoers, iGems)
+			aHelp.append(getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES", (iCounter, 5)))
 
 	elif iPlayer == iCanada:
 		if iGoal == 0:

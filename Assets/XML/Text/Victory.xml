@@ -244,6 +244,30 @@
 		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1_TITLE</Tag>
+		<English>The Boer Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1</Tag>
+		<English>Allow no European Colonies in South Africa by 1902 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2_TITLE</Tag>
+		<English>A monopoly is forever</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2</Tag>
+		<English>Secure or get by trade 5 gems resources by 1947 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3_TITLE</Tag>
+		<English>The Incident</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3</Tag>
+		<English>Build an ICBM by 1979 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA1_TITLE</Tag>
 		<English>The Golden Law</English>
 		<German>Das goldene Gesetz</German>
@@ -3135,5 +3159,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AFRICAN_COLONIES</Tag>
+		<English>No European colonies in South Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES</Tag>
+		<English>Available gems resources: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

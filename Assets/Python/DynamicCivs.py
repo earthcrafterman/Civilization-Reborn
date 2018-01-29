@@ -243,6 +243,10 @@ dSpecificVassalTitles = {
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
 	},
+	iBoers	: {
+		iEngland : "TXT_KEY_CIV_BOER_ENGLAND",
+		iNetherlands : "TXT_KEY_CIV_BOER_NETHERLANDS",
+	}
 }
 
 dMasterTitles = {
@@ -529,6 +533,7 @@ dStartingLeaders = [
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
+	iBoers : iKruger,
 	iCanada : iMacDonald,
 },
 # 600 AD
@@ -2155,6 +2160,9 @@ def leader(iPlayer):
 	
 	elif iPlayer == iBrazil:
 		if iEra >= iGlobal: return iVargas
+		
+	elif iPlayer == iBoers:
+		if iEra >= iDigital: return iMandela
 		
 	elif iPlayer == iCanada:
 		if iEra >= iGlobal: return iTrudeau

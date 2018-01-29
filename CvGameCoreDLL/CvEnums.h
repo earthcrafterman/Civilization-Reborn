@@ -1337,6 +1337,7 @@ enum PlayerTypes				// Exposed to Python
 	AMERICA,
 	ARGENTINA,
 	BRAZIL,
+	BOERS,
 	CANADA,
 	INDEPENDENT,
 	INDEPENDENT2,

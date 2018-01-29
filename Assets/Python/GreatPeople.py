@@ -2946,6 +2946,8 @@ iCivMexico : {
 		"Emiliano Zapata Salazar", # 19th
 	],
 },
+iCivBoers : {
+},
 iCivCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th
