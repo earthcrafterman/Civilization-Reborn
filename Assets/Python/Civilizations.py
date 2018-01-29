@@ -120,6 +120,7 @@ iCivArgentina :	Techs(column=13, exceptions=[iMachineTools]),
 iCivMexico :	Techs(column=13, exceptions=[iMachineTools]),
 iCivColombia :	Techs(column=13, exceptions=[iMachineTools]),
 iCivBrazil :	Techs(column=13),
+iCivAustralia :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
 iCivCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
 },
 {

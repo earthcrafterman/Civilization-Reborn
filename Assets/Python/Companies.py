@@ -151,6 +151,9 @@ class Companies:
 				iValue += 2
 			elif city.getRegionID() == rChina:
 				iValue -= 2
+		elif iCompany == iSteelIndustry:
+			if iOwner == iAustralia:
+				iValue += 2
 		
 		# geographical requirements
 		tPlot = (city.getX(), city.getY())

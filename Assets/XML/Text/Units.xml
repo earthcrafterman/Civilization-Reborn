@@ -1576,4 +1576,12 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER</Tag>
+		<English>Digger</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] promotion.</English>
+	</TEXT>
 </Civ4GameText>

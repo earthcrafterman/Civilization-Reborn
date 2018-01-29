@@ -52,6 +52,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("religionFounded",self.onReligionFounded) #Victory
 		eventManager.addEventHandler("buildingBuilt",self.onBuildingBuilt) #Victory
 		eventManager.addEventHandler("projectBuilt",self.onProjectBuilt) #Victory
+		eventManager.addEventHandler("unitGifted",self.onUnitGifted) #Victory
 		eventManager.addEventHandler("BeginPlayerTurn", self.onBeginPlayerTurn)
 		eventManager.addEventHandler("kbdEvent",self.onKbdEvent)
 		eventManager.addEventHandler("OnLoad",self.onLoadGame) #edead: StoredData
@@ -490,6 +491,8 @@ class CvRFCEventHandler:
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList
+		
+		vic.onUnitGifted(pUnit, iOwner, pPlot)
 			
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")

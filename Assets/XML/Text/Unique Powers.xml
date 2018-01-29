@@ -36,6 +36,14 @@
 		<Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_AUS_TITLE</Tag>
+		<English>The Power of Mining Industry:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_AUS</Tag>
+		<English>Mines on the mining resources provide doubled [ICON_PRODUCTION] and [ICON_COMMERCE] increment.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
 		<German>Die Macht der Juntas:</German>
