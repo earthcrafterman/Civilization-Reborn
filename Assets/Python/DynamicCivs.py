@@ -527,6 +527,7 @@ dStartingLeaders = [
 	iCongo : iMbemba,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
+	iAustralia : iMenzies,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
 	iCanada : iMacDonald,

@@ -982,5 +982,13 @@
 			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MENZIES</Type>
+			<Button>Art/Leaderheads/RobertMenzies/menzies.dds</Button>
+			<NIF>Art/Leaderheads/RobertMenzies/fdr.nif</NIF>
+			<KFM>Art/Leaderheads/RobertMenzies/fdr.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/RobertMenzies/fdr.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/RobertMenzies/fdr_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
