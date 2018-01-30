@@ -2307,22 +2307,26 @@ iCivTurkey : {
 iCivSweden : {
 	iGreatProphet : [
 		"fBirgitta Birgersdotter", # 13th
-		iRenaissance, 
+		iRenaissance,
+		"John Campanius Holm", # 17th
 		"Emanuel Swedenborg", # 18th
 	],
 	iGreatArtist : [
 		"Nils Hakansson", # 14
+		"Georg Sternhielm", # 17t
 		"Johan Ludvig Runeberg", # 19th finnish
 		"fJohanna Maria Lind", # 19th
 		iGlobal,
 		"fAstrid Lindgren", # 20th
 		"Ingmar Bergman", # 20th
+		"Stieg Larsson", # 20th
 	],
 	iGreatScientist : [
 		"Mikael Agricola", # 16th finnish
 		"Anders Celsius", # 18th
 		u"Carl von Linné", # 18th
 		iIndustrial,
+		"Jöns Jacob Berzelius", # 19th
 		"Johannes Rydberg", # 19th
 		u"Anders Ångström", # 19th
 	],
@@ -2330,6 +2334,7 @@ iCivSweden : {
 		iRenaissance,
 		"Arvid Horn", # 18th
 		iIndustrial,
+		"Rutger Mackleir", # 18th
 		"Sven Hedin", # 19th
 		iGlobal,
 		"Ingvar Kamprad", # 20th
@@ -2337,11 +2342,17 @@ iCivSweden : {
 	iGreatEngineer : [
 		iRenaissance,
 		"Nicomedus Tessin", # 18th
+		"Christopher Polhammar", # 18th
 		iIndustrial,
+		"Johan Ericsson", # 19th
+		"Pehr Gerog Scheutz", # 19th
 		"Alfred Nobel", # 19th
+		"Lars Magnus Ericsson", # 19th
 	],
 	iGreatStatesman : [
 		"Erik den Helige", # 11th
+		iRenaissance,
+		"Peter Estenberg", # 18th
 		iGlobal,
 		u"Dag Hammarskjöld", # 20th
 	],
