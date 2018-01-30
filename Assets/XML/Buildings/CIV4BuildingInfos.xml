@@ -246,6 +246,35 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_STAR_FORT</BuildingClass>
+			<Type>BUILDING_BOER_PLAAS</Type>
+			<Description>TXT_KEY_BUILDING_BOER_PLAAS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BOER_PLAAS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BOER_PLAAS</ArtDefineTag>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iUnignorableBombardDefense>50</iUnignorableBombardDefense>
+			<iAsset>2</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>2</iYield>
+			</YieldChanges>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
 			<Type>BUILDING_BARRACKS</Type>
 			<Description>TXT_KEY_BUILDING_BARRACKS</Description>

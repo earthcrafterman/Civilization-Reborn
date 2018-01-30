@@ -1176,5 +1176,12 @@
 			<fBlue>0.09</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_GOLDEN_BROWN</Type>
+			<fRed>0.71</fRed>
+			<fGreen>0.42</fGreen>
+			<fBlue>0.09</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

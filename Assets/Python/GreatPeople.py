@@ -2934,6 +2934,8 @@ iCivMexico : {
 },
 iCivAustralia : {
 },
+iCivBoers : {
+},
 iCivCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th

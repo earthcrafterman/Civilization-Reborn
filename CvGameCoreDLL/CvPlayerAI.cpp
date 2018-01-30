@@ -5370,6 +5370,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == REFRIGERATION || iI == TELEVISION)
 										iValue *= 3;
 									break;
+								case BOERS:
+									break;
 								default:
 									break;
 								}

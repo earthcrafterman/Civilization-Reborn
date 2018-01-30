@@ -1584,4 +1584,12 @@
 		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] promotion.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BOER_COMMANDO</Tag>
+		<English>Kommando</English>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BOER_COMMANDO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kommando[COLOR_REVERT], the Boer replacement for the the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+	</TEXT>
 </Civ4GameText>

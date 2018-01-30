@@ -2717,5 +2717,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Sydney_Opera/opera_house_button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BOER_PLAAS</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.01</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Boer_Plaas/Burh.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Boer_Plaas/Boer_Plaas.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
