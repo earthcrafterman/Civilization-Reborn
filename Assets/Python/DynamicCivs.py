@@ -450,7 +450,6 @@ dNameChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
-	iVikings : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 }
 
@@ -461,7 +460,6 @@ dAdjectiveChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
-	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 }
 
@@ -568,7 +566,7 @@ def setup():
 	elif iScenario == i1700AD:
 		data.players[iEgypt].iResurrections += 1
 		
-		for iPlayer in [iVikings, iMoors]:
+		for iPlayer in [iMoors]:
 			nameChange(iPlayer)
 			adjectiveChange(iPlayer)
 	
@@ -1026,9 +1024,9 @@ def specificName(iPlayer):
 				return capitalName(iPlayer)
 			
 	elif iPlayer == iVikings:
-		if bEmpire:
-			if iEra > iRenaissance:
-				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
+		# if bEmpire:
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
 	
 		if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 			return "TXT_KEY_CIV_VIKINGS_NORWAY"
@@ -1685,7 +1683,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS"
 			
 		if bEmpire:
-			if iEra == iRenaissance:
+			if iEra == iRenaissance and utils.getScenario() != i1700AD:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iArabia:
