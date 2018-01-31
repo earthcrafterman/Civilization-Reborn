@@ -243,6 +243,7 @@ public:
 	void createGreatPeople(int eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
 	int getGreatPeopleCreated();
 	int getGreatGeneralsCreated();
+	int getGreatSpiesCreated();
 	int getGreatPeopleThresholdModifier();
 	int getGreatGeneralsThresholdModifier();
 	int getGreatPeopleRateModifier();

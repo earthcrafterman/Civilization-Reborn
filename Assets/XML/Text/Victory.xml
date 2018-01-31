@@ -1057,6 +1057,30 @@
 		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
+		<English>Samson Option</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1</Tag>
+		<English>Build an ICBM by 1980 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
+		<English>Start-up Nation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Have the city with the highest research output in 2000 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>By Stratagem You Wage War</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3</Tag>
+		<English>Create two Great Spies</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
 		<English>Renaissance Architecture</English>
 		<German>Architektur der Renaissance</German>
@@ -3219,5 +3243,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES</Tag>
 		<English>Available gems resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUCLEAR_ARSENAL</Tag>
+		<English>ICBMs built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_SPIES</Tag>
+		<English>Great Spies created: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT</Tag>
+		<English>City with highest research output: %s1_city</English>
 	</TEXT>
 </Civ4GameText>

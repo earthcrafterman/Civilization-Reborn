@@ -671,7 +671,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
-		<German>Schwerer Schwertk�mpfer</German>
+		<German>Schwerer Schwertkämpfer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
@@ -1347,7 +1347,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
 		<English>Jewish Rabbi</English>
-		<German>Jüdischer Rabbi</German>
+		<German>JÃ¼discher Rabbi</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
@@ -1591,5 +1591,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BOER_COMMANDO_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Kommando[COLOR_REVERT], the Boer replacement for the the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA</Tag>
+		<English>Merkava</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</English>
 	</TEXT>
 </Civ4GameText>

@@ -220,4 +220,5 @@ iCivNetherlands : 4,
 iCivAmerica : 4,
 iCivAustralia : 4,
 iCivCanada : 4,
+iCivIsrael : 4,
 }

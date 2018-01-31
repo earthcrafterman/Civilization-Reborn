@@ -549,6 +549,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MANDELA</Tag>
 		<English>Nelson Mandela</English>
->>>>>>> remotes/Aus/SouthAfrica
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BEN_GURION</Tag>
+		<English>Ben-Gurion</English>
 	</TEXT>
 </Civ4GameText>

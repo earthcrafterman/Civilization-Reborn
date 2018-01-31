@@ -15,7 +15,7 @@ lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCi
 def testunit(iPlayer, iUnit):
 	unit = gc.getPlayer(iPlayer).initUnit(utils.getUniqueUnit(iPlayer, iUnit), 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 	print getName(unit)
-	
+
 def create(iPlayer, iUnit, (x, y)):
 	gc.getPlayer(iPlayer).createGreatPeople(utils.getUniqueUnit(iPlayer, iUnit), True, True, x, y)
 
@@ -24,9 +24,9 @@ def getAlias(iCiv, iType):
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivMaya: return iCivAztec
 	elif iCiv == iCivThailand: return iCivKhmer
-	
+
 	return iCiv
-	
+
 def getType(iUnit):
 	iUnitType = utils.getBaseUnit(iUnit)
 	if iUnitType in lTypes: return lTypes.index(iUnitType)
@@ -36,59 +36,59 @@ def getAvailableNames(iPlayer, iType):
 	pPlayer = gc.getPlayer(iPlayer)
 	iCiv = getAlias(pPlayer.getCivilizationType(), iType)
 	iEra = pPlayer.getCurrentEra()
-	
+
 	return getEraNames(iCiv, iType, iEra)
 
 def getEraNames(iCiv, iType, iEra):
 	lNames = lGreatPeople[iCiv][iType]
-	
+
 	iOffset = lOffsets[iCiv][iType][iEra]
 	iNextOffset = len(lNames)
 	if iEra + 1 < iNumEras: iNextOffset = lOffsets[iCiv][iType][iEra+1]
-	
+
 	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
-	
+
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
 	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
-	
+
 	if len(lAfter) >= iSpread:
 		return lAfter[:iSpread]
-	
+
 	iSpread -= len(lAfter)
 	return lBefore[-iSpread:] + lAfter
-	
+
 def getName(unit):
 	iType = getType(unit.getUnitType())
 	if iType < 0: return None
-	
+
 	lAvailableNames = getAvailableNames(unit.getOwner(), iType)
 	if not lAvailableNames: return None
-	
+
 	return utils.getRandomEntry(lAvailableNames)
-	
+
 def onGreatPersonBorn(unit, iPlayer, city):
 	sName = getName(unit)
 	if sName:
 		gc.getGame().addGreatPersonBornName(sName)
-		
+
 		# Leoreth: replace graphics for female GP names
 		if sName[0] == "f":
 			sName = sName[1:]
 			unit = utils.replace(unit, dFemaleGreatPeople[utils.getBaseUnit(unit.getUnitType())])
-			
+
 		unit.setName(sName)
-		
+
 	# Leoreth: display notification
 	if iPlayer not in [iIndependent, iIndependent2, iBarbarian]:
 		pDisplayCity = city
 		if pDisplayCity.isNone(): pDisplayCity = gc.getMap().findCity(unit.getX(), unit.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-			
+
 		sCity = "%s (%s)" % (pDisplayCity.getName(), gc.getPlayer(pDisplayCity.getOwner()).getCivilizationShortDescription(0))
 		sMessage = localText.getText("TXT_KEY_MISC_GP_BORN", (unit.getName(), sCity))
 		sUnrevealedMessage = localText.getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", (unit.getName(),))
-		
+
 		if city.isNone(): sMessage = localText.getText("TXT_KEY_MISC_GP_BORN_OUTSIDE", (unit.getName(), sCity))
-	
+
 		for iLoopPlayer in range(iNumPlayers):
 			if gc.getPlayer(iLoopPlayer).isAlive():
 				if unit.plot().isRevealed(gc.getPlayer(iLoopPlayer).getTeam(), False):
@@ -101,24 +101,24 @@ def setup():
 		for iType in dGreatPeople[iCiv].keys():
 			lEntries = dGreatPeople[iCiv][iType]
 			iOffsets = 0
-			
+
 			for i in range(len(lEntries)):
 				entry = lEntries[i]
-				if entry in range(iNumEras): 
+				if entry in range(iNumEras):
 					lOffsets[iCiv][lTypes.index(iType)][entry] = i - iOffsets
 					iOffsets += 1
-				else: 
+				else:
 					lGreatPeople[iCiv][lTypes.index(iType)].append(entry)
-				
+
 			lCurrentOffsets = lOffsets[iCiv][lTypes.index(iType)]
 			for i in range(1, len(lCurrentOffsets)):
 				if lCurrentOffsets[i] < lCurrentOffsets[i-1]: lCurrentOffsets[i] = lCurrentOffsets[i-1]
-				
+
 			lCurrentOffsets[iDigital] = len(lGreatPeople[iCiv][lTypes.index(iType)])
-				
+
 	print lGreatPeople
 
-		
+
 dGreatPeople = {
 iCivChina : {
 	iGreatProphet : [
@@ -145,7 +145,7 @@ iCivChina : {
 		iMedieval,
 		"fShangguan Wan'er", # 7th
 		"Luo Guanzhong", # 14th
-		iRenaissance, 
+		iRenaissance,
 		"Wu Cheng'en", # 16th
 		"Cao Xueqin", # 18th
 		iGlobal,
@@ -187,7 +187,7 @@ iCivChina : {
 		"Zhang Heng", # 2nd
 		iMedieval,
 		"Bi Sheng", # 11th
-		"Wang Zhen", # 14th 
+		"Wang Zhen", # 14th
 		iGlobal,
 		"Li Siguang", # 20th
 		"fWu Jianxiong", # 20th
@@ -247,7 +247,7 @@ iCivIndia : {
 		iRenaissance,
 		"Purandara Dasa", # 15th
 		"Nainsukh", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Raja Ravi Varma", # 19th
 		iGlobal,
 		"Raja Rao", # 20th
@@ -295,7 +295,7 @@ iCivIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
-		iGlobal, 
+		iGlobal,
 		"Jawaharlal Nehru", # 20th
 	],
 	iGreatGeneral : [
@@ -315,7 +315,7 @@ iCivBabylonia : {
 		"Utnapishtim", # legendary
 		"Gilgamesh", # legendary
 		"fAmat-Mamu", # 18th BC
-		iClassical, 
+		iClassical,
 		"fAdad-guppi", # 6th BC
 		"Ezra", # 5th BC
 	],
@@ -329,7 +329,7 @@ iCivBabylonia : {
 		"fTapputi", # legendary
 		"Esagil-kin-apli", # 11th BC
 		iClassical,
-		"fEnnigaldi", # 6th BC 
+		"fEnnigaldi", # 6th BC
 		"Nabu-rimanni", # 6th BC
 		"Kidinnu", # 4th BC
 		"Sudines", # 3rd BC
@@ -339,7 +339,7 @@ iCivBabylonia : {
 		"fIltani", # 18th BC
 		"Burna-Buriash", # 14th BC
 		"Kadashman-Enlil", # 14th BC
-		iClassical, 
+		iClassical,
 		"Itti-Marduk-balatu", # 6th BC
 	],
 	iGreatEngineer : [
@@ -370,7 +370,7 @@ iCivEgypt : {
 		"Meryre", # 15th BC
 		"Akhenaten", # 14th BC
 		"fNefertiti", # 13th BC
-		iClassical, 
+		iClassical,
 		"Petiese", # 7th BC
 	],
 	iGreatArtist : [
@@ -381,14 +381,14 @@ iCivEgypt : {
 		"Sennedjem", # 13th
 		"Khaemweset", # 12th BC
 		"Amenemope", # 12th BC
-		iClassical, 
+		iClassical,
 		"fHelena", # 4th BC
 	],
 	iGreatScientist : [
 		"fMerit-Ptah", # 27th BC
 		"fPeseshet", # 26th BC
 		"Ahmose", # 17th BC
-		iClassical, 
+		iClassical,
 		"Harkhebi", # 3rd BC
 		"Manetho", # 3rd BC
 		"Ptolemaios", # 2nd
@@ -399,7 +399,7 @@ iCivEgypt : {
 		"Harkhuf", # 23rd BC
 		"Maya", # 13th BC
 		"fTiye", # 13th BC
-		iClassical, 
+		iClassical,
 		"Piye", # 8th BC
 		"Alara", # 8th BC
 	],
@@ -408,7 +408,7 @@ iCivEgypt : {
 		"Sneferu", # 27th BC
 		"Senenmut", # 17th BC
 		"Ineni", # 15th BC
-		iClassical, 
+		iClassical,
 		"Heron", # 1st AD
 	],
 	iGreatStatesman : [
@@ -516,7 +516,7 @@ iCivCarthage : {
 		iClassical,
 		"Mago", # 4th BC
 		"Hasdrubal Clitomachus", # 2nd BC
-		"Abba", # 3rd 
+		"Abba", # 3rd
 	],
 	iGreatMerchant : [
 		"Acerbas", # 9th BC / legendary
@@ -629,7 +629,7 @@ iCivRome : {
 	iGreatScientist : [
 		"Titus Lucretius Carus", # 1st BC
 		"Sosigenes", # 1st BC
-		"Antonius Castor", # 1st 
+		"Antonius Castor", # 1st
 		"Gaius Plinius Secundus", # 1st
 		"Strabo", # 1st
 		"Lucius Annaeus Seneca", # 1st
@@ -710,7 +710,7 @@ iCivJapan : {
 	],
 	iGreatMerchant : [
 		"Shousuke Tanaka", # 17th
-		iIndustrial, 
+		iIndustrial,
 		"Torakusu Yamaha", # 19th
 		"Outano Kouzui", # 19th
 		iGlobal,
@@ -829,7 +829,7 @@ iCivKorea : {
 		"Baegun", # 13th
 		iRenaissance,
 		"fHeo Nanseolheon", # 16th
-		iGlobal, 
+		iGlobal,
 		"Sun Myung Moon", # 20th
 	],
 	iGreatArtist : [
@@ -858,7 +858,7 @@ iCivKorea : {
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
-		iGlobal, 
+		iGlobal,
 		"Lee Byung-chul", # 20th
 		"Chung Ju-yung", # 20th
 	],
@@ -952,11 +952,11 @@ iCivVikings : {
 		u"Haraldr Blátonn", # 10th
 		u"Sveinn Tjúguskegg", # 10th
 		"fBirgitta Birgersdotter", # 13th
-		iRenaissance, 
+		iRenaissance,
 		"Emanuel Swedenborg", # 18th
 	],
 	iGreatArtist : [
-		"Snorri Sturluson", # 13th 
+		"Snorri Sturluson", # 13th
 		"Nils Hakansson", # 14th swedish
 		iRenaissance,
 		"Johan Nordahl Brun", # 18th
@@ -1030,7 +1030,7 @@ iCivArabia : {
 		"Umar ibn al-Kattab", # 7th
 		"fRabia Basri", # 9th
 		"Al-Baqilanni", # 10th
-		iRenaissance, 
+		iRenaissance,
 		"Muhammad ibn Abd al-Wahhab", # 18th
 	],
 	iGreatArtist : [
@@ -1040,7 +1040,7 @@ iCivArabia : {
 		"Muhammad ibn al-Zayn", # 14th
 		iRenaissance,
 		"Ibn Furtu", # 16th
-		iGlobal, 
+		iGlobal,
 		"Muhammad al-Maghut", # 20th
 	],
 	iGreatScientist : [
@@ -1064,7 +1064,7 @@ iCivArabia : {
 		"Ibn Wahshiyah", # 10th
 		"fMariam al-Astrulabi", # 10th
 		"Al-Jazari", # 12th
-		iGlobal, 
+		iGlobal,
 		"Hassan Fathy", # 20th
 		"fZaha Hadid", # 20th
 	],
@@ -1105,10 +1105,10 @@ iCivMoors : {
 		"Ibn Tufail", # 12th
 		"Ibn Quzman", # 12th
 		"Al-Shustari", # 13th
-		iRenaissance, 
+		iRenaissance,
 		"Ahmad Ibn al-Qadi", # 16th
 		"Mohammed Awzal", # 18th
-		iGlobal, 
+		iGlobal,
 		"Abdessadeq Cheqara", # 20th
 	],
 	iGreatScientist : [
@@ -1124,7 +1124,7 @@ iCivMoors : {
 		"Al-Idrisi", # 12th
 		"Ibn Jubayr", # 12th
 		"Ibn Battuta", # 14th
-		iRenaissance, 
+		iRenaissance,
 		"Hassan al-Wazzan", # 16th
 	],
 	iGreatEngineer : [
@@ -1132,14 +1132,14 @@ iCivMoors : {
 		"Ibn Bassal", # 11th
 		"Al-Zarqali", # 11th
 		"Al-Muradi", # 11th
-		iRenaissance, 
+		iRenaissance,
 		"Ahmed el Inglizi", # 18th
 	],
 	iGreatStatesman : [
 		"fZaynab an-Nafzawiyyah", # 11h
 		"Ibn al-Khatib", # 14th
 		"Ibn Khaldun", # 14th
-		iGlobal, 
+		iGlobal,
 		"Habib Bourguiba", # 20th
 	],
 	iGreatGeneral : [
@@ -1158,10 +1158,10 @@ iCivIndonesia : {
 		"Maha Rsi Agastya", # 5th
 		"Buddha Pahyien", # 4th
 		"Sakyakirti", # 7th
-		"fGayatri Rajapatni", # 14th 
+		"fGayatri Rajapatni", # 14th
 		iRenaissance,
-		"Sunan Giri", # 15th 
-		"Sunan Gunung Jati", # 16th 
+		"Sunan Giri", # 15th
+		"Sunan Gunung Jati", # 16th
 	],
 	iGreatArtist : [
 		"Asep Sunandar Sunarya", # 20th
@@ -1185,15 +1185,15 @@ iCivIndonesia : {
 		"Rakai Pikatan", #9th
 	],
 	iGreatStatesman : [
-		"Gajah Mada", # 14th 
-		"Parmeswara", # 14th 
+		"Gajah Mada", # 14th
+		"Parmeswara", # 14th
 		iIndustrial,
-		"Mahmud Badaruddin", # 19th 
-		"fRaden Ayu Kartini", # 19th 
+		"Mahmud Badaruddin", # 19th
+		"fRaden Ayu Kartini", # 19th
 		iGlobal,
-		"Sukarno", # 20th 
-		"Agus Salim", # 20th 
-		"Chep the Magnificent", # Contest Reward 
+		"Sukarno", # 20th
+		"Agus Salim", # 20th
+		"Chep the Magnificent", # Contest Reward
 	],
 	iGreatGeneral : [
 		"Dharmawangsa", # 10th
@@ -1226,7 +1226,7 @@ iCivSpain : {
 		u"Diego de Silva Velázquez", # 17th
 		u"fJuana Inés de la Cruz", # 17th
 		"Francisco de Goya", # 18th
-		iIndustrial, 
+		iIndustrial,
 		u"Isaac Albéniz", # 19th
 		iGlobal,
 		"Pablo Picasso", # 20th
@@ -1236,7 +1236,7 @@ iCivSpain : {
 	iGreatScientist : [
 		"Gerardo de Cremona", # 12th
 		"Ramon Llull", # 13th
-		iRenaissance, 
+		iRenaissance,
 		"Miguel Serveto", # 16th
 		"Antonio de Ulloa", # 18th
 		iIndustrial,
@@ -1403,7 +1403,7 @@ iCivFrance : {
 		"Joachim Murat", # 18th
 		"Louis-Alexandre Berthier", # 19th
 		"Gilbert de Lafayette", # 19th
-		iGlobal, 
+		iGlobal,
 		u"Philippe Pétain", # 20th
 		"Philippe Leclerc de Hauteclocque", # 20th
 	],
@@ -1535,7 +1535,7 @@ iCivEngland : {
 	],
 	iGreatEngineer : [
 		"Henry Yevele", # 14th
-		iRenaissance, 
+		iRenaissance,
 		"Inigo Jones", # 17th
 		"Robert Hooke", # 17th
 		"Christopher Wren", # 17th
@@ -1591,7 +1591,7 @@ iCivGermany : {
 		iRenaissance,
 		"Martin Luther", # 16th
 		"Philip Melanchthon", # 16th
-		iIndustrial, 
+		iIndustrial,
 		"Theodor Herzl", # 19th
 		iGlobal,
 		"Dietrich Bonhoeffer", # 20th
@@ -1755,7 +1755,7 @@ iCivRussia : {
 		"Ivan Kruzenshtern", # 19th
 		"Nikolai Chukmaldin", # 19th
 		"Karl Faberzhe", # 19th
-		iGlobal, 
+		iGlobal,
 		"Nikolai Kondratiev", # 20th
 	],
 	iGreatEngineer : [
@@ -1764,7 +1764,7 @@ iCivRussia : {
 		"Postnik Yakovlev", # 16th
 		"Vasily Bazhenov", # 18th
 		"Ivan Starov", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Vladimir Shukhov", # 19th
 		"Sergey Prokudin-Gorsky", # 19th
 		iGlobal,
@@ -1882,7 +1882,7 @@ iCivPortugal : {
 		u"António Ferreira", # 16th
 		u"João de Barros", # 16th
 		"Machado de Castro", # 18th
-		iGlobal, 
+		iGlobal,
 		u"fAmália Rodrigues", # 20th
 		u"José Saramago", # 20th
 	],
@@ -1984,7 +1984,7 @@ iCivItaly : {
 		iRenaissance,
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
-		iIndustrial, 
+		iIndustrial,
 		"Giovanni Maria Mastai-Ferretti", #19th
 	],
 	iGreatArtist : [
@@ -1998,7 +1998,7 @@ iCivItaly : {
 		"Claudio Monteverdi", # 17th
 		"fArtemisia Gentileschi", # 17th
 		"Antonio Vivaldi", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Alessandro Manzoni", # 19th
 		"Giuseppe Verdi", # 19th
 		"Giacomo Puccini", # 19th
@@ -2019,7 +2019,7 @@ iCivItaly : {
 		"Luigi Galvani", # 18th
 		"Alessandro Volta", # 18th
 		"fMaria Gaetana Agnesi", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Amedeo Avogadro", # 19th
 		"Camillo Golgi", # 19th
 		iGlobal,
@@ -2035,7 +2035,7 @@ iCivItaly : {
 		"Ciriaco de Ancona", # 15th
 		iRenaissance,
 		"fTullia d'Aragona", # 16th
-		iGlobal, 
+		iGlobal,
 		"Enzo Ferrari", # 20th
 		"Gianni Versace", # 20th
 	],
@@ -2069,7 +2069,7 @@ iCivItaly : {
 		"Francesco Sforza", # 15th
 		iIndustrial,
 		"Giuseppe Garibaldi", # 19th
-		iGlobal, 
+		iGlobal,
 		"Giovanni Messe", # 20th
 	],
 },
@@ -2187,7 +2187,7 @@ iCivMughals : {
 		"Hiravijaya ji", # 16th
 		"Shah Abdul Latif Bhittai", # 18th
 		"Bulleh Shah", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Mirza Ghulam Ahmad", # 19th
 	],
 	iGreatArtist : [
@@ -2262,7 +2262,7 @@ iCivTurkey : {
 		u"Gül Baba", # 16th
 		u"Ahmet Nedîm Efendi", # 18th
 		"Abdullah Buhari", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"Osman Hamdi Bey", # 19th
 		"fFatma Aliye Topuz", # 19th
 		iGlobal,
@@ -2273,7 +2273,7 @@ iCivTurkey : {
 		"Qazi Zada", # 14th
 		"Serafeddin Sabuncuoglu", # 15th
 		u"Ali Kusçu", # 15th
-		iRenaissance, 
+		iRenaissance,
 		u"Matrakçi Nasuh", # 16th
 		u"Takiyüddin", # 16th
 		u"Ibrahim Müteferrika", # 18th
@@ -2299,7 +2299,7 @@ iCivTurkey : {
 		"Mimar Sinan", # 16th
 		"Davud Aga", # 16th
 		u"Takiyüddin", # 16th
-		iIndustrial, 
+		iIndustrial,
 		"Ishak Efendi", # 19th
 		iGlobal,
 		"Mimar Kemaleddin", # 20th
@@ -2348,7 +2348,7 @@ iCivNetherlands : {
 		"fTitia Bergsma", # 18th
 		iIndustrial,
 		"Vincent van Gogh", # 19th
-		iGlobal, 
+		iGlobal,
 		"Piet Mondrian", # 20th
 	],
 	iGreatScientist : [
@@ -2413,7 +2413,7 @@ iCivAmerica : {
 		"fMary Baker Eddy", # 19th
 		"fEllen G. White", # 19th
 		"Charles Taze Russell", # 19th
-		iGlobal, 
+		iGlobal,
 		"Menachem Mendel Schneerson", # 20th
 		"L. Ron Hubbard", # 20th
 		"Billy Graham", # 20th
@@ -2588,14 +2588,14 @@ iCivTibet : {
 		"Thonmi Sambhota", # 7th
 		"Yuthog Yontan Gonpo", # 8th and 12th
 		"Tsongkhapa", # 14th
-		iRenaissance, 
+		iRenaissance,
 		"Kunkhyen Pema Karpo", # 16h
-		iIndustrial, 
+		iIndustrial,
 		"Khyenrab Norbu", # 20th
 	],
 	iGreatMerchant : [
 		"Sonam Rapten", # 17th
-		iIndustrial, 
+		iIndustrial,
 		"Tsarong", # 20th
 	],
 	iGreatEngineer : [
@@ -2625,7 +2625,7 @@ iCivPoland : {
 		"Wojciech", # 10th
 		"Stanislaw", # 11th
 		"fJadwiga", # 14th
-		iRenaissance, 
+		iRenaissance,
 		"Piotr z Goniadza", # 16th
 		"Israel Baal Szem Tow", # 18th
 		iGlobal,
@@ -2633,7 +2633,7 @@ iCivPoland : {
 	],
 	iGreatArtist : [
 		"Jan Kochanowski", # 16th
-		iIndustrial, 
+		iIndustrial,
 		"Adam Mickiewicz", # 19th
 		"Fryderyk Chopin", # 19th
 		"Jan Matejko", # 19th
@@ -2808,7 +2808,7 @@ iCivBrazil : {
 		"Roberto Mangabeira Unger", # 20th
 	],
 	iGreatGeneral : [
-		u"Luís Alves de Lima e Silva", # 19th 
+		u"Luís Alves de Lima e Silva", # 19th
 		"Joaquim Marques Lisboa", # 19th
 		u"fMaria Quitéria", # 19th
 		iGlobal,
@@ -2999,7 +2999,7 @@ iCivPolynesia : {
 	iGreatProphet : [
 		"Maui", # legendary
 		"Kuamo'o Mo'okini", # 12th
-		iIndustrial, 
+		iIndustrial,
 		"Te Kooti", # 19th
 		"fAngata", # 19th
 		"Rua Kenana Hepetipa", # 19th
@@ -3009,7 +3009,7 @@ iCivPolynesia : {
 		"Hotu Matu'a", # 4th-7th
 		"Ui-te-Rangiora", # 7th
 		"Kupe", # 10th-14th
-		iIndustrial, 
+		iIndustrial,
 		"fKawena", # 20th
 		"Uiliami Leilua Vi", # 20th
 		"Rangi Hetet", # 20th
@@ -3022,7 +3022,7 @@ iCivPolynesia : {
 	iGreatMerchant : [
 		"Tupaia", # 18th
 		"Mai", # 18th
-		iIndustrial, 
+		iIndustrial,
 		"fPiipi Raumati", # 19th
 		"Tuilaepa Aiono Sailele Malielegaoi", # 20th
 	],
@@ -3049,6 +3049,65 @@ iCivPolynesia : {
 		"Te Rauparaha", # 19th
 		"Hone Heke", # 19th
 		"Seru Epenisa Cakobau", # 19th
+	],
+},
+iCivIsrael : { # all 20th century
+	iGreatProphet : [
+		"Martin Buber",
+		"Ovadia Yosef",
+		"Yeshayahu Leibowitz",
+		"Adin Steinsalz",
+		"fNaamah Kelman",
+	],
+	iGreatArtist : [
+		"fRachel Bluwstein",
+		"Marcel Janco",
+		"Joseph Zartsky",
+		"Shmuel Yosef Agnon",
+		"fNaomi Shemer",
+		"Amos Oz",
+	],
+	iGreatScientist : [
+		"Yuval Ne'eman",
+		"fAda Yonath",
+		"Aaron Ciechanover",
+		"Robert Aumann",
+		"Arieh Warshel",
+		"Adi Shamir",
+	],
+	iGreatMerchant : [
+		"Michael Bruno",
+		"Daniel Kahneman",
+		"Moshe Schnitzer",
+		"fShari Arison",
+	],
+	iGreatEngineer : [
+		"Moshe Novomeysky",
+		"Arieh Sharon",
+		"fRachel Shalon",
+		"Dan Shechtman",
+		"Dov Frohman",
+	],
+	iGreatStatesman : [
+		"Abba Eban",
+		"fGolda Meir",
+		"Menachem Begin",
+		"Yitzhak Rabin",
+		"Shimon Peres",
+	],
+	iGreatGeneral : [
+		"Moshe Dayan",
+		"Israel Tal",
+		"Michael Barkai",
+		"fOrna Barbivai",
+	],
+	iGreatSpy : [
+		"fHannah Szenes",
+		"Isser Harel",
+		"Jonathan Pollard",
+		"Eli Cohen",
+		"Gamliel Cohen",
+		"fYolande Harmer",
 	],
 },
 }

@@ -13,14 +13,14 @@ class Techs:
 		self.era = era
 		self.techs = techs
 		self.exceptions = exceptions
-		
+
 	def list(self):
 		lTechs = Set()
 		lTechs.update([i for i in range(iNumTechs) if gc.getTechInfo(i).getGridX() <= self.column])
 		lTechs.update([i for i in range(iNumTechs) if gc.getTechInfo(i).getEra() <= self.era])
 		lTechs.update(self.techs)
 		lTechs.difference_update(self.exceptions)
-		
+
 		return list(lTechs)
 
 ### Starting tech methods ###
@@ -30,37 +30,37 @@ def getScenarioTechs(iScenario, iPlayer):
 	for iScenarioType in reversed(range(iScenario+1)):
 		if iCivilization in lStartingTechs[iScenarioType]:
 			return lStartingTechs[iScenarioType][iCivilization].list()
-			
+
 def getStartingTechs(iPlayer):
 	return getScenarioTechs(utils.getScenario(), iPlayer)
-	
+
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
 		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
 		if iPlayer == iSeljuks: continue
-	
+
 		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 		if iCivilization in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
-			
+
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
-				
+
 def initTechs(iPlayer, lTechs):
 	pPlayer = gc.getPlayer(iPlayer)
 
 	for iTech in lTechs:
 		initTech(iPlayer, iTech)
-	
+
 	iCurrentEra = pPlayer.getCurrentEra()
 	pPlayer.setStartingEra(iCurrentEra)
-	
+
 def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
-	
+
 ### General functions ###
-		
+
 def initBirthYear(iPlayer):
 	gc.getPlayer(iPlayer).setBirthYear(tBirth[iPlayer])
 
@@ -123,6 +123,7 @@ iCivBrazil :	Techs(column=13),
 iCivAustralia :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
 iCivBoers :		Techs(column=13),
 iCivCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
+iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 },
 {
 iCivIndependent:Techs(column=5),

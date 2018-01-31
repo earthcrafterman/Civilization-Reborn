@@ -146,6 +146,7 @@ tCapitals = (
 (118, 13),# Sydney
 (68, 15), # Pretoria
 (30, 52), # Montreal
+(73, 38), # Jerusalem
 )
 
 dChangedCapitals = {
@@ -236,6 +237,7 @@ tBirthArea = (
 ((112, 9),	(120, 19)),	# Australia
 ((66, 13),	(69, 17)),	# Boers
 ((20, 50), 	(35, 60)), 	# Canada
+((72, 37), 	(74, 39)), 	# Israel
 )
 
 dChangedBirthArea = {
@@ -325,6 +327,7 @@ tCoreArea = (
 ((112, 10),	(118, 18)),	# Australia
 ((62, 10),	(70, 17)),	# Boer
 ((27, 50),	(35, 52)),	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedCoreArea = {
@@ -433,6 +436,7 @@ tNormalArea = (
 ((101, 6),	(123, 23)), # Australia
 ((60, 8),	(72, 17)),	# Boers
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedNormalArea = {
@@ -519,6 +523,7 @@ tBroaderArea = (
 ((112, 10),	(118, 20)), # Australia
 ((60, 8),	(72, 17)),	# Boers
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedBroaderArea = {

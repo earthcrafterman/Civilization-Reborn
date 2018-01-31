@@ -148,22 +148,25 @@ BeginTeam
 	TeamID=45, (Canada)
 EndTeam
 BeginTeam
-	TeamID=46, (Independent)
+	TeamID=46, (Israel)
 EndTeam
 BeginTeam
-	TeamID=47, (Independent2)
+	TeamID=47, (Independent)
 EndTeam
 BeginTeam
-	TeamID=48, (Native)
+	TeamID=48, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=49, (Celtia)
+	TeamID=49, (Native)
 EndTeam
 BeginTeam
-	TeamID=50, (Seljuks)
+	TeamID=50, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=51, (Barbarian)
+	TeamID=51, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=52, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -731,6 +734,21 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=46
+	LeaderType=LEADER_BEN_GURION
+	CivType=CIVILIZATION_ISRAEL
+	PlayableCiv=1
+	StartingGold=1500
+	StateReligion=RELIGION_JUDAISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_IDEOLOGY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_EGALITARIANISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_PUBLIC_WELFARE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=47
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -739,7 +757,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	team=48
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -748,7 +766,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -757,7 +775,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM
 	PlayableCiv=0
@@ -765,7 +783,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=50
+	Team=51
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	PlayableCiv=0
@@ -773,7 +791,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=51
+	Team=52
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
@@ -19696,10 +19714,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Reykjavik
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -19709,7 +19727,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		ReligionType=RELIGION_PROTESTANTISM
-		Player45Culture=10, (Independent)
+		Player47Culture=10, (Independent)
 	EndCity
 	TeamReveal=16,45,
 EndPlot
@@ -22066,13 +22084,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Djenne
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -22080,7 +22098,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_UNIVERSITY_OF_SANKORE
 		ReligionType=RELIGION_ISLAM
-		Player46Culture=100, (Independent2)
+		Player48Culture=100, (Independent2)
 	EndCity
 	TeamReveal=38,45,46,
 EndPlot
@@ -22126,13 +22144,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Marrakus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -22143,7 +22161,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=22,24,29,35,38,45,
 EndPlot
@@ -23127,16 +23145,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Timbuktu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -23146,7 +23164,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		ReligionType=RELIGION_ISLAM
-		Player46Culture=200, (Independent2)
+		Player48Culture=200, (Independent2)
 	EndCity
 	TeamReveal=46,
 EndPlot
@@ -24728,13 +24746,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Gao
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -24743,7 +24761,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player46Culture=100, (Independent2)
+		Player48Culture=100, (Independent2)
 	EndCity
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
@@ -25924,13 +25942,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Bergen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -25942,7 +25960,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_PROTESTANTISM
-		Player45Culture=100, (Bergen)
+		Player47Culture=100, (Bergen)
 	EndCity
 	TeamReveal=16,24,39,45,
 EndPlot
@@ -26184,19 +26202,19 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Ngazargamu
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_MARKET
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=29,45,46,
 EndPlot
@@ -26865,19 +26883,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Roma
 		CityPopulation=8
 		BuildingType=BUILDING_WALLS
@@ -26902,7 +26920,7 @@ BeginPlot
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player46Culture=250, (Independent2)
+		Player48Culture=250, (Independent2)
 	EndCity
 	TeamReveal=16,21,22,24,25,38,39,45,46,
 EndPlot
@@ -27004,19 +27022,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=K&#248;benhavn
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -27031,7 +27049,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=16,21,22,24,25,38,39,45,46,
 EndPlot
@@ -27053,16 +27071,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Oslo
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -27080,7 +27098,7 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=16,24,39,45,46,
 EndPlot
@@ -27597,13 +27615,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Trondheim
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -27614,7 +27632,7 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=16,45,
 EndPlot
@@ -32779,13 +32797,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Mombasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -32795,7 +32813,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=22,24,29,38,45,
 EndPlot
@@ -33328,13 +33346,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Gondar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -33345,7 +33363,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=35,45,46,
 EndPlot
@@ -34372,16 +34390,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=46, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34392,7 +34410,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=22,24,29,38,45,46,
 EndPlot
@@ -35416,10 +35434,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Sana'a
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -35427,7 +35445,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player46Culture=100, (Independent2)
+		Player48Culture=100, (Independent2)
 	EndCity
 	TeamReveal=29,35,45,46,
 EndPlot
@@ -38186,16 +38204,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=46, (Independent)
+		UnitType=UNIT_CANNON, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Masqat
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -38206,7 +38224,7 @@ BeginPlot
 		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=8,21,24,29,34,38,45,46,
 EndPlot
@@ -38721,16 +38739,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Merv
 		CityPopulation=4
 		BuildingType=BUILDING_STABLE
@@ -38740,7 +38758,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=8,45,46,
 EndPlot
@@ -39667,16 +39685,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Samarkand
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -39688,7 +39706,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=8,45,
 EndPlot
@@ -41459,13 +41477,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Kashgar
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -41475,7 +41493,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=200, (Independent)
+		Player47Culture=200, (Independent)
 	EndCity
 	TeamReveal=1,45,
 EndPlot
@@ -42390,16 +42408,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Hyderabad
 		CityPopulation=7
 		BuildingType=BUILDING_WALLS
@@ -42412,7 +42430,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player46Culture=200, (Independent2)
+		Player48Culture=200, (Independent2)
 	EndCity
 	TeamReveal=5,10,24,29,34,38,45,46,
 EndPlot
@@ -43888,13 +43906,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Turfan
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -43903,7 +43921,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=200, (Independent)
+		Player47Culture=200, (Independent)
 	EndCity
 	TeamReveal=1,45,
 EndPlot
@@ -44724,10 +44742,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (China)
 	EndUnit
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=47, (China)
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -44738,7 +44756,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player45Culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=1,34,45,46,
 EndPlot
@@ -45491,16 +45509,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Yangon
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -45514,7 +45532,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=1,21,24,29,34,36,38,45,46,
 EndPlot
@@ -46324,16 +46342,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent2)
+		CityOwner=48, (Independent2)
 		CityName=Palembang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -46344,7 +46362,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player46Culture=100, (Independent2)
+		Player48Culture=100, (Independent2)
 	EndCity
 	TeamReveal=38,45,46,
 EndPlot
@@ -46992,19 +47010,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Hanoi
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -47018,7 +47036,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=1,21,29,36,38,45,46,
 EndPlot
@@ -48428,16 +48446,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Pontianak
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48450,7 +48468,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=36,38,45,46,
 EndPlot
@@ -48484,16 +48502,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -48507,7 +48525,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=50, (Independent)
+		Player47Culture=50, (Independent)
 	EndCity
 	TeamReveal=1,21,29,36,38,45,
 EndPlot
@@ -50031,10 +50049,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (China)
 	EndUnit
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=47, (China)
 		CityName=Qiqihar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -50042,7 +50060,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=50, (China)
+		Player47Culture=50, (China)
 	EndCity
 	TeamReveal=1,12,45,
 EndPlot
@@ -50283,16 +50301,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent)
+		CityOwner=47, (Independent)
 		CityName=Makassar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -50300,7 +50318,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player47Culture=100, (Independent)
 	EndCity
 	TeamReveal=38,45,
 EndPlot
