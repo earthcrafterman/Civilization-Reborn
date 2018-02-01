@@ -84,7 +84,7 @@ def getLanguages(iCiv):
 	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iArgentina: return (iLangSpanish,)
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iBoers: return (iLangEnglish, iLangDutch)
+	elif iCiv == iBoers: return (iLangDutch, iLangEnglish)
 	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
