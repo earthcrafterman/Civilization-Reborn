@@ -1284,7 +1284,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if data.iSwedenHappinessTurns >= utils.getTurns(50):
 				win(iSweden, 2)
 			
-		if iGameTurn == getTurnYear(1970):
+		if iGameTurn == getTurnForYear(1970):
 			expire(iSweden, 2)
 		
 	elif iPlayer == iNetherlands:
