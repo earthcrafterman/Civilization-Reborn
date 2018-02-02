@@ -538,4 +538,20 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MENZIES</Tag>
+		<English>Robert Menzies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_KRUGER</Tag>
+		<English>Paul Kruger</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MANDELA</Tag>
+		<English>Nelson Mandela</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BEN_GURION</Tag>
+		<English>Ben-Gurion</English>
+	</TEXT>
 </Civ4GameText>

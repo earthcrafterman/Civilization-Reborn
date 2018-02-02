@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- America -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_DESC</Tag>
+		<English>The Boers</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_SHORT_DESC</Tag>
+		<English>Boer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_ADJECTIVE</Tag>
+		<English>Boer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_PEOPLES</Tag>
+		<English>Boer Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_DEFAULT</Tag>
+		<English>Boer Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_REPUBLIC</Tag>
+		<English>Boer Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_DEMOCRATIC</Tag>
+		<English>Republic of South Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_COMMUNIST</Tag>
+		<English>South African Socialist Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_EMPIRE</Tag>
+		<English>Union of South Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_DESC_FASCIST</Tag>
+		<English>United Sovereignty of Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_ENGLAND</Tag>
+		<English>States of Cape Colony</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_NETHERLANDS</Tag>
+		<English>Orange states</English>
+	</TEXT>
+</Civ4GameText>

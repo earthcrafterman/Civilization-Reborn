@@ -8,7 +8,7 @@ class CvDllPythonEvents
 public:
 	void reportGenericEvent(const char* szEventName, void *pyArgs);
 	bool reportKbdEvent(int evt, int key, int iCursorX, int iCursorY);
-	bool reportMouseEvent(int evt, int iCursorX, int iCursorY, bool bInterfaceConsumed=false);												
+	bool reportMouseEvent(int evt, int iCursorX, int iCursorY, bool bInterfaceConsumed=false);
 	void reportModNetMessage(int iData1, int iData2, int iData3, int iData4, int iData5);
 
 	void reportInit();
@@ -24,17 +24,17 @@ public:
 	void reportBeginPlayerTurn(int iGameTurn, PlayerTypes);
 	void reportEndPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);						
-	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
+	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
+	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);
 // BUG - Combat Events - start
 	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
 	void reportCombatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender);
 	void reportCombatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
 	void reportCombatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
 // BUG - Combat Events - start
-	void reportImprovementBuilt(int iImprovementType, int iX, int iY);	
-	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);	
-	void reportRouteBuilt(int iRouteType, int iX, int iY);	
+	void reportImprovementBuilt(int iImprovementType, int iX, int iY);
+	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);
+	void reportRouteBuilt(int iRouteType, int iX, int iY);
 
 	void reportPlotRevealed(CvPlot *pPlot, TeamTypes eTeam);
 	void reportPlotFeatureRemoved(CvPlot *pPlot, FeatureTypes eFeature, CvCity* pCity);
@@ -64,11 +64,11 @@ public:
 
 	void reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
-	void reportUnitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot);					
-	void reportUnitSetXY(CvPlot* pPlot, CvUnit* pUnit);					
+	void reportUnitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot);
+	void reportUnitSetXY(CvPlot* pPlot, CvUnit* pUnit);
 	void reportUnitCreated(CvUnit *pUnit);
 	void reportUnitBuilt(CvCity *pCity, CvUnit *pUnit);
-	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);			
+	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);
 // BUG - Upgrade Unit Event - start
 	void reportUnitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit);
 // BUG - Upgrade Unit Event - end
@@ -105,7 +105,7 @@ public:
 	void reportGoldenAge(PlayerTypes ePlayer);
 	void reportEndGoldenAge(PlayerTypes ePlayer);
 	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
-	void reportChat(CvWString szString);				
+	void reportChat(CvWString szString);
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
 	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
@@ -116,6 +116,8 @@ public:
 	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
+	void reportBordersOpened(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
+	void reportBordersClosed(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);

@@ -489,7 +489,7 @@
 			<fBlue>0.40</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
-		
+
 		<ColorVal>
 			<Type>COLOR_PLAYER_DARK_PINK</Type>
 			<fRed>0.69</fRed>
@@ -1160,6 +1160,34 @@
 			<fRed>0.95</fRed>
 			<fGreen>0.60</fGreen>
 			<fBlue>0.75</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_AUSTGREEN</Type>
+			<fRed>0.00</fRed>
+			<fGreen>0.53</fGreen>
+			<fBlue>0.32</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_GOLD</Type>
+			<fRed>0.99</fRed>
+			<fGreen>0.82</fGreen>
+			<fBlue>0.09</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_GOLDEN_BROWN</Type>
+			<fRed>0.71</fRed>
+			<fGreen>0.42</fGreen>
+			<fBlue>0.09</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ISRAEL</Type>
+			<fRed>0.37</fRed>
+			<fGreen>0.53</fGreen>
+			<fBlue>0.69</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 	</ColorVals>

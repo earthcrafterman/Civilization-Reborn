@@ -18,12 +18,20 @@
 		<English>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_AUSTRALIA</Tag>
+		<English>It is the year 1788 AD. The arrival of the First Fleet of British ships at Sydney to establish the penal colony of New South Wales. Europeans are preparing exploration of the continent, establishment of other colonies and the beginnings of autonomous democratic government.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_AZTECS</Tag>
 		<English>It is the year 1195 AD. The Aztec peoples have founded the city of Tenochtitlan at Lake Texcoco in the Valley of Mexico. Through clever use of irrigation systems, Tenochtitlan can become the largest metropolis of Mesoamerica and dominate the surrounding cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BABYLONIA</Tag>
 		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Babylon, they will soon be overshadowed by the greatest metropolis of its time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BOERS</Tag>
+		<English>It is the year 1852 AD. The discord between governers and settlers about colony politics lead settlers to move out from their colonies. Boer republics declared independence and get recognized by former governers, but the political and deplomatic conditions against European imperialists are still unstable. The Boer peoples' bright future is not guaranted yet.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BRAZIL</Tag>
@@ -120,6 +128,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_INDONESIA</Tag>
 		<English>It is the year 650 AD. Nearly all of the trade between China and India passes the Strait of Malacca. Benefiting from its position on the nearby island of Sumatra, the Indonesian Kingdom of Srivijaya rises to become a major trading power in Southeast Asia.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ISRAEL</Tag>
+		<English>It is the year 1948 AD. Following decades of Zionist immigration to Palestine, the international community has agreed to partition the region and create a Jewish state. Many challenges await the young Israeli nation, from coexisting with the surrounding Arab populations to growing a tradition of technological and scientific prowess.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ITALY</Tag>

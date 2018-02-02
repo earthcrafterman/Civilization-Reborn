@@ -832,6 +832,13 @@ void CvPlot::doImprovement()
 					{
 						iOdds *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent();
 						iOdds /= 100;
+						
+						// Australia UP easter egg
+						if (getOwnerINLINE() == AUSTRALIA)
+						{
+							iOdds *= 9;
+							iOdds /= 10;
+						}
 
 						if( GC.getGameINLINE().getSorenRandNum(iOdds, "Bonus Discovery") == 0)
 						{
@@ -6846,6 +6853,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		if (eBonus != NO_BONUS)
 		{
 			iYield += GC.getImprovementInfo(eImprovement).getImprovementBonusYield(eBonus, eYield);
+		}
+		
+		// Australian UP: Mines on the mining resources provide doubled production and commerce increment
+		if (eBonus != NO_BONUS && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_MINE") && ePlayer == AUSTRALIA)
+		{
+			iYield += GC.getImprovementInfo(eImprovement).getImprovementBonusYield(eBonus, eYield) + GC.getImprovementInfo(eImprovement).getYieldChange(eYield);
 		}
 	}
 

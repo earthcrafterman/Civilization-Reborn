@@ -139,25 +139,34 @@ BeginTeam
 	TeamID=42, (Brazil)
 EndTeam
 BeginTeam
-	TeamID=43, (Canada)
+	TeamID=43, (Australia)
 EndTeam
 BeginTeam
-	TeamID=44, (Independent)
+	TeamID=44, (Boers)
 EndTeam
 BeginTeam
-	TeamID=45, (Independent2)
+	TeamID=45, (Canada)
 EndTeam
 BeginTeam
-	TeamID=46, (Native)
+	TeamID=46, (Israel)
 EndTeam
 BeginTeam
-	TeamID=47, (Celtia)
+	TeamID=47, (Independent)
 EndTeam
 BeginTeam
-	TeamID=48, (Seljuks)
+	TeamID=48, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=49, (Barbarian)
+	TeamID=49, (Native)
+EndTeam
+BeginTeam
+	TeamID=50, (Celtia)
+EndTeam
+BeginTeam
+	TeamID=51, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=52, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -701,6 +710,34 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=43
+	LeaderType=LEADER_MENZIES
+	CivType=CIVILIZATION_AUSTRALIA
+	PlayableCiv=1
+	StartingGold=1200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=44
+	LeaderType=LEADER_KRUGER
+	CivType=CIVILIZATION_BOER
+	PlayableCiv=1
+	StartingGold=1000
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=45
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
 	PlayableCiv=1
@@ -715,7 +752,26 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
+<<<<<<< HEAD
+	Team=46
+=======
 	Team=44
+	LeaderType=LEADER_BEN_GURION
+	CivType=CIVILIZATION_ISRAEL
+	PlayableCiv=1
+	StartingGold=1500
+	StateReligion=RELIGION_JUDAISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_IDEOLOGY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_EGALITARIANISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_PUBLIC_WELFARE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=45
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -724,7 +780,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
+<<<<<<< HEAD
+	Team=47
+=======
+	Team=46
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -733,7 +793,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
+<<<<<<< HEAD
+	Team=48
+=======
+	Team=47
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -742,7 +806,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+<<<<<<< HEAD
+	Team=49
+=======
+	Team=48
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -750,7 +818,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+<<<<<<< HEAD
+	Team=50
+=======
+	Team=49
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	Color=PLAYERCOLOR_SELJUK
@@ -761,7 +833,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+<<<<<<< HEAD
+	Team=51
+=======
+	Team=50
+>>>>>>> remotes/Isra/israel
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0

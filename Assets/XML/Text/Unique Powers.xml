@@ -36,6 +36,14 @@
 		<Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_AUS_TITLE</Tag>
+		<English>The Power of Mining Industry:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_AUS</Tag>
+		<English>Mines on the mining resources provide doubled [ICON_PRODUCTION] and [ICON_COMMERCE] increment.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
 		<German>Die Macht der Juntas:</German>
@@ -76,6 +84,16 @@
 		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
 		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BOE_TITLE</Tag>
+		<English>The Power of Voortrekkers:</English>
+		<German>To be translated:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BOE</Tag>
+		<English>Additional infrastructure in new and acquired cities</English>
+		<German>To be translated</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
@@ -710,4 +728,21 @@
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR_TITLE</Tag>
+		<English>The Power of Aliyah:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR</Tag>
+		<English>Extra food, production and commerce in your capital from Jewish cities with open borders; immigration from Jewish cities at war</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_EMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing to Israel!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</English>
+	</TEXT>
+
 </Civ4GameText>

@@ -1014,6 +1014,11 @@ int CyPlayer::getGreatGeneralsCreated()
 	return m_pPlayer ? m_pPlayer->getGreatGeneralsCreated() : -1;
 }
 
+int CyPlayer::getGreatSpiesCreated()
+{
+	return m_pPlayer ? m_pPlayer->getGreatSpiesCreated() : -1;
+}
+
 int CyPlayer::getGreatPeopleThresholdModifier()
 {
 	return m_pPlayer ? m_pPlayer->getGreatPeopleThresholdModifier() : -1;
@@ -2563,7 +2568,7 @@ void CyPlayer::setReligiousTolerance(int iNewValue)
 		m_pPlayer->setReligiousTolerance(iNewValue);
 }
 
-int CyPlayer::getBirthYear() 
+int CyPlayer::getBirthYear()
 {
 	return m_pPlayer ? m_pPlayer->getBirthYear() : -1;
 }

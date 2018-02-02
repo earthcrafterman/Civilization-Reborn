@@ -130,6 +130,34 @@
 		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS1_TITLE</Tag>
+		<English>Commonwealth of Oceania</English>
+		<German>To be translated</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS1</Tag>
+		<English>Control Australia, New Zealand, New Guinea and 3 Pacific island in 1950 AD</English>
+		<German>To be translated</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS2_TITLE</Tag>
+		<English>ANZAC</English>
+		<German>ANZAC</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS2</Tag>
+		<English>Gift 10 Digger, Marines or Mechanized Infantry to at least three different civilizations by 1950 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS3_TITLE</Tag>
+		<English>G'Day mate!</English>
+		<German>To be translated</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS3</Tag>
+		<English>Have the highest approval rating in the world for 25 turns</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>
 		<English>Floating Gardens</English>
 		<German>Schwimmende G&#228;rten</German>
@@ -242,6 +270,30 @@
 		<German>Machen Sie Babylon bis zum Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
 		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
 		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1_TITLE</Tag>
+		<English>The Boer Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1</Tag>
+		<English>Allow no European Colonies in South Africa by 1902 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2_TITLE</Tag>
+		<English>A monopoly is forever</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2</Tag>
+		<English>Secure or get by trade 5 gems resources by 1947 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3_TITLE</Tag>
+		<English>The Incident</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3</Tag>
+		<English>Build an ICBM by 1979 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA1_TITLE</Tag>
@@ -1005,6 +1057,30 @@
 		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
+		<English>Samson Option</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1</Tag>
+		<English>Build an ICBM by 1980 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
+		<English>Start-up Nation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Have the city with the highest research output in 2000 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>By Stratagem You Wage War</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3</Tag>
+		<English>Create two Great Spies</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
 		<English>Renaissance Architecture</English>
 		<German>Architektur der Renaissance</German>
@@ -1381,7 +1457,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
 		<English>Build three Islamic Grand Mosques by 1500 AD</English>
-		<German>Bauen Sie drei Islamische Große Moscheen bis zum Jahr 1500 n. Chr.</German>
+		<German>Bauen Sie drei Islamische Groï¿½e Moscheen bis zum Jahr 1500 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
@@ -1915,17 +1991,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
-		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
+		<German>Erwï¿½hltes Volk: Haben Sie insgesamt 15 Groï¿½e Propheten, Wissenschaftler und Staatsmï¿½nner in Ihren Stï¿½dten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD2</Tag>
 		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
-		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
+		<German>Gelobtes Land: Haben Sie legendï¿½re Kultur in der jï¿½dischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD3</Tag>
 		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
-		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jï¿½dischen Minderheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
@@ -2175,12 +2251,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
 		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
-		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
+		<German>Humanismus: Stellen Sie sicher, dass es in sï¿½kularen Zivilisationen 25 Universitï¿½ten, 10 Groï¿½e Wissenschaftler und 10 Groï¿½e Staatsmï¿½nner gibt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
 		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
-		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
+		<German>Modernismus: Stellen Sie sicher, dass die fï¿½nf fortschrittlichsten unabhï¿½ngigen Zivilisationen sï¿½kular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
@@ -3135,5 +3211,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GIVEN_UNITS</Tag>
+		<English>Units given: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UNIT_RECEIVERS</Tag>
+		<English>Unit receiving civs: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_AUSTRALIA</Tag>
+		<English>Australia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_NEW_ZEALAND</Tag>
+		<English>New Zealand: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_GUINEA</Tag>
+		<English>New Guinea: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_PACIFIC</Tag>
+		<English>Pacific Islands: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AFRICAN_COLONIES</Tag>
+		<English>No European colonies in South Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES</Tag>
+		<English>Available gems resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUCLEAR_ARSENAL</Tag>
+		<English>ICBMs built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_SPIES</Tag>
+		<English>Great Spies created: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT</Tag>
+		<English>City with highest research output: %s1_city</English>
 	</TEXT>
 </Civ4GameText>

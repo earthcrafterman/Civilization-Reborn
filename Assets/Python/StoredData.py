@@ -237,6 +237,9 @@ class GameData:
 		self.iDutchColonies = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
+		self.iAustraliaGifts = 0
+		self.lAustralianGiftReceivers = []
+		self.iAustraliaHappinessTurns = 0
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0

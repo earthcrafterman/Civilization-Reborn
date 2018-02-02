@@ -53,15 +53,15 @@ class RiseAndFall:
 		iNewCiv = data.getNewCiv()
 		if popupReturn.getButtonClicked() == 0: # 1st button
 			self.handleNewCiv(iNewCiv)
-			
+
 	def respawnPopup(self, iCiv):
 		self.showPopup(7628, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
 		data.iRespawnCiv = iCiv
-		
+
 	def eventApply7628(self, popupReturn):
 		if popupReturn.getButtonClicked() == 0:
 			self.handleNewCiv(data.iRespawnCiv)
-		
+
 	def handleNewCiv(self, iCiv):
 		iPreviousCiv = utils.getHumanID()
 		iOldHandicap = gc.getActivePlayer().getHandicapType()
@@ -73,25 +73,25 @@ class RiseAndFall:
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
 		data.bAlreadySwitched = True
 		gc.getPlayer(iCiv).setPlayable(True)
-		
+
 		data.resetHumanStability()
 
 		for city in utils.getCityList(iCiv):
 			city.setInfoDirty(True)
 			city.setLayoutDirty(True)
-						
+
 		for i in range(3):
 			data.players[iCiv].lGoals[i] = -1
-						
+
 		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 			vic.loseAll(iPreviousCiv)
-			
+
 		CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
-			
+
 	def scheduleFlipPopup(self, iNewCiv, lPlots):
 		data.lTempEvents.append((iNewCiv, lPlots))
 		self.checkFlipPopup()
-		
+
 	def checkFlipPopup(self):
 		for tEvent in data.lTempEvents:
 			iNewCiv, lPlots = tEvent
@@ -99,14 +99,14 @@ class RiseAndFall:
 
 	def flipPopup(self, iNewCiv, lPlots):
 		iHuman = utils.getHumanID()
-		
+
 		flipText = CyTranslator().getText("TXT_KEY_FLIPMESSAGE1", ())
-		
+
 		for city in self.getConvertedCities(iNewCiv, lPlots):
 			flipText += city.getName() + "\n"
-			
+
 		flipText += CyTranslator().getText("TXT_KEY_FLIPMESSAGE2", ())
-							
+
 		self.showPopup(7615, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), flipText, (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
 		data.iNewCivFlip = iNewCiv
 		data.iOldCivFlip = iHuman
@@ -116,15 +116,15 @@ class RiseAndFall:
 		iHuman = utils.getHumanID()
 		lPlots = data.lTempPlots
 		iNewCivFlip = data.iNewCivFlip
-		
+
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
 		lHumanCityList = [city for city in self.getConvertedCities(iNewCivFlip, lPlots) if city.getOwner() == iHuman]
-		
+
 		if popupReturn.getButtonClicked() == 0: # 1st button
 			print ("Flip agreed")
 			CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_FLIP_AGREED", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
-						
+
 			if lHumanCityList:
 				for city in lHumanCityList:
 					tCity = (city.getX(), city.getY())
@@ -133,7 +133,7 @@ class RiseAndFall:
 					utils.flipUnitsInCityBefore(tCity, iNewCivFlip, iHuman)
 					utils.flipCity(tCity, 0, 0, iNewCivFlip, [iHuman])
 					utils.flipUnitsInCityAfter(tCity, iNewCivFlip)
-					
+
 			if iNumCities == 0 and gc.getPlayer(iNewCivFlip).getNumCities() > 0:
 				self.createStartingWorkers(iNewCivFlip, (gc.getPlayer(iNewCivFlip).getCapitalCity().getX(), gc.getPlayer(iNewCivFlip).getCapitalCity().getY()))
 
@@ -157,11 +157,11 @@ class RiseAndFall:
 			if data.lCheatersCheck[0] == 0:
 				data.lCheatersCheck[0] = iCheatersPeriod
 				data.lCheatersCheck[1] = data.iNewCivFlip
-				
+
 		elif popupReturn.getButtonClicked() == 1: # 2nd button
 			print ("Flip disagreed")
 			CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_FLIP_REFUSED", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
-						
+
 
 			if lHumanCityList:
 				for city in lHumanCityList:
@@ -174,11 +174,11 @@ class RiseAndFall:
 						gc.getTeam(gc.getPlayer(iNewCivFlip).getTeam()).declareWar(iHuman, False, -1) ##True??
 						data.iBetrayalTurns = iBetrayalPeriod
 						self.initBetrayal()
-						
+
 		data.lTempEvents.remove((iNewCivFlip, lPlots))
-		
+
 		gc.getGame().autosave()
-				
+
 	def rebellionPopup(self, iRebelCiv):
 		self.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \
 				CyTranslator().getText("TXT_KEY_REBELLION_TEXT", (gc.getPlayer(iRebelCiv).getCivilizationAdjectiveKey(),)), \
@@ -207,83 +207,83 @@ class RiseAndFall:
 				x, y = tPlot
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
 					utils.colonialConquest(iPlayer, tPlot)
-		
+
 	def eventApply7629(self, netUserData, popupReturn):
 		targetList = data.lByzantineBribes
 		iButton = popupReturn.getButtonClicked()
-		
+
 		if iButton >= len(targetList): return
-		
+
 		unit, iCost = targetList[iButton]
 		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-		
+
 		newUnit = utils.makeUnit(unit.getUnitType(), iByzantium, (closestCity.plot().getX(), closestCity.plot().getY()), 1)
 		gc.getPlayer(iByzantium).changeGold(-iCost)
 		unit.kill(False, iByzantium)
-		
+
 		if newUnit:
 			CyInterface().selectUnit(newUnit, True, True, False)
 
 #######################################
 ### Main methods (Event-Triggered) ###
-#####################################  
+#####################################
 
 	def setup(self):
 
 		self.determineEnabledPlayers()
-		
+
 		self.initScenario()
-		
+
 		# Leoreth: make sure to select the Egyptian settler
 		if pEgypt.isHuman():
 			x, y = Areas.getCapital(iEgypt)
-			plotEgypt = gc.getMap().plot(x, y)  
+			plotEgypt = gc.getMap().plot(x, y)
 			for i in range(plotEgypt.getNumUnits()):
 				unit = plotEgypt.getUnit(i)
 				if unit.getUnitType() == iSettler:
 					CyInterface().selectUnit(unit, True, False, False)
 					break
-					
+
 	def initScenario(self):
 		self.updateStartingPlots()
-	
+
 		self.adjustCityCulture()
-		
+
 		self.updateGreatWall()
-			
+
 		self.foundCapitals()
 		self.flipStartingTerritory()
-		
+
 		self.adjustReligionFoundingDates()
 		self.initStartingReligions()
-		
+
 		Civilizations.initScenarioTechs(utils.getScenario())
-	
+
 		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
-			
+
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
 			self.adjust600ADWonders()
-			
+
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
 			self.init1700ADDiplomacy()
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			self.adjust1700ADWonders()
-			
+
 			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iTurkey]:
 				utils.setReborn(iPlayer, True)
-			
+
 			pChina.updateTradeRoutes()
-		
+
 		self.invalidateUHVs()
-		
+
 		gc.getGame().setVoteSourceReligion(1, iCatholicism, False)
-		
+
 		self.updateExtraOptions()
-		
+
 	def updateExtraOptions(self):
 		# Human player can't collapse
 		data.bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
@@ -295,112 +295,112 @@ class RiseAndFall:
 		data.bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
 		# No plagues
 		data.bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
-		
+
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):
 			x, y = Areas.getCapital(iPlayer)
 			gc.getPlayer(iPlayer).setStartingPlot(gc.getMap().plot(x, y), False)
-		
+
 	def adjustCityCulture(self):
 		if utils.getTurns(10) == 10: return
-	
+
 		lCities = []
 		for iPlayer in range(iNumTotalPlayersB):
 			lCities.extend(utils.getCityList(iPlayer))
-			
+
 		for city in lCities:
 			city.setCulture(city.getOwner(), utils.getTurns(city.getCulture(city.getOwner())), True)
-			
+
 	def updateGreatWall(self):
 		if utils.getScenario() == i3000BC:
 			return
-	
+
 		elif utils.getScenario() == i600AD:
 			tTL = (98, 39)
 			tBR = (107, 48)
 			lExceptions = [(105, 48), (106, 48), (107, 48), (106, 47), (98, 46), (98, 47), (99, 47), (98, 48), (99, 48), (98, 39), (99, 39), (100, 39), (98, 40), (99, 40), (98, 41), (99, 41), (98, 42), (100, 40)]
 			lAdditions = [(103, 38), (104, 37), (102, 49), (103, 49)]
-				
+
 		elif utils.getScenario() == i1700AD:
 			tTL = (98, 40)
 			tBR = (106, 50)
 			lExceptions = [(98, 46), (98, 47), (98, 48), (98, 49), (99, 49), (98, 50), (99, 50), (100, 50), (99, 47), (99, 48), (100, 49), (101, 49), (101, 50), (102, 50)]
 			lAdditions = [(104, 51), (105, 51), (106, 51), (107, 41), (107, 42), (107, 43), (103, 38), (103, 39), (104, 39), (105, 39), (104, 37)]
-			
+
 			lRemoveWall = [(97, 40), (98, 39), (99, 39), (100, 39), (101, 39), (102, 39)]
-			
+
 			for tPlot in lRemoveWall:
 				x, y = tPlot
 				gc.getMap().plot(x, y).setOwner(-1)
-				
+
 			gc.getMap().plot(102, 47).getPlotCity().updateGreatWall()
-			
+
 			for tPlot in lRemoveWall:
 				x, y = tPlot
 				gc.getMap().plot(x, y).setOwner(iChina)
-		
+
 		for (x, y) in utils.getPlotList(tTL, tBR, lExceptions):
 			plot = gc.getMap().plot(x, y)
 			if not plot.isWater(): plot.setWithinGreatWall(True)
-					
+
 		for (x, y) in lAdditions:
 			plot = gc.getMap().plot(x, y)
 			if not plot.isWater(): plot.setWithinGreatWall(True)
-			
-			
+
+
 	def adjust1700ADCulture(self):
 		for (x, y) in utils.getWorldPlotsList():
 			plot = gc.getMap().plot(x, y)
 			if plot.getOwner() != -1:
 				plot.changeCulture(plot.getOwner(), 100, True)
 				utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
-					
+
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
-			
+
 		for x, y in [(58, 49), (59, 49), (60, 49)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iGermany, 100, True)
-			
+
 		for x, y in [(62, 51)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iHolyRome, 100, True)
-			
+
 		for x, y in [(58, 52), (58, 53)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iNetherlands, 100, True)
-			
+
 		for x, y in [(64, 53), (66, 55)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
-			
+
 		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
-			
+
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
 			data.players[iPlayer].iExplorationTurn = getTurnForYear(1700)
-			
+
 		data.players[iVikings].iColonistsAlreadyGiven = 1
 		data.players[iSpain].iColonistsAlreadyGiven = 7
 		data.players[iFrance].iColonistsAlreadyGiven = 3
 		data.players[iEngland].iColonistsAlreadyGiven = 3
 		data.players[iPortugal].iColonistsAlreadyGiven = 6
 		data.players[iNetherlands].iColonistsAlreadyGiven = 4
-		
+
 	def assign3000BCGold(self):
 		for iPlayer in range(iNumTotalPlayers):
 			gc.getPlayer(iPlayer).changeGold(utils.getTurns(tStartingGold[iPlayer]))
-			
+
 	def assign600ADGold(self):
 		for iPlayer in dExtraGold600AD:
 			gc.getPlayer(iPlayer).changeGold(utils.getTurns(dExtraGold600AD[iPlayer]))
-		
+
 	def assign1700ADGold(self):
 		for iPlayer in dExtraGold1700AD:
 			gc.getPlayer(iPlayer).changeGold(utils.getTurns(dExtraGold1700AD[iPlayer]))
-		
+
 	def init1700ADDiplomacy(self):
-		
+
 		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_LIMITED)
 		teamIndia.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
-	
+
 	def changeAttitudeExtra(self, iPlayer1, iPlayer2, iValue):
 		gc.getPlayer(iPlayer1).AI_changeAttitudeExtra(iPlayer2, iValue)
 		gc.getPlayer(iPlayer2).AI_changeAttitudeExtra(iPlayer1, iValue)
@@ -410,47 +410,47 @@ class RiseAndFall:
 			if not gc.getPlayer(iPlayer).isPlayable():
 				for i in range(3):
 					data.players[iPlayer].lGoals[i] = 0
-					
+
 	def foundCapitals(self):
 		if utils.getScenario() == i600AD:
-		
+
 			# China
 			self.prepareChina()
 			tCapital = Areas.getCapital(iChina)
 			lBuildings = [iGranary, iConfucianTemple, iTaixue, iBarracks, iForge]
 			utils.foundCapital(iChina, tCapital, "Xi'an", 4, 100, lBuildings, [iConfucianism, iTaoism])
-			
+
 		elif utils.getScenario() == i1700AD:
-			
+
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
 			pChengdu.setCulture(iChina, 100, True)
 
 	def flipStartingTerritory(self):
-	
+
 		if utils.getScenario() == i600AD:
-			
+
 			# China
 			tTL, tBR = Areas.tBirthArea[iChina]
 			if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further south
 			self.startingFlip(iChina, [(tTL, tBR)])
-			
+
 		if utils.getScenario() == i1700AD:
-		
+
 			# China (Tibet)
 			tTibetTL = (94, 42)
 			tTibetBR = (97, 45)
 			tManchuriaTL = (105, 51)
 			tManchuriaBR = (109, 55)
 			self.startingFlip(iChina, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
-			
+
 			# Russia (Sankt Peterburg)
 			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
 			utils.convertPlotCulture(gc.getMap().plot(67, 57), iRussia, 100, True)
-			
-			
+
+
 	def startingFlip(self, iPlayer, lRegionList):
-	
+
 		for tuple in lRegionList:
 			tTL = tuple[0]
 			tBR = tuple[1]
@@ -473,7 +473,7 @@ class RiseAndFall:
 			pXian.setImprovementType(-1)
 			pXian.setRouteType(-1)
 			pXian.setFeatureType(iForest, 0)
-			
+
 		elif utils.getScenario() == i1700AD:
 			pBeijing = gc.getMap().plot(tBeijing[0], tBeijing[1])
 			pBeijing.getPlotCity().kill()
@@ -495,7 +495,7 @@ class RiseAndFall:
 			else:
 				pPlot.setCulture(iIndependent2, 0, True)
 				pPlot.setOwner(-1)
-					
+
 		pIndependent.found(99, 41)
 		utils.makeUnit(iArcher, iIndependent, (99, 41), 1)
 		pChengdu = gc.getMap().plot(99, 41).getPlotCity()
@@ -503,7 +503,7 @@ class RiseAndFall:
 		pChengdu.setPopulation(2)
 		pChengdu.setHasReligion(iConfucianism, True, False, False)
 		pChengdu.setHasRealBuilding(iGranary, True)
-		
+
 		if utils.getScenario() == i600AD:
 			pBarbarian.found(105, 49)
 			utils.makeUnit(iArcher, iBarbarian, (105, 49), 1)
@@ -514,92 +514,92 @@ class RiseAndFall:
 			pShenyang.setHasRealBuilding(iGranary, True)
 			pShenyang.setHasRealBuilding(iWalls, True)
 			pShenyang.setHasRealBuilding(iConfucianTemple, True)
-			
+
 	def adjust600ADWonders(self):
 		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
 		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
-		
+
 		pNanjing = gc.getMap().plot(105, 43).getPlotCity()
 		pNanjing.setBuildingOriginalOwner(iConfucianShrine, iChina)
-		
+
 		pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
 		pPataliputra.setBuildingOriginalOwner(iHinduShrine, iIndia)
 		pPataliputra.setBuildingOriginalOwner(iBuddhistShrine, iIndia)
-		
+
 		pSirajis = gc.getMap().plot(82, 38).getPlotCity()
 		pSirajis.setBuildingOriginalOwner(iZoroastrianShrine, iPersia)
-		
+
 		pAlexandria = gc.getMap().plot(67, 36).getPlotCity()
 		pAlexandria.setBuildingOriginalOwner(iGreatLighthouse, iEgypt)
 		pAlexandria.setBuildingOriginalOwner(iGreatLibrary, iEgypt)
-		
+
 		pMemphis = gc.getMap().plot(69, 35).getPlotCity()
 		pMemphis.setBuildingOriginalOwner(iPyramids, iEgypt)
 		pMemphis.setBuildingOriginalOwner(iGreatSphinx, iEgypt)
-		
+
 		pAthens = gc.getMap().plot(67, 41).getPlotCity()
 		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
-		
+
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
 		pRome.setBuildingOriginalOwner(iColosseum, iRome)
-		
+
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
-		
+
 	def adjust1700ADWonders(self):
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
 		pMilan.setBuildingOriginalOwner(iLeaningTower, iItaly)
 		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
-		
+
 		pDjenne = gc.getMap().plot(51, 29).getPlotCity()
 		pDjenne.setBuildingOriginalOwner(iUniversityOfSankore, iMali)
-		
+
 		pJerusalem = gc.getMap().plot(73, 38).getPlotCity()
 		pJerusalem.setBuildingOriginalOwner(iJewishShrine, iIndependent)
 		pJerusalem.setBuildingOriginalOwner(iOrthodoxShrine, iByzantium)
 		pJerusalem.setBuildingOriginalOwner(iDomeOfTheRock, iArabia)
-		
+
 		pBaghdad = gc.getMap().plot(77, 40).getPlotCity()
 		pBaghdad.setBuildingOriginalOwner(iSpiralMinaret, iArabia)
-		
+
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
 		pRome.setBuildingOriginalOwner(iColosseum, iRome)
 		pRome.setBuildingOriginalOwner(iSistineChapel, iItaly)
-		
+
 		pSeville = gc.getMap().plot(51, 41).getPlotCity()
 		pSeville.setBuildingOriginalOwner(iMezquita, iMoors)
-		
+
 		pBangkok = gc.getMap().plot(101, 33).getPlotCity()
 		pBangkok.setBuildingOriginalOwner(iWatPreahPisnulok, iKhmer)
-		
+
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
-		
+
 		pConstantinople = gc.getMap().plot(68, 45).getPlotCity()
 		pConstantinople.setBuildingOriginalOwner(iTheodosianWalls, iByzantium)
 		pConstantinople.setBuildingOriginalOwner(iHagiaSophia, iByzantium)
-		
+
 		pJakarta = gc.getMap().plot(104, 25).getPlotCity()
 		pJakarta.setBuildingOriginalOwner(iBorobudur, iIndonesia)
-		
+
 		pMexicoCity = gc.getMap().plot(18, 37).getPlotCity()
 		pMexicoCity.setBuildingOriginalOwner(iFloatingGardens, iAztecs)
-		
+
 		pCairo = gc.getMap().plot(69, 35).getPlotCity()
 		pCairo.setBuildingOriginalOwner(iPyramids, iEgypt)
 		pCairo.setBuildingOriginalOwner(iGreatSphinx, iEgypt)
-		
+
 		pAthens = gc.getMap().plot(67, 41).getPlotCity()
 		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
-		
+
 		pShiraz = gc.getMap().plot(82, 38).getPlotCity()
 		pShiraz.setBuildingOriginalOwner(iZoroastrianShrine, iPersia)
-		
+
 		pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
 		pPataliputra.setBuildingOriginalOwner(iHinduShrine, iIndia)
 		pPataliputra.setBuildingOriginalOwner(iBuddhistShrine, iIndia)
-		
+
 		pMecca = gc.getMap().plot(75, 33).getPlotCity()
 		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
 
@@ -613,14 +613,14 @@ class RiseAndFall:
 				iNextCiv = iCiv+j+1
 				if getTurnForYear(tBirth[iCiv]) + data.players[iCiv].iBirthTurnModifier == getTurnForYear(tBirth[iNextCiv]) + data.players[iNextCiv].iBirthTurnModifier:
 					data.players[iNextCiv].iBirthTurnModifier += 1
-						
+
 	def placeGoodyHuts(self):
-			
+
 		if utils.getScenario() == i3000BC:
 			self.placeHut((101, 38), (107, 41)) # Southern China
 			self.placeHut((62, 45), (67, 50)) # Balkans
 			self.placeHut((69, 42), (76, 46)) # Asia Minor
-		
+
 		if utils.getScenario() <= i600AD:
 			self.placeHut((49, 40), (54, 46)) # Iberia
 			self.placeHut((57, 51), (61, 56)) # Denmark / Northern Germany
@@ -641,35 +641,35 @@ class RiseAndFall:
 			self.placeHut((34, 25), (39, 29)) # Amazonas Delta
 			self.placeHut((33, 9), (37, 15)) # Parana Delta
 			self.placeHut((25, 36), (32, 39)) # Caribbean
-		
+
 		self.placeHut((107, 19), (116, 22)) # Northern Australia
 		self.placeHut((114, 10), (118, 17)) # Western Australia
 		self.placeHut((120, 5), (123, 11)) # New Zealand
 		self.placeHut((59, 25), (67, 28)) # Central Africa
-		
+
 	def adjustReligionFoundingDates(self):
 		lReligionFoundingYears = [-2000, 40, 500, 1521, 622, -1500, 80, -500, -400, -600]
-	
+
 		for iReligion in range(iNumReligions):
 			if gc.getGame().isReligionFounded(iReligion):
 				gc.getGame().setReligionGameTurnFounded(iReligion, getTurnForYear(lReligionFoundingYears[iReligion]))
-		
+
 	def initStartingReligions(self):
-	
+
 		if utils.getScenario() == i600AD:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
-			
+
 		elif utils.getScenario() == i1700AD:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
-			
+
 	def checkTurn(self, iGameTurn):
-	
+
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:
 			self.placeGoodyHuts()
-		
+
 		if iGameTurn == getTurnForYear(tBirth[iSpain])-1:
 			if utils.getScenario() == i600AD:
 				pMassilia = gc.getMap().plot(56, 46)
@@ -687,7 +687,7 @@ class RiseAndFall:
 					utils.cultureManager(tPlot, 100, iTurkey, iOwner, True, False, False)
 					self.convertSurroundingPlotCulture(iTurkey, utils.surroundingPlots(tPlot))
 					utils.makeUnit(iLongbowman, iTurkey, tPlot, 1)
-					
+
 		#Trigger betrayal mode
 		if data.iBetrayalTurns > 0:
 			self.initBetrayal()
@@ -716,21 +716,21 @@ class RiseAndFall:
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
 			utils.makeUnit(iAfricanWarElephant, iCarthage, (58, 39), 2)
-			
+
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
 				sta.completeCollapse(iRome)
-				
+
 		if iGameTurn == getTurnForYear(-50):
 			if pByzantium.isHuman() and pGreece.isAlive():
 				sta.completeCollapse(iGreece)
-			
+
 		#Colonists
 		if iGameTurn == getTurnForYear(-850):
 			self.giveEarlyColonists(iGreece)
 		elif iGameTurn == getTurnForYear(-700): # removed their colonists because of the Qart-Hadasht spawn
 			self.giveEarlyColonists(iCarthage)
-			
+
 		elif iGameTurn == getTurnForYear(-600):
 			self.giveEarlyColonists(iRome)
 		elif iGameTurn == getTurnForYear(-400):
@@ -739,21 +739,21 @@ class RiseAndFall:
 		if utils.isYearIn(860, 1250):
 			if iGameTurn % utils.getTurns(10) == 9:
 				self.giveRaiders(iVikings, Areas.getBroaderArea(iVikings))
-		
+
 		if utils.isYearIn(1350, 1918):
 			for iPlayer in [iSpain, iEngland, iFrance, iPortugal, iNetherlands, iVikings, iGermany]:
 				if iGameTurn == data.players[iPlayer].iExplorationTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
 					self.giveColonists(iPlayer)
-					
+
 		if iGameTurn == getTurnForYear(710)-1:
 			x, y = 51, 37
 			if gc.getMap().plot(x,y).isCity():
 				marrakesh = gc.getMap().plot(x,y).getPlotCity()
 				marrakesh.setHasReligion(iIslam, True, False, False)
-				
+
 				utils.makeUnit(iSettler, marrakesh.getOwner(), (x,y), 1)
 				utils.makeUnit(iWorker, marrakesh.getOwner(), (x,y), 1)
-				
+
 		# Leoreth: help human with Aztec UHV - prevent super London getting in the way
 		if iGameTurn == getTurnForYear(1500) and utils.getHumanID() == iAztecs:
 			x, y = Areas.getCapital(iEngland)
@@ -762,7 +762,7 @@ class RiseAndFall:
 				city = plot.getPlotCity()
 				if city.getPopulation() > 14:
 					city.changePopulation(-3)
-				
+
 		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
 			tEsfahan = utils.getFreePlot((81, 41))
 			x, y = tEsfahan
@@ -780,7 +780,7 @@ class RiseAndFall:
 				pPlot = gc.getMap().plot(i, j)
 				if not pPlot.isCity():
 					utils.convertPlotCulture(pPlot, iSeljuks, 100, False)
-						
+
 			utils.updateMinorTechs(iSeljuks, iBarbarian)
 
 			tSeljukAreaTL = (78, 37)
@@ -802,18 +802,18 @@ class RiseAndFall:
 				else:
 					targetCityList.append(tPlot)
 					targetPlayerList.append(city.getOwner())
-			
+
 			for tPlot in targetCityList:
 				tSpawnPlot = utils.getFreeNeighborPlot(tPlot)
 				x, y = tSpawnPlot
 				iExtra = 0
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iArabia and utils.getHumanID() != iArabia: iExtra = 1
-				
+
 				utils.makeUnitAI(iGhulamWarrior, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3 + iExtra)
 				utils.makeUnitAI(iTrebuchet, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + 2*iExtra)
 				utils.makeUnitAI(iHeavySwordsman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 				utils.makeUnitAI(iLongbowman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			
+
 			for iPlayer in targetPlayerList:
 				teamSeljuks.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
 			if utils.getHumanID() in lCivGroups[2]:
@@ -831,19 +831,19 @@ class RiseAndFall:
 				teamSeljuks.declareWar(iArabia, True, WarPlanTypes.WARPLAN_TOTAL)
 
 		if iGameTurn == getTurnForYear(1230 + data.iSeed % 10): #Linkman226- Mongol Conquerors for Seljuks
-		
+
 			# let Seljuk army decay for everyone
 			lSeljukUnits = [pSeljuks.getUnit(i) for i in range(pSeljuks.getNumUnits())]
-			
+
 			lUnitsToRemove = []
 			for unit in lSeljukUnits:
 				if unit.getUnitType() == iGhulamWarrior:
 					if gc.getGame().getSorenRandNum(2, 'Delete unit') != 0:
 						lUnitsToRemove.append(unit)
-						
+
 			for unit in lUnitsToRemove:
 				unit.kill(False, iBarbarian)
-		
+
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
 				tPlot = utils.getFreePlot((84, 46))
 				targetAreaTL = (73, 38)
@@ -862,7 +862,7 @@ class RiseAndFall:
 					iModifier = 2
 				else:
 					iModifier = 1
-					
+
 				spawnPlot = utils.getFreeNeighborPlot(tPlot)
 
 				utils.makeUnitAI(iKeshik, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier)
@@ -876,22 +876,22 @@ class RiseAndFall:
 				utils.makeUnitAI(iKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				utils.makeUnitAI(iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				utils.makeUnitAI(iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-				
-				
+
+
 		# Leoreth: make sure Aztecs are dead in 1700 if a civ that spawns from that point is selected
 		if iGameTurn == getTurnForYear(1700)-2:
 			if utils.getHumanID() >= iGermany and pAztecs.isAlive():
 				sta.completeCollapse(iAztecs)
 				#utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
-				
-				
+
+
 		if utils.getScenario() == i3000BC:
 			iFirstSpawn = iGreece
 		elif utils.getScenario() == i600AD:
 			iFirstSpawn = iArabia
 		else:
 			iFirstSpawn = iAmerica
-			
+
 		for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
 			if iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6:
 				self.initBirth(iGameTurn, tBirth[iLoopCiv], iLoopCiv)
@@ -905,22 +905,22 @@ class RiseAndFall:
 				lPlots = utils.getPlotList(tTL, tBR)
 				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, lPlots)
 				self.convertSurroundingPlotCulture(iChina, lPlots)
-				utils.flipUnitsInArea(lPlots, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-				utils.flipUnitsInArea(lPlots, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+				utils.flipUnitsInArea(lPlots, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
+				utils.flipUnitsInArea(lPlots, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ
 				utils.flipUnitsInArea(lPlots, iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
-				
+
 		#kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
 		for iPlayer in [iVikings, iSpain, iFrance, iHolyRome, iRussia]:
 			if iGameTurn >= getTurnForYear(tBirth[iPlayer])+2 and iGameTurn <= getTurnForYear(tBirth[iVikings])+utils.getTurns(10):
 				utils.killUnitsInArea(iBarbarian, Areas.getBirthArea(iPlayer))
-				
+
 		#fragment utility
 		if iGameTurn >= getTurnForYear(50) and iGameTurn % utils.getTurns(15) == 6:
 			self.fragmentIndependents()
 #		if (iGameTurn >= getTurnForYear(450) and iGameTurn % utils.getTurns(30) == 12):
 #			self.fragmentBarbarians(iGameTurn)
-			
+
 		#fall of civs
 		#if (iGameTurn >= getTurnForYear(200) and iGameTurn % utils.getTurns(4) == 0):
 		#	self.collapseByBarbs(iGameTurn)
@@ -933,7 +933,7 @@ class RiseAndFall:
 
 		if iGameTurn % utils.getTurns(10) == 5:
 			sta.checkResurrection(iGameTurn)
-			
+
 		# Leoreth: check for scripted rebirths
 		for iCiv in range(iNumPlayers):
 			if tRebirth[iCiv] != -1:
@@ -941,15 +941,15 @@ class RiseAndFall:
 					self.rebirthFirstTurn(iCiv)
 				if iGameTurn == getTurnForYear(tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
-					
+
 	def endTurn(self, iPlayer):
 		for tTimedConquest in data.lTimedConquests:
 			iConqueror, tPlot = tTimedConquest
 			utils.colonialConquest(iConqueror, tPlot)
-			
+
 		if utils.getHumanID() == iPlayer:
 			self.checkFlipPopup()
-			
+
 		data.lTimedConquests = []
 
 	def rebirthFirstTurn(self, iCiv):
@@ -960,24 +960,24 @@ class RiseAndFall:
 		Modifiers.updateModifiers(iCiv)
 		x, y = Areas.dRebirthPlot[iCiv]
 		plot = gc.getMap().plot(x,y)
-		
+
 		# disable Mexico and Colombia
 		if iCiv == iAztecs and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: return
 		if iCiv == iMaya and gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: return
-		
+
 		# reset contacts and make peace
 		for iOtherCiv in range(iNumPlayers):
 			if iCiv != iOtherCiv:
 				teamCiv.makePeace(iOtherCiv)
 				teamCiv.cutContact(iOtherCiv)
-		
+
 		# reset diplomacy
 		pCiv.AI_reset()
-		
+
 		# reset map visibility
 		for (i, j) in utils.getWorldPlotsList():
 			gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
-		
+
 		# assign new leader
 		if iCiv in rebirthLeaders:
 			if pCiv.getLeader() != rebirthLeaders[iCiv]:
@@ -985,7 +985,7 @@ class RiseAndFall:
 
 		CyInterface().addMessage(gc.getGame().getActivePlayer(), True, iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 		utils.setReborn(iCiv, True)
-		
+
 		# Determine whether capital location is free
 		bFree = True
 		if not utils.isFree(iCiv, (x, y), True):
@@ -1003,15 +1003,15 @@ class RiseAndFall:
 				pCiv.found(x,y)
 			else:
 				utils.makeUnit(iSettler, iCiv, (x, y), 1)
-				
+
 		# make sure there is a palace in the city
 		if plot.isCity():
 			capital = plot.getPlotCity()
 			if not capital.hasBuilding(iPalace):
 				capital.setHasRealBuilding(iPalace, True)
-		
+
 		self.createRespawnUnits(iCiv, (x, y))
-		
+
 		# for colonial civs, set dynamic state religion
 		if iCiv in [iAztecs, iMaya]:
 			self.setStateReligion(iCiv)
@@ -1021,12 +1021,12 @@ class RiseAndFall:
 			self.respawnPopup(iCiv)
 
 		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(tRebirth[iCiv]))
-		
+
 		dc.onCivRespawn(iCiv, [])
-		
+
 	def rebirthSecondTurn(self, iCiv):
 		lRebirthPlots = Areas.getRebirthArea(iCiv)
-		
+
 		# exclude American territory for Mexico
 		lRemovedPlots = []
 		if iCiv == iAztecs:
@@ -1035,10 +1035,10 @@ class RiseAndFall:
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() == iAmerica and tPlot not in Areas.getCoreArea(iAztecs, True):
 					lRemovedPlots.append(tPlot)
-					
+
 		for tPlot in lRemovedPlots:
 			lRebirthPlots.remove(tPlot)
-		
+
 		seljukUnits = []
 		lCities = []
 		for tPlot in lRebirthPlots:
@@ -1048,13 +1048,13 @@ class RiseAndFall:
 				unit = plot.getUnit(i)
 				if unit.getOwner() == iSeljuks:
 					seljukUnits.append(unit)
-					
+
 			if plot.isCity():
 				lCities.append(plot.getPlotCity())
-					
+
 		for unit in seljukUnits:
 			unit.kill(False, iBarbarian)
-			
+
 		# remove garrisons
 		for city in lCities:
 			if city.getOwner() != utils.getHumanID():
@@ -1062,29 +1062,29 @@ class RiseAndFall:
 				utils.relocateGarrisons(tPlot, city.getOwner())
 				utils.relocateSeaGarrisons(tPlot, city.getOwner())
 				#utils.createGarrisons(tPlot, iCiv)
-				
+
 		# convert cities
 		iConvertedCities, iHumanCities = self.convertSurroundingCities(iCiv, lRebirthPlots)
-		
+
 		# create garrisons
 		for city in lCities:
 			if city.getOwner() == utils.getHumanID():
 				x = city.getX()
 				y = city.getY()
 				utils.createGarrisons((x, y), iCiv, 1)
-				
+
 		# convert plot culture
 		self.convertSurroundingPlotCulture(iCiv, lRebirthPlots)
-		
+
 		# reset plague
 		data.players[iCiv].iPlagueCountdown = -10
 		utils.clearPlague(iCiv)
-		
+
 		# adjust starting stability
 		data.players[iCiv].resetStability()
 		data.players[iCiv].iStabilityLevel = iStabilityStable
 		if utils.getHumanID() == iCiv: data.resetHumanStability()
-		
+
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
 			self.scheduleFlipPopup(iCiv, lRebirthPlots)
@@ -1105,9 +1105,9 @@ class RiseAndFall:
 				iStateReligion = pAztecs.getStateReligion()
 				if city.isHasReligion(iStateReligion):
 					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
-			
+
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
-			
+
 			pAztecs.setCivics(iCivicsGovernment, iDemocracy)
 			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
 			pAztecs.setCivics(iCivicsSociety, iIndividualism)
@@ -1192,7 +1192,7 @@ class RiseAndFall:
 		for j in range(iRndnum, iRndnum + iNumPlayers):
 			iPlayer = j % iNumPlayers
 			if gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(tBirth[iPlayer]) + utils.getTurns(30):
-				
+
 				if data.getStabilityLevel(iPlayer) == iStabilityCollapsing:
 
 					cityList = []
@@ -1206,7 +1206,7 @@ class RiseAndFall:
 								capital = gc.getPlayer(iPlayer).getCapitalCity()
 								iDistance = utils.calculateDistance(x, y, capital.getX(), capital.getY())
 								if iDistance > 3:
-							
+
 									if city.angryPopulation(0) > 0 or \
 										city.healthRate(False, 0) < 0 or \
 										city.getReligionBadHappiness() > 0 or \
@@ -1216,7 +1216,7 @@ class RiseAndFall:
 										city.getWarWearinessPercentAnger() > 0:
 										cityList.append(city)
 										continue
-									
+
 									for iLoop in range(iNumTotalPlayers+1):
 										if iLoop != iPlayer:
 											if pPlot.getCulture(iLoop) > 0:
@@ -1240,7 +1240,7 @@ class RiseAndFall:
 						if iPlayer == utils.getHumanID():
 							CyInterface().addMessage(iPlayer, True, iDuration, splittingCity.getName() + " " + \
 												CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(iOrange), -1, -1, True, True)
-						
+
 					return
 
 
@@ -1249,18 +1249,18 @@ class RiseAndFall:
 		print 'init birth in: '+str(iBirthYear)
 		iHuman = utils.getHumanID()
 		iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
-		
+
 		if iCiv in lSecondaryCivs:
 			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
 				return
-		
+
 		if iCiv == iTurkey:
 			if pSeljuks.isAlive():
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
-		
+
 		lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina, iCanada]
-		
+
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
 			if iCiv == iByzantium:
@@ -1274,34 +1274,34 @@ class RiseAndFall:
 				else:
 					if data.getStabilityLevel(iKhmer) > iStabilityUnstable:
 						return
-						
+
 			if iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
 				if iColonyPlayer < 0: return
 				elif iColonyPlayer not in [iArgentina, iBrazil]:
 					if data.getStabilityLevel(iColonyPlayer) > iStabilityStable:
 						return
-						
+
 		if utils.getHumanID() != iCiv and iCiv == iItaly:
 			if pRome.isAlive():
 				return
-				
+
 			cityList = utils.getCoreCityList(iRome, 0)
-			
+
 			iIndependentCities = 0
 
 			for pCity in cityList:
 				if not pCity.getOwner() < iNumPlayers:
 					iIndependentCities += 1
-					
+
 			if iIndependentCities == 0:
 				return
-				
+
 		tCapital = Areas.getCapital(iCiv)
-				
+
 		x, y = tCapital
 		bCapitalSettled = False
-		
+
 		if iCiv == iItaly:
 			for (i, j) in utils.surroundingPlots(tCapital):
 				if gc.getMap().plot(i, j).isCity():
@@ -1317,7 +1317,7 @@ class RiseAndFall:
 			reborn = utils.getReborn(iCiv)
 			tTopLeft, tBottomRight = Areas.getBirthRectangle(iCiv)
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
-			
+
 			if iCiv == iThailand:
 				i, j = Areas.tCapitals[iKhmer]
 				if gc.getMap().plot(i, j).isCity():
@@ -1333,20 +1333,20 @@ class RiseAndFall:
 						tCapital = (x-1, y+1)
 						x, y = tCapital
 						gc.getMap().plot(x, y).setFeatureType(-1, 0)
-						
+
 				utils.setReborn(iKhmer, True)
-				
+
 				# Prey Nokor becomes Saigon
 				if gc.getMap().plot(104, 33).isCity():
 					gc.getMap().plot(104, 33).getPlotCity().setName("Saigon", False)
-				
+
 			iPreviousOwner = gc.getMap().plot(x, y).getOwner()
-				
+
 
 			if data.players[iCiv].iFlipsDelay == 0: #city hasn't already been founded)
-			
+
 				#this may fix the -1 bug
-				if iCiv == iHuman: 
+				if iCiv == iHuman:
 					killPlot = gc.getMap().plot(x, y)
 					iNumUnitsInAPlot = killPlot.getNumUnits()
 					if iNumUnitsInAPlot > 0:
@@ -1354,18 +1354,18 @@ class RiseAndFall:
 							unit = killPlot.getUnit(0)
 							if unit.getOwner() != iCiv:
 								unit.kill(False, iBarbarian)
-				
+
 				bBirthInCapital = False
-				
+
 				if (iCiv in lConditionalCivs and iCiv != iThailand) or bCapitalSettled:
 					bBirthInCapital = True
-				
+
 				if iCiv == iTurkey:
-					self.moveOutInvaders(tTopLeft, tBottomRight)  
-					
+					self.moveOutInvaders(tTopLeft, tBottomRight)
+
 				if bBirthInCapital:
 					utils.makeUnit(iCatapult, iCiv, (0, 0), 1)
-			
+
 				bDeleteEverything = False
 				pCapital = gc.getMap().plot(x, y)
 				if pCapital.isOwned():
@@ -1411,22 +1411,22 @@ class RiseAndFall:
 						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInForeignBorders(iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight)
-						
-				if bBirthInCapital:	
+
+				if bBirthInCapital:
 					utils.clearCatapult(iCiv)
-						
+
 			else:
 				print ( "setBirthType again: flips" )
 				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
-				
+
 		# Leoreth: reveal all normal plots on spawn
 		for (x, y) in Areas.getNormalArea(iCiv):
 			gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
-				
+
 		# Leoreth: conditional state religion for colonial civs and Byzantium
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
-			
+
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
@@ -1454,8 +1454,8 @@ class RiseAndFall:
 		print ("deleteMode after", iCurrentPlayer)
 		tCapital = Areas.getCapital(iCiv)
 		x, y = tCapital
-			
-		
+
+
 		if iCurrentPlayer == iCiv:
 			if iCiv == iCarthage:
 				for i in range(x - 2, x + 2): # from x-2 to x+1
@@ -1474,11 +1474,11 @@ class RiseAndFall:
 				pPlot.setOwner(iCiv)
 			data.lDeleteMode[0] = -1
 			return
-		    
+
 		#print ("iCurrentPlayer", iCurrentPlayer, "iCiv", iCiv)
 		if iCurrentPlayer != iCiv-1 and iCiv not in [iCarthage, iGreece]:
 			return
-		
+
 		bNotOwned = True
 		for (i, j) in utils.surroundingPlots(tCapital):
 			#print ("deleting again", i, j)
@@ -1489,7 +1489,7 @@ class RiseAndFall:
 					if iLoopCiv != iCiv:
 						pPlot.setCulture(iLoopCiv, 0, True)
 				pPlot.setOwner(iCiv)
-		
+
 		for (i, j) in utils.surroundingPlots(tCapital, 15): # must include the distance from Sogut to the Caspius
 			if (i, j) != tCapital:
 				pPlot=gc.getMap().plot(i, j)
@@ -1500,7 +1500,7 @@ class RiseAndFall:
 						for i in range(pPlot.getNumUnits()):
 							unit = pPlot.getUnit(0)
 							unit.setXYOld(x, y)
-		
+
 	def birthInFreeRegion(self, iCiv, tCapital, tTopLeft, tBottomRight):
 		x, y = tCapital
 		startingPlot = gc.getMap().plot(x, y)
@@ -1509,10 +1509,10 @@ class RiseAndFall:
 			if iFlipsDelay > 0:
 				print ("starting units in", x, y)
 				self.createStartingUnits(iCiv, tCapital)
-				
+
 				if iCiv == iTurkey:
 					data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
-			
+
 				if iCiv == iItaly:
 					utils.removeCoreUnits(iItaly)
 					cityList = utils.getCoreCityList(iItaly, 0)
@@ -1526,48 +1526,48 @@ class RiseAndFall:
 						city.setHasRealBuilding(iLibrary, True)
 						city.setHasRealBuilding(iCourthouse, True)
 						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
-										
+
 				lPlots = utils.surroundingPlots(tCapital, 3)
-				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
 				self.assignTechs(iCiv)
 				data.players[iCiv].iPlagueCountdown = -iImmunity
 				utils.clearPlague(iCiv)
 				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
-				
+
 
 		else: #starting units have already been placed, now the second part
-		
+
 			iNumCities = gc.getPlayer(iCiv).getNumCities()
-		
+
 			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
 			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
 			self.convertSurroundingPlotCulture(iCiv, lPlots)
 			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
-			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
-		
+
 			# create starting workers
 			if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
 				self.createStartingWorkers(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
-			
+
 			if iCiv == iArabia:
 				self.arabianSpawn()
-				
+
 			if iCiv == iGermany:
 				self.germanSpawn()
-   
-			print ("utils.flipUnitsInArea()") 
+
+			print ("utils.flipUnitsInArea()")
 			#cover plots revealed by the lion
 			utils.clearCatapult(iCiv)
 
 			if iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
 				self.scheduleFlipPopup(iCiv, lPlots)
-				
 
-			
+
+
 	def birthInForeignBorders(self, iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
 		if iCiv == iItaly:
 			utils.removeCoreUnits(iItaly)
@@ -1582,13 +1582,13 @@ class RiseAndFall:
 				city.setHasRealBuilding(iLibrary, True)
 				city.setHasRealBuilding(iCourthouse, True)
 				if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
-				
+
 		iNumCities = gc.getPlayer(iCiv).getNumCities()
-		
+
 		lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
 		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
 		self.convertSurroundingPlotCulture(iCiv, lPlots)
-		
+
 		# create starting workers
 		if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
 			self.createStartingWorkers(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
@@ -1603,10 +1603,10 @@ class RiseAndFall:
 					self.assignTechs(iCiv)
 					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
-			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
-			
+
 			if iCiv == iTurkey:
 				data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
 
@@ -1629,14 +1629,14 @@ class RiseAndFall:
 					self.assignTechs(iCiv)
 					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
-			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ
 
 		if iNumHumanCitiesToConvert > 0:
 			print "Flip Popup: foreign borders"
 			self.scheduleFlipPopup(iCiv, lPlots)
-			
+
 		if iCiv == iGermany:
 			self.germanSpawn()
 
@@ -1656,7 +1656,7 @@ class RiseAndFall:
 				gc.getMap().plot(x, y).getPlotCity().setHasRealBuilding(iPalace, True)
 				utils.convertPlotCulture(gc.getMap().plot(x, y), iCiv, 100, True)
 				self.convertSurroundingPlotCulture(iCiv, utils.surroundingPlots(tCapital))
-				
+
 				#cover plots revealed
 				for (i, j) in utils.surroundingPlots((0, 0), 2):
 					gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
@@ -1670,70 +1670,70 @@ class RiseAndFall:
 
 				print ("flipping remaining units")
 				lPlots = utils.getPlotList(tTopLeft, tBottomRight)
-				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
-				
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ
+
 				self.assignTechs(iCiv)
-				
+
 				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
 
 				# kill the catapult and cover the plots
 				utils.clearCatapult(iCiv)
-				
+
 				utils.convertPlotCulture(gc.getMap().plot(x, y), iCiv, 100, True)
-				
+
 				# notify dynamic names
 				dc.onCityAcquired(iCiv, iOwner)
-				
+
 				self.createStartingWorkers(iCiv, tCapital)
 
 		else: # starting units have already been placed, now to the second part
 			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
 			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
 			self.convertSurroundingPlotCulture(iCiv, lPlots)
-				
+
 			for i in range(iIndependent, iBarbarian+1):
-				utils.flipUnitsInArea(lPlots, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
-			
+				utils.flipUnitsInArea(lPlots, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ
+
 			# kill the catapult and cover the plots
 			utils.clearCatapult(iCiv)
-				
+
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
 				print "Flip Popup: in capital"
 				self.scheduleFlipPopup(iCiv, lPlots)
-				
+
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iCiv, 100, True)
-			
-				
+
+
 	def getConvertedCities(self, iPlayer, lPlots = []):
 		lCities = []
-		
+
 		for city in utils.getAreaCities(lPlots):
 			if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
-			
+
 			if city.getOwner() != iPlayer:
 				lCities.append(city)
-			
+
 		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
 		if iPlayer == iByzantium and pRome.isAlive():
 			x, y = Areas.getCapital(iByzantium)
 			for city in utils.getCityList(iRome):
 				if city.getX() >= x-1 and city.getY() <= y:
 					lCities.append(city)
-					
+
 		# Leoreth: Canada also flips English/American/French cities in the Canada region
 		if iPlayer == iCanada:
 			lCanadaCities = []
 			lCanadaCities.extend(utils.getCityList(iFrance))
 			lCanadaCities.extend(utils.getCityList(iEngland))
 			lCanadaCities.extend(utils.getCityList(iAmerica))
-			
+
 			for city in lCanadaCities:
 				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and city not in lCities:
 					lCities.append(city)
-					
+
 		# Leoreth: remove capital locations
 		for city in lCities:
 			if city.getOwner() < iNumPlayers:
@@ -1741,63 +1741,63 @@ class RiseAndFall:
 					lCities.remove(city)
 
 		return lCities
-						
+
 	def convertSurroundingCities(self, iPlayer, lPlots):
 		iConvertedCitiesCount = 0
 		iNumHumanCities = 0
 		data.iSpawnWar = 0
-					
+
 		lEnemies = []
 		lCities = self.getConvertedCities(iPlayer, lPlots)
-		
+
 		for city in lCities:
 			x = city.getX()
 			y = city.getY()
 			iHuman = utils.getHumanID()
 			iOwner = city.getOwner()
 			iCultureChange = 0
-			
+
 			# Case 1: Minor civilization
 			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iSeljuks, iNative]:
 				iCultureChange = 100
-				
+
 			# Case 2: Human city
 			elif iOwner == iHuman:
 				iNumHumanCities += 1
-				
+
 			# Case 3: Other
 			else:
 				iCultureChange = 100
 				if iOwner not in lEnemies: lEnemies.append(iOwner)
-				
+
 			if iCultureChange > 0:
 				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
 				iConvertedCitiesCount += 1
-				
+
 		self.warOnSpawn(iPlayer, lEnemies)
-				
+
 		if iConvertedCitiesCount > 0:
 			if iHuman == iPlayer:
 				CyInterface().addMessage(iPlayer, True, iDuration, CyTranslator().getText("TXT_KEY_FLIP_TO_US", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
-				
+
 		return iConvertedCitiesCount, iNumHumanCities
-		
+
 	def warOnSpawn(self, iPlayer, lEnemies):
 		if iPlayer == iCanada: return
 		elif iPlayer == iGermany and utils.getHumanID() != iPlayer: return
-		
+
 		if gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iPlayer]) + 5:
 			for iEnemy in lEnemies:
 				tEnemy = gc.getTeam(iEnemy)
-				
+
 				if tEnemy.isAtWar(iPlayer): continue
 				if iPlayer == iByzantium and iEnemy == iRome: continue
-			
+
 				iRand = gc.getGame().getSorenRandNum(100, 'War on spawn')
 				if iRand >= tAIStopBirthThreshold[iEnemy]:
 					tEnemy.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
 					self.spawnAdditionalUnits(iPlayer)
-					
+
 	def spawnAdditionalUnits(self, iPlayer):
 		tPlot = Areas.getCapital(iPlayer)
 		self.createAdditionalUnits(iPlayer, tPlot)
@@ -1812,7 +1812,7 @@ class RiseAndFall:
 	def findSeaPlots( self, tCoords, iRange, iCiv):
 		"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
 		seaPlotList = []
-		for (x, y) in utils.surroundingPlots(tCoords, iRange): 
+		for (x, y) in utils.surroundingPlots(tCoords, iRange):
 			pPLot = gc.getMap().plot(x, y)
 			if pPLot.isWater():
 				if not pPLot.isUnit():
@@ -1871,9 +1871,9 @@ class RiseAndFall:
 					if city.getRegionID() == rIberia:
 						tCapital = (city.getX(), city.getY())
 						break
-						
+
 			tSeaPlot = self.findSeaPlots(tCapital, 1, iCiv)
-			
+
 			if tSeaPlot:
 				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
@@ -1882,58 +1882,58 @@ class RiseAndFall:
 	def giveColonists(self, iCiv):
 		pCiv = gc.getPlayer(iCiv)
 		teamCiv = gc.getTeam(pCiv.getTeam())
-		
+
 		if pCiv.isAlive() and utils.getHumanID() != iCiv:
 			if teamCiv.isHasTech(iExploration) and data.players[iCiv].iColonistsAlreadyGiven < tMaxColonists[iCiv]:
 				lCities = utils.getAreaCitiesCiv(iCiv, Areas.getCoreArea(iCiv))
-				
+
 				# help England with settling Canada and Australia
 				if iCiv == iEngland:
 					lColonialCities = utils.getAreaCitiesCiv(iCiv, utils.getPlotList(tCanadaTL, tCanadaBR))
 					lColonialCities.extend(utils.getAreaCitiesCiv(iCiv, utils.getPlotList(tAustraliaTL, tAustraliaBR)))
-					
+
 					if lColonialCities:
 						lCities = lColonialCities
-						
+
 				for city in lCities:
 					if not city.isCoastal(20):
 						lCities.remove(city)
-						
+
 				if lCities:
 					city = utils.getRandomEntry(lCities)
 					tPlot = (city.getX(), city.getY())
 					tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 					if not tSeaPlot: tSeaPlot = tPlot
-					
+
 					utils.makeUnitAI(utils.getUniqueUnitType(iCiv, gc.getUnitInfo(iGalleon).getUnitClassType()), iCiv, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(iSettler, iCiv, tSeaPlot, UnitAITypes.UNITAI_SETTLE, 1)
 					utils.makeUnit(utils.getBestDefender(iCiv), iCiv, tSeaPlot, 1)
 					utils.makeUnit(iWorker, iCiv, tSeaPlot, 1)
-					
+
 					data.players[iCiv].iColonistsAlreadyGiven += 1
-					
+
 
 	def onFirstContact(self, iTeamX, iHasMetTeamY):
-	
+
 		iGameTurn = gc.getGame().getGameTurn()
-		
+
 		# no conquerors for minor civs
 		if iHasMetTeamY >= iNumPlayers: return
-		
+
 		if iGameTurn > getTurnForYear(600) and iGameTurn < getTurnForYear(1800):
 			if iTeamX in lCivBioNewWorld and iHasMetTeamY in lCivBioOldWorld:
 				iNewWorldCiv = iTeamX
 				iOldWorldCiv = iHasMetTeamY
-				
+
 				iIndex = lCivBioNewWorld.index(iNewWorldCiv)
-				
+
 				bAlreadyContacted = data.lFirstContactConquerors[iIndex]
-				
+
 				# avoid "return later" exploit
 				if iGameTurn <= getTurnForYear(tBirth[iAztecs])+10:
 					data.lFirstContactConquerors[iIndex] = True
 					return
-					
+
 				if not bAlreadyContacted:
 					if iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
@@ -1944,19 +1944,19 @@ class RiseAndFall:
 					elif iNewWorldCiv == iInca:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
-						
+
 					data.lFirstContactConquerors[iIndex] = True
-					
+
 					# change some terrain to end isolation
 					if iNewWorldCiv == iInca:
 						gc.getMap().plot(27, 30).setFeatureType(-1, 0)
 						gc.getMap().plot(28, 31).setFeatureType(-1, 0)
-						gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
+						gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 					elif iNewWorldCiv == iAztecs:
 						gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						
+
 					lContactPlots = []
 					lArrivalPlots = []
 					for (x, y) in utils.getPlotList(tContactZoneTL, tContactZoneBR):
@@ -1968,52 +1968,52 @@ class RiseAndFall:
 								if not plot.getFeatureType() in [iJungle, iRainforest] and not plot.getTerrainType() == iMarsh and (x, y) != (25, 32):
 									if gc.getMap().getArea(plot.getArea()).getNumTiles() > 3:
 										lArrivalPlots.append((x,y))
-								
+
 					if lContactPlots and lArrivalPlots:
 						tContactPlot = utils.getRandomEntry(lContactPlots)
 						lDistancePlots = [(tuple, utils.calculateDistance(tuple[0], tuple[1], tContactPlot[0], tContactPlot[1])) for tuple in lArrivalPlots]
 						lDistancePlots.sort(key=itemgetter(1))
 						tArrivalPlot = lDistancePlots[0][0]
-												
+
 						pNewWorldCiv = gc.getPlayer(iNewWorldCiv)
 						teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())
-						
+
 						iModifier1 = 0
 						iModifier2 = 0
-						
+
 						if utils.getHumanID() == iNewWorldCiv:
 							if pNewWorldCiv.getNumCities() > 6: iModifier1 = 1
 						else:
 							if iNewWorldCiv == iInca or pNewWorldCiv.getNumCities() > 4: iModifier1 = 1
 							if utils.getHumanID() != iOldWorldCiv: iModifier2 = 1
-							
+
 						if gc.getGame().getGameTurnYear() < tBirth[utils.getHumanID()]:
 							iModifier1 += 1
 							iModifier2 += 1
-							
+
 						teamOldWorldCiv.declareWar(iNewWorldCiv, True, WarPlanTypes.WARPLAN_TOTAL)
-						
+
 						iInfantry = utils.getBestInfantry(iOldWorldCiv)
 						iCounter = utils.getBestCounter(iOldWorldCiv)
 						iCavalry = utils.getBestCavalry(iOldWorldCiv)
 						iSiege = utils.getBestSiege(iOldWorldCiv)
 						iStateReligion = gc.getPlayer(iOldWorldCiv).getStateReligion()
-						
+
 						if iInfantry:
 							utils.makeUnitAI(iInfantry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-						
+
 						if iCounter:
 							utils.makeUnitAI(iCounter, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-							
+
 						if iSiege:
 							utils.makeUnitAI(iSiege, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-							
+
 						if iCavalry:
 							utils.makeUnitAI(iCavalry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
-							
+
 						if iStateReligion >= 0:
 							utils.makeUnit(iMissionary + iStateReligion, iOldWorldCiv, tArrivalPlot, 1)
-							
+
 						if iNewWorldCiv == iInca:
 							utils.makeUnitAI(iAucac, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 						elif iNewWorldCiv == iAztecs:
@@ -2022,27 +2022,27 @@ class RiseAndFall:
 						elif iNewWorldCiv == iMaya:
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-						
+
 						if utils.getHumanID() == iNewWorldCiv:
 							CyInterface().addMessage(iNewWorldCiv, True, iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_NEWWORLD", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 						elif utils.getHumanID() == iOldWorldCiv:
 							CyInterface().addMessage(iOldWorldCiv, True, iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-							
+
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
 			if iTeamX in [iPersia, iByzantium, iRussia]:
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols(iTeamX):
 
 					data.setFirstContactMongols(iTeamX, False)
-		
+
 					teamTarget = gc.getTeam(iTeamX)
 
 					teamMongolia.declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
-					
+
 					lPlotList = []
 					lTargetList = []
 					iWesternLimit = 75
-					
+
 					iHandicap = 0
 					if utils.getHumanID() == iTeamX:
 						iHandicap = gc.getGame().getHandicapType() / 2
@@ -2051,7 +2051,7 @@ class RiseAndFall:
 						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_NORTH)
 					elif iTeamX in [iByzantium, iRussia]:
 						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_EAST)
-						
+
 					for tPlot in lPlotList:
 						x, y = tPlot
 						if x < iWesternLimit:
@@ -2082,9 +2082,9 @@ class RiseAndFall:
 		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iSpain, iPortugal]:
 				self.handleColonialAcquisition(iCiv)
-				
+
 	def onRailroadDiscovered(self, iCiv):
-	
+
 		if utils.getHumanID() != iCiv:
 			if iCiv == iAmerica:
 				iCount = 0
@@ -2103,26 +2103,26 @@ class RiseAndFall:
 								plot = gc.getMap().plot(i, j)
 								if not (plot.isCity() or plot.isPeak() or plot.isWater()):
 									lFreePlots.append((i, j))
-									
+
 				for iEnemy in lEnemyCivs:
 					gc.getTeam(iCiv).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
-									
+
 				if iCount > 0:
 					for i in range(iCount):
 						tPlot = utils.getRandomEntry(lFreePlots)
 						utils.makeUnitAI(iMinuteman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 						utils.makeUnitAI(iCannon, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-						
+
 				if 2-iCount > 0:
 					for i in range(2-iCount):
 						tPlot = utils.getRandomEntry(lWestCoast)
 						utils.makeUnit(iSettler, iCiv, tPlot, 1)
 						utils.makeUnit(iMinuteman, iCiv, tPlot, 1)
-						
+
 			elif iCiv == iRussia:
 				lFreePlots = []
 				tVladivostok = (111, 51)
-				
+
 				x, y = tVladivostok
 				pPlot = gc.getMap().plot(x, y)
 				utils.convertPlotCulture(pPlot, iRussia, 100, True)
@@ -2132,7 +2132,7 @@ class RiseAndFall:
 							plot = gc.getMap().plot(i, j)
 							if not (plot.isCity() or plot.isWater() or plot.isPeak()):
 								lFreePlots.append((i, j))
-									
+
 						tPlot = utils.getRandomEntry(lFreePlots)
 						gc.getTeam(iRussia).declareWar(pPlot.getOwner(), True, WarPlanTypes.WARPLAN_LIMITED)
 						utils.makeUnitAI(iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
@@ -2142,10 +2142,10 @@ class RiseAndFall:
 						pRussia.found(x, y)
 						utils.makeUnit(iRifleman, iCiv, tVladivostok, 2)
 						utils.makeUnit(iRifleman, iCiv, tVladivostok, 2)
-						
+
 						for (i, j) in utils.surroundingPlots(tVladivostok):
 							utils.convertPlotCulture(gc.getMap().plot(i, j), iRussia, 80, True)
-					
+
 
 
 	def handleColonialAcquisition(self, iPlayer):
@@ -2167,7 +2167,7 @@ class RiseAndFall:
 
 		for tPlot in settlerList:
 			utils.colonialAcquisition(iPlayer, tPlot)
-	
+
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
 				askCityList = []
@@ -2178,11 +2178,11 @@ class RiseAndFall:
 					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
 						askCityList.append(tPlot)
 						#sAskCities += gc.getMap().plot(x, y).getPlotCity().getName() + " "
-						
+
 				if askCityList:
 					x, y = askCityList[0]
 					sAskCities = gc.getMap().plot(x, y).getPlotCity().getName()
-					
+
 				for tPlot in askCityList:
 					x, y = tPlot
 					if tPlot != askCityList[0]:
@@ -2190,9 +2190,9 @@ class RiseAndFall:
 							sAskCities += ", " + gc.getMap().plot(x, y).getPlotCity().getName()
 						else:
 							sAskCities += CyTranslator().getText("TXT_KEY_AND", ()) + gc.getMap().plot(x, y).getPlotCity().getName()
-						
+
 				iAskGold = len(askCityList) * 200
-						
+
 				popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
 				popup.setHeaderString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_TITLE", (sPlayer,)))
 				popup.setBodyString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_MESSAGE", (sPlayer, iAskGold, sAskCities)))
@@ -2210,13 +2210,13 @@ class RiseAndFall:
 						bAccepted = False
 				else:
 					bAccepted = True
-				
+
 				iNumCities = 0
 				for tPlot in targetList:
 					x, y = tPlot
 					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
 						iNumCities += 1
-						
+
 				if iNumCities >= gc.getPlayer(iTargetCiv).getNumCities():
 					bAccepted = False
 
@@ -2246,35 +2246,35 @@ class RiseAndFall:
 
 		if tSeaPlot != -1:
 			utils.makeUnit(utils.getUniqueUnitType(iPlayer, gc.getUnitInfo(iGalleon).getUnitClassType()), iPlayer, tSeaPlot, 1)
-	
+
 	def startWarsOnSpawn(self, iCiv):
-	
+
 		pCiv = gc.getPlayer(iCiv)
 		teamCiv = gc.getTeam(pCiv.getTeam())
-		
+
 		iMin = 10
-		
+
 		if gc.getGame().getSorenRandNum(100, 'Trigger spawn wars') >= iMin:
 			for iLoopCiv in lEnemyCivsOnSpawn[iCiv]:
 				if utils.isAVassal(iLoopCiv): continue
 				if not gc.getPlayer(iLoopCiv).isAlive(): continue
 				if teamCiv.isAtWar(iLoopCiv): continue
 				if utils.getHumanID() == iCiv and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
-				
+
 				iLoopMin = 50
 				if iLoopCiv >= iNumMajorPlayers: iLoopMin = 30
 				if utils.getHumanID() == iLoopCiv: iLoopMin += 10
-				
+
 				if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
 					iWarPlan = -1
 					if iLoopCiv in lTotalWarOnSpawn[iCiv]:
 						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
 					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
-					
+
 					if utils.getHumanID() == iCiv: data.iBetrayalTurns = 0
-					
-					
-	def immuneMode(self, argsList): 
+
+
+	def immuneMode(self, argsList):
 		pWinningUnit,pLosingUnit = argsList
 		iLosingPlayer = pLosingUnit.getOwner()
 		iUnitType = pLosingUnit.getUnitType()
@@ -2299,15 +2299,15 @@ class RiseAndFall:
 		iFlipPlayer = data.iNewCivFlip
 		if not gc.getPlayer(iFlipPlayer).isAlive() or not gc.getTeam(iFlipPlayer).isAtWar(utils.getHumanID()):
 			return
-	
+
 		iHuman = utils.getHumanID()
 		turnsLeft = data.iBetrayalTurns
 		lTempPlots = [(x, y) for (x, y) in data.lTempPlots if not gc.getMap().plot(x, y).isCore(data.iOldCivFlip)]
 		plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		if not plotList:
-			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )			
+			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )
 		if not plotList:
-			plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )				
+			plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )
 		if plotList:
 			tPlot = utils.getRandomEntry(plotList)
 			if tPlot:
@@ -2423,7 +2423,7 @@ class RiseAndFall:
 			utils.makeUnit(iLancer, iCiv, tPlot, 2)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
-			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2) 
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iKeshik, iCiv, tPlot, 4)
 		elif iCiv == iAztecs:
 			utils.makeUnit(iJaguar, iCiv, tPlot, 5)
@@ -2450,10 +2450,18 @@ class RiseAndFall:
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
+		elif iCiv == iAustralia:
+			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(iRifleman, iCiv, tPlot, 3)
+		elif iCiv == iBoers:
+			utils.makeUnit(iKommando, iCiv, tPlot, 4)
+			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iCanada:
 			utils.makeUnit(iCavalry, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
 
 
 	def createStartingUnits(self, iCiv, tPlot):
@@ -2585,7 +2593,7 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
-			utils.makeUnit(iWorker, iCiv, tPlot, 1)    
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
@@ -2841,11 +2849,39 @@ class RiseAndFall:
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 3)
 			if utils.getHumanID() != iBrazil:
 				utils.makeUnitAI(iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+		elif iCiv == iAustralia:
+			utils.createSettlers(iCiv, 4)
+			utils.makeUnit(iDragoon, iCiv, tPlot, 2)
+			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 2)
+				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
+			iReligion = self.findAreaReligion(iCiv, utils.getPlotList(vic.tAustraliaTL, vic.tAustraliaBR))
+			if iReligion >= 0:
+				pAustralia.setLastStateReligion(iReligion)
+				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
+		elif iCiv == iBoers:
+			utils.createSettlers(iCiv, 3)
+			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
+			utils.makeUnit(iKommando, iCiv, tPlot, 5)
+			utils.makeUnit(iCannon, iCiv, tPlot, 2)
+			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
 		elif iCiv == iCanada:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iDragoon, iCiv, tPlot, 3)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
-				
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 3)
+			utils.makeUnit(iTank, iCiv, tPlot, 3)
+			utils.makeUnit(iFighter, iCiv, tPlot, 3)
+			utils.makeUnit(iSpy, iCiv, tPlot, 3)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iTransport, iCiv, tSeaPlot, 1)
+
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv)
 
@@ -2880,10 +2916,10 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
-				
+
 	def findAreaReligion(self, iPlayer, lPlots):
 		lReligions = [0 for i in range(iNumReligions)]
-		
+
 		for (x, y) in lPlots:
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity():
@@ -2896,7 +2932,7 @@ class RiseAndFall:
 					iStateReligion = gc.getPlayer(iOwner).getStateReligion()
 					if iStateReligion >= 0:
 						lReligions[iStateReligion] += 1
-						
+
 		iMax = 0
 		iHighestReligion = -1
 		for i in range(iNumReligions):
@@ -2904,10 +2940,11 @@ class RiseAndFall:
 			if lReligions[iLoopReligion] > iMax:
 				iMax = lReligions[iLoopReligion]
 				iHighestReligion = iLoopReligion
-				
+
 		return iHighestReligion
 
-				
+
+
 	def createStartingWorkers( self, iCiv, tPlot ):
 		if iCiv == iIndia:
 			#utils.makeUnit(iPunjabiWorker, iCiv, tPlot, 2)
@@ -2956,7 +2993,7 @@ class RiseAndFall:
 		elif iCiv == iRussia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iNetherlands:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3) 
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iPoland:
@@ -2972,7 +3009,7 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 3)
 		elif iCiv == iPortugal:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3) 
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iInca:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 		elif iCiv == iItaly:
@@ -2995,16 +3032,22 @@ class RiseAndFall:
 			utils.makeUnit(iMadeireiro, iCiv, tPlot, 3)
 		elif iCiv == iArgentina:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iAustralia:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iBoers:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iCanada:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-			
+		elif iCiv == iIsrael:
+			utils.makeUnit(iLabourer, iCiv, tPlot, 2)
+
 	def create1700ADstartingUnits(self):
 
 		# Japan
 		tCapital = Areas.getCapital(iJapan)
 		if utils.getHumanID() != iJapan:
 			utils.makeUnit(iSettler, iJapan, tCapital, 1)
-		
+
 		for iPlayer in range(iNumPlayers):
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and utils.getHumanID() == iPlayer:
 				utils.makeUnit(iSettler, iPlayer, Areas.getCapital(iPlayer), 1)
@@ -3019,12 +3062,12 @@ class RiseAndFall:
 		utils.makeUnit(iChokonu, iChina, tCapital, 2)
 		utils.makeUnit(iHorseArcher, iChina, tCapital, 1)
 		utils.makeUnit(iWorker, iChina, tCapital, 2)
-		
+
 		tCapital = Areas.getCapital(iJapan)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
 		if tSeaPlot:
 			utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
-			
+
 		if utils.getHumanID() != iJapan:
 			utils.makeUnit(iCrossbowman, iJapan, tCapital, 2)
 			utils.makeUnit(iSamurai, iJapan, tCapital, 3)
@@ -3043,7 +3086,7 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iVikings, tSeaPlot, 1)
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
-				
+
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)
@@ -3057,7 +3100,7 @@ class RiseAndFall:
 		tCapital = Areas.getCapital(iKorea)
 		if utils.getHumanID() != iKorea:
 			utils.makeUnit(iHeavySwordsman, iKorea, tCapital, 2)
-			
+
 		for iPlayer in range(iNumPlayers):
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
 				tCapital = Areas.getCapital(iPlayer)
@@ -3066,21 +3109,21 @@ class RiseAndFall:
 
 
 	def create4000BCstartingUnits(self):
-	
+
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
-			
+
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
-				
+
 			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
-		
+
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
-				
+
 		sta.onCivSpawn(iPlayer)
 
 	def arabianSpawn(self):
@@ -3090,14 +3133,14 @@ class RiseAndFall:
 
 		bBaghdad = gc.getMap().plot(tBaghdad[0], tBaghdad[1]).getOwner() == iArabia
 		bCairo = gc.getMap().plot(tCairo[0], tCairo[1]).getOwner() == iArabia
-		
+
 		lCities = []
-		
+
 		if bBaghdad: lCities.append(tBaghdad)
 		if bCairo: lCities.append(tCairo)
-		
+
 		tCapital = utils.getRandomEntry(lCities)
-		
+
 		if tCapital:
 			if utils.getHumanID() != iArabia:
 				utils.moveCapital(iArabia, tCapital)
@@ -3105,137 +3148,137 @@ class RiseAndFall:
 				utils.makeUnit(iSwordsman, iArabia, tCapital, 2)
 			utils.makeUnit(iCamelArcher, iArabia, tCapital, 2)
 			utils.makeUnit(iSwordsman, iArabia, tCapital, 2)
-		
+
 		if bBaghdad:
 			utils.makeUnit(iSettler, iArabia, tBaghdad, 1)
 			utils.makeUnit(iWorker, iArabia, tBaghdad, 1)
-		
+
 		if bCairo:
 			utils.makeUnit(iSettler, iArabia, tCairo, 1)
 			utils.makeUnit(iWorker, iArabia, tCairo, 1)
-			
+
 		if len(lCities) < 2:
 			utils.makeUnit(iSettler, iArabia, tMecca, 2 - len(lCities))
 			utils.makeUnit(iWorker, iArabia, tMecca, 2 - len(lCities))
 
 		if utils.getHumanID() != iArabia and bBaghdad:
 			utils.makeUnit(iSpearman, iArabia, tBaghdad, 2)
-			
+
 	def germanSpawn(self):
 		if data.getStabilityLevel(iHolyRome) < iStabilityShaky: data.setStabilityLevel(iHolyRome, iStabilityShaky)
-			
+
 		utils.setReborn(iHolyRome, True)
-		
+
 		dc.nameChange(iHolyRome)
 		dc.adjectiveChange(iHolyRome)
-		
+
 	def holyRomanSpawn(self):
 		plot = gc.getMap().plot(60, 56)
 		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
-		
-				
+
+
 	def determineEnabledPlayers(self):
-	
+
 		iHuman = utils.getHumanID()
-		
+
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")
 		if iRand <= 0:
 			data.setPlayerEnabled(iPolynesia, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
 			data.setPlayerEnabled(iPolynesia, False)
-			
+
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
 		if iRand <= 0:
 			data.setPlayerEnabled(iHarappa, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
 			data.setPlayerEnabled(iHarappa, False)
-		
+
 		if iHuman != iIndia and iHuman != iIndonesia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iTamils, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
 				data.setPlayerEnabled(iTamils, False)
-				
+
 		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iTibet, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
 				data.setPlayerEnabled(iTibet, False)
-				
+
 		if iHuman != iSpain and iHuman != iMali:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iMoors, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
 				data.setPlayerEnabled(iMoors, False)
-				
+
 		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iPoland, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
 				data.setPlayerEnabled(iPoland, False)
-				
+
 		if iHuman != iMali and iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
 				data.setPlayerEnabled(iCongo, False)
-				
+
 		if iHuman != iSpain:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iArgentina, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
 				data.setPlayerEnabled(iArgentina, False)
-				
+
 		if iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
-			
+
 			if iRand <= 0:
 				data.setPlayerEnabled(iBrazil, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
 				data.setPlayerEnabled(iBrazil, False)
-				
+
 	def placeHut(self, tTL, tBR):
 		plotList = []
-		
+
 		for (x, y) in utils.getPlotList(tTL, tBR):
 			plot = gc.getMap().plot(x, y)
 			if plot.isFlatlands() or plot.isHills():
 				if plot.getFeatureType() != iMud:
 					if plot.getOwner() < 0:
 						plotList.append((x, y))
-		
+
 		if not plotList:
 			#utils.debugTextPopup('List empty: ' + str(tTL) + ' ' + str(tBR))
 			return
-		
+
 		tPlot = utils.getRandomEntry(plotList)
 		i, j = tPlot
-		
+
 		gc.getMap().plot(i, j).setImprovementType(iHut)
-		
+
 	def setStateReligion(self, iCiv):
 		lCities = utils.getAreaCities(Areas.getCoreArea(iCiv))
 		lReligions = [0 for i in range(iNumReligions)]
-		
+
 		for city in lCities:
 			for iReligion in range(iNumReligions):
 				if iReligion not in [iJudaism] and city.isHasReligion(iReligion): lReligions[iReligion] += 1
-				
+
 		iHighestEntry = utils.getHighestEntry(lReligions)
-		
+
 		if iHighestEntry > 0:
 			gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
-			
+
 rnf = RiseAndFall()

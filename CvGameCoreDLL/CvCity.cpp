@@ -7351,6 +7351,12 @@ int CvCity::getBuildingHappiness(BuildingTypes eBuilding) const
 	iHappiness = GC.getBuildingInfo(eBuilding).getHappiness();
 
 	iHappiness += GC.getBuildingInfo(eBuilding).getCultureHappiness() * getCultureLevel();
+	
+	// Merijn: Sydney Opera House
+	if (eBuilding == SYDNEY_OPERA)
+	{
+		iHappiness += getCultureLevel();
+	}
 
 	if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 	{

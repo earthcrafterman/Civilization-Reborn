@@ -66,6 +66,7 @@ iCivMongols : 10,
 iCivMughals : 15,
 iCivNetherlands : 15,
 iCivGermany : 12,
+iCivAustralia : 11,
 }
 
 dDistanceSubtrahend = {
@@ -90,6 +91,7 @@ iCivInca : 3,
 iCivItaly : 5,
 iCivTurkey : 3,
 iCivGermany : 3,
+iCivAustralia : 5,
 }
 
 dDistanceSubtrahendExploration = {
@@ -126,6 +128,7 @@ iCivCongo : 300,
 iCivNetherlands : 150,
 iCivGermany : 300,
 iCivAmerica : 200,
+iCivAustralia : 150,
 iCivArgentina : 150,
 iCivBrazil : 150,
 iCivCanada : 150,
@@ -158,6 +161,7 @@ iCivPoland : 30,
 iCivPortugal : 5,
 iCivItaly : 70,
 iCivNetherlands : 5,
+iCivAmerica : 20,
 iCivAmerica : 20,
 }
 
@@ -214,5 +218,7 @@ iCivMughals : 4,
 iCivThailand : 4,
 iCivNetherlands : 4,
 iCivAmerica : 4,
+iCivAustralia : 4,
 iCivCanada : 4,
+iCivIsrael : 4,
 }

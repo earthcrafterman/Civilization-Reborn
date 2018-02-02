@@ -765,7 +765,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-		<German>Jüdische Synagoge</German>
+		<German>JÃ¼dische Synagoge</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
@@ -774,7 +774,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-		<German>Jüdische Jeschiwa</German>
+		<German>JÃ¼dische Jeschiwa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
@@ -783,7 +783,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-		<German>Jüdischer Sanhedrin</German>
+		<German>JÃ¼discher Sanhedrin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
@@ -893,7 +893,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Basílica de San Pedro</Text>
+			<Text>BasÃ­lica de San Pedro</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -1149,7 +1149,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-		<German>Zoroastrisches Königliches Feuer</German>
+		<German>Zoroastrisches KÃ¶nigliches Feuer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
@@ -1197,7 +1197,7 @@
 		<French>Caf&#233;</French>
 		<German>Kaffeehaus</German>
 		<Italian>Caffetteria</Italian>
-		<Spanish>CafÃ©</Spanish>
+		<Spanish>CafÃƒÂ©</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COFFEEHOUSE_STRATEGY</Tag>
@@ -1422,5 +1422,29 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Tag>
+		<English>Immigration Office</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Immigration Office[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT], can be build in every city and provides an extra trade route.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS</Tag>
+		<English>Plaas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Plaas[COLOR_REVERT], the Boer replacement for the [COLOR_BUILDING_TEXT]Star Fort[COLOR_REVERT], provides two extra food.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Tag>
+		<English>Kibbutz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
 	</TEXT>
 </Civ4GameText>
