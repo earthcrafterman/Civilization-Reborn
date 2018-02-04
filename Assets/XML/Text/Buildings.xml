@@ -1447,4 +1447,12 @@
 		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA</Tag>
+		<English>Ziara</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ziara[COLOR_REVERT], the Swahili replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants one free trade route.</English>
+	</TEXT>
 </Civ4GameText>

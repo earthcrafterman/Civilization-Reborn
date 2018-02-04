@@ -4175,6 +4175,8 @@ tRenames = (
 {},
 # Harappa (settler map only)
 {},
+# Swahili (settler map only)
+{},
 )
 
 tLanguages = (
@@ -4218,7 +4220,8 @@ tLanguages = (
 "Celtic",
 "Mexican",
 "Polynesian",
-"Harappan"
+"Harappan",
+"Swahili"
 )
 
 def getLanguageName(iLanguage):

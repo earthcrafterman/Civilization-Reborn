@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Congo -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_DESC</Tag>
+		<English>The Swahili</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_PEOPLES</Tag>
+		<English>Swahili Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_ADJECTIVE</Tag>
+		<English>Swahili</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_DEFAULT</Tag>
+		<English>Kilwa Sultanate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWAHILI_SHORT_DESC</Tag>
+		<English>Swahili</English>
+	</TEXT>
+</Civ4GameText>

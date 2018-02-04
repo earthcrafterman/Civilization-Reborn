@@ -231,6 +231,7 @@ class GameData:
 		self.iVikingGold = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
+		self.iSwahiliTradeGold = 0
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0
 		self.iCongoSlaveCounter = 0
@@ -268,6 +269,7 @@ class GameData:
 		self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)] = bNewValue
 		
 	def isPlayerEnabled(self, iPlayer):
+		if gc.getGame().getActivePlayer() == iPlayer: return True
 		return self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)]
 		
 	def resetStability(self, iPlayer):

@@ -993,7 +993,37 @@ def checkTurn(iGameTurn, iPlayer):
 
 		if iGameTurn == getTurnForYear(1950):
 			expire(iRussia, 2)
-
+			
+	elif iPlayer == iSwahili:
+		# first goal: acquire 4000 gold by trade by 1500 AD
+		if isPossible(iSwahili, 0):
+			iTradeGold = 0
+			
+			# gold from city trade routes
+			iTradeCommerce = 0
+			for city in utils.getCityList(iSwahili):
+				iTradeCommerce += city.getTradeYield(2)
+			iTradeGold += iTradeCommerce * pSwahili.getCommercePercent(0) / 100
+			
+			# gold from per turn gold trade
+			for iPlayer in range(iNumPlayers):
+				iTradeGold += pSwahili.getGoldPerTurnByPlayer(iPlayer)
+			
+			data.iSwahiliTradeGold += iTradeGold
+			
+			if data.iSwahiliTradeGold >= utils.getTurns(4000):
+				win(iSwahili, 2)
+				
+		if iGameTurn == getTurnForYear(1500):
+			expire(iSwahili, 0)
+			expire(iSwahili, 1)
+			
+		# second goal: build an Islamic Mosque by 1500 AD
+		
+		# third goal: found a city in Australia by 1650 AD
+		if iGameTurn == getTurnForYear(1650):
+			expire(iSwahili, 2)
+			
 	elif iPlayer == iMali:
 
 		# first goal: conduct a trade mission to your holy city by 1350 AD
@@ -1626,6 +1656,12 @@ def onCityBuilt(iPlayer, city):
 			if bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania:
 				win(iEngland, 0)
 
+	# third Swahili goal: found a city in Australia by 1650 AD
+	elif iPlayer == iSwahili:
+		if isPossible(iSwahili, 2):
+			if city.getRegionID() == rAustralia:
+				win(iSwahili, 2)
+				
 def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
@@ -1865,7 +1901,13 @@ def onBuildingBuilt(iPlayer, iBuilding):
 			if iBuilding == iTambo:
 				if isRoad(iInca, lAndeanCoast) and getNumBuildings(iInca, iTambo) >= 5:
 					win(iInca, 0)
-
+		
+	# second Swahili goal: build an Islamic Mosque by 1500 AD
+	elif iPlayer == iSwahili:
+		if isPossible(iSwahili, 1):
+			if iBuilding == iIslamicCathedral:
+				win(iSwahili, 1)
+				
 def checkWonderGoal(iPlayer, lWonders):
 	for iWonder in lWonders:
 		if data.getWonderBuilder(iWonder) != iPlayer:
@@ -1994,6 +2036,11 @@ def onPlayerGoldTrade(iPlayer, iGold):
 		if isPossible(iTamils, 2):
 			data.iTamilTradeGold += iGold
 
+	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
+	elif iPlayer == iSwahili:
+		if isPossible(iSwahili, 0):
+			data.iSwahiliTradeGold += iGold
+		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
 	# second Congolese goal: gain 1000 gold through slave trade by 1800 AD
@@ -2009,6 +2056,10 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	if iPlayer == iTamils:
 		data.iTamilTradeGold += iGold
 
+	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
+	elif iPlayer == iSwahili:
+		data.iSwahiliTradeGold += iGold
+		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
 		if isPossible(iMali, 0):
@@ -3808,6 +3859,11 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
 			aHelp.append(getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_COMMUNIST_BROTHERS", (iCount, 5)))
+	
+	elif iPlayer == iSwahili:
+		if iGoal == 0:
+			iTradeGold = data.iSwahiliTradeGold
+			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iMali:
 		if iGoal == 1:

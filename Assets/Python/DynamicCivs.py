@@ -436,6 +436,7 @@ dEmpireThreshold = {
 	iTibet : 2,
 	iPolynesia : 3,
 	iTamils : 3,
+	iSwahili : 4,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -518,6 +519,7 @@ dStartingLeaders = [
 	iHolyRome : iBarbarossa,
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
+	iSwahili : iShirazi,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
 	iPortugal : iAfonso,
@@ -2085,7 +2087,12 @@ def leader(iPlayer):
 			if iGameTurn >= getTurnForYear(1750): return iCatherine
 
 			return iPeter
-
+			
+	elif iPlayer == iSwahili:
+		if iEra >= iIndustrial: return iBarghash
+		
+		if bEmpire: return iDawud
+		
 	elif iPlayer == iNetherlands:
 		if iGameTurn >= getTurnForYear(1650): return iWilliam
 

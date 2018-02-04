@@ -1811,6 +1811,38 @@
 		<German>Verbreiten Sie den Katholizismus zu 30% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_TITLE</Tag>
+		<English>Swahili Coast Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1</Tag>
+		<English>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_EPIC</Tag>
+		<English>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_MARATHON</Tag>
+		<English>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA2_TITLE</Tag>
+		<English>Msikiti Mkubwa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA2</Tag>
+		<English>Build an Islamic Grand Mosque by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA3_TITLE</Tag>
+		<English>Marchinbar Island Coins</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA3</Tag>
+		<English>Found a city in Australia by 1650 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
 		<English>The Sangam Period</English>
 		<German>Die Sangam-&#196;ra</German>

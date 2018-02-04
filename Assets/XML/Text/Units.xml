@@ -1600,4 +1600,16 @@
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW</Tag>
+		<English>Dhow</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dhow[COLOR_REVERT], the Swahili replacement for the the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], provides gold when stationed in foreign coastal cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_HELP</Tag>
+		<English>[ICON_BULLET]2 [ICON_GOLD] when stationed in a foreign coastal city (max one unit per city)</English>
+	</TEXT>
 </Civ4GameText>

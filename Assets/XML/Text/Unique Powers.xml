@@ -662,6 +662,14 @@
 		<Spanish>Las unidades navales nuevas reciben +2 puntos de movimiento</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SWA_TITLE</Tag>
+		<English>The Power of Sea Trade:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWA</Tag>
+		<English>Foreign trade route yields increased by 100%</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<German>Die Macht der Thalassokratie:</German>

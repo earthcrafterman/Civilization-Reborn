@@ -1168,10 +1168,13 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tPacific1TL, vic.tPacific1BR) or utils.isPlotInArea((x, y), vic.tPacific2TL, vic.tPacific2BR) or utils.isPlotInArea((x, y), vic.tPacific3TL, vic.tPacific3BR) or utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
 			return 72
 				
-
 	elif iPlayer == iBoers:
 		if utils.isPlotInArea((x, y), vic.tBoerAfricaTL, vic.tBoerAfricaBR):
 			return 73
+			
+	elif iPlayer == iSwahili:
+		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
+			return 70
 			
 	return -1
 		

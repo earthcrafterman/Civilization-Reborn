@@ -432,5 +432,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ISRAEL</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_SWAHILI</Type> <!-- Swahili -->
+			<ColorTypePrimary>COLOR_CIVILIZATION_GREENBLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_CIVILIZATION_MOSS</ColorTypeSecondary>
+			<TextColorType>COLOR_CIVILIZATION_GREENBLUE_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
