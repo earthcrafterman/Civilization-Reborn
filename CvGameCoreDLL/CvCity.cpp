@@ -2373,7 +2373,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 
 		if (!(GC.getBuildingClassInfo((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())).isNoLimit()))
 		{
-			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
+			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && GC.getBuildingInfo(eBuilding).getProductionCost() > 0)
 			{
 				if (isWorldWondersMaxed())
 				{
@@ -11317,11 +11317,9 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
 	}
 
-	iTotalCulture /= 100;
-
 	if (iTotalCulture > 0)
 	{
-		return (getCultureTimes100(eIndex) / iTotalCulture);
+		return (100 * getCultureTimes100(eIndex) / iTotalCulture);
 	}
 
 	if (eIndex == getOwner())

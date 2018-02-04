@@ -2890,6 +2890,8 @@ void CvPlayer::doTurn()
 
 	GC.getGameINLINE().verifyDeals();
 
+	checkCapitalCity();
+
 	AI_doTurnPre();
 
 	if (getRevolutionTimer() > 0)
@@ -25561,4 +25563,43 @@ bool CvPlayer::canBuySlaves() const
 	}
 
 	return false;
+}
+
+void CvPlayer::checkCapitalCity()
+{
+	if (getCapitalCity() != NULL)
+	{
+		return;
+	}
+
+	BuildingTypes eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(GC.getDefineINT("CAPITAL_BUILDINGCLASS"))));
+
+	if (eCapitalBuilding == NO_BUILDING)
+	{
+		return;
+	}
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->setNumRealBuilding(eCapitalBuilding, 0);
+	}
+
+	findNewCapital();
+}
+
+void CvPlayer::restoreGeneralThreshold()
+{
+	changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
+
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+		{
+			GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+		}
+	}
+
+	decrementGreatGeneralsCreated();
 }

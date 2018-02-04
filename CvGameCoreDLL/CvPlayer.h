@@ -668,6 +668,9 @@ public:
 	int getStateReligionFreeExperience() const;																																// Exposed to Python
 	void changeStateReligionFreeExperience(int iChange);
 
+	// Leoreth
+	void checkCapitalCity();
+
 	DllExport CvCity* getCapitalCity() const;																																	// Exposed to Python
 	void setCapitalCity(CvCity* pNewCapitalCity);
 
@@ -1302,6 +1305,8 @@ public:
 	int calculateColonyMaintenance() const;
 	int calculateCorporationMaintenance() const;
 	int calculateCitiesMaintenance() const;
+
+	void restoreGeneralThreshold();
 
 	bool m_bTurnPlayed;
 
