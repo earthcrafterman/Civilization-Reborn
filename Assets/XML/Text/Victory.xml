@@ -1843,6 +1843,42 @@
 		<English>Found a city in Australia by 1650 AD</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_TITLE</Tag>
+		<English>Lion of the North</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1</Tag>
+		<English>Control the Baltic Coast, the Kattegat and the Skagerak by 1700 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2_TITLE</Tag>
+		<English>Swedish India Company</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2</Tag>
+		<English>Control or get by trade 7 fur resources by 1800 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE3_TITLE</Tag>
+		<English>Social democracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE3</Tag>
+		<English>Have the highest approval rating in the world for 50 turns by 1970 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_SKAGERRAK_HELP</Tag>
+		<English>Skagerrak and Kattegat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_BALTIC_SEA_HELP</Tag>
+		<English>Baltic Coast</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2_HELP</Tag>
+		<English>Controlled fur resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
 		<English>The Sangam Period</English>
 		<German>Die Sangam-&#196;ra</German>

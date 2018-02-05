@@ -1612,4 +1612,16 @@
 		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_HELP</Tag>
 		<English>[ICON_BULLET]2 [ICON_GOLD] when stationed in a foreign coastal city (max one unit per city)</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDEN_KAROLIN</Tag>
+		<English>Karolin</English>
+		<French>Carolean</French>
+		<German>Karoliner</German>
+		<Italian>Carolean</Italian>
+		<Spanish>Carolean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDEN_KAROLIN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Karolin[COLOR_REVERT], the Swedish replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] promotions.</English>
+	</TEXT>
 </Civ4GameText>

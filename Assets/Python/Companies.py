@@ -19,7 +19,7 @@ iNumCompanies = 9
 tCompanyTechs = (iCompass, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
+lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)

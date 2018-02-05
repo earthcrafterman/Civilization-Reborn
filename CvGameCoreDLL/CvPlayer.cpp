@@ -8802,7 +8802,18 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 
 int CvPlayer::specialistCommerce(SpecialistTypes eSpecialist, CommerceTypes eCommerce) const
 {
-	return (GC.getSpecialistInfo(eSpecialist).getCommerceChange(eCommerce) + getSpecialistExtraCommerce(eCommerce));
+	int iValue = (GC.getSpecialistInfo(eSpecialist).getCommerceChange(eCommerce) + getSpecialistExtraCommerce(eCommerce));
+	
+	// Merijn: Swedish UP: 1 gold (and 2 happiness) for settled GP
+	if (eCommerce == COMMERCE_GOLD && getID() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))
+	{
+		if (eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE") && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
+		{
+			iValue += 1;
+		}
+	}
+	
+	return iValue;
 }
 
 

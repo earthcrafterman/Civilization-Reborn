@@ -4612,6 +4612,15 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
 
+	// Merijn: Swedish UP, 2 happiness (and 1 gold) for every settled GP
+	if (getOwnerINLINE() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))
+	{
+		if (eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE") && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
+		{
+			iHappinessChange += 2;
+		}
+	}
+
 	if (iHappinessChange > 0)
 	{
 		changeSpecialistGoodHappiness(iHappinessChange * iChange);
@@ -10635,12 +10644,12 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getCommerceChange(eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
+	return iChange * (GET_PLAYER(getOwnerINLINE()).specialistCommerce(eSpecialist, eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
 }
 // BUG - Specialist Additional Commerce - end
 
 
-int CvCity::getReligionCommerce(CommerceTypes eIndex) const												 
+int CvCity::getReligionCommerce(CommerceTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");

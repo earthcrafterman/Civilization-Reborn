@@ -525,4 +525,12 @@
 		<Tag>TXT_KEY_UHV_AREA_73</Tag>
 		<English>South Africa</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_74</Tag>
+		<English>Skagerrak and Kattegat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_75</Tag>
+		<English>Baltic Coast</English>
+	</TEXT>
 </Civ4GameText>

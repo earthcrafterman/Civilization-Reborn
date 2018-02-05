@@ -1176,6 +1176,15 @@ def getUHVTileInfo(argsList):
 		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
 			return 70
 			
+	elif iPlayer == iSweden:
+		if (x, y) in vic.lSkagerrak or (x, y) in vic.lSkagerrak:
+			return 74
+		
+		if (x, y) in vic.lBalticSea or (x, y) in vic.lBalticSea:
+			return 75
+				
+		# continue with ID 72
+			
 	return -1
 		
 def getCityName(argsList):

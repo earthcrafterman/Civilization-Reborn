@@ -3810,6 +3810,33 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
+			<Type>BUILDING_SWEDEN_RIKSBANK</Type>
+			<Description>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SWEDEN_RIKSBANK</ArtDefineTag>
+			<PrereqTech>TECH_FINANCE</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_RAILWAY_STATION</BuildingClass>
 			<Type>BUILDING_RAILWAY_STATION</Type>
 			<Description>TXT_KEY_BUILDING_RAILWAY_STATION</Description>

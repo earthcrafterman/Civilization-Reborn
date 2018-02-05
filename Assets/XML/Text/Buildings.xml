@@ -1455,4 +1455,12 @@
 		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ziara[COLOR_REVERT], the Swahili replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants one free trade route.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Tag>
+		<English>Riksbank</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Tag>
+		<English>The Swedish [COLOR_BUILDING_TEXT]Riksbank[COLOR_REVERT] greatly increases a city's production of wealth and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+	</TEXT>
 </Civ4GameText>

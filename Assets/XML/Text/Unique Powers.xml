@@ -670,6 +670,14 @@
 		<English>Foreign trade route yields increased by 100%</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SWE_TITLE</Tag>
+		<English>The Power of Nobel Prizes:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWE</Tag>
+		<English>Settled Great People create two extra [ICON_HAPPY] and one extra [ICON_GOLD]</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<German>Die Macht der Thalassokratie:</German>

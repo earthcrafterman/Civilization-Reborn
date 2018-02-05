@@ -94,82 +94,85 @@ BeginTeam
 	TeamID=27, (Swahili)
 EndTeam
 BeginTeam
-	TeamID=27, (Mali)
+	TeamID=28, (Mali)
 EndTeam
 BeginTeam
-	TeamID=28, (Poland)
+	TeamID=29, (Poland)
 EndTeam
 BeginTeam
-	TeamID=29, (Portugal)
+	TeamID=30, (Portugal)
 EndTeam
 BeginTeam
-	TeamID=30, (Inca)
+	TeamID=31, (Inca)
 EndTeam
 BeginTeam
-	TeamID=31, (Italy)
+	TeamID=32, (Italy)
 EndTeam
 BeginTeam
-	TeamID=32, (Mongols)
+	TeamID=33, (Mongols)
 EndTeam
 BeginTeam
-	TeamID=33, (Aztecs)
+	TeamID=34, (Aztecs)
 EndTeam
 BeginTeam
-	TeamID=34, (Mughals)
+	TeamID=35, (Mughals)
 EndTeam
 BeginTeam
-	TeamID=35, (Turkey)
+	TeamID=36, (Turkey)
 EndTeam
 BeginTeam
-	TeamID=36, (Thailand)
+	TeamID=37, (Thailand)
 EndTeam
 BeginTeam
-	TeamID=37, (Congo)
+	TeamID=38, (Congo)
 EndTeam
 BeginTeam
-	TeamID=38, (Netherlands)
+	TeamID=39, (Sweden)
 EndTeam
 BeginTeam
-	TeamID=39, (Germany)
+	TeamID=40, (Netherlands)
 EndTeam
 BeginTeam
-	TeamID=40, (America)
+	TeamID=41, (Germany)
 EndTeam
 BeginTeam
-	TeamID=41, (Argentina)
+	TeamID=42, (America)
 EndTeam
 BeginTeam
-	TeamID=42, (Brazil)
+	TeamID=43, (Argentina)
 EndTeam
 BeginTeam
-	TeamID=43, (Australia)
+	TeamID=44, (Brazil)
 EndTeam
 BeginTeam
-	TeamID=44, (Boers)
+	TeamID=45, (Australia)
 EndTeam
 BeginTeam
-	TeamID=45, (Canada)
+	TeamID=46, (Boers)
 EndTeam
 BeginTeam
-	TeamID=46, (Israel)
+	TeamID=47, (Canada)
 EndTeam
 BeginTeam
-	TeamID=47, (Independent)
+	TeamID=48, (Israel)
 EndTeam
 BeginTeam
-	TeamID=48, (Independent2)
+	TeamID=49, (Independent)
 EndTeam
 BeginTeam
-	TeamID=49, (Native)
+	TeamID=50, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=50, (Celtia)
+	TeamID=51, (Native)
 EndTeam
 BeginTeam
-	TeamID=51, (Seljuks)
+	TeamID=52, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=52, (Barbarian)
+	TeamID=53, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=54, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -654,6 +657,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=39
+	LeaderType=LEADER_GUSTAV
+	CivType=CIVILIZATION_SWEDEN
+	PlayableCiv=1
+	StartingGold=500
+	StateReligion=RELIGION_CATHOLICISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=40
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS
 	PlayableCiv=1
@@ -667,7 +684,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=40
+	Team=41
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
 	PlayableCiv=1
@@ -682,7 +699,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=41
+	Team=42
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA
 	PlayableCiv=1
@@ -696,7 +713,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=42
+	Team=43
 	LeaderType=LEADER_SAN_MARTIN
 	CivType=CIVILIZATION_ARGENTINA
 	PlayableCiv=1
@@ -710,7 +727,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=43
+	Team=44
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
 	PlayableCiv=1
@@ -725,7 +742,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=44
+	Team=45
 	LeaderType=LEADER_MENZIES
 	CivType=CIVILIZATION_AUSTRALIA
 	PlayableCiv=1
@@ -739,7 +756,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
+	Team=46
 	LeaderType=LEADER_KRUGER
 	CivType=CIVILIZATION_BOER
 	PlayableCiv=1
@@ -753,7 +770,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
+	Team=47
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
 	PlayableCiv=1
@@ -768,7 +785,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	Team=48
 	LeaderType=LEADER_BEN_GURION
 	CivType=CIVILIZATION_ISRAEL
 	PlayableCiv=1
@@ -783,7 +800,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -792,7 +809,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -801,7 +818,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=50
+	Team=51
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -810,7 +827,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=51
+	Team=52
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -818,7 +835,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=52
+	Team=53
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	Color=PLAYERCOLOR_SELJUK
@@ -829,7 +846,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=53
+	Team=54
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
