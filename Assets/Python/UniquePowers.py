@@ -12,7 +12,7 @@
 # Japan now in CvUnit::experienceNeeded(); +50% promotion tempo
 # England now in CvHandicapInfo::getDistanceMaintenancePercentByID()
 #Ethiopia in Congresses.py (USED TO BE in CvUnit::init() and CvUnit::upgrade())
-#Maya in CvHandicapInfo::getResearchPercentByID()
+#CvTeam::getCivilizationResearchModifier()
 #Byzantium in Stability.checkImplosion()
 #Khmer in CvUnit::canMoveInto()
 #Germany (USED TO BE IN in CvUnit::init(), CvUnit::upgrade() and CvUnitAI::AI_pillageValue()); NOW IN CvUnit::upgradePrice()

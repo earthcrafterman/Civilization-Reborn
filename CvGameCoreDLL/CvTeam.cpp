@@ -2739,16 +2739,31 @@ int CvTeam::getCivilizationResearchModifier() const
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
 	// Maya UP
-	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= ERA_CLASSICAL)
-	{
-		if (getLeaderID() == MAYA) iCivModifier -= 50; // Maya UP
+	if (getLeaderID() == MAYA) {
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 30) break;
+			}
+		}
+		if (Techs < 30) iCivModifier -= 50; // Maya UP
 	}
 
 	// nerf late game China
 	if (getLeaderID() == CHINA)
 	{
-		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 15;
-		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 25;
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 45) break;
+			}
+		}
+		if (Techs >= 30 && Techs < 45)  iCivModifier += 15;
+		if (Techs >= 45)				iCivModifier += 25;
 	}
 
 	return iCivModifier;
@@ -2894,17 +2909,35 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	if (getID() == CHINA)
 	{
-		if (iSpreadModifier > 0) iSpreadModifier = 0;
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs < 45) break;
+			}
+		}
+
+		if (Techs < 45 && iSpreadModifier > 0) iSpreadModifier = 0;
 	}
 
 	iModifier += iSpreadModifier;
 
 	//Leoreth: new Chinese UP: techs not known by anyone get -25% cost
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	if (getID() == CHINA)
 	{
-		if (iCivsWithTech == 0)
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 45) break;
+			}
+		}
+
+		if (Techs < 45 && iCivsWithTech == 0)
 		{
 			iModifier -= 25;
 		}

@@ -155,7 +155,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
-		<English>Faster research of techologies that nobody has discovered yet until the Renaissance</English>
+		<English>Faster research of technologies that nobody has discovered yet until the Renaissance (Specifically until 45 techs are obtained)</English>
 		<French>1.5X Vitesse d'entra&#238;nement des unit&#233;s de combat rapproch&#233; et &#233;quip&#233;es d'armes &#224; feu</French>
 		<German>Schnellere Forschung von Technologien, die bisher niemand entdeckt hat, bis zum Beginn der Renaissance</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
@@ -260,7 +260,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GRE</Tag>
-		<English>+150% Great People birth rate until the end of the Classical Era</English>
+		<English>+150% Great People birth rate until the end of the Classical Era (Specifically until 30 techs are obtained)</English>
 		<French>+150 % Taux de natalit&#233; des personnages illustres jusqu'&#224; la fin du Moyen Age</French>
 		<German>+150% Geburtenrate von Gro&#223;en Pers&#246;nlichkeiten bis zum Ende des klassischen Zeitalters</German>
 		<Italian>+150% tasso di natalit&#224; dei Grandi Personaggi fino alla fine del Medioevo</Italian>
@@ -372,7 +372,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ITA</Tag>
-		<English>Free specialist in all of your cities until the Industrial Age</English>
+		<English>Free specialist in all of your cities until the Industrial Age (Specifically until 60 techs are obtained)</English>
 		<German>Zus&#228;tzlicher Spezialist in allen St&#228;dten bis zum Industriezeitalter</German>
 	</TEXT>
 	<TEXT>
@@ -453,7 +453,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>-40% research cost until beginning of the Middle Ages</English>
+		<English>-40% research cost until beginning of the Middle Ages (Specifically until 30 techs are obtained)</English>
 		<French>-40% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
 		<German>-40% Forschungskosten bis zum Anfang des Mittelalters</German>
 		<Italian>-40% ai costi di ricerca fino alla fine del Medioevo</Italian>
@@ -523,7 +523,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO</Tag>
-		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
+		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance (Specifically until 45 techs are obtained)</English>
 		<German>Verbesserungen, die Nahrung produzieren, geben eine zus&#228;tzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
 	</TEXT>
 	<TEXT>
