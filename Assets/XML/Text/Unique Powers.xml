@@ -445,7 +445,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
-		<English>The Power of Astronomy:</English>
+		<English>The Power of Urban Agriculture:</English>
 		<French>Le Pouvoir de l'Astronomie :</French>
 		<German>Die Macht der Astronomie:</German>
 		<Italian>Il potere dell'astronomia:</Italian>
@@ -453,7 +453,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>-40% research cost until beginning of the Middle Ages</English>
+		<English>Cottages yield Food equal to their Commerce Yield</English>
 		<French>-40% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
 		<German>-40% Forschungskosten bis zum Anfang des Mittelalters</German>
 		<Italian>-40% ai costi di ricerca fino alla fine del Medioevo</Italian>
