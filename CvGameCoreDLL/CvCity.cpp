@@ -6366,9 +6366,17 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 	}
 
 	// Leoreth: Greek UP
-	if (getOwnerINLINE() == GREECE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_CLASSICAL)
+	if (getOwnerINLINE() == GREECE)
 	{
-		iModifier += 150;
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 30) break;
+			}
+		}
+		if (Techs < 30) iModifier += 150;
 	}
 
 	return std::max(0, (iModifier + 100));
@@ -8499,10 +8507,18 @@ int CvCity::getFreeSpecialist() const
     // Leoreth: Italian UP, only until the industrial era
     int iItalianSpecialists = 0;
 	int iCoreSpecialists = 0;
-
-    if (getOwner() == ITALY && GET_PLAYER((PlayerTypes)ITALY).getCurrentEra() < 4)
+    if (getOwner() == ITALY)
     {
-		iItalianSpecialists = 1;
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 60) break;
+			}
+		}
+
+		if (Techs < 60) iItalianSpecialists = 1;
     }
 
 	//Leoreth: handle free specialists for core here for simplicity
@@ -9518,9 +9534,18 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
 	// Harappan UP: Sanitation: positive health contributes to city growth
-	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT  && !isFoodProduction())
+	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && !isFoodProduction())
 	{
-		if (iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 15) break;
+			}
+		}
+
+		if (Techs < 15 && iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
 		{
 			iYieldRateTimes100 += 100 * (goodHealth() - badHealth());
 		}

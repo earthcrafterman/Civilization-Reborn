@@ -10602,9 +10602,18 @@ int CvPlayer::getCaptureGoldModifier() const
 	int iModifier = m_iCaptureGoldModifier;
 
 	// Viking UP
-	if (getID() == VIKINGS && getCurrentEra() <= ERA_MEDIEVAL)
+	if (getID() == VIKINGS)
 	{
-		iModifier += 100;
+		int Techs = 0;
+
+		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+			if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
+				Techs++;
+				if (Techs >= 45) break;
+			}
+		}
+
+		if (Techs < 45) iModifier += 100;
 	}
 
 	return iModifier;
