@@ -6862,6 +6862,17 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+	// Mayan UP: Cottage type Improvements give Food in addition to Gold
+	if ((int)eYield == 0 && ePlayer == MAYA && (
+		eImprovement == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE") ||
+		eImprovement == GC.getInfoTypeForString("IMPROVEMENT_VILLAGE") ||
+		eImprovement == GC.getInfoTypeForString("IMPROVEMENT_HAMLET") ||
+		eImprovement == GC.getInfoTypeForString("IMPROVEMENT_TOWN")))
+
+	{
+		iYield += GC.getImprovementInfo(eImprovement).getYieldChange(YIELD_COMMERCE);
+	}
+
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
 	if (ePlayer == MOORS)
 	{
