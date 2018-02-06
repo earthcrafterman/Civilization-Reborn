@@ -483,7 +483,7 @@ BeginPlayer
 	LeaderType=LEADER_BARGHASH
 	CivType=CIVILIZATION_SWAHILI
 	PlayableCiv=0
-Handicap=HANDICAP_REGENT
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=28
@@ -28789,7 +28789,8 @@ BeginPlot
 	RiverWEDirection=1
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
-	PlotType=2BeginUnit
+	PlotType=2
+	BeginUnit
 		UnitType=UNIT_SWEDEN_KAROLIN, UnitOwner=39, (Sweden)
 	EndUnit
 	BeginUnit
