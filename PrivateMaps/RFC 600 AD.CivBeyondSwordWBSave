@@ -9019,7 +9019,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=37
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_STONE
+	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

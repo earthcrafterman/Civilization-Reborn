@@ -2014,6 +2014,7 @@
 			<iAirBombDefense>20</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>100</iHappinessPercent>
+			<iHealthPercent>100</iHealthPercent>
 			<iPillageGold>0</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
