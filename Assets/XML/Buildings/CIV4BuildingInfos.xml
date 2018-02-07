@@ -3870,13 +3870,13 @@
 				<BonusCommerceModifier>
 					<BonusType>BONUS_COAL</BonusType>
 					<CommerceModifiers>
-						<iCommerce>25</iCommerce>
+						<iCommerce>15</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 				<BonusCommerceModifier>
 					<BonusType>BONUS_OIL</BonusType>
 					<CommerceModifiers>
-						<iCommerce>25</iCommerce>
+						<iCommerce>15</iCommerce>
 					</CommerceModifiers>
 				</BonusCommerceModifier>
 			</BonusCommerceModifiers>
