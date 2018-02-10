@@ -248,7 +248,7 @@ lOlderNeighbours = [
 # converted to years - edead
 tBirth = (
 -3000, # 0, #3000BC			# Egypt
--3000, # 0, #3000BC			# China
+-2070, # 0, #3000BC			# China
 -3000, # 0, #3000BC			# Babylonia
 -3000,					# Harappa
 -1600, # 50, #1600BC			# Greece

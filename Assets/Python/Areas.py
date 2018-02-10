@@ -100,7 +100,7 @@ def init():
 ### Capitals ###
 
 tCapitals = (
-(69, 33), # Thebes
+(69, 34), # Thebes
 (100, 44), # Chang'an
 (76, 40), # Babylon
 (87, 40), # Harappa
