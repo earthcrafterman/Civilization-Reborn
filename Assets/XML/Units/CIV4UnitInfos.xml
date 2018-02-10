@@ -857,7 +857,8 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<iCost>100</iCost>
+			<PrereqTech>TECH_ARTIFICIAL_INTELLIGENCE</PrereqTech>
+			<iCost>500</iCost>
 			<iAdvancedStartCost>10000</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>0</iMoves>

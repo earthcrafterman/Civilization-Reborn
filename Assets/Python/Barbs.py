@@ -156,9 +156,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
-		if utils.isYearIn(100, 600):
-			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
-		elif utils.isYearIn(600, 1000):
+		if utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
 			
 		#pirates in Mediterranean
