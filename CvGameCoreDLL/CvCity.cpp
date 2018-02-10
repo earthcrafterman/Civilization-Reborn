@@ -5027,10 +5027,21 @@ int CvCity::getOvercrowdingPercentAnger(int iExtra) const
 	{
 		iAnger += (((iOvercrowding * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, (getPopulation() + iExtra))) + 1);
 	}
+	
+	if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_BIOTECHNOLOGY")) || 
+	(GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_NANOTECHNOLOGY"))))
+	{
+		iAnger -= std::max(0, (int)(getPopulation() / 10));
+	}
+
+	if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_BIOTECHNOLOGY")) && 
+		(GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_NANOTECHNOLOGY"))))
+	{
+		iAnger -= std::max(0, (int)(getPopulation() / 5));
+	}
 
 	return iAnger;
 }
-
 
 int CvCity::getNoMilitaryPercentAnger() const
 {
@@ -5381,6 +5392,18 @@ int CvCity::extraFreeSpecialists() const
 
 int CvCity::unhealthyPopulation(bool bNoAngry, int iExtra) const
 {
+	if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_BIOTECHNOLOGY")) || 
+		(GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_NANOTECHNOLOGY"))))
+	{
+		return std::max(0, (int)((getPopulation() + iExtra - ((bNoAngry) ? angryPopulation(iExtra) : 0)) / 4 * 3));
+	}
+
+	if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_BIOTECHNOLOGY")) && 
+		(GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_NANOTECHNOLOGY"))))
+	{
+		return std::max(0, (int)((getPopulation() + iExtra - ((bNoAngry) ? angryPopulation(iExtra) : 0)) / 2));
+	}
+
 	if (isNoUnhealthyPopulation())
 	{
 		return 0;
@@ -5520,7 +5543,12 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 		iTotalHealth += iHealth;
 	}
 
-	iHealth = getPowerBadHealth();
+	if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_FUSION"))) {
+		iHealth = 0;
+	}
+	else {
+		iHealth = getPowerBadHealth();
+	}
 	if (iHealth < 0)
 	{
 		iTotalHealth += iHealth;
@@ -8551,7 +8579,8 @@ int CvCity::getPowerCount() const
 
 bool CvCity::isPower() const
 {
-	return ((getPowerCount() > 0) || isAreaCleanPower());
+	return ((getPowerCount() > 0) || isAreaCleanPower() || 
+		GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_FUSION")));
 }
 
 
@@ -10845,7 +10874,11 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			if (NO_BONUS != eBonus && iNumBonuses > 0)
 			{
 				//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-				iCommerce += ((getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1) ? 2 : 1) * (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+				iCommerce += (eCorporation == (CorporationTypes)GC.getInfoTypeForString("CORPORATION_COMPUTER_INDUSTRY") && (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_TELECOMMUNICATIONS"))) ? 1.25 : 1) * 
+					(eCorporation == (CorporationTypes)GC.getInfoTypeForString("CORPORATION_COMPUTER_INDUSTRY") && (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_SATELLITES"))) ? 1.25 : 1) * 
+					(getOwner() == NETHERLANDS && eCorporation == ((CorporationTypes)1) ? 2 : 1) * 
+					(GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * 
+					GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			}
 		}
 	}

@@ -5,6 +5,11 @@
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_POPULATION</Tag>
+		<English>Population</English>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>

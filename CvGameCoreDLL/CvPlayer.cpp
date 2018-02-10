@@ -6650,6 +6650,10 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit) const
 		iMultiplier += getDomainProductionModifier((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
 	}
 
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_SUPERMATERIALS"))) {
+		iMultiplier += 25;
+	}
+
 	for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
 	{
 		if (hasTrait((TraitTypes)iI))
@@ -6680,6 +6684,10 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 				iMultiplier += GC.getSpecialBuildingInfo((SpecialBuildingTypes) GC.getBuildingInfo(eBuilding).getSpecialBuildingType()).getProductionTraits(iI);
 			}
 		}
+	}
+
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_SUPERMATERIALS"))) {
+		iMultiplier += 25;
 	}
 
 	// Leoreth: civics
@@ -6715,6 +6723,10 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 int CvPlayer::getProductionModifier(ProjectTypes eProject) const
 {
 	int iMultiplier = 0;
+	
+	if (GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_SUPERMATERIALS"))) {
+		iMultiplier += 25;
+	}
 
 	if (GC.getProjectInfo(eProject).isSpaceship())
 	{

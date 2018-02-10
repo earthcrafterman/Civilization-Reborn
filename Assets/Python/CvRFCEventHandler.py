@@ -29,6 +29,7 @@ import Areas
 import Civilizations
 import AIParameters
 import GreatPeople as gp
+import UnitEffects
 
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
@@ -514,6 +515,7 @@ class CvRFCEventHandler:
 	def onUnitBuilt(self, argsList):
 		city, unit = argsList
 		vic.onUnitBuilt(city, unit)
+		UnitEffects.onUnitBuilt(city, unit)
 		
 		if unit.getUnitType() == iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
 			utils.handleChineseCities(unit)

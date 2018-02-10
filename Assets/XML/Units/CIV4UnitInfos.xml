@@ -839,6 +839,43 @@
 				</FreePromotion>
 			</FreePromotions>
 		</UnitInfo>
+		
+		<UnitInfo>
+			<Class>UNITCLASS_POPULATION</Class>
+			<Type>UNIT_POPULATION</Type>
+			<Capture>UNITCLASS_POPULATION</Capture>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_POPULATION</Description>
+			<Civilopedia>TXT_KEY_UNIT_POPULATION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_POPULATION_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bFood>0</bFood>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>10000</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>0</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iAsset>2</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>2</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>2</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_ANCIENT</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCOUT</Class>
 			<Type>UNIT_SCOUT</Type>

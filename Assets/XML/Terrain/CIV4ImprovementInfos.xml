@@ -262,6 +262,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -317,6 +323,12 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
@@ -398,7 +410,14 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -525,7 +544,14 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -661,6 +687,13 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -726,6 +759,13 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
@@ -855,6 +895,15 @@
 					<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -918,6 +967,14 @@
 				</TechYieldChange>
 				<TechYieldChange>
 					<PrereqTech>TECH_ELECTRICITY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1082,6 +1139,14 @@
 						<iYield>1</iYield>
 					</RouteYields>
 				</RouteYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1244,6 +1309,14 @@
 						<iYield>1</iYield>
 					</RouteYields>
 				</RouteYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1310,6 +1383,13 @@
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -1419,6 +1499,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -1507,6 +1593,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -1558,7 +1650,15 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1685,6 +1785,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -1745,7 +1851,16 @@
 			</FeatureMakesValids>
 			<ImprovementPillage/>
 			<ImprovementUpgrade>IMPROVEMENT_HAMLET</ImprovementUpgrade>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1802,7 +1917,16 @@
 			</FeatureMakesValids>
 			<ImprovementPillage>IMPROVEMENT_COTTAGE</ImprovementPillage>
 			<ImprovementUpgrade>IMPROVEMENT_VILLAGE</ImprovementUpgrade>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1849,6 +1973,14 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_PRINTING</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1902,6 +2034,14 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_PRINTING</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -2058,7 +2198,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TOURISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -2127,7 +2276,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TOURISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
