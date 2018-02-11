@@ -83,6 +83,7 @@ class Religions:
 					if not gc.getMap().plot(92, 39).getPlotCity().isNone():
 						self.foundReligion((92, 39), iHinduism)
 				
+		self.checkConfucianism(iGameTurn)
 		self.checkJudaism(iGameTurn)
 		
 		#self.checkBuddhism(iGameTurn)
@@ -237,7 +238,14 @@ class Religions:
 		city = utils.getRandomEntry(lCoreCities)
 		
 		self.foundReligion((city.getX(), city.getY()), iReligion)
-					
+		
+## CONFUCIANISM
+	def checkConfucianism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iConfucianism): return
+
+		if iGameTurn == getTurnForYear(-550) - utils.getTurns(data.iSeed % 5):
+			self.foundReligion((104, 45), iConfucianism)
+			
 ## JUDAISM
 
 	def checkJudaism(self, iGameTurn):

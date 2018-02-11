@@ -453,4 +453,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CHIEFDOM_ADJECTIVE</Tag>
+		<English>%s2 Chiefdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEAGUE_ADJECTIVE</Tag>
+		<English>%s2 League</English>
+	</TEXT>
 </Civ4GameText>
