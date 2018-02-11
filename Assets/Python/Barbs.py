@@ -19,17 +19,22 @@ tMinorCities = (
 (-3000, (73, 38), iIndependent, 'Yerushalayim', 1, iArcher, 2),	# Jerusalem
 (-3000, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-3000, (69, 30), iIndependent2, 'Mero&#235;', 3, iArcher, 1), 	# Meroe
+(-3000, (102, 44), iIndependent, 'Luoyang', 1, -1, -1), 	# Neolithic China
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
-(-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
+(-1100, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
+(-1100, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
+(-495, (105, 43), iIndependent2, 'Yuecheng', 1, iArcher, 2), 	# Nanjing
 (-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
-(-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
+(-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, -1, -1),	# Shenyang
 (-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
+(-257, (101, 37), iIndependent2, 'Co Loa', 2, iWarElephant, 1), 	# Hanoi
+(-214, (105, 39), iIndependent2, 'Panyu ', 2, iAxeman, 2), 	# Guangzhou
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
 (-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Albán
@@ -322,23 +327,27 @@ class Barbs:
 			if not self.canFoundCity(sName): continue
 			
 			lReligions = []
+			lBuildings = []
+			iCulture = 10 * (gc.getGame().getCurrentEra() + 1)
 			bForceSpawn = False
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
 			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
+			if sName == 'Zou' or sName == 'Zhongdu' or sName == 'Fenghao' or sName == 'Yuecheng':
+				lBuildings = [iLibrary, iPaganTemple]
+				bForceSpawn = True
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
 			utils.evacuate(tPlot)
 		
-			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
+			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions, lBuildings, iCulture):
 				data.lMinorCityFounded[i] = True
 		
 	def canFoundCity(self, sName):
 		if sName == 'Kanchipuram' and utils.getHumanID() == iTamils: return False
 		elif sName == 'Tanjapuri' and gc.getPlayer(iTamils).isAlive(): return False
-		elif sName == 'Zhongdu' and utils.getHumanID() == iChina: return False
 		elif sName == 'Hamburg' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 == 0): return False
 		elif sName == 'L&#252;beck' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 != 0): return False
 		elif sName == 'Rasa' and gc.getPlayer(iTibet).isAlive(): return False
@@ -346,7 +355,7 @@ class Barbs:
 		
 		return True
 	
-	def foundCity(self, iPlayer, tPlot, sName, iPopulation, iUnitType = -1, iNumUnits = -1, lReligions = []):
+	def foundCity(self, iPlayer, tPlot, sName, iPopulation, iUnitType = -1, iNumUnits = -1, lReligions = [], lBuildings = [], iCulture = 1):
 		pPlayer = gc.getPlayer(iPlayer)
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
@@ -359,8 +368,8 @@ class Barbs:
 			city.setName(sName, False)
 			city.setPopulation(iPopulation)
 			
-			plot.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
-			city.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
+			plot.changeCulture(iPlayer, iCulture, True)
+			city.changeCulture(iPlayer, iCulture, True)
 			
 			if iNumUnits > 0 and iUnitType > 0:
 				utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
@@ -369,6 +378,9 @@ class Barbs:
 				if gc.getGame().isReligionFounded(iReligion):
 					city.setHasReligion(iReligion, True, False, False)
 					
+			for iBuilding in lBuildings:
+				city.setHasRealBuilding(iBuilding, True)
+			
 			return True
 		
 		return False

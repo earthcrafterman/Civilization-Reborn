@@ -886,7 +886,7 @@ class RiseAndFall:
 				
 				
 		if utils.getScenario() == i3000BC:
-			iFirstSpawn = iGreece
+			iFirstSpawn = iChina
 		elif utils.getScenario() == i600AD:
 			iFirstSpawn = iArabia
 		else:
@@ -2463,6 +2463,9 @@ class RiseAndFall:
 
 
 	def createStartingUnits(self, iCiv, tPlot):
+		if iCiv == iChina:
+			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 1)
@@ -2556,9 +2559,9 @@ class RiseAndFall:
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
 			utils.makeUnit(iHorseman, iCiv, tPlot, 1)
-			if utils.getHumanID() != iKorea:
-				utils.makeUnit(iSpearman, iCiv, tPlot, 2)
-				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
+			#if utils.getHumanID() != iKorea:
+			#	utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			#	utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
@@ -2915,6 +2918,8 @@ class RiseAndFall:
 
 				
 	def createStartingWorkers( self, iCiv, tPlot ):
+		if iCiv == iChina:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iIndia:
 			#utils.makeUnit(iPunjabiWorker, iCiv, tPlot, 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)

@@ -112,7 +112,7 @@ tCapitals = (
 (60, 44), # Rome
 (91, 30), # Thanjavur
 (72, 29), # Aksum
-(109, 46), # Seoul
+(108, 48), # Pyongyang
 (22, 35), # Tikal
 (68, 45), # Constantinople
 (113, 45), # Kyoto
@@ -189,7 +189,7 @@ iTurkey : (68, 45),	# Istanbul
 
 tBirthArea = (
 ((66, 30), 	(70, 36)), 	# Egypt
-((99, 43), 	(107, 47)), 	# China
+((99, 43), 	(101, 45)), 	# China
 ((75, 39), 	(77, 42)), 	# Babylonia
 ((85, 37), 	(88, 41)), 	# Harappa
 ((65, 39), 	(70, 45)), 	# Greece

@@ -142,7 +142,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 38
+iNumMinorCities = 50
 
 # scripted conquerors
 iNumConquests = 10
@@ -248,7 +248,7 @@ lOlderNeighbours = [
 # converted to years - edead
 tBirth = (
 -3000, # 0, #3000BC			# Egypt
--2070, # 0, #3000BC			# China
+-1050, # 0, #1050BC			# China, founding of Fenghao
 -3000, # 0, #3000BC			# Babylonia
 -3000,					# Harappa
 -1600, # 50, #1600BC			# Greece

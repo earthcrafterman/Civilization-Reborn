@@ -1244,13 +1244,11 @@ def specificAdjective(iPlayer):
 				
 				return "TXT_KEY_CIV_CHINA_SUI"
 			
-			if iEra == iClassical:
+			if iEra <= iClassical:
 				if iGameTurn >= getTurnForYear(0):
 					return "TXT_KEY_CIV_CHINA_HAN"
 				
 				return "TXT_KEY_CIV_CHINA_QIN"
-			
-			return "TXT_KEY_CIV_CHINA_ZHOU"
 			
 	elif iPlayer == iBabylonia:
 		if bCityStates and not bEmpire:
@@ -1524,7 +1522,47 @@ def republicTitle(iPlayer):
 	return key(iPlayer, "REPUBLIC")
 
 def defaultTitle(iPlayer):
-	return desc(iPlayer, key(iPlayer, "DEFAULT"))
+	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = gc.getPlayer(iPlayer)
+	tPlayer = gc.getTeam(pPlayer.getTeam())
+	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
+	
+	iNumCities = pPlayer.getNumCities()
+	if iNumCities == 0:
+		return desc(iPlayer, key(iPlayer, "DEFAULT"))
+	
+	bReborn = pPlayer.isReborn()
+	iReligion = pPlayer.getStateReligion()
+	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	tCapitalCoords = capitalCoords(iPlayer)
+	bAnarchy = pPlayer.isAnarchy()
+	bEmpire = isEmpire(iPlayer)
+	bCityStates = isCityStates(iPlayer)
+	bTheocracy = (iCivicReligion == iTheocracy)
+	bResurrected = data.players[iPlayer].iResurrections > 0
+	bCapitulated = isCapitulated(iPlayer)
+	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
+	iEra = pPlayer.getCurrentEra()
+	iGameEra = gc.getGame().getCurrentEra()
+	bWar = isAtWar(iPlayer)
+	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
+	
+	title = "TXT_KEY_KINGDOM_ADJECTIVE"
+	
+	if iEra == iAncient:
+		if not bMonarchy:
+			title = "TXT_KEY_CHIEFDOM_ADJECTIVE"
+	
+	if iEra == iClassical:
+		if bCityStates:
+			if bWar:
+				title = "TXT_KEY_LEAGUE_ADJECTIVE"
+			title = "TXT_KEY_CITY_STATES_ADJECTIVE"
+
+		if bEmpire:
+			title = "TXT_KEY_EMPIRE_ADJECTIVE"
+	
+	return title
 	
 def specificTitle(iPlayer, lPreviousOwners=[]):
 	iGameTurn = gc.getGame().getGameTurn()
