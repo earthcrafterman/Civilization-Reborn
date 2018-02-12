@@ -309,7 +309,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_ATUA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Atua.dds</PaganReligionButton>
 			<Identifier>AUS</Identifier>
-			<StartingYear>1851</StartingYear>
+			<StartingYear>1850</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>75</LoadingTime>
 				<LoadingTime>45</LoadingTime>

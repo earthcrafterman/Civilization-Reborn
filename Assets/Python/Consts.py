@@ -292,7 +292,7 @@ tBirth = (
 1775, # 346, #1775AD #332 for 1733AD	# America
 1810,					# Argentina
 1822,					# Brazil
-1851,					# Australia
+1850,					# Australia
 1867,	#Canada
 #1791,	#Canada
 -3000, # 0,
