@@ -62,7 +62,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_FIREARM_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
 				</Unit>
 			</Units>
@@ -1494,7 +1494,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
 					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
 				</Unit>
 			</Units>

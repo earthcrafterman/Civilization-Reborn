@@ -8,10 +8,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OCEAN_LINER</Tag>
 		<English>Ocean Liner</English>
-		<French>Ocean Liner</French>
-		<German>Ocean Liner</German>
-		<Italian>Ocean Liner</Italian>
-		<Spanish>Ocean Liner</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FIREARM_SKIRMISHER</Tag>
+		<English>Firearm Skirmisher</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COMMANDO</Tag>
+		<English>Commando</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPECIAL_FORCES</Tag>
+		<English>Special Forces</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUPER_CARRIER</Tag>
