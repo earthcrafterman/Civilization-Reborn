@@ -2865,6 +2865,9 @@ class RiseAndFall:
 			if iReligion >= 0:
 				pAustralia.setLastStateReligion(iReligion)
 				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
+			else:
+				pAustralia.setLastStateReligion(iProtestantism)
+				utils.makeUnit(iProtestantMissionary, iCiv, tPlot, 1)
 		elif iCiv == iCanada:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iDragoon, iCiv, tPlot, 3)
