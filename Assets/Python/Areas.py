@@ -227,7 +227,7 @@ tBirthArea = (
 ((69, 41), 	(76, 48)), 	# Turkey
 ((100, 32), 	(103, 36)), 	# Thailand
 ((61, 19), 	(65, 22)), 	# Congo
-((61, 56),	(65, 62)),	# Sweden
+((61, 56),	(67, 62)),	# Sweden
 ((56, 52), 	(58, 54)), 	# Holland
 ((58, 49), 	(65, 55)), 	# Germany
 ((25, 43), 	(32, 50)), 	# America
@@ -242,7 +242,6 @@ iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
 iTurkey : 	((67, 41), 	(76, 48)), 	# 2 more west
-iSweden :	((61, 56),	(67, 62)),	# Includes Finland
 iArgentina : 	((29, 3), 	(35, 13)), 	# includes Chile
 }
 
