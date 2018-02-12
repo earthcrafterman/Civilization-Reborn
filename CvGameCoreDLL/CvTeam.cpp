@@ -6224,31 +6224,6 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 	{
 		changeRiverTradeCount(iChange);
 	}
-
-	if (eTech == GC.getInfoTypeForString("TECH_UNIFIED_THEORY")) {
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-				{
-					pCapitalCity = GET_PLAYER((PlayerTypes)iI).getCapitalCity();
-
-					if (pCapitalCity != NULL)
-					{
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_GENERAL")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_SPY")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_SCIENTIST")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ENGINEER")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_MERCHANT")), false, false);
-						pCapitalCity->createGreatPeople((UnitTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_STATESMAN")), false, false);
-					}
-				}
-			}
-		}
-	}
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (GC.getBuildingInfo((BuildingTypes) iI).getObsoleteTech() == eTech)

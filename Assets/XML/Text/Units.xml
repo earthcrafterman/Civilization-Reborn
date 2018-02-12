@@ -5,7 +5,38 @@
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 	</TEXT>
-	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OCEAN_LINER</Tag>
+		<English>Ocean Liner</English>
+		<French>Ocean Liner</French>
+		<German>Ocean Liner</German>
+		<Italian>Ocean Liner</Italian>
+		<Spanish>Ocean Liner</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUPER_CARRIER</Tag>
+		<English>Super Carrier</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PIRATE</Tag>
+		<English>Pirate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CORSAIR</Tag>
+		<English>Corsair</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MISSILE_BOAT</Tag>
+		<English>Missile Boat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ATTACK_SUBMARINE</Tag>
+		<English>Attack Submarine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ESCORT_DESTROYER</Tag>
+		<English>Escort Destroyer</English>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POPULATION</Tag>
 		<English>Population</English>
@@ -77,10 +108,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AXEMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT]</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Tag>
-		<English>Nuclear Submarine</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE_STRATEGY</Tag>

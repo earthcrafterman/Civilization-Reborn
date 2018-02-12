@@ -6,6 +6,10 @@
 		<English>Deforestation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_SOLAR</Tag>
+		<English>Build a [LINK=IMPROVEMENT_SOLAR]Solar Farm[\LINK]</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_OCEAN_FISHERY</Tag>
 		<English>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</English>
 	</TEXT>

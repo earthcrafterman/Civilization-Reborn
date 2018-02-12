@@ -7080,10 +7080,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		if (eYield == YIELD_FOOD && !isImpassable() && GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)GC.getInfoTypeForString("TECH_AUTOMATION"))) {
-			iYield += 2;
-		}
-
 		//Rhye - start UP (not shown in debug mode)
 		if (ePlayer == MALI)
 		{

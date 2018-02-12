@@ -410,14 +410,7 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges>
-				<TechYieldChange>
-					<PrereqTech>TECH_GENETICS</PrereqTech>
-					<TechYields>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-			</TechYieldChanges>
+			<TechYieldChanges/>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -544,14 +537,7 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges>
-				<TechYieldChange>
-					<PrereqTech>TECH_GENETICS</PrereqTech>
-					<TechYields>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-			</TechYieldChanges>
+			<TechYieldChanges/>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -707,6 +693,53 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
+			<Type>IMPROVEMENT_SOLAR</Type>
+			<Description>TXT_KEY_IMPROVEMENT_SOLAR</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SOLAR</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+			</YieldChanges>
+			<bActsAsCity>0</bActsAsCity>
+			<bHillsMakesValid>0</bHillsMakesValid>
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
+			<bRiverSideMakesValid>0</bRiverSideMakesValid>
+			<bNoFreshWater>0</bNoFreshWater>
+			<bRequiresFlatlands>0</bRequiresFlatlands>
+			<bRequiresRiverSide>0</bRequiresRiverSide>
+			<bRequiresIrrigation>0</bRequiresIrrigation>
+			<bCarriesIrrigation>0</bCarriesIrrigation>
+			<bRequiresFeature>0</bRequiresFeature>
+			<bWater>0</bWater>
+			<bGoody>0</bGoody>
+			<bPermanent>0</bPermanent>
+			<iAdvancedStartCost>30</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iTilesPerGoody>0</iTilesPerGoody>
+			<iGoodyRange>0</iGoodyRange>
+			<iFeatureGrowth>0</iFeatureGrowth>
+			<iUpgradeTime>0</iUpgradeTime>
+			<iAirBombDefense>10</iAirBombDefense>
+			<iDefenseModifier>0</iDefenseModifier>
+			<iHappinessPercent>0</iHappinessPercent>
+			<iPillageGold>10</iPillageGold>
+			<bOutsideBorders>0</bOutsideBorders>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<FeatureMakesValids/>
+			<ImprovementPillage/>
+			<ImprovementUpgrade/>
+			<TechYieldChanges/>
+			<RouteYieldChanges/>
+			<bGraphicalOnly>0</bGraphicalOnly>
+		</ImprovementInfo>
+		<ImprovementInfo>
 			<Type>IMPROVEMENT_WORKSHOP</Type>
 			<Description>TXT_KEY_IMPROVEMENT_WORKSHOP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_WORKSHOP_PEDIA</Civilopedia>
@@ -765,8 +798,17 @@
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
-					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<PrereqTech>TECH_NANOTECHNOLOGY</PrereqTech>
 					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_NANOTECHNOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
@@ -895,12 +937,11 @@
 					<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
-						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
-					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<PrereqTech>TECH_ELECTRICITY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -908,7 +949,7 @@
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
-					<PrereqTech>TECH_ELECTRICITY</PrereqTech>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1129,6 +1170,14 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -1139,14 +1188,6 @@
 						<iYield>1</iYield>
 					</RouteYields>
 				</RouteYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_GENETICS</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
 			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1299,6 +1340,14 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -1309,14 +1358,6 @@
 						<iYield>1</iYield>
 					</RouteYields>
 				</RouteYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_GENETICS</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
 			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1593,12 +1634,6 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_GENETICS</PrereqTech>
-					<TechYields>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -1655,6 +1690,7 @@
 					<PrereqTech>TECH_ROBOTICS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -1708,7 +1744,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1788,6 +1833,8 @@
 				<TechYieldChange>
 					<PrereqTech>TECH_GENETICS</PrereqTech>
 					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -1851,16 +1898,7 @@
 			</FeatureMakesValids>
 			<ImprovementPillage/>
 			<ImprovementUpgrade>IMPROVEMENT_HAMLET</ImprovementUpgrade>
-			<TechYieldChanges>
-				<TechYieldChange>
-					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-			</TechYieldChanges>
+			<TechYieldChanges/>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1917,16 +1955,7 @@
 			</FeatureMakesValids>
 			<ImprovementPillage>IMPROVEMENT_COTTAGE</ImprovementPillage>
 			<ImprovementUpgrade>IMPROVEMENT_VILLAGE</ImprovementUpgrade>
-			<TechYieldChanges>
-				<TechYieldChange>
-					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-			</TechYieldChanges>
+			<TechYieldChanges/>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1973,14 +2002,6 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_PRINTING</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -2041,10 +2062,8 @@
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
-					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
 					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -2154,7 +2173,6 @@
 			<iAirBombDefense>20</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>100</iHappinessPercent>
-			<iHealthPercent>100</iHealthPercent>
 			<iPillageGold>0</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -2211,7 +2229,6 @@
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
-
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_MARINE_RESERVE</Type>
 			<Description>TXT_KEY_IMPROVEMENT_MARINE_RESERVE</Description>

@@ -48,7 +48,6 @@ tMinorCities = (
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, iCrossbowman, 2),		# Kiev
-(990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa

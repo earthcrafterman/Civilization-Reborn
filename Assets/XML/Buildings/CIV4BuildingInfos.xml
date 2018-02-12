@@ -1085,7 +1085,7 @@
 			<Strategy>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RECYCLING_CENTER</ArtDefineTag>
-			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+			<PrereqTech>TECH_ECOLOGY</PrereqTech>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

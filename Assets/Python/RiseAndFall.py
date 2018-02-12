@@ -736,11 +736,11 @@ class RiseAndFall:
 		elif iGameTurn == getTurnForYear(-400):
 			self.giveEarlyColonists(iRome)
 
-		if iGameTurn == getTurnForYear(840):
-			if utils.getHumanID() != iEngland:
-				pEngland.found(49, 56)
-				utils.makeUnit(iCrossbowman, iEngland, (49, 56), 1)
-				utils.makeUnit(iWorker, iEngland, (49, 56), 1)
+		#if iGameTurn == getTurnForYear(840):
+		#	if utils.getHumanID() != iEngland:
+		#		pEngland.found(49, 56)
+		#		utils.makeUnit(iCrossbowman, iEngland, (49, 56), 1)
+		#		utils.makeUnit(iWorker, iEngland, (49, 56), 1)
 			
 		if utils.isYearIn(860, 1250):
 			if iGameTurn % utils.getTurns(10) == 9:
@@ -2684,14 +2684,18 @@ class RiseAndFall:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
 			utils.createMissionaries(iCiv, 1)
 		elif iCiv == iEngland:
-			if utils.getHumanID() != iEngland:
-				utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
-				utils.createSettlers(iCiv, 2)
-				utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			else:
-				utils.createSettlers(iCiv, 3)
-				utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-				
+			#if utils.getHumanID() != iEngland:
+			#	utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
+			#	utils.createSettlers(iCiv, 2)
+			#	utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			#else:
+			#	utils.createSettlers(iCiv, 3)
+			#	utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			
+			utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
+			utils.createSettlers(iCiv, 3)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			
 			utils.createMissionaries(iCiv, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
@@ -3028,9 +3032,10 @@ class RiseAndFall:
 		elif iCiv == iFrance:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iEngland:
-			if utils.getHumanID() != iEngland:
-				utils.makeUnit(iWorker, iCiv, tPlot, 2)
-			else: utils.makeUnit(iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+			#if utils.getHumanID() != iEngland:
+			#	utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			#else: utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iHolyRome:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iRussia:

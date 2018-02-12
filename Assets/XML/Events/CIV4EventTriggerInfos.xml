@@ -5579,7 +5579,7 @@
 				<UnitClass>UNITCLASS_MISSILE_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_STEALTH_DESTROYER</UnitClass>
 				<UnitClass>UNITCLASS_SUBMARINE</UnitClass>
-				<UnitClass>UNITCLASS_NUCLEAR_SUBMARINE</UnitClass>
+				<UnitClass>UNITCLASS_ATTACK_SUBMARINE</UnitClass>
 				<UnitClass>UNITCLASS_CARRIER</UnitClass>
 				<UnitClass>UNITCLASS_TRANSPORT</UnitClass>
 			</UnitsRequired>
@@ -13301,7 +13301,6 @@
 				<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
 				<UnitClass>UNITCLASS_FRIGATE</UnitClass>
 				<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
-				<UnitClass>UNITCLASS_IRONCLAD</UnitClass>
 				<UnitClass>UNITCLASS_TORPEDO_BOAT</UnitClass>
 				<UnitClass>UNITCLASS_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_TRANSPORT</UnitClass>
@@ -13310,7 +13309,7 @@
 				<UnitClass>UNITCLASS_BATTLESHIP</UnitClass>
 				<UnitClass>UNITCLASS_MISSILE_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_SUBMARINE</UnitClass>
-				<UnitClass>UNITCLASS_NUCLEAR_SUBMARINE</UnitClass>
+				<UnitClass>UNITCLASS_ATTACK_SUBMARINE</UnitClass>
 				<UnitClass>UNITCLASS_CARRIER</UnitClass>
 			</UnitsRequired>
 			<iNumUnits>1</iNumUnits>

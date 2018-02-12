@@ -15,6 +15,10 @@
 		<English>Orchard</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SOLAR</Tag>
+		<English>Solar Farm</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_NATURE_RESERVE</Tag>
 		<English>Nature Reserve</English>
 	</TEXT>
