@@ -527,7 +527,7 @@ dStartingLeaders = [
 	iCongo : iMbemba,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
-	iAustralia : iMenzies,
+	iAustralia : iCurtin,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
 	iCanada : iMacDonald,
@@ -2156,6 +2156,9 @@ def leader(iPlayer):
 	
 	elif iPlayer == iBrazil:
 		if iEra >= iGlobal: return iVargas
+		
+	elif iPlayer == iAustralia:
+		if iEra >= iGlobal: return iMenzies
 		
 	elif iPlayer == iCanada:
 		if iEra >= iGlobal: return iTrudeau

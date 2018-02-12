@@ -390,6 +390,10 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
+					<LeaderName>LEADER_CURTIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_MENZIES</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

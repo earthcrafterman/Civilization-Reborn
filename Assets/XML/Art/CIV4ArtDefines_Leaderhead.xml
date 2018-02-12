@@ -990,5 +990,13 @@
 			<NoShaderNIF>Art/Leaderheads/RobertMenzies/fdr.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/RobertMenzies/fdr_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CURTIN</Type>
+			<Button>Art/Leaderheads/Curtin/Btn_LH_curtin.dds</Button>
+			<NIF>Art/Leaderheads/Curtin/curtin.nif</NIF>
+			<KFM>Art/Leaderheads/Curtin/curtin.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Curtin/curtin.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Curtin/bismarck_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
