@@ -618,7 +618,7 @@ class Barbs:
 							utils.makeUnitAI(iUnitType, iPlayer, (x, y), UnitAITypes.UNITAI_ATTACK, 1)
 							
 	def placeCamp(self, iPlayer, iUnitType, iNumUnits, tBR, tTL, bInvasion, iStrength):
-		lPlots = self.possibleTiles(tTL, tBR, bTerritory=bInvasion, bBorder=bInvasion)
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=bInvasion)
 		
 		for i in range(iNumUnits):
 			tPlot = utils.getRandomEntry(lPlots)
