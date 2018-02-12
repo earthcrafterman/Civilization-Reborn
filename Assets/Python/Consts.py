@@ -400,7 +400,7 @@ iCivMexico : (1880, 1940, 1960),
 iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
-iCivBoers : (1902, 1947, 1979),
+iCivBoers : (1920, 1950, 1980),
 iCivCanada : (1920, 1950, 2000),
 }
 

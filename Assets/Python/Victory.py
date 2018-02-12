@@ -1375,8 +1375,8 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iBrazil, 2)
 			
 	elif iPlayer == iBoers:
-		# first goal: Allow no European Colonies in South Africa by 1902 AD
-		if iGameTurn == getTurnForYear(1902):
+		# first goal: Allow no European Colonies in South Africa by 1920 AD
+		if iGameTurn == getTurnForYear(1920):
 			if isAreaFreeOfCivs(utils.getPlotList(tBoerAfricaTL, tBoerAfricaBR), lCivGroups[0]):
 				win(iBoers, 0)
 			else:
@@ -1387,11 +1387,11 @@ def checkTurn(iGameTurn, iPlayer):
 			if countResources(iBoers, iGems) >= 5:
 				win(iBoers, 1)
 				
-		if iGameTurn == getTurnForYear(1947):
+		if iGameTurn == getTurnForYear(1950):
 			expire(iBoers, 1)
 		
 		# third goal: Build an ICBM by 1979 AD
-		if iGameTurn == getTurnForYear(1979):
+		if iGameTurn == getTurnForYear(1980):
 			expire(iBoers, 2)
 				
 	elif iPlayer == iCanada:
