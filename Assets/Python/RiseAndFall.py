@@ -2852,7 +2852,7 @@ class RiseAndFall:
 			if utils.getHumanID() != iBrazil:
 				utils.makeUnitAI(iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 		elif iCiv == iBoers:
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 3, utils.getPlotList((60, 9), (17, 15)))
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iKommando, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
