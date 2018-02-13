@@ -66,7 +66,7 @@ tMinorStates = (
 	(-300, 600, (91, 31), [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 600, (92, 33), [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 900, (105, 49), [iHorseArcher, iSwordsman]), # Jurchen
-	(1100, 1500, (60, 44), [iPikeman, iLongbowman]), # Rome late
+	(1100, 1500, (60, 44), [iPikeman, iCrossbowman]), # Rome late
 	(0, 1100, (60, 44), [iSpearman, iArcher]), # Rome early
 )
 
@@ -281,7 +281,7 @@ class Barbs:
 					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 		
 		if utils.isYearIn(1700, 1900):
-			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
+			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
 			
 		if utils.isYearIn(1500, 1850):
 			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)

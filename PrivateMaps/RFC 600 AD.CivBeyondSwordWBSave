@@ -691,7 +691,7 @@ BeginPlayer
 	CivType=CIVILIZATION_ARGENTINA
 	PlayableCiv=1
 	StartingGold=1200
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
@@ -23226,13 +23226,13 @@ BeginPlot
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=50, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=50, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
@@ -23706,7 +23706,7 @@ BeginPlot
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=49, (Independent)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
