@@ -19745,10 +19745,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=49, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginCity
-		CityOwner=49, (Independent)
+		CityOwner=16, (Vikings)
 		CityName=Reykjavik
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -19758,7 +19758,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		ReligionType=RELIGION_PROTESTANTISM
-		Player49Culture=10, (Independent)
+		Player16Culture=16, (Vikings)
 	EndCity
 	TeamReveal=16,39,47,
 EndPlot

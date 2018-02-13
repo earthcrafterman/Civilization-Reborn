@@ -1020,9 +1020,6 @@ iCivVikings : {
 		"Olav Duun", # 19th
 		"Edvard Munch", # 19th
 		"Edvard Grieg", # 19th
-		iGlobal,
-		
-		"fKaren Blixen", # 20th danish
 	],
 	iGreatScientist : [
 		"Tycho Brahe", # 16th

@@ -574,6 +574,7 @@ def setup():
 
 	elif iScenario == i1700AD:
 		data.players[iEgypt].iResurrections += 1
+
 		for iPlayer in [iMoors]:
 			nameChange(iPlayer)
 			adjectiveChange(iPlayer)
