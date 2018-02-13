@@ -7967,6 +7967,30 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_RABBIT</Type>
+			<Button>Art/Units/Rabbit/rabbitbutton.dds</Button>
+			<fScale>0.2</fScale>
+			<fInterfaceScale>1.3</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Rabbit/killerrabbit.nif</NIF>
+			<KFM>Art/Units/Rabbit/killerrabbit.kfm</KFM>
+			<SHADERNIF>Art/Units/Rabbit/killerrabbit.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/LionShadow.nif</ShadowNIF>
+				<ShadowAttachNode>LionBip Spine1</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.28</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWAHILI_DHOW</Type>
 			<Button>Art/Units/Swahili Dhow/Dhow.dds</Button>
 			<fScale>0.12</fScale>

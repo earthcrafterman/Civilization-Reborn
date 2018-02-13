@@ -1664,4 +1664,16 @@
 		<Tag>TXT_KEY_UNIT_SWEDEN_KAROLIN_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Karolin[COLOR_REVERT], the Swedish replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] promotions.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RABBIT</Tag>
+		<English>Rabbit</English>
+		<French>Lapin</French>
+		<German>Hase</German>
+		<Italian>Coniglio</Italian>
+		<Spanish>Conejo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RABBIT_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Rabbits[COLOR_REVERT] are Barbarian units that spawn in Australia from 1860 AD.</English>
+	</TEXT>
 </Civ4GameText>

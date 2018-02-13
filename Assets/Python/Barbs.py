@@ -285,6 +285,10 @@ class Barbs:
 			
 		if utils.isYearIn(1500, 1850):
 			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
+			
+		# Rabbits in Australia
+		if iGameTurn >= getTurnForYear(1860):
+			self.checkSpawn(iBarbarian, iRabbit, 2 + iHandicap, (103, 10), (118, 22), self.spawnRabbits, iGameTurn, 8, 4)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
@@ -571,3 +575,14 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+			
+	def spawnRabbits(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
+		''' Merijn: inside territory, dispersed over several plots, pillaging'''
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True)
+		
+		for i in range(iNumUnits):
+			tPlot = utils.getRandomEntry(lPlots)
+			if not tPlot: break
+			
+			lPlots.remove(tPlot)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_PILLAGE, 1, sAdj)

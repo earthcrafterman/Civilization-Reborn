@@ -303,7 +303,7 @@ tBirth = (
 1775, # 346, #1775AD #332 for 1733AD	# America
 1810,					# Argentina
 1822,					# Brazil
-1851,					# Australia
+1850,					# Australia
 1852,					# Boers
 1867,	#Canada
 #1791,	#Canada
@@ -1547,7 +1547,7 @@ tPersecutionPreference = (
 )
 
 lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iItaly, iNetherlands, iSweden, iGermany, iAmerica, iArgentina, iBrazil, iCanada]
-lProtestantStart = [iSweden, iNetherlands, iGermany, iAmerica]
+lProtestantStart = [iSweden, iNetherlands, iGermany, iAmerica, iAustralia]
 
 # initialise tech variables to unit indices from XML
 
@@ -1577,8 +1577,8 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 188
-(iOceanLiner, iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
+iNumUnits = 189
+(iOceanLiner, iLion, iBear, iPanther, iWolf, iRabbit, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
 iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
 iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
 iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iSpearman, 
@@ -1776,7 +1776,7 @@ iVictorySecularism = 11
 
 #leaders
 
-iNumLeaders = 131
+iNumLeaders = 132
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
 iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
 iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
@@ -1789,7 +1789,7 @@ iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandrag
 iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub,
 iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya,
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge, iMenzies, iKruger, iMandela, iBenGurion, iShirazi, iDawud, iBarghash, iChristian, iGustavVasa, iKarl) = range(iNumLeaders)
+iGeorge, iCurtin, iMenzies, iKruger, iMandela, iBenGurion, iShirazi, iDawud, iBarghash, iChristian, iGustavVasa, iKarl) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,

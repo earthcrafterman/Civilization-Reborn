@@ -309,7 +309,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_ATUA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Atua.dds</PaganReligionButton>
 			<Identifier>AUS</Identifier>
-			<StartingYear>1851</StartingYear>
+			<StartingYear>1850</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>75</LoadingTime>
 				<LoadingTime>45</LoadingTime>
@@ -389,6 +389,10 @@
 				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_CURTIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 				<Leader>
 					<LeaderName>LEADER_MENZIES</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>

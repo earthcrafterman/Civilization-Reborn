@@ -539,8 +539,12 @@
 		<English>George I</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_CURTIN</Tag>
+		<English>Curtin</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_MENZIES</Tag>
-		<English>Robert Menzies</English>
+		<English>Menzies</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KRUGER</Tag>

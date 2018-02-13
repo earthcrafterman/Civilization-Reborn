@@ -2475,6 +2475,7 @@ class RiseAndFall:
 		elif iCiv == iAustralia:
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 3)
+			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iBoers:
 			utils.makeUnit(iKommando, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
@@ -2911,6 +2912,9 @@ class RiseAndFall:
 			if iReligion >= 0:
 				pAustralia.setLastStateReligion(iReligion)
 				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
+			else:
+				pAustralia.setLastStateReligion(iProtestantism)
+				utils.makeUnit(iProtestantMissionary, iCiv, tPlot, 1)
 		elif iCiv == iBoers:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
