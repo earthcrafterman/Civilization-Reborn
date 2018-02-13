@@ -19,15 +19,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BOER_DEFAULT</Tag>
-		<English>Boer Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BOER_REPUBLIC</Tag>
-		<English>Boer Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BOER_DEMOCRATIC</Tag>
-		<English>Republic of South Africa</English>
+		<English>Boer Republics</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BOER_COMMUNIST</Tag>
@@ -38,15 +30,59 @@
 		<English>Union of South Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BOER_DESC_FASCIST</Tag>
-		<English>United Sovereignty of Africa</English>
+		<Tag>TXT_KEY_CIV_BOER_FASCIST</Tag>
+		<English>Afrikaner Volksstaat</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BOER_ENGLAND</Tag>
-		<English>States of Cape Colony</English>
+		<English>Kaap de Goede Hoop</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BOER_NETHERLANDS</Tag>
 		<English>Orange states</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_REPUBLIC</Tag>
+		<English>Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Republik %s1:Republik %s1:Republik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica di %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_UNION</Tag>
+		<English>Union of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_SOUTH_AFRICA</Tag>
+		<English>South Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_TRANSVAAL</Tag>
+		<English>Republic of Transvaal</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_ORANGE_FREE_STATE</Tag>
+		<English>Orange Free State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BOER_NATALIA</Tag>
+		<English>Natalia Republic</English>
 	</TEXT>
 </Civ4GameText>

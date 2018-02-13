@@ -12232,6 +12232,7 @@
 			<Description>TXT_KEY_UNIT_PIRATE</Description>
 			<Civilopedia>TXT_KEY_UNIT_PRIVATEER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_PIRATE_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
@@ -12354,6 +12355,7 @@
 			<Description>TXT_KEY_UNIT_CORSAIR</Description>
 			<Civilopedia>TXT_KEY_UNIT_PRIVATEER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_PIRATE_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
@@ -12475,6 +12477,7 @@
 			<Description>TXT_KEY_UNIT_PRIVATEER</Description>
 			<Civilopedia>TXT_KEY_UNIT_PRIVATEER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_PIRATE_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
@@ -12600,6 +12603,7 @@
 			<Description>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT</Description>
 			<Civilopedia>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_PIRATE_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>

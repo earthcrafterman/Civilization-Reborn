@@ -418,7 +418,7 @@ iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
 iCivAustralia : (1950, 1950, -1),
-iCivBoers : (1902, 1947, 1979),
+iCivBoers : (1920, 1950, 1980),
 iCivCanada : (1920, 1950, 2000),
 iCivIsrael : (1980, 2000, -1),
 }
@@ -1546,8 +1546,8 @@ tPersecutionPreference = (
 (iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iBuddhism, iHinduism, iTaoism, iConfucianism), # Zoroastrianism
 )
 
-lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iItaly, iNetherlands, iSweden, iGermany, iAmerica, iArgentina, iBrazil, iCanada]
-lProtestantStart = [iSweden, iNetherlands, iGermany, iAmerica, iAustralia]
+lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iItaly, iNetherlands, iSweden, iGermany, iAmerica, iArgentina, iBrazil, iAustralia, iBoers, iCanada]
+lProtestantStart = [iSweden, iNetherlands, iGermany, iAmerica, iAustralia, iBoers]
 
 # initialise tech variables to unit indices from XML
 
@@ -1591,7 +1591,7 @@ iChangSuek, iGhulamWarrior, iFarari, iPistolier, iCuirassier, iConquistador, iWi
 iDragoon, iCossack, iGrenadierCavalry, iCavalry, iRurales, iKommando, iWarElephant, iBallistaElephant, iAfricanWarElephant, iTank, iPanzer, 
 iMainBattleTank, iMerkava, iGunship, iCatapult, iHwacha, iTrebuchet, iBombard, iSiegeElephant, iCannon, iHeavyCannon, iArtillery, 
 iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDharani,
-iCog, iDhow, iGalleass, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPirate, iCorsair, iPrivateer, iOrangLaut, iCorsair, iFrigate,
+iCog, iDhow, iGalleass, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPirate, iCorsair, iPrivateer, iOrangLaut, iMoorCorsair, iFrigate,
 iShipOfTheLine, iTorpedoBoat, iMissileBoat, iCruiser, iTransport, iDestroyer, iCorvette, iEscortDestroyer, iBattleship, iMissileCruiser, iStealthDestroyer,
 iSubmarine, iAttackSubmarine, iCarrier, iSuperCarrier, iBiplane, iFighter, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber,
 iICBM, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy, iFemaleGreatProphet,

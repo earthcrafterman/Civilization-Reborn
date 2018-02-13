@@ -97,9 +97,22 @@ class UniquePowers:
 
 		iOwner = pWinningUnit.getOwner()
 
-		if (iOwner == iVikings and gc.getGame().getGameTurn() <= getTurnForYear(1500)) or pWinningUnit.getUnitType() == iCorsair:
+		if (iOwner == iVikings and gc.getGame().getGameTurn() <= getTurnForYear(1500) or 
+		pWinningUnit.getUnitType() == iPirate or 
+		pWinningUnit.getUnitType() == iCorsair or 
+		pWinningUnit.getUnitType() == iPrivateer or 
+		pWinningUnit.getUnitType() == iOrangLaut or
+		pWinningUnit.getUnitType() == iMoorCorsair):
 			if cLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
 				iGold = cLosingUnit.getProductionCost() / 2
+				if((iOwner == iVikings and gc.getGame().getGameTurn() <= getTurnForYear(1500) and (
+						pWinningUnit.getUnitType() == iPirate or 
+						pWinningUnit.getUnitType() == iCorsair or 
+						pWinningUnit.getUnitType() == iPrivateer or 
+						pWinningUnit.getUnitType() == iOrangLaut or
+						pWinningUnit.getUnitType() == iMoorCorsair)) or
+					pWinningUnit.getUnitType() == iMoorCorsair):
+					iGold *= 2
 				iGold = utils.getTurns(iGold)
 				gc.getPlayer(iOwner).changeGold(iGold)
 				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()

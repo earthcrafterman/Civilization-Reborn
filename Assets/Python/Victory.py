@@ -1474,9 +1474,10 @@ def checkTurn(iGameTurn, iPlayer):
 				data.iAustraliaHappinessTurns += 1
 				if data.iAustraliaHappinessTurns >= utils.getTurns(25):
 					win(iAustralia, 2)
+
 	elif iPlayer == iBoers:
-		# first goal: Allow no European Colonies in South Africa by 1902 AD
-		if iGameTurn == getTurnForYear(1902):
+		# first goal: Allow no European Colonies in South Africa by 1920 AD
+		if iGameTurn == getTurnForYear(1920):
 			if isAreaFreeOfCivs(utils.getPlotList(tBoerAfricaTL, tBoerAfricaBR), lCivGroups[0]):
 				win(iBoers, 0)
 			else:
@@ -1487,11 +1488,11 @@ def checkTurn(iGameTurn, iPlayer):
 			if countResources(iBoers, iGems) >= 5:
 				win(iBoers, 1)
 				
-		if iGameTurn == getTurnForYear(1947):
+		if iGameTurn == getTurnForYear(1950):
 			expire(iBoers, 1)
 		
 		# third goal: Build an ICBM by 1979 AD
-		if iGameTurn == getTurnForYear(1979):
+		if iGameTurn == getTurnForYear(1980):
 			expire(iBoers, 2)
 			
 	elif iPlayer == iCanada:
@@ -1610,6 +1611,7 @@ def checkHistoricalVictory(iPlayer):
 	if gc.getGame().getWinner() == -1:
 		if countAchievedGoals(iPlayer) == 3:
 			gc.getGame().setWinner(iPlayer, 7)
+
 
 def onUnitBuilt(city, unit):
 	if not gc.getGame().isVictoryValid(7): return
@@ -2055,7 +2057,7 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 			data.iVikingGold += iGold
 
 	elif iPlayer == iMoors:
-		if isPossible(iMoors, 2) and iUnit == iCorsair:
+		if isPossible(iMoors, 2) and iUnit == iMoorCorsair:
 			data.iMoorishGold += iGold
 
 def onCityCaptureGold(iPlayer, iGold):

@@ -2916,11 +2916,18 @@ class RiseAndFall:
 				pAustralia.setLastStateReligion(iProtestantism)
 				utils.makeUnit(iProtestantMissionary, iCiv, tPlot, 1)
 		elif iCiv == iBoers:
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 3, utils.getPlotList((60, 9), (17, 15)))
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iKommando, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			iReligion = self.findAreaReligion(iCiv, utils.getPlotList((60, 9), (17, 15)))
+			if iReligion >= 0:
+				pBoers.setLastStateReligion(iReligion)
+				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
+			else:
+				pBoers.setLastStateReligion(iProtestantism)
+				utils.makeUnit(iProtestantMissionary, iCiv, tPlot, 1)
 		elif iCiv == iCanada:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iDragoon, iCiv, tPlot, 3)
