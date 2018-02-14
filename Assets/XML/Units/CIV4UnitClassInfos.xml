@@ -639,6 +639,14 @@
 			<DefaultUnit>UNIT_ICBM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_PURE_FUSION_MISSILE</Type>
+			<Description>TXT_KEY_UNIT_PURE_FUSION_MISSILE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_PURE_FUSION_MISSILE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_NUCLEAR_BOMBER</Type>
 			<Description>TXT_KEY_UNIT_NUCLEAR_BOMBER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

@@ -14869,6 +14869,49 @@
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_PURE_FUSION_MISSILE</Class>
+			<Type>UNIT_PURE_FUSION_MISSILE</Type>
+			<Domain>DOMAIN_IMMOBILE</Domain>
+			<DefaultUnitAI>UNITAI_ICBM</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_PURE_FUSION_MISSILE</Description>
+			<Civilopedia>TXT_KEY_UNIT_ICBM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_ICBM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bNukeImmune>1</bNukeImmune>
+			<bMechanized>1</bMechanized>
+			<bSuicide>1</bSuicide>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ICBM</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqBuilding>BUILDING_FUSION_PLANT</PrereqBuilding>
+			<PrereqTech>TECH_FUSION</PrereqTech>
+			<iCost>500</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iNukeRange>1</iNukeRange>
+			<iAsset>10</iAsset>
+			<iPower>40</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ICBM</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_GREAT_PROPHET</Class>
 			<Type>UNIT_GREAT_PROPHET</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>

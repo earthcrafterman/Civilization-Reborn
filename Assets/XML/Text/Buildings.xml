@@ -6,6 +6,22 @@
 		<English>The [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] increases a city's scientific research as well as providing a small amount of culture.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUPERMATERIAL_SYNTHESIZER</Tag>
+		<English>Supermaterial Synthesizer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TV_DISTRIBUTOR</Tag>
+		<English>TV Distributor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AIR_TRAFFIC_CONTROL_TOWER</Tag>
+		<English>Air Traffic Control Tower</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FUSION_PLANT</Tag>
+		<English>Fusion Plant</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Tag>
 		<English>Automated Factory</English>
 	</TEXT>

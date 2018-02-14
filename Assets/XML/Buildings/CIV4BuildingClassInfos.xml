@@ -34,7 +34,42 @@
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_FORBIDDEN_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
-		
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SUPERMATERIAL_SYNTHESIZER</Type>
+			<Description>TXT_KEY_BUILDING_SUPERMATERIAL_SYNTHESIZER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SUPERMATERIAL_SYNTHESIZER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_TV_DISTRIBUTOR</Type>
+			<Description>TXT_KEY_BUILDING_TV_DISTRIBUTOR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_TV_DISTRIBUTOR</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AIR_TRAFFIC_CONTROL_TOWER</Type>
+			<Description>TXT_KEY_BUILDING_AIR_TRAFFIC_CONTROL_TOWER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AIR_TRAFFIC_CONTROL_TOWER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FUSION_PLANT</Type>
+			<Description>TXT_KEY_BUILDING_FUSION_PLANT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FUSION_PLANT</DefaultBuilding>
+		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_AUTOMATED_FACTORY</Type>
 			<Description>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Description>
