@@ -2462,18 +2462,18 @@ class RiseAndFall:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 3)
 		elif iCiv == iAmerica:
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 3)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 3)
 			utils.makeUnit(iMinuteman, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 3)
 		elif iCiv == iArgentina:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 2)
 			utils.makeUnit(iGrenadierCavalry, iCiv, tPlot, 4)
 		elif iCiv == iBrazil:
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iAustralia:
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iBoers:
@@ -2859,7 +2859,7 @@ class RiseAndFall:
 				utils.makeUnit(iCannon, iCiv, tPlot, 5, "", 2)
 		elif iCiv == iAmerica:
 			utils.createSettlers(iCiv, 8)
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 2)
 			utils.makeUnit(iMinuteman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
@@ -2889,7 +2889,7 @@ class RiseAndFall:
 				utils.makeUnit(iCannon, iCiv, tPlot, 2, "", 2)
 		elif iCiv == iBrazil:
 			utils.createSettlers(iCiv, 5)
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 3)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 3)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
@@ -2920,7 +2920,7 @@ class RiseAndFall:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iKommando, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 2)
 			iReligion = self.findAreaReligion(iCiv, utils.getPlotList((60, 9), (17, 15)))
 			if iReligion >= 0:
 				pBoers.setLastStateReligion(iReligion)
@@ -2965,7 +2965,7 @@ class RiseAndFall:
 		elif iCiv == iAztecs:
 			utils.makeUnit(iDragoon, iCiv, tPlot, 4, "", 2)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 5, "", 2)
-			utils.makeUnit(iGrenadier, iCiv, tPlot, 2, "", 2)
+			utils.makeUnit(iFirearmSkirmisher, iCiv, tPlot, 2, "", 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 3, "", 2)
 		elif iCiv == iMaya:
 			utils.makeUnit(iMusketman, iCiv, tPlot, 5, "", 2)

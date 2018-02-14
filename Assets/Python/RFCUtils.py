@@ -1192,7 +1192,7 @@ class RFCUtils:
 				
 	def getBestCounter(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lCounterList = [iMarine, iGrenadier, iPikeman, iHeavySpearman, iSpearman]
+		lCounterList = [iPikeman, iHeavySpearman, iSpearman]
 		
 		for iBaseUnit in lCounterList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())

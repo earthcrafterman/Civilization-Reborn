@@ -2119,10 +2119,10 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
 def onUnitGifted(unit, iOwner, plot):
 
-	# second Australian goal: Gift 10 Digger, Marines or Mechanized Infantry to three different civilizations by 1950 AD
+	# second Australian goal: Gift 10 Digger, Commandos, Special Forces, or Mechanized Infantry to three different civilizations by 1950 AD
 	if iOwner == iAustralia:
 		if isPossible(iAustralia, 1):
-			if unit.getUnitType() in [iDigger, iMarine, iMechanizedInfantry]:
+			if unit.getUnitType() in [iDigger, iSpecialForces, iCommando, iMechanizedInfantry]:
 				iReceiver = plot.getOwner()
 				if iReceiver not in data.lAustralianGiftReceivers:
 					data.lAustralianGiftReceivers.append(iReceiver)
