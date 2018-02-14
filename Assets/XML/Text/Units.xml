@@ -15,7 +15,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FIREARM_SKIRMISHER</Tag>
-		<English>Firearm Skirmisher</English>
+		<English>Skirmisher</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COMMANDO</Tag>
@@ -1494,7 +1494,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SKIRMISHER</Tag>
-		<English>Skirmisher</English>
+		<English>Javelinman</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SKIRMISHER_STRATEGY</Tag>
