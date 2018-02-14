@@ -134,7 +134,7 @@ iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[i
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iEthics]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),
-iCivVikings :	Techs([iGuilds], column=6),
+iCivVikings :	Techs(column=6, exceptions=[iEthics]),
 },
 {
 iCivIndependent:Techs(column=10),

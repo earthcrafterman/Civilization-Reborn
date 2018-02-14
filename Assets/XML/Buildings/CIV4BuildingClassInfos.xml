@@ -34,6 +34,70 @@
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_FORBIDDEN_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
+		
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AUTOMATED_FACTORY</Type>
+			<Description>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AUTOMATED_FACTORY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FIBER_NETWORK</Type>
+			<Description>TXT_KEY_BUILDING_FIBER_NETWORK</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FIBER_NETWORK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SUPERCOMPUTER</Type>
+			<Description>TXT_KEY_BUILDING_SUPERCOMPUTER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SUPERCOMPUTER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LOGISTICS_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_LOGISTICS_CENTER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LOGISTICS_CENTER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CELLPHONE_TOWER</Type>
+			<Description>TXT_KEY_BUILDING_CELLPHONE_TOWER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CELLPHONE_TOWER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_VERTICAL_FARM</Type>
+			<Description>TXT_KEY_BUILDING_VERTICAL_FARM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_VERTICAL_FARM</DefaultBuilding>
+		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_WALLS</Type>
 			<Description>TXT_KEY_BUILDING_WALLS</Description>

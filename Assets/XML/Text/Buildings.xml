@@ -6,6 +6,34 @@
 		<English>The [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] increases a city's scientific research as well as providing a small amount of culture.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Tag>
+		<English>Automated Factory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Tag>
+		<English>Container Terminal</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FIBER_NETWORK</Tag>
+		<English>Fiber Optic Network</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUPERCOMPUTER</Tag>
+		<English>Supercomputer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOGISTICS_CENTER</Tag>
+		<English>Warehouse</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CELLPHONE_TOWER</Tag>
+		<English>Cellphone Tower</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERTICAL_FARM</Tag>
+		<English>Vertical Farm</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER</Tag>
 		<English>Administrative Center</English>
 		<German>Verwaltungszentrum</German>

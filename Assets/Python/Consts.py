@@ -1620,8 +1620,9 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 242
-(iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iPlaas, iBarracks, iIkhanda, iStable, iGer, 
+iNumBuildings = 249
+(iPalace, iAutomaticFactory, iContainerTerminal, iFiberNetwork, iSupercomputer, iLogisticsCenter, iCellphoneTower, iVerticalFarm,
+iWalls, iDun, iCastle, iCitadel, iStarFort, iPlaas, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iKibbutz, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
 iHarbor, iCustomsHouse, iFeitoria, iImmigrationOffice, iWharf, iPostOffice, iTambo, iDrydock, iAirport, iForge, iMint, 
