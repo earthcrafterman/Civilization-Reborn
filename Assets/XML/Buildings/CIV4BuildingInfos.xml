@@ -166,6 +166,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_NUCLEAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_FUSION</PrereqTech>
 			<iCost>500</iCost>
+			<bPower>1</bPower>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
