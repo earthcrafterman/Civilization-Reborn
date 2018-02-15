@@ -11585,7 +11585,7 @@
 			</TechTypes>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -11676,7 +11676,7 @@
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -11761,7 +11761,7 @@
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -11846,7 +11846,7 @@
 			</PrereqBonuses>
 			<iCost>70</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -13112,7 +13112,7 @@
 			<PrereqTech>TECH_ROCKETRY</PrereqTech>
 			<iCost>160</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>6</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -13190,7 +13190,7 @@
 			</PrereqBonuses>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>6</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<iCombat>20</iCombat>

@@ -980,6 +980,8 @@ class RiseAndFall:
 		# reset diplomacy
 		pCiv.AI_reset()
 
+		# reset great people
+		pCiv.resetGreatPeopleCreated()
 		# reset map visibility
 		for (i, j) in utils.getWorldPlotsList():
 			gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
@@ -3153,7 +3155,8 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iVikings, tSeaPlot, 1)
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
-
+			else:
+				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 3)
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)
