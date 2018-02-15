@@ -390,8 +390,6 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	# if smaller cities are supposed to be destroyed, do that first
 	lCededCities = []
 	lRemovedCities = []
-	lRelocatedUnits = []
-	
 	for city in lCities:
 		if bRazeMinorCities:
 			bMaxPopulation = (city.getPopulation() < 10)
@@ -484,8 +482,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						break
 						
 		if iClaim != -1:
-			lUnits = secedeCity(city, iClaim)
-			lRelocatedUnits.extend(lUnits)
+			secedeCity(city, iClaim)
 			continue
 
 		# if part of the core / resurrection area of a dead civ -> possible resurrection
@@ -523,10 +520,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		if bResurrectionFound: continue
 
 		# assign randomly to possible minors
-		lUnits = secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
-		lRelocatedUnits.extend(lUnits)
-		
-	utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
 		
 	# execute possible resurrections
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
@@ -542,11 +536,8 @@ def secedeCity(city, iNewOwner):
 
 	sName = city.getName()
 	
-	iNumDefenders = max(2, gc.getPlayer(iNewOwner).getCurrentEra()-1)
-	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
-	
+	utils.relocateGarrisonToClosestCity(city)
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
-	utils.flipOrCreateDefenders(iNewOwner, lFlippedUnits, (city.getX(), city.getY()), iNumDefenders)
 	
 	if city.getOwner() == utils.getHumanID():
 		if iNewOwner in [iIndependent, iIndependent2, iNative, iBarbarian]:
@@ -560,8 +551,6 @@ def secedeCity(city, iNewOwner):
 	if utils.getHumanID() == iNewOwner:
 		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
 		CyInterface().addMessage(iNewOwner, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
-		
-	return lRelocatedUnits
 	
 def completeCollapse(iPlayer):
 	lCities = utils.getCityList(iPlayer)
@@ -572,20 +561,20 @@ def completeCollapse(iPlayer):
 	# secede all cities, destroy close and less important ones
 	bRazeMinorCities = (gc.getPlayer(iPlayer).getCurrentEra() <= iMedieval)
 	secedeCities(iPlayer, lCities, bRazeMinorCities)
-		
+	
 	# take care of the remnants of the civ
 	gc.getPlayer(iPlayer).killUnits()
 	utils.resetUHV(iPlayer)
 	data.players[iPlayer].iLastTurnAlive = gc.getGame().getGameTurn()
-		
+	
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == iByzantium:
 		utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
-		
+	
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:
 		utils.setReborn(iMongolia, True)
-		
+	
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	
 	sText = localText.getText("TXT_KEY_STABILITY_COMPLETE_COLLAPSE", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),))
@@ -1611,7 +1600,6 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 							lCityList.append(city)
 
 	lOwners = []
-	dRelocatedUnits = {}
 	
 	for city in lCityList:
 		iOwner = city.getOwner()
@@ -1622,21 +1610,12 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		bCapital = city.isCapital()
 		
-		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
-		lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
-		
-		if iOwner in dRelocatedUnits:
-			dRelocatedUnits[iOwner].extend(lRelocatedUnits)
-		else:
-			dRelocatedUnits[iOwner] = lRelocatedUnits
-		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
+			utils.flipUnitsInArea(utils.surroundingPlots((x, y), 2), iPlayer, iOwner, True, False)
 		else:
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
-			
-		utils.flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
-			
+		
 		newCity = gc.getMap().plot(x, y).getPlotCity()
 		
 		# Leoreth: rebuild some city infrastructure
@@ -1650,12 +1629,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		if iOwner not in lOwners:
 			lOwners.append(iOwner)
 			
-	for iOwner in dRelocatedUnits:
-		if iOwner < iNumPlayers:
-			utils.relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
-		else:
-			utils.killUnits(dRelocatedUnits[iOwner])
-			
+	
 	for iOwner in lOwners:
 		teamOwner = gc.getTeam(iOwner)
 		bOwnerHumanVassal = teamOwner.isVassal(iHuman)
