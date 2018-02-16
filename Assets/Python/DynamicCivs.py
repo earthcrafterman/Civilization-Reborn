@@ -587,8 +587,7 @@ def setup():
 		if gc.getPlayer(iPlayer).getNumCities() > 0:
 			checkName(iPlayer)
 
-		if not gc.getPlayer(iPlayer).isHuman():
-			setLeader(iPlayer, startingLeader(iPlayer))
+		setLeader(iPlayer, startingLeader(iPlayer))
 
 def onCivRespawn(iPlayer, tOriginalOwners):
 	data.players[iPlayer].iResurrections += 1
@@ -1949,8 +1948,6 @@ def leader(iPlayer):
 	if iPlayer >= iNumPlayers: return None
 
 	if not gc.getPlayer(iPlayer).isAlive(): return None
-
-	if gc.getPlayer(iPlayer).isHuman(): return None
 
 	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(pPlayer.getTeam())
