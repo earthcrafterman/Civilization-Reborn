@@ -11485,7 +11485,7 @@
 			</TechTypes>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
@@ -12260,8 +12260,8 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<iAsset>3</iAsset>
-			<iPower>3</iPower>
+			<iAsset>1</iAsset>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
@@ -12353,7 +12353,7 @@
 					<PassableTech>TECH_COMPASS</PassableTech>
 				</FeaturePassableTech>
 			</FeaturePassableTechs>
-			<iCombat>3</iCombat>
+			<iCombat>5</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -12401,8 +12401,8 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<iAsset>3</iAsset>
-			<iPower>3</iPower>
+			<iAsset>1</iAsset>
+			<iPower>7</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
@@ -13083,7 +13083,7 @@
 			</TechTypes>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>12</iMinAreaSize>
+			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>5</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>

@@ -6655,7 +6655,7 @@ bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iModifier)
 	if (iDifficulty >= 90) iExperience += 4;
 	else if (iDifficulty >= 80) iExperience += 3;
 	else if (iDifficulty >= 65) iExperience += 2;
-	else if (iDifficulty >= 50) iExperience += 1;
+	else iExperience += 1;
 
 	if (iExperience == 0)
 	{
