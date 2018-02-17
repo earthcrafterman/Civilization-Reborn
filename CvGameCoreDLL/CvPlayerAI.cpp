@@ -11522,20 +11522,22 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth: prefer deification if no state religion
-	if (eCivic == CIVIC_DEIFICATION && getLastStateReligion() == NO_RELIGION)
-	{
-		iValue *= 2;
-	}
-
-	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))
-	{
-	    iValue /= 10;
-	}
-
-	if (eCivic == CIVIC_MONARCHY && getID() == NETHERLANDS)
-	{
-		iValue /= 2;
-	}
+	if (eCivic == CIVIC_DEIFICATION)switch (getLastStateReligion())
+		{
+		case NO_RELIGION:
+			if (getCurrentEra() <= ERA_CLASSICAL)
+			{
+				iValue *= 2;
+			}
+			break;
+		case JUDAISM:
+		case ORTHODOXY:
+		case CATHOLICISM:
+		case PROTESTANTISM:
+		case ISLAM:
+			iValue /= 5;
+			break;
+		}
 
 	// Leoreth: take American UP into account
 	if (getID() == AMERICA)

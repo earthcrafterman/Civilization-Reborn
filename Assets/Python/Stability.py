@@ -1241,7 +1241,7 @@ def calculateTrendScore(lTrend):
 		
 	if iPositive > iNegative: return max(0, iPositive - iNegative - iNeutral / 2)
 	
-	if iNegative > iPositive: return min(0, iPositive - iNegative + iNeutral / 4)
+	if iNegative > iPositive: return min(0, iPositive - iNegative + iNeutral / 2)
 	
 	return 0
 	
