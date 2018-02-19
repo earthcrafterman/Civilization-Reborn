@@ -262,34 +262,47 @@ class Barbs:
 
 		#American natives
 		if utils.isYearIn(600, 1100):
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), 5)
 			if utils.getScenario() == i3000BC:  #late start condition
-				self.checkSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkCampUnitSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), 5)
 			else:  #late start condition
-				self.checkSpawn(iNative, iJaguar, 2, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkCampUnitSpawn(iNative, iJaguar, 2, (15, 38), (24, 47), 5)
 		if utils.isYearIn(1300, 1600):
-			self.checkSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), 20)
 		if utils.isYearIn(1400, 1800):
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), 20)
 		if utils.isYearIn(1300, 1600):
 			if iGameTurn % 18 == 0:
 				if not gc.getMap().plot(27, 29).isUnit():
-					utils.makeUnitAI(iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iNative, iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 			elif iGameTurn % 18 == 9:
 				if not gc.getMap().plot(30, 13).isUnit():
-					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iNative, iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 		
 		if utils.isYearIn(1700, 1900):
-			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
+			self.checkCampUnitSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), 20)
 			
 		if utils.isYearIn(1500, 1850):
-			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
+			self.checkCampUnitSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), 20)
 			
 		# Rabbits in Australia
 		if iGameTurn >= getTurnForYear(1860):
 			self.checkSpawn(iBarbarian, iRabbit, 2 + iHandicap, (103, 10), (118, 22), self.spawnRabbits, iGameTurn, 8, 4)
 				
+		if utils.isYearIn(600, 1900):
+			iMaxCamps = 1
+			if data.iFirstNewWorldColony >= 0:
+				iMaxCamps += 2
+			if iGameTurn >= getTurnForYear(1750):
+				iMaxCamps += 2
+			
+			if iGameTurn < getTurnForYear(1400):
+				self.checkCampSpawn(iNative, iCampUnit, 1, (15, 38), (24, 47), False, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 7)
+			elif iGameTurn < getTurnForYear(1700):
+				self.checkCampSpawn(iNative, iCampUnit, 1, (11, 44), (33, 51), False, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 9)
+			else:
+				self.checkCampSpawn(iNative, iCampUnit, 1, (11, 44), (33, 51), True, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 14)
+
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
 			self.checkSpawn(iNative, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
@@ -429,7 +442,7 @@ class Barbs:
 				iOwner = unit.getOwner()
 				if iOwner == iBarbarian:
 					return (False, tCity[3]+1)
-
+	
 		#checks the surroundings and allows only AI units
 		for (x, y) in utils.surroundingPlots(tCity[0], tCity[1]):
 			currentPlot=gc.getMap().plot(x,y)
@@ -444,9 +457,9 @@ class Barbs:
 					if pOwner.isHuman():
 						return (False, tCity[3]+1)
 		return (True, tCity[3])
-
-
-
+	
+	
+	
 	def killNeighbours(self, tCoords): # Unused
 		'Kills all units in the neigbbouring tiles of plot (as well as plot itself) so late starters have some space.'
 		for (x, y) in utils.surroundingPlots(tCoords):
@@ -454,27 +467,27 @@ class Barbs:
 			for i in range(killPlot.getNumUnits()):
 				unit = killPlot.getUnit(0)	# 0 instead of i because killing units changes the indices
 				unit.kill(False, iBarbarian)
-				
+	
 	# Leoreth: check region for number of units first
 	def checkLimitedSpawn(self, iPlayer, iUnitType, iNumUnits, iMaxUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
 		if iTurn % utils.getTurns(iPeriod) == iRest:
 			lAreaUnits = utils.getAreaUnits(iPlayer, tTL, tBR)
 			if len(lAreaUnits) < iMaxUnits:
 				self.checkSpawn(iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj)
-						
+	
 	# Leoreth: new ways to spawn barbarians
 	def checkSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
 		if len(lAdj) == 0:
 			sAdj = ""
 		else:
 			sAdj = utils.getRandomEntry(lAdj)
-	
+		
 		if iTurn % utils.getTurns(iPeriod) == iRest:
 			spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
-			
+	
 	def possibleTiles(self, tTL, tBR, bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
 		return [tPlot for tPlot in utils.getPlotList(tTL, tBR) if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
-		
+	
 	def possibleTile(self, tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
@@ -513,7 +526,7 @@ class Barbs:
 		if not bWater and gc.getMap().getArea(plot.getArea()).getNumCities() == 0: return False
 		
 		return True
-
+	
 	def spawnPirates(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: spawns all ships at the same coastal spot, out to pillage and disrupt trade, can spawn inside borders'''
 		
@@ -522,7 +535,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_PIRATE_SEA, iNumUnits, sAdj)
-		
+	
 	def spawnNatives(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: outside of territory, in jungles, all dispersed on several plots, out to pillage'''
 		
@@ -534,17 +547,17 @@ class Barbs:
 			
 			lPlots.remove(tPlot)
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, 1, sAdj)
-			
+	
 	def spawnMinors(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents minor states without ingame cities
-			    outside of territory, not in jungles, in groups, passive'''
-			    
+				outside of territory, not in jungles, in groups, passive'''
+				
 		lPlots = self.possibleTiles(tTL, tBR, bTerritory=False)
 		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-		
+	
 	def spawnNomads(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents aggressive steppe nomads etc.
 			    outside of territory, not in jungles, in small groups, target cities'''
@@ -554,7 +567,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-			
+	
 	def spawnInvaders(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents large invasion forces and migration movements
 			    inside of territory, not in jungles, in groups, target cities'''
@@ -564,7 +577,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-			
+	
 	def spawnUprising(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
 			     spawns units in a free plot in the second ring of a random target city in the area
@@ -575,7 +588,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-			
+	
 	def spawnRabbits(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Merijn: inside territory, dispersed over several plots, pillaging'''
 		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True)
@@ -586,3 +599,45 @@ class Barbs:
 			
 			lPlots.remove(tPlot)
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_PILLAGE, 1, sAdj)
+	
+	# Merijn: Camp functions	
+	def checkCampSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, bInvasion, iTurn, iPeriod, iRest, iMaxCamps, iStrength):
+		if iTurn % utils.getTurns(iPeriod) == iRest:
+			unitList = PyPlayer(iPlayer).getUnitsOfType(iCampUnit)
+			lPlotList = utils.getPlotList(tTL, tBR)
+			
+			iCount = 0
+			if unitList:
+				for unit in unitList:
+					x = unit.getX()
+					y = unit.getY()
+					if (x, y) in lPlotList:
+						iCount += 1
+			
+			if iCount < iMaxCamps:
+				self.placeCamp(iPlayer, iUnitType, iNumUnits, tTL, tBR, bInvasion, iStrength)
+	
+	def checkCampUnitSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, iChance):
+		unitList = PyPlayer(iPlayer).getUnitsOfType(iCampUnit)
+		lPlotList = utils.getPlotList(tTL, tBR)
+		
+		if unitList:
+			for unit in unitList:
+				if gc.getGame().getSorenRandNum(100, 'Random entry') < iChance:
+					x = unit.getX()
+					y = unit.getY()
+					if (x, y) in lPlotList:
+						for i in range(iNumUnits):
+							utils.makeUnitAI(iUnitType, iPlayer, (x, y), UnitAITypes.UNITAI_ATTACK, 1)
+	
+	def placeCamp(self, iPlayer, iUnitType, iNumUnits, tBR, tTL, bInvasion, iStrength):
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=bInvasion)
+		
+		for i in range(iNumUnits):
+			tPlot = utils.getRandomEntry(lPlots)
+			if not tPlot: break
+			
+			lPlots.remove(tPlot)
+			
+			unit = gc.getPlayer(iPlayer).initUnit(iUnitType, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			unit.setBaseCombatStr(iStrength)
