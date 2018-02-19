@@ -390,6 +390,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	# if smaller cities are supposed to be destroyed, do that first
 	lCededCities = []
 	lRemovedCities = []
+	lRelocatedUnits = []
+	
 	for city in lCities:
 		if bRazeMinorCities:
 			bMaxPopulation = (city.getPopulation() < 10)
@@ -482,7 +484,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						break
 						
 		if iClaim != -1:
-			secedeCity(city, iClaim)
+			lUnits = secedeCity(city, iClaim)
+			lRelocatedUnits.extend(lUnits)
 			continue
 
 		# if part of the core / resurrection area of a dead civ -> possible resurrection
@@ -520,8 +523,15 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		if bResurrectionFound: continue
 
 		# assign randomly to possible minors
-		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
-		
+
+		lUnits = secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
+		lRelocatedUnits.extend(lUnits)
+
+	if iPlayer < iNumPlayers and gc.getPlayer(iPlayer).getNumCities() > 0:
+		utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+	else:
+		utils.killUnits(lRelocatedUnits)
+	
 	# execute possible resurrections
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
 	for iResurrectionPlayer in dPossibleResurrections:
@@ -536,8 +546,12 @@ def secedeCity(city, iNewOwner):
 
 	sName = city.getName()
 	
-	utils.relocateGarrisonToClosestCity(city)
+	iNumDefenders = max(2, gc.getPlayer(iNewOwner).getCurrentEra()-1)
+	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
+	
+	utils.flipOrCreateDefenders(iNewOwner, lFlippedUnits, (city.getX(), city.getY()), iNumDefenders)
 	
 	if city.getOwner() == utils.getHumanID():
 		if iNewOwner in [iIndependent, iIndependent2, iNative, iBarbarian]:
@@ -552,6 +566,8 @@ def secedeCity(city, iNewOwner):
 		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
 		CyInterface().addMessage(iNewOwner, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
 	
+	return lRelocatedUnits
+
 def completeCollapse(iPlayer):
 	lCities = utils.getCityList(iPlayer)
 	
@@ -579,7 +595,7 @@ def completeCollapse(iPlayer):
 	
 	sText = localText.getText("TXT_KEY_STABILITY_COMPLETE_COLLAPSE", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),))
 	CyInterface().addMessage(utils.getHumanID(), False, iDuration, sText, "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-		
+	
 def collapseToCore(iPlayer):
 	lAhistoricalCities = []
 	lNonCoreCities = []
@@ -598,10 +614,10 @@ def collapseToCore(iPlayer):
 		if utils.getHumanID() == iPlayer:
 			sText = localText.getText("TXT_KEY_STABILITY_FOREIGN_SECESSION", ())
 			CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
-				
+		
 		# secede all foreign cities
 		secession(iPlayer, lAhistoricalCities)
-		
+	
 	# otherwise, secede all cities outside of core
 	elif lNonCoreCities:
 	
@@ -612,7 +628,7 @@ def collapseToCore(iPlayer):
 			
 		# secede all non-core cities
 		secession(iPlayer, lNonCoreCities)
-		
+	
 def downgradeCottages(iPlayer):
 	for (x, y) in utils.getWorldPlotsList():
 		plot = gc.getMap().plot(x, y)
@@ -623,7 +639,7 @@ def downgradeCottages(iPlayer):
 			elif iImprovement == iVillage: plot.setImprovementType(iCottage)
 			elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
 			elif iImprovement == iCottage: plot.setImprovementType(-1)
-				
+	
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_DOWNGRADE_COTTAGES", ())
 		CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
@@ -632,7 +648,7 @@ def calculateStability(iPlayer):
 	iGameTurn = gc.getGame().getGameTurn()
 	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(pPlayer.getTeam())
-
+	
 	iExpansionStability = 0
 	iEconomyStability = 0
 	iDomesticStability = 0
@@ -1600,6 +1616,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 							lCityList.append(city)
 
 	lOwners = []
+	dRelocatedUnits = {}
 	
 	for city in lCityList:
 		iOwner = city.getOwner()
@@ -1610,11 +1627,20 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		bCapital = city.isCapital()
 		
+		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
+		lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+		
+		if iOwner in dRelocatedUnits:
+			dRelocatedUnits[iOwner].extend(lRelocatedUnits)
+		else:
+			dRelocatedUnits[iOwner] = lRelocatedUnits
+		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
-			utils.flipUnitsInArea(utils.surroundingPlots((x, y), 2), iPlayer, iOwner, True, False)
 		else:
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
+		
+		utils.flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
 		
 		newCity = gc.getMap().plot(x, y).getPlotCity()
 		
@@ -1628,7 +1654,13 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 		if iOwner not in lOwners:
 			lOwners.append(iOwner)
-			
+	
+	for iOwner in dRelocatedUnits:
+		if iOwner < iNumPlayers:
+			utils.relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
+		else:
+			utils.killUnits(dRelocatedUnits[iOwner])
+	
 	
 	for iOwner in lOwners:
 		teamOwner = gc.getTeam(iOwner)

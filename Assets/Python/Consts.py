@@ -1588,7 +1588,7 @@ iBersagliere, iDigger, iSamInfantry, iMobileSam, iMechanizedInfantry, iArcher, i
 iSkirmisher, iHolkan, iKelebolo, iLongbowman, iPatiyodha, iFirearmSkirmisher, iMinuteman, iCommando, iNavySeal, iSpecialForces, iCrossbowman, iChokonu, iChariot, iWarChariot, iHuluganni, 
 iCidainh, iHorseman, iNumidianCavalry, iAsvaka, iHorseArcher, iCamelArcher, iKhampa, iLancer, iKeshik, iCataphract, 
 iChangSuek, iGhulamWarrior, iFarari, iPistolier, iCuirassier, iConquistador, iWingedHussar, iMountedBrave, iCamelGunner, iHussar, 
-iDragoon, iCossack, iGrenadierCavalry, iCavalry, iRurales, iKommando, iWarElephant, iBallistaElephant, iAfricanWarElephant, iTank, iPanzer, 
+iDragoon, iCossack, iGrenadierCavalry, iCavalry, iRurales, iKommando, iWarElephant, iBallistaElephant, iAtlasElephant, iTank, iPanzer, 
 iMainBattleTank, iMerkava, iGunship, iCatapult, iHwacha, iTrebuchet, iBombard, iSiegeElephant, iCannon, iHeavyCannon, iArtillery, 
 iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDharani,
 iCog, iDhow, iGalleass, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPirate, iCorsair, iPrivateer, iOrangLaut, iMoorCorsair, iFrigate,
