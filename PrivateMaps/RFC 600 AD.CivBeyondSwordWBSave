@@ -23226,13 +23226,13 @@ BeginPlot
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=50, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=50, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
@@ -23706,7 +23706,7 @@ BeginPlot
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=49, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2

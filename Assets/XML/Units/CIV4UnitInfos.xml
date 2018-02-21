@@ -12260,8 +12260,8 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<iAsset>1</iAsset>
-			<iPower>4</iPower>
+			<iAsset>3</iAsset>
+			<iPower>5</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
@@ -12401,7 +12401,7 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<iAsset>1</iAsset>
+			<iAsset>3</iAsset>
 			<iPower>7</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
