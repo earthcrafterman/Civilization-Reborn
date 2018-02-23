@@ -192,7 +192,7 @@ tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50), (32, 51))
 
 dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
-	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
+	iBabylonia: (0, [iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (1, [iPrinting]),
@@ -3333,12 +3333,11 @@ def getUHVHelp(iPlayer, iGoal):
 			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
-			bConstruction = data.lFirstDiscovered[iConstruction] == iBabylonia
 			bArithmetics = data.lFirstDiscovered[iArithmetics] == iBabylonia
 			bWriting = data.lFirstDiscovered[iWriting] == iBabylonia
 			bCalendar = data.lFirstDiscovered[iCalendar] == iBabylonia
 			bContract = data.lFirstDiscovered[iContract] == iBabylonia
-			aHelp.append(getIcon(bConstruction) + localText.getText("TXT_KEY_TECH_CONSTRUCTION", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
+			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
 			aHelp.append(getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()) + ' ' + getIcon(bContract) + localText.getText("TXT_KEY_TECH_CONTRACT", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
