@@ -1070,7 +1070,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR2</Tag>
-		<English>Have the city with the highest research output in 2000 AD</English>
+		<English>Control the city with the highest research for 10 turns</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
@@ -3321,7 +3321,11 @@
 		<English>Great Spies created: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT</Tag>
-		<English>City with highest research output: %s1_city</English>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_CITY</Tag>
+		<English>City with highest research: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_TURNS</Tag>
+		<English>Turns with highest research city: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

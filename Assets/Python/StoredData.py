@@ -243,6 +243,7 @@ class GameData:
 		self.iAustraliaGifts = 0
 		self.lAustralianGiftReceivers = []
 		self.iAustraliaHappinessTurns = 0
+		self.iIsraeliResearchTurns = 0
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0

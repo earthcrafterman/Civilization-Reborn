@@ -1540,17 +1540,21 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1980):
 			expire(iIsrael, 0)
 
-		# second goal: have the city with the highest research output in 2000 AD
-		if iGameTurn == getTurnForYear(2000):
-			highestResearchCity = getHighestResearchCity(iIsrael)
-			if isBestCity(iPlayer, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput):
-				win(iIsrael, 2)
-			else:
-				lose(iIsrael, 2)
+		# second goal: have the city with the highest research output for 10 turns (no time limit)
+		if isPossible(iIsrael, 1):
+			if data.iIsraeliResearchTurns >= utils.getTurns(10):
+				win(iIsrael, 1)
+			
+			x, y = 0, 0
+			capital = pPlayer.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			if pBestCity.getOwner() == iPlayer: 
+				data.iIsraeliResearchTurns += 1
 
-		# second goal: create two great spies (no time limit)
-		#if iGameTurn == getTurnForYear(2010):
-		#	expire(iIsrael, 1)
+		# third goal: create two great spies (no time limit)
+		# see onGreatPersonBorn()
 
 
 	# check religious victory (human only)
@@ -2042,12 +2046,12 @@ def onGreatPersonBorn(iPlayer, unit):
 				if data.iMexicanGreatGenerals >= 3:
 					win(iAztecs, 1)
 
-	# third Israeli goal: get two great spies by 2010 AD
+	# third Israeli goal: get two great spies (no time limit)
 	if iPlayer == iIsrael:
-		if isPossible(iIsrael, 1):
+		if isPossible(iIsrael, 2):
 			if pUnitInfo.getGreatPeoples(iSpecialistGreatSpy):
 				if pIsrael.getGreatSpiesCreated() >= 2:
-					win(iIsrael, 1)
+					win(iIsrael, 2)
 
 def onUnitPillage(iPlayer, iGold, iUnit):
 
@@ -2726,9 +2730,6 @@ def countOpenBorders(iPlayer, lContacts = [i for i in range(iNumPlayers)]):
 
 def getMostCulturedCity(iPlayer):
 	return utils.getHighestEntry(utils.getCityList(iPlayer), lambda x: x.getCulture(iPlayer))
-
-def getHighestResearchCity(iPlayer):
-	return utils.getHighestEntry(utils.getCityList(iPlayer), cityResearchOutput)
 
 def isAreaFreeOfCivs(lPlots, lCivs):
 	for city in utils.getAreaCities(lPlots):
@@ -4198,10 +4199,13 @@ def getUHVHelp(iPlayer, iGoal):
 			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
-			highestResearchCity = getHighestResearchCity(iIsrael)
-			pBestCity = getBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
-			bBestCity = isBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
-			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT", (pBestCity.getName(),)))
+			x, y = 0, 0
+			capital = pIsrael.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			iResearchTurns = data.iIsraeliResearchTurns
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
 		elif iGoal == 2:
 			iSpies = pIsrael.getGreatSpiesCreated()
 			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))

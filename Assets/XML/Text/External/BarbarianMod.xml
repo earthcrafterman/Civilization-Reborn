@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!-- UP -->
+	<TEXT>
+		<Tag>TXT_KEY_UP_HBA_TITLE</Tag>
+		<English>The Power of Plunder:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HBA</Tag>
+		<English>All units start with the Raider promotion, receive [ICON_GOLD] from barbarian activities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_UNIT_KILLING</Tag>
+		<English>You have acquired %d1 [ICON_GOLD] by killing a %s2 %s3.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_WORKER_KILLING</Tag>
+		<English>You have acquired %d1 [ICON_GOLD] by killing a %s2.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_GP_KILLING</Tag>
+		<English>You have acquired %d1 [ICON_GOLD] by killing %s2.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_RAZING</Tag>
+		<English>You have acquired %d1 [ICON_GOLD] by razing %s2.</English>
+	</TEXT>
+	<!-- UHV -->
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA1_TITLE</Tag>
+		<English>Razing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA2_TITLE</Tag>
+		<English>Killing and Pillaging</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA3_TITLE</Tag>
+		<English>Pirating</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA1</Tag>
+		<English>Acquire 10000 gold by razing cities and raze at least 10 capitals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA1_EPIC</Tag>
+		<English>Acquire 15000 gold by razing cities and raze at least 10 capitals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA1_MARATHON</Tag>
+		<English>Acquire 30000 gold by razing cities and raze at least 10 capitals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA2</Tag>
+		<English>Acquire 10000 gold by killing units and 5000 gold by pillaging</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA2_EPIC</Tag>
+		<English>Acquire 15000 gold by killing units and 7500 gold by pillaging</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA2_MARATHON</Tag>
+		<English>Acquire 30000 gold by killing units and 15000 gold by pillaging</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA3</Tag>
+		<English>Acquire 5000 gold through piracy and sink at least 50 ships</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA3_EPIC</Tag>
+		<English>Acquire 7500 gold through piracy and sink at least 50 ships</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HBA3_MARATHON</Tag>
+		<English>Acquire 15000 gold through piracy and sink at least 50 ships</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RAZE_GOLD</Tag>
+		<English>Gold from razing: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITALS_RAZED</Tag>
+		<English>Capitals razed: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_KILLING_GOLD</Tag>
+		<English>Gold from killing units: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PILLAGE_GOLD</Tag>
+		<English>Gold from pillaging: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INTERMEDIATE_BARBARIAN</Tag>
+		<English>We have accomplished 2 Historical Goals out of 3. The upkeep for our units is halved.</English>
+	</TEXT>
+	<!-- Units, promotions -->
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NAVAL_CAMP</Tag>
+		<English>Naval camp</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NAVAL_CAMP_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Naval camps[COLOR_REVERT] can be used to buy new naval units and buy experience for existing and new naval units.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMP_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Camps[COLOR_REVERT] can be used to buy new units and buy experience for existing and new units.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_CAMP_HELP</Tag>
+		<English>[ICON_BULLET]New units can be bought here[NEWLINE][ICON_BULLET]Experience for units can be bought here</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_CAMP_PEDIA</Tag>
+		<English>NO PEDIA YET</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RAIDER</Tag>
+		<English>Raider</English>
+		<French>Pillard</French>
+		<German>R&#228;uber</German>
+		<Italian>Razziatore</Italian>
+		<Spanish>Bandido</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_STRIKE</Tag>
+		<English>Your units are on strike! You need to wreak more havoc to have enough gold for unit upkeep.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_GENERAL</Tag>
+		<English>A great general has arisen in one of your camps!</English>
+	</TEXT>
+	<!-- Pedia -->
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_BARBARIAN_GAME</Tag>
+		<English>Barbarian Game</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_BARBARIAN_GAME_PEDIA</Tag>
+		<English>[H1]Barbarian game[\H1][PARAGRAPH:2]You can play as the barbarians in RFC DoC. The features of the Warlords mod are adepted to RFC. Some changes were made for more balance and for better coherence with the RFC mechanics. But the general concepts of the Warlords mod are still there.[NEWLINE][NEWLINE][BOLD]Basic mechnics[\BOLD][NEWLINE]Like the Warlords mod, the goal is to wreak havoc. You acquire gold by pillaging, killing units and razing cities, basically by behaving like a real barbarian. The amount of gold you can accumulate by being a barbarian and spend to buy new units are tweaked a little compared to the Warlords scenario. A big difference between the Warlords mod and this modmod is that you cannot buy promotion for new units. Instead, you can buy experience. The first experience points are cheap, but they get more expensive as your unit becomes more experienced.[NEWLINE][NEWLINE][BOLD]Camps[\BOLD][NEWLINE]Camps are the cities of the barbarians. New units and experience for your units can be bought at camps. There are two types of camps; land based camps and naval based camps. As you might expect, you can buy land based units in land based camps and naval based units in naval based camps. Both types can move, but only the naval based unit can defend itself. It is very weak, so you should consider keeping some defensive units near it.[NEWLINE][NEWLINE]You get a free camp at the start of the game. During the game, some more camps will spawn, giving you the opportunity to wreak havoc on several locations at the same time. Protect your camps with care, because when all camps are lost, you automatically lose the game! At certain times during the game, you can resurrect dead camps for a gold penalty.[NEWLINE][NEWLINE]You can open the camp manager by clicking on the button on the top left corner of the mainscreen or by clicking on the camp manager button when a camp is selected.[NEWLINE][NEWLINE][BOLD]Taking over barbarian[\BOLD][NEWLINE]You have the ability to take over the scripted barbarian units for gold. If you have enough gold, you get a popup that informs you which units you can take over and where they will spawn. These units are slightly cheaper than the units you can buy at your camps.[NEWLINE][NEWLINE][BOLD]Victory[\BOLD][NEWLINE]Like all other civs, the barbarian do have their own unique historical victory. As you might expect, they all have to do with wreaking havoc. You can also win by destroying all existing civilizations. All other victory types are disabled.[NEWLINE][NEWLINE][BOLD]Technology[\BOLD][NEWLINE]Because the human barbarian player cannot have any cities, there is no possibility for it to get new technologies to get new types of units. To compensate with that, the human barbarian receives technologies for free if a certain amount of civilizations have researched the technology. This way, the human barbarian does advance with the same rate as the other civilizations, although with a small (but intended) lag. You cannot upgrade your existing unit to more advanced ones though. You can only buy more advanced units.[NEWLINE][NEWLINE][BOLD]Additional information[\BOLD][NEWLINE][ICON_BULLET]You are with peace with the normal barbarians and cannot declare war on them. You are automatically at war with every other civ. (including the Celts, Seljuks and Natives)[NEWLINE][ICON_BULLET]All advisors other that the victory advisor and the new camp advisor are disabled[NEWLINE][ICON_BULLET]Workers are not killed on the spot, but at the beginning of the next turn. Don't let them get recaptured otherwise you won't get any gold from them.[NEWLINE][ICON_BULLET]You automatically raze every city. (including holy cities) Instead, you can use camps.[NEWLINE][ICON_BULLET]You are immune to collapse.[NEWLINE][ICON_BULLET]As you can't have any cities, you can't get the Triumphal Arch when you achieve 2 historical victory. Instead, you get a discount on your unit upkeep.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BARBARIAN_PEDIA</Tag>
+		<English>[TAB]The term "barbarian" was created by the Greeks; it was originally used to denote any foreigner. Since then it has gained a more negative connotation, and it is commonly applied to civilizations deemed "inferior" to one's own. The Chinese, for instance, thought of all foreign cultures - everybody from the Manchus to the Turks to the Europeans - as barbarians. Rome applied it to the Huns and the Germanic tribes, as well as to the more advanced Gauls.</English>
+		<French>[TAB]Le terme "Barbare" est &#224; l'origine un crit&#232;re linguistique utilis&#233; par les Grecs pour d&#233;signer toute personne &#233;trang&#232;re &#224; la civilisation grecque. Depuis, ce terme a pris une connotation p&#233;jorative et s'applique aux civilisations jug&#233;es "inf&#233;rieures". Les Chinois, par exemple, consid&#233;raient toutes les cultures &#233;trang&#232;res, des Mandchous aux Turcs en passant par les Europ&#233;ens, comme des barbares. Rome utilisait ce terme pour d&#233;signer les Huns, les Gaulois et les tribus germaniques.</French>
+		<German>[TAB]Der Begriff "Barbar" kommt aus dem Griechischen und bezeichnete in seiner urspr&#252;nglichen Bedeutung alle Nichtgriechen. Seither haftete dem Wort allerdings eine immer negativere Assoziation an und heute wird es im Allgemeinen als Bezeichnung f&#252;r primitivere, "unterlegenere" Zivilisationen verwendet. Die Chinesen betrachteten beispielsweise alle fremden Kulturen - wirklich alle, von den Manchus &#252;ber die T&#252;rken bis hin zu den Europ&#228;ern - als Barbaren. Rom benutzte den Begriff f&#252;r die Hunnen und die germanischen St&#228;mme sowie f&#252;r die immerhin etwas fortschrittlicheren Gallier.</German>
+		<Italian>[TAB]Il termine "barbaro" venne coniato dai Greci e inizialmente veniva utilizzato per indicare qualsiasi straniero. Da allora, la parola ha assunto una connotazione negativa e viene associato a quelle civilt&#224; definite "inferiori". I Cinesi, per esempio, identificavano tutte le culture straniere come "barbare" dai Manci&#249; ai Turchi agli Europei. Roma boll&#242; con questo termine gli Unni e le popolazioni germaniche, cos&#236; come i Galli che erano culturalmente evoluti.</Italian>
+		<Spanish>[TAB]El t&#233;rmino "b&#225;rbaro" fue acu&#241;ado por los griegos, y originalmente se utilizaba para referirse a cualquier extranjero. Pero desde entonces ha adquirido unas connotaciones negativas, pues suele emplearse al hablar de las civilizaciones a las que se considera "inferiores" a la propia. Los chinos, por ejemplo, pensaban que todas las culturas extranjeras (desde los manch&#250;es a los turcos, pasando por los europeos) eran b&#225;rbaras. En Roma se empleaba el t&#233;rmino para referirse a los hunos y las tribus germanas, as&#237; como a los galos, que eran m&#225;s avanzados.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BARBARIAN</Tag>
+		<English>It is the year 1000 BC. The world has known civilizations for 2000 years. It is time to end this so-called sophistication and bring some chaos in the world!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MINOR_DESC</Tag>
+		<English>Barbarian State</English>
+		<French>
+			<Text>Empire barbare</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Barbarenreich:Barbarenreich:Barbarenreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Territorio Barbaro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Territorio de los b&#225;rbaros</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	
+	
+	<!-- Takeover event -->
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BARBARIANS_PEOPLES</Tag>
+		<English>Barbarians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_TAKEOVER_TITLE</Tag>
+		<English>Barbarian uprising! Do you want to take over these barbarians?</English>
+	</TEXT>
+	
+	<!-- Camp Spawn -->
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_UNIT_BUY</Tag>
+		<English>What unit do you want to buy?</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_BUY_UNITS</Tag>
+		<English>Buy new units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUY_CAMPS_COSTS</Tag>
+		<English>- %d1[ICON_GOLD]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUY_UNITS_COSTS</Tag>
+		<English>%s1 (%d2x, %s3) - %d4[ICON_GOLD]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_BUY_XP</Tag>
+		<English>Buy 1 XP: %d1_Num [ICON_GOLD]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARBARIAN_CAMP_SPAWN</Tag>
+		<English>Do you want to buy a camp?</English>
+	</TEXT>
+	
+	<!-- Areas -->
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_0</Tag>
+		<English>Europe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_1</Tag>
+		<English>Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_2</Tag>
+		<English>Asia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_3</Tag>
+		<English>Middle East</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_4</Tag>
+		<English>North America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_5</Tag>
+		<English>South America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_6</Tag>
+		<English>Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_7</Tag>
+		<English>Mediterranean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_8</Tag>
+		<English>Northern Seas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_9</Tag>
+		<English>Persian Gulf</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BARB_AREA_10</Tag>
+		<English>Asian Seas</English>
+	</TEXT>
+</Civ4GameText>

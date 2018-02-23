@@ -980,9 +980,10 @@ class RiseAndFall:
 
 		# reset diplomacy
 		pCiv.AI_reset()
-
+		
 		# reset great people
 		pCiv.resetGreatPeopleCreated()
+		
 		# reset map visibility
 		for (i, j) in utils.getWorldPlotsList():
 			gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
@@ -1048,11 +1049,11 @@ class RiseAndFall:
 				iStateReligion = pAztecs.getStateReligion()
 				if city.isHasReligion(iStateReligion):
 					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
-			
+
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
-			
+
 			pAztecs.setGold(500)
-			
+
 			pAztecs.setCivics(iCivicsGovernment, iDespotism)
 			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
 			pAztecs.setCivics(iCivicsSociety, iIndividualism)
@@ -1068,7 +1069,7 @@ class RiseAndFall:
 			pMaya.setCivics(iCivicsReligion, iClergy)
 			pMaya.setCivics(iCivicsTerritory, iNationhood)
 			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
-		
+
 		dc.onCivRespawn(iCiv, [])
 
 	def rebirthSecondTurn(self, iCiv):
@@ -1740,7 +1741,7 @@ class RiseAndFall:
 				if city.getX() >= x-1 and city.getY() <= y:
 					if (city.getX(), city.getY()) not in lPlots:
 						lCities.append(city)
-					
+
 		# Leoreth: Canada also flips English/American/French cities in the Canada region
 		if iPlayer == iCanada:
 			lCanadaCities = []
@@ -1963,9 +1964,9 @@ class RiseAndFall:
 					elif iNewWorldCiv == iInca:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
-						
+
 					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
-						
+
 					data.lFirstContactConquerors[iIndex] = True
 
 					# change some terrain to end isolation
@@ -3159,6 +3160,7 @@ class RiseAndFall:
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
 			else:
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 3)
+
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)

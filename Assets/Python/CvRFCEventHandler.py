@@ -140,10 +140,10 @@ class CvRFCEventHandler:
 
 		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
-			
+
 		#if iPlayer < iNumMajorPlayers:
 		#	utils.spreadMajorCulture(iPlayer, tCity)
-		
+
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
 			if iPlayer == iTurkey and tCity == (68, 45):
@@ -430,7 +430,7 @@ class CvRFCEventHandler:
 			for iPromotion in range(gc.getNumPromotionInfos()):
 				if gc.getPromotionInfo(iPromotion).isLeader():
 					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
-		
+
 	def onReligionFounded(self, argsList):
 		'Religion Founded'
 		iReligion, iFounder = argsList
