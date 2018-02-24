@@ -18,6 +18,14 @@ localText = CyTranslator()
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
 lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
+#second greek goal: colonize Occitania and Catalonia, South Italy and Black sea
+tOccitaniaAndCataloniaTL = (54, 42)
+tOccitaniaAndCataloniaBR = (57, 46)
+tSouthItalyTL = (60, 40)
+tSouthItalyBR = (63, 43)
+tBlackSeaTL = (69, 44)
+tBlackSeaBR = (76, 49)
+
 # first Polynesian goal: settle two out of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 # second Polynesian goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
 tHawaiiTL = (0, 34)
@@ -354,11 +362,14 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: control Egypt, Phoenicia, Babylonia and Persia in 330 BC
 		if iGameTurn == getTurnForYear(-330):
+			bOccitaniaAndCatalonia = getNumCitiesInArea(iPlayer, utils.getPlotList(tOccitaniaAndCataloniaTL, tOccitaniaAndCataloniaBR)) >= 1
+			bSouthItaly = getNumCitiesInArea(iPlayer, utils.getPlotList(tSouthItalyTL, tSouthItalyBR)) >= 1
+			bBlackSea = getNumCitiesInArea(iPlayer, utils.getPlotList(tBlackSeaTL, tBlackSeaBR)) >= 1
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
-			if bEgypt and bPhoenicia and bBabylonia and bPersia:
+			if bOccitaniaAndCatalonia and bSouthItaly and bBlackSea and bEgypt and bPhoenicia and bBabylonia and bPersia:
 				win(iGreece, 1)
 			else:
 				lose(iGreece, 1)
@@ -3358,10 +3369,14 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMathematics) + localText.getText("TXT_KEY_TECH_MATHEMATICS", ()) + ' ' + getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
 			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
+			bOccitaniaAndCatalonia = getNumCitiesInArea(iPlayer, utils.getPlotList(tOccitaniaAndCataloniaTL, tOccitaniaAndCataloniaBR)) >= 1
+			bSouthItaly = getNumCitiesInArea(iPlayer, utils.getPlotList(tSouthItalyTL, tSouthItalyBR)) >= 1
+			bBlackSea = getNumCitiesInArea(iPlayer, utils.getPlotList(tBlackSeaTL, tBlackSeaBR)) >= 1
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
+			aHelp.append(getIcon(bOccitaniaAndCatalonia) + localText.getText("TXT_KEY_CIV_VICTORY_OCC_CAT", ()) + ' ' + getIcon(bSouthItaly) + localText.getText("TXT_KEY_VICTORY_SOUTH_ITALY", ()) + ' ' + getIcon(bBlackSea) + localText.getText("TXT_KEY_VICTORY_BLACK_SEA", ()))
 			aHelp.append(getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_PHOENICIA_SHORT_DESC", ()) + ' ' + getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
 		elif iGoal == 2:
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)

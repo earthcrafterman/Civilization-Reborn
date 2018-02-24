@@ -461,4 +461,8 @@
 		<Tag>TXT_KEY_LEAGUE_ADJECTIVE</Tag>
 		<English>%s2 League</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLONIAL_EMPIRE</Tag>
+		<English>%s2 Colonial Empire</English>
+	</TEXT>
 </Civ4GameText>
