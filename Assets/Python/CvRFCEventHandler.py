@@ -529,6 +529,7 @@ class CvRFCEventHandler:
 		
 		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 			sta.onWonderBuilt(iOwner, iBuildingType)
+			self.rnf.onWonderBuilt(iOwner, iBuildingType)
 			
 		if iBuildingType == iPalace:
 			sta.onPalaceMoved(iOwner)

@@ -80,7 +80,16 @@ tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors]
+
+iChineseUnificationYear = -300
+tChinaTL = (101, 42)
+tChinaBR = (106, 48)
+
+tConquestQinChina = (10, iChina, iIndependent, tChinaTL, tChinaBR, 2, iChineseUnificationYear, 10)
+tConquestQinChina2 = (10, iChina, iIndependent2, tChinaTL, tChinaBR, 2, iChineseUnificationYear + 50, 10) #Chian deletes the conquerors
+
+
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestQinChina, tConquestQinChina2]
 
 class AIWars:
 		
@@ -126,6 +135,9 @@ class AIWars:
 		self.checkConquest(tConquestRomeEgypt)
 		
 		self.checkConquest(tConquestSpainMoors)
+		self.checkConquest(tConquestQinChina)
+		self.checkConquest(tConquestQinChina2)
+		
 		
 		if iGameTurn == data.iNextTurnAIWar:
 			self.planWars(iGameTurn)
@@ -208,6 +220,10 @@ class AIWars:
 				iBestInfantry = iHoplite
 				iBestSiege = iCatapult
 			
+			if iPlayer == iChina:
+				iBestInfantry = iSwordsman
+				iBestSiege = iCatapult
+			
 			utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 			utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
 			
@@ -216,6 +232,10 @@ class AIWars:
 				
 			if iPlayer == iSpain:
 				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 * iExtra)
+				
+			if iPlayer == iChina:
+				utils.makeUnitAI(iChariot, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:

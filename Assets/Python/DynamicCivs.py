@@ -987,7 +987,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIA"
 			
 	elif iPlayer == iGreece:
-		if not bCityStates and bEmpire and iEra <= iClassical:
+		if iCivicGovernment == iMonarchy and bEmpire and iEra == iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIA"
 			
 	elif iPlayer == iPolynesia:
@@ -1263,7 +1263,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
 			
 	elif iPlayer == iGreece:
-		if not bCityStates and bEmpire and iEra <= iClassical:
+		if iCivicGovernment == iMonarchy and bEmpire and iEra == iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIAN"
 			
 	elif iPlayer == iPersia:
@@ -1642,13 +1642,11 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE"
 			
 	elif iPlayer == iGreece:
-		if bEmpire:
-			return "TXT_KEY_EMPIRE_ADJECTIVE"
-	
-		if bCityStates:				
+		if bCityStates:	
 			if bWar:
 				return "TXT_KEY_CIV_GREECE_LEAGUE"
-				
+			if bEmpire:
+				return "TXT_KEY_COLONIAL_EMPIRE"
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"
 			
 	elif iPlayer == iPersia:

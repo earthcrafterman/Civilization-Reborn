@@ -145,7 +145,7 @@ iLime = 100
 iNumMinorCities = 50
 
 # scripted conquerors
-iNumConquests = 10
+iNumConquests = 12
 
 #neighbours
 lNeighbours = [
@@ -1070,9 +1070,9 @@ lEnemyCivsOnSpawn = [
 [], #Harappa
 [iIndependent,iIndependent2,iBabylonia], #Greece
 [], #India
-[], #Carthage
+[iGreece], #Carthage
 [], #Polynesia
-[iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage], #Persia
+[iBabylonia,iBabylonia,iCarthage,iCarthage], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [], # rome for testing
 [], #Tamils

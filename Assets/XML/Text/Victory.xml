@@ -714,13 +714,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
-		<English>Alexander's Empire</English>
-		<German>Alexanders Reich</German>
+		<English>Hellenic World</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2</Tag>
-		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
-		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+		<English>Colonize Emporion, South Italy, Black Sea and control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_EPIC</Tag>
@@ -3135,5 +3133,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VICTORY_OCC_CAT</Tag>
+		<English>Emporion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SOUTH_ITALY</Tag>
+		<English>South Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BLACK_SEA</Tag>
+		<English>Black Sea</English>
 	</TEXT>
 </Civ4GameText>
