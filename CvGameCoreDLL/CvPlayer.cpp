@@ -10657,6 +10657,18 @@ void CvPlayer::changeSlaveryCount(int iChange)
 }
 
 // Leoreth
+bool CvPlayer::isNoSlavery() const
+{
+	return m_iNoSlaveryCount > 0;
+}
+
+// Leoreth
+void CvPlayer::changeNoSlaveryCount(int iChange)
+{
+	m_iNoSlaveryCount += iChange;
+}
+
+// Leoreth
 bool CvPlayer::isColonialSlavery() const
 {
 	return m_iColonialSlaveryCount > 0;
@@ -17789,6 +17801,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeColonyCommerce(GC.getCivicInfo(eCivic).getColonyCommerce() * iChange); // Leoreth
 	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
 	changeSlaveryCount(GC.getCivicInfo(eCivic).isSlavery() * iChange); // Leoreth
+	changeNoSlaveryCount(GC.getCivicInfo(eCivic).isNoSlavery() * iChange); // Leoreth
 	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
@@ -18189,6 +18202,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iColonyCommerce); // Leoreth
 	pStream->Read(&m_iCaptureGoldModifier); // Leoreth
 	pStream->Read(&m_iSlaveryCount); // Leoreth
+	pStream->Read(&m_iNoSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
@@ -18724,6 +18738,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iColonyCommerce); // Leoreth
 	pStream->Write(m_iCaptureGoldModifier); // Leoreth
 	pStream->Write(m_iSlaveryCount); // Leoreth
+	pStream->Write(m_iNoSlaveryCount); // Leoreth
 	pStream->Write(m_iColonialSlaveryCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
@@ -25575,8 +25590,6 @@ bool CvPlayer::canBuySlaves() const
 {
 	if (isMinorCiv() || isBarbarian()) return false;
 
-	if (isColonialSlavery() && countColonies() > 0) return true;
-
 	if (isSlavery())
 	{
 		if (getNumCities() > 0)
@@ -25599,6 +25612,8 @@ bool CvPlayer::canBuySlaves() const
 			}
 		}
 	}
+
+	if (countColonies() > 0) return true;
 
 	return false;
 }
@@ -25647,4 +25662,13 @@ void CvPlayer::resetGreatPeopleCreated()
 	m_iGreatPeopleCreated = 0;
 	m_iGreatGeneralsCreated = 0;
 	m_iGreatSpiesCreated = 0;
+}
+
+bool CvPlayer::canUseSlaves() const
+{
+	if (isSlavery()) return true;
+
+	if (isNoSlavery()) return false;
+
+	return true;
 }
