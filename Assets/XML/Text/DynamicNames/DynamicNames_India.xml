@@ -157,4 +157,16 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_MAGADHA</Tag>
+		<English>Kingdom of Magadha</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_NANDA</Tag>
+		<English>Nanda Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_SHUNGA</Tag>
+		<English>Shunga Empire</English>
+	</TEXT>
 </Civ4GameText>

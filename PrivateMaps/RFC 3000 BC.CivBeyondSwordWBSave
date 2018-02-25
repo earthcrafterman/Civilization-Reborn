@@ -214,6 +214,8 @@ BeginPlayer
 	StartingGold=80
 	StateReligion=RELIGION_HINDUISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -33705,7 +33707,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=35
-	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
@@ -34088,7 +34089,7 @@ EndPlot
 BeginPlot
 	x=89,y=35
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -34478,6 +34479,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=35
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2

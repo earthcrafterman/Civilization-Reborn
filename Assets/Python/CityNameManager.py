@@ -261,7 +261,8 @@ tEraNames = (
 	'Indraprastha'		:	'Dilli',
 	'Moling'		:	'Nanjing',
 	'Panyu'			:	'Guangzhou',
-	'Mero&#235;'		:	'Dunqulah'
+	'Mero&#235;'		:	'Dunqulah',
+	'Tosali'		:	'Kolkata'
 	
 },
 # renaissance
@@ -4156,6 +4157,8 @@ dIdentifiers = {
 	"Klajpeda"		:	"Memel",
 	"Medvegalis"		:	"Memel",
 	"Memel"			:	"Memel",
+	"Buhen"			:	"Mero&#235;",
+	"Mero&#235;"		:	"Mero&#235;",
 	"Margiana"		:	"Merv",
 	"Margus"		:	"Merv",
 	"Merv"			:	"Merv",
@@ -5613,6 +5616,7 @@ tRenames = (
 	"Harare"		:	"Harare",
 	"Illizi"		:	"Illizi",
 	"Muqdisho"		:	"Muqdisho",
+	"Mero&#235;"		:	"Buhen"
 },
 #Language: Korean
 {

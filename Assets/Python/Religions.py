@@ -96,6 +96,8 @@ class Religions:
 		self.spreadJudaismMiddleEast(iGameTurn)
 		
 		self.spreadIslamIndonesia(iGameTurn)
+		
+		self.spreadHinduismDelhi(iGameTurn)
 
 
 	def foundReligion(self, tPlot, iReligion):
@@ -281,7 +283,18 @@ class Religions:
 			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lMiddleEastCities, iJudaism))
 			if pSpreadCity:
 				pSpreadCity.spreadReligion(iJudaism)
-				
+
+## HINDUISM
+	def spreadHinduismDelhi(self, iGameTurn):
+		if not gc.getGame().isReligionFounded(iHinduism): return
+		if iGameTurn > getTurnForYear(-300): return
+		
+		lIndianCities = utils.getRegionCities([rIndia])
+		
+		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lIndianCities, iHinduism))
+		if pSpreadCity:
+			pSpreadCity.spreadReligion(iHinduism)
+
 ## ISLAM
 
 	def spreadIslamIndonesia(self, iGameTurn):
