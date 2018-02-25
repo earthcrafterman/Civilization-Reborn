@@ -235,7 +235,7 @@ class AIWars:
 				
 			if iPlayer == iChina:
 				utils.makeUnitAI(iChariot, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-
+				gc.getPlayer(iPlayer).changeGold(utils.getTurns(200))
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:

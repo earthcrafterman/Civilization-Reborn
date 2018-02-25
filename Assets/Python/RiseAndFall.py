@@ -1266,7 +1266,7 @@ class RiseAndFall:
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 		
-		lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina, iCanada]
+		lConditionalCivs = [iMughals, iThailand, iBrazil, iArgentina, iCanada]
 		
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2468,9 +2468,9 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iArcher, iCiv, tPlot, 1)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
-			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 4)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iChariot, iCiv, tPlot, 1)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
@@ -2532,12 +2532,12 @@ class RiseAndFall:
 		elif iCiv == iTamils:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
-			utils.createMissionaries(iCiv, 1)
-			if utils.getHumanID() != iTamils:
-				utils.makeUnit(iHinduMissionary, iCiv, tPlot, 1)
-				utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+			utils.makeUnit(iWarElephant, iCiv, tPlot, 3)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
+			#utils.createMissionaries(iCiv, 1)
+			#if utils.getHumanID() != iTamils:
+			#	utils.makeUnit(iHinduMissionary, iCiv, tPlot, 1)
+			#	utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iTamils)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iTamils, tSeaPlot, 1)
@@ -2923,7 +2923,7 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iIndia:
 			#utils.makeUnit(iPunjabiWorker, iCiv, tPlot, 2)
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iWorker, iCiv, tPlot, 6)
 		elif iCiv == iGreece:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iPersia:

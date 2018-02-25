@@ -1227,13 +1227,15 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_INDIA_MARATHA"
 			
 			if iEra >= iMedieval:
-				return "TXT_KEY_CIV_INDIA_PALA"
-			
-			if iReligion == iBuddhism:
+				if iReligion == iBuddhism:
+					return "TXT_KEY_CIV_INDIA_PALA"
+				
+				if iReligion == iHinduism:
+					return "TXT_KEY_CIV_INDIA_GUPTA"
+
+			if bEmpire:
 				return "TXT_KEY_CIV_INDIA_MAURYA"
 			
-			if iReligion == iHinduism:
-				return "TXT_KEY_CIV_INDIA_GUPTA"
 			
 	elif iPlayer == iChina:
 		if bMonarchy:
@@ -1623,7 +1625,15 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bCityStates:
 			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
-			
+		
+		#not bEmpire and iEra <= iMedieval and not bCityStates
+		if gc.getPlayer(iPlayer).getNumCities() >= 1:
+			if iEra == iClassical:
+				return "TXT_KEY_CIV_INDIA_NANDA"
+			else:
+				return "TXT_KEY_CIV_INDIA_SHUNGA"
+		return "TXT_KEY_CIV_INDIA_MAGADHA"
+					
 	elif iPlayer == iChina:
 		if bEmpire:
 			if iEra >= iIndustrial or utils.getScenario() == i1700AD:

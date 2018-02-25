@@ -2156,10 +2156,10 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>40</iCost>
+			<iCost>10</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iMaintenanceModifier>-10</iMaintenanceModifier>
+			<iMaintenanceModifier>-20</iMaintenanceModifier>
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -8836,34 +8836,35 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_KHAJURAHO</BuildingClass>
 			<Type>BUILDING_KHAJURAHO</Type>
-			<Description>TXT_KEY_BUILDING_KHAJURAHO</Description>
-			<Civilopedia>TXT_KEY_BUILDING_KHAJURAHO_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HELP_KHAJURAHO</Help>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KHAJURAHO</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_KHAJURAHO</MovieDefineTag>
+			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
-			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
+			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>200</iAIWeight>
-			<iCost>200</iCost>
+			<iAIWeight>50</iAIWeight>
+			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iAsset>15</iAsset>
+			<iGlobalPopulationChange>1</iGlobalPopulationChange>
+			<iAsset>12</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>8</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8875,17 +8876,20 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_MARBLE</BonusType>
+					<BonusType>BONUS_STONE</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -9675,35 +9679,42 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WAT_PREAH_PISNULOK</BuildingClass>
 			<Type>BUILDING_WAT_PREAH_PISNULOK</Type>
-			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
-			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
-			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
+			<Description>TXT_KEY_BUILDING_KHAJURAHO</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KHAJURAHO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_HELP_KHAJURAHO</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KHAJURAHO</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_KHAJURAHO</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
-			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>50</iAIWeight>
-			<iCost>400</iCost>
+			<iAIWeight>200</iAIWeight>
+			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iGlobalPopulationChange>1</iGlobalPopulationChange>
-			<iAsset>12</iAsset>
+			<iAsset>15</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>8</iCommerce>
+				<iCommerce>4</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -9715,28 +9726,17 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_MARBLE</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<SpecialistYieldChanges>
-				<SpecialistYieldChange>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</SpecialistYieldChange>
-			</SpecialistYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>5</iFlavor>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
