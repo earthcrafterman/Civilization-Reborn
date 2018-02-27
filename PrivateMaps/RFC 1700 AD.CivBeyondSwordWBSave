@@ -343,10 +343,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=16
-	LeaderType=LEADER_GUSTAV
-	CivDesc=TXT_KEY_CIV_SWEDEN_DESC
-	CivShortDesc=TXT_KEY_CIV_SWEDEN_SHORT_DESC
-	CivAdjective=TXT_KEY_CIV_SWEDEN_ADJECTIVE
+	LeaderType=LEADER_CHRISTIAN_IV
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
 	StartingGold=150
