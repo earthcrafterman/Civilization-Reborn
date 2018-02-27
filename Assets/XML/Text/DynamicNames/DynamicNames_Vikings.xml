@@ -130,8 +130,16 @@
 		<English>Norse Kingdoms</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
-		<English>Denmark-Norway</English>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_DESC</Tag>
+		<English>The Danish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_SHORT_DESC</Tag>
+		<English>Denmark</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_ADJECTIVE</Tag>
+		<English>Danish</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
