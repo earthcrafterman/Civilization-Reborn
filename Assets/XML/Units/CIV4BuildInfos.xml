@@ -214,7 +214,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -414,7 +414,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -620,7 +620,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -657,7 +657,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -694,7 +694,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -997,7 +997,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -1149,7 +1149,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -1345,7 +1345,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>

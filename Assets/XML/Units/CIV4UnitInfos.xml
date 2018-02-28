@@ -11924,6 +11924,8 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<SpecialCargo>SPECIALUNIT_PEOPLE</SpecialCargo>
+			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>2</iAsset>
 			<iPower>6</iPower>
 			<UnitMeshGroups>

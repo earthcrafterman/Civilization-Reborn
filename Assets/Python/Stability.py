@@ -865,6 +865,7 @@ def calculateStability(iPlayer):
 	if bFreeEnterprise: iEconomicGrowthModifier = 4
 	
 	iEconomicGrowthStability = iEconomicGrowthModifier * calculateTrendScore(data.players[iPlayer].lEconomyTrend)
+	if iEconomicGrowthStability < 0: iEconomicGrowthStability /= 4
 	if iEconomicGrowthStability < 0 and bPublicWelfare: iEconomicGrowthStability /= 2
 	
 	lParameters[iParameterEconomicGrowth] = iEconomicGrowthStability
