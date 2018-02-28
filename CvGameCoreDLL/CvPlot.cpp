@@ -2885,6 +2885,10 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 
 	iTime *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getBuildPercent();
 	iTime /= 100;
+	
+	if (getFeatureType() != NO_FEATURE)
+		if (GC.getGame().getActivePlayer() == KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST"))
+			iTime /= 2;
 
 	return iTime;
 }
