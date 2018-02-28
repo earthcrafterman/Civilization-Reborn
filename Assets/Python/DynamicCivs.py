@@ -473,7 +473,7 @@ dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
-	iVikings : ["Oslo", "Nidaros", "Roskilde"],
+	iVikings : ["Oslo", "Nidaros", "Roskilde", "Stockholm", "Kalmar"],
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
