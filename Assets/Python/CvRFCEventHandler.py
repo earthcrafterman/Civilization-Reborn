@@ -357,6 +357,8 @@ class CvRFCEventHandler:
 			gc.getPlayer(iItaly).AI_updateFoundValues(False)
 
 		vic.onCityBuilt(iOwner, city)
+		
+		UniquePowers.onCityBuilt(iOwner, city)
 
 		if iOwner < iNumPlayers:
 			dc.onCityBuilt(iOwner)
