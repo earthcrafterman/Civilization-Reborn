@@ -9477,6 +9477,12 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 {
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
+	if ((eIndex == YIELD_FOOD && !isColony()) || (eIndex == YIELD_COMMERCE && isColony()))
+		for (int iI = 0; iI < GC.getNumBonusInfos(); ++iI)
+			if(GC.getBonusInfo((BonusTypes)iI).getHealth() > 0)
+				if(hasBonus((BonusTypes)iI))
+					iYieldRateTimes100 += 100 * GC.getBonusInfo((BonusTypes)iI).getHealth();
+
 	// Harappan UP: Sanitation: positive health contributes to city growth
 	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && !isFoodProduction())
 	{
