@@ -699,3 +699,11 @@ class UniquePowers:
 				data.iSwahiliTradeGold += iGold
 				if utils.getHumanID() == iSwahili:
 					CyInterface().addMessage(iSwahili, False, iDuration, CyTranslator().getText("TXT_KEY_SWAHILI_DHOW_GOLD", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+
+	def onCityBuilt(city):
+		iOwner = city.getOwner()
+		x = city.getX()
+		y = city.getY()
+		
+		if utils.getHumanID() != iPolynesia and iOwner == iPolynesia:
+			makeUnit(iArcher, iPolynesia, (x,y), 1)

@@ -2463,6 +2463,15 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	if (eBuilding == PYRAMIDS)
+	{
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())) && GC.getBuildingInfo((BuildingTypes)iI).getProductionCost() > 0)
+				if (getNumRealBuilding((BuildingTypes)iI) > 0 && !(GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI)))
+					return true;
+		return false;
+	}
+
 	return true;
 }
 
@@ -14676,6 +14685,60 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		if (!isProduction() || isProductionProcess() || AI_isChooseProductionDirty())
 		{
 			AI_chooseProduction();
+			
+			//Polynesia sometimes doesn't build anything, this should fix it.
+			if (getOwner() == POLYNESIA && !isProductionUnit() && !isProductionBuilding() && !isProductionProject())
+			{
+				UnitTypes eLoopUnit = NO_UNIT;
+				UnitTypes eBestUnit = NO_UNIT;
+
+				UnitAITypes eUnitAI;
+
+				int NumSettlers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLE);
+				int NumWorkBoats = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA);
+				int NumTransports = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLER_SEA) * 2;
+				int bDefendersHave = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) > 1;
+				
+				if (NumSettlers <= 3 && NumSettlers <= NumTransports)
+					eUnitAI = UNITAI_SETTLE;
+				else if (NumTransports <= 6 && NumTransports < NumSettlers)
+					eUnitAI = UNITAI_SETTLER_SEA;
+				else if (NumWorkBoats < AI_neededSeaWorkers())
+					eUnitAI = UNITAI_WORKER_SEA;
+				else if (!bDefendersHave)
+					eUnitAI = UNITAI_CITY_DEFENSE;
+				else
+				{
+					int rand = GC.getGameINLINE().getSorenRandNum(4, "Pick Polynesian Unit AI");
+					switch (rand)
+					{
+						case 0:
+							eUnitAI = UNITAI_SETTLE;
+						case 1:
+							eUnitAI = UNITAI_WORKER_SEA;
+						case 2:
+							eUnitAI = UNITAI_SETTLER_SEA;
+						case 3:
+							eUnitAI = UNITAI_CITY_DEFENSE;
+					}
+				}
+
+				for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+				{
+					eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+
+					if (eLoopUnit != NO_UNIT)
+						if ((GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
+							if (eBestUnit == NO_UNIT || getProductionTurnsLeft(eLoopUnit, 0) < getProductionTurnsLeft(eBestUnit, 0))
+								eBestUnit = eLoopUnit;
+				}
+
+				if(eBestUnit == (UnitTypes)GC.getInfoTypeForString("UNIT_WORK_BOAT") && canTrain((UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"), false, false, false, false))
+					eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA");
+
+				if(eBestUnit != NO_UNIT)
+					pushOrder(ORDER_TRAIN, eBestUnit, eUnitAI, false, false, false);
+			}
 		}
 	}
 

@@ -1121,7 +1121,7 @@ void CvCityAI::AI_chooseProduction()
 	}
 	}
 
-    if ((getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
+    if (getOwner() != POLYNESIA && (getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
     {
     	if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, (kPlayer.getCurrentEra() > 1) ? 0 : 7, 33))
 		{
@@ -1796,7 +1796,7 @@ void CvCityAI::AI_chooseProduction()
         		iTrainInvaderChance = (100 - ((100 - iTrainInvaderChance) / (bCrushStrategy ? 6 : 3)));
         	}
 
-            if (GC.getGameINLINE().getSorenRandNum(100, "AI Dagger Offense Unit") < iTrainInvaderChance )
+            if (getOwner() != POLYNESIA &&GC.getGameINLINE().getSorenRandNum(100, "AI Dagger Offense Unit") < iTrainInvaderChance )
             {
             	{
 					if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, 20))
@@ -2029,7 +2029,7 @@ void CvCityAI::AI_chooseProduction()
 //		}
 //	}
 
-	if (!bAlwaysPeace && (bDanger || (GC.getGameINLINE().getSorenRandNum(30, "AI Build Defense") < getPopulation())))
+	if (getOwner() != POLYNESIA && !bAlwaysPeace && (bDanger || (GC.getGameINLINE().getSorenRandNum(30, "AI Build Defense") < getPopulation())))
 	{
 	    if (!bDanger)
 	    {
@@ -2156,12 +2156,6 @@ void CvCityAI::AI_chooseProduction()
 	}
 
 	if (AI_chooseProcess())
-	{
-		return;
-	}
-
-	//Polynesia sometimes doesn't build anything, this should fix it.
-	if (AI_chooseUnit(UNITAI_SETTLER_SEA))
 	{
 		return;
 	}
@@ -2838,7 +2832,8 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
 				{
 					if ((isFoodProduction(eLoopUnit) && 
-						!(bGrowMore)) || ((eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
+						!(bGrowMore)) || (getOwner() != POLYNESIA && 
+						(eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
 						(getProductionTurnsLeft(eLoopUnit, 0) < 11 ||
 						(isCapital() && GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100)))))
 					{
@@ -3756,7 +3751,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 		        }
 		    }
 
-			if ((iFocusFlags & BUILDINGFOCUS_DEFENSE) || (iPass > 0))
+			if (getOwner() != POLYNESIA && ((iFocusFlags & BUILDINGFOCUS_DEFENSE) || (iPass > 0)))
 			{
 				if (!bAreaAlone)
 				{
@@ -3923,7 +3918,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 			}
 
-			if ((iFocusFlags & BUILDINGFOCUS_EXPERIENCE) || (iPass > 0))
+			if (getOwner() != POLYNESIA && (iFocusFlags & BUILDINGFOCUS_EXPERIENCE) || (iPass > 0))
 			{
 				iValue += (kBuilding.getFreeExperience() * ((iHasMetCount > 0) ? 12 : 6));
 
@@ -3955,7 +3950,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 			}
 
 			// since this duplicates BUILDINGFOCUS_EXPERIENCE checks, do not repeat on pass 1
-			if ((iFocusFlags & BUILDINGFOCUS_DOMAINSEA))
+			if (getOwner() != POLYNESIA && (iFocusFlags & BUILDINGFOCUS_DOMAINSEA))
 			{
 				iValue += (kBuilding.getFreeExperience() * ((iHasMetCount > 0) ? 16 : 8));
 

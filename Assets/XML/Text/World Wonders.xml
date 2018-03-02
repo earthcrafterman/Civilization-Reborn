@@ -618,7 +618,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
-		<English>[ICON_BULLET]Cities continue to grow when using Food for Production</English>
+		<English>[ICON_BULLET]Cities continue to grow when using Food for Production[NEWLINE][COLOR_WARNING_TEXT]Requires a Wonder in the city it's built in[COLOR_REVERT]</English>
 		<German>[ICON_BULLET]Städte wachsen weiterhin, wenn Nahrung zur Produktion verwendet wird</German>
 	</TEXT>
 	<TEXT>

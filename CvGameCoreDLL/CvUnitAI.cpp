@@ -5445,7 +5445,7 @@ void CvUnitAI::AI_settlerSeaMove()
 	int iSettlerCount = getUnitAICargo(UNITAI_SETTLE);
 	int iWorkerCount = getUnitAICargo(UNITAI_WORKER);
 
-	if ((iSettlerCount > 0) && (isFull() ||
+	if ((iSettlerCount > 0) && (getOwner() == POLYNESIA || isFull() ||
 			((getUnitAICargo(UNITAI_CITY_DEFENSE) > 0) &&
 			 (getUnitAICargo(UNITAI_WORKER) > 0) &&
 			 (GET_PLAYER(getOwnerINLINE()).AI_unitTargetMissionAIs(this, MISSIONAI_LOAD_SETTLER) == 0))))
@@ -13425,6 +13425,16 @@ bool CvUnitAI::AI_settlerSeaTransport()
 			else
 			{
 				getGroup()->pushMission(MISSION_MOVE_TO, pBestFoundPlot->getX_INLINE(), pBestFoundPlot->getY_INLINE(), 0, false, false, MISSIONAI_FOUND, pBestFoundPlot);
+				if (getOwner() == POLYNESIA && getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"))
+				{
+					int iNeededSeaWorkers = 0;
+					
+					for(int iI = 0; iI < GET_PLAYER(getOwner()).getNumCities(); iI++)
+						iNeededSeaWorkers += GET_PLAYER(getOwner()).getCity(iI)->AI_neededSeaWorkers();
+					
+					if (GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA) < iNeededSeaWorkers)
+						AI_setUnitAIType(UNITAI_WORKER_SEA);
+				}
 				return true;
 			}
 		}
@@ -13508,6 +13518,16 @@ bool CvUnitAI::AI_settlerSeaTransport()
 			else
 			{
 				getGroup()->pushMission(MISSION_MOVE_TO, pBestFoundPlot->getX_INLINE(), pBestFoundPlot->getY_INLINE(), 0, false, false, MISSIONAI_FOUND, pBestFoundPlot);
+				if (getOwner() == POLYNESIA && getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"))
+				{
+					int iNeededSeaWorkers = 0;
+					
+					for(int iI = 0; iI < GET_PLAYER(getOwner()).getNumCities(); iI++)
+						iNeededSeaWorkers += GET_PLAYER(getOwner()).getCity(iI)->AI_neededSeaWorkers();
+					
+					if (GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA) < iNeededSeaWorkers)
+						AI_setUnitAIType(UNITAI_WORKER_SEA);
+				}
 				return true;
 			}
 		}

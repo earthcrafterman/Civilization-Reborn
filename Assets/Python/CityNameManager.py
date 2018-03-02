@@ -181,7 +181,7 @@ def onCityBuilt(city):
 	if sNewName:
 		city.setName(sNewName, False)
 		return
-
+		
 	sNewName = getNativeName(iOwner, (x,y))
 
 	if sNewName:

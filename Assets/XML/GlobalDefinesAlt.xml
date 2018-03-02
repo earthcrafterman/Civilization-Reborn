@@ -88,7 +88,7 @@
 	</Define>
 	<Define>
 		<DefineName>PLAYER_OCCURRENCE_POLYNESIA</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 0 -->
 	</Define>
 	<Define>
 		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
