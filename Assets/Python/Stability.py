@@ -411,14 +411,9 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						if bCulture and bPopulation:
 							lRemovedCities.append(city)
 							continue
-							
-			# always raze Harappan cities
-			if iPlayer == iHarappa and utils.getHumanID() != iPlayer:
-				lRemovedCities.append(city)
-				continue
-						
+
 		lCededCities.append(city)
-			
+
 	for city in lRemovedCities:
 		plot = city.plot()
 		gc.getPlayer(iBarbarian).disband(city)

@@ -2941,6 +2941,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
 
+	if (getID() == POLYNESIA)
+	{
+		iValue += 3;
+	}
+
 	//Leoreth: Seljuks target only cities in the middle east
 	if (getID() == SELJUKS)
 	{

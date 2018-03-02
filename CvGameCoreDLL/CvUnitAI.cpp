@@ -1164,6 +1164,12 @@ void CvUnitAI::AI_settleMove()
 		}
 	}
 
+	if (!plot()->isCity() && canFound(plot()) && plot()->getPlotType() != PLOT_OCEAN && GC.getMap().getArea(getArea())->getNumTiles() == 1)
+	{
+		getGroup()->pushMission(MISSION_FOUND);
+		return;
+	}
+
 	//Rhye - don't be so shy (restored Warlords settings)
 	/*int iDanger = GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 3);
 
@@ -18200,6 +18206,7 @@ int CvUnitAI::AI_calculatePlotWorkersNeeded(CvPlot* pPlot, BuildTypes eBuild)
 	{
 		iNeeded *= 2;
 	}
+
 	return iNeeded;
 
 }

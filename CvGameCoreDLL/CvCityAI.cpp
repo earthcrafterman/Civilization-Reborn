@@ -768,6 +768,10 @@ void CvCityAI::AI_chooseProduction()
      	{
      		iMaxSettlers = (iMaxSettlers + 2) / 3;
      	}
+		if (getOwnerINLINE() == HARAPPA && !((bLandWar || bAssault) && bMajorWar))
+		{
+			iMaxSettlers = iMaxSettlers * 2;
+		}
     }
 
     bool bChooseWorker = false;
@@ -890,7 +894,7 @@ void CvCityAI::AI_chooseProduction()
 				return;
 			}
 		}
-		
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       09/19/09                                jdog5000      */
 /*                                                                                              */
@@ -984,6 +988,27 @@ void CvCityAI::AI_chooseProduction()
 		}
 
 		return;
+	}
+
+	int iPlotSettlerCount = (iNumSettlers == 0) ? 0 : plot()->plotCount(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE());
+	int iPlotCityDefenderCount = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
+
+	if (iPlotSettlerCount == 0 && getOwner() == HARAPPA)
+	{
+		if ((iNumSettlers < iMaxSettlers) && (!(bLandWar && bMajorWar) || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
+		{
+			if (iPlotCityDefenderCount == 1)
+			{
+				if (AI_chooseUnit(UNITAI_CITY_DEFENSE))
+				{
+					return;
+				}
+			}
+			else if (AI_chooseUnit(UNITAI_SETTLE))
+			{
+				return;
+			}
+		}
 	}
 
 	if (((iTargetCulturePerTurn > 0) || (getPopulation() > 5)) && (getCommerceRate(COMMERCE_CULTURE) == 0))
@@ -1104,9 +1129,6 @@ void CvCityAI::AI_chooseProduction()
 		}
     }
 
-
-	int iPlotSettlerCount = (iNumSettlers == 0) ? 0 : plot()->plotCount(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE());
-	int iPlotCityDefenderCount = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
 	//minimal defense.
 	if (iPlotCityDefenderCount <= iPlotSettlerCount)
 	{
@@ -1357,8 +1379,8 @@ void CvCityAI::AI_chooseProduction()
 				iSettlerSeaNeeded = std::min(1, iSettlerSeaNeeded);
 			}
 
-			// Leoreth: more settlers for colonial civs
-			if (getOwner() == ENGLAND || getOwner() == FRANCE || getOwner() == NETHERLANDS || getOwner() == SPAIN || getOwner() == PORTUGAL)
+			// Leoreth: more settlers for colonial civs 1SDAN: and Polynesia
+			if (getOwner() == ENGLAND || getOwner() == FRANCE || getOwner() == NETHERLANDS || getOwner() == SPAIN || getOwner() == PORTUGAL || getOwner() == POLYNESIA)
 			{
 				iSettlerSeaNeeded *= 3;
 				iSettlerSeaNeeded /= 2;
@@ -1373,7 +1395,7 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		if (iPlotSettlerCount == 0)
+		if (iPlotSettlerCount == 0 && getOwner() != HARAPPA)
 		{
 			if ((iNumSettlers < iMaxSettlers) && (!(bLandWar && bMajorWar) || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
 			{
@@ -2137,6 +2159,12 @@ void CvCityAI::AI_chooseProduction()
 	{
 		return;
 	}
+
+	//Polynesia sometimes doesn't build anything, this should fix it.
+	if (AI_chooseUnit(UNITAI_SETTLER_SEA))
+	{
+		return;
+	}
 }
 
 
@@ -2385,6 +2413,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
+		break;
+	case HARAPPA:
+		aiUnitAIVal[UNITAI_SETTLE] *= 3;
 		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
@@ -2806,8 +2837,10 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 			{
 				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
 				{
-
-					if (!(bGrowMore && isFoodProduction(eLoopUnit)))
+					if ((isFoodProduction(eLoopUnit) && 
+						!(bGrowMore)) || ((eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
+						(getProductionTurnsLeft(eLoopUnit, 0) < 11 ||
+						(isCapital() && GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100)))))
 					{
 						if (canTrain(eLoopUnit))
 						{
@@ -8284,8 +8317,13 @@ int CvCityAI::AI_yieldValue(short* piYields, short* piCommerceYields, bool bAvoi
 		iProductionValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION);
 	}
 
-	iValue += iProductionValue;
-
+	if (getOwner() == POLYNESIA)
+	{
+		iValue += iProductionValue * 4;
+	}
+	else {
+		iValue += iProductionValue;
+	}
 
 	iCommerceValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_COMMERCE)));
 	iCommerceValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE);
