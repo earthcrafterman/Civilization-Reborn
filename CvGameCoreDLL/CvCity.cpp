@@ -9477,7 +9477,7 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 {
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
-	if ((eIndex == YIELD_FOOD && !isColony()))isCore()
+	if ((eIndex == YIELD_FOOD && plot()->isCore(getOwner())))
 		for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 			if(GC.getBonusInfo((BonusTypes)iI).getHealth() > 0)
 				if(hasBonus((BonusTypes)iI))
