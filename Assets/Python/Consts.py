@@ -1065,32 +1065,32 @@ iNetherlands : 200,
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
 [], #Egypt
-[iIndependent,iIndependent2,iIndependent2], #China
+[iIndependent,iIndependent2], #China
 [iIndependent,iIndependent2], #Babylonia
 [], #Harappa
-[iIndependent,iIndependent2,iBabylonia], #Greece
+[], #Greece
 [], #India
-[iGreece], #Carthage
+[iCeltia], #Carthage
 [], #Polynesia
-[iBabylonia,iBabylonia,iCarthage,iCarthage], #Persia
+[iBabylonia,iCarthage], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
-[], # rome for testing
+[iCeltia], # rome for testing
 [], #Tamils
 [], #Ethiopia
 [], #Korea
 [], #Maya
 [iGreece, iPersia], #Byzantium
 [], #Japan
-[iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
-[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
+[iEngland,iFrance,iIndependent,iIndependent2], #Vikings
+[iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
-[iKhmer, iKhmer], #Indonesia
+[iKhmer], #Indonesia
 [], #Moors
 [], #Spain
 [], #France
 [], #Khmer
 [], #England
-[iRome,iArabia,iArabia], #Holy Rome
+[iRome,iArabia], #Holy Rome
 [], #Russia
 [], #Mali
 [], #Poland

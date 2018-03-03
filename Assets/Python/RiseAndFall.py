@@ -2265,11 +2265,11 @@ class RiseAndFall:
 				if utils.isAVassal(iLoopCiv): continue
 				if not gc.getPlayer(iLoopCiv).isAlive(): continue
 				if teamCiv.isAtWar(iLoopCiv): continue
-				if utils.getHumanID() == iCiv and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
+				#if utils.getHumanID() == iCiv and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
 				
-				iLoopMin = 50
-				if iLoopCiv >= iNumMajorPlayers: iLoopMin = 30
-				if utils.getHumanID() == iLoopCiv: iLoopMin += 10
+				iLoopMin = 0
+				#if iLoopCiv >= iNumMajorPlayers: iLoopMin = 0
+				#if utils.getHumanID() == iLoopCiv: iLoopMin += 10
 				
 				if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
 					iWarPlan = -1
@@ -2510,14 +2510,14 @@ class RiseAndFall:
 			utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		elif iCiv == iRome:
-			utils.createSettlers(iCiv, 3)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			utils.makeUnit(iLegion, iCiv, tPlot, 4)
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:
-				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
-				pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-				pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+			#utils.makeUnit(iLegion, iCiv, tPlot, 4)
+			#tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			#if tSeaPlot:
+			#	utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+			#	pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+			#	pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iJapan:
 			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 1)

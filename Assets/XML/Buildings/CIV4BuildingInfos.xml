@@ -3574,7 +3574,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PHOENICIAN_GLASSMAKER</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<PrereqTech>TECH_BLOOMERY</PrereqTech>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8166,7 +8166,7 @@
 			<bWater>1</bWater>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
-			<iCost>250</iCost>
+			<iCost>500</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>10</iMinAreaSize>
@@ -8196,7 +8196,7 @@
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
+					<iProductonModifier>200</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<Flavors>

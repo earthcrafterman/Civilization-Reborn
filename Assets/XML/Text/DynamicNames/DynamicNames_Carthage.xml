@@ -150,4 +150,16 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
+		<English>Carthaginian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AFRICA_ADJECTIVE</Tag>
+		<English>African</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNIS_ADJECTIVE</Tag>
+		<English>Tunisian</English>
+	</TEXT>
 </Civ4GameText>
