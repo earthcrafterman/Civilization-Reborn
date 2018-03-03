@@ -237,7 +237,7 @@ class Barbs:
 		#camels in arabia
 		if utils.isYearIn(190, 550):
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
-		if utils.isYearIn(-800, 1300):
+		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iArabia]):
 			iNumUnits = iHandicap
 			if utils.getScenario() == i3000BC: iNumUnits += 1
 			self.checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
@@ -278,16 +278,18 @@ class Barbs:
 			elif iGameTurn % 18 == 9:
 				if not gc.getMap().plot(30, 13).isUnit():
 					utils.makeUnitAI(iNative, iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
-		
-		if utils.isYearIn(1700, 1900):
-			self.checkCampUnitSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), 20)
-			
-		if utils.isYearIn(1500, 1850):
-			self.checkCampUnitSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), 20)
-			
-		# Rabbits in Australia
-		if iGameTurn >= getTurnForYear(1860):
-			self.checkSpawn(iBarbarian, iRabbit, 2 + iHandicap, (103, 10), (118, 22), self.spawnRabbits, iGameTurn, 8, 4)
+
+		if self.includesActiveHuman([iAmerica, iEngland, iFrance, iAustralia]):
+			if utils.isYearIn(1700, 1900):
+				self.checkCampUnitSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), 20)
+				
+			if utils.isYearIn(1500, 1850):
+				self.checkCampUnitSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), 20)
+				
+			# Rabbits in Australia
+			if iGameTurn >= getTurnForYear(1860):
+				self.checkSpawn(iBarbarian, iRabbit, 2 + iHandicap, (103, 10), (118, 22), self.spawnRabbits, iGameTurn, 8, 4)
+
 				
 		if utils.isYearIn(600, 1900):
 			iMaxCamps = 1
@@ -588,6 +590,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+
 	
 	def spawnRabbits(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Merijn: inside territory, dispersed over several plots, pillaging'''
@@ -641,3 +644,7 @@ class Barbs:
 			
 			unit = gc.getPlayer(iPlayer).initUnit(iUnitType, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			unit.setBaseCombatStr(iStrength)
+	
+			
+	def includesActiveHuman(self, lPlayers):
+		return utils.getHumanID() in lPlayers and tBirth[utils.getHumanID()] <= gc.getGame().getGameTurnYear()
