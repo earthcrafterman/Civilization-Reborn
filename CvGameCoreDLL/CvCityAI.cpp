@@ -2832,8 +2832,7 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
 				{
 					if ((isFoodProduction(eLoopUnit) && 
-						!(bGrowMore)) || (getOwner() != POLYNESIA && 
-						(eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
+						!(bGrowMore)) || ((eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
 						(getProductionTurnsLeft(eLoopUnit, 0) < 11 ||
 						(isCapital() && GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100)))))
 					{
