@@ -357,8 +357,12 @@ class CvRFCEventHandler:
 			gc.getPlayer(iItaly).AI_updateFoundValues(False)
 
 		vic.onCityBuilt(iOwner, city)
+
+		x = city.getX()
+		y = city.getY()
 		
-		UniquePowers.onCityBuilt(iOwner, city)
+		if utils.getHumanID() != iPolynesia and iOwner == iPolynesia:
+			utils.makeUnit(iArcher, iPolynesia, (x,y), 1)
 
 		if iOwner < iNumPlayers:
 			dc.onCityBuilt(iOwner)
