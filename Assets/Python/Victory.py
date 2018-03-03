@@ -422,12 +422,37 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iCarthage, 1)
 				
 		# third goal: have 5000 gold in 200 AD
-		if iGameTurn == getTurnForYear(200):
-			if pCarthage.getGold() >= utils.getTurns(5000):
-				win(iCarthage, 2)
-			else:
-				lose(iCarthage, 2)
-				
+		if iGameTurn == getTurnForYear(620):
+			lAfricanRegions = [rMaghreb, rWestAfrica, rSouthAfrica, rEthiopia]
+			lWorld = utils.getWorldPlotsList();
+			for (x, y) in lWorld:
+				plot = gc.getMap().plot(x, y)
+				if (plot.getRegionID() in lAfricanRegions) and (x, y) != (69, 23):
+					#Test African tiles
+					coastness = 0
+					plot1 = gc.getMap().plot(x - 1, y - 1)
+					plot2 = gc.getMap().plot(x - 1, y + 1)
+					plot3 = gc.getMap().plot(x + 1, y - 1)
+					plot4 = gc.getMap().plot(x + 1, y + 1)
+					plotA = gc.getMap().plot(x - 1, y)
+					plotB = gc.getMap().plot(x + 1, y)
+					plotC = gc.getMap().plot(x, y - 1)
+					plotD = gc.getMap().plot(x, y + 1)
+					if plot1.isWater(): coastness = coastness + 1
+					if plot2.isWater(): coastness = coastness + 1
+					if plot3.isWater(): coastness = coastness + 1
+					if plot4.isWater(): coastness = coastness + 1
+					if plotA.isWater(): coastness = coastness + 1
+					if plotB.isWater(): coastness = coastness + 1
+					if plotC.isWater(): coastness = coastness + 1
+					if plotD.isWater(): coastness = coastness + 1
+					if coastness >= 4 and coastness < 8:
+						#Test coastal African tiles, exclude islands
+						if not plot.isRevealed(iPlayer, False):
+							lose(iCarthage, 2)
+							return
+			win(iCarthage, 2)	
+			
 	elif iPlayer == iPolynesia:
 	
 		# first goal: settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
@@ -3401,9 +3426,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]))
 			bIberia = isControlled(iCarthage, Areas.getNormalArea(iSpain, False))
 			aHelp.append(getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
-		elif iGoal == 2:
-			iTreasury = pCarthage.getGold()
-			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
+		#elif iGoal == 2:
 
 	elif iPlayer == iPolynesia:
 		if iGoal == 0 or iGoal == 1:

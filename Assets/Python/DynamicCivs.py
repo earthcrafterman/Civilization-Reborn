@@ -468,6 +468,7 @@ dAdjectiveChanges = {
 dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu", "Akkad"],
+	iPhoenicia : ['Sur', 'Sydwn', 'Carthage'],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
@@ -1267,7 +1268,19 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iGreece:
 		if iCivicGovernment == iMonarchy and bEmpire and iEra == iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIAN"
-			
+	
+	
+	elif iPlayer == iPhoenicia:
+		if isCapital(iPlayer, ["Sur", "Sydwn"]):
+			return "TXT_KEY_CIV_PHOENICIA_ADJECTIVE"
+		else:
+			if iEra <= iClassical:
+				return "TXT_KEY_CIV_CARTHAGE_ADJECTIVE"
+			elif iEra == iMedieval:
+				return "TXT_KEY_CIV_AFRICA_ADJECTIVE"
+			elif iEra >= iRenaissance:
+				return "TXT_KEY_CIV_TUNIS_ADJECTIVE"
+
 	elif iPlayer == iPersia:
 		if pPlayer.isStateReligion() and iReligion < 0:
 			return "TXT_KEY_CIV_PERSIA_MEDIAN"
@@ -2044,8 +2057,6 @@ def leader(iPlayer):
 		if bResurrected and getColumn(iPlayer) >= 11: return iGeorge
 	
 		if bEmpire: return iAlexanderTheGreat
-		
-		if not bCityStates: return iAlexanderTheGreat
 		
 	elif iPlayer == iPersia:
 		if bReborn:
