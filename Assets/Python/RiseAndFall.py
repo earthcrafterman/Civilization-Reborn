@@ -2527,12 +2527,8 @@ class RiseAndFall:
 		elif iCiv == iPolynesia:
 			tSeaPlot = (4, 19)
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)
-			if utils.getHumanID() != iPolynesia:
-				utils.makeUnit(iSettler, iCiv, (6, 19), 1)
-				utils.makeUnitAI(iWaka, iCiv, tSeaPlot, UnitAITypes.UNITAI_WORKER_SEA, 1)
-			else:
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iWaka, iCiv, tSeaPlot, 1)
+			utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		elif iCiv == iRome:
 			utils.createSettlers(iCiv, 3)

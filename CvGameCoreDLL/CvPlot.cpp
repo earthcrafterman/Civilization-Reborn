@@ -7410,6 +7410,11 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 82393;
 	}
 
+	if (eIndex == POLYNESIA && ((getX_INLINE() == 6 && getY_INLINE() == 19) || (getX_INLINE() == 5 && getY_INLINE() == 21)))
+	{
+		return 82393;
+	}
+
 	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (getSettlerValue(eIndex) >= 800))
 	{
 		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
