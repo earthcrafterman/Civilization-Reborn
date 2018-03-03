@@ -22,7 +22,7 @@ tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary curren
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
 tSilkRouteTL = (80, 46)
-tSilkRouteBR = (99, 52)
+tSilkRouteBR = (101, 52)
 
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)

@@ -108,12 +108,13 @@ tRegionMap = (
 tSpreadFactors = (
 # Judaism
 {
-	iMinority :	[rEgypt, rMesopotamia, rPersia, rAnatolia, rBalkans, rItaly, rIberia, rEurope, rScandinavia, rRussia, rBritain, rUnitedStates],
+	iMinority :	[rEgypt, rPersia, rAnatolia, rBalkans, rItaly, rIberia, rRussia, rBritain],
+	iPeriphery :	[rUnitedStates, rEurope, rScandinavia]
 },
 # Orthodoxy
 {
-	iCore :		[rRussia, rEthiopia],
-	iHistorical : 	[rBalkans, rAnatolia, rMesopotamia, rEgypt, rSiberia],
+	iCore :		[rRussia, rEthiopia, rBalkans],
+	iHistorical : 	[rAnatolia, rMesopotamia, rEgypt, rSiberia],
 	iPeriphery : 	[rMaghreb, rItaly, rPersia, rAlaska],
 	iMinority :	[rCentralAsia],
 },
@@ -121,7 +122,8 @@ tSpreadFactors = (
 {
 	iCore :		[rEurope, rScandinavia, rItaly, rIberia],
 	iHistorical :	[rBritain, rScandinavia, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rColombia, rPeru, rBrazil, rArgentina, rSouthAfrica],
-	iPeriphery :	[rBalkans, rAustralia, rOceania, rWestAfrica],
+	iPeriphery :	[rAustralia, rOceania, rWestAfrica],
+	iMinority :	[rBalkans]
 },
 # Protestantism
 {
@@ -144,8 +146,8 @@ tSpreadFactors = (
 # Buddhism
 {
 	iCore : 	[rIndia, rTibet, rIndochina],
-	iHistorical : 	[rCentralAsia, rChina, rManchuria, rKorea, rJapan, rIndonesia],
-	iMinority :	[rPersia],
+	iHistorical : 	[rCentralAsia, rManchuria, rKorea, rJapan, rIndonesia],
+	iMinority :	[rPersia, rChina],
 },
 # Confucianism
 {
@@ -163,6 +165,7 @@ tSpreadFactors = (
 # Zoroastrianism
 {
 	iCore :		[rPersia],
+	iHistorical :	[rCentralAsia],
 	iMinority : 	[rIndia],
 },
 )

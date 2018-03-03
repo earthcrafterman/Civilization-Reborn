@@ -18,6 +18,14 @@ localText = CyTranslator()
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
 lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
+#second greek goal: colonize Occitania and Catalonia, South Italy and Black sea
+tOccitaniaAndCataloniaTL = (54, 42)
+tOccitaniaAndCataloniaBR = (57, 46)
+tSouthItalyTL = (60, 40)
+tSouthItalyBR = (63, 43)
+tBlackSeaTL = (69, 44)
+tBlackSeaBR = (76, 49)
+
 # first Polynesian goal: settle two out of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 # second Polynesian goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
 tHawaiiTL = (0, 34)
@@ -212,7 +220,7 @@ tPacific3BR = (122, 33)
 
 dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
-	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
+	iBabylonia: (0, [iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (1, [iPrinting]),
@@ -375,11 +383,14 @@ def checkTurn(iGameTurn, iPlayer):
 
 		# second goal: control Egypt, Phoenicia, Babylonia and Persia in 330 BC
 		if iGameTurn == getTurnForYear(-330):
+			bOccitaniaAndCatalonia = getNumCitiesInArea(iPlayer, utils.getPlotList(tOccitaniaAndCataloniaTL, tOccitaniaAndCataloniaBR)) >= 1
+			bSouthItaly = getNumCitiesInArea(iPlayer, utils.getPlotList(tSouthItalyTL, tSouthItalyBR)) >= 1
+			bBlackSea = getNumCitiesInArea(iPlayer, utils.getPlotList(tBlackSeaTL, tBlackSeaBR)) >= 1
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
-			if bEgypt and bPhoenicia and bBabylonia and bPersia:
+			if bOccitaniaAndCatalonia and bSouthItaly and bBlackSea and bEgypt and bPhoenicia and bBabylonia and bPersia:
 				win(iGreece, 1)
 			else:
 				lose(iGreece, 1)
@@ -391,7 +402,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iIndia:
 
 		# first goal: control the Hindu and Buddhist shrine in 100 BC
-		if iGameTurn == getTurnForYear(-100):
+		if iGameTurn == getTurnForYear(350):
 			bBuddhistShrine = getNumBuildings(iIndia, iBuddhistShrine) > 0
 			bHinduShrine = getNumBuildings(iIndia, iHinduShrine) > 0
 			if bHinduShrine and bBuddhistShrine:
@@ -399,13 +410,13 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIndia, 0)
 
-		# second goal: build 20 temples by 700 AD
-		if iGameTurn == getTurnForYear(700):
+		# second goal: build 20 temples by 850 AD
+		if iGameTurn == getTurnForYear(850):
 			expire(iIndia, 1)
 
 		# third goal: control 20% of the world's population in 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			if getPopulationPercent(iIndia) >= 20.0:
+			if getPopulationPercent(iIndia) >= 18.0:
 				win(iIndia, 2)
 			else:
 				lose(iIndia, 2)
@@ -432,11 +443,36 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iCarthage, 1)
 
 		# third goal: have 5000 gold in 200 AD
-		if iGameTurn == getTurnForYear(200):
-			if pCarthage.getGold() >= utils.getTurns(5000):
-				win(iCarthage, 2)
-			else:
-				lose(iCarthage, 2)
+		if iGameTurn == getTurnForYear(620):
+			lAfricanRegions = [rMaghreb, rWestAfrica, rSouthAfrica, rEthiopia]
+			lWorld = utils.getWorldPlotsList();
+			for (x, y) in lWorld:
+				plot = gc.getMap().plot(x, y)
+				if (plot.getRegionID() in lAfricanRegions) and (x, y) != (69, 23):
+					#Test African tiles
+					coastness = 0
+					plot1 = gc.getMap().plot(x - 1, y - 1)
+					plot2 = gc.getMap().plot(x - 1, y + 1)
+					plot3 = gc.getMap().plot(x + 1, y - 1)
+					plot4 = gc.getMap().plot(x + 1, y + 1)
+					plotA = gc.getMap().plot(x - 1, y)
+					plotB = gc.getMap().plot(x + 1, y)
+					plotC = gc.getMap().plot(x, y - 1)
+					plotD = gc.getMap().plot(x, y + 1)
+					if plot1.isWater(): coastness = coastness + 1
+					if plot2.isWater(): coastness = coastness + 1
+					if plot3.isWater(): coastness = coastness + 1
+					if plot4.isWater(): coastness = coastness + 1
+					if plotA.isWater(): coastness = coastness + 1
+					if plotB.isWater(): coastness = coastness + 1
+					if plotC.isWater(): coastness = coastness + 1
+					if plotD.isWater(): coastness = coastness + 1
+					if coastness >= 4 and coastness < 8:
+						#Test coastal African tiles, exclude islands
+						if not plot.isRevealed(iPlayer, False):
+							lose(iCarthage, 2)
+							return
+			win(iCarthage, 2)	
 
 	elif iPlayer == iPolynesia:
 
@@ -1867,15 +1903,16 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iNumBaths >= 3 and iNumGranaries >= 2 and iNumSmokehouses >= 2:
 					win(iHarappa, 1)
 
-	# second Indian goal: build 20 temples by 700 AD
+	# second Indian goal: build 26 temples and edicts by 700 AD
 	elif iPlayer == iIndia:
 		if isPossible(iIndia, 1):
 			lTemples = [iTemple + i*4 for i in range(iNumReligions)]
+			lTemples.append(iEdict)
 			if iBuilding in lTemples:
 				iCounter = 0
 				for iGoalTemple in lTemples:
 					iCounter += getNumBuildings(iIndia, iGoalTemple)
-				if iCounter >= 20:
+				if iCounter >= 26:
 					win(iIndia, 1)
 
 	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
@@ -3538,12 +3575,11 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
-			bConstruction = data.lFirstDiscovered[iConstruction] == iBabylonia
 			bArithmetics = data.lFirstDiscovered[iArithmetics] == iBabylonia
 			bWriting = data.lFirstDiscovered[iWriting] == iBabylonia
 			bCalendar = data.lFirstDiscovered[iCalendar] == iBabylonia
 			bContract = data.lFirstDiscovered[iContract] == iBabylonia
-			aHelp.append(getIcon(bConstruction) + localText.getText("TXT_KEY_TECH_CONSTRUCTION", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
+			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
 			aHelp.append(getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()) + ' ' + getIcon(bContract) + localText.getText("TXT_KEY_TECH_CONTRACT", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
@@ -3564,10 +3600,14 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMathematics) + localText.getText("TXT_KEY_TECH_MATHEMATICS", ()) + ' ' + getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
 			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
+			bOccitaniaAndCatalonia = getNumCitiesInArea(iPlayer, utils.getPlotList(tOccitaniaAndCataloniaTL, tOccitaniaAndCataloniaBR)) >= 1
+			bSouthItaly = getNumCitiesInArea(iPlayer, utils.getPlotList(tSouthItalyTL, tSouthItalyBR)) >= 1
+			bBlackSea = getNumCitiesInArea(iPlayer, utils.getPlotList(tBlackSeaTL, tBlackSeaBR)) >= 1
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
+			aHelp.append(getIcon(bOccitaniaAndCatalonia) + localText.getText("TXT_KEY_CIV_VICTORY_OCC_CAT", ()) + ' ' + getIcon(bSouthItaly) + localText.getText("TXT_KEY_VICTORY_SOUTH_ITALY", ()) + ' ' + getIcon(bBlackSea) + localText.getText("TXT_KEY_VICTORY_BLACK_SEA", ()))
 			aHelp.append(getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_PHOENICIA_SHORT_DESC", ()) + ' ' + getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
 		elif iGoal == 2:
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)
@@ -3582,14 +3622,15 @@ def getUHVHelp(iPlayer, iGoal):
 			bHinduShrine = (getNumBuildings(iIndia, iHinduShrine) > 0)
 			aHelp.append(getIcon(bHinduShrine) + localText.getText("TXT_KEY_VICTORY_HINDU_SHRINE", ()) + ' ' + getIcon(bBuddhistShrine) + localText.getText("TXT_KEY_VICTORY_BUDDHIST_SHRINE", ()))
 		elif iGoal == 1:
-			lTemples = [iTemple + 4 * i for i in range(iNumReligions)]
+			lTemples = [iTemple + i*4 for i in range(iNumReligions)]
+			lTemples.append(iEdict)
 			iCounter = 0
 			for iGoalTemple in lTemples:
 				iCounter += getNumBuildings(iIndia, iGoalTemple)
-			aHelp.append(getIcon(iCounter >= 20) + localText.getText("TXT_KEY_VICTORY_TEMPLES_BUILT", (iCounter, 20)))
+			aHelp.append(getIcon(iCounter >= 26) + localText.getText("TXT_KEY_VICTORY_TEMPLES_BUILT", (iCounter, 26)))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iIndia)
-			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(20))))
+			aHelp.append(getIcon(popPercent >= 18.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(18))))
 
 	elif iPlayer == iCarthage:
 		if iGoal == 0:
@@ -3600,9 +3641,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]))
 			bIberia = isControlled(iCarthage, Areas.getNormalArea(iSpain, False))
 			aHelp.append(getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
-		elif iGoal == 2:
-			iTreasury = pCarthage.getGold()
-			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
+		#elif iGoal == 2:
 
 	elif iPlayer == iPolynesia:
 		if iGoal == 0 or iGoal == 1:

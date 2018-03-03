@@ -189,6 +189,10 @@ BeginPlayer
 	LeaderType=LEADER_QIN_SHI_HUANG
 	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -211,7 +215,8 @@ BeginPlayer
 	CivType=CIVILIZATION_GREECE
 	PlayableCiv=1
 	StartingGold=100
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
@@ -224,6 +229,8 @@ BeginPlayer
 	StartingGold=80
 	StateReligion=RELIGION_HINDUISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -234,7 +241,9 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -21992,6 +22001,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_SHEEP
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26318,21 +26328,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=45
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=68,y=46
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=68,y=47
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=68,y=48
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -26643,6 +26656,12 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+EndPlot
+BeginPlot
+	x=69,y=34
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
 	EndUnit
@@ -26651,14 +26670,8 @@ BeginPlot
 	EndUnit
 EndPlot
 BeginPlot
-	x=69,y=34
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-EndPlot
-BeginPlot
 	x=69,y=35
-	BonusType=BONUS_MARBLE
+	BonusType=BONUS_STONE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -26711,14 +26724,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=44
-	BonusType=BONUS_SHEEP
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=45
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=46
@@ -27846,7 +27858,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -29730,7 +29741,7 @@ BeginPlot
 	x=77,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_STONE
+	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -33785,7 +33796,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=35
-	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
@@ -34168,7 +34178,7 @@ EndPlot
 BeginPlot
 	x=89,y=35
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -34558,6 +34568,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=35
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -38426,12 +38438,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=1, (China)
-	EndUnit
 EndPlot
 BeginPlot
 	x=100,y=45
@@ -40003,7 +40009,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=45
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40394,6 +40399,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
+	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

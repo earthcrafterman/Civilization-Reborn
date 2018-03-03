@@ -83,6 +83,7 @@ class Religions:
 					if not gc.getMap().plot(92, 39).getPlotCity().isNone():
 						self.foundReligion((92, 39), iHinduism)
 				
+		self.checkConfucianism(iGameTurn)
 		self.checkJudaism(iGameTurn)
 		
 		#self.checkBuddhism(iGameTurn)
@@ -96,6 +97,8 @@ class Religions:
 		self.spreadJudaismNorthAmerica(iGameTurn)
 		
 		self.spreadIslamIndonesia(iGameTurn)
+		
+		self.spreadHinduismDelhi(iGameTurn)
 
 
 	def foundReligion(self, tPlot, iReligion):
@@ -238,13 +241,20 @@ class Religions:
 		city = utils.getRandomEntry(lCoreCities)
 		
 		self.foundReligion((city.getX(), city.getY()), iReligion)
-					
+		
+## CONFUCIANISM
+	def checkConfucianism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iConfucianism): return
+
+		if iGameTurn == getTurnForYear(-550) - utils.getTurns(data.iSeed % 5):
+			self.foundReligion((104, 45), iConfucianism)
+			
 ## JUDAISM
 
 	def checkJudaism(self, iGameTurn):
 		if gc.getGame().isReligionFounded(iJudaism): return
 
-		if iGameTurn == getTurnForYear(-1500) - utils.getTurns(data.iSeed % 5):
+		if iGameTurn == getTurnForYear(-168) - utils.getTurns(data.iSeed % 5):
 			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
 			
 	def spreadJudaismEurope(self, iGameTurn):
@@ -292,6 +302,18 @@ class Religions:
 			if pSpreadCity:
 				pSpreadCity.spreadReligion(iJudaism)
 				
+
+## HINDUISM
+	def spreadHinduismDelhi(self, iGameTurn):
+		if not gc.getGame().isReligionFounded(iHinduism): return
+		if iGameTurn > getTurnForYear(-300): return
+		
+		lIndianCities = utils.getRegionCities([rIndia])
+		
+		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lIndianCities, iHinduism))
+		if pSpreadCity:
+			pSpreadCity.spreadReligion(iHinduism)
+
 ## ISLAM
 
 	def spreadIslamIndonesia(self, iGameTurn):

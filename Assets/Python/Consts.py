@@ -143,10 +143,10 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 38
+iNumMinorCities = 50
 
 # scripted conquerors
-iNumConquests = 10
+iNumConquests = 12
 
 #neighbours
 lNeighbours = [
@@ -259,16 +259,16 @@ lOlderNeighbours = [
 # converted to years - edead
 tBirth = (
 -3000, # 0, #3000BC			# Egypt
--3000, # 0, #3000BC			# China
+-1050, # 0, #1050BC			# China, founding of Fenghao
 -3000, # 0, #3000BC			# Babylonia
 -3000,					# Harappa
 -1600, # 50, #1600BC			# Greece
--1500, # 0, #3000BC			# India
+-600, # 0, #3000BC			# India
 -1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
 -1000,					# Polynesia
 -850, # 84, #844BC			# Persia
 -753, # 90, #753BC			# Rome
--300,					# Tamils
+848,					# Tamils
 -290, # 121, #300BC			# Ethiopia
 -50,					# Korea
 65, # 145, #60AD			# Maya
@@ -1067,7 +1067,7 @@ tStartingGold = (
 0,	# Babylonia
 0, 	# Harappa
 100,	# Greece
-80,	# India
+300,	# India
 200,	# Carthage
 0,	# Polynesia
 200,	# Persia
@@ -1148,32 +1148,32 @@ iNetherlands : 200,
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
 [], #Egypt
-[iIndependent,iIndependent2,iIndependent2], #China
+[iIndependent,iIndependent2], #China
 [iIndependent,iIndependent2], #Babylonia
 [], #Harappa
-[iIndependent,iIndependent2,iBabylonia], #Greece
+[], #Greece
 [], #India
-[], #Carthage
+[iCeltia], #Carthage
 [], #Polynesia
-[iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage], #Persia
+[iBabylonia,iCarthage], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
-[], # rome for testing
+[iCeltia], # rome for testing
 [], #Tamils
 [], #Ethiopia
 [], #Korea
 [], #Maya
 [iGreece, iPersia], #Byzantium
 [], #Japan
-[iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
-[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
+[iEngland,iFrance,iIndependent,iIndependent2], #Vikings
+[iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
-[iKhmer, iKhmer], #Indonesia
+[iKhmer], #Indonesia
 [], #Moors
 [], #Spain
 [], #France
 [], #Khmer
 [], #England
-[iRome,iArabia,iArabia], #Holy Rome
+[iRome,iArabia], #Holy Rome
 [], #Russia
 [],	#Swahili
 [], #Mali
@@ -1640,7 +1640,7 @@ iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslami
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery,
 iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, iAcademy, iStockExchange, iManufactory, iMuseum, iArmoury,
 iAdministrativeCenter, iSecretService, iTriumphalArch, iNationalTheatre, iTradingCompany, iIberianTradingCompany, iCentralBank, iNationalCollege, iNationalGallery, iNationalMonument,
-iIronworks, iMilitaryAcademy, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis, iPyramids,
+iIronworks, iMilitaryAcademy, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis, iPyramids, 
 iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iColossus, iParthenon, iStatueOfZeus, iShwedagonPaya, iKhajuraho, iGreatLibrary,
 iMausoleumOfMaussollos, iFloatingGardens, iColosseum, iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iHagiaSophia, iNotreDame, 
 iTempleOfKukulkan, iHimejiCastle, iBlueMosque, iWatPreahPisnulok, iTopkapiPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort, iVersailles, 
