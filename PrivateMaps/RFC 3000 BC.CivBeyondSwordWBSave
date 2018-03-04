@@ -26637,6 +26637,17 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
+	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent2)
+		CityName=Uruk
+		CityPopulation=3
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=31
@@ -28208,6 +28219,17 @@ BeginPlot
 	x=73,y=38
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (iIndependent)
+		CityName=Yerushalayim
+		CityPopulation=1
+	EndCity
 EndPlot
 BeginPlot
 	x=73,y=39
@@ -29727,6 +29749,14 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=50, (iIndependent2)
+	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent2)
+		CityName=Mero&#235
+		CityPopulation=3
+	EndCity
 EndPlot
 BeginPlot
 	x=77,y=39
@@ -30482,6 +30512,14 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
+	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent)
+		CityName=Shushan
+		CityPopulation=1
+	EndCity
 EndPlot
 BeginPlot
 	x=79,y=41
@@ -39226,6 +39264,11 @@ BeginPlot
 	x=102,y=44
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginCity
+		CityOwner=50, (iIndependent2)
+		CityName=Luoyang
+		CityPopulation=1
+	EndCity
 EndPlot
 BeginPlot
 	x=102,y=45
