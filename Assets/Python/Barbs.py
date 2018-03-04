@@ -16,11 +16,6 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-3000, (73, 38), iIndependent, 'Yerushalayim', 1, iArcher, 2),	# Jerusalem
-(-3000, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
-(-3000, (77, 38), iIndependent2, 'Uruk', 3, iArcher, 2), 	# Sumerians
-(-3000, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
-(-3000, (102, 44), iIndependent, 'Luoyang', 1, -1, -1), 	# Neolithic China
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
 (-2500, (77, 42), iIndependent, 'Ninua', 1, iVulture, 3), 	# Assyrian Empire
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
