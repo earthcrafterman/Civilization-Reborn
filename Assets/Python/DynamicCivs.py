@@ -1265,6 +1265,8 @@ def specificAdjective(iPlayer):
 					return "TXT_KEY_CIV_CHINA_HAN"
 
 				return "TXT_KEY_CIV_CHINA_QIN"
+			
+-			return "TXT_KEY_CIV_CHINA_ZHOU"
 
 	elif iPlayer == iBabylonia:
 		if bCityStates and not bEmpire:

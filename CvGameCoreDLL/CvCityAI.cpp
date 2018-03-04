@@ -950,8 +950,18 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		if ((pWaterArea != NULL) && (iWaterPercent > 30))
+		if ((pWaterArea != NULL) && (iWaterPercent > 30 || getOwner() == POLYNESIA))
 		{
+			if (getOwner() == POLYNESIA && GC.getGameINLINE().getSorenRandNum(2, "Polynesian Explorers") == 0)
+			{
+				if (kPlayer.AI_getNumAIUnits(UNITAI_EXPLORE_SEA) < 2)
+				{
+					if (AI_chooseUnit(UNITAI_EXPLORE_SEA))
+					{
+						return;
+					}
+				}
+			}
 			if (GC.getGameINLINE().getSorenRandNum(2, "AI Coast Raiders!") == 0)
 			{
 				if (kPlayer.AI_getNumAIUnits(UNITAI_ASSAULT_SEA) <= (1 + kPlayer.getNumCities() / 2))

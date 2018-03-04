@@ -11205,6 +11205,10 @@
 					<UnitAIType>UNITAI_WORKER_SEA</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
 			</UnitAIs>
 			<Builds>
 				<Build>

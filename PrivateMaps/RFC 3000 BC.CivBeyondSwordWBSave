@@ -7,7 +7,7 @@ BeginGame
 	GameTurn=0
 	StartYear=-3000
 	Description=TXT_KEY_RHYES_WB_DESC
-	ModPath=Mods\RFC Civs and Fixes
+	ModPath=Mods\DOC Community Mod Compilation
 EndGame
 BeginTeam
 	TeamID=0, (Egypt)

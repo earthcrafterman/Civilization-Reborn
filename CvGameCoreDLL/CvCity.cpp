@@ -14696,17 +14696,18 @@ void CvCity::doProduction(bool bAllowNoProduction)
 
 				int NumSettlers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLE);
 				int NumWorkBoats = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA);
+				int NumSeaExplorers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_EXPLORE_SEA);
 				int NumTransports = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLER_SEA) * 2;
-				int bDefendersHave = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) > 1;
+				int bHaveDefenders = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) > 1;
 				
-				if (NumSettlers <= 3 && NumSettlers <= NumTransports)
+				if (NumSeaExplorers < 2)
+					eUnitAI = UNITAI_EXPLORE_SEA;
+				else if (NumSettlers <= 3 && NumSettlers <= NumTransports)
 					eUnitAI = UNITAI_SETTLE;
 				else if (NumTransports <= 6 && NumTransports < NumSettlers)
 					eUnitAI = UNITAI_SETTLER_SEA;
 				else if (NumWorkBoats < AI_neededSeaWorkers())
 					eUnitAI = UNITAI_WORKER_SEA;
-				else if (!bDefendersHave)
-					eUnitAI = UNITAI_CITY_DEFENSE;
 				else
 				{
 					int rand = GC.getGameINLINE().getSorenRandNum(4, "Pick Polynesian Unit AI");
@@ -14718,23 +14719,24 @@ void CvCity::doProduction(bool bAllowNoProduction)
 							eUnitAI = UNITAI_WORKER_SEA;
 						case 2:
 							eUnitAI = UNITAI_SETTLER_SEA;
-						case 3:
-							eUnitAI = UNITAI_CITY_DEFENSE;
+						case 4:
+							eUnitAI = UNITAI_EXPLORE_SEA;
 					}
 				}
 
-				for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
-				{
-					eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
-
-					if (eLoopUnit != NO_UNIT)
-						if ((GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
-							if (eBestUnit == NO_UNIT || getProductionTurnsLeft(eLoopUnit, 0) < getProductionTurnsLeft(eBestUnit, 0))
-								eBestUnit = eLoopUnit;
-				}
-
-				if(eBestUnit == (UnitTypes)GC.getInfoTypeForString("UNIT_WORK_BOAT") && canTrain((UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"), false, false, false, false))
+				if (eUnitAI == UNITAI_WORKER_SEA || eUnitAI == UNITAI_EXPLORE_SEA && canTrain((UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"), false, false, false, false))
 					eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA");
+
+				if (eLoopUnit == NO_UNIT)
+					for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+					{
+						eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+
+						if (eLoopUnit != NO_UNIT)
+							if ((GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
+								if (eBestUnit == NO_UNIT || getProductionTurnsLeft(eLoopUnit, 0) < getProductionTurnsLeft(eBestUnit, 0))
+									eBestUnit = eLoopUnit;
+					}
 
 				if(eBestUnit != NO_UNIT)
 					pushOrder(ORDER_TRAIN, eBestUnit, eUnitAI, false, false, false);

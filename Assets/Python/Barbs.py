@@ -288,10 +288,10 @@ class Barbs:
 		if utils.isYearIn(1300, 1600):
 			if iGameTurn % 18 == 0:
 				if not gc.getMap().plot(27, 29).isUnit():
-					utils.makeUnitAI(iNative, iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 			elif iGameTurn % 18 == 9:
 				if not gc.getMap().plot(30, 13).isUnit():
-					utils.makeUnitAI(iNative, iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 
 		if self.includesActiveHuman([iAmerica, iEngland, iFrance, iAustralia]):
 			if utils.isYearIn(1700, 1900):
