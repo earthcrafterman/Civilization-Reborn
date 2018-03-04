@@ -26645,7 +26645,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=50, (iIndependent2)
-		CityName=Uruk
+		CityName=Mero&#235
 		CityPopulation=3
 	EndCity
 EndPlot
@@ -29754,7 +29754,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=50, (iIndependent2)
-		CityName=Mero&#235
+		CityName=Uruk
 		CityPopulation=3
 	EndCity
 EndPlot
