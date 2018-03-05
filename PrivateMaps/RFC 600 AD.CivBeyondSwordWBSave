@@ -39302,7 +39302,7 @@ BeginPlot
 (		UnitType=UNIT_WORKER, UnitOwner=1, (China))
 (	EndUnit)
 	BeginCity
-		CityOwner=50, (China)
+		CityOwner=1, (China)
 		CityName=Chang'an, (Xi'an)
 		CityPopulation=1, (4)
 (		BuildingType=BUILDING_PALACE)
@@ -39312,7 +39312,7 @@ BeginPlot
 (		BuildingType=BUILDING_CONFUCIAN_TEMPLE)
 (		ReligionType=RELIGION_CONFUCIANISM)
 (		ReligionType=RELIGION_TAOISM)
-		Player50Culture=3000, (100)
+		Player1Culture=3000, (100)
 	EndCity
 EndPlot
 BeginPlot
@@ -40134,13 +40134,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=50, (China)
+		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=50, (China)
+		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=50, (China)
+		CityOwner=1, (China)
 		CityName=Beijing
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -40156,7 +40156,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player50Culture=100, (20)
+		Player1Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
@@ -40529,10 +40529,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=50, (China)
+		CityOwner=1, (China)
 		CityName=Kaifeng
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -40544,7 +40544,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player50Culture=100, (20)
+		Player1Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
@@ -41343,10 +41343,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=50, (China)
+		CityOwner=1, (China)
 		CityName=Nanjing
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -41361,7 +41361,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player50Culture=100, (20)
+		Player1Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
