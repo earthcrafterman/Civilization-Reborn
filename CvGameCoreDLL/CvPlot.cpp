@@ -6881,11 +6881,13 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	if (ePlayer == MOORS)
 	{
 		int Techs = 0;
-
-		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
-			if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
-				Techs++;
-				if (Techs >= 45) break;
+		
+		if (getOwnerINLINE() == ePlayer) {
+			for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
+				if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
+					Techs++;
+					if (Techs >= 45) break;
+				}
 			}
 		}
 
