@@ -1410,27 +1410,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER1_EPIC</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER1_MARATHON</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
+		<English>Control 50% of world population and a capital in Parsa by 140 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_NOTURN</Tag>
@@ -1448,34 +1428,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER2</Tag>
 		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_EPIC</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_MARATHON</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_NOTURN</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
@@ -1484,27 +1436,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER3_EPIC</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER3_MARATHON</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+		<English>Control Adur Farnbag and 2 additional holy city shrines in 350 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_NOTURN</Tag>

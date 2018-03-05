@@ -108,7 +108,7 @@ tCapitals = (
 (94, 40), # Pataliputra
 (73, 40), # Sur
 (4, 18), # Tonga
-(82, 38), # Persepolis
+(80, 42), #(82, 38), # Persepolis, Ecbatana
 (60, 44), # Rome
 (91, 30), # Thanjavur
 (72, 29), # Aksum
@@ -150,7 +150,6 @@ dChangedCapitals = {
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
-iPersia : (81, 41),	# Esfahan (Iran)
 iTamils : (90, 30),	# Vijayanagara
 iMaya : (27, 29),	# Bogota (Colombia)
 iKhmer : (101, 37),	# Hanoi
@@ -159,6 +158,7 @@ iHolyRome : (62, 49),	# Vienna
 
 # new capital locations if changed during the game
 dNewCapitals = {
+iPersia : (82, 38),	# Parsa (Persia)
 iJapan : (116, 46),	# Tokyo
 iVikings : (63, 59),	# Stockholm
 iHolyRome : (62, 49),	# Vienna
@@ -196,10 +196,10 @@ tBirthArea = (
 ((92, 36), 	(96, 40)), 	# India
 ((71, 39), 	(74, 41)), 	# Carthage
 ((3, 17), 	(7, 22)), 	# Polynesia
-((70, 37), 	(85, 44)), 	# Persia
+((75, 37), 	(85, 44)), 	# Persia
 ((59, 41), 	(63, 47)), 	# Rome
 ((90, 27), 	(93, 32)), 	# Tamils
-((69, 27), 	(73, 30)), 	# Ethiopia
+((71, 27), 	(75, 30)), 	# Ethiopia
 ((107, 45), 	(110, 49)), 	# Korea
 ((20, 35), 	(23, 37)), 	# Maya
 ((64, 38), 	(74, 45)), 	# Byzantium

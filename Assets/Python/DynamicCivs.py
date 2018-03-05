@@ -1282,9 +1282,6 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_TUNIS_ADJECTIVE"
 
 	elif iPlayer == iPersia:
-		if pPlayer.isStateReligion() and iReligion < 0:
-			return "TXT_KEY_CIV_PERSIA_MEDIAN"
-	
 		if bEmpire:
 			if bReborn:
 				if iEra <= iRenaissance:
@@ -1303,7 +1300,10 @@ def specificAdjective(iPlayer):
 			
 			if iEra == iMedieval:
 				return "TXT_KEY_CIV_PERSIA_SASSANID"
-				
+		
+		if iEra <= iClassical:
+			return "TXT_KEY_CIV_PERSIA_MEDIAN"
+		
 	elif iPlayer == iPolynesia:
 		if isCapital(iPlayer, ["Manu'a"]):
 			return "TXT_KEY_CIV_POLYNESIA_TUI_MANUA"
@@ -1607,6 +1607,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = gc.getGame().getCurrentEra()
 	bWar = isAtWar(iPlayer)
+	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
 
 	if iPlayer == iEgypt:
 		if bResurrected:
@@ -1679,6 +1680,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iPersia:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if bMonarchy:
+			return "TXT_KEY_CIV_PERSIA_SHAHDOM"
 			
 	elif iPlayer == iPhoenicia:
 		if bEmpire:
@@ -2063,7 +2067,7 @@ def leader(iPlayer):
 		
 		if bResurrected and getColumn(iPlayer) >= 11: return iGeorge
 	
-		if bEmpire: return iAlexanderTheGreat
+		if iGameTurn >= getTurnForYear(-338): return iAlexanderTheGreat
 		
 	elif iPlayer == iPersia:
 		if bReborn:

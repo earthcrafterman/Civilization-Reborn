@@ -85,7 +85,7 @@ class Religions:
 				
 		self.checkConfucianism(iGameTurn)
 		self.checkJudaism(iGameTurn)
-		
+		self.checkZoroastrianism(iGameTurn)
 		#self.checkBuddhism(iGameTurn)
 
 		self.checkChristianity(iGameTurn)
@@ -247,6 +247,13 @@ class Religions:
 
 		if iGameTurn == getTurnForYear(-550) - utils.getTurns(data.iSeed % 5):
 			self.foundReligion((104, 45), iConfucianism)
+
+## ZOROASTRIANISM
+	def checkZoroastrianism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iZoroastrianism): return
+
+		if utils.getHumanID() != iPersia and iGameTurn == getTurnForYear(-500) - utils.getTurns(data.iSeed % 5):
+			self.foundReligion((82, 38), iZoroastrianism)
 			
 ## JUDAISM
 

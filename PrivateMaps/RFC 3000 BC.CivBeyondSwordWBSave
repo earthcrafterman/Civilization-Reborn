@@ -245,11 +245,10 @@ BeginPlayer
 	CivType=CIVILIZATION_PERSIA
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_ZOROASTRIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -29279,6 +29278,9 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+	EndUnit
 	BeginUnit
 		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit

@@ -27,30 +27,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PEOPLES</Tag>
-		<English>Parsi Peoples</English>
-		<French>
-			<Text>Peuplades Parsi</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Parsiv&#246;lker:Parsiv&#246;lker:Parsiv&#246;lkern</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>Popoli Parsi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pueblos Parsi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<English>Iranian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_PERSIA_SHAHDOM</Tag>
 		<English>%s2 Shahdom</English>
 		<French>
 			<Text>Royaume %s2 du Shah</Text>

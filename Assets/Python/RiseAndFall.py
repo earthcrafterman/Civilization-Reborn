@@ -2470,8 +2470,7 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
-			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(iChariot, iCiv, tPlot, 1)
+			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)

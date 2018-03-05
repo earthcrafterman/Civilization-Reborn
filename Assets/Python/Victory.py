@@ -474,7 +474,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 			# first goal: control 7% of world territory by 140 AD
 			if isPossible(iPersia, 0):
-				if getLandPercent(iPersia) >= 6.995:
+				if getPopulationPercent(iPersia) >= 50 and isBuildingInCity((82, 38), iPalace):
 					win(iPersia, 0)
 			
 			if iGameTurn == getTurnForYear(140):
@@ -490,7 +490,8 @@ def checkTurn(iGameTurn, iPlayer):
 						
 			# third goal: control two holy shrines in 350 AD
 			if iGameTurn == getTurnForYear(350):
-				if countShrines(iPersia) >= 2:
+				bZoroastrianShrine = (getNumBuildings(iPersia, iZoroastrianShrine) > 0)
+				if countShrines(iPersia) >= 3 and bZoroastrianShrine:
 					win(iPersia, 2)
 				else:
 					lose(iPersia, 2)
@@ -3449,14 +3450,18 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iPersia:
 		if not pPersia.isReborn():
 			if iGoal == 0:
-				landPercent = getLandPercent(iPersia)
-				aHelp.append(getIcon(landPercent >= 6.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % landPercent), str(7))))
+				popPercent = getPopulationPercent(iPersia)
+				bPalace = isBuildingInCity((82, 38), iPalace)
+				aHelp.append(getIcon(popPercent >= 18.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(18))))
+				aHelp.append(getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()))
 			elif iGoal == 1:
 				iCounter = countWonders(iPersia)
 				aHelp.append(getIcon(iCounter >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 7)))
 			elif iGoal == 2:
 				iCounter = countShrines(iPersia)
-				aHelp.append(getIcon(iCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_SHRINES", (iCounter, 2)))
+				bZoroastrianShrine = (getNumBuildings(iPersia, iZoroastrianShrine) > 0)
+				aHelp.append(getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_SHRINES", (iCounter, 3)))
+				aHelp.append(getIcon(bZoroastrianShrine) + localText.getText("TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE", ()))
 		else:
 			if iGoal == 0:
 				iCount = countOpenBorders(iPersia, lCivGroups[0])

@@ -22,7 +22,7 @@ tMinorCities = (
 (-3000, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
 (-3000, (102, 44), iIndependent, 'Luoyang', 1, -1, -1), 	# Neolithic China
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
-(-2500, (77, 42), iIndependent, 'Ninua', 1, iVulture, 3), 	# Assyrian Empire
+(-2500, (77, 42), iIndependent, 'Ninua', 1, iVulture, 1), 	# Assyrian Empire
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
 (-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 2),	# Ankara
@@ -31,6 +31,7 @@ tMinorCities = (
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
 (-650, (90, 37), iIndependent2, 'Ujjain', 2, iMilitia, 1),	# Avanti
+(-550, (82, 38), iPersia, 'Parsa', 1, iArcher, 2),	# Parsa
 (-550, (95, 37), iIndependent, 'Tosali', 2, iWarElephant, 1),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 2),	# Delhi
@@ -215,10 +216,9 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
 			
 		#barbarians in central asia
-		if utils.isYearIn(-1600, -850):
-			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 3, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
-		elif utils.isYearIn(-850, 300):
+		if utils.isYearIn(-1600, -250):
 			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 4, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 10-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+		elif utils.isYearIn(-250, 300):
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		elif utils.isYearIn(300, 700):
 			#if utils.getScenario() == i3000BC:  #late start condition
@@ -324,6 +324,7 @@ class Barbs:
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
 			if iGameTurn < getTurnForYear(iYear): return
 			if iGameTurn > getTurnForYear(iYear)+10: continue
+			if iPlayer == utils.getHumanID(): continue
 			
 			if data.lMinorCityFounded[i]: continue
 			
