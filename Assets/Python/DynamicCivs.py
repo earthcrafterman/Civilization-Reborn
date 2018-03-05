@@ -1328,6 +1328,10 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 
 	elif iPlayer == iTamils:
+		if iReligion == iIslam:
+			if iEra in [iMedieval, iRenaissance]:
+				return "TXT_KEY_CIV_TAMILS_BAHMANI"
+	
 		if iEra <= iClassical:
 			if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
 				return "TXT_KEY_CIV_TAMILS_PANDYAN"
@@ -1717,6 +1721,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_OF"
 
 	elif iPlayer == iTamils:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
+	
 		if iEra >= iMedieval:
 			return "TXT_KEY_KINGDOM_OF"
 

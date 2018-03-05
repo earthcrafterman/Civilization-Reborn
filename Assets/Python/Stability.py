@@ -339,7 +339,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
 	bHuman = (utils.getHumanID() == iPlayer)
-	bFall = (not bHuman and iGameTurn > getTurnForYear(tFall[iPlayer]))
+	bFall = isDecline(iPlayer)
 	
 	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
 	
@@ -1281,7 +1281,10 @@ def updateEconomyTrend(iPlayer):
 	iCivicEconomy = pPlayer.getCivics(3)
 		
 	iPositiveThreshold = 5
-	iNegativeThreshold = min(2, pPlayer.getCurrentEra() / 2)
+	iNegativeThreshold = 0
+	
+	if isDecline(iPlayer):
+		iNegativeThreshold = 2
 	
 	if iCivicEconomy == iCentralPlanning: iNegativeThreshold = 0
 	
@@ -1860,6 +1863,9 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetEconomyTrend()
 	playerData.resetHappinessTrend()
 	playerData.resetWarTrends()
+	
+def isDecline(iPlayer):
+	return utils.getHumanID() != iPlayer and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
 	
 class Civics:
 

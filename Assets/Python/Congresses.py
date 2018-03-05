@@ -40,14 +40,14 @@ def setup():
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
-		if not isGlobalWar():
+		if not data.currentCongress:
 			data.iCongressTurns -= 1
 			
-		if data.iCongressTurns == 0:
-			data.iCongressTurns = utils.getTurns(iCongressInterval)
-			currentCongress = Congress()
-			data.currentCongress = currentCongress
-			currentCongress.startCongress()
+			if data.iCongressTurns == 0:
+				data.iCongressTurns = utils.getTurns(iCongressInterval)
+				currentCongress = Congress()
+				data.currentCongress = currentCongress
+				currentCongress.startCongress()
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():
@@ -101,10 +101,10 @@ def isGlobalWar():
 	return (data.iGlobalWarAttacker != -1 and data.iGlobalWarDefender != -1)
 	
 def endGlobalWar(iAttacker, iDefender):
-	data.iGlobalWarAttacker = -1
-	data.iGlobalWarDefender = -1
-	
 	if not gc.getPlayer(iAttacker).isAlive() or not gc.getPlayer(iDefender).isAlive():
+		return
+		
+	if data.currentCongress:
 		return
 	
 	lAttackers = [iAttacker]
@@ -508,6 +508,11 @@ class Congress:
 			popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
 		
 			popup.addPopup(utils.getHumanID())
+			
+		# if this was triggered by a war, reset belligerents
+		if isGlobalWar():
+			data.iGlobalWarAttacker = -1
+			data.iGlobalWarDefender = -1
 		
 		# don't waste memory
 		data.currentCongress = None
@@ -1124,6 +1129,13 @@ class Congress:
 		self.lInvites = lPossibleInvites[:getNumInvitations()]
 		
 		lRemove = []
+		
+		# if not a war congress, exclude civs in global wars
+		if isGlobalWar() and not self.bPostWar:
+			lAttackers, lDefenders = determineAlliances(data.iGlobalWarAttacker, data.iGlobalWarDefender)
+			lRemove.extend(lAttackers)
+			lRemove.extend(lDefenders)
+			
 		for iLoopPlayer in self.lInvites:
 			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
 			
