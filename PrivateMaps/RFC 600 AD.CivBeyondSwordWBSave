@@ -39303,7 +39303,7 @@ BeginPlot
 (	EndUnit)
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Chang'an, (Xi'an)
+		CityName=Daxing, (Xi'an)
 		CityPopulation=1, (4)
 (		BuildingType=BUILDING_PALACE)
 (		BuildingType=BUILDING_BARRACKS)
@@ -40141,7 +40141,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Beijing
+		CityName=Youzhou, (Beijing)
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -40533,7 +40533,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Kaifeng
+		CityName=Bianzhou, (Kaifeng)
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHINESE_TAIXUE
@@ -41347,7 +41347,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Nanjing
+		CityName=Jiangning, (Nanjing)
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE

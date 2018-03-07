@@ -46637,7 +46637,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Xi'an
+		CityName=Chang'an, (Xi'an)
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -47747,7 +47747,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Beijing
+		CityName=Youzhou, (Beijing)
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -48184,7 +48184,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Kaifeng
+		CityName=Bianzhou, (Kaifeng)
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
