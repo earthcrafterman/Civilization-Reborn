@@ -23375,9 +23375,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_SCOUT, UnitOwner=16, (Vikings)
 	EndUnit
-(	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (Human only)
-(	EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings) (Human only)
+	(EndUnit)
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)
 	EndUnit
@@ -24591,12 +24591,12 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings)) (AI only)
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (AI only)
-(	EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings) (AI only)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings) (AI only)
+	(EndUnit)
 EndPlot
 BeginPlot
 	x=63,y=60
@@ -38840,9 +38840,9 @@ BeginPlot
 (	RouteType=ROUTE_ROAD)
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
+	(BeginUnit)
 (		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent))
-(	EndUnit)
+	(EndUnit)
 (	BeginCity)
 (		CityOwner=49, (Independent))
 (		CityName=Chengdu)
@@ -39274,33 +39274,33 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
-(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
-(	EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_HORSE_ARCHER, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_HEAVY_SWORDSMAN, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_HEAVY_SWORDSMAN, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+	(UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_WORKER, UnitOwner=1, (China)
+	(EndUnit)
+	(BeginUnit)
+		UnitType=UNIT_WORKER, UnitOwner=1, (China)
+	(EndUnit)
 	BeginCity
 		CityOwner=1, (China)
 		CityName=Daxing, (Xi'an)
@@ -40134,10 +40134,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -40529,7 +40529,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -41343,7 +41343,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -41396,15 +41396,15 @@ BeginPlot
 (	RouteType=ROUTE_ROAD)
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
+	(BeginUnit)
 (		UnitType=UNIT_ARCHER, UnitOwner=53, (Barbarian))
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_WARRIOR, UnitOwner=53, (Barbarian))
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_WARRIOR, UnitOwner=53, (Barbarian))
-(	EndUnit)
+	(EndUnit)
 (	BeginCity)
 (		CityOwner=53, (Barbarian))
 (		CityName=Simiyan hoton)
@@ -42934,12 +42934,12 @@ BeginPlot
 	x=109,y=46
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
+	(BeginUnit)
 (		UnitType=UNIT_HEAVY_SWORDSMAN, UnitOwner=12, (Korea)) (AI only)
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_HEAVY_SWORDSMAN, UnitOwner=12, (Korea)) (AI only)
-(	EndUnit)
+	(EndUnit)
 	BeginUnit
 		UnitType=UNIT_HORSE_ARCHER, UnitOwner=12, (Korea)
 	EndUnit
@@ -44437,21 +44437,21 @@ BeginPlot
 	x=113,y=45
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
+	(BeginUnit)
 (		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=15, (Japan)) (AI only)
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=15, (Japan)) (AI only)
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=15, (Japan)) (AI only)
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_ARCHER, UnitOwner=15, (Japan)) (AI only)
-(	EndUnit)
-(	BeginUnit)
+	(EndUnit)
+	(BeginUnit)
 (		UnitType=UNIT_ARCHER, UnitOwner=15, (Japan)) (AI only)
-(	EndUnit)
+	(EndUnit)
 	BeginUnit
 		UnitType=UNIT_SWORDSMAN, UnitOwner=15, (Japan)
 	EndUnit
