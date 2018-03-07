@@ -40082,10 +40082,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	BeginCity, (Removed after game start)
-		CityOwner=48
+		CityOwner=49
 		CityName=Guiyang
 		CityPopulation=1
-		Player50Culture=250
+		Player49Culture=250
 	EndCity
 	PlotType=1
 EndPlot
