@@ -2495,9 +2495,10 @@ class RiseAndFall:
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
-			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(iChariot, iCiv, tPlot, 1)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 4)
+			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 4)
+			utils.makeUnit(iChariot, iCiv, tPlot, 2)
+			teamIndia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)

@@ -22051,6 +22051,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_SHEEP
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -22434,6 +22435,8 @@ EndPlot
 BeginPlot
 	x=58,y=42
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SILVER
+	RouteType=ROUTE_ROAD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -26576,7 +26579,9 @@ BeginPlot
 	x=68,y=39
 	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
+	PlotType=1
 EndPlot
 BeginPlot
 	x=68,y=40
@@ -26609,72 +26614,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=45
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginCity
-		CityOwner=14, (Byzantium)
-		CityName=Konstantinoupolis
-		CityPopulation=4
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_CASTLE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_BYZANTINE_HIPPODROME
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_THEODOSIAN_WALLS
-		BuildingType=BUILDING_HAGIA_SOPHIA
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_ORTHODOXY
-		ReligionType=RELIGION_CATHOLICISM
-		Player14Culture=250, (Byzantium)
-	EndCity
 EndPlot
 BeginPlot
 	x=68,y=46
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=68,y=47
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=68,y=48
 	BonusType=BONUS_HORSE
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26987,7 +26947,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=34
-	BonusType=BONUS_MARBLE
+	BonusType=BONUS_STONE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -27038,7 +26998,20 @@ EndPlot
 BeginPlot
 	x=69,y=39
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	BonusType=BONUS_MARBLE
+	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Herakleion
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=10, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=40
@@ -27064,16 +27037,63 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=44
-	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROMAN_ROAD
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=45
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Konstantinoupolis
+		CityPopulation=4
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_CASTLE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_BYZANTINE_HIPPODROME
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_THEODOSIAN_WALLS
+		BuildingType=BUILDING_HAGIA_SOPHIA
+		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=250, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=46
@@ -27807,6 +27827,7 @@ BeginPlot
 	x=71,y=40
 	BonusType=BONUS_COPPER
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28238,7 +28259,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -30183,7 +30203,7 @@ BeginPlot
 	x=77,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_STONE
+	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -34363,7 +34383,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=35
-	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
@@ -34749,7 +34768,7 @@ EndPlot
 BeginPlot
 	x=89,y=35
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -35179,6 +35198,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=35
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40942,7 +40963,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=45
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -41373,6 +41393,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
+	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -44727,6 +44748,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45016,6 +45038,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=6
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45031,6 +45054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=9
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

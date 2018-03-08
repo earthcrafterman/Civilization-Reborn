@@ -710,6 +710,7 @@ def calculateStability(iPlayer):
 		if plot.isCore(iPlayer):
 			iCorePopulation += iCorePopulationModifier * iPopulation / 100
 			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
+			if iPlayer == iRome: iCorePopulation *= 2
 		else:
 			iOwnCulture = plot.getCulture(iPlayer)
 			

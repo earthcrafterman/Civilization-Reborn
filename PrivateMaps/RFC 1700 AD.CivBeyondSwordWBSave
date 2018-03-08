@@ -25913,7 +25913,9 @@ EndPlot
 BeginPlot
 	x=58,y=42
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	BonusType=BONUS_SILVER
+	RouteType=ROUTE_ROAD
+	PlotType=1
 	TeamReveal=16,21,22,24,25,36,39,40,49,50,
 EndPlot
 BeginPlot
@@ -31440,7 +31442,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 	TeamReveal=36,49,
 EndPlot
 BeginPlot
@@ -31480,117 +31482,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=45
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginCity
-		CityOwner=36, (Turkey)
-		CityName=Kostantiniyye
-		CityPopulation=12
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_OTTOMAN_HAMMAM
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_MILITARY_ACADEMY
-		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
-		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_THEODOSIAN_WALLS
-		BuildingType=BUILDING_HAGIA_SOPHIA
-		BuildingType=BUILDING_BLUE_MOSQUE
-		BuildingType=BUILDING_TOPKAPI_PALACE
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_ORTHODOXY
-		ReligionType=RELIGION_ISLAM
-		Player36Culture=300, (Turkey)
-	EndCity
 	TeamReveal=25,26,36,49,
 EndPlot
 BeginPlot
 	x=68,y=46
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 	TeamReveal=25,26,36,49,
 EndPlot
 BeginPlot
 	x=68,y=47
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 	TeamReveal=25,26,29,36,49,
 EndPlot
 BeginPlot
 	x=68,y=48
 	BonusType=BONUS_HORSE
+	isNOfRiver
+	RiverWEDirection=1
 	ImprovementType=IMPROVEMENT_FORT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -31975,7 +31890,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=34
-	BonusType=BONUS_MARBLE
+	BonusType=BONUS_STONE
 	ImprovementType=IMPROVEMENT_QUARRY
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
@@ -32043,7 +31958,22 @@ EndPlot
 BeginPlot
 	x=69,y=39
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	BonusType=BONUS_MARBLE
+	PlotType=1
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginCity
+		CityOwner=36, (Turkey)
+		CityName=Kandiye
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		Player36Culture=100, (Turkey)
+	EndCity
 	TeamReveal=36,49,
 EndPlot
 BeginPlot
@@ -32074,17 +32004,105 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=44
-	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROMAN_ROAD
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=25,26,36,49,
 EndPlot
 BeginPlot
 	x=69,y=45
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginCity
+		CityOwner=36, (Turkey)
+		CityName=Kostantiniyye
+		CityPopulation=12
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_OTTOMAN_HAMMAM
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_UNIVERSITY
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MILITARY_ACADEMY
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
+		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		BuildingType=BUILDING_THEODOSIAN_WALLS
+		BuildingType=BUILDING_HAGIA_SOPHIA
+		BuildingType=BUILDING_BLUE_MOSQUE
+		BuildingType=BUILDING_TOPKAPI_PALACE
+		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_ISLAM
+		Player36Culture=300, (Turkey)
+	EndCity
 	TeamReveal=25,26,36,49,
 EndPlot
 BeginPlot
@@ -33579,7 +33597,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	BonusType=BONUS_URANIUM
 	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -36071,7 +36088,7 @@ BeginPlot
 	x=77,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_STONE
+	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -41070,7 +41087,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=35
-	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
@@ -41500,7 +41516,7 @@ EndPlot
 BeginPlot
 	x=89,y=35
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -42019,6 +42035,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=35
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_RICE
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
@@ -44857,10 +44875,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=49, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=49, (China)
+		CityOwner=1, (China)
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -44871,7 +44889,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player49Culture=100, (China)
+		Player1Culture=100, (China)
 	EndCity
 	TeamReveal=1,35,49,50,
 EndPlot
@@ -48732,9 +48750,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=45
-	BonusType=BONUS_SILK
-	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
+	ImprovementType=IMPROVEMENT_VILLAGE
 	PlotType=2
 	TeamReveal=1,12,50,
 EndPlot
@@ -49194,7 +49211,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	BonusType=BONUS_SILK
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,12,15,49,50,
@@ -50164,10 +50182,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=49, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=49, (China)
+		CityOwner=1, (china)
 		CityName=Qiqihar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -50175,7 +50193,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player49Culture=50, (China)
+		Player1Culture=50, (China)
 	EndCity
 	TeamReveal=1,12,49,
 EndPlot
@@ -53091,6 +53109,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -53413,6 +53432,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=6
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -53428,6 +53448,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=9
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

@@ -22381,6 +22381,7 @@ EndPlot
 BeginPlot
 	x=58,y=42
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SILVER
 	PlotType=2
 EndPlot
 BeginPlot
@@ -26296,7 +26297,7 @@ BeginPlot
 	x=68,y=39
 	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=68,y=40
@@ -26709,7 +26710,8 @@ EndPlot
 BeginPlot
 	x=69,y=39
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	BonusType=BONUS_MARBLE
+	PlotType=1
 EndPlot
 BeginPlot
 	x=69,y=40
@@ -27466,6 +27468,8 @@ EndPlot
 BeginPlot
 	x=71,y=40
 	BonusType=BONUS_COPPER
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -43686,6 +43690,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43975,6 +43980,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=6
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43990,6 +43996,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=9
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
