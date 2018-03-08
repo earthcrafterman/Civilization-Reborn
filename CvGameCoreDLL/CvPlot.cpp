@@ -6880,20 +6880,20 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
 	if (ePlayer == MOORS)
 	{
-		int Techs = 0;
-		
 		if (getOwnerINLINE() == ePlayer) {
+			int Techs = 0;
+		
 			for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
 				if (GET_TEAM(getTeam()).isHasTech((TechTypes)iI)) {
 					Techs++;
 					if (Techs >= 45) break;
 				}
 			}
-		}
 
-		if (Techs < 45 && (int)eYield == 0 && iYield > 0 && getTerrainType() == GC.getInfoTypeForString("TERRAIN_PLAINS"))
-		{
-			iYield += 1;
+			if (Techs < 45 && (int)eYield == 0 && iYield > 0 && getTerrainType() == GC.getInfoTypeForString("TERRAIN_PLAINS"))
+			{
+				iYield += 1;
+			}
 		}
 	}
 

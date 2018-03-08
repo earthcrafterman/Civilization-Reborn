@@ -519,6 +519,9 @@ class RiseAndFall:
 		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
 		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
+		
+		pXian = gc.getMap().plot(100, 44).getPlotCity()
+		pXian.setHasRealBuilding(iPalace, True)
 
 		pNanjing = gc.getMap().plot(105, 43).getPlotCity()
 		pNanjing.setBuildingOriginalOwner(iConfucianShrine, iChina)
