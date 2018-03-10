@@ -305,13 +305,12 @@ def checkLostCoreCollapse(iPlayer):
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 	
-def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
+def determineStabilityLevel(iCurrentLevel, iStability, overTurns = 0):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if bFall: iThreshold += 10
+	iThreshold += overTurns * overTurns / 3
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
-	elif bFall: return max(iStabilityCollapsing, iCurrentLevel - (iThreshold - iStability) / 10)
 	elif iStability < iThreshold - 10: return max(iStabilityCollapsing, iCurrentLevel - 1)
 	
 	return iCurrentLevel
@@ -339,9 +338,11 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
 	bHuman = (utils.getHumanID() == iPlayer)
-	bFall = isDecline(iPlayer)
+	overTurns = 0
+	if isDecline(iPlayer):
+		overTurns = gc.getGame().getGameTurnYear() - tFall[iPlayer]
 	
-	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
+	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, overTurns)
 	
 	if iNewStabilityLevel > iStabilityLevel:
 		data.setStabilityLevel(iPlayer, iNewStabilityLevel)

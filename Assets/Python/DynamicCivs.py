@@ -1011,8 +1011,8 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
 			
 	elif iPlayer == iEthiopia:
-		if not gc.getGame().isReligionFounded(iIslam):
-			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
+		if iEra < iMedieval:
+			return gc.getPlayer(iPlayer).getCapitalCity().getName()
 			
 	elif iPlayer == iKorea:
 		if iEra == iClassical:
@@ -1331,6 +1331,8 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iEthiopia:
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
+		elif iEra < iMedieval:
+			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
 			
 	elif iPlayer == iByzantium:
 		if pRome.getNumCities() > 0:
@@ -1704,6 +1706,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bCityStates:
 			return "TXT_KEY_REPUBLIC_ADJECTIVE"
+	
+	elif iPlayer == iEthiopia:
+		if bMonarchy and not bEmpire:
+			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iJapan:
 		if bEmpire:

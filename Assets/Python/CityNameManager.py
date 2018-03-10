@@ -46,7 +46,7 @@ def getLanguages(iCiv):
 		return (iLangPersian,)
 	elif iCiv == iRome: return (iLangLatin,)
 	elif iCiv == iTamils: return (iLangIndian,)
-	elif iCiv == iEthiopia: return (iLangEthiopian,)
+	elif iCiv == iEthiopia: return (iLangEthiopian,iLangEgyptian)
 	elif iCiv == iKorea: return (iLangKorean, iLangChinese)
 	elif iCiv == iMaya: 
 		if utils.isReborn(iCiv): return (iLangSpanish,)
@@ -4138,6 +4138,8 @@ dIdentifiers = {
 	"Marsylia"		:	"Marseille",
 	"Massalia"		:	"Marseille",
 	"Massilia"		:	"Marseille",
+	"Cryptus Portus"	:	"Masqat",
+	"Kryptos Limen"		:	"Masqat",
 	"Masqat"		:	"Masqat",
 	"Muscat"		:	"Masqat",
 	"Matsuyama"		:	"Matsuyama",
@@ -5331,6 +5333,7 @@ tRenames = (
 	"Samarqand"		:	"Marakanda",
 	"Merv"			:	"Margiana",
 	"Marseille"		:	"Massalia",
+	"Kryptos Limen"		:	"Masqat",
 	"Ineb Hedj"		:	"Memphis",
 	"Mykenai"		:	"Mykenai",
 	"Inebahti"		:	"Naupactus",
@@ -5460,6 +5463,7 @@ tRenames = (
 	"Paris"			:	"Lutetia Parisiorum",
 	"Samarqand"		:	"Marakanda",
 	"Marseille"		:	"Massilia",
+	"Masqat"		:	"Cryptus Portus",
 	"Milano"		:	"Mediolanum",
 	"Melitene"		:	"Melitene",
 	"Ineb Hedj"		:	"Memphis",

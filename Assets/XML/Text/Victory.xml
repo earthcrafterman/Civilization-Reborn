@@ -594,13 +594,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
-		<English>Nine Saints</English>
-		<German>Neun Heilige</German>
+		<English>The Red Sea trade routes</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
-		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Großen Propheten in zwei orthodoxen Städten an</German>
+		<English>Open borders with Rome, Persia and India by 500AD.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
@@ -609,28 +607,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+		<English>Control 4 incense resources by 620AD.</English>
+		<German>Erlangen Sie bis 620 n. Chr. 4 Weihrauch-Ressourcen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3_TITLE</Tag>
-		<English>Resisting the Scramble</English>
-		<German>Dem Wettlauf Widerstand leisten</German>
+		<English>Oriental Orthodoxy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3</Tag>
-		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</English>
-		<German>Lassen Sie im Jahr 1910 n. Chr. keine europ&#228;ischen Kolonien im &#246;stlichen und sub&#228;quatorialen Afrika zu</German>
+		<English>Build 3 Orthodox Cathedral in 1300AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>

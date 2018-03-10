@@ -36,6 +36,7 @@ tMinorCities = (
 (-550, (95, 37), iIndependent, 'Tosali', 2, iWarElephant, 1),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 2),	# Delhi
+(-550, (81, 34), iPersia, 'Kryptos Limen', 2, iArcher, 2),	# Musqat
 (-495, (105, 43), iIndependent2, 'Yuecheng', 1, iArcher, 2), 	# Nanjing
 (-350, (72, 48), iGreece, 'Chersonesos', 2, iArcher, 2),	# Crimaia
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iWarElephant, 2),	# Madras
@@ -189,9 +190,9 @@ class Barbs:
 			elif utils.isYearIn(700, 1400):
 				self.checkSpawn(iBarbarian, iWarGalley, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 8, 0)
 		#pirates in Indian ocean
-		if utils.isYearIn(-650, 700):
-			self.checkSpawn(iBarbarian, iWarGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 18, 0)
-		elif utils.isYearIn(700, 1700):
+		#if utils.isYearIn(-650, 700):
+		#	self.checkSpawn(iBarbarian, iWarGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 18, 0)
+		if utils.isYearIn(700, 1700):
 			self.checkSpawn(iBarbarian, iHeavyGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 10, 0)
 
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn

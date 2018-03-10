@@ -142,7 +142,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 50
+iNumMinorCities = 70
 
 # scripted conquerors
 iNumConquests = 12
@@ -258,7 +258,7 @@ tBirth = (
 -844, # 84, #844BC			# Persia
 -753, # 90, #753BC			# Rome
 848,					# Tamils
--290, # 121, #300BC			# Ethiopia
+100, # 121, #300BC			# Ethiopia
 -50,					# Korea
 65, # 145, #60AD			# Maya
 330,					# Byzantium
@@ -269,7 +269,7 @@ tBirth = (
 650,					# Indonesia
 711,					# Moors
 722, # 193, #718AD			# Spain
-750, # 196, #751AD			# France
+481, # 196, #751AD			# France
 800, # 187, #657AD			# Khmer
 820, # 203, #829AD			# England
 840, # 205, #843AD			# Holy Rome
@@ -307,7 +307,7 @@ tFall = (
 -539,					# Babylonia
 -1700,					# Harappa
 -146,					# Greece
-600, # end of Gupta Empire		# India
+1000, 					# India
 -146,					# Phoenicia
 1200,					# Polynesia
 651,					# Persia
@@ -498,7 +498,7 @@ tResurrectionIntervals = (
 [(600, 2020)], #China
 [(-3000, -500)], #Babylonia
 [],		# Harappa
-[(1800, 2020)], #Greece
+[(1820, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
 [(-1000, -150)], #Carthage
 [],		# Polynesia
@@ -1082,7 +1082,7 @@ lEnemyCivsOnSpawn = [
 [iGreece, iPersia], #Byzantium
 [], #Japan
 [iEngland,iFrance,iIndependent,iIndependent2], #Vikings
-[iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
+[iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iEthiopia,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
 [iKhmer], #Indonesia
 [], #Moors

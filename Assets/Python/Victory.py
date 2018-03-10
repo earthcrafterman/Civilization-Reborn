@@ -587,7 +587,8 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: settle a great prophet in two Orthodox cities by 500 AD
 		if isPossible(iEthiopia, 0):
-			if countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet) >= 2:
+			bRedSea = countOpenBorders(iEthiopia, [iRome, iPersia, iIndia]) >= 3
+			if bRedSea:
 				win(iEthiopia, 0)
 				
 		if iGameTurn == getTurnForYear(500):
@@ -595,27 +596,20 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# second goal: acquire three incense resources by 600 AD
 		if isPossible(iEthiopia, 1):
-			if pEthiopia.getNumAvailableBonuses(iIncense) >= 3:
+			if pEthiopia.getNumAvailableBonuses(iIncense) >= 4:
 				win(iEthiopia, 1)
 				
-		if iGameTurn == getTurnForYear(600):
+		if iGameTurn == getTurnForYear(620):
 			expire(iEthiopia, 1)
 			
 		# third goal: allow no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD
-		if iGameTurn == getTurnForYear(1500):
-			bEastAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0])
-			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			if not bEastAfrica or not bSubequatorialAfrica:
-				lose(iEthiopia, 2)
-				
-		if iGameTurn == getTurnForYear(1910) and isPossible(iEthiopia, 2):
-			bEastAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0])
-			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			if bEastAfrica and bSubequatorialAfrica:
+		if iGameTurn == getTurnForYear(1300):
+			iOrthodox = getNumBuildings(iEthiopia, iOrthodoxCathedral)
+			if iOrthodox == 3:
 				win(iEthiopia, 2)
 			else:
 				lose(iEthiopia, 2)
-				
+
 	elif iPlayer == iKorea:
 	
 		# first goal: build a Buddhist Stupa and a Confucian Academy by 1200 AD
@@ -3508,15 +3502,15 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iEthiopia:
 		if iGoal == 0:
-			iOrthodoxCitiesWithProphets = countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet)
-			aHelp.append(getIcon(iOrthodoxCitiesWithProphets >= 2) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS", (iOrthodoxCitiesWithProphets, 2)))
+			iCount = countOpenBorders(iEthiopia, [iRome, iPersia, iIndia])
+			aHelp.append(getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 3)))
 		elif iGoal == 1:
 			iNumIncense = pEthiopia.getNumAvailableBonuses(iIncense)
-			aHelp.append(getIcon(iNumIncense >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 3)))
+			aHelp.append(getIcon(iNumIncense >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 4)))
 		elif iGoal == 2:
-			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
-
+			iOrthodox = getNumBuildings(iEthiopia, iOrthodoxCathedral)
+			aHelp.append(getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))
+			
 	elif iPlayer == iKorea:
 		if iGoal == 0:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)

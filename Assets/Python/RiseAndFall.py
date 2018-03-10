@@ -2556,7 +2556,6 @@ class RiseAndFall:
 			tSeaPlot = (74, 29)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
 			utils.createMissionaries(iCiv, 1)
