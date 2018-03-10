@@ -114,7 +114,7 @@ tCapitals = (
 (72, 29), # Aksum
 (108, 48), # Pyongyang
 (22, 35), # Tikal
-(68, 45), # Constantinople
+(69, 45), # Constantinople
 (113, 45), # Kyoto
 (60, 59), # Oslo
 (75, 33), # Mecca

@@ -234,8 +234,13 @@ BeginPlayer
 	Team=7
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
-	PlayableCiv=0
+	Color=PLAYERCOLOR_POLYNESIA
+	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
+	StartingGold=50
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 EndPlayer
 BeginPlayer
 	Team=8
@@ -918,11 +923,13 @@ BeginPlot
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=0,y=15
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=0,y=16
@@ -1260,11 +1267,13 @@ BeginPlot
 	x=1,y=13
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=1,y=14
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=1,y=15
@@ -1991,6 +2000,7 @@ EndPlot
 BeginPlot
 	x=3,y=20
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2018,6 +2028,7 @@ EndPlot
 BeginPlot
 	x=3,y=25
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2334,6 +2345,26 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLYNESIAN_WAKA, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Mu'a
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player7Culture=500
+	EndCity
 EndPlot
 BeginPlot
 	x=4,y=19
@@ -2692,6 +2723,7 @@ EndPlot
 BeginPlot
 	x=5,y=19
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2705,6 +2737,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Manu'a
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player7Culture=200
+	EndCity
 EndPlot
 BeginPlot
 	x=5,y=22
@@ -2726,6 +2771,17 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Tokelau
+		CityPopulation=2
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		Player7Culture=75
+	EndCity
 EndPlot
 BeginPlot
 	x=5,y=26
@@ -3048,6 +3104,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Niue
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player7Culture=300
+	EndCity
 EndPlot
 BeginPlot
 	x=6,y=20
@@ -5165,6 +5234,7 @@ EndPlot
 BeginPlot
 	x=12,y=18
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5176,6 +5246,7 @@ EndPlot
 BeginPlot
 	x=12,y=20
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5544,6 +5615,17 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Tahiti
+		CityPopulation=2
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		Player7Culture=100
+	EndCity
 EndPlot
 BeginPlot
 	x=13,y=19
@@ -26608,7 +26690,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=44
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -27037,7 +27118,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=44
-	RouteType=ROUTE_ROMAN_ROAD
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -27456,8 +27537,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=42
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Attaleia
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=10, (Byzantium)
+	EndCity
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27846,7 +27937,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -28245,23 +28337,23 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginCity
-		CityOwner=14, (Byzantium)
-		CityName=Ikonion
-		CityPopulation=2
-		BuildingType=BUILDING_MARKET
-		ReligionType=RELIGION_ORTHODOXY
-		Player14Culture=10, (Byzantium)
-	EndCity
 EndPlot
 BeginPlot
 	x=72,y=44
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Ankyra
+		CityPopulation=2
+		BuildingType=BUILDING_MARKET
+		ReligionType=RELIGION_ORTHODOXY
+		Player14Culture=10, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=72,y=45
@@ -33210,6 +33302,29 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Mohenjo-Daro
+		CityPopulation=3
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_HINDU_TEMPLE
+		ReligionType=RELIGION_HINDUISM
+		Player49Culture=50, (Independent)
+	EndCity
 EndPlot
 BeginPlot
 	x=85,y=38
@@ -34001,8 +34116,9 @@ BeginPlot
 	BeginCity
 		CityOwner=49, (Independent)
 		CityName=Lavapuri
-		CityPopulation=2
+		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		Player49Culture=50, (Independent)
@@ -34025,6 +34141,24 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Rehman Dheri
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_BUDDHISM
+		Player49Culture=50, (Independent)
+	EndCity
 EndPlot
 BeginPlot
 	x=87,y=43
@@ -34394,6 +34528,29 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Lothal
+		CityPopulation=2
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_HINDU_TEMPLE
+		ReligionType=RELIGION_HINDUISM
+		Player49Culture=10, (Independent)
+	EndCity
 EndPlot
 BeginPlot
 	x=88,y=37
@@ -47218,6 +47375,17 @@ BeginPlot
 	x=121,y=6
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Otautahi
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		Player7Culture=25
+	EndCity
 EndPlot
 BeginPlot
 	x=121,y=7
@@ -47227,6 +47395,7 @@ EndPlot
 BeginPlot
 	x=121,y=8
 	BonusType=BONUS_CRAB
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47590,6 +47759,17 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=7, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=7, (Polynesia)
+		CityName=Tamaki Makaurau
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		Player7Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=122,y=11
@@ -47611,27 +47791,32 @@ BeginPlot
 	x=122,y=14
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=122,y=15
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=122,y=16
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=122,y=17
 	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=122,y=18
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=122,y=19
@@ -47916,6 +48101,7 @@ EndPlot
 BeginPlot
 	x=123,y=5
 	BonusType=BONUS_WHALE
+	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47963,22 +48149,26 @@ BeginPlot
 	x=123,y=14
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=15
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=16
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=17
 	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=18
@@ -47990,11 +48180,13 @@ BeginPlot
 	x=123,y=19
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=20
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=7,
 EndPlot
 BeginPlot
 	x=123,y=21

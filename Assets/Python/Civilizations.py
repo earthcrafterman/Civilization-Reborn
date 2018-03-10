@@ -56,6 +56,8 @@ def initTechs(iPlayer, lTechs):
 	pPlayer.setStartingEra(iCurrentEra)
 
 def initTech(iPlayer, iTech):
+	if iPlayer == 7:
+		print str(iTech)
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
 
@@ -131,6 +133,7 @@ iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 iCivIndependent:Techs(column=5),
 iCivIndependent2:Techs(column=5),
 iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
+iCivPolynesia :	Techs([iLiterature, iNavigation], column=3, exceptions=[iAlloys, iConstruction, iRiding]),
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iEthics]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),

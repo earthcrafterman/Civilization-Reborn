@@ -11,6 +11,7 @@ from Consts import *
 import CityNameManager as cnm
 import Victory as vic
 import DynamicCivs as dc
+import CvWorldBuilderScreen as platy
 from operator import itemgetter
 import Stability as sta
 import Areas
@@ -705,6 +706,20 @@ class RiseAndFall:
 			else:
 				data.lCheatersCheck[0] -= 1
 
+		crete = gc.getMap().plot(68, 39)
+		if crete.isCity() and crete.getPlotCity().getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+			self.creteFlip((68, 39))
+
+		crete = gc.getMap().plot(69, 39)
+		if crete.isCity() and crete.getPlotCity().getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+			self.creteFlip((69, 39))
+
+		self.polyFlip((117, 2), (123, 14), (0, 2), (2, 14))
+		self.polyFlip((1, 15), (9, 24))
+		self.polyFlip((0, 22), (8, 41), (122, 22), (123, 41))
+		self.polyFlip((7, 13), (20, 26))
+		self.polyFlip((18, 19), (24, 19))
+
 		if iGameTurn % utils.getTurns(20) == 0:
 			if pIndependent.isAlive():
 				utils.updateMinorTechs(iIndependent, iBarbarian)
@@ -1318,6 +1333,12 @@ class RiseAndFall:
 
 		x, y = tCapital
 		bCapitalSettled = False
+		
+		if iCiv == iGermany:
+			self.germanCapital()
+			tCapital = (62, 53)
+			x, y = tCapital
+			bCapitalSettled = True
 
 		if iCiv == iItaly:
 			for (i, j) in utils.surroundingPlots(tCapital):
@@ -1417,7 +1438,7 @@ class RiseAndFall:
 						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 							if iCiv != iLoopCiv:
 								utils.flipUnitsInArea(utils.getPlotList(tTopLeft, tBottomRight, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, [])), iCiv, iLoopCiv, True, False)
-						if pCurrent.isCity():
+						if pCurrent.isCity() and iCiv != iTurkey:
 							pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
 						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 							if iCiv != iLoopCiv:
@@ -2504,6 +2525,8 @@ class RiseAndFall:
 			teamIndia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iSettler, iCiv, (70, 42), 1)
+			utils.makeUnit(iArcher, iCiv, (70, 42), 2)
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 			#utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
 			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
@@ -2858,7 +2881,7 @@ class RiseAndFall:
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iCaravel, iCiv, tSeaPlot, 1)
 		elif iCiv == iGermany:
-			utils.createSettlers(iCiv, 4)
+			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 2)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3, "", 2)
 			utils.makeUnitAI(iMusketman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
@@ -3257,7 +3280,138 @@ class RiseAndFall:
 		plot = gc.getMap().plot(60, 56)
 		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
 
+	def germanCapital(self):
+		if gc.getMap().plot(62, 53).isCity() == False:
+			lCities = []
+			if gc.getMap().plot(62, 52).isCity():
+				lCities.append(gc.getMap().plot(62, 52).getPlotCity())
+			if gc.getMap().plot(61, 52).isCity():
+				lCities.append(gc.getMap().plot(61, 52).getPlotCity())
+			if gc.getMap().plot(61, 53).isCity():
+				lCities.append(gc.getMap().plot(61, 53).getPlotCity())
+			if gc.getMap().plot(61, 54).isCity():
+				lCities.append(gc.getMap().plot(61, 54).getPlotCity())
+			if gc.getMap().plot(62, 54).isCity():
+				lCities.append(gc.getMap().plot(62, 54).getPlotCity())
+			if gc.getMap().plot(63, 54).isCity():
+				lCities.append(gc.getMap().plot(63, 54).getPlotCity())
+			if gc.getMap().plot(63, 53).isCity():
+				lCities.append(gc.getMap().plot(63, 53).getPlotCity())
+			if gc.getMap().plot(63, 52).isCity():
+				lCities.append(gc.getMap().plot(63, 52).getPlotCity())
 
+			if len(lCities) == 1:
+				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (62, 53))
+				utils.convertPlotCulture(gc.getMap().plot(62, 53), iCiv, 100, True)
+			if len(lCities) > 1:
+				lbest = lCities[0]
+				ibestCulture = gc.getMap().plot(lbest.getX(), lbest.getY()).getCulture(lbest.getOwner())
+				for index in range(1, len(lCities)):
+					city = lCities[index]
+					culture = gc.getMap().plot(city.getX(), city.getY()).getCulture(city.getOwner())
+					if city.getPopulation() > lbest.getPopulation():
+						lbest = city
+					elif culture > ibestCulture:
+						lbest = city
+					elif city.getPopulation() == lbest.getPopulation() and culture == ibestCulture:
+						if gc.getGame().getSorenRandNum(2, 'random city') == 1:
+							lbest = city
+				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, (62, 53))
+				utils.convertPlotCulture(gc.getMap().plot(62, 53), iCiv, 100, True)
+				for city in lCities:
+					if city != lbest:
+						city.kill()
+
+	def MoveCity(self, pPlayer, city, plot):
+		pNewCity = pPlayer.initCity(plot[0], plot[1])
+		sName = cnm.getFoundName(iGermany, (plot))
+		if not sName:
+			sName = city.getName()
+		city.setName("ToBeRazed", False)
+		pNewCity.setName(sName, True)
+		self.copyCityStats(city, pNewCity, True)
+		pOldPlot = city.plot()
+		city.kill()
+		pOldPlot.setImprovementType(-1)
+		for iUnit in range(gc.getMap().plot(plot[0], plot[1]).getNumUnits()):
+			unit = plot.getUnit(iUnit)
+			if loopUnit.isNone(): continue
+			unit.setXY(plot[0], plot[1], True, True, False)
+
+	def copyCityStats(self, pOldCity, pNewCity, bMove):
+		pNewCity.setPopulation(pOldCity.getPopulation())
+		for iBuilding in xrange(gc.getNumBuildingInfos()):
+			pNewCity.setBuildingProduction(iBuilding, pOldCity.getBuildingProduction(iBuilding))
+			if gc.getBuildingInfo(iBuilding).isCapital() and not bMove: continue
+			pNewCity.setNumRealBuilding(iBuilding, pOldCity.getNumRealBuilding(iBuilding))
+		for iClass in xrange(gc.getNumBuildingClassInfos()):
+			for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+				pNewCity.setBuildingCommerceChange(iClass, iCommerce, pOldCity.getBuildingCommerceChange(iClass, iCommerce))
+			for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
+				pNewCity.setBuildingYieldChange(iClass, iYield, pOldCity.getBuildingYieldChange(iClass, iYield))
+	##		pNewCity.setBuildingHappyChange(iClass, pOldCity.getBuildingHappyChange(iClass))
+	##		pNewCity.setBuildingHealthChange(iClass, pOldCity.getBuildingHealthChange(iClass))
+		for iPlayerX in xrange(gc.getMAX_PLAYERS()):
+			pNewCity.setCultureTimes100(iPlayerX, pOldCity.getCultureTimes100(iPlayerX), False)
+		for iReligion in xrange(gc.getNumReligionInfos()):
+			pNewCity.setHasReligion(iReligion, pOldCity.isHasReligion(iReligion), False, False)
+			if bMove and pOldCity.isHolyCityByType(iReligion):
+				CyGame().setHolyCity(iReligion, pNewCity, False)
+			pNewCity.changeReligionInfluence(iReligion, pOldCity.getReligionInfluence(iReligion) - pNewCity.getReligionInfluence(iReligion))
+			pNewCity.changeStateReligionHappiness(iReligion, pOldCity.getStateReligionHappiness(iReligion) - pNewCity.getStateReligionHappiness(iReligion))
+		for iCorporation in xrange(gc.getNumCorporationInfos()):
+			pNewCity.setHasCorporation(iCorporation, pOldCity.isHasCorporation(iCorporation), False, False)
+			if bMove and pOldCity.isHeadquartersByType(iCorporation):
+				CyGame().setHeadquarters(iCorporation, pNewCity, False)
+		for iImprovement in xrange(gc.getNumImprovementInfos()):
+			pNewCity.changeImprovementFreeSpecialists(iImprovement, pOldCity.getImprovementFreeSpecialists(iImprovement) - pNewCity.getImprovementFreeSpecialists(iImprovement))
+		for iSpecialist in xrange(gc.getNumSpecialistInfos()):
+			pNewCity.setFreeSpecialistCount(iSpecialist, pOldCity.getFreeSpecialistCount(iSpecialist))
+			pNewCity.setForceSpecialistCount(iSpecialist, pOldCity.getForceSpecialistCount(iSpecialist))
+		for iUnit in xrange(gc.getNumUnitInfos()):
+			pNewCity.setUnitProduction(iUnit, pOldCity.getUnitProduction(iUnit))
+			pNewCity.setGreatPeopleUnitProgress(iUnit, pOldCity.getGreatPeopleUnitProgress(iUnit))
+		for iCommerce in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+			pNewCity.changeSpecialistCommerce(iCommerce, pOldCity.getSpecialistCommerce(iCommerce) - pNewCity.getSpecialistCommerce(iCommerce))
+		for iBonus in xrange(gc.getNumBonusInfos()):
+			pNewCity.changeFreeBonus(iBonus, pOldCity.getFreeBonus(iBonus) - pNewCity.getFreeBonus(iBonus))
+			while pOldCity.isNoBonus(iBonus) != pNewCity.isNoBonus(iBonus):
+				if pOldCity.isNoBonus(iBonus):
+					pNewCity.changeNoBonusCount(iBonus, 1)
+				else:
+					pNewCity.changeNoBonusCount(iBonus, -1)
+		for iOrder in xrange(pOldCity.getOrderQueueLength()):
+			OrderData = pOldCity.getOrderFromQueue(iOrder)
+			pNewCity.pushOrder(OrderData.eOrderType, OrderData.iData1, OrderData.iData2, OrderData.bSave, False, True, False)
+		pNewCity.changeBaseGreatPeopleRate(pOldCity.getBaseGreatPeopleRate() - pNewCity.getBaseGreatPeopleRate())
+		pNewCity.changeConscriptAngerTimer(pOldCity.getConscriptAngerTimer() - pNewCity.getConscriptAngerTimer())
+		pNewCity.changeDefenseDamage(pOldCity.getDefenseDamage() - pNewCity.getDefenseDamage())
+		pNewCity.changeDefyResolutionAngerTimer(pOldCity.getDefyResolutionAngerTimer() - pNewCity.getDefyResolutionAngerTimer())
+		pNewCity.changeEspionageHappinessCounter(pOldCity.getEspionageHappinessCounter() - pNewCity.getEspionageHappinessCounter())
+		pNewCity.changeEspionageHealthCounter(pOldCity.getEspionageHealthCounter() - pNewCity.getEspionageHealthCounter())
+		pNewCity.changeExtraHappiness(pOldCity.getExtraHappiness() - pNewCity.getExtraHappiness())
+		pNewCity.changeExtraHealth(pOldCity.getExtraHealth() - pNewCity.getExtraHealth())
+		pNewCity.changeExtraTradeRoutes(pOldCity.getExtraTradeRoutes() - pNewCity.getExtraTradeRoutes())
+		pNewCity.changeGreatPeopleProgress(pOldCity.getGreatPeopleProgress() - pNewCity.getGreatPeopleProgress())
+		pNewCity.changeHappinessTimer(pOldCity.getHappinessTimer() - pNewCity.getHappinessTimer())
+		pNewCity.changeHurryAngerTimer(pOldCity.getHurryAngerTimer() - pNewCity.getHurryAngerTimer())
+		pNewCity.setAirliftTargeted(pOldCity.isAirliftTargeted())
+		pNewCity.setBombarded(pOldCity.isBombarded())
+		pNewCity.setCitizensAutomated(pOldCity.isCitizensAutomated())
+		pNewCity.setDrafted(pOldCity.isDrafted())
+		pNewCity.setFeatureProduction(pOldCity.getFeatureProduction())
+		pNewCity.setFood(pOldCity.getFood())
+		pNewCity.setHighestPopulation(pOldCity.getHighestPopulation())
+		pNewCity.setNeverLost(pOldCity.isNeverLost())
+		pNewCity.setOccupationTimer(pOldCity.getOccupationTimer())
+		pNewCity.setOverflowProduction(pOldCity.getOverflowProduction())
+		pNewCity.setPlundered(pOldCity.isPlundered())
+		pNewCity.setProduction(pOldCity.getProduction())
+		pNewCity.setProductionAutomated(pOldCity.isProductionAutomated())
+		pNewCity.setScriptData(pOldCity.getScriptData())
+		pNewCity.setWallOverride(pOldCity.isWallOverride())
+
+		
 	def determineEnabledPlayers(self):
 
 		iHuman = utils.getHumanID()
@@ -3393,4 +3547,76 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 			
+	def creteFlip(self, crete):
+		lCities = []
+		lOwners = []
+		lGreece = []
+		
+		for x in range(65, (67 + 1)):
+			for y in range(40, (43 + 1)):
+				lGreece.append((x, y))
+		
+		for coord in lGreece:
+			plot = gc.getMap().plot(coord[0], coord[1])
+			if plot.isCity() and plot.getPlotCity().getOwner not in [iIndependent, iIndependent2, iBarbarian]:
+				lCities.append(plot.getPlotCity())
+				if plot.getPlotCity().getOwner() not in lOwners : lOwners.append(plot.getPlotCity().getOwner())
+
+		if len(lCities) == 0:
+			return
+		elif len(lCities) == 1 or len(lOwners) == 1:
+			utils.flipCity(crete, False, False, lCities[0].getOwner(), [])
+		else:
+			lbest = lCities[0]
+			ibestCulture = gc.getMap().plot(lbest.getX(), lbest.getY()).getCulture(lbest.getOwner())
+			for index in range(1, len(lCities)):
+				city = lCities[index]
+				culture = gc.getMap().plot(city.getX(), city.getY()).getCulture(city.getOwner())
+				if city.getPopulation() > lbest.getPopulation():
+					lbest = city
+				elif culture > ibestCulture:
+					lbest = city
+				elif city.getPopulation() == lbest.getPopulation() and culture == ibestCulture:
+					if gc.getGame().getSorenRandNum(2, 'random city') == 1:
+						lbest = city
+			utils.flipCity(crete, False, False, lbest.getOwner(), [])
+
+	def polyFlip (self, BL, TR, BL2 = (-1, -1), TR2 = (-1. -1)):
+		lCities = []
+		iFlip = -1
+		
+		print "YES"
+		
+		for x in range(BL[0], (TR[0] + 1)):
+			for y in range(BL[1],(TR[1] + 1)):
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity() and plot.getPlotCity().getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+					lCities.append((x, y))
+					print ("City at " + str(x) + ", " + str(y))
+				if len(lCities) > 0 and plot.getNumUnits() > 0:
+					for index in range(plot.getNumUnits()):
+						unit = plot.getUnit(index)
+						if unit.getOwner() not in [iIndependent, iIndependent2, iBarbarian]:
+							iFlip = unit.getOwner()
+							print "Flip to " + str(iFlip)
+
+		if BL2 != (-1, -1) and TR2 != (-1, -1):
+			for x in range(BL2[0],(TR2[0] + 1)):
+				for y in range(BL2[1], (TR2[1] + 1)):
+					plot = gc.getMap().plot(x, y)
+					if plot.isCity() and plot.getPlotCity().getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+						lCities.append((x, y))
+						print "City at " + str(x) + ", " + str(y)
+					if len(lCities) > 0 and plot.getNumUnits() > 0:
+						for index in range(plot.getNumUnits()):
+							unit = plot.getUnit(index)
+							if unit.getOwner() not in [iIndependent, iIndependent2, iBarbarian]:
+								iFlip = unit.getOwner()
+								print "Flip to " + str(iFlip)
+
+		if iFlip != -1 and len(lCities) > 0:
+			for city in lCities:
+				utils.flipCity(city, False, False, iFlip, [])
+
+
 rnf = RiseAndFall()

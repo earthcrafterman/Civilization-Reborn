@@ -360,9 +360,6 @@ class CvRFCEventHandler:
 
 		x = city.getX()
 		y = city.getY()
-		
-		if utils.getHumanID() != iPolynesia and iOwner == iPolynesia:
-			utils.makeUnit(iArcher, iPolynesia, (x,y), 1)
 
 		if iOwner < iNumPlayers:
 			dc.onCityBuilt(iOwner)

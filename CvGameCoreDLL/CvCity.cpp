@@ -14686,8 +14686,11 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		{
 			AI_chooseProduction();
 			
+			if (!isHuman() && getOwner() == POLYNESIA && plot()->getNumDefenders(getOwnerINLINE()) == 0)
+				pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_ARCHER"), UNITAI_CITY_DEFENSE, false, false, false);
+
 			//Polynesia sometimes doesn't build anything, this should fix it.
-			if (getOwner() == POLYNESIA && !isProductionUnit() && !isProductionBuilding() && !isProductionProject())
+			if (!isHuman() && getOwner() == POLYNESIA && !isProductionUnit() && !isProductionBuilding() && !isProductionProject())
 			{
 				UnitTypes eLoopUnit = NO_UNIT;
 				UnitTypes eBestUnit = NO_UNIT;
