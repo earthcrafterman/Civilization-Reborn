@@ -601,6 +601,12 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
@@ -3086,6 +3092,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
 			</CommerceHappinesses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
@@ -3420,6 +3432,12 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>50</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
@@ -8441,7 +8459,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ORACLE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ORACLE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_DIVINATION</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<PrereqBonuses>BONUS_FISH</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>

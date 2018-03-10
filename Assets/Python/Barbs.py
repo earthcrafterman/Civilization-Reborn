@@ -30,26 +30,29 @@ tMinorCities = (
 (-1100, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
+(-733, (61, 40), iGreece, 'Syrakousai', 2, -1, -1),		# Magna Graecia
 (-650, (90, 37), iIndependent2, 'Ujjain', 2, iMilitia, 1),	# Avanti
 (-550, (82, 38), iPersia, 'Parsa', 1, iArcher, 2),	# Parsa
 (-550, (95, 37), iIndependent, 'Tosali', 2, iWarElephant, 1),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 2),	# Delhi
 (-495, (105, 43), iIndependent2, 'Yuecheng', 1, iArcher, 2), 	# Nanjing
-(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
+(-350, (72, 48), iGreece, 'Chersonesos', 2, iArcher, 2),	# Crimaia
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iWarElephant, 2),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, -1, -1),	# Shenyang
-(-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 30), iIndependent, 'Tanjapuri', 3, iWarElephant, 3),	# Thanjavur
+(-281, (75, 44), iBarbarian, 'Trapezon', 2, iChariot, 5),	# Pontic Kingdom
 (-257, (101, 37), iIndependent2, 'Co Loa', 2, iWarElephant, 1), 	# Hanoi
 (-214, (105, 39), iIndependent2, 'Panyu', 2, iAxeman, 2), 	# Guangzhou
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
 (-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
+(-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
+(-80, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
+(-80, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
+(-80, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (89, 34), iIndependent2, 'Pratisthan', 2, iWarElephant, 2),	# Satahavana
 (100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
-(-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
-(-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
@@ -119,10 +122,10 @@ class Barbs:
 
 			
 		#celts
-		if utils.isYearIn(-650, -110):
+		if utils.isYearIn(-650, 200):
 			self.checkSpawn(iCeltia, iGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 6, 0)
-			if iHandicap >= 0:
-				self.checkSpawn(iCeltia, iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GAUL"])
+			#if iHandicap >= 0:
+			#	self.checkSpawn(iCeltia, iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GAUL"])
 
 		#norse
 		if utils.isYearIn(-650, 550):
@@ -196,12 +199,12 @@ class Barbs:
 		#	self.checkSpawn(iBarbarian, iHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
 
 		#barbarians in europe
-		if utils.isYearIn(-210, 470):
+		if utils.isYearIn(210, 470):
 			self.checkSpawn(iBarbarian, iAxeman, 3 + iHandicap, (50, 45), (63, 52), self.spawnInvaders, iGameTurn, 10, 0, ["TXT_KEY_ADJECTIVE_GERMANIC"])
 			self.checkSpawn(iBarbarian, iAxeman, 2 + iHandicap, (64, 49), (69, 55), self.spawnInvaders, iGameTurn, 12, 2, ["TXT_KEY_ADJECTIVE_GERMANIC"])
 		# Leoreth: begins 100 AD instead of 50 AD
-		if utils.isYearIn(100, 470):
-			self.checkSpawn(iBarbarian, iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+		#if utils.isYearIn(100, 470):
+		#	self.checkSpawn(iBarbarian, iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
 		if utils.isYearIn(300, 550):
 			self.checkSpawn(iBarbarian, iAxeman, 4 + iHandicap, (49, 41), (56, 52), self.spawnInvaders, iGameTurn, 5, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
 			self.checkSpawn(iBarbarian, iSwordsman, 4 + iHandicap, (49, 41), (57, 52), self.spawnInvaders, iGameTurn, 5, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
@@ -349,6 +352,10 @@ class Barbs:
 				lBuildings = [iPaganTemple]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]
+			if sName == 'Syrakousai':
+				lBuildings = [iPaganTemple, iHarbor]
+			if sName in ['Lugodunon', 'Burdigala', 'Lutetia']:
+				lBuildings = [iDun]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			

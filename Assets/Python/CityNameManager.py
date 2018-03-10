@@ -262,7 +262,8 @@ tEraNames = (
 	'Moling'		:	'Nanjing',
 	'Panyu'			:	'Guangzhou',
 	'Mero&#235;'		:	'Dunqulah',
-	'Tosali'		:	'Kolkata'
+	'Tosali'		:	'Kolkata',
+	'Babil&#251;'		:	'Baghdad'
 	
 },
 # renaissance
@@ -4945,6 +4946,7 @@ dIdentifiers = {
 	"Valence"		:	"Valencia",
 	"Valencia"		:	"Valencia",
 	"Valentia"		:	"Valencia",
+	"Qart-Hadasht"
 	"Bankuubaa"		:	"Vancouver",
 	"Vancouver"		:	"Vancouver",
 	"Vankuver"		:	"Vancouver",
@@ -5409,12 +5411,13 @@ tRenames = (
 	"Zaragoza"		:	"Caesaraugusta",
 	"Kaisareia"		:	"Caesarea Mazaca",
 	"K&#246;nigsberg"	:	"Calininopolis",
+	"Carthago Nova"		:	"Cartagena",
 	"Qart-Hadasht"		:	"Carthago",
 	"Cluj-Napoca"		:	"Castrum Clus",
 	"Chersonesos"		:	"Chersonesus",
 	"Kition"		:	"Citium",
 	"K&#246;ln"		:	"Colonia Agrippina",
-	"Byzantion"		:	"Constantinopolis",
+	"Byzantion"		:	"Byzantium",
 	"Constantinopolis"	:	"Constantinopolis",
 	"Korinthos"		:	"Corinthus",
 	"Krak&#243;w"		:	"Cracovia",

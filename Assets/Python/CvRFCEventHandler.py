@@ -610,7 +610,12 @@ class CvRFCEventHandler:
 		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(600):
 			for iPlayer in range(iVikings):
 				Modifiers.adjustInflationModifier(iPlayer)
-			
+		
+		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(-520) and utils.getHumanID() != iPersia:
+			plot = gc.getMap().plot(82, 38)
+			if plot.isCity():
+				city = plot.getPlotCity()
+				utils.relocateCapital(iPersia, city)
 		return 0
 
 	def onBeginPlayerTurn(self, argsList):	

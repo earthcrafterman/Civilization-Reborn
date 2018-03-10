@@ -166,6 +166,7 @@ tSpreadFactors = (
 {
 	iCore :		[rPersia],
 	iHistorical :	[rCentralAsia],
-	iMinority : 	[rIndia],
+	iPeriphery :	[rMesopotamia],
+	iMinority : 	[rIndia, rAnatolia],
 },
 )

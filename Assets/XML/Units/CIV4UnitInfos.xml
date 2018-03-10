@@ -2167,15 +2167,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<Builds>
-				<Build>
-					<BuildType>BUILD_ROMAN_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-			</Builds>
 			<PrereqTech>TECH_BLOOMERY</PrereqTech>
 			<BonusType>BONUS_IRON</BonusType>
-			<iCost>45</iCost>
+			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
@@ -2195,20 +2189,20 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>8</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iCityAttack>10</iCityAttack>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
 			<UnitClassDefenseMods>
 				<UnitClassDefenseMod>
-					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
@@ -2228,6 +2222,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SWORDSMAN</Class>
@@ -2287,7 +2287,7 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>6</iCombat>
+			<iCombat>5</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>

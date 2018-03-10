@@ -527,21 +527,19 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iRome:
 	
 		# first goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
-		if iGameTurn == getTurnForYear(100):
+		if iGameTurn == getTurnForYear(320):
 			expire(iRome, 0)
 			
 		# second goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
-		if iGameTurn == getTurnForYear(320):
-			bSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False)) >= 2
-			bFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1])) >= 3
-			bEngland = getNumCitiesInArea(iRome, Areas.getCoreArea(iEngland, False)) >= 1
-			bCarthage = getNumCitiesInArea(iRome, utils.getPlotList(tCarthageTL, tCarthageBR)) >= 2
-			bByzantium = getNumCitiesInArea(iRome, Areas.getCoreArea(iByzantium, False)) >= 4
-			bEgypt = getNumCitiesInArea(iRome, Areas.getCoreArea(iEgypt, False)) >= 2
-			if bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt:
+		if iGameTurn < getTurnForYear(320):
+			tRect = { iRome : ((44, 30), (75, 56))}
+			tPlots = Areas.getArea(iRome, tRect, {})
+			bRomanEmpire = isControlled(iRome, tPlots)
+			if bRomanEmpire:
 				win(iRome, 1)
-			else:
-				lose(iRome, 1)
+		
+		if iGameTurn == getTurnForYear(320):
+			expire(iRome, 1)
 					
 		# third goal: be first to discover Theology, Machinery and Civil Service
 		
@@ -1741,7 +1739,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iCounter >= 26:
 					win(iIndia, 1)
 	
-	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
+	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 320 AD
 	elif iPlayer == iRome:
 		if isPossible(iRome, 0):
 			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iForum]:
@@ -1749,7 +1747,8 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 				iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
 				iNumForums = getNumBuildings(iRome, iForum)
-				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
+				bColosseum = getNumBuildings(iRome, iColosseum)
+				if iNumBarracks >= 5 and iNumAqueducts >= 4 and iNumAmphitheatres >= 3 and iNumForums >= 2 and bColosseum:
 					win(iRome, 0)
 					
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
@@ -3482,16 +3481,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 			iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
 			iNumForums = getNumBuildings(iRome, iForum)
-			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumAmphitheatres >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
-		elif iGoal == 1:
-			iCitiesSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False))
-			iCitiesFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
-			iCitiesEngland = getNumCitiesInArea(iRome, Areas.getCoreArea(iEngland, False))
-			iCitiesCarthage = getNumCitiesInArea(iRome, utils.getPlotList(tCarthageTL, tCarthageBR))
-			iCitiesByzantium = getNumCitiesInArea(iRome, Areas.getCoreArea(iByzantium, False))
-			iCitiesEgypt = getNumCitiesInArea(iRome, Areas.getCoreArea(iEgypt, False))
-			aHelp.append(getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
-			aHelp.append(getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))
+			bColosseum = getNumBuildings(iRome, iColosseum)
+			aHelp.append(getIcon(iNumBarracks >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 5)) + ' ' + getIcon(iNumAqueducts >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 4)) + ' ' + getIcon(iNumAmphitheatres >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 3)) + ' ' + getIcon(iNumForums >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 2))  + ' ' + getIcon(iNumForums >= 1) + localText.getText("TXT_KEY_VICTORY_COLOSSEUM", (bColosseum, 1)))
 		elif iGoal == 2:
 			bArchitecture = data.lFirstDiscovered[iArchitecture] == iRome
 			bPolitics = data.lFirstDiscovered[iPolitics] == iRome

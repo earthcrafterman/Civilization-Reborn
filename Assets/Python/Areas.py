@@ -114,7 +114,7 @@ tCapitals = (
 (72, 29), # Aksum
 (108, 48), # Pyongyang
 (22, 35), # Tikal
-(68, 45), # Constantinople
+(69, 45), # Constantinople
 (113, 45), # Kyoto
 (60, 59), # Oslo
 (75, 33), # Mecca
@@ -197,7 +197,7 @@ tBirthArea = (
 ((71, 39), 	(74, 41)), 	# Carthage
 ((3, 17), 	(7, 22)), 	# Polynesia
 ((75, 37), 	(85, 44)), 	# Persia
-((59, 41), 	(63, 47)), 	# Rome
+((59, 43), 	(61, 45)), 	# Rome
 ((90, 27), 	(93, 32)), 	# Tamils
 ((71, 27), 	(75, 30)), 	# Ethiopia
 ((107, 45), 	(110, 49)), 	# Korea
@@ -235,6 +235,8 @@ tBirthArea = (
 )
 
 dChangedBirthArea = {
+iPersia :	((70, 37), 	(85, 44)), 	# Persia
+iRome :		((59, 41), 	(63, 47)), 	# Rome
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south

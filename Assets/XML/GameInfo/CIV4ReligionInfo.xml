@@ -43,7 +43,7 @@
 			<Description>TXT_KEY_RELIGION_ORTHODOXY</Description>
 			<Adjective>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ORTHODOXY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_ETHICS</TechPrereq>
+			<TechPrereq>TECH_THEOLOGY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
@@ -75,7 +75,7 @@
 			<Description>TXT_KEY_RELIGION_CATHOLICISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CATHOLICISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_DOCTRINE</TechPrereq>
+			<TechPrereq>TECH_JUDICIARY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CATHOLIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
@@ -139,7 +139,7 @@
 			<Description>TXT_KEY_RELIGION_ISLAM</Description>
 			<Adjective>TXT_KEY_RELIGION_ISLAM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ISLAM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_THEOLOGY</TechPrereq>
+			<TechPrereq>TECH_DOCTRINE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ISLAMIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>150</iSpreadFactor>

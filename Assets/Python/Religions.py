@@ -88,7 +88,7 @@ class Religions:
 		self.checkZoroastrianism(iGameTurn)
 		#self.checkBuddhism(iGameTurn)
 
-		self.checkChristianity(iGameTurn)
+		#self.checkChristianity(iGameTurn)
 						
 		self.checkSchism(iGameTurn)
 
@@ -261,7 +261,7 @@ class Religions:
 		if gc.getGame().isReligionFounded(iJudaism): return
 
 		if iGameTurn == getTurnForYear(-168) - utils.getTurns(data.iSeed % 5):
-			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
+			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iJudaism)
 			
 	def spreadJudaismEurope(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iJudaism): return
@@ -463,7 +463,10 @@ class Religions:
 				if not gc.getGame().isReligionFounded(iProtestantism):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
 					self.reformation()
-					
+		
+		if iTech == iEthics:
+			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iJudaism)
+			
 		for iReligion in range(iNumReligions):
 			self.checkLateReligionFounding(iReligion, iTech)
 					

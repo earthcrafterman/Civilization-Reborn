@@ -699,7 +699,7 @@ def calculateStability(iPlayer):
 	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
 	for city in utils.getCityList(iPlayer):
-		iPopulation = city.getPopulation()
+		iPopulation = city.getPopulation() - 1 #stabilise classical empires
 		iModifier = 0
 		x = city.getX()
 		y = city.getY()

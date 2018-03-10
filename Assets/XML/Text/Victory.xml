@@ -1542,17 +1542,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<English>Build 5 Barracks, 4 Aqueducts, 3 Amphitheatres, 2 Forums and Colosseum by 320 AD</English>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 	</TEXT>
 	<TEXT>
@@ -1566,18 +1556,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM2_EPIC</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM2_MARATHON</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+		<English>Control by 320 AD all the area historically known as the Roman Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_NOTURN</Tag>
@@ -3077,5 +3056,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_BLACK_SEA</Tag>
 		<English>Black Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COLOSSEUM</Tag>
+		<English>Colosseum</English>
 	</TEXT>
 </Civ4GameText>
