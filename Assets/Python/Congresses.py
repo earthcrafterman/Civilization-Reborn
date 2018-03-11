@@ -527,7 +527,7 @@ class Congress:
 		self.inviteToCongress()
 		
 		if self.bPostWar:
-			iHostPlayer = self.lWinners[0]
+			iHostPlayer = [iWinner for iWinner in self.lWinners if gc.getPlayer(iWinner).isAlive()][0]
 		else:
 			iHostPlayer = utils.getRandomEntry(self.lInvites)
 			
@@ -537,7 +537,7 @@ class Congress:
 				if iThisPlayer != iThatPlayer:
 					tThisPlayer = gc.getTeam(iThisPlayer)
 					if not tThisPlayer.canContact(iThatPlayer): tThisPlayer.meet(iThatPlayer, False)
-			
+
 		self.sHostCityName = utils.getRandomEntry(utils.getOwnedCoreCities(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
