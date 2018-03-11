@@ -1431,14 +1431,14 @@ class RiseAndFall:
 						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
-				elif bDeleteEverything and not bBirthInCapital:
+				elif bDeleteEverything and not bBirthInCapital and iCiv != iTurkey:
 					for (i, j) in utils.surroundingPlots(tCapital):
 						data.lDeleteMode[0] = iCiv
 						pCurrent=gc.getMap().plot(i, j)
 						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 							if iCiv != iLoopCiv:
 								utils.flipUnitsInArea(utils.getPlotList(tTopLeft, tBottomRight, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, [])), iCiv, iLoopCiv, True, False)
-						if pCurrent.isCity() and iCiv != iTurkey:
+						if pCurrent.isCity():
 							pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
 						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 							if iCiv != iLoopCiv:
