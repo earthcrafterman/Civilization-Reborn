@@ -3565,6 +3565,11 @@ class RiseAndFall:
 		if len(lCities) == 0:
 			return
 		elif len(lCities) == 1 or len(lOwners) == 1:
+			plot = gc.getMap().plot(crete[0], crete[1])
+			for index in range(plot.getNumUnits()):
+				unit = plot.getUnit(index)
+				if unit.getOwner() == gc.getMap().plot(crete[0], crete[1]).getPlotCity().getOwner():
+					utils.flipUnit(unit, lCities[0].getOwner(), (crete[0], crete[1]))
 			utils.flipCity(crete, False, False, lCities[0].getOwner(), [])
 		else:
 			lbest = lCities[0]
@@ -3579,6 +3584,11 @@ class RiseAndFall:
 				elif city.getPopulation() == lbest.getPopulation() and culture == ibestCulture:
 					if gc.getGame().getSorenRandNum(2, 'random city') == 1:
 						lbest = city
+			plot = gc.getMap().plot(crete[0], crete[1])
+			for index in range(plot.getNumUnits()):
+				unit = plot.getUnit(index)
+				if unit.getOwner() == plot.getPlotCity().getOwner():
+					utils.flipUnit(unit, lbest.getOwner(), (crete[0], crete[1]))
 			utils.flipCity(crete, False, False, lbest.getOwner(), [])
 
 	def polyFlip (self, BL, TR, BL2 = (-1, -1), TR2 = (-1. -1)):
@@ -3616,6 +3626,11 @@ class RiseAndFall:
 
 		if iFlip != -1 and len(lCities) > 0:
 			for city in lCities:
+				plot = gc.getMap().plot(city[0], city[1])
+				for index in range(plot.getNumUnits()):
+					unit = plot.getUnit(index)
+					if unit.getOwner() == plot.getPlotCity().getOwner():
+						utils.flipUnit(unit, iFlip, (city[0], city[1]))
 				utils.flipCity(city, False, False, iFlip, [])
 
 
