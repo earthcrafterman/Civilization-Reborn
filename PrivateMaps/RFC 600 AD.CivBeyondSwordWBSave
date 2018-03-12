@@ -27564,18 +27564,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=42
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginCity
-		CityOwner=14, (Byzantium)
-		CityName=Attaleia
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HARBOR
-		ReligionType=RELIGION_CATHOLICISM
-		Player14Culture=10, (Byzantium)
-	EndCity
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

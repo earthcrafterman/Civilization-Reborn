@@ -2525,8 +2525,6 @@ class RiseAndFall:
 			teamIndia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iSettler, iCiv, (70, 42), 1)
-			utils.makeUnit(iArcher, iCiv, (70, 42), 2)
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 			#utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
 			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
