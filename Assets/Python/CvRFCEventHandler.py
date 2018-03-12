@@ -292,7 +292,7 @@ class CvRFCEventHandler:
 					carthage.setPopulation(3)
 					
 					utils.makeUnitAI(iWorkboat, iCarthage, (58, 39), UnitAITypes.UNITAI_WORKER_SEA, 1)
-					utils.makeUnitAI(iGalley, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
+					utils.makeUnitAI(iBireme, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(iSettler, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
 					# additional defenders and walls to make human life not too easy
@@ -398,8 +398,8 @@ class CvRFCEventHandler:
 				if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
 					utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
 		
-		# Maya Holkans give food to closest city on victory
-		if pWinningUnit.getUnitType() == iHolkan:
+		# Maya Blowgunners give food to closest city on victory
+		if pWinningUnit.getUnitType() == iBlowgunner:
 			iOwner = pWinningUnit.getOwner()
 			if gc.getPlayer(iOwner).getNumCities() > 0:
 				city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
@@ -488,7 +488,7 @@ class CvRFCEventHandler:
 		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
 		if iPlayer in [iTamils, iMali]:
-			vic.onTradeMission(iPlayer, iX, iY, iGold)
+			vic.onTradeMission(iUnitType, iPlayer, iX, iY, iGold)
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList

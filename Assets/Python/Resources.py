@@ -248,6 +248,7 @@ class Resources:
 				
 			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
 				self.createResource(28, 31, iIron) # Colombia
+				self.createResource(27, 31, iHorse) # Colombia
 			
 			if data.isPlayerEnabled(iArgentina):
 				self.createResource(31, 10, iWine) # Mendoza, Argentina

@@ -1459,23 +1459,23 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 179
+iNumUnits = 224
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
-iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
-iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
-iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iSpearman, 
-iHoplite, iImmortal, iImpi, iHeavySpearman, iPikeman, iLandsknecht, iArquebusier, iJanissary, iAskari, iQizilbash, 
-iMohawk, iMusketeer, iMusketman, iRedcoat, iMinuteman, iRifleman, iGrenadier, iAlbionLegion, iAntiTank, iInfantry, 
-iBersagliere, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
-iSkirmisher, iHolkan, iKelebolo, iLongbowman, iPatiyodha, iCrossbowman, iChokonu, iChariot, iWarChariot, iHuluganni, 
-iCidainh, iHorseman, iNumidianCavalry, iAsvaka, iHorseArcher, iCamelArcher, iKhampa, iLancer, iKeshik, iCataphract, 
-iChangSuek, iGhulamWarrior, iFarari, iPistolier, iCuirassier, iConquistador, iWingedHussar, iMountedBrave, iCamelGunner, iHussar, 
-iDragoon, iCossack, iGrenadierCavalry, iCavalry, iRurales, iWarElephant, iBallistaElephant, iAtlasElephant, iTank, iPanzer, 
-iMainBattleTank, iGunship, iCatapult, iHwacha, iTrebuchet, iBombard, iSiegeElephant, iCannon, iHeavyCannon, iArtillery, 
-iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDharani,
+iScout, iExplorer, iCaravan, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
+iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iCityGuard, iKoa, iAxeman, iLightSwordsman, iVulture, iDogSoldier, iKhopesh,  
+iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iGhazi, iDoppelSoldner, iKallarani, iSpearman, 
+iHoplite, iImmortal, iImpi, iEagle, iHolkan, iHeavySpearman, iBambooRuncing, iPhakak, iPikeman, iLandsknecht, iTagmata, iAshigaru, iDobDob, iArquebusier, iJanissary, iAskari, iQizilbash, 
+iMohawk, iMusketeer, iBandeirantes, iMusketman, iRedcoat, iMinuteman, iStrelets, iTercio, iRifleman, iMahardlek, iGrenadier, iAlbionLegion, iGardist, iNaffatun, iAntiTank, iInfantry, 
+iBersagliere, iPatricios, iEjercito, iSepoy, iSamInfantry, iMobileSam, iMarine, iNavySeal, iGuardaNacional, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
+iSkirmisher, iBlowgunner, iKelebolo, iLongbowman, iPatiyodha, iNgolo, iSlinger, iCrossbowman, iChokonu, iChariot, iWarChariot, iHuluganni, 
+iCidainh, iScythedChariot, iHorseman, iNumidianCavalry, iAsvaka, iHetairoi, iHorseArcher, iCamelArcher, iKhampa, iBerber, iLancer, iKeshik, iCataphract, 
+iChangSuek, iGhulamWarrior, iFarari, iChevalier, iPistolier, iSavannaHunter, iCuirassier, iConquistador, iWingedHussar, iCondotierro, iMountedBrave, iCamelGunner, iHussar, 
+iDragoon, iCossack, iGrenadierCavalry, iCavalry, iRurales, iLlanero, iWarElephant, iBallistaElephant, iAtlasElephant, iMahout, iTank, iPanzer, 
+iMainBattleTank, iGunship, iCatapult, iHwacha, iRam, iBallista, iTrebuchet, iFirelance, iSiegeEngineer, iBombard, iSiegeElephant, iTabor, iGreatBombard, iCannon, iHeavyCannon, iArtillery, 
+iMachineGun, iHowitzer, iHeavyHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iLongship, iWarGalley, iHeavyGalley, iDharani,
 iCog, iGalleass, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPrivateer, iOrangLaut, iCorsair, iFrigate, 
-iShipOfTheLine, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, 
-iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, iFighter, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber, 
+iShipOfTheLine, iManOWar, iIronclad, iKobukson, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, 
+iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, iFighter, iJetFighter, iArrow, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber, 
 iICBM, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy, iFemaleGreatProphet, 
 iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
 
@@ -1502,19 +1502,19 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 236
-(iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
-iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
-iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
-iHarbor, iCustomsHouse, iFeitoria, iWharf, iPostOffice, iTambo, iDrydock, iAirport, iForge, iMint, 
-iArtStudio, iFactory, iAssemblyPlant, iZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
-iPaganTemple, iMonument, iObelisk, iStele, iCandi, iEdict, iMalae, iTotemPole, iPublicTransportation, iLibrary,
-iEdubba, iTaixue, iHoTrai, iSangam, iUniversity, iSeowon, iGompa, iObservatory, iLaboratory, iResearchInstitute,
-iWeaver, iMbwadi, iTheatre, iOdeon, iHippodrome, iPavilion, iAmphitheatre, iBallCourt, iCharreadaArena, iGarden, 
-iCinema, iBroadcastTower, iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iBank, iRoyalExchange, iRailwayStation, 
-iDepartmentStore, iMall, iSupermarket, iRefrigerationPlant, iCoffeehouse, iSalon, iDistillery, iHotel, iConstabulary, iMountedPolice, 
-iCivicSquare, iRathaus, iSejmik, iEstate, iMausoleum, iFazenda, iHacienda, iNewsPress, iCourthouse, iJail, 
-iSacrificialAltar, iLevee, iDike, iIntelligenceAgency, iSecurityBureau, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, 
+iNumBuildings = 281
+(iPalace, iWalls, iDun, iKasbah, iCastle, iCitadel, iMountainFortress, iStarFort, iQila, iKremlin, iBarracks, iCastra, iIkhanda, iStable, iGer, iEstancia, iBullring,
+iBunker, iPillbox, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iChinampa, iAbAnbar, iBath, 
+iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iEarlySewer, iPark, iHospital, iMendicantOrder, iRecyclingCenter, iLighthouse, iTradingPost, 
+iHarbor, iCothon, iFishery, iCustomsHouse, iFeitoria, iCollegantia, iTradeGuild, iWharf, iPostOffice, iTambo, iShreni, iYam, iDrydock, iAirport, iForge, iMint, iArtStudio,
+iDutchMill, iStoneCutter, iFactory, iAssemblyPlant, iZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
+iPaganTemple, iMonument, iObelisk, iStele, iCandi, iEdict, iMalae, iTotemPole, iStatue, iPublicTransportation, iLibrary,
+iEdubba, iTaixue, iHoTrai, iSangam, iUniversity, iSeowon, iGompa, iPublicUniversity, iNizamiyya, iObservatory, iKushitePyramid, iKatun, iLaboratory, iResearchInstitute,
+iWeaver, iMbwadi, iTheatre, iOdeon, iHippodrome, iOpera, iAmphitheatre, iBallCourt, iCharreadaArena, iGarden, iBasilica,
+iCinema, iBroadcastTower, iMicrowaveStation, iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iAgora, iBazaar, iBank, iRoyalExchange, iSaltMine, iRailwayStation, 
+iDepartmentStore, iMall, iSupermarket, iRefrigerationPlant, iCoffeehouse, iSalon, iPavilion, iPublicHouse, iTeahouse, iPagoda, iMeadhall, iDistillery, iHotel, iResort, iConstabulary, iMountedPolice, 
+iCivicSquare, iRathaus, iSejmik, iSambadrome, iWene, iPendopo, iEstate, iMausoleum, iFazenda, iHacienda, iChateau, iFolwark, iColonyAdministration, iNewsPress, iCourthouse, iXeer, iSatrapCourt, iJail, 
+iSacrificialAltar, iLevee, iDike, iFLoatingMarket, iIntelligenceAgency, iSecurityBureau, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, 
 iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicChurch, iCatholicCathedral, iCatholicMonastery, iCatholicShrine, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, 
 iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, 

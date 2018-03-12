@@ -583,7 +583,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2</Tag>
-		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</English>
+		<English>Control a total of 25 frigates or man-o-wars and sink 50 enemy ships by 1800 AD</English>
 		<German>Kontrollieren Sie bis zum Jahr 1800 n. Chr. insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe</German>
 	</TEXT>
 	<TEXT>
@@ -1620,23 +1620,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+		<English>Build 6 Castra, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Castra, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+		<English>Build 6 Castra, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Castra, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+		<English>Build 6 Castra, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Castra, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_NOTURN</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukten, 4 Amphitheatern und 3 Foren</German>
+		<English>Build 6 Castra, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Castra, 5 Aqu&#228;dukten, 4 Amphitheatern und 3 Foren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
@@ -2704,7 +2704,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAVY_SIZE</Tag>
-		<English>Total of frigates and ships of the line: %d1 / %d2</English>
+		<English>Total of frigates and man-o-wars: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NEAR_EAST</Tag>
@@ -2796,7 +2796,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
-		<English>Barracks: %d1 / %d2</English>
+		<English>Castra: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_RESERVOIRS</Tag>

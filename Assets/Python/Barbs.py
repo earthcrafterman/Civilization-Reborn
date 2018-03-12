@@ -157,9 +157,9 @@ class Barbs:
 
 		# Holkans in classical Mesoamerica
 		if utils.isYearIn(100, 600):
-			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
+			self.checkSpawn(iBarbarian, iBlowgunner, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
-			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
+			self.checkSpawn(iBarbarian, iBlowgunner, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
 			
 		#pirates in Mediterranean
 		if utils.isYearIn(-210, 50):

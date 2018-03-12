@@ -1899,7 +1899,7 @@ def onPlayerSlaveTrade(iPlayer, iGold):
 			if data.iCongoSlaveCounter >= utils.getTurns(1000):
 				win(iCongo, 1)
 				
-def onTradeMission(iPlayer, iX, iY, iGold):
+def onTradeMission(iUnitType, iPlayer, iX, iY, iGold):
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
@@ -1908,12 +1908,12 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
 		if isPossible(iMali, 0):
-			iStateReligion = pMali.getStateReligion()
-			if iStateReligion != -1:
-				pHolyCity = gc.getGame().getHolyCity(iStateReligion)
-				
-				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
-					win(iMali, 0)
+			if iUnitType != iCaravan:
+				iStateReligion = pMali.getStateReligion()
+				if iStateReligion != -1:
+					pHolyCity = gc.getGame().getHolyCity(iStateReligion)
+					if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
+						win(iMali, 0)
 					
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
