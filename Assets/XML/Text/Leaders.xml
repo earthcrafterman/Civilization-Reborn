@@ -538,4 +538,12 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CURTIN</Tag>
+		<English>Curtin</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MENZIES</Tag>
+		<English>Menzies</English>
+	</TEXT>
 </Civ4GameText>

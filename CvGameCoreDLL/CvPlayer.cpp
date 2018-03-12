@@ -6950,6 +6950,17 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->updateFeatureHealth();
 		}
 	}
+	
+	// Merijn: Sydney Opera House effect
+	if (eBuilding == SYDNEY_OPERA)
+	{
+		CvCity* pLoopCity;
+		int iLoop;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->changeCultureHappiness(iChange);
+		}
+	}
 }
 
 

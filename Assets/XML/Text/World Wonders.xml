@@ -902,6 +902,18 @@
 		<English>[ICON_BULLET]No open borders required for trade</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA</Tag>
+		<English>Sydney Opera House</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA_STRATEGY</Tag>
+		<English>To be written</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_HAPPY] per Culture Level in All Cities</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>

@@ -143,6 +143,7 @@ tCapitals = (
 (27, 46), # Washington
 (34, 11), # Buenos Aires
 (41, 18), # Rio de Janeiro
+(118, 13),# Sydney
 (30, 52), # Montreal
 )
 
@@ -231,6 +232,7 @@ tBirthArea = (
 ((25, 43), 	(32, 50)), 	# America
 ((31, 3), 	(35, 13)), 	# Argentina
 ((36, 15), 	(43, 27)), 	# Brazil
+((112, 9),	(120, 19)),	# Australia
 ((20, 50), 	(35, 60)), 	# Canada
 )
 
@@ -317,6 +319,7 @@ tCoreArea = (
 ((23, 45),	(32, 50)),	# America
 ((31, 6),	(35, 12)),	# Argentina
 ((37, 15),	(41, 22)),	# Brazil
+((112, 10),	(118, 18)),	# Australia
 ((27, 50),	(35, 52)),	# Canada
 )
 
@@ -423,6 +426,7 @@ tNormalArea = (
 ((11, 43), 	(31, 49)), 	# America
 ((31,  3), 	(36, 15)), 	# Argentina
 ((32, 14), 	(43, 28)), 	# Brazil
+((101, 6),	(123, 23)), # Australia
 (( 8, 50), 	(37, 67)), 	# Canada
 )
 
@@ -507,6 +511,7 @@ tBroaderArea = (
 ((10, 42), 	(37, 56)), 	# America
 ((29,  3), 	(36, 15)), 	# Argentina
 ((32, 14), 	(43, 28)), 	# Brazil
+((112, 10),	(118, 20)), # Australia
 (( 8, 50), 	(37, 67)), 	# Canada
 )
 

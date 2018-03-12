@@ -405,9 +405,10 @@ class UniquePowers:
 				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 				if city.getRegionID() in lNewWorld and bNewWorld:
 					if iFoodDifference <= 0 or iHappinessDifference <= 0: continue
-					iNorthAmericaBonus = 0
-					if city.getRegionID() in [rCanada, rUnitedStates]: iNorthAmericaBonus = 5
-					lCities.append((city, iHappinessDifference + iFoodDifference / 2 + city.getPopulation() / 2 + iNorthAmericaBonus))
+					iBonus = 0
+					if city.getRegionID() in [rCanada, rUnitedStates]: iBonus += 5
+					if city.hasBuilding(iImmigrationOffice): iBonus += 5
+					lCities.append((city, iHappinessDifference + iFoodDifference / 2 + city.getPopulation() / 2 + iBonus))
 				elif city.getRegionID() not in lNewWorld and not bNewWorld:
 					iValue = 0
 					if iFoodDifference < 0:

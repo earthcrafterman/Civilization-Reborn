@@ -188,6 +188,18 @@ tCanadaEastTL = (27, 50)
 tCanadaEastBR = (36, 59)
 tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50), (32, 51))
 
+# first Australian goal: control Australia, New Zealand, New Guinea and 3 pacific islands in 1950 AD
+tAustraliaTL = (103, 7)
+tAustraliaBR = (118, 22)
+tNewGuineaTL = (111, 24)
+tNewGuineaBR = (117, 27)
+tPacific1TL = (118, 18)
+tPacific1BR = (123, 27)
+tPacific2TL = (0, 16)
+tPacific2BR = (21, 30)
+tPacific3TL = (115, 32)
+tPacific3BR = (122, 33)
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -1369,6 +1381,31 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		if iGameTurn == getTurnForYear(1950):
 			expire(iBrazil, 2)
+			
+	elif iPlayer == iAustralia:
+		
+		# first Australian goal: control Australia, New Zealand, New Guinea and 3 pacific islands in 1950 AD
+		if iGameTurn == getTurnForYear(1950):
+			bAustralia = getNumCitiesInArea(iAustralia, utils.getPlotList(tAustraliaTL, tAustraliaBR)) >= 7
+			bNewZealand = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewZealandTL, tNewZealandBR)) >= 2
+			bGuinea = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewGuineaTL, tNewGuineaBR)) >= 1
+			bPacific = getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific1TL, tPacific1BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific2TL, tPacific2BR)) \
+				+ getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific3TL, tPacific3BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tHawaiiTL, tHawaiiBR)) >= 3
+			if bAustralia and bNewZealand and bGuinea and bPacific:
+				win(iAustralia, 0)
+			else:
+				lose(iAustralia, 0)
+		
+		# second goal: Gift 25 Digger, Marines or Mechanized Infantry to other civilizations by 1950 AD
+		if iGameTurn == getTurnForYear(1950):
+			expire(iAustralia, 1)
+			
+		# third goal: Have the highest approval rating in the world for 25 turns
+		if isPossible(iAustralia, 2):
+			if isHappiest(iPlayer):
+				data.iAustraliaHappinessTurns += 1
+				if data.iAustraliaHappinessTurns >= utils.getTurns(25):
+					win(iAustralia, 2)
 				
 	elif iPlayer == iCanada:
 	
@@ -1923,6 +1960,19 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 			data.iCanadianPeaceDeals += 1
 			if data.iCanadianPeaceDeals >= 12:
 				win(iCanada, 2)
+
+def onUnitGifted(unit, iOwner, plot):
+
+	# second Australian goal: Gift 10 Digger, Marines or Mechanized Infantry to three different civilizations by 1950 AD
+	if iOwner == iAustralia:
+		if isPossible(iAustralia, 1):
+			if unit.getUnitType() in [iDigger, iMarine, iMechanizedInfantry]:
+				iReceiver = plot.getOwner()
+				if iReceiver not in data.lAustralianGiftReceivers:
+					data.lAustralianGiftReceivers.append(iReceiver)
+				data.iAustraliaGifts += 1
+				if data.iAustraliaGifts >= 10 and len(data.lAustralianGiftReceivers) >= 3:
+					win(iAustralia, 1)
 			
 def onBlockade(iPlayer, iGold):
 
@@ -3893,6 +3943,22 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iCounter = countResources(iAmerica, iOil)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
+			
+	elif iPlayer == iAustralia:
+		if iGoal == 0:
+			iAustraliaCities = getNumCitiesInArea(iAustralia, utils.getPlotList(tAustraliaTL, tAustraliaBR))
+			iNewZealandCities = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewZealandTL, tNewZealandBR))
+			iGuineaCities = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewGuineaTL, tNewGuineaBR))
+			iPacificCities = getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific1TL, tPacific1BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific2TL, tPacific2BR)) \
+				+ getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific3TL, tPacific3BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tHawaiiTL, tHawaiiBR))
+			aHelp.append(getIcon(iAustraliaCities >= 7) + localText.getText("TXT_KEY_VICTORY_AUSTRALIA_CONTROL_AUSTRALIA", (iAustraliaCities, 7)) + ' ' + getIcon(iNewZealandCities >= 2) + localText.getText("TXT_KEY_VICTORY_AUSTRALIA_CONTROL_NEW_ZEALAND", (iNewZealandCities, 2)) + ' ' + getIcon(iGuineaCities >= 1) + localText.getText("TXT_KEY_VICTORY_AUSTRALIA_CONTROL_GUINEA", (iGuineaCities, 1)) + ' ' + getIcon(iPacificCities >= 3) + localText.getText("TXT_KEY_VICTORY_AUSTRALIA_CONTROL_PACIFIC", (iPacificCities, 3)))
+		elif iGoal == 1:
+			iGifts = data.iAustraliaGifts
+			iReceivers = len(data.lAustralianGiftReceivers)
+			aHelp.append(getIcon(iGifts >= 10) + localText.getText("TXT_KEY_VICTORY_GIVEN_UNITS", (iGifts, 10)) + ' ' + getIcon(iReceivers >= 3) + localText.getText("TXT_KEY_VICTORY_UNIT_RECEIVERS", (iReceivers, 3)))
+		elif iGoal == 2:
+			iHappinessTurns = data.iAustraliaHappinessTurns
+			aHelp.append(getIcon(iHappinessTurns >= utils.getTurns(25)) + localText.getText("TXT_KEY_VICTORY_HAPPINESS_TURNS", (iHappinessTurns, utils.getTurns(25))))
 
 	elif iPlayer == iArgentina:
 		if iGoal == 0:

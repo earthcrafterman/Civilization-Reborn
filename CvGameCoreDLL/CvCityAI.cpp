@@ -2649,6 +2649,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
 		break;
+	case AUSTRALIA:
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
+		aiUnitAIVal[UNITAI_WORKER] *= 3;
+		aiUnitAIVal[UNITAI_WORKER] /= 2;
+		break;
 	case NATIVE:
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 5;
 		aiUnitAIVal[UNITAI_CITY_COUNTER] /= 2;
@@ -3382,6 +3388,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case BRAZIL:
 										if (iI == CRISTO_REDENTOR) iTempValue *= 3;
 										if (iI == ITAIPU_DAM || iI == WEMBLEY) iTempValue *= 2;
+										break;
+									case AUSTRALIA:
+										if (iI == WEMBLEY) iTempValue *= 2;
 										break;
 									case CANADA:
 										if (iI == CN_TOWER) iTempValue *= 3;

@@ -1423,4 +1423,16 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Tag>
+		<English>Immigration Office</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_HELP</Tag>
+		<English>[ICON_BULLET]Increases the chance of attracting immigrants</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Immigration Office[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT], can be build in every city and provides an extra trade route.</English>
+	</TEXT>
 </Civ4GameText>

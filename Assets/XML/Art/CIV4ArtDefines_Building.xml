@@ -2697,5 +2697,25 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>0.62</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Australia_Office/west_customs.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Australia_Office/Australia_Office.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SYDNEY_OPERA</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.62</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Sydney_Opera/Sydney_Opera_House.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Sydney_Opera/opera_house_button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
