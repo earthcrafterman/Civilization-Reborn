@@ -7412,7 +7412,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 82393;
 	}
 
-	if (eIndex == POLYNESIA && ((getX_INLINE() == 6 && getY_INLINE() == 19) || (getX_INLINE() == 5 && getY_INLINE() == 21) || (getX_INLINE() == 5 && getY_INLINE() == 30) || (getX_INLINE() == 17 && getY_INLINE() == 17) ))
+	if (eIndex == POLYNESIA && ((getX_INLINE() == 6 && getY_INLINE() == 19) || (getX_INLINE() == 5 && getY_INLINE() == 21) || (getX_INLINE() == 5 && getY_INLINE() == 30) || (getX_INLINE() == 17 && getY_INLINE() == 17) || (getX_INLINE() == 3 && getY_INLINE() == 37) || (getX_INLINE() == 5 && getY_INLINE() == 25)))
 	{
 		return 82393;
 	}

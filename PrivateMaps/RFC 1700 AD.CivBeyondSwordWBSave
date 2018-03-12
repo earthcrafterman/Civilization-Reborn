@@ -1742,6 +1742,7 @@ EndPlot
 BeginPlot
 	x=2,y=37
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2002,6 +2003,7 @@ EndPlot
 BeginPlot
 	x=3,y=20
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2029,6 +2031,7 @@ EndPlot
 BeginPlot
 	x=3,y=25
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2095,6 +2098,19 @@ BeginPlot
 	x=3,y=37
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=O'ahu
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=3,y=38
@@ -2349,6 +2365,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Mu'a
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=4,y=19
@@ -2460,6 +2489,7 @@ EndPlot
 BeginPlot
 	x=4,y=39
 	BonusType=BONUS_WHALE
+	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2711,6 +2741,7 @@ EndPlot
 BeginPlot
 	x=5,y=19
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2724,6 +2755,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Manu'a
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=5,y=22
@@ -2745,6 +2789,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Tokelau
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=5,y=26
@@ -2773,6 +2830,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Kiritimati
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=5,y=31
@@ -3071,6 +3141,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Niue
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=6,y=20
@@ -5220,6 +5303,7 @@ EndPlot
 BeginPlot
 	x=12,y=18
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5231,6 +5315,7 @@ EndPlot
 BeginPlot
 	x=12,y=20
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5617,6 +5702,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Tahiti
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=13,y=19
@@ -6038,6 +6136,7 @@ EndPlot
 BeginPlot
 	x=14,y=24
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -6431,6 +6530,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Nuku Hiva
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=15,y=24
@@ -7222,6 +7334,19 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Mangareva
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=17,y=18
@@ -8836,6 +8961,20 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_TRIBAL_VILLAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=49, (Independent)
+		CityName=Rapa Nui
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MOAI_STATUES
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_ATUA_SHRINE
+		Player49Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=21,y=17
@@ -8957,7 +9096,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=36
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_STONE
+	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=21,22,24,30,49,50,
@@ -9367,9 +9508,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=37
-	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

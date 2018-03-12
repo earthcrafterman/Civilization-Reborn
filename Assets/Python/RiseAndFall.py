@@ -3302,7 +3302,6 @@ class RiseAndFall:
 
 			if len(lCities) == 1:
 				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (62, 53))
-				utils.convertPlotCulture(gc.getMap().plot(62, 53), iCiv, 100, True)
 			if len(lCities) > 1:
 				lbest = lCities[0]
 				ibestCulture = gc.getMap().plot(lbest.getX(), lbest.getY()).getCulture(lbest.getOwner())
@@ -3317,7 +3316,6 @@ class RiseAndFall:
 						if gc.getGame().getSorenRandNum(2, 'random city') == 1:
 							lbest = city
 				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, (62, 53))
-				utils.convertPlotCulture(gc.getMap().plot(62, 53), iCiv, 100, True)
 				for city in lCities:
 					if city != lbest:
 						city.kill()
@@ -3334,7 +3332,7 @@ class RiseAndFall:
 		city.kill()
 		pOldPlot.setImprovementType(-1)
 		for iUnit in range(gc.getMap().plot(plot[0], plot[1]).getNumUnits()):
-			unit = plot.getUnit(iUnit)
+			unit = gc.getMap().plot(plot[0], plot[1]).getUnit(iUnit)
 			if loopUnit.isNone(): continue
 			unit.setXY(plot[0], plot[1], True, True, False)
 

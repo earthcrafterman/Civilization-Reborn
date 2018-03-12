@@ -2354,9 +2354,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 
 	aiUnitAIVal[UNITAI_SETTLE] *= ((bDanger) ? 8 : 20);
 	aiUnitAIVal[UNITAI_WORKER] *= ((bDanger) ? 2 : 7);
-	aiUnitAIVal[UNITAI_ATTACK] *= 3;
-	aiUnitAIVal[UNITAI_ATTACK_CITY] *= 4;
-	aiUnitAIVal[UNITAI_COLLATERAL] *= 5;
+	aiUnitAIVal[UNITAI_ATTACK] *= 4;
+	aiUnitAIVal[UNITAI_ATTACK_CITY] *= 5;
+	aiUnitAIVal[UNITAI_COLLATERAL] *= 6;
 	aiUnitAIVal[UNITAI_PILLAGE] *= 3;
 	aiUnitAIVal[UNITAI_RESERVE] *= 3;
 	aiUnitAIVal[UNITAI_COUNTER] *= 3;
@@ -2377,7 +2377,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	aiUnitAIVal[UNITAI_SPY_SEA] *= 10;
 	aiUnitAIVal[UNITAI_CARRIER_SEA] *= 8;
 	aiUnitAIVal[UNITAI_MISSILE_CARRIER_SEA] *= 8;
-	aiUnitAIVal[UNITAI_PIRATE_SEA] *= 5;
+	aiUnitAIVal[UNITAI_PIRATE_SEA] *= 10;
 	aiUnitAIVal[UNITAI_ATTACK_AIR] *= 6;
 	aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 3;
 	aiUnitAIVal[UNITAI_CARRIER_AIR] *= 15;
@@ -2458,7 +2458,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 				aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
 	case POLYNESIA:
-		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 5;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		break;
 	case PERSIA:
@@ -8459,13 +8459,6 @@ int CvCityAI::AI_buildUnitProb()
 	{
 		iProb /= 2;
 	}
-
-	
-
-	if (getOwnerINLINE() == POLYNESIA)
-		iProb /= 4;
-	else //1SDAN AIs don't build enough units
-		iProb *= 2;
 
 	return iProb;
 }

@@ -218,9 +218,15 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=5
-	LeaderType=LEADER_ASOKA
+	LeaderType=LEADER_CHANDRAGUPTA
 	CivType=CIVILIZATION_INDIA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=150
+	StateReligion=RELIGION_HINDUISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -267,7 +273,12 @@ BeginPlayer
 	Team=11
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=300
+	StateReligion=RELIGION_ORTHODOXY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -2357,7 +2368,7 @@ BeginPlot
 	BeginCity
 		CityOwner=7, (Polynesia)
 		CityName=Mu'a
-		CityPopulation=5
+		CityPopulation=4
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -3110,7 +3121,7 @@ BeginPlot
 	BeginCity
 		CityOwner=7, (Polynesia)
 		CityName=Niue
-		CityPopulation=4
+		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_POLYNESIAN_MALAE
@@ -8720,7 +8731,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=36
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -9102,9 +9113,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=37
-	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -26997,6 +27005,8 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27006,6 +27016,22 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Ethiopia)
+		CityName=Meroë
+		CityPopulation=3
+		BuildingType=BUILDING_ETHIOPIAN_STELE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_LIBRARY
+		Player11Culture=150, (Ethiopia)
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=31
@@ -27464,6 +27490,7 @@ EndPlot
 BeginPlot
 	x=70,y=29
 	TerrainType=TERRAIN_PLAINS
+	RouteType=ROUTE_ROAD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -27854,6 +27881,8 @@ EndPlot
 BeginPlot
 	x=71,y=28
 	BonusType=BONUS_CAMEL
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28222,6 +28251,7 @@ EndPlot
 BeginPlot
 	x=72,y=25
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28233,6 +28263,8 @@ EndPlot
 BeginPlot
 	x=72,y=27
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28248,18 +28280,41 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=50, (Independent2)
+		UnitType=UNIT_SPEARMAN, UnitOwner=11, (Ethiopia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent2)
+		UnitType=UNIT_SPEARMAN, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=11, (Ethiopia)
 	EndUnit
 	BeginCity
-		CityOwner=50, (Independent2)
+		CityOwner=11, (Ethiopia)
 		CityName=Aksum
-		CityPopulation=2
+		CityPopulation=3
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_ETHIOPIAN_STELE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_LIBRARY
 		ReligionType=RELIGION_ORTHODOXY
-		Player50Culture=50, (Independent2)
+		Player11Culture=150, (Ethiopia)
 	EndCity
 EndPlot
 BeginPlot
@@ -28628,6 +28683,17 @@ BeginPlot
 	x=73,y=25
 	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Ethiopia)
+		CityName=Muqdisho
+		CityPopulation=2
+		BuildingType=BUILDING_ETHIOPIAN_STELE
+		BuildingType=BUILDING_HARBOR
+		Player11Culture=25, (Ethiopia)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -28652,6 +28718,8 @@ EndPlot
 BeginPlot
 	x=73,y=29
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -29055,11 +29123,13 @@ EndPlot
 BeginPlot
 	x=74,y=28
 	TerrainType=TERRAIN_DESERT
+	RouteType=ROUTE_ROAD
 	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=29
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -29448,6 +29518,8 @@ EndPlot
 BeginPlot
 	x=75,y=27
 	BonusType=BONUS_CAMEL
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -29455,6 +29527,18 @@ BeginPlot
 	x=75,y=28
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=11, (Ethiopia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Ethiopia)
+		CityName=Berbera
+		CityPopulation=2
+		BuildingType=BUILDING_ETHIOPIAN_STELE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		Player11Culture=25, (Ethiopia)
+	EndCity
 EndPlot
 BeginPlot
 	x=75,y=29
@@ -34958,6 +35042,8 @@ EndPlot
 BeginPlot
 	x=89,y=40
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35375,19 +35461,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=49, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+		UnitType=UNIT_WORKER, UnitOwner=49, (India)
 	EndUnit
 	BeginCity
-		CityOwner=49, (Independent)
+		CityOwner=5, (India)
 		CityName=Bhopal
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35395,7 +35481,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player49Culture=50, (Independent)
+		Player5Culture=150, (India)
 	EndCity
 EndPlot
 BeginPlot
@@ -35407,6 +35493,7 @@ EndPlot
 BeginPlot
 	x=90,y=39
 	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -35417,13 +35504,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=49, (Independent)
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
 	EndUnit
 	BeginCity
-		CityOwner=49, (Independent)
+		CityOwner=5, (India)
 		CityName=Delhi
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -35436,7 +35526,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player49Culture=100, (Independent)
+		Player5Culture=200, (India)
 	EndCity
 EndPlot
 BeginPlot
@@ -35869,6 +35959,8 @@ EndPlot
 BeginPlot
 	x=91,y=39
 	BonusType=BONUS_RICE
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -37064,18 +37156,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=50, (Independent2)
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=50, (Independent2)
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
 	EndUnit
 	BeginCity
-		CityOwner=50, (Independent2)
+		CityOwner=5, (India)
 		CityName=Pataliputra
 		CityPopulation=8
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -37093,7 +37186,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player50Culture=50, (Independent2)
+		Player5Culture=300, (India)
 	EndCity
 EndPlot
 BeginPlot
@@ -37474,6 +37567,8 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_BANANA
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39482,7 +39577,7 @@ BeginPlot
 	BeginCity
 		CityOwner=1, (China)
 		CityName=Daxing, (Xi'an)
-		CityPopulation=1, (4)
+		CityPopulation=4
 (		BuildingType=BUILDING_PALACE)
 (		BuildingType=BUILDING_BARRACKS)
 (		BuildingType=BUILDING_FORGE)

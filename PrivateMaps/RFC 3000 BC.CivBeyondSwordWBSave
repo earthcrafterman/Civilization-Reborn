@@ -8675,7 +8675,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=36
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -9036,6 +9036,7 @@ EndPlot
 BeginPlot
 	x=22,y=35
 	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
@@ -9046,7 +9047,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=37
-	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -9430,6 +9430,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=37
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
