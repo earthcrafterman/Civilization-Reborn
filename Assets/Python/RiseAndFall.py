@@ -2558,13 +2558,13 @@ class RiseAndFall:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
-			utils.createMissionaries(iCiv, 1)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
-			utils.makeUnit(iHorseman, iCiv, tPlot, 1)
-			#if utils.getHumanID() != iKorea:
-			#	utils.makeUnit(iSpearman, iCiv, tPlot, 2)
-			#	utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
+			#utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iSpearman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			#utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
+			#utils.makeUnit(iHorseman, iCiv, tPlot, 1)
+			if utils.getHumanID() != iKorea:
+				utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
@@ -2940,8 +2940,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-		elif iCiv == iKorea:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		#elif iCiv == iKorea:
+		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iByzantium:

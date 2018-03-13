@@ -203,7 +203,7 @@ dTechGoals = {
 	iBabylonia: (0, [iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
-	iKorea: (1, [iPrinting]),
+	iKorea: (2, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
 }
 
@@ -612,9 +612,15 @@ def checkTurn(iGameTurn, iPlayer):
 
 	elif iPlayer == iKorea:
 	
+		if iGameTurn == getTurnForYear(300):
+			if countHuts((111, 41), (116, 50)) > 0:
+				lose(iKorea, 0)
+			else:
+				win(iKorea, 0)
+		
 		# first goal: build a Buddhist Stupa and a Confucian Academy by 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			expire(iKorea, 0)
+			expire(iKorea, 1)
 			
 		# second goal: be first to discover Printing Press
 		
@@ -1747,12 +1753,12 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
 	elif iPlayer == iKorea:
-		if isPossible(iKorea, 0):
+		if isPossible(iKorea, 1):
 			if iBuilding in [iConfucianCathedral, iBuddhistCathedral]:
 				bBuddhist = getNumBuildings(iKorea, iBuddhistCathedral) > 0
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
 				if bBuddhist and bConfucian:
-					win(iKorea, 0)
+					win(iKorea, 1)
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
@@ -1871,14 +1877,6 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 		if isPossible(iEngland, 1):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
 				data.iEnglishSinks += 1
-				
-	# third Korean goal: sink 20 enemy ships
-	elif iWinningPlayer == iKorea:
-		if isPossible(iKorea, 2):
-			if pLosingUnitInfo.getDomainType() == iDomainSea:
-				data.iKoreanSinks += 1
-				if data.iKoreanSinks >= 20:
-					win(iKorea, 2)
 					
 def onGreatPersonBorn(iPlayer, unit):
 	iUnitType = utils.getBaseUnit(unit.getUnitType())
@@ -3022,6 +3020,14 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 		if city.isHasReligion(iReligion) and city.getFreeSpecialistCount(iSpecialist) > 0:
 			iCount += 1
 	return iCount
+
+def countHuts(tTL, tBR):
+	iCount = 0
+	for (x, y) in utils.getPlotList(tTL, tBR):
+		plot = gc.getMap().plot(x, y)
+		if plot.getImprovementType() == iHut:
+			iCount += 1
+	return iCount
 	
 ### UHV HELP SCREEN ###
 
@@ -3512,13 +3518,10 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))
 			
 	elif iPlayer == iKorea:
-		if iGoal == 0:
+		if iGoal == 1:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)
 			bBuddhistCathedral = (getNumBuildings(iKorea, iBuddhistCathedral) > 0)
 			aHelp.append(getIcon(bBuddhistCathedral) + localText.getText("TXT_KEY_BUILDING_BUDDHIST_CATHEDRAL", ()) + ' ' + getIcon(bConfucianCathedral) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL", ()))
-		elif iGoal == 2:
-			iNumSinks = data.iKoreanSinks
-			aHelp.append(getIcon(iNumSinks >= 20) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iNumSinks, 20)))
 
 	# Maya goals have no stages
 	elif iPlayer == iMaya:

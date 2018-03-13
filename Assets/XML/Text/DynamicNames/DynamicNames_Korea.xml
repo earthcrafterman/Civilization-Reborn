@@ -35,7 +35,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_JOSEON</Tag>
-		<English>Greater Joseon</English>
+		<English>Joseon</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_ADJECTIVE</Tag>
@@ -88,5 +88,9 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_GOJOSEON</Tag>
+		<English>Gojoseon</English>
 	</TEXT>
 </Civ4GameText>

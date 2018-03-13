@@ -3149,7 +3149,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_KOREAN_SEOWON</BuildingType>
 				</Building>
 				<Building>

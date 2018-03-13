@@ -404,6 +404,9 @@ dForeignNames = {
 	},
 }
 
+lKingdomOf = [iEthiopia, iKorea]
+lKingdomAdj = [iChina, iIndia, iRome]
+
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
@@ -1015,14 +1018,18 @@ def specificName(iPlayer):
 			return gc.getPlayer(iPlayer).getCapitalCity().getName()
 			
 	elif iPlayer == iKorea:
-		if iEra == iClassical:
-			if bEmpire:
+		if capital.getY() > 46:
+			if iEra == iClassical:
 				return "TXT_KEY_CIV_KOREA_GOGURYEO"
-				
-		if iEra <= iMedieval:
-			return "TXT_KEY_CIV_KOREA_GORYEO"
-			
-		return "TXT_KEY_CIV_KOREA_JOSEON"
+					
+			if iEra <= iMedieval:
+				return "TXT_KEY_CIV_KOREA_GORYEO"
+		else:
+			if iEra == iClassical:
+				return "TXT_KEY_CIV_KOREA_GOJOSEON"
+					
+			if iEra <= iMedieval:
+				return "TXT_KEY_CIV_KOREA_JOSEON"
 		
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -1500,6 +1507,15 @@ def vassalTitle(iPlayer, iMaster):
 		return "TXT_KEY_COLONY_OF"
 	
 	return "TXT_KEY_PROTECTORATE_OF"
+
+def monarchyTitle(iPlayer):
+	if iPlayer in lKingdomOf: return "TXT_KEY_KINGDOM_OF"
+	if iPlayer in lKingdomAdj: return "TXT_KEY_KINGDOM_ADJECTIVE"
+	iEra = gc.getPlayer(iPlayer).getCurrentEra()
+	if iEra < iMedieval:
+		return "TXT_KEY_KINGDOM_OF"
+	else:
+		return "TXT_KEY_KINGDOM_ADJECTIVE"
 	
 def communistTitle(iPlayer):
 	if iPlayer in lSocialistRepublicOf: return "TXT_KEY_SOCIALIST_REPUBLIC_OF"
@@ -1569,7 +1585,7 @@ def defaultTitle(iPlayer):
 	bWar = isAtWar(iPlayer)
 	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
 	
-	title = "TXT_KEY_KINGDOM_ADJECTIVE"
+	title = monarchyTitle(iPlayer)
 	
 	if iEra == iAncient:
 		if not bMonarchy:
@@ -1706,10 +1722,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bCityStates:
 			return "TXT_KEY_REPUBLIC_ADJECTIVE"
-	
-	elif iPlayer == iEthiopia:
-		if bMonarchy and not bEmpire:
-			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iJapan:
 		if bEmpire:
@@ -1752,9 +1764,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if bCityStates:
 			return "TXT_KEY_CIV_KOREA_SAMHAN"
-				
-		if iReligion >= 0:
-			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iMaya:
 		if bReborn:

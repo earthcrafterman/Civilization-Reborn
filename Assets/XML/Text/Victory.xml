@@ -1131,31 +1131,30 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
+		<English>Yayoi People</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<English>Ensure there are no tribal villages on Japan in 300AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
 		<English>Palman Daejanggyeong and Gukjagam</English>
 		<German>Palman Daejanggyeong und Gukjagam</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<Tag>TXT_KEY_UHV_KOR2</Tag>
 		<English>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</English>
 		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
 		<English>Choe Yun-ui</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR2</Tag>
+		<Tag>TXT_KEY_UHV_KOR3</Tag>
 		<English>Be first to discover Printing</English>
 		<German>Erforschen Sie als Erster Buchdruck</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
-		<English>Yi Sun-sin</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR3</Tag>
-		<English>Sink 20 enemy ships</English>
-		<German>Versenken Sie 20 gegnerische Schiffe</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>

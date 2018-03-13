@@ -308,7 +308,8 @@ def checkLostCoreCollapse(iPlayer):
 def determineStabilityLevel(iCurrentLevel, iStability, overTurns = 0):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	iThreshold += overTurns * overTurns / 3
+	if overTurns > 0:
+		iThreshold += 5 + overTurns
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
 	elif iStability < iThreshold - 10: return max(iStabilityCollapsing, iCurrentLevel - 1)

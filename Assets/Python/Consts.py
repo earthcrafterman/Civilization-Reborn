@@ -259,7 +259,7 @@ tBirth = (
 -753, # 90, #753BC			# Rome
 848,					# Tamils
 100, # 121, #300BC			# Ethiopia
--50,					# Korea
+-37,					# Korea
 65, # 145, #60AD			# Maya
 330,					# Byzantium
 525, # 97, #660BC			# Japan
@@ -307,12 +307,12 @@ tFall = (
 -539,					# Babylonia
 -1700,					# Harappa
 -146,					# Greece
-1000, 					# India
+1200, 					# India
 -146,					# Phoenicia
 1200,					# Polynesia
 651,					# Persia
 235, # crisis of the third century	# Rome
-1000,					# Tamils
+1279,					# Tamils
 960,					# Ethiopia
 1255, #Mongol invasion			# Korea
 900,					# Maya
