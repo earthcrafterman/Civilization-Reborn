@@ -2845,8 +2845,7 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 				{
 					if ((isFoodProduction(eLoopUnit) && 
 						!(bGrowMore)) || ((eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
-						(getProductionTurnsLeft(eLoopUnit, 0) < 11 ||
-						(isCapital() && GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100)))))
+						(isCapital() && GC.getGame().getElapsedGameTurns() < ((20 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100))))
 					{
 						if (canTrain(eLoopUnit))
 						{

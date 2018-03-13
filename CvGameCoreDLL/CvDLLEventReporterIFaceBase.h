@@ -64,7 +64,7 @@ public:
 	virtual void unitKilled(CvUnit *pUnit, PlayerTypes eAttacker) = 0;				
 	virtual void unitLost(CvUnit *pUnit) = 0;
 	virtual void unitPromoted(CvUnit *pUnit, PromotionTypes ePromotion) = 0;
-	virtual void unitSelected(CvUnit *pUnit) = 0;
+	virtual void unitSelected(CvUnit *pUnit) = 0;z
 	virtual void unitRename(CvUnit* pUnit) = 0;
 	virtual void unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer) = 0;
 	virtual void unitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess) = 0;
