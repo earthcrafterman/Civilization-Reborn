@@ -356,7 +356,7 @@ class Barbs:
 			if sName == 'Buda': bForceSpawn = True
 			if sName == 'Zou' or sName == 'Zhongdu' or sName == 'Fenghao' or sName == 'Yuecheng':
 				lBuildings = [iLibrary, iPaganTemple]
-			if sName == 'Ninua' or sName == 'Ankuwash' or sName == 'Pratisthan':
+			if sName == 'Ninua' or sName == 'Pratisthan':
 				lBuildings = [iPaganTemple]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]

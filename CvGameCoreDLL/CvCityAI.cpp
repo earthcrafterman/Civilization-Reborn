@@ -1122,6 +1122,69 @@ void CvCityAI::AI_chooseProduction()
 	}
 	}
 
+	//int iMaxUnitSpending = (bAggressiveAI ? 7 : 3) + iBuildUnitProb / 3; //Rhye
+    int iMaxUnitSpending =  3 + iBuildUnitProb / 3; //Rhye
+    if (bAlwaysPeace)
+	{
+		iMaxUnitSpending = -10;
+	}
+    else if (kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
+    {
+    	iMaxUnitSpending = 5 + iMaxUnitSpending + (100 - iMaxUnitSpending) / 2;
+    }
+    else
+    {
+    	iMaxUnitSpending += bDefenseWar ? 4 : 0;
+    	switch (pArea->getAreaAIType(getTeam()))
+    	{
+			case AREAAI_OFFENSIVE:
+				iMaxUnitSpending += 5;
+				break;
+
+			case AREAAI_DEFENSIVE:
+				iMaxUnitSpending += 10;
+				break;
+
+			case AREAAI_MASSING:
+				iMaxUnitSpending += 25;
+				break;
+
+			case AREAAI_ASSAULT:
+				iMaxUnitSpending += 8;
+				break;
+
+			case AREAAI_ASSAULT_MASSING:
+				iMaxUnitSpending += 16;
+				break;
+
+			case AREAAI_ASSAULT_ASSIST:
+				iMaxUnitSpending += 6;
+				break;
+
+			case AREAAI_NEUTRAL:
+				break;
+			default:
+				FAssert(false);
+		}
+	}
+
+	if (getNumBuildings() >= kPlayer.getCurrentEra() * 2 + 1 && iUnitCostPercentage < (iMaxUnitSpending + 5) / 2)
+	{
+		if ((bLandWar) ||
+			  ((kPlayer.getNumCities() <= 3) && (GC.getGameINLINE().getElapsedGameTurns() < 60)) ||
+			  (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") < AI_buildUnitProb()) ||
+				(isHuman() && (getGameTurnFounded() == GC.getGameINLINE().getGameTurn())))
+		{
+			bChooseUnit = false;
+			if (AI_chooseUnit())
+			{
+				return;
+			}
+		}
+	}
+
+	bChooseUnit = true;
+
     if (getOwner() != POLYNESIA && (getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
     {
     	if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, (kPlayer.getCurrentEra() > 1) ? 0 : 7, 33))
@@ -1542,52 +1605,6 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 		FAssertMsg(false, "AI_bestSpreadUnit should provide a valid unit when it returns true");
-	}
-
-	//int iMaxUnitSpending = (bAggressiveAI ? 7 : 3) + iBuildUnitProb / 3; //Rhye
-    int iMaxUnitSpending =  3 + iBuildUnitProb / 3; //Rhye
-    if (bAlwaysPeace)
-	{
-		iMaxUnitSpending = -10;
-	}
-    else if (kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
-    {
-    	iMaxUnitSpending = 5 + iMaxUnitSpending + (100 - iMaxUnitSpending) / 2;
-    }
-    else
-    {
-    	iMaxUnitSpending += bDefenseWar ? 4 : 0;
-    	switch (pArea->getAreaAIType(getTeam()))
-    	{
-			case AREAAI_OFFENSIVE:
-				iMaxUnitSpending += 5;
-				break;
-
-			case AREAAI_DEFENSIVE:
-				iMaxUnitSpending += 10;
-				break;
-
-			case AREAAI_MASSING:
-				iMaxUnitSpending += 25;
-				break;
-
-			case AREAAI_ASSAULT:
-				iMaxUnitSpending += 8;
-				break;
-
-			case AREAAI_ASSAULT_MASSING:
-				iMaxUnitSpending += 16;
-				break;
-
-			case AREAAI_ASSAULT_ASSIST:
-				iMaxUnitSpending += 6;
-				break;
-
-			case AREAAI_NEUTRAL:
-				break;
-			default:
-				FAssert(false);
-		}
 	}
 
     if (iUnitCostPercentage < (iMaxUnitSpending + 10))
@@ -2132,7 +2149,6 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	bChooseUnit = false;
 	if (iUnitCostPercentage < iMaxUnitSpending + 5)
 	{
 		if ((bLandWar) ||
@@ -2354,9 +2370,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 
 	aiUnitAIVal[UNITAI_SETTLE] *= ((bDanger) ? 8 : 20);
 	aiUnitAIVal[UNITAI_WORKER] *= ((bDanger) ? 2 : 7);
-	aiUnitAIVal[UNITAI_ATTACK] *= 4;
-	aiUnitAIVal[UNITAI_ATTACK_CITY] *= 5;
-	aiUnitAIVal[UNITAI_COLLATERAL] *= 6;
+	aiUnitAIVal[UNITAI_ATTACK] *= 3;
+	aiUnitAIVal[UNITAI_ATTACK_CITY] *= 4;
+	aiUnitAIVal[UNITAI_COLLATERAL] *= 5;
 	aiUnitAIVal[UNITAI_PILLAGE] *= 3;
 	aiUnitAIVal[UNITAI_RESERVE] *= 3;
 	aiUnitAIVal[UNITAI_COUNTER] *= 3;
@@ -2377,7 +2393,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	aiUnitAIVal[UNITAI_SPY_SEA] *= 10;
 	aiUnitAIVal[UNITAI_CARRIER_SEA] *= 8;
 	aiUnitAIVal[UNITAI_MISSILE_CARRIER_SEA] *= 8;
-	aiUnitAIVal[UNITAI_PIRATE_SEA] *= 10;
+	aiUnitAIVal[UNITAI_PIRATE_SEA] *= 5;
 	aiUnitAIVal[UNITAI_ATTACK_AIR] *= 6;
 	aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 3;
 	aiUnitAIVal[UNITAI_CARRIER_AIR] *= 15;
@@ -2843,8 +2859,8 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 			{
 				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
 				{
-					if ((isFoodProduction(eLoopUnit) && 
-						!(bGrowMore)) || ((eUnitAI == UNITAI_SETTLE || eUnitAI == UNITAI_WORKER) && 
+					if ((isFoodProduction(eLoopUnit) && !(bGrowMore)) || 
+						((((getOwner() == HARAPPA || getOwner() == POLYNESIA) && eUnitAI == UNITAI_SETTLE) || (eUnitAI == UNITAI_WORKER && GET_PLAYER(getOwner()).AI_getNumAIUnits(UNITAI_WORKER) == 0)) && 
 						(isCapital() && GC.getGame().getElapsedGameTurns() < ((20 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100))))
 					{
 						if (canTrain(eLoopUnit))

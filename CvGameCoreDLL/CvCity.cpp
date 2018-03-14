@@ -14686,68 +14686,71 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		{
 			AI_chooseProduction();
 			
-			if (!isHuman() && getOwner() == POLYNESIA && plot()->getNumDefenders(getOwnerINLINE()) == 0)
-				pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_ARCHER"), UNITAI_CITY_DEFENSE, false, false, false);
-			
-			if (!isHuman() && getOwner() == POLYNESIA && !hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_ATUA_SHRINE")))
-				pushOrder(ORDER_CONSTRUCT, (BuildingTypes)GC.getInfoTypeForString("BUILDING_ATUA_SHRINE"), -1, false, false, false);
-
-			if (!isHuman() && getOwner() == POLYNESIA && !hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_POLYNESIAN_MALAE")))
-				pushOrder(ORDER_CONSTRUCT, (BuildingTypes)GC.getInfoTypeForString("BUILDING_POLYNESIAN_MALAE"), -1, false, false, false);
-			//Polynesia sometimes doesn't build anything, this should fix it.
-			if (!isHuman() && getOwner() == POLYNESIA && !isProductionUnit() && !isProductionBuilding() && !isProductionProject())
+			if (getOwner() == POLYNESIA && !isHuman())
 			{
-				UnitTypes eLoopUnit = NO_UNIT;
-				UnitTypes eBestUnit = NO_UNIT;
+				if (plot()->getNumDefenders(getOwnerINLINE()) == 0)
+					pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_ARCHER"), UNITAI_CITY_DEFENSE, false, false, false);
+			
+				if (!hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_ATUA_SHRINE")))
+					pushOrder(ORDER_CONSTRUCT, (BuildingTypes)GC.getInfoTypeForString("BUILDING_ATUA_SHRINE"), -1, false, false, false);
 
-				UnitAITypes eUnitAI;
-
-				int NumSettlers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLE);
-				int NumWorkBoats = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA);
-				int NumSeaExplorers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_EXPLORE_SEA);
-				int NumTransports = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLER_SEA) * 2;
-				int bHaveDefenders = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) > 1;
-				
-				if (NumSeaExplorers < 2)
-					eUnitAI = UNITAI_EXPLORE_SEA;
-				else if (NumSettlers <= 3 && NumSettlers <= NumTransports)
-					eUnitAI = UNITAI_SETTLE;
-				else if (NumTransports <= 6 && NumTransports < NumSettlers)
-					eUnitAI = UNITAI_SETTLER_SEA;
-				else if (NumWorkBoats < AI_neededSeaWorkers())
-					eUnitAI = UNITAI_WORKER_SEA;
-				else
+				if (!hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_POLYNESIAN_MALAE")))
+					pushOrder(ORDER_CONSTRUCT, (BuildingTypes)GC.getInfoTypeForString("BUILDING_POLYNESIAN_MALAE"), -1, false, false, false);
+				//Polynesia sometimes doesn't build anything, this should fix it.
+				if (!isProductionUnit() && !isProductionBuilding() && !isProductionProject())
 				{
-					int rand = GC.getGameINLINE().getSorenRandNum(4, "Pick Polynesian Unit AI");
-					switch (rand)
+					UnitTypes eLoopUnit = NO_UNIT;
+					UnitTypes eBestUnit = NO_UNIT;
+
+					UnitAITypes eUnitAI;
+
+					int NumSettlers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLE);
+					int NumWorkBoats = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_WORKER_SEA);
+					int NumSeaExplorers = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_EXPLORE_SEA);
+					int NumTransports = GET_PLAYER(getOwner()).AI_totalUnitAIs(UNITAI_SETTLER_SEA) * 2;
+					int bHaveDefenders = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) > 1;
+				
+					if (NumSeaExplorers < 2)
+						eUnitAI = UNITAI_EXPLORE_SEA;
+					else if (NumSettlers <= 3 && NumSettlers <= NumTransports)
+						eUnitAI = UNITAI_SETTLE;
+					else if (NumTransports <= 6 && NumTransports < NumSettlers)
+						eUnitAI = UNITAI_SETTLER_SEA;
+					else if (NumWorkBoats < AI_neededSeaWorkers())
+						eUnitAI = UNITAI_WORKER_SEA;
+					else
 					{
-						case 0:
-							eUnitAI = UNITAI_SETTLE;
-						case 1:
-							eUnitAI = UNITAI_WORKER_SEA;
-						case 2:
-							eUnitAI = UNITAI_SETTLER_SEA;
-						case 4:
-							eUnitAI = UNITAI_EXPLORE_SEA;
+						int rand = GC.getGameINLINE().getSorenRandNum(4, "Pick Polynesian Unit AI");
+						switch (rand)
+						{
+							case 0:
+								eUnitAI = UNITAI_SETTLE;
+							case 1:
+								eUnitAI = UNITAI_WORKER_SEA;
+							case 2:
+								eUnitAI = UNITAI_SETTLER_SEA;
+							case 4:
+								eUnitAI = UNITAI_EXPLORE_SEA;
+						}
 					}
+
+					if (eUnitAI == UNITAI_WORKER_SEA || eUnitAI == UNITAI_EXPLORE_SEA && canTrain((UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"), false, false, false, false))
+						eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA");
+
+					if (eLoopUnit == NO_UNIT)
+						for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+						{
+							eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+
+							if (eLoopUnit != NO_UNIT)
+								if ((GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
+									if (eBestUnit == NO_UNIT || getProductionTurnsLeft(eLoopUnit, 0) < getProductionTurnsLeft(eBestUnit, 0))
+										eBestUnit = eLoopUnit;
+						}
+
+					if(eBestUnit != NO_UNIT)
+						pushOrder(ORDER_TRAIN, eBestUnit, eUnitAI, false, false, false);
 				}
-
-				if (eUnitAI == UNITAI_WORKER_SEA || eUnitAI == UNITAI_EXPLORE_SEA && canTrain((UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA"), false, false, false, false))
-					eBestUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_POLYNESIAN_WAKA");
-
-				if (eLoopUnit == NO_UNIT)
-					for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
-					{
-						eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
-
-						if (eLoopUnit != NO_UNIT)
-							if ((GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
-								if (eBestUnit == NO_UNIT || getProductionTurnsLeft(eLoopUnit, 0) < getProductionTurnsLeft(eBestUnit, 0))
-									eBestUnit = eLoopUnit;
-					}
-
-				if(eBestUnit != NO_UNIT)
-					pushOrder(ORDER_TRAIN, eBestUnit, eUnitAI, false, false, false);
 			}
 		}
 	}
