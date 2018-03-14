@@ -1122,69 +1122,6 @@ void CvCityAI::AI_chooseProduction()
 	}
 	}
 
-	//int iMaxUnitSpending = (bAggressiveAI ? 7 : 3) + iBuildUnitProb / 3; //Rhye
-    int iMaxUnitSpending =  3 + iBuildUnitProb / 3; //Rhye
-    if (bAlwaysPeace)
-	{
-		iMaxUnitSpending = -10;
-	}
-    else if (kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
-    {
-    	iMaxUnitSpending = 5 + iMaxUnitSpending + (100 - iMaxUnitSpending) / 2;
-    }
-    else
-    {
-    	iMaxUnitSpending += bDefenseWar ? 4 : 0;
-    	switch (pArea->getAreaAIType(getTeam()))
-    	{
-			case AREAAI_OFFENSIVE:
-				iMaxUnitSpending += 5;
-				break;
-
-			case AREAAI_DEFENSIVE:
-				iMaxUnitSpending += 10;
-				break;
-
-			case AREAAI_MASSING:
-				iMaxUnitSpending += 25;
-				break;
-
-			case AREAAI_ASSAULT:
-				iMaxUnitSpending += 8;
-				break;
-
-			case AREAAI_ASSAULT_MASSING:
-				iMaxUnitSpending += 16;
-				break;
-
-			case AREAAI_ASSAULT_ASSIST:
-				iMaxUnitSpending += 6;
-				break;
-
-			case AREAAI_NEUTRAL:
-				break;
-			default:
-				FAssert(false);
-		}
-	}
-
-	if (getNumBuildings() >= kPlayer.getCurrentEra() * 2 + 1 && iUnitCostPercentage < (iMaxUnitSpending + 5) / 2)
-	{
-		if ((bLandWar) ||
-			  ((kPlayer.getNumCities() <= 3) && (GC.getGameINLINE().getElapsedGameTurns() < 60)) ||
-			  (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") < AI_buildUnitProb()) ||
-				(isHuman() && (getGameTurnFounded() == GC.getGameINLINE().getGameTurn())))
-		{
-			bChooseUnit = false;
-			if (AI_chooseUnit())
-			{
-				return;
-			}
-		}
-	}
-
-	bChooseUnit = true;
-
     if (getOwner() != POLYNESIA && (getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
     {
     	if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, (kPlayer.getCurrentEra() > 1) ? 0 : 7, 33))
@@ -1605,6 +1542,52 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 		FAssertMsg(false, "AI_bestSpreadUnit should provide a valid unit when it returns true");
+	}
+
+	//int iMaxUnitSpending = (bAggressiveAI ? 7 : 3) + iBuildUnitProb / 3; //Rhye
+    int iMaxUnitSpending =  3 + iBuildUnitProb / 3; //Rhye
+    if (bAlwaysPeace)
+	{
+		iMaxUnitSpending = -10;
+	}
+    else if (kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
+    {
+    	iMaxUnitSpending = 5 + iMaxUnitSpending + (100 - iMaxUnitSpending) / 2;
+    }
+    else
+    {
+    	iMaxUnitSpending += bDefenseWar ? 4 : 0;
+    	switch (pArea->getAreaAIType(getTeam()))
+    	{
+			case AREAAI_OFFENSIVE:
+				iMaxUnitSpending += 5;
+				break;
+
+			case AREAAI_DEFENSIVE:
+				iMaxUnitSpending += 10;
+				break;
+
+			case AREAAI_MASSING:
+				iMaxUnitSpending += 25;
+				break;
+
+			case AREAAI_ASSAULT:
+				iMaxUnitSpending += 8;
+				break;
+
+			case AREAAI_ASSAULT_MASSING:
+				iMaxUnitSpending += 16;
+				break;
+
+			case AREAAI_ASSAULT_ASSIST:
+				iMaxUnitSpending += 6;
+				break;
+
+			case AREAAI_NEUTRAL:
+				break;
+			default:
+				FAssert(false);
+		}
 	}
 
     if (iUnitCostPercentage < (iMaxUnitSpending + 10))
