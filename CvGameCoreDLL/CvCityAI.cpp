@@ -2859,7 +2859,7 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 			{
 				if (!isHuman() || (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == eUnitAI))
 				{
-					if ((isFoodProduction(eLoopUnit) && !(bGrowMore)) || 
+					if ((!(isFoodProduction(eLoopUnit) && (bGrowMore))) || 
 						((((getOwner() == HARAPPA || getOwner() == POLYNESIA) && eUnitAI == UNITAI_SETTLE) || (eUnitAI == UNITAI_WORKER && GET_PLAYER(getOwner()).AI_getNumAIUnits(UNITAI_WORKER) == 0)) && 
 						(isCapital() && GC.getGame().getElapsedGameTurns() < ((20 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100))))
 					{
