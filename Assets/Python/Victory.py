@@ -1808,6 +1808,12 @@ def checkWonderGoal(iPlayer, lWonders):
 	for iWonder in lWonders:
 		if data.getWonderBuilder(iWonder) != iPlayer:
 			return False
+		if iPlayer == iMaya and iWonder == iTempleOfKukulkan:
+			chichenItza = gc.getMap().plot(23, 37)
+			if not chichenItza.isCity():
+				return False
+			if chichenItza.getPlotCity().isHasRealBuilding(iWonder):
+				return True			
 	return True
 				
 def onReligionFounded(iPlayer, iReligion):

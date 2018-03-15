@@ -339,9 +339,8 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
 	bHuman = (utils.getHumanID() == iPlayer)
-	overTurns = 0
-	if isDecline(iPlayer):
-		overTurns = gc.getGame().getGameTurnYear() - tFall[iPlayer]
+	
+	overTurns = declineOverTurns(iPlayer)
 	
 	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, overTurns)
 	
@@ -1287,8 +1286,8 @@ def updateEconomyTrend(iPlayer):
 	iPositiveThreshold = 5
 	iNegativeThreshold = 0
 	
-	if isDecline(iPlayer):
-		iNegativeThreshold = 2
+	#if isDecline(iPlayer):
+		#iNegativeThreshold = 2
 	
 	if iCivicEconomy == iCentralPlanning: iNegativeThreshold = 0
 	
@@ -1864,8 +1863,19 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetHappinessTrend()
 	playerData.resetWarTrends()
 	
-def isDecline(iPlayer):
-	return utils.getHumanID() != iPlayer and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
+def declineOverTurns(iPlayer):
+	if utils.getHumanID() == iPlayer:
+		return 0
+	iTurn = gc.getGame().getGameTurn()
+	iFallTurn = getTurnForYear(tFall[iPlayer])
+	for tInterval in tResurrectionIntervals[iPlayer]:
+		iStart, iEnd = tInterval
+		if getTurnForYear(iStart) <= iTurn:
+			iFallTurn = getTurnForYear(iEnd)
+	overTurns = iTurn - iFallTurn
+	if overTurns < 0:
+		overTurns = 0
+	return overTurns
 	
 class Civics:
 

@@ -47,7 +47,7 @@ tMinorCities = (
 (-214, (105, 39), iIndependent2, 'Panyu', 2, iAxeman, 2), 	# Guangzhou
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
+(-100, (19, 35), iNative, 'Danibaan', 2, iArcher, 1),	# Monte Alb�n
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-80, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-80, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon

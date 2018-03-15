@@ -5638,6 +5638,12 @@
 			<iCultureGarrison>3</iCultureGarrison>
 			<iAsset>1</iAsset>
 			<iPower>3</iPower>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COVER</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>

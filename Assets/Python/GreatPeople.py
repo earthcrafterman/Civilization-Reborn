@@ -48,7 +48,8 @@ def getEraNames(iCiv, iType, iEra):
 	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
 	
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
-	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
+	#lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
+	lAfter=['Uux']
 	
 	if len(lAfter) >= iSpread:
 		return lAfter[:iSpread]
@@ -3155,7 +3156,7 @@ iCivMaya : {
 		"Kukulkan" # 10th, named after the god
 	],
 	iGreatArtist : [
-		"Uaxaclajuun Ub'aah K'awiil", # 8th
+		"Uaxaclajuun", # 8th
 		"Chakalte'", # 8th
 		"Jun Nat Omootz", # 8th
 		"Asan Winik Tu’ub", # 8th

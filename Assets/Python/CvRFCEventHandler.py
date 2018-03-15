@@ -685,9 +685,9 @@ class CvRFCEventHandler:
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
 				data.players[iPlayer].iExplorationTurn = iGameTurn
 				
-		elif iTech == iCompass:
-			if iPlayer == iVikings:
-				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
+		#elif iTech == iCompass:
+		#	if iPlayer == iVikings:
+		#		gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
 			self.pla.onTechAcquired(iTech, iPlayer)

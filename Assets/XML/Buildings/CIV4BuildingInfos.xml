@@ -3115,12 +3115,12 @@
 			<Strategy>TXT_KEY_BUILDING_MAYAN_BALL_COURT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MAYAN_BALL_COURT</ArtDefineTag>
-			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iHappiness>3</iHappiness>
+			<iHappiness>1</iHappiness>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceHappinesses>
@@ -9549,7 +9549,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
-			<iCost>450</iCost>
+			<iCost>180</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
