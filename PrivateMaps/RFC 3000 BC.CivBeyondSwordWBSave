@@ -26638,15 +26638,17 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=50, (iIndependent2)
+		CityOwner=49, (iIndependent2)
 		CityName=Mero&#235
+		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=3
+		Player49Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -26667,6 +26669,17 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=50, (iIndependent)
+	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent)
+		CityName=Niwt-Rst
+		CityPopulation=1
+		BuildingType=BUILDING_PAGAN_TEMPLE
+		Player50Culture=10, (iIndependent)
+	EndCity
+	TeamReveal=0,
 EndPlot
 BeginPlot
 	x=69,y=34
@@ -28234,9 +28247,8 @@ BeginPlot
 		CityOwner=49, (iIndependent)
 		CityName=Yerushalayim
 		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_MONUMENT
 		CityPopulation=1
-		Player49Culture=20, (Byzantium)
+		Player49Culture=20, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -29759,7 +29771,7 @@ BeginPlot
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
-		Player50Culture=20
+		Player50Culture=30
 	EndCity
 EndPlot
 BeginPlot
@@ -30528,7 +30540,9 @@ BeginPlot
 	BeginCity
 		CityOwner=50, (iIndependent)
 		CityName=Shushan
+		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=1
+		Player50Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -39275,9 +39289,11 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginCity
-		CityOwner=50, (iIndependent2)
+		CityOwner=49, (iIndependent2)
 		CityName=Luoyang
+		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=1
+		Player49Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot

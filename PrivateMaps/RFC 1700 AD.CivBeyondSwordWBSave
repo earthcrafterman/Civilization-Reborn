@@ -31994,6 +31994,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=32
+	ImprovementType=IMPROVEMENT_HAMLET
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+	TeamReveal=36,49,50,
+EndPlot
+BeginPlot
+	x=69,y=33
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -32002,7 +32011,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=36, (Turkey)
-		CityName=El-Uqsur
+		CityName=Al-Uqsur
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -32012,15 +32021,6 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player36Culture=100, (Turkey)
 	EndCity
-	TeamReveal=36,49,50,
-EndPlot
-BeginPlot
-	x=69,y=33
-	ImprovementType=IMPROVEMENT_HAMLET
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
 	TeamReveal=36,49,50,
 EndPlot
 BeginPlot

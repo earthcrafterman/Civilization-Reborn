@@ -262,6 +262,7 @@ class RiseAndFall:
 
 		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
+			teamEgypt.declareWar(iIndependent2, True, WarPlanTypes.WARPLAN_TOTAL)
 
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
@@ -670,6 +671,9 @@ class RiseAndFall:
 
 	def checkTurn(self, iGameTurn):
 
+		if gc.getPlayer(iEgypt).isAlive() and gc.getMap().plot(69,33).isCity() and gc.getMap().plot(69,33).getPlotCity().getOwner() == iIndependent2 and not gc.getTeam(iEgypt).isAtWar(iIndependent2): 
+			teamEgypt.declareWar(iIndependent2, True, WarPlanTypes.WARPLAN_TOTAL)
+	
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:
 			self.placeGoodyHuts()
