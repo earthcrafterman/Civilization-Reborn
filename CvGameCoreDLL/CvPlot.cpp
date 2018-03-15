@@ -7039,7 +7039,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 	if (bCity)
 	{
-		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
+		iYield += GC.getYieldInfo(eYield).getMinCity();
 		int iAppliedImprovement = -1;
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields on small islands, except food

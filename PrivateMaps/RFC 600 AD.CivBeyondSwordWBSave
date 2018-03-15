@@ -18156,8 +18156,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=46,y=63
@@ -19210,7 +19210,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=60
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -26650,7 +26650,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=0
 	isWOfRiver
-	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27051,6 +27050,17 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Diospolis Megali
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=10, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=34
@@ -27088,6 +27098,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27567,6 +27578,18 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Attaleia
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=10, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=70,y=43

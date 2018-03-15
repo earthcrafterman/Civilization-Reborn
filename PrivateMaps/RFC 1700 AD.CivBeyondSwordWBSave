@@ -20370,8 +20370,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 	TeamReveal=16,39,49,
 EndPlot
 BeginPlot
@@ -21699,7 +21699,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=60
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,24,39,40,49,50,
 EndPlot
@@ -31555,9 +31555,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=0
 	isWOfRiver
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=36,49,
@@ -32073,7 +32072,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32738,6 +32738,25 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginCity
+		CityOwner=36, (Turkey)
+		CityName=Bodrum
+		CityPopulation=5
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_ISLAM
+		Player36Culture=100, (Turkey)
+	EndCity
 	TeamReveal=36,49,
 EndPlot
 BeginPlot
@@ -33232,7 +33251,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -33243,28 +33263,10 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_MARBLE
+	ImprovementType=IMPROVEMENT_QUARRY
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
-	EndUnit
-	BeginCity
-		CityOwner=36, (Turkey)
-		CityName=Ankara
-		CityPopulation=5
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		ReligionType=RELIGION_ORTHODOXY
-		ReligionType=RELIGION_ISLAM
-		Player36Culture=100, (Turkey)
-	EndCity
 	TeamReveal=36,49,
 EndPlot
 BeginPlot
@@ -33735,9 +33737,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
+	EndUnit
+	BeginCity
+		CityOwner=36, (Turkey)
+		CityName=Konya
+		CityPopulation=5
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_ISLAM
+		Player36Culture=100, (Turkey)
+	EndCity
 	TeamReveal=36,49,
 EndPlot
 BeginPlot

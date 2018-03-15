@@ -2768,7 +2768,8 @@ class RiseAndFall:
 				utils.makeUnit(iCaravel, iCiv, tSeaPlot, 2)
 		elif iCiv == iSwahili:
 			utils.createSettlers(iCiv, 3)
-			utils.makeUnit(iArcher, iCiv, tPlot, 5)
+			utils.makeUnit(iCrossbowman, iCiv, tPlot, 6)
+			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 3)
 			utils.createMissionaries(iCiv, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:

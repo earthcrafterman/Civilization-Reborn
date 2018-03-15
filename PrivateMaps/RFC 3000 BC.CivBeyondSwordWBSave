@@ -18076,8 +18076,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=46,y=63
@@ -19130,7 +19130,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=60
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -26280,7 +26280,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=0
 	isWOfRiver
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -26671,6 +26670,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=34
+	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+EndPlot
+BeginPlot
+	x=69,y=35
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -26682,18 +26688,12 @@ BeginPlot
 	EndUnit
 EndPlot
 BeginPlot
-	x=69,y=35
-	BonusType=BONUS_STONE
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-EndPlot
-BeginPlot
 	x=69,y=36
 	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -28233,7 +28233,10 @@ BeginPlot
 	BeginCity
 		CityOwner=49, (iIndependent)
 		CityName=Yerushalayim
+		BuildingType=BUILDING_JEWISH_TEMPLE
+		BuildingType=BUILDING_MONUMENT
 		CityPopulation=1
+		Player49Culture=20, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -29748,20 +29751,22 @@ BeginPlot
 	x=77,y=37
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=50, (iIndependent2)
+	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent2)
+		CityName=Uruk
+		CityPopulation=3
+		BuildingType=BUILDING_MONUMENT
+		Player50Culture=20
+	EndCity
 EndPlot
 BeginPlot
 	x=77,y=38
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=50, (iIndependent2)
-	EndUnit
-	BeginCity
-		CityOwner=50, (iIndependent2)
-		CityName=Uruk
-		CityPopulation=3
-	EndCity
 EndPlot
 BeginPlot
 	x=77,y=39
