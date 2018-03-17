@@ -23279,6 +23279,8 @@ int CvPlayer::getNewCityProductionValue() const
 		iValue /= 2;
 	}
 
+	iValue *= 2;
+
 	return iValue;
 }
 
