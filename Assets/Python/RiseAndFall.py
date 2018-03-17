@@ -748,8 +748,7 @@ class RiseAndFall:
 			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
-
-			utils.makeUnit(iAtlasElephant, iCarthage, (58, 39), 2)
+			#utils.makeUnit(iAtlasElephant, iCarthage, (58, 39), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
@@ -2321,6 +2320,10 @@ class RiseAndFall:
 				iLoopMin = 0
 				#if iLoopCiv >= iNumMajorPlayers: iLoopMin = 0
 				#if utils.getHumanID() == iLoopCiv: iLoopMin += 10
+				
+				iLoopMin = 0
+				#if iLoopCiv >= iNumMajorPlayers: iLoopMin = 0
+				#if utils.getHumanID() == iLoopCiv: iLoopMin += 10
 
 				if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
 					iWarPlan = -1
@@ -2534,10 +2537,8 @@ class RiseAndFall:
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 4)
-			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 4)
-			utils.makeUnit(iChariot, iCiv, tPlot, 2)
-			teamIndia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
@@ -2620,16 +2621,15 @@ class RiseAndFall:
 			tSeaPlot = (74, 29)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
-			utils.createMissionaries(iCiv, 1)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
-			utils.makeUnit(iHorseman, iCiv, tPlot, 1)
-			#if utils.getHumanID() != iKorea:
-			#	utils.makeUnit(iSpearman, iCiv, tPlot, 2)
-			#	utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
+			#utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iSpearman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			#utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
+			#utils.makeUnit(iHorseman, iCiv, tPlot, 1)
+			if utils.getHumanID() != iKorea:
+				utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
@@ -3065,15 +3065,15 @@ class RiseAndFall:
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iRome:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 		elif iCiv == iJapan:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iTamils:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-		elif iCiv == iKorea:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		#elif iCiv == iKorea:
+		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iByzantium:
@@ -3559,7 +3559,7 @@ class RiseAndFall:
 				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
-			
+
 	def creteFlip(self, crete):
 		lCities = []
 		lOwners = []
@@ -3646,5 +3646,20 @@ class RiseAndFall:
 						utils.flipUnit(unit, iFlip, (city[0], city[1]))
 				utils.flipCity(city, False, False, iFlip, [])
 
+	def onWonderBuilt(self, iCiv, iBuilding):
+		if iBuilding == iOracle:
+			city = gc.getPlayer(iCiv).getCapitalCity()
+			tPlot = (city.getX(), city.getY())
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
+				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
+				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 
 rnf = RiseAndFall()

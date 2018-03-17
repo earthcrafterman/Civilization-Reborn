@@ -85,10 +85,10 @@ class Religions:
 				
 		self.checkConfucianism(iGameTurn)
 		self.checkJudaism(iGameTurn)
-		
+		self.checkZoroastrianism(iGameTurn)
 		#self.checkBuddhism(iGameTurn)
 
-		self.checkChristianity(iGameTurn)
+		#self.checkChristianity(iGameTurn)
 						
 		self.checkSchism(iGameTurn)
 
@@ -99,6 +99,7 @@ class Religions:
 		self.spreadIslamIndonesia(iGameTurn)
 		
 		self.spreadHinduismDelhi(iGameTurn)
+		self.spreadBuddhismKorea(iGameTurn)
 
 
 	def foundReligion(self, tPlot, iReligion):
@@ -248,6 +249,13 @@ class Religions:
 
 		if iGameTurn == getTurnForYear(-550) - utils.getTurns(data.iSeed % 5):
 			self.foundReligion((104, 45), iConfucianism)
+
+## ZOROASTRIANISM
+	def checkZoroastrianism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iZoroastrianism): return
+
+		if utils.getHumanID() != iPersia and iGameTurn == getTurnForYear(-500) - utils.getTurns(data.iSeed % 5):
+			self.foundReligion((82, 38), iZoroastrianism)
 			
 ## JUDAISM
 
@@ -255,7 +263,7 @@ class Religions:
 		if gc.getGame().isReligionFounded(iJudaism): return
 
 		if iGameTurn == getTurnForYear(-168) - utils.getTurns(data.iSeed % 5):
-			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
+			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iJudaism)
 			
 	def spreadJudaismEurope(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iJudaism): return
@@ -301,7 +309,6 @@ class Religions:
 			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lNorthAmericanCities, iJudaism))
 			if pSpreadCity:
 				pSpreadCity.spreadReligion(iJudaism)
-				
 
 ## HINDUISM
 	def spreadHinduismDelhi(self, iGameTurn):
@@ -313,6 +320,17 @@ class Religions:
 		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lIndianCities, iHinduism))
 		if pSpreadCity:
 			pSpreadCity.spreadReligion(iHinduism)
+
+## BUDDHISM
+	def spreadBuddhismKorea(self, iGameTurn):
+		if not gc.getGame().isReligionFounded(iBuddhism): return
+		if iGameTurn > getTurnForYear(-30): return
+		
+		lKoreanCities = utils.getRegionCities([rKorea])
+		
+		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lKoreanCities, iBuddhism))
+		if pSpreadCity:
+			pSpreadCity.spreadReligion(iBuddhism)
 
 ## ISLAM
 
@@ -475,7 +493,10 @@ class Religions:
 				if not gc.getGame().isReligionFounded(iProtestantism):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
 					self.reformation()
-					
+		
+		if iTech == iEthics:
+			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iJudaism)
+			
 		for iReligion in range(iNumReligions):
 			self.checkLateReligionFounding(iReligion, iTech)
 					

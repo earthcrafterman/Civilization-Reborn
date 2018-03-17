@@ -305,13 +305,13 @@ def checkLostCoreCollapse(iPlayer):
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 	
-def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
+def determineStabilityLevel(iCurrentLevel, iStability, overTurns = 0):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if bFall: iThreshold += 10
+	if overTurns > 0:
+		iThreshold += 5 + overTurns
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
-	elif bFall: return max(iStabilityCollapsing, iCurrentLevel - (iThreshold - iStability) / 10)
 	elif iStability < iThreshold - 10: return max(iStabilityCollapsing, iCurrentLevel - 1)
 	
 	return iCurrentLevel
@@ -339,9 +339,10 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
 	bHuman = (utils.getHumanID() == iPlayer)
-	bFall = isDecline(iPlayer)
 	
-	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, bFall)
+	overTurns = declineOverTurns(iPlayer)
+	
+	iNewStabilityLevel = determineStabilityLevel(iStabilityLevel, iStability, overTurns)
 	
 	if iNewStabilityLevel > iStabilityLevel:
 		data.setStabilityLevel(iPlayer, iNewStabilityLevel)
@@ -696,7 +697,7 @@ def calculateStability(iPlayer):
 	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
 	for city in utils.getCityList(iPlayer):
-		iPopulation = city.getPopulation()
+		iPopulation = city.getPopulation() - 1 #stabilise classical empires
 		iModifier = 0
 		x = city.getX()
 		y = city.getY()
@@ -1284,8 +1285,8 @@ def updateEconomyTrend(iPlayer):
 	iPositiveThreshold = 5
 	iNegativeThreshold = 0
 	
-	if isDecline(iPlayer):
-		iNegativeThreshold = 2
+	#if isDecline(iPlayer):
+		#iNegativeThreshold = 2
 	
 	if iCivicEconomy == iCentralPlanning: iNegativeThreshold = 0
 	
@@ -1865,8 +1866,19 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetHappinessTrend()
 	playerData.resetWarTrends()
 	
-def isDecline(iPlayer):
-	return utils.getHumanID() != iPlayer and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
+def declineOverTurns(iPlayer):
+	if utils.getHumanID() == iPlayer:
+		return 0
+	iTurn = gc.getGame().getGameTurn()
+	iFallTurn = getTurnForYear(tFall[iPlayer])
+	for tInterval in tResurrectionIntervals[iPlayer]:
+		iStart, iEnd = tInterval
+		if getTurnForYear(iStart) <= iTurn:
+			iFallTurn = getTurnForYear(iEnd)
+	overTurns = iTurn - iFallTurn
+	if overTurns < 0:
+		overTurns = 0
+	return overTurns
 	
 class Civics:
 

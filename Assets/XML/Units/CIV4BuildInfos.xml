@@ -22,17 +22,17 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_ROMAN_ROAD</Type>
-			<Description>TXT_KEY_BUILD_ROMAN_ROAD</Description>
+			<Description>TXT_KEY_BUILD_ROAD</Description>
 			<PrereqTech>TECH_LEVERAGE</PrereqTech>
 			<iTime>400</iTime>
-			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
+			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<HotKey>KB_R</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/Buttons/Builds/BuildPavedRoad.dds</Button>
+			<Button>Art/Interface/Buttons/Builds/BuildRoad.dds</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>

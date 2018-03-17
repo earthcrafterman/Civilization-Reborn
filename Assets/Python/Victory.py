@@ -223,7 +223,7 @@ dTechGoals = {
 	iBabylonia: (0, [iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
-	iKorea: (1, [iPrinting]),
+	iKorea: (2, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
 }
 
@@ -495,7 +495,7 @@ def checkTurn(iGameTurn, iPlayer):
 
 			# first goal: control 7% of world territory by 140 AD
 			if isPossible(iPersia, 0):
-				if getLandPercent(iPersia) >= 6.995:
+				if getPopulationPercent(iPersia) >= 50 and isBuildingInCity((82, 38), iPalace):
 					win(iPersia, 0)
 
 			if iGameTurn == getTurnForYear(140):
@@ -511,7 +511,8 @@ def checkTurn(iGameTurn, iPlayer):
 
 			# third goal: control two holy shrines in 350 AD
 			if iGameTurn == getTurnForYear(350):
-				if countShrines(iPersia) >= 2:
+				bZoroastrianShrine = (getNumBuildings(iPersia, iZoroastrianShrine) > 0)
+				if countShrines(iPersia) >= 3 and bZoroastrianShrine:
 					win(iPersia, 2)
 				else:
 					lose(iPersia, 2)
@@ -547,21 +548,19 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iRome:
 
 		# first goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
-		if iGameTurn == getTurnForYear(100):
+		if iGameTurn == getTurnForYear(320):
 			expire(iRome, 0)
 
 		# second goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
-		if iGameTurn == getTurnForYear(320):
-			bSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False)) >= 2
-			bFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1])) >= 3
-			bEngland = getNumCitiesInArea(iRome, Areas.getCoreArea(iEngland, False)) >= 1
-			bCarthage = getNumCitiesInArea(iRome, utils.getPlotList(tCarthageTL, tCarthageBR)) >= 2
-			bByzantium = getNumCitiesInArea(iRome, Areas.getCoreArea(iByzantium, False)) >= 4
-			bEgypt = getNumCitiesInArea(iRome, Areas.getCoreArea(iEgypt, False)) >= 2
-			if bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt:
+		if iGameTurn < getTurnForYear(320):
+			tRect = { iRome : ((44, 30), (75, 56))}
+			tPlots = Areas.getArea(iRome, tRect, {})
+			bRomanEmpire = isControlled(iRome, tPlots)
+			if bRomanEmpire:
 				win(iRome, 1)
-			else:
-				lose(iRome, 1)
+
+		if iGameTurn == getTurnForYear(320):
+			expire(iRome, 1)
 
 		# third goal: be first to discover Theology, Machinery and Civil Service
 
@@ -609,7 +608,8 @@ def checkTurn(iGameTurn, iPlayer):
 
 		# first goal: settle a great prophet in two Orthodox cities by 500 AD
 		if isPossible(iEthiopia, 0):
-			if countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet) >= 2:
+			bRedSea = countOpenBorders(iEthiopia, [iRome, iPersia, iIndia]) >= 3
+			if bRedSea:
 				win(iEthiopia, 0)
 
 		if iGameTurn == getTurnForYear(500):
@@ -617,32 +617,31 @@ def checkTurn(iGameTurn, iPlayer):
 
 		# second goal: acquire three incense resources by 600 AD
 		if isPossible(iEthiopia, 1):
-			if pEthiopia.getNumAvailableBonuses(iIncense) >= 3:
+			if pEthiopia.getNumAvailableBonuses(iIncense) >= 4:
 				win(iEthiopia, 1)
-
-		if iGameTurn == getTurnForYear(600):
+				
+		if iGameTurn == getTurnForYear(620):
 			expire(iEthiopia, 1)
 
 		# third goal: allow no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD
-		if iGameTurn == getTurnForYear(1500):
-			bEastAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0])
-			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			if not bEastAfrica or not bSubequatorialAfrica:
-				lose(iEthiopia, 2)
-
-		if iGameTurn == getTurnForYear(1910) and isPossible(iEthiopia, 2):
-			bEastAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0])
-			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			if bEastAfrica and bSubequatorialAfrica:
+		if iGameTurn == getTurnForYear(1300):
+			iOrthodox = getNumBuildings(iEthiopia, iOrthodoxCathedral)
+			if iOrthodox == 3:
 				win(iEthiopia, 2)
 			else:
 				lose(iEthiopia, 2)
 
 	elif iPlayer == iKorea:
-
+	
+		if iGameTurn == getTurnForYear(300):
+			if countHuts((111, 41), (116, 50)) > 0:
+				lose(iKorea, 0)
+			else:
+				win(iKorea, 0)
+		
 		# first goal: build a Buddhist Stupa and a Confucian Academy by 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			expire(iKorea, 0)
+			expire(iKorea, 1)
 
 		# second goal: be first to discover Printing Press
 
@@ -1915,7 +1914,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iCounter >= 26:
 					win(iIndia, 1)
 
-	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
+	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 320 AD
 	elif iPlayer == iRome:
 		if isPossible(iRome, 0):
 			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iForum]:
@@ -1923,17 +1922,18 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 				iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
 				iNumForums = getNumBuildings(iRome, iForum)
-				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
+				bColosseum = getNumBuildings(iRome, iColosseum)
+				if iNumBarracks >= 5 and iNumAqueducts >= 4 and iNumAmphitheatres >= 3 and iNumForums >= 2 and bColosseum:
 					win(iRome, 0)
 
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
 	elif iPlayer == iKorea:
-		if isPossible(iKorea, 0):
+		if isPossible(iKorea, 1):
 			if iBuilding in [iConfucianCathedral, iBuddhistCathedral]:
 				bBuddhist = getNumBuildings(iKorea, iBuddhistCathedral) > 0
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
 				if bBuddhist and bConfucian:
-					win(iKorea, 0)
+					win(iKorea, 1)
 
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
@@ -1989,6 +1989,12 @@ def checkWonderGoal(iPlayer, lWonders):
 	for iWonder in lWonders:
 		if data.getWonderBuilder(iWonder) != iPlayer:
 			return False
+		if iPlayer == iMaya and iWonder == iTempleOfKukulkan:
+			chichenItza = gc.getMap().plot(23, 37)
+			if not chichenItza.isCity():
+				return False
+			if chichenItza.getPlotCity().isHasRealBuilding(iWonder):
+				return True			
 	return True
 
 def onReligionFounded(iPlayer, iReligion):
@@ -2058,14 +2064,6 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 		if isPossible(iEngland, 1):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
 				data.iEnglishSinks += 1
-
-	# third Korean goal: sink 20 enemy ships
-	elif iWinningPlayer == iKorea:
-		if isPossible(iKorea, 2):
-			if pLosingUnitInfo.getDomainType() == iDomainSea:
-				data.iKoreanSinks += 1
-				if data.iKoreanSinks >= 20:
-					win(iKorea, 2)
 
 def onGreatPersonBorn(iPlayer, unit):
 	iUnitType = utils.getBaseUnit(unit.getUnitType())
@@ -2519,6 +2517,7 @@ def lose(iPlayer, iGoal):
 
 def win(iPlayer, iGoal):
 	data.players[iPlayer].lGoals[iGoal] = 1
+	data.players[iPlayer].lGoalTurns[iGoal] = gc.getGame().getGameTurn()
 	checkHistoricalVictory(iPlayer)
 
 def expire(iPlayer, iGoal):
@@ -3243,6 +3242,14 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 			iCount += 1
 	return iCount
 
+def countHuts(tTL, tBR):
+	iCount = 0
+	for (x, y) in utils.getPlotList(tTL, tBR):
+		plot = gc.getMap().plot(x, y)
+		if plot.getImprovementType() == iHut:
+			iCount += 1
+	return iCount
+
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -3529,7 +3536,16 @@ def getUHVHelp(iPlayer, iGoal):
 
 	# the info is outdated or irrelevant once the goal has been accomplished or failed
 	if data.players[iPlayer].lGoals[iGoal] == 1:
-		aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
+		iWinTurn = data.players[iPlayer].lGoalTurns[iGoal]
+		iTurnYear = gc.getGame().getTurnYear(iWinTurn)
+		if iTurnYear < 0:
+			sWinDate = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
+		else:
+			sWinDate = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
+		if not gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE", (sWinDate,)))
+		else:
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN", (sWinDate, iWinTurn - utils.getScenarioStartTurn())))
 		return aHelp
 	elif data.players[iPlayer].lGoals[iGoal] == 0:
 		aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))
@@ -3654,14 +3670,18 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iPersia:
 		if not pPersia.isReborn():
 			if iGoal == 0:
-				landPercent = getLandPercent(iPersia)
-				aHelp.append(getIcon(landPercent >= 6.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % landPercent), str(7))))
+				popPercent = getPopulationPercent(iPersia)
+				bPalace = isBuildingInCity((82, 38), iPalace)
+				aHelp.append(getIcon(popPercent >= 18.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(18))))
+				aHelp.append(getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()))
 			elif iGoal == 1:
 				iCounter = countWonders(iPersia)
 				aHelp.append(getIcon(iCounter >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 7)))
 			elif iGoal == 2:
 				iCounter = countShrines(iPersia)
-				aHelp.append(getIcon(iCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_SHRINES", (iCounter, 2)))
+				bZoroastrianShrine = (getNumBuildings(iPersia, iZoroastrianShrine) > 0)
+				aHelp.append(getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_SHRINES", (iCounter, 3)))
+				aHelp.append(getIcon(bZoroastrianShrine) + localText.getText("TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE", ()))
 		else:
 			if iGoal == 0:
 				iCount = countOpenBorders(iPersia, lCivGroups[0])
@@ -3682,16 +3702,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 			iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
 			iNumForums = getNumBuildings(iRome, iForum)
-			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumAmphitheatres >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
-		elif iGoal == 1:
-			iCitiesSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False))
-			iCitiesFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
-			iCitiesEngland = getNumCitiesInArea(iRome, Areas.getCoreArea(iEngland, False))
-			iCitiesCarthage = getNumCitiesInArea(iRome, utils.getPlotList(tCarthageTL, tCarthageBR))
-			iCitiesByzantium = getNumCitiesInArea(iRome, Areas.getCoreArea(iByzantium, False))
-			iCitiesEgypt = getNumCitiesInArea(iRome, Areas.getCoreArea(iEgypt, False))
-			aHelp.append(getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
-			aHelp.append(getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))
+			bColosseum = getNumBuildings(iRome, iColosseum)
+			aHelp.append(getIcon(iNumBarracks >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 5)) + ' ' + getIcon(iNumAqueducts >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 4)) + ' ' + getIcon(iNumAmphitheatres >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 3)) + ' ' + getIcon(iNumForums >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 2))  + ' ' + getIcon(iNumForums >= 1) + localText.getText("TXT_KEY_VICTORY_COLOSSEUM", (bColosseum, 1)))
 		elif iGoal == 2:
 			bArchitecture = data.lFirstDiscovered[iArchitecture] == iRome
 			bPolitics = data.lFirstDiscovered[iPolitics] == iRome
@@ -3717,23 +3729,20 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iEthiopia:
 		if iGoal == 0:
-			iOrthodoxCitiesWithProphets = countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet)
-			aHelp.append(getIcon(iOrthodoxCitiesWithProphets >= 2) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS", (iOrthodoxCitiesWithProphets, 2)))
+			iCount = countOpenBorders(iEthiopia, [iRome, iPersia, iIndia])
+			aHelp.append(getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 3)))
 		elif iGoal == 1:
 			iNumIncense = pEthiopia.getNumAvailableBonuses(iIncense)
-			aHelp.append(getIcon(iNumIncense >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 3)))
+			aHelp.append(getIcon(iNumIncense >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 4)))
 		elif iGoal == 2:
-			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
-
+			iOrthodox = getNumBuildings(iEthiopia, iOrthodoxCathedral)
+			aHelp.append(getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))
+			
 	elif iPlayer == iKorea:
-		if iGoal == 0:
+		if iGoal == 1:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)
 			bBuddhistCathedral = (getNumBuildings(iKorea, iBuddhistCathedral) > 0)
 			aHelp.append(getIcon(bBuddhistCathedral) + localText.getText("TXT_KEY_BUILDING_BUDDHIST_CATHEDRAL", ()) + ' ' + getIcon(bConfucianCathedral) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL", ()))
-		elif iGoal == 2:
-			iNumSinks = data.iKoreanSinks
-			aHelp.append(getIcon(iNumSinks >= 20) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iNumSinks, 20)))
 
 	# Maya goals have no stages
 	elif iPlayer == iMaya:

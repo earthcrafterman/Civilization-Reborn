@@ -646,13 +646,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
-		<English>Nine Saints</English>
-		<German>Neun Heilige</German>
+		<English>The Red Sea trade routes</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
-		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Großen Propheten in zwei orthodoxen Städten an</German>
+		<English>Open borders with Rome, Persia and India by 500AD.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
@@ -661,28 +659,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+		<English>Control 4 incense resources by 620AD.</English>
+		<German>Erlangen Sie bis 620 n. Chr. 4 Weihrauch-Ressourcen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3_TITLE</Tag>
-		<English>Resisting the Scramble</English>
-		<German>Dem Wettlauf Widerstand leisten</German>
+		<English>Oriental Orthodoxy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3</Tag>
-		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</English>
-		<German>Lassen Sie im Jahr 1910 n. Chr. keine europ&#228;ischen Kolonien im &#246;stlichen und sub&#228;quatorialen Afrika zu</German>
+		<English>Build 3 Orthodox Cathedral in 1300AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
@@ -1221,31 +1207,30 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
+		<English>Yayoi People</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<English>Ensure there are no tribal villages on Japan in 300AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
 		<English>Palman Daejanggyeong and Gukjagam</English>
 		<German>Palman Daejanggyeong und Gukjagam</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<Tag>TXT_KEY_UHV_KOR2</Tag>
 		<English>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</English>
 		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
 		<English>Choe Yun-ui</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR2</Tag>
+		<Tag>TXT_KEY_UHV_KOR3</Tag>
 		<English>Be first to discover Printing</English>
 		<German>Erforschen Sie als Erster Buchdruck</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
-		<English>Yi Sun-sin</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR3</Tag>
-		<English>Sink 20 enemy ships</English>
-		<German>Versenken Sie 20 gegnerische Schiffe</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>
@@ -1319,8 +1304,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2</Tag>
-		<English>Build the Temple of Kukulkan by 900 AD</English>
-		<German>Errichten Sie bis zum Jahr 900 n. Chr. die Pyramide des Kukulc&#225;n</German>
+		<English>Build the Temple of Kukulkan in Chichen Itza by 900 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3_TITLE</Tag>
@@ -1486,27 +1470,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER1_EPIC</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER1_MARATHON</Tag>
-		<English>Control 7% of the world by 140 AD</English>
-		<French>Contr&#244;ler 7% du territoire mondial avant 140 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
-		<Italian>Devi controllare l'7% del territorio mondiale entro il 140 d.C.</Italian>
-		<Spanish>Controlar el 7% del territorio mundial antes del 140 d. C.</Spanish>
+		<English>Control 50% of world population and a capital in Parsa by 140 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_NOTURN</Tag>
@@ -1524,34 +1488,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER2</Tag>
 		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_EPIC</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_MARATHON</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_NOTURN</Tag>
-		<English>Control 7 world wonders by 350 AD</English>
-		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
-		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
-		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
@@ -1560,27 +1496,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER3_EPIC</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_PER3_MARATHON</Tag>
-		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
-		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
-		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+		<English>Control Adur Farnbag and 2 additional holy city shrines in 350 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_NOTURN</Tag>
@@ -1686,17 +1602,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<English>Build 5 Barracks, 4 Aqueducts, 3 Amphitheatres, 2 Forums and Colosseum by 320 AD</English>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 	</TEXT>
 	<TEXT>
@@ -1710,18 +1616,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM2_EPIC</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM2_MARATHON</Tag>
-		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+		<English>Control by 320 AD all the area historically known as the Roman Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_NOTURN</Tag>
@@ -2621,6 +2516,14 @@
 		<English>Goal accomplished!</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE</Tag>
+		<English>Goal accomplished! (%s1)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN</Tag>
+		<English>Goal accomplished! (%s1 - Turn %d2)</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_FAILED</Tag>
 		<English>Goal failed!</English>
 	</TEXT>
@@ -3329,5 +3232,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_BLACK_SEA</Tag>
 		<English>Black Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COLOSSEUM</Tag>
+		<English>Colosseum</English>
 	</TEXT>
 </Civ4GameText>

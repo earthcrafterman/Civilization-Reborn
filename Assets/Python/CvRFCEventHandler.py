@@ -557,7 +557,6 @@ class CvRFCEventHandler:
 
 		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 			sta.onWonderBuilt(iOwner, iBuildingType)
-
 			self.rnf.onWonderBuilt(iOwner, iBuildingType)
 
 		if iBuildingType == iPalace:
@@ -640,6 +639,11 @@ class CvRFCEventHandler:
 			for iPlayer in range(iVikings):
 				Modifiers.adjustInflationModifier(iPlayer)
 
+		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(-520) and utils.getHumanID() != iPersia:
+			plot = gc.getMap().plot(82, 38)
+			if plot.isCity():
+				city = plot.getPlotCity()
+				utils.relocateCapital(iPersia, city)
 		return 0
 
 	def onBeginPlayerTurn(self, argsList):
@@ -721,9 +725,9 @@ class CvRFCEventHandler:
 
 				data.players[iPlayer].iExplorationTurn = iGameTurn
 
-		elif iTech == iCompass:
-			if iPlayer == iVikings:
-				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
+		#elif iTech == iCompass:
+		#	if iPlayer == iVikings:
+		#		gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
 			self.pla.onTechAcquired(iTech, iPlayer)

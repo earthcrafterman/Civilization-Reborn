@@ -260,11 +260,10 @@ BeginPlayer
 	CivType=CIVILIZATION_PERSIA
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_ZOROASTRIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -276,6 +275,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -297,9 +297,10 @@ BeginPlayer
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=1
 	StartingGold=100
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -312,6 +313,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -322,6 +324,7 @@ BeginPlayer
 	StartingGold=200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -15953,6 +15956,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=58
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -15963,7 +15967,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=60
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -16308,7 +16312,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=58
-	FeatureType=FEATURE_ICE, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -26669,6 +26673,7 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+<<<<<<< HEAD
 	BeginUnit
 		UnitType=UNIT_MILITIA, UnitOwner=49, (iIndependent)
 	EndUnit
@@ -26683,6 +26688,8 @@ BeginPlot
 		Player49Culture=10, (iIndependent)
 	EndCity
 	TeamReveal=0,
+=======
+>>>>>>> bitsoftales
 EndPlot
 BeginPlot
 	x=69,y=34
@@ -26690,9 +26697,19 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
+	EndUnit
 EndPlot
 BeginPlot
 	x=69,y=35
+<<<<<<< HEAD
+=======
+	BonusType=BONUS_STONE
+>>>>>>> bitsoftales
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -26753,7 +26770,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=44
+<<<<<<< HEAD
 	BonusType=BONUS_FISH
+=======
+>>>>>>> bitsoftales
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -29420,6 +29440,9 @@ BeginPlot
 		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
 	EndUnit
 EndPlot
@@ -31258,12 +31281,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=33
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=34
-	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -41998,6 +42021,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=44
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42373,6 +42397,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=44
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

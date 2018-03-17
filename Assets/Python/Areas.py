@@ -108,7 +108,7 @@ tCapitals = (
 (94, 40), # Pataliputra
 (73, 40), # Sur
 (4, 18), # Tonga
-(82, 38), # Persepolis
+(80, 42), #(82, 38), # Persepolis, Ecbatana
 (60, 44), # Rome
 (91, 30), # Thanjavur
 (72, 29), # Aksum
@@ -155,7 +155,6 @@ dChangedCapitals = {
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
-iPersia : (81, 41),	# Esfahan (Iran)
 iTamils : (90, 30),	# Vijayanagara
 iMaya : (27, 29),	# Bogota (Colombia)
 iKhmer : (101, 37),	# Hanoi
@@ -164,6 +163,7 @@ iHolyRome : (62, 49),	# Vienna
 
 # new capital locations if changed during the game
 dNewCapitals = {
+iPersia : (82, 38),	# Parsa (Persia)
 iJapan : (116, 46),	# Tokyo
 #iVikings : (63, 59),	# Stockholm
 iHolyRome : (62, 49),	# Vienna
@@ -194,7 +194,7 @@ iTurkey : (68, 45),	# Istanbul
 
 tBirthArea = (
 ((66, 30), 	(70, 36)), 	# Egypt
-((99, 43), 	(101, 45)), # China
+((99, 43), 	(101, 45)), 	# China
 ((75, 37), 	(77, 42)), 	# Babylonia
 ((85, 37), 	(88, 41)), 	# Harappa
 ((65, 39), 	(70, 45)), 	# Greece
@@ -202,12 +202,12 @@ tBirthArea = (
 ((71, 39), 	(74, 41)), 	# Carthage
 ((3, 17), 	(7, 22)), 	# Polynesia
 ((72, 37), 	(85, 44)), 	# Persia
-((59, 41), 	(63, 47)), 	# Rome
+((59, 43), 	(61, 45)), 	# Rome
 ((90, 27), 	(93, 32)), 	# Tamils
-((69, 27), 	(73, 30)), 	# Ethiopia
+((71, 27), 	(75, 30)), 	# Ethiopia
 ((107, 45), 	(110, 49)), 	# Korea
 ((20, 35), 	(23, 37)), 	# Maya
-((64, 38), 	(74, 45)), 	# Byzantium
+((64, 38), 	(75, 45)), 	# Byzantium
 ((111, 41), 	(116, 49)), 	# Japan
 ((58, 56), 	(64, 62)), 	# Vikings
 ((67, 30), 	(80, 40)), 	# Arabia
@@ -245,6 +245,8 @@ tBirthArea = (
 )
 
 dChangedBirthArea = {
+iPersia :	((70, 37), 	(85, 44)), 	# Persia
+iRome :		((59, 41), 	(63, 47)), 	# Rome
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
@@ -298,7 +300,7 @@ tCoreArea = (
 ((79, 37),	(85, 44)),	# Persia
 ((59, 43),	(61, 45)),	# Rome
 ((90, 27),	(93, 32)),	# Tamils
-((69, 27),	(73, 30)),	# Ethiopia
+((70, 27),	(73, 30)),	# Ethiopia
 ((108, 45),	(110, 48)),	# Korea
 ((20, 35),	(23, 37)),	# Maya
 ((64, 40),	(72, 46)),	# Byzantium

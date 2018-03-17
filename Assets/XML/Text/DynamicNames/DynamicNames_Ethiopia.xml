@@ -142,7 +142,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_SHORT_DESC</Tag>TXT_KEY_CIV_ETHIOPIA_AKSUMITE
 		<English>Ethiopia</English>
 		<French>
 			<Text>&#201;thiopie</Text>
@@ -164,5 +164,9 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUMITE</Tag>
+		<English>Aksumite</English>
 	</TEXT>
 </Civ4GameText>
