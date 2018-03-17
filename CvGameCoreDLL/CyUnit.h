@@ -354,10 +354,15 @@ public:
 	int getImmobileTimer() const;
 	void setImmobileTimer(int iNewValue);
 
-	bool isMadeAttack();																							 
-	void setMadeAttack(bool bNewValue);															 
-	bool isMadeInterception();																							 
-	void setMadeInterception(bool bNewValue);															 
+	bool isMadeAttack();		
+	int getMadeAttack();		
+	int getAttacksPerTurn();																							 
+	void setMadeAttack(int bNewValue);																				 
+	void changeMadeAttack(int bNewValue);
+	bool isMadeInterception();		
+	int getMadeInterception();																							 
+	void setMadeInterception(int iNewValue);																			 
+	void changeMadeInterception(int iNewValue);															 
 
 	bool isPromotionReady();																					 
 	void setPromotionReady(bool bNewValue);													 

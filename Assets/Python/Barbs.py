@@ -16,11 +16,12 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
-(-2500, (77, 42), iIndependent, 'Ninua', 1, iVulture, 3), 	# Assyrian Empire
+(-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
+(-2600, (69, 39), iIndependent, 'Knossos', 2, -1, -1), 	# Minoans
+(-2500, (77, 42), iIndependent2, 'Ninua', 2, iMilitia, 3), 	# Assyrian Empire
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
-(-1600, (72, 44), iBarbarian, 'Ankuwash', 1, iHuluganni, 2),	# Ankara
+(-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 2),	# Ankara
 (-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 1),	# Ankara
 (-1100, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
 (-1100, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
@@ -350,7 +351,12 @@ class Barbs:
 			lReligions = []
 			lBuildings = []
 			iCulture = 10 * (gc.getGame().getCurrentEra() + 1)
-			if sName == "Ankuwash": iCulture = 0
+			if sName == "Ankuwash": 
+				gc.getPlayer(iBarbarian).initUnit(iWorker, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+				gc.getPlayer(iBarbarian).initUnit(iWorker, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
 			bForceSpawn = True
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
@@ -359,9 +365,15 @@ class Barbs:
 			if sName == 'Zou' or sName == 'Zhongdu' or sName == 'Fenghao' or sName == 'Yuecheng':
 				lBuildings = [iLibrary, iPaganTemple]
 			if sName == 'Ninua' or sName == 'Pratisthan':
-				lBuildings = [iPaganTemple]
+				lBuildings = [iPaganTemple, iGranary]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]
+			if sName == 'Tsor':
+				lBuildings = [iJewishTemple, iMonument]
+				lReligions = [iJudaism]
+			if sName == 'Ankuwash':
+				lBuildings = [iWeaver, iLibrary, iPaganTemple, iJewishTemple, iMonument]
+				lReligions = [iJudaism]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			

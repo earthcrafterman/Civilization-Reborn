@@ -4986,11 +4986,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case EGYPT:
 									if (iI == MASONRY)
 										iValue *= 3;
-									if (iI == DIVINATION || iI == PHILOSOPHY || iI == PRIESTHOOD)
+									if (iI == DIVINATION || iI == PHILOSOPHY || iI == PRIESTHOOD || iI == MYTHOLOGY || iI == LEVERAGE)
 										iValue *= 2;
 									if (iI == ALLOYS)
 										iValue /= 2;
-									if (iI == BLOOMERY)
+									if (iI == BLOOMERY || iI == RIDING)
 										iValue /= 5;
 									break;
 								case CHINA:
@@ -5729,7 +5729,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	int iI;
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
-
+	
 	if (bForced)
 	{
 		if (getTeam() == GET_PLAYER(ePlayer).getTeam() || (GET_TEAM(getTeam()).isVassal(GET_PLAYER(ePlayer).getTeam()) && !GET_TEAM(getTeam()).isCapitulated()))

@@ -15,6 +15,7 @@ import CvWorldBuilderScreen as platy
 from operator import itemgetter
 import Stability as sta
 import Areas
+import WarMaps
 import Civilizations
 import Modifiers
 import CvEspionageAdvisor
@@ -262,7 +263,8 @@ class RiseAndFall:
 
 		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
-			teamEgypt.declareWar(iIndependent2, True, WarPlanTypes.WARPLAN_TOTAL)
+			if utils.getHumanID() != iEgypt:
+				gc.getMap().plot(70, 34).setRouteType(CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), 'ROUTE_ROAD'))
 
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
@@ -671,9 +673,18 @@ class RiseAndFall:
 
 	def checkTurn(self, iGameTurn):
 
-		if gc.getPlayer(iEgypt).isAlive() and gc.getMap().plot(69,33).isCity() and gc.getMap().plot(69,33).getPlotCity().getOwner() == iIndependent2 and not gc.getTeam(iEgypt).isAtWar(iIndependent2): 
-			teamEgypt.declareWar(iIndependent2, True, WarPlanTypes.WARPLAN_TOTAL)
-	
+		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt:
+			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+
+		if gc.getGame().getGameTurnYear() == -2000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia:
+			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+
+		if gc.getGame().getGameTurnYear() == -1200 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia:
+			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+			
+		if gc.getGame().getGameTurnYear() == -1000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iBabylonia):
+			teamBabylonia.declareWar(gc.getMap().plot(73, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:
 			self.placeGoodyHuts()
@@ -1141,7 +1152,7 @@ class RiseAndFall:
 			if city.getOwner() == utils.getHumanID():
 				x = city.getX()
 				y = city.getY()
-				utils.createGarrisons((x, y), iCiv, 1)
+				utils.createGarrisons((x, y), iCiv, 2)
 
 		# convert plot culture
 		self.convertSurroundingPlotCulture(iCiv, lRebirthPlots)
@@ -2542,22 +2553,23 @@ class RiseAndFall:
 				#utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 		elif iCiv == iPersia:
 			utils.createSettlers(iCiv, 3)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 6)
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
-			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+			utils.makeUnit(iWarElephant, iCiv, tPlot, 2)
+			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
+			if gc.getMap().plot(73,38).isCity() and gc.getMap().plot(73,38).getOwner() == iEgypt and utils.getHumanID() != iEgypt:
+				teamEgypt.declareWar(iCarthage, False, WarPlanTypes.WARPLAN_TOTAL)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:
-				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
-				pCarthage.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
-				pCarthage.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-				pCarthage.initUnit(iWarGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
+			utils.makeUnit(iWorkboat, iCiv, (58, 40), 2)
+			pCarthage.initUnit(iGalley, 58, 40, UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+			utils.makeUnit(iSettler, iCiv, (58, 40), 2)
+			pCarthage.initUnit(iGalley, 58, 40, UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+			utils.makeUnit(iArcher, iCiv, (58, 40), 2)
+			pCarthage.initUnit(iWarGalley, 58, 40, UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iPolynesia:
 			tSeaPlot = (4, 19)
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)

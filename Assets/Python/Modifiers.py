@@ -4,7 +4,12 @@ from RFCUtils import utils
 def getModifier(iPlayer, iModifier):
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 	if iCivilization in lOrder:
-		return tModifiers[iModifier][lOrder.index(iCivilization)]
+		if iModifier == iModifierUnitUpkeep:
+			return tModifiers[iModifier][lOrder.index(iCivilization)] / 2
+		elif (iModifier == iModifierUnitCost or iModifier == iModifierBuildingCost) and utils.getHumanID() != iPlayer:
+			return tModifiers[iModifier][lOrder.index(iCivilization)] - 20
+		else:
+			return tModifiers[iModifier][lOrder.index(iCivilization)]
 	return tDefaults[iModifier]
 
 def getAdjustedModifier(iPlayer, iModifier):
@@ -53,7 +58,7 @@ iModifierInflationRate, iModifierGreatPeopleThreshold, iModifierGrowthThreshold)
 
 ### Sequence of spawns ###
 
-lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivEngland, iCivHolyRome, iCivRussia, iCivSwahili, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIsrael, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
+lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivEngland, iCivHolyRome, iCivRussia, iCivSwahili, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivSweden, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivAustralia, iCivBoers, iCivCanada, iCivIsrael, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
 
 ### Modifiers (by civilization!) ###
 
@@ -69,7 +74,7 @@ tCivicUpkeep = 				( 120,110,110,100,110,140, 70, 80, 70, 75, 80, 80, 80, 80, 90
 tHealth = 					(   2,  1,  1,  1,  3,  1,  3,  3,  3,  3,  2,  3,  3,  3,  3,  2,  3,  2,  3,  3,  3,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  3,  3,  4,  4,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,		  0,  0,  0,  0,  0,  0 )
 
 
-tUnitCost = 				( 110,130,140,200,110,120, 90,100, 90,100, 85, 90, 80,105,115, 90, 85,100,110, 90,105,100, 90, 90,100, 90, 90, 90, 90, 80, 90,100,110, 80,100,100,100, 90, 70, 90, 90, 90, 90, 75, 85, 80, 85, 85, 85, 85, 85, 85,		200,200,150,150,100,140 )
+tUnitCost = 				( 110,130,110,200,110,120, 90,100, 70,100, 85, 90, 80,105,115, 90, 85,100,110, 90,105,100, 90, 90,100, 90, 90, 90, 90, 80, 90,100,110, 80,100,100,100, 90, 70, 90, 90, 90, 90, 75, 85, 80, 85, 85, 85, 85, 85, 85,		600,600,150,150,100,140 )
 tWonderCost = 				(  80, 80, 80, 80, 80,100, 90,100, 85,100,100,100,100, 90,110,100, 90, 90,100, 90, 80, 85, 90, 70, 90,100,100, 90, 90,100, 90, 80, 80, 90, 80, 80, 90, 90,100, 85, 90,100, 90, 70, 70, 90, 90, 90, 80, 90, 80, 80,		150,150,150,100,100,100 )
 tBuildingCost = 			( 110,120,110,100,100,110, 90, 50,110, 90, 70,100, 80, 90,110,100, 90,100, 80,100, 90, 90, 90, 85, 90, 85, 90, 80, 80, 80, 85, 70, 80, 80, 80, 85, 80, 80, 80, 80, 80, 80, 70, 70, 70, 80, 80, 75, 70, 80, 75, 80,		100,100,150,100,100,100 )
 tInflationRate = 			( 130,120,130,130,130,140,130,130,130,130,110,130, 90,125,120, 80, 70, 85,100,100, 90, 85, 90, 75, 70, 70, 75,115,115, 70, 80, 80, 85, 90, 80,100,100, 75, 75, 75, 85, 75, 70, 65, 60, 65, 65, 60, 60, 60, 60, 60,		 95, 95, 95, 95, 95, 95 )

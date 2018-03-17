@@ -4958,6 +4958,9 @@ int CvPlayer::getNumGovernmentCenters() const
 
 bool CvPlayer::canRaze(CvCity* pCity) const
 {
+	if (getID() == BABYLONIA && !isHuman() && ((pCity->getX() == 77 && pCity->getY() == 42) || (pCity->getX() == 77 && pCity->getY() == 37)))
+		return false;
+
 	if (!pCity->isAutoRaze())
 	{
 		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))

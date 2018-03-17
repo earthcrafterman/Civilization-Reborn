@@ -811,12 +811,16 @@ class WBUnitScreen:
 			self.placeDirection()
 
 		elif sName == "MadeAttackText":
-			pUnit.setMadeAttack(not pUnit.isMadeAttack())
+			if 		pUnit.isMadeAttack() : 								pUnit.setMadeAttack(pUnit.getAttacksPerTurn())
+			elif 	pUnit.getMadeAttack() == pUnit.getAttacksPerTurn() : 	pUnit.setMadeAttack(0)
+			else : 																pUnit.setMadeAttack(getMadeAttack())
 			self.placeDirection()
 			self.placeMissions()
 
 		elif sName == "MadeInterceptionText":
-			pUnit.setMadeInterception(not pUnit.isMadeInterception())
+			if 		pUnit.isMadeInterception() : 								pUnit.setMadeInterception(pUnit.getAttacksPerTurn())
+			elif 	pUnit.getMadeInterception() == pUnit.getAttacksPerTurn() : 	pUnit.setMadeInterception(0)
+			else : 																pUnit.setMadeInterception(getMadeInterception())
 			self.placeDirection()
 			self.placeMissions()
 
@@ -914,8 +918,8 @@ class WBUnitScreen:
 			pUnitX.setMoves(0)
 			pUnitX.setImmobileTimer(0)
 			pUnitX.setPromotionReady(False)
-			pUnitX.setMadeAttack(False)
-			pUnitX.setMadeInterception(False)
+			pUnitX.setMadeAttack(0)
+			pUnitX.setMadeInterception(0)
 			self.changeDirection(DirectionTypes.DIRECTION_SOUTH, pUnitX)
 			pUnitX.setUnitAIType(Info.getDefaultUnitAIType())
 			pUnitX.changeCargoSpace(Info.getCargoSpace() - pUnitX.cargoSpace())
@@ -1018,9 +1022,9 @@ class WBUnitScreen:
 			elif iChangeType == 6:
 				loopUnit.setPromotionReady(pUnit.isPromotionReady())
 			elif iChangeType == 7:
-				loopUnit.setMadeAttack(pUnit.isMadeAttack())
+				loopUnit.setMadeAttack(pUnit.getMadeAttack())
 			elif iChangeType == 8:
-				loopUnit.setMadeInterception(pUnit.isMadeInterception())
+				loopUnit.setMadeInterception(pUnit.getMadeInterception())
 			elif iChangeType == 9:
 				self.changeDirection(pUnit.getFacingDirection(), loopUnit)
 			elif iChangeType == 10:

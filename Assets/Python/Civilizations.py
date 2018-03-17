@@ -43,6 +43,10 @@ def initScenarioTechs(iScenario):
 		if iCivilization in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
 
+		if iPlayer == iEgypt and utils.getHumanID() != iEgypt:
+			gc.getTeam(gc.getPlayer(iEgypt).getTeam()).setHasTech(iMythology, True, iEgypt, False, False)
+			vic.onTechAcquired(iEgypt, iMythology)
+
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
 
@@ -56,8 +60,6 @@ def initTechs(iPlayer, lTechs):
 	pPlayer.setStartingEra(iCurrentEra)
 
 def initTech(iPlayer, iTech):
-	if iPlayer == 7:
-		print str(iTech)
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
 
@@ -75,10 +77,10 @@ def init():
 lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iMythology]),
-iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
+iCivEgypt :	Techs([iMining, iPottery, iPastoralism]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
 iCivChina :	Techs(column=3),
-iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
+iCivBabylonia :	Techs([iPastoralism, iPottery, iTanning]),
 iCivIndia :	Techs([iLiterature, iContract, iBloomery], column=3, exceptions=[iSeafaring, iShipbuilding]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting, iConstruction], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),

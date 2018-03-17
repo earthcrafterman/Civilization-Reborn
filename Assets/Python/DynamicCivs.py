@@ -492,7 +492,7 @@ dCapitalLocations = findCapitalLocations(dCapitals)
 dStartingLeaders = [
 # 3000 BC
 {
-	iEgypt : iRamesses,
+	iEgypt : iDjoser,
 	iIndia : iAsoka,
 	iChina : iQinShiHuang,
 	iBabylonia : iSargon,
@@ -2031,8 +2031,6 @@ def leader(iPlayer):
 
 	if not gc.getPlayer(iPlayer).isAlive(): return None
 
-	if gc.getPlayer(iPlayer).isHuman(): return None
-
 	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(pPlayer.getTeam())
 	bReborn = pPlayer.isReborn()
@@ -2056,6 +2054,10 @@ def leader(iPlayer):
 		if bResurrected or utils.getScenario() >= i600AD: return iBaibars
 
 		if getColumn(iPlayer) >= 4: return iCleopatra
+
+		for iI in range(gc.getNumBuildingInfos()):
+			if isWorldWonderClass(gc.getBuildingInfo(iI).getBuildingClassType()) and capital.isHasRealBuilding(iI):
+				return iRamesses
 
 	elif iPlayer == iIndia:
 		if not bMonarchy and iEra >= iGlobal: return iGandhi

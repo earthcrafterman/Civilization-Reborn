@@ -664,11 +664,16 @@ public:
 	DllExport bool isSuicide() const;																											// Exposed to Python
 	int getDropRange() const;
 
-	bool isMadeAttack() const;																																// Exposed to Python
-	void setMadeAttack(bool bNewValue);																							// Exposed to Python
+	bool isMadeAttack() const;	
+	int getMadeAttack() const;																													// Exposed to Python
+	int getAttacksPerTurn() const;																															// Exposed to Python
+	void setMadeAttack(int iNewValue);			
+	void changeMadeAttack(int iNewValue);																							// Exposed to Python
 
-	bool isMadeInterception() const;																													// Exposed to Python
-	void setMadeInterception(bool bNewValue);																				// Exposed to Python
+	bool isMadeInterception() const;	
+	int getMadeInterception() const;																													// Exposed to Python
+	void setMadeInterception(int iNewValue);																											// Exposed to Python
+	void changeMadeInterception(int iNewValue);																				// Exposed to Python
 
 	DllExport bool isPromotionReady() const;																									// Exposed to Python
 	void setPromotionReady(bool bNewValue);																					// Exposed to Python
@@ -900,9 +905,9 @@ protected:
 	DirectionTypes m_eFacingDirection;
 	int m_iImmobileTimer;
 	int m_iExtraUpkeep; // Leoreth
+	int m_iMadeAttack;
+	int m_iMadeInterception;
 
-	bool m_bMadeAttack;
-	bool m_bMadeInterception;
 	bool m_bPromotionReady;
 	bool m_bDeathDelay;
 	bool m_bCombatFocus;

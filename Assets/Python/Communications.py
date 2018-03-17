@@ -157,4 +157,33 @@ class Communications:
 		return
 
 	def onCityAcquired(self, city):
+		#When AI Egypt captures Jerusalem, go after the owner of Sur if it exists and its owner is not Egypt or a vassal of Egypt
+		if city.getOwner() == iEgypt and utils.getHumanID() != iEgypt and city.getX() == 73 and city.getY() == 38 and gc.getGame().getGameTurnYear() <= -500 and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73,40).getOwner() != iEgypt and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iEgypt) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iEgypt):
+			teamEgypt.declareWar(gc.getMap().plot(73,40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+			return
+
+		if city.getOwner() == iBabylonia and utils.getHumanID() != iBabylonia and city.getX() == 73 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= -300 and gc.getMap().plot(73, 38).isCity() and gc.getMap().plot(73, 38).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isVassal(iBabylonia):
+			teamBabylonia.declareWar(gc.getMap().plot(73,38).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+
+		#When AI Persia captures Akkad
+		if city.getOwner() == iPersia and utils.getHumanID() != iPersia and city.getX() == 76 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= 100:
+			#Go after the owner of Sur if it exists and its owner is not Persia or a Vassal of Persia
+			if gc.getMap().plot(73, 40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iPersia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iPersia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iPersia):
+				teamPersia.declareWar(gc.getMap().plot(73,40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				return
+
+			#Go after the owner of Jerusalem if it exists and its owner is not Persia or a Vassal of Persia
+			elif gc.getMap().plot(73, 38).isCity() and gc.getMap().plot(73, 38).getPlotCity().getOwner() != iPersia and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isAtWar(iPersia) and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isVassal(iPersia):
+				teamPersia.declareWar(gc.getMap().plot(73,38).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				return
+
+		#When AI Persia captures Sur go after the owner of Jerusalem if it exists and its owner is not Persia or a Vassal of Persia
+		if city.getOwner() == iPersia and utils.getHumanID() != iPersia and city.getX() == 73 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= 100 and gc.getMap().plot(73, 38).isCity() and gc.getMap().plot(73, 38).getPlotCity().getOwner() != iPersia and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isAtWar(iPersia) and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isVassal(iPersia):
+				teamPersia.declareWar(gc.getMap().plot(73,38).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				return
+
+		#When AI Persia captures Jerusalem go after the owner of Sur if it exists and its owner is not Persia or a Vassal of Persia
+		if city.getOwner() == iPersia and utils.getHumanID() != iPersia and city.getX() == 73 and city.getY() == 38 and gc.getGame().getGameTurnYear() <= 100 and gc.getMap().plot(73, 40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iPersia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iPersia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iPersia):
+				teamPersia.declareWar(gc.getMap().plot(73,40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				return
 		return

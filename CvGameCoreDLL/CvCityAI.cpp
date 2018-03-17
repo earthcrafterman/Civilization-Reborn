@@ -922,6 +922,14 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
+		
+		if (getX() == 72 && getY() == 44) 
+		{
+			pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_HITTITE_HULUGANNI"), UNITAI_ATTACK, false, false, false);
+			return;
+		}
+
+
 		bChooseUnit = false;
 		if (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") > AI_buildUnitProb())
 		{
@@ -2414,6 +2422,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	switch (getOwnerINLINE())
 	{
 	case EGYPT:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
@@ -2462,6 +2472,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case PERSIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+        aiUnitAIVal[UNITAI_SETTLE] /= 5;
 		break;
 	case ROME:      // leave unit AI unchanged so far
         aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;

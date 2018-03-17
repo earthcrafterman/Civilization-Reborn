@@ -26638,17 +26638,17 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=49, (iIndependent2)
+		CityOwner=50, (iIndependent2)
 		CityName=Mero&#235
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=3
-		Player49Culture=10, (iIndependent)
+		Player50Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -26670,14 +26670,17 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=50, (iIndependent)
+		UnitType=UNIT_MILITIA, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=49, (iIndependent)
 	EndUnit
 	BeginCity
-		CityOwner=50, (iIndependent)
+		CityOwner=49, (iIndependent)
 		CityName=Niwt-Rst
 		CityPopulation=1
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player50Culture=10, (iIndependent)
+		Player49Culture=10, (iIndependent)
 	EndCity
 	TeamReveal=0,
 EndPlot
@@ -28238,17 +28241,23 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
 	EndUnit
 	BeginCity
-		CityOwner=49, (iIndependent)
+		CityOwner=50, (iIndependent)
 		CityName=Yerushalayim
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		CityPopulation=1
-		Player49Culture=20, (iIndependent)
+		Player50Culture=20, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -30535,14 +30544,23 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent)
+		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
 	EndUnit
 	BeginCity
-		CityOwner=50, (iIndependent)
+		CityOwner=49, (iIndependent)
 		CityName=Shushan
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=1
-		Player50Culture=10, (iIndependent)
+		Player49Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot

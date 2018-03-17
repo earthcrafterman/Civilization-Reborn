@@ -1343,7 +1343,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>CHI</Identifier>
-			<StartingYear>-3000</StartingYear>
+			<StartingYear>-1050</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -2562,7 +2562,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>IND</Identifier>
-			<StartingYear>-1500</StartingYear>
+			<StartingYear>-600</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -4486,7 +4486,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
 			<Identifier>PER</Identifier>
-			<StartingYear>-850</StartingYear>
+			<StartingYear>-550</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -5771,7 +5771,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>TAM</Identifier>
-			<StartingYear>-300</StartingYear>
+			<StartingYear>848</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -7353,6 +7353,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_CHARIOT</UnitClassType>
+					<UnitType>UNIT_HITTITE_HULUGANNI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses/>
