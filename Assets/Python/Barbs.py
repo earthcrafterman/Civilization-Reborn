@@ -22,7 +22,7 @@ tMinorCities = (
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
 (-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 2),	# Ankara
-(-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 1),	# Ankara
+(-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
 (-1100, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
 (-1100, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala

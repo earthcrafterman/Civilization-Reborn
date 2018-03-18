@@ -77,6 +77,7 @@ def init():
 lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iMythology]),
+iCivIndependent : 	Techs([iMasonry, iPastoralism]),
 iCivEgypt :	Techs([iMining, iPottery, iPastoralism]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
 iCivChina :	Techs(column=3),

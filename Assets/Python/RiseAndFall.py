@@ -673,15 +673,12 @@ class RiseAndFall:
 
 	def checkTurn(self, iGameTurn):
 
-		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt:
+		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if gc.getGame().getGameTurnYear() == -2000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia:
+		if (gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1200) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
 			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if gc.getGame().getGameTurnYear() == -1200 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia:
-			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
-			
 		if gc.getGame().getGameTurnYear() == -1000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iBabylonia):
 			teamBabylonia.declareWar(gc.getMap().plot(73, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
 
