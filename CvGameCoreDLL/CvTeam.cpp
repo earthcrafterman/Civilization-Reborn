@@ -2762,8 +2762,8 @@ int CvTeam::getCivilizationResearchModifier() const
 				if (Techs >= 45) break;
 			}
 		}
-		if (Techs >= 30 && Techs < 45)  iCivModifier += 15;
-		if (Techs >= 45)				iCivModifier += 25;
+		if (Techs >= 30 && Techs < 45)  iCivModifier += 20;
+		if (Techs >= 45)				iCivModifier += 30;
 	}
 
 	return iCivModifier;
@@ -2885,10 +2885,19 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
+	int iCivsWithTechChina = 0;
 	int iSpreadModifier = 0;
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).canContact(CHINA) && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) iCivsWithTech++;
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) 
+		{
+			iCivsWithTech++;
+
+			if (GET_PLAYER(CHINA).canContact((PlayerTypes)iI))
+			{
+				iCivsWithTechChina++;
+			}
+		}
 	}
 
 	// less than a quarter know it -> more expensive
@@ -2908,40 +2917,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iUpperThreshold = 3 * iLowerThreshold;
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
-	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
-	if (getID() == CHINA)
-	{
-		int Techs = 0;
-
-		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
-			if (isHasTech((TechTypes)iI)) {
-				Techs++;
-				if (Techs < 45) break;
-			}
-		}
-
-		if (Techs < 45 && iSpreadModifier > 0) iSpreadModifier = 0;
-	}
-
 	iModifier += iSpreadModifier;
-
-	//Leoreth: new Chinese UP: techs not known by anyone get -40% cost
-	if (getID() == CHINA)
-	{
-		int Techs = 0;
-
-		for  (int iI = 0; iI < GC.getNumTechInfos(); iI++) {
-			if (isHasTech((TechTypes)iI)) {
-				Techs++;
-				if (Techs >= 45) break;
-			}
-		}
-
-		if (Techs < 45 && iCivsWithTech == 0)
-		{
-			iModifier -= 40;
-		}
-	}
 
 	return iModifier;
 }

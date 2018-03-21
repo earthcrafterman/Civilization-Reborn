@@ -280,7 +280,7 @@ tBirth = (
 650,					# Indonesia
 711,					# Moors
 722, # 193, #718AD			# Spain
-481, # 196, #751AD			# France
+751, # 196, #751AD			# France
 800, # 187, #657AD			# Khmer
 820, # 203, #829AD			# England
 840, # 205, #843AD			# Holy Rome
@@ -1209,7 +1209,7 @@ lTotalWarOnSpawn = [
 [], #India
 [], #Phoenicia
 [], #Polynesia
-[iBabylonia, iCarthage, iIndependent2], #Persia
+[iBabylonia, iIndependent2], #Persia
 [iGreece], #Rome
 [], #Tamils
 [], #Ethiopia

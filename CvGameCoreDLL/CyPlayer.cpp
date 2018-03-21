@@ -2651,3 +2651,8 @@ void CyPlayer::resetGreatPeopleCreated()
 {
 	if (m_pPlayer) m_pPlayer->resetGreatPeopleCreated();
 }
+
+void CyPlayer::changeYieldRateModifier(int iYieldType, int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeYieldRateModifier((YieldTypes)iYieldType, iChange);
+}
