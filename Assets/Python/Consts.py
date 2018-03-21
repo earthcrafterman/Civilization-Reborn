@@ -369,7 +369,7 @@ tFall = (
 2020)					# Israel
 
 dVictoryYears = {
-iCivEgypt : (-850, -100, 170),
+iCivEgypt : (-1000, -100, 170),
 iCivChina : (1000, -1, 1800),
 iCivBabylonia : (-1, -850, -700),
 iCivHarappa : (-1600, -1500, -800),
@@ -584,7 +584,7 @@ tResurrectionIntervals = (
 # Leoreth: tGoals[reborn][iGameSpeed][iCiv][iGoal]
 tGoals1 = (
 ( # Marathon
-("TXT_KEY_UHV_EGY1_MARATHON", "TXT_KEY_UHV_EGY2_MARATHON", "TXT_KEY_UHV_EGY3_MARATHON"),
+("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2_MARATHON", "TXT_KEY_UHV_EGY3_MARATHON"),
 ("TXT_KEY_UHV_CHI1", "TXT_KEY_UHV_CHI2", "TXT_KEY_UHV_CHI3"),
 ("TXT_KEY_UHV_BAB1", "TXT_KEY_UHV_BAB2_MARATHON", "TXT_KEY_UHV_BAB3_MARATHON"),
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
@@ -635,7 +635,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_ISR1", "TXT_KEY_UHV_ISR2", "TXT_KEY_UHV_ISR3"),
 ),
 ( # Epic
-("TXT_KEY_UHV_EGY1_EPIC", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
+("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
 ("TXT_KEY_UHV_CHI1", "TXT_KEY_UHV_CHI2", "TXT_KEY_UHV_CHI3"),
 ("TXT_KEY_UHV_BAB1", "TXT_KEY_UHV_BAB2_EPIC", "TXT_KEY_UHV_BAB3_EPIC"),
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
@@ -1153,9 +1153,9 @@ lEnemyCivsOnSpawn = [
 [], #Harappa
 [iCeltia], #Greece
 [], #India
-[iCeltia], #Carthage
+[iCeltia, iCeltia, iBabylonia, iBabylonia, iEgypt, iEgypt], #Carthage
 [], #Polynesia
-[iBabylonia,iCarthage,iEgypt,iIndependent2], #Persia
+[iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage,iEgypt,iIndependent2], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [iCeltia], # rome for testing
 [], #Tamils
@@ -1209,7 +1209,7 @@ lTotalWarOnSpawn = [
 [], #India
 [], #Phoenicia
 [], #Polynesia
-[iBabylonia, iCarthage], #Persia
+[iBabylonia, iCarthage, iIndependent2], #Persia
 [iGreece], #Rome
 [], #Tamils
 [], #Ethiopia

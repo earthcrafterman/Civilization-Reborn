@@ -13840,6 +13840,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 
 			pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eTrainUnit, getX_INLINE(), getY_INLINE(), eTrainAIUnit);
+			
 			FAssertMsg(pUnit != NULL, "pUnit is expected to be assigned a valid unit object");
 
 			pUnit->finishMoves();
@@ -14705,9 +14706,6 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		{
 			AI_chooseProduction();
 			
-			if (getOwner() == BARBARIAN && getX() == 72 && getY() == 44)
-				pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_HITTITE_HULUGANNI"), UNITAI_ATTACK, false, false, false);
-
 			if (getOwner() == POLYNESIA && !isHuman())
 			{
 				if (plot()->getNumDefenders(getOwnerINLINE()) == 0)

@@ -1457,37 +1457,42 @@ def checkResurrection(iGameTurn):
 	for iLoopCiv in range(iNumPlayers):
 		if utils.canRespawn(iLoopCiv):
 			lPossibleResurrections.append(iLoopCiv)
-			
+
 	# higher respawn chance for civs whose entire core is controlled by minor civs
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
+		iAddRoll = 0
+
 		if gc.getGame().getGameTurn() - data.players[iLoopCiv].iLastTurnAlive < utils.getTurns(15):
 			continue
-	
+ 
 		for city in utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)):
-			if city.getOwner() not in [iIndependent, iIndependent2, iNative, iBarbarian]:
-				break
-		else:
+			if city.getOwner() in [iIndependent, iIndependent2, iNative, iBarbarian]:
+				iAddRoll += 1
+
+		iMaxCities = len(utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)))
+
+		if iAddRoll == iMaxCities:
 			lCityList = getResurrectionCities(iLoopCiv)
 			if lCityList:
 				doResurrection(iLoopCiv, lCityList)
-				return
-				
-	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
+				continue
+		else:
+			iAddRoll = iAddRoll * 100 / iMaxCities
+
 		iMinNumCities = 2
-		
+
 		# special case Netherlands: need only one city to respawn (Amsterdam)
 		if iLoopCiv == iNetherlands:
 			iMinNumCities = 1
-					
-		iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
+
+		iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll') - (iAddRoll / 2)
 		if iRespawnRoll - iNationalismModifier + 10 < tResurrectionProb[iLoopCiv]:
 			#print 'Passed respawn roll'
 			lCityList = getResurrectionCities(iLoopCiv)
 			if len(lCityList) >= iMinNumCities:
 				#print 'Enough cities -> doResurrection()'
 				doResurrection(iLoopCiv, lCityList)
-				return
-						
+
 def getResurrectionCities(iPlayer, bFromCollapse = False):
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)

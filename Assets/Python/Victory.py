@@ -18,6 +18,16 @@ localText = CyTranslator()
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
 lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
+#second Egyptian goal: Control the Levant, Lower Egypt, and Nubia by 1500 AD and the Levant, Lower Egypt, Nubia, and Eastern Anatolia in 1000 AD
+tLevantTL = (73, 37)
+tLevantBR = (74, 41)
+tLowerEgyptTL = (68, 32)
+tLowerEgyptBR = (70, 34)
+tNubiaTL = (68, 29)
+tNubiaBR = (70, 31)
+tEasternAnatoliaTL = (71, 43)
+tEasternAnatoliaBR = (73, 45)
+
 #second greek goal: colonize Occitania and Catalonia, South Italy and Black sea
 tOccitaniaAndCataloniaTL = (54, 42)
 tOccitaniaAndCataloniaBR = (57, 46)
@@ -299,10 +309,13 @@ def checkTurn(iGameTurn, iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 
 	if iPlayer == iEgypt:
-
-		# first goal: have 500 culture in 850 BC
-		if iGameTurn == getTurnForYear(-850):
-			if pEgypt.countTotalCulture() >= utils.getTurns(500):
+		#second Egyptian goal: Control the Levant, Lower Egypt, Nubia, and Eastern Anatolia in 1000 AD
+		if iGameTurn == getTurnForYear(-1000):
+			bLevant = isControlledOrVassalized(iEgypt, utils.getPlotList(tLevantTL, tLevantBR), True)
+			bLowerEgypt = isControlledOrVassalized(iEgypt, utils.getPlotList(tLowerEgyptTL, tLowerEgyptBR), True)
+			bNubia = isControlledOrVassalized(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR), True)
+			bEasternAnatolia = isControlledOrVassalized(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR), True)
+			if bLevant and bLowerEgypt and bNubia and bEasternAnatolia:
 				win(iEgypt, 0)
 			else:
 				lose(iEgypt, 0)
@@ -2699,13 +2712,13 @@ def isControlled(iPlayer, lPlots):
 
 	return iPlayer in lOwners and len(lOwners) == 1
 
-def isControlledOrVassalized(iPlayer, lPlots):
+def isControlledOrVassalized(iPlayer, lPlots, bIncludeIndependents = False):
 	bControlled = False
 	lOwners = []
 	lValidOwners = [iPlayer]
 	for city in utils.getAreaCities(lPlots):
 		iOwner = city.getOwner()
-		if iOwner not in lOwners and iOwner < iNumPlayers:
+		if iOwner not in lOwners and (bIncludeIndependents or (not bIncludeIndependents and iOwner < iNumPlayers)):
 			lOwners.append(iOwner)
 	for iLoopPlayer in range(iNumPlayers):
 		if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
@@ -3553,8 +3566,18 @@ def getUHVHelp(iPlayer, iGoal):
 
 	if iPlayer == iEgypt:
 		if iGoal == 0:
-			iCulture = pEgypt.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+			bLevant = False
+			bLowerEgypt = False
+			bNubia = False
+			bEasternAnatolia = False
+			
+			
+			bLevant = isControlledOrVassalized(iEgypt, utils.getPlotList(tLevantTL, tLevantBR), True)
+			bLowerEgypt = isControlledOrVassalized(iEgypt, utils.getPlotList(tLowerEgyptTL, tLowerEgyptBR), True)
+			bNubia = isControlledOrVassalized(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR), True)
+			bEasternAnatolia = isControlledOrVassalized(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR), True)
+
+			aHelp.append(getIcon(bLowerEgypt) + localText.getText("TXT_KEY_VICTORY_LOWER_EGYPT", ()) + ' ' + getIcon(bNubia) + localText.getText("TXT_KEY_VICTORY_NUBIA", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()) + ' ' + getIcon(bEasternAnatolia) + localText.getText("TXT_KEY_VICTORY_EASTERN_ANATIOLIA", ()))
 		elif iGoal == 1:
 			bPyramids = data.getWonderBuilder(iPyramids) == iEgypt
 			bLibrary = data.getWonderBuilder(iGreatLibrary) == iEgypt

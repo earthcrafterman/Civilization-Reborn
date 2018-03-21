@@ -530,32 +530,20 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1_TITLE</Tag>
-		<English>Valley of Kings</English>
+		<English>The 19th Dynasty</English>
 		<German>Tal der K&#246;nige</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1</Tag>
-		<English>Have more than 500 Culture in 850 BC</English>
-		<French>Avoir plus de 500 en Culture en 850 av. J.-C.</French>
-		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 500 Kulturpunkte</German>
-		<Italian>Devi avere pi&#249; di 500 cultura nel 850 a.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 500 en el 850 a. C.</Spanish>
+		<English>Control Lower Egypt, Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1_EPIC</Tag>
-		<English>Have more than 750 Culture in 850 BC</English>
-		<French>Avoir plus de 750 en Culture en 850 av. J.-C.</French>
-		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 750 Kulturpunkte</German>
-		<Italian>Devi avere pi&#249; di 750 cultura nel 850 a.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 750 en el 850 a. C.</Spanish>
+		<English>Control Lower Egypt, Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1_MARATHON</Tag>
-		<English>Have more than 1500 Culture in 850 BC</English>
-		<French>Avoir plus de 1500 en Culture en 850 av. J.-C.</French>
-		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 1500 Kulturpunkte</German>
-		<Italian>Devi avere pi&#249; di 1500 cultura nel 850 a.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 1500 en el 850 a. C.</Spanish>
+		<English>Control Lower Egypt, Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY2_TITLE</Tag>
@@ -3236,5 +3224,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_COLOSSEUM</Tag>
 		<English>Colosseum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LOWER_EGYPT</Tag>
+		<English>Lower Egypt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUBIA</Tag>
+		<English>Nubia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LEVANT</Tag>
+		<English>The Levant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EASTERN_ANATIOLIA</Tag>
+		<English>Eastern Anatolia</English>
 	</TEXT>
 </Civ4GameText>

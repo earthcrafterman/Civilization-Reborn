@@ -676,7 +676,7 @@ class RiseAndFall:
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if (gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1200) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
+		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
 			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		if gc.getGame().getGameTurnYear() == -1000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iBabylonia):
@@ -1826,7 +1826,7 @@ class RiseAndFall:
 
 			if iCultureChange > 0:
 				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
-				utils.ensureDefenders(iPlayer, (x, y), 2)
+				utils.ensureDefenders(iPlayer, (x, y), 4)
 				iConvertedCitiesCount += 1
 
 		self.warOnSpawn(iPlayer, lEnemies)
