@@ -30,9 +30,8 @@ tMinorCities = (
 (-733, (61, 40), iGreece, 'Syrakousai', 2, -1, -1),		# Magna Graecia
 (-650, (90, 37), iIndependent, 'Ujjain', 2, iMilitia, 1),	# Avanti
 (-550, (82, 38), iPersia, 'Parsa', 1, iArcher, 2),	# Parsa
-(-550, (95, 37), iIndependent, 'Tosali', 2, iWarElephant, 1),	# Kalinga
+(-550, (95, 37), iIndependent2, 'Tosali', 2, iArcher, 2),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
-(-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 2),	# Delhi
 (-550, (81, 34), iPersia, 'Kryptos Limen', 2, iArcher, 2),	# Musqat
 (-495, (105, 43), iIndependent2, 'Yuecheng', 1, iArcher, 2), 	# Nanjing
 (-350, (72, 48), iGreece, 'Chersonesos', 2, iArcher, 2),	# Crimaia
