@@ -2533,7 +2533,6 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iSettler, iCiv, tPlot, 4)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 4)
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 2)
@@ -2552,7 +2551,8 @@ class RiseAndFall:
 				#utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				#utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 		elif iCiv == iPersia:
-			utils.createSettlers(iCiv, 3)
+			utils.makeUnit(iSettler, iCiv, tPlot, 1)
+			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 6)
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
