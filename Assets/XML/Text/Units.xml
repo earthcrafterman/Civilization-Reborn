@@ -1682,18 +1682,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_ESCORT</Tag>
-		<English>Escort</English>
+		<English>Escort Ships</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_TRANSPORT</Tag>
-		<English>Transport</English>
+		<English>Transport Ships</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_CAPITAL</Tag>
-		<English>Capital</English>
+		<English>Capital Ships</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_RAIDER</Tag>
-		<English>Raider</English>
+		<English>Raider Ships</English>
 	</TEXT>
 </Civ4GameText>
