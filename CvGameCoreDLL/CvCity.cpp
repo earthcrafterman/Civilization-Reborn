@@ -17427,6 +17427,11 @@ int CvCity::getBestYieldAvailable(YieldTypes eYield) const
 
 bool CvCity::isAutoRaze() const
 {
+	if (GC.getGameINLINE().getGameTurnYear() < -1000)
+	{
+		return false;
+	}
+
 	// Leoreth: don't raze holy cities
 	if (isHolyCity())
 	{

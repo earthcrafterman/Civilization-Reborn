@@ -16426,7 +16426,19 @@
 			<UnitName/>
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
-					<UnitCombat>UNITCOMBAT_NAVAL</UnitCombat>
+					<UnitCombat>UNITCOMBAT_TRANSPORT</UnitCombat>
+					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_ESCORT</UnitCombat>
+					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_CAPITAL</UnitCombat>
+					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_RAIDER</UnitCombat>
 					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>
@@ -16609,7 +16621,19 @@
 			<UnitName/>
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
-					<UnitCombat>UNITCOMBAT_NAVAL</UnitCombat>
+					<UnitCombat>UNITCOMBAT_TRANSPORT</UnitCombat>
+					<UnitPromotion>PROMOTION_NAVIGATION1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_ESCORT</UnitCombat>
+					<UnitPromotion>PROMOTION_NAVIGATION1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_CAPITAL</UnitCombat>
+					<UnitPromotion>PROMOTION_NAVIGATION1</UnitPromotion>
+				</UnitCombatPromotion>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_RAIDER</UnitCombat>
 					<UnitPromotion>PROMOTION_NAVIGATION1</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>

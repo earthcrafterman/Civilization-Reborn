@@ -4486,7 +4486,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
 			<Identifier>PER</Identifier>
-			<StartingYear>-550</StartingYear>
+			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>

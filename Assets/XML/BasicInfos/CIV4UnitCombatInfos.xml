@@ -52,8 +52,23 @@
 			<Button>,Art/Interface/Buttons/Promotions/Helicopter_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,7</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
-			<Type>UNITCOMBAT_NAVAL</Type>
-			<Description>TXT_KEY_UNITCOMBAT_NAVAL</Description>
+			<Type>UNITCOMBAT_ESCORT</Type>
+			<Description>TXT_KEY_UNITCOMBAT_ESCORT</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_CAPITAL</Type>
+			<Description>TXT_KEY_UNITCOMBAT_CAPITAL</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_TRANSPORT</Type>
+			<Description>TXT_KEY_UNITCOMBAT_TRANSPORT</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_RAIDER</Type>
+			<Description>TXT_KEY_UNITCOMBAT_RAIDER</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>

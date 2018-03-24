@@ -266,7 +266,7 @@ tBirth = (
 -600, # 0, #3000BC			# India
 -1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
 -1000,					# Polynesia
--550, # 84, #844BC			# Persia
+-850, # 84, #844BC			# Persia
 -753, # 90, #753BC			# Rome
 848,					# Tamils
 100, # 121, #300BC			# Ethiopia

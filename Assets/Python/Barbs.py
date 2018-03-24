@@ -28,7 +28,7 @@ tMinorCities = (
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
 (-733, (61, 40), iGreece, 'Syrakousai', 2, -1, -1),		# Magna Graecia
-(-650, (90, 37), iIndependent2, 'Ujjain', 2, iMilitia, 1),	# Avanti
+(-650, (90, 37), iIndependent, 'Ujjain', 2, iMilitia, 1),	# Avanti
 (-550, (82, 38), iPersia, 'Parsa', 1, iArcher, 2),	# Parsa
 (-550, (95, 37), iIndependent, 'Tosali', 2, iWarElephant, 1),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
@@ -36,9 +36,9 @@ tMinorCities = (
 (-550, (81, 34), iPersia, 'Kryptos Limen', 2, iArcher, 2),	# Musqat
 (-495, (105, 43), iIndependent2, 'Yuecheng', 1, iArcher, 2), 	# Nanjing
 (-350, (72, 48), iGreece, 'Chersonesos', 2, iArcher, 2),	# Crimaia
-(-325, (92, 33), iIndependent, 'Kanchipuram', 2, iWarElephant, 2),	# Madras
+(-325, (92, 33), iIndependent2, 'Kanchipuram', 2, iWarElephant, 2),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, -1, -1),	# Shenyang
-(-300, (91, 30), iIndependent, 'Tanjapuri', 3, iWarElephant, 3),	# Thanjavur
+(-300, (91, 30), iIndependent2, 'Tanjapuri', 3, iWarElephant, 3),	# Thanjavur
 (-281, (75, 44), iBarbarian, 'Trapezon', 2, iChariot, 5),	# Pontic Kingdom
 (-257, (101, 37), iIndependent2, 'Co Loa', 2, iWarElephant, 1), 	# Hanoi
 (-214, (105, 39), iIndependent2, 'Panyu', 2, iAxeman, 2), 	# Guangzhou

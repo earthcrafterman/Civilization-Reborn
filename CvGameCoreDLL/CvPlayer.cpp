@@ -11004,6 +11004,9 @@ void CvPlayer::changeAssets(int iChange)
 
 int CvPlayer::getPower() const
 {
+	if (getID() > NUM_MAJOR_PLAYERS)
+		m_iPower / (getNumCities() / 2);
+	
 	return m_iPower;
 }
 

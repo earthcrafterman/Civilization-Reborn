@@ -1826,7 +1826,19 @@
 			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
-					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_TRANSPORT</UnitCombatType>
+					<iExperience>4</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_ESCORT</UnitCombatType>
+					<iExperience>4</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_CAPITAL</UnitCombatType>
+					<iExperience>4</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_RAIDER</UnitCombatType>
 					<iExperience>4</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
@@ -11221,7 +11233,19 @@
 			</BonusProductionModifiers>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
-					<UnitCombatType>UNITCOMBAT_NAVAL</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_TRANSPORT</UnitCombatType>
+					<iExperience>5</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_ESCORT</UnitCombatType>
+					<iExperience>5</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_CAPITAL</UnitCombatType>
+					<iExperience>5</iExperience>
+				</UnitCombatFreeExperience>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_RAIDER</UnitCombatType>
 					<iExperience>5</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>

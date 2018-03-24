@@ -1680,4 +1680,20 @@
 		<Tag>TXT_KEY_UNIT_RABBIT_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Rabbits[COLOR_REVERT] are Barbarian units that spawn in Australia from 1860 AD.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_ESCORT</Tag>
+		<English>Escort</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_TRANSPORT</Tag>
+		<English>Transport</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_CAPITAL</Tag>
+		<English>Capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_RAIDER</Tag>
+		<English>Raider</English>
+	</TEXT>
 </Civ4GameText>
