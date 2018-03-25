@@ -1844,6 +1844,9 @@ public:
 	int getSpecialistYieldChange(int i, int j) const;			// Exposed to Python
 	int* getSpecialistYieldChangeArray(int i) const;
 
+	int getSpecialistHealthChange(int i) const;			// Exposed to Python
+	int* getSpecialistHealthChangeArray() const;
+
 	int getBonusYieldModifier(int i, int j) const;				// Exposed to Python
 	int* getBonusYieldModifierArray(int i) const;
 
@@ -2052,6 +2055,7 @@ protected:
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;
 	bool* m_pbBuildingClassNeededInCity;
+	int*  m_paiSpecialistHealthChange;
 
 	int** m_ppaiSpecialistYieldChange;
 	int** m_ppaiBonusYieldModifier;

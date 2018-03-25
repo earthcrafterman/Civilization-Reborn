@@ -7328,6 +7328,7 @@ m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
 m_ppaiSpecialistYieldChange(NULL),
+m_paiSpecialistHealthChange(NULL), //1SDAN
 m_ppaiBonusYieldModifier(NULL),
 m_ppaiBonusCommerceModifier(NULL), //Leoreth
 m_ppaiBonusYieldChange(NULL) //Leoreth
@@ -7384,6 +7385,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_piImprovementHappinessPercent); // Leoreth
 	SAFE_DELETE_ARRAY(m_piImprovementHealthPercent); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiSpecialistHealthChange); //1SDAN
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -8446,6 +8448,18 @@ int* CvBuildingInfo::getSpecialistYieldChangeArray(int i) const
 	return m_ppaiSpecialistYieldChange[i];
 }
 
+int CvBuildingInfo::getSpecialistHealthChange(int i) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_paiSpecialistHealthChange ? m_paiSpecialistHealthChange[i] : -1;
+}
+
+int* CvBuildingInfo::getSpecialistHealthChangeArray() const
+{
+	return m_paiSpecialistHealthChange;
+}
+
 int CvBuildingInfo::getBonusYieldModifier(int i, int j) const
 {
 	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
@@ -8870,6 +8884,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_pbBuildingClassNeededInCity = new bool[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_pbBuildingClassNeededInCity);
 
+	SAFE_DELETE_ARRAY(m_paiSpecialistHealthChange);
+	m_paiSpecialistHealthChange = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistHealthChange);
+
 	int i;
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -9117,6 +9135,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceFlexible);
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceChangeOriginalOwner);
 	stream->Write(GC.getNumBuildingClassInfos(), m_pbBuildingClassNeededInCity);
+	stream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistHealthChange);
 
 	int i;
 	for(i=0;i<GC.getNumSpecialistInfos();i++)
@@ -9665,6 +9684,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	// Leoreth
 	pXML->SetVariableListTagPair(&m_piPrereqBuildingClassPercent, "PrereqBuildingClassPercents", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
+	
+	// 1SDAN
+	pXML->SetVariableListTagPair(&m_paiSpecialistHealthChange, "SpecialistHealthChanges", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 
 	pXML->Init2DIntList(&m_ppaiSpecialistYieldChange, GC.getNumSpecialistInfos(), NUM_YIELD_TYPES);
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"SpecialistYieldChanges"))
