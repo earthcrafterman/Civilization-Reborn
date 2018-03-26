@@ -47,7 +47,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_CHINA_LATE</Tag>
-		<English>It is the year 600 AD. After the Han Dynasty had collapsed, civil war between the Chinese kingdoms ensued. Only 11 years ago Emperor Wen of Sui managed to reunite China and reclaim the Mandate of Heaven. But the power of the Sui Dynasty is not completely consolidated, and the old challenges of China remain.</English>
+		<English>It is the year 300 AD. Jin dynasty managed to reach a great extend, but the clouds of previous civil war are still visible. The power of the Jin Dynasty is not completely consolidated, and the old challenges of China remain.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_CHINA_1700AD</Tag>
@@ -113,6 +113,10 @@
 		<Tag>TXT_KEY_DOM_INDIA</Tag>
 		<English>It is the year 600 BC. The vedic period of Mahajanapadas is getting over as the kingdoms of Avanti, Panchala and Magadha emerge. Magadha princes aspire to transform India into the religious and spiritual center of the world.</English>
 	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_DOM_INDIA_LATE</Tag>
+		<English>It is the year 300 AD. Gupta empire has established control over shrines of Hinduism and Jainism. Guptas aspire to reunite Indian subcontinent, but they aren't the only center of power in the area.</English>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_INDIA_1700AD</Tag>
 		<English>It is the year 1700 AD. Sixteen years ago, Shivaji Bhosle has established the Maratha Kingdom, the first Hindu state to challenge Mughal hegemony over Northern India. With Mughal power declining, now is the time to break Muslim domination of the subcontinent for good.</English>
@@ -147,7 +151,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_LATE</Tag>
-		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
+		<English>It is the year 300 AD. Kingdom of Goguryeo is in decline, but the three Korean kingdoms still thrive. A new dynasty is emerging aiming to reclaim Manchuria, and protect Korean independence from China.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_1700AD</Tag>
@@ -190,6 +194,10 @@
 		<English>It is the year 860 BC. The war-like Iranian peoples inhabit the Iranian plateau for centuries, but it isn't particularly wealthy. The rich neighbors in India and Mesopotamia are in chaos of their civil wars giving a great opportunity to conquer and consolidate our power over them.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_PERSIA_LATE</Tag>
+		<English>It is the year 300 AD. Sassanid dynasty has managed to secure control over central Asia, India and Arabia, but the western border is threatened. Persia and Rome have fought endless wars of considerable military and economic cost over their border dispute. Capital has been moved near the border in an attempt to gain the decisive advantage.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_PERSIA_1700AD</Tag>
 		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
 	</TEXT>
@@ -220,6 +228,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ROME</Tag>
 		<English>It is the year 753 BC. Military discipline and a superior political system make Rome the only city in Italy that can stand against Carthaginian expansionism. It is the starting point for a series of campaigns to gain wealth and glory over Italy, Carthage, Mediterranean and beyond.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ROME_LATE</Tag>
+		<English>It is the year 300 AD. The crisis of 3rd century has destabilized the empire and it economy. Gallic and Palmyrene empires have been crashed. However, the empire is fragile, vulnerable to external threats and new secessions seem inevitable.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_RUSSIA</Tag>

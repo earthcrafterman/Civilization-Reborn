@@ -227,7 +227,8 @@ def isImmune(iPlayer):
 		
 	# immune right after scenario start
 	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
-		return True
+		if iPlayer == iPersia:
+			return True
 		
 	# immune right after birth
 	if iGameTurn - getTurnForYear(tBirth[iPlayer]) < utils.getTurns(20):
@@ -355,6 +356,10 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 		if iNewStabilityLevel < iStabilityLevel:
 			data.setStabilityLevel(iPlayer, iNewStabilityLevel)
+			
+	# Chinese UP: +10% commerce per stability level
+	if iPlayer == iChina:
+		pPlayer.changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, 10 * (iNewStabilityLevel - iStabilityLevel))
 		
 	# update stability information
 	data.players[iPlayer].iLastStability = iStability
@@ -497,7 +502,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			if gc.getGame().getGameTurn() - data.players[iLoopPlayer].iLastTurnAlive < utils.getTurns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
-			if iPlayer == iArabia and iLoopPlayer == iEgypt: continue
+			#if iPlayer == iArabia and iLoopPlayer == iEgypt: continue
 
 			if tCityPlot in Areas.getRespawnArea(iLoopPlayer):
 				bPossible = False
@@ -583,8 +588,8 @@ def completeCollapse(iPlayer):
 	data.players[iPlayer].iLastTurnAlive = gc.getGame().getGameTurn()
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
-	if iPlayer == iByzantium:
-		utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
+	#if iPlayer == iByzantium:
+	#	utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
 		
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:
@@ -1716,6 +1721,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 	elif iPlayer == iIndia:
 		utils.setReborn(iIndia, gc.getGame().getGameTurn() < getTurnForYear(1900))
+		
+	elif iPlayer == iArabia:
+		utils.setReborn(iArabia, True)
 	
 		
 	# others revert to their old cores instead

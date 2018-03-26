@@ -356,4 +356,8 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_CIV_CHINA_JIN</Tag>
+		<English>Jin</English>
+	</TEXT>
 </Civ4GameText>

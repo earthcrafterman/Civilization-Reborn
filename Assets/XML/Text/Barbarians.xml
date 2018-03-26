@@ -593,4 +593,8 @@
 		<Tag>TXT_KEY_MERCENARY_ZULU</Tag>
 		<English>Zulu</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_LOMBARD</Tag>
+		<English>Lombard</English>
+	</TEXT>
 </Civ4GameText>

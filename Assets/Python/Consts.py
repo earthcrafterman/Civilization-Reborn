@@ -508,7 +508,7 @@ tResurrectionIntervals = (
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [(0, 800)], #Maya
-[(1100, 1280)], #Byzantium
+[(1100, 1453)], #Byzantium
 [(1800, 2020)], #Japan
 [(1520, 2020)], #Vikings
 [(1900, 2020)], #Arabia
@@ -916,10 +916,10 @@ iCanada		:	"TXT_KEY_DOM_CANADA",
 
 dawnOfMan600AD = {
 iChina		:	"TXT_KEY_DOM_CHINA_LATE",
-iJapan		:	"TXT_KEY_DOM_JAPAN_LATE",
-iKorea		:	"TXT_KEY_DOM_KOREA_LATE",
-iByzantium	:	"TXT_KEY_DOM_BYZANTIUM_LATE",
-iVikings	:	"TXT_KEY_DOM_VIKINGS_LATE",
+iIndia 		:	"TXT_KEY_DOM_INDIA_LATE",
+iPersia 	:	"TXT_KEY_DOM_PERSIA_LATE",
+iRome 		:	"TXT_KEY_DOM_ROME_LATE",
+iKorea		:	"TXT_KEY_DOM_KOREA_LATE"
 }
 
 dawnOfMan1700AD = {
@@ -1038,7 +1038,9 @@ tStartingGold = (
 
 dExtraGold600AD = {
 iChina : 300,
-iJapan : 200,
+iRome : -200,
+iPersia : 300,
+iIndia : 100,
 iIndependent : 50,
 iIndependent2 : 50,
 iNative : 200,
@@ -1654,7 +1656,7 @@ iVictorySecularism = 11
 
 #leaders
 
-iNumLeaders = 121
+iNumLeaders = 122
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
 iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
 iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
@@ -1667,7 +1669,7 @@ iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandrag
 iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, 
 iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, 
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge) = range(iNumLeaders)
+iGeorge, iKhosrow) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
