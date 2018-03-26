@@ -8253,7 +8253,13 @@ void CvCity::changeTradeRouteModifier(int iChange)
 
 int CvCity::getForeignTradeRouteModifier() const
 {
-	return m_iForeignTradeRouteModifier;
+	int iResult = m_iForeignTradeRouteModifier;
+	
+	// Merijn - Swahili UP: the power of sea trade, +100% foreign trade route yield.
+	if (getOwner() == SWAHILI)
+		iResult += 100;
+	
+	return iResult;
 }
 
 void CvCity::changeForeignTradeRouteModifier(int iChange)

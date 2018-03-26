@@ -2697,5 +2697,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SWAHILI_ZIARA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Ziara/Ziara.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Ziara/Ziara_Button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

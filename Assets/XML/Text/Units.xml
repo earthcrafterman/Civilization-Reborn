@@ -1576,4 +1576,16 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW</Tag>
+		<English>Dhow</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dhow[COLOR_REVERT], the Swahili replacement for the the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], provides gold when stationed in foreign coastal cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_HELP</Tag>
+		<English>[ICON_BULLET]2 [ICON_GOLD] when stationed in a foreign coastal city (max one unit per city)</English>
+	</TEXT>
 </Civ4GameText>

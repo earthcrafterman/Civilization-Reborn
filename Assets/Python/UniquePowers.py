@@ -64,6 +64,9 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
+
+		if iGameTurn >= getTurnForYear(tBirth[iSwahili]) and pSwahili.isAlive():
+			self.swahiliDhow()
 		
 		data.bBabyloniaTechReceived = False
 					
@@ -570,3 +573,25 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
+
+	# Swahili Dhow, 2 gold for each foreign city with a Dhow in it
+	def swahiliDhow(self):
+		unitList = PyPlayer(iSwahili).getUnitsOfType(iDhow)
+		if unitList:
+			iCount = 0
+			lCities = []
+			for unit in unitList:
+				x = unit.getX()
+				y = unit.getY()
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity():
+					city = plot.getPlotCity()
+					if city.getOwner() != iSwahili and city.isCoastal(5) and (x, y) not in lCities:
+						iCount += 1
+						lCities.append((x, y))
+			if iCount > 0:
+				iGold = 2 * iCount
+				pSwahili.changeGold(iGold)
+				data.iSwahiliTradeGold += iGold
+				if utils.getHumanID() == iSwahili:
+					CyInterface().addMessage(iSwahili, False, iDuration, CyTranslator().getText("TXT_KEY_SWAHILI_DHOW_GOLD", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

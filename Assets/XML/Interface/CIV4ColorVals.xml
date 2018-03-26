@@ -1162,5 +1162,26 @@
 			<fBlue>0.75</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_GREENBLUE</Type>
+			<fRed>0.00</fRed>
+			<fGreen>0.50</fGreen>
+			<fBlue>0.25</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_GREENBLUE_TEXT</Type>
+			<fRed>0.00</fRed>
+			<fGreen>0.50</fGreen>
+			<fBlue>0.25</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_MOSS</Type>
+			<fRed>0.65</fRed>
+			<fGreen>0.80</fGreen>
+			<fBlue>0.45</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

@@ -538,4 +538,16 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SHIRAZI</Tag>
+		<English>Shirazi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DAWUD</Tag>
+		<English>Dawud</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BARGHASH</Tag>
+		<English>Barghash</English>
+	</TEXT>
 </Civ4GameText>

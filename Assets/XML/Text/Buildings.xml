@@ -1423,4 +1423,12 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA</Tag>
+		<English>Ziara</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ziara[COLOR_REVERT], the Swahili replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants one free trade route.</English>
+	</TEXT>
 </Civ4GameText>

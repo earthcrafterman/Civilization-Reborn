@@ -71,6 +71,10 @@
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
+		<DefineName>PLAYER_OCCURRENCE_SWAHILI</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
+	<Define>
 		<DefineName>PLAYER_OCCURRENCE_ARGENTINA</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>

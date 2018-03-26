@@ -341,6 +341,8 @@ class Barbs:
 		elif sName == 'Hamburg' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 == 0): return False
 		elif sName == 'L&#252;beck' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 != 0): return False
 		elif sName == 'Rasa' and gc.getPlayer(iTibet).isAlive(): return False
+		elif sName == 'Quelimane' and gc.getPlayer(iSwahili).isAlive(): return False
+		elif sName == 'Mombasa' and gc.getPlayer(iSwahili).isAlive(): return False
 		#elif sName == 'Marrakus' and utils.getScenario() != i3000BC: return False
 		
 		return True

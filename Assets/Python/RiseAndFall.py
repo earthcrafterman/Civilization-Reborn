@@ -2410,6 +2410,9 @@ class RiseAndFall:
 		elif iCiv == iNetherlands:
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
 			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
+		elif iCiv == iSwahili:
+			utils.makeUnit(iSpearman, iCiv, 3)
+			utils.makeUnit(iSwordsman, iCiv, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 4)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2703,6 +2706,14 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iLongbowman, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iCaravel, iCiv, tSeaPlot, 2)
+		elif iCiv == iSwahili:
+			utils.createSettlers(iCiv, 3)
+			utils.makeUnit(iArcher, iCiv, tPlot, 5)
+			utils.createMissionaries(iCiv, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iGalley, iCiv, tSeaPlot, 2)
 		elif iCiv == iMali:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 5)
@@ -2962,7 +2973,9 @@ class RiseAndFall:
 		elif iCiv == iRussia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iNetherlands:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3) 
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iSwahili:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iPoland:
@@ -3214,6 +3227,13 @@ class RiseAndFall:
 				data.setPlayerEnabled(iBrazil, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
 				data.setPlayerEnabled(iBrazil, False)
+				
+		if iHuman not in [iCongo, iEthiopia, iArabia]:
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_SWAHILI")
+			if iRand <= 0:
+				data.setPlayerEnabled(iSwahili, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Swahili enabled?') != 0:
+				data.setPlayerEnabled(iSwahili, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []
