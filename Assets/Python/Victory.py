@@ -131,6 +131,10 @@ tMediterraneanExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,
 # first Incan goal: build five Tambos and a road along the Andean coast by 1500 AD
 lAndeanCoast = [(25, 29), (24, 28), (24, 27), (24, 26), (24, 25), (25, 24), (25, 23), (26, 22), (27, 21), (28, 20), (29, 19), (30, 18), (30, 17), (30, 16), (30, 15), (30, 14)]
 
+# first Swedish goal: Control the Baltic Coast, the Kattegat and the Skagerak in 1700 AD
+lSkagerrak = [(59, 57), (59, 56), (60, 56), (62, 56), (62, 57), (61, 58), (61, 59), (60, 59), (59, 59)]
+lBalticSea = [(59, 56), (59, 55), (60, 56), (59, 54), (60, 54), (61, 54), (62, 54), (63, 54), (64, 54), (65, 54), (65, 55), (65, 56), (66, 56), (66, 57), (67, 57), (68, 57), (69, 57), (69, 58), (69, 59), (68, 59), (67, 59), (66, 59), (66, 60), (66, 61), (66, 62), (65, 62), (64, 62), (64, 61), (63, 61), (63, 60), (63, 59), (63, 58), (63, 57), (62, 56), (62, 57)]
+
 # third Incan goal: control 60% of South America in 1700 AD
 # second Colombian goal: control South America in 1920 AD
 tSAmericaTL = (24, 3)
@@ -234,6 +238,7 @@ def setup():
 		win(iJapan, 0)
 		win(iFrance, 0)
 		win(iCongo, 0)
+		win(iSweden, 0)
 		
 		# French goal needs to be winnable
 		data.setWonderBuilder(iNotreDame, iFrance)
@@ -1252,6 +1257,35 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iCongo, 1)
 			
 		# third goal: enter the Industrial Era before anyone enters the Modern Era
+		
+	elif iPlayer == iSweden:
+		# first goal: Control the Baltic Coast, the Kattegat and the Skagerak by 1700 AD
+		if iGameTurn == getTurnForYear(1700):
+			bSkagerrak = isCultureControlled(iSweden, lSkagerrak)
+			bBalticSea = isCultureControlled(iSweden, lBalticSea)
+			if bSkagerrak and bBalticSea:
+				win(iSweden, 0)
+		
+		if iGameTurn == getTurnForYear(1700):
+			expire(iSweden, 0)
+			
+		# second goal: Control 7 fur resources by 1800 AD
+		if isPossible(iSweden, 1):
+			if pSweden.getNumAvailableBonuses(iFur) >= 7:
+				win(iSweden, 1)
+				
+		if iGameTurn == getTurnForYear(1800):
+			expire(iSweden, 1)
+		
+		# third goal: Have the highest approval rating in the world for 50 turns by 1970 AD
+		if isPossible(iSweden, 2):
+			if isHappiest(iPlayer):
+				data.iSwedenHappinessTurns += 1
+			if data.iSwedenHappinessTurns >= utils.getTurns(50):
+				win(iSweden, 2)
+			
+		if iGameTurn == getTurnForYear(1970):
+			expire(iSweden, 2)
 		
 	elif iPlayer == iNetherlands:
 	
@@ -3848,6 +3882,18 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			iSlaves = data.iCongoSlaveCounter
 			aHelp.append(getIcon(iSlaves >= utils.getTurns(1000)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1000))))
+			
+	elif iPlayer == iSweden:
+		if iGoal == 0:
+			bSkagerrak = isCultureControlled(iSweden, lSkagerrak)
+			bBalticSea = isCultureControlled(iSweden, lBalticSea)
+			aHelp.append(getIcon(bSkagerrak) + localText.getText("TXT_KEY_UHV_SWE1_SKAGERRAK_HELP", ()) + ' ' + getIcon(bBalticSea) + localText.getText("TXT_KEY_UHV_SWE1_BALTIC_SEA_HELP", ()))
+		elif iGoal == 1:
+			iNumFur = pSweden.getNumAvailableBonuses(iFur)
+			aHelp.append(getIcon(iNumFur >= 7) + localText.getText("TXT_KEY_UHV_SWE2_HELP", (iNumFur, 7)))
+		elif iGoal == 2:
+			iHappinessTurns = data.iSwedenHappinessTurns
+			aHelp.append(getIcon(iHappinessTurns >= utils.getTurns(50)) + localText.getText("TXT_KEY_VICTORY_HAPPINESS_TURNS", (iHappinessTurns, utils.getTurns(50))))
 
 	elif iPlayer == iNetherlands:
 		if iGoal == 0:

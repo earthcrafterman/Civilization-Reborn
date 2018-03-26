@@ -2613,6 +2613,16 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case CONGO:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
 		break;
+	case SWEDEN:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLE] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		aiUnitAIVal[UNITAI_COUNTER] *= 3;
+		break;
 	case NETHERLANDS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -3340,6 +3350,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case CONGO:
 										iTempValue /= 2;
+										break;
+									case SWEDEN:
+										if (iI == CERN_RESEARCH_COMPLEX) {
+											iTempValue *= 3;
+											iTempValue /= 2;
+										}
 										break;
 									case NETHERLANDS:
 										if (iI == NOTRE_DAME) { //Notre Dame

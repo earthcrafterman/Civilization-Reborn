@@ -1347,6 +1347,10 @@ class RiseAndFall:
 				if gc.getMap().plot(104, 33).isCity():
 					gc.getMap().plot(104, 33).getPlotCity().setName("Saigon", False)
 				
+			# Exclude Sweden from Viking core
+			elif iCiv == iSweden:
+				utils.setReborn(iVikings, True)
+				
 			iPreviousOwner = gc.getMap().plot(x, y).getOwner()
 				
 
@@ -2442,6 +2446,8 @@ class RiseAndFall:
 			utils.makeUnit(iChangSuek, iCiv, tPlot, 2)
 		elif iCiv == iCongo:
 			utils.makeUnit(iPombos, iCiv, tPlot, 3)
+		elif iCiv == iSweden:
+			utils.makeUnit(iArquebusier, iCiv, tPlot, 4)
 		elif iCiv == iGermany:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 3)
@@ -2796,6 +2802,17 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iPombos, iCiv, tPlot, 2)
+		elif iCiv == iSweden:
+			utils.createSettlers(iCiv, 3)
+			utils.makeUnit(iArquebusier, iCiv, tPlot, 5)
+			utils.makeUnit(iPikeman, iCiv, tPlot, 2)
+			utils.makeUnit(iBombard, iCiv, tPlot, 2)
+			utils.createMissionaries(iCiv, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
+				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iCaravel, iCiv, tSeaPlot, 1)
 		elif iCiv == iGermany:
 			utils.createSettlers(iCiv, 4)
 			utils.createMissionaries(iCiv, 2)
@@ -2993,6 +3010,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCongo:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iSweden:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iGermany:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iAmerica:
@@ -3198,6 +3217,13 @@ class RiseAndFall:
 				data.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
 				data.setPlayerEnabled(iCongo, False)
+				
+		if iHuman not in [iVikings, iRussia, iHolyRome, iGermany]:
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_SWEDEN")
+			if iRand <= 0:
+				data.setPlayerEnabled(iSweden, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Sweden enabled?') != 0:
+				data.setPlayerEnabled(iSweden, False)
 				
 		if iHuman != iSpain:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")

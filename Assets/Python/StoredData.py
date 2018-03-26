@@ -234,6 +234,7 @@ class GameData:
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0
 		self.iCongoSlaveCounter = 0
+		self.iSwedenHappinessTurns = 0
 		self.iDutchColonies = 0
 		self.iMexicanGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0

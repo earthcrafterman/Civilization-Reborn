@@ -704,8 +704,6 @@ class CvRFCEventHandler:
 				utils.moveCapital(iPlayer, (116, 47)) # Toukyou
 			elif iPlayer == iItaly and iEra == iIndustrial:
 				utils.moveCapital(iPlayer, (60, 44)) # Roma
-			elif iPlayer == iVikings and iEra == iRenaissance:
-				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
 				

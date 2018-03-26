@@ -1332,6 +1332,7 @@ enum PlayerTypes				// Exposed to Python
 	TURKEY,
 	THAILAND,
 	CONGO,
+	SWEDEN,
 	NETHERLANDS,
 	GERMANY,
 	AMERICA,
