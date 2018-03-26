@@ -1028,17 +1028,14 @@ public:
 
 	//1SDAN
 	int getCivicUpkeepReduction() const;
-	void setCivicUpkeepReduction(int iNewValue);
 	void changeCivicUpkeepReduction(int iChange);
 
 	int getSpecialistGoodHealth(int iSpecialistType) const;
 	int* getSpecialistGoodHealthArray() const;
-	void setSpecialistGoodHealth(int eSpecialist, int iNewValue);
 	void changeSpecialistGoodHealth(int eSpecialist, int iChange);
 	
 	int getSpecialistBadHealth(int iSpecialistType) const;
 	int* getSpecialistBadHealthArray() const;
-	void setSpecialistBadHealth(int eSpecialist, int iNewValue);
 	void changeSpecialistBadHealth(int eSpecialist, int iChange);
 
 	//Leoreth

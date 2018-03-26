@@ -9548,12 +9548,6 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 {
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
-	if ((eIndex == YIELD_FOOD && plot()->isCore(getOwner())))
-		for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
-			if(GC.getBonusInfo((BonusTypes)iI).getHealth() > 0)
-				if(hasBonus((BonusTypes)iI))
-					iYieldRateTimes100 += 100 * GC.getBonusInfo((BonusTypes)iI).getHealth();
-
 	// Harappan UP: Sanitation: positive health contributes to city growth
 	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && !isFoodProduction())
 	{
@@ -11877,17 +11871,42 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 			if (hasBonus(eIndex))
 			{
 				processBonus(eIndex, 1);
+
+				if (plot()->isCore(getOwner()))
+				{
+					if (GC.getBonusInfo(eIndex).getHealth() > 0)
+					{
+						changeBaseYieldRate(YIELD_FOOD, 1);
+					}
+					else if (GC.getBonusInfo(eIndex).getHealth() == 0 && GC.getBonusInfo(eIndex).getHappiness() == 0)
+					{
+						changeBaseYieldRate(YIELD_PRODUCTION, 1);
+					}
+				}
 			}
 			else
 			{
 				processBonus(eIndex, -1);
+
+				if (plot()->isCore(getOwner()))
+				{
+					if (GC.getBonusInfo(eIndex).getHealth() > 0)
+					{
+						changeBaseYieldRate(YIELD_FOOD, -1);
+					}
+					else if (GC.getBonusInfo(eIndex).getHealth() == 0 && GC.getBonusInfo(eIndex).getHappiness() == 0)
+					{
+						changeBaseYieldRate(YIELD_PRODUCTION, -1);
+					}
+				}
 			}
 		}
+
 		if (getOwner() == EGYPT && iChange > 0 && iOldNumBonuses < 2 && getNumBonuses(eIndex) >= 2 && isCapital())
 		{
 			changeCivicUpkeepReduction(1);
 		}
-		else if (getOwner() == EGYPT && iChange < 0 && iOldNumBonuses <= 2 && getNumBonuses(eIndex) < 2 && isCapital())
+		else if (getOwner() == EGYPT && iChange < 0 && iOldNumBonuses >= 2 && getNumBonuses(eIndex) < 2 && isCapital())
 		{
 			changeCivicUpkeepReduction(-1);
 		}
@@ -15506,7 +15525,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eOriginalOwner);
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
-
+	
 	pStream->Read(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiRiverPlotYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiBaseYieldRate);
@@ -15541,7 +15560,7 @@ void CvCity::read(FDataStreamBase* pStream)
 
 	pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
 	pStream->Read(NUM_CITY_PLOTS_3, m_aiCultureCosts); // Leoreth
-
+	
 	pStream->Read(GC.getNumSpecialistInfos(), m_aiSpecialistGoodHealth); // 1SDAN
 	pStream->Read(GC.getNumSpecialistInfos(), m_aiSpecialistBadHealth); // 1SDAN
 
@@ -15789,7 +15808,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_eOriginalOwner);
 	pStream->Write(m_eCultureLevel);
 	pStream->Write(m_eArtStyle); // Leoreth
-
+	
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiRiverPlotYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiBaseYieldRate);
@@ -17528,14 +17547,9 @@ int CvCity::getCivicUpkeepReduction() const
 	return m_iCivicUpkeepReduction;
 }
 
-void CvCity::setCivicUpkeepReduction(int iNewValue)
-{
-	m_iCivicUpkeepReduction = iNewValue;
-}
-
 void CvCity::changeCivicUpkeepReduction(int iChange)
 {
-	setCivicUpkeepReduction(m_iCivicUpkeepReduction + iChange);
+	m_iCivicUpkeepReduction += iChange;
 }
 
 int CvCity::getSpecialistGoodHealth (int iSpecialistType) const
@@ -17546,11 +17560,6 @@ int CvCity::getSpecialistGoodHealth (int iSpecialistType) const
 int* CvCity::getSpecialistGoodHealthArray () const
 {
 	return m_aiSpecialistGoodHealth;
-}
-
-void CvCity::setSpecialistGoodHealth (int eSpecialist, int iNewValue)
-{
-	m_aiSpecialistGoodHealth[eSpecialist] = iNewValue;
 }
 
 void CvCity::changeSpecialistGoodHealth (int eSpecialist, int iChange)
@@ -17575,11 +17584,6 @@ int CvCity::getSpecialistBadHealth (int iSpecialistType) const
 int* CvCity::getSpecialistBadHealthArray () const
 {
 	return m_aiSpecialistBadHealth;
-}
-
-void CvCity::setSpecialistBadHealth (int eSpecialist, int iNewValue)
-{
-	m_aiSpecialistBadHealth[eSpecialist] = iNewValue;
 }
 
 void CvCity::changeSpecialistBadHealth (int eSpecialist, int iChange)
