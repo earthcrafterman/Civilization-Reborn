@@ -6531,6 +6531,25 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 				szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_BAD_HAPPINESS", -iHappinessChange));
 			}
 		}
+		
+		int iHealthChange = 0;
+
+		if (pCity != NULL)
+		{
+			iHealthChange += pCity->getSpecialistGoodHealth(eSpecialist) - pCity->getSpecialistBadHealth(eSpecialist);
+		}
+
+		if (iHealthChange != 0)
+		{
+			if (iHealthChange > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_GOOD_HEALTH", iHealthChange));
+			}
+			else
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_BAD_HEALTH", -iHealthChange));
+			}
+		}
 
 		if (GC.getSpecialistInfo(eSpecialist).getExperience() > 0)
 		{

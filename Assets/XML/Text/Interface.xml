@@ -1400,6 +1400,22 @@
 		<Spanish>, %D1_Change[ICON_UNHAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_BAD_HEALTH</Tag>
+		<English>, %D1_Change[ICON_UNHEALTHY]</English>
+		<French>, %D1_Change[ICON_UNHEALTHY]</French>
+		<German>, %D1_Change[ICON_UNHEALTHY]</German>
+		<Italian>, %D1_Change[ICON_UNHEALTHY]</Italian>
+		<Spanish>, %D1_Change[ICON_UNHEALTHY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_GOOD_HEALTH</Tag>
+		<English>, %D1_Change[ICON_HEALTHY]</English>
+		<French>, %D1_Change[ICON_HEALTHY]</French>
+		<German>, %D1_Change[ICON_HEALTHY]</German>
+		<Italian>, %D1_Change[ICON_HEALTHY]</Italian>
+		<Spanish>, %D1_Change[ICON_HEALTHY]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Tag>
 		<English>Great Statesman</English>
 		<German>Gro&#223;er Staatsmann</German>

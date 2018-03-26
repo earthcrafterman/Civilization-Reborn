@@ -70,6 +70,9 @@ CvCity::CvCity()
 	m_aiCulturePlots = new int[NUM_CITY_PLOTS_3]; // Leoreth
 	m_aiCultureCosts = new int[NUM_CITY_PLOTS_3]; // Leoreth
 
+	m_aiSpecialistGoodHealth = new int[GC.getNumSpecialistInfos()]; //1SDAN
+	m_aiSpecialistBadHealth = new int[GC.getNumSpecialistInfos()]; //1SDAN
+
 	m_paiNoBonus = NULL;
 	m_paiFreeBonus = NULL;
 	m_paiNumBonuses = NULL;
@@ -161,6 +164,8 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiSpecialistGoodHealth); // 1SDAN
+	SAFE_DELETE_ARRAY(m_aiSpecialistBadHealth); // 1SDAN
 	SAFE_DELETE_ARRAY(m_abEverOwned);
 	SAFE_DELETE_ARRAY(m_abTradeRoute);
 	SAFE_DELETE_ARRAY(m_abRevealed);
@@ -674,6 +679,12 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	{
 		m_abCommerceRankValid[iI] = false;
 		m_aiCommerceRank[iI] = -1;
+	}
+
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		m_aiSpecialistGoodHealth[iI] = 0;
+		m_aiSpecialistBadHealth[iI] = 0;
 	}
 
 	if (!bConstructorCall)
@@ -4270,6 +4281,11 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 		}
 	}
 
+	if (getOwner() == EGYPT && plot()->isCore(EGYPT) && GC.getBonusInfo(eBonus).getHappiness() > 0)
+	{
+		changeBonusYieldRateModifier((YIELD_COMMERCE), (5 * iChange));
+	}
+
 	changeBonusGoodHappiness(iGoodValue * iChange);
 	changeBonusBadHappiness(iBadValue * iChange);
 
@@ -4339,6 +4355,17 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		else
 		{
 			changeBuildingBadHealth(GC.getBuildingInfo(eBuilding).getHealth() * iChange);
+		}
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			if (GC.getBuildingInfo(eBuilding).getSpecialistHealthChange(iI) > 0)
+			{
+				changeSpecialistGoodHealth(iI, GC.getBuildingInfo(eBuilding).getSpecialistHealthChange(iI) * iChange);
+			}
+			else
+			{
+				changeSpecialistBadHealth(iI, GC.getBuildingInfo(eBuilding).getSpecialistHealthChange(iI) * iChange);
+			}
 		}
 		if (GC.getBuildingInfo(eBuilding).getHappiness() > 0)
 		{
@@ -5463,6 +5490,15 @@ int CvCity::goodHealth() const
 		}
 	}
 
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++) 
+	{
+		iHealth = getSpecialistGoodHealth(iI);
+		if (iHealth > 0)
+		{
+			iTotalHealth += iHealth *= getSpecialistCount((SpecialistTypes)iI);
+		}
+	}
+
 	return iTotalHealth;
 }
 
@@ -5541,6 +5577,15 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	if (iHealth < 0)
 	{
 		iTotalHealth += iHealth;
+	}
+
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++) 
+	{
+		iHealth = getSpecialistBadHealth(iI);
+		if (iHealth > 0)
+		{
+			iTotalHealth += iHealth *= getSpecialistCount((SpecialistTypes)iI);
+		}
 	}
 
 	//Leoreth: civic pollution modifier
@@ -15487,6 +15532,9 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
 	pStream->Read(NUM_CITY_PLOTS_3, m_aiCultureCosts); // Leoreth
 
+	pStream->Read(GC.getNumSpecialistInfos(), m_aiSpecialistGoodHealth); // 1SDAN
+	pStream->Read(GC.getNumSpecialistInfos(), m_aiSpecialistBadHealth); // 1SDAN
+
 	pStream->ReadString(m_szName);
 	pStream->ReadString(m_szScriptData);
 
@@ -15763,6 +15811,9 @@ void CvCity::write(FDataStreamBase* pStream)
 
 	pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
 	pStream->Write(NUM_CITY_PLOTS_3, m_aiCultureCosts); // Leoreth
+
+	pStream->Write(GC.getNumSpecialistInfos(), m_aiSpecialistGoodHealth); // 1SDAN
+	pStream->Write(GC.getNumSpecialistInfos(), m_aiSpecialistBadHealth); // 1SDAN
 
 	pStream->WriteString(m_szName);
 	pStream->WriteString(m_szScriptData);
@@ -17457,6 +17508,64 @@ bool CvCity::isAutoRaze() const
 	}
 
 	return false;
+}
+
+int CvCity::getSpecialistGoodHealth (int iSpecialistType) const
+{
+	return m_aiSpecialistGoodHealth[iSpecialistType];
+}
+
+int* CvCity::getSpecialistGoodHealthArray () const
+{
+	return m_aiSpecialistGoodHealth;
+}
+
+void CvCity::setSpecialistGoodHealth (int eSpecialist, int iNewValue)
+{
+	m_aiSpecialistGoodHealth[eSpecialist] = iNewValue;
+}
+
+void CvCity::changeSpecialistGoodHealth (int eSpecialist, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_aiSpecialistGoodHealth[eSpecialist] += iChange;
+		AI_setAssignWorkDirty(true);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			setInfoDirty(true);
+		}
+	}
+}
+
+int CvCity::getSpecialistBadHealth (int iSpecialistType) const
+{
+	return m_aiSpecialistBadHealth[iSpecialistType];
+}
+
+int* CvCity::getSpecialistBadHealthArray () const
+{
+	return m_aiSpecialistBadHealth;
+}
+
+void CvCity::setSpecialistBadHealth (int eSpecialist, int iNewValue)
+{
+	m_aiSpecialistBadHealth[eSpecialist] = iNewValue;
+}
+
+void CvCity::changeSpecialistBadHealth (int eSpecialist, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_aiSpecialistBadHealth[eSpecialist] += iChange;
+		AI_setAssignWorkDirty(true);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			setInfoDirty(true);
+		}
+	}
 }
 
 int CvCity::getMusicScriptId() const

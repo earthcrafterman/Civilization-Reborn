@@ -261,6 +261,14 @@
 	<ElementType name="SpecialistCounts" content="eltOnly">
 		<element type="SpecialistCount" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iSpecialistHealth" content="textOnly" dt:type="int"/>
+	<ElementType name="SpecialistHealthChange" content="eltOnly">
+		<element type="SpecialistType"/>
+		<element type="iSpecialistHealth"/>
+	</ElementType>
+	<ElementType name="SpecialistHealthChanges" content="eltOnly">
+		<element type="SpecialistHealthChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="iFreeSpecialistCount" content="textOnly" dt:type="int"/>
 	<ElementType name="FreeSpecialistCount" content="eltOnly">
 		<element type="SpecialistType"/>

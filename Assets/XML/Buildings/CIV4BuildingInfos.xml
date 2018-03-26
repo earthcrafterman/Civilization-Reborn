@@ -1369,6 +1369,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
 			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 			<iCost>200</iCost>
+			<Help>TXT_KEY_BUILDING_PARK_HELP</Help>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -1376,16 +1377,72 @@
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<iHappiness>1</iHappiness>
-			<ImprovementHealths>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-			</ImprovementHealths>
+			<SpecialistHealthChanges>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_CITIZEN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_ARTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_SCIENTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_MERCHANT</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_ENGINEER</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_STATESMAN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_GENERAL</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_SPY</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_SLAVE</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+			</SpecialistHealthChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -1403,6 +1460,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ISRAELI_KIBBUTZ</ArtDefineTag>
 			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 			<iCost>200</iCost>
+			<Help>TXT_KEY_BUILDING_PARK_HELP</Help>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -1414,16 +1472,72 @@
 			<YieldChanges>
 				<iYield>2</iYield>
 			</YieldChanges>
-			<ImprovementHealths>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-			</ImprovementHealths>
+			<SpecialistHealthChanges>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_CITIZEN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_ARTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_SCIENTIST</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_MERCHANT</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_ENGINEER</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_STATESMAN</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_GENERAL</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_GREAT_SPY</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+				<SpecialistHealthChange>
+					<SpecialistType>SPECIALIST_SLAVE</SpecialistType>
+					<iSpecialistHealth>1</iSpecialistHealth>
+				</SpecialistHealthChange>
+			</SpecialistHealthChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2813,6 +2927,10 @@
 			<ImprovementHealths>
 				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<iHealthPercent>100</iHealthPercent>
+				</ImprovementHealth>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_HAMLET</ImprovementType>
 					<iHealthPercent>50</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>

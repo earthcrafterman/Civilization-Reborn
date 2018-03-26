@@ -1511,4 +1511,8 @@
 		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Immigration Office[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT], can be build in every city and provides an extra trade route.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PARK_HELP</Tag>
+		<English>+1[ICON_HEALTHY] per Specialist</English>
+	</TEXT>
 </Civ4GameText>

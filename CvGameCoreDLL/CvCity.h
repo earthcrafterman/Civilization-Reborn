@@ -1026,6 +1026,17 @@ public:
 
 	bool isAutoRaze() const;
 
+	//1SDAN
+	int getSpecialistGoodHealth(int iSpecialistType) const;
+	int* getSpecialistGoodHealthArray() const;
+	void setSpecialistGoodHealth(int eSpecialist, int iNewValue);
+	void changeSpecialistGoodHealth(int eSpecialist, int iChange);
+	
+	int getSpecialistBadHealth(int iSpecialistType) const;
+	int* getSpecialistBadHealthArray() const;
+	void setSpecialistBadHealth(int eSpecialist, int iNewValue);
+	void changeSpecialistBadHealth(int eSpecialist, int iChange);
+
 	//Leoreth
 	bool isMiddleEast() const;
 	int getSpecialistGoodHappiness() const;
@@ -1328,6 +1339,10 @@ protected:
 	int* m_aiGameTurnPlayerLost;
 	int* m_aiCulturePlots;
 	int* m_aiCultureCosts;
+
+	// 1SDAN
+	int* m_aiSpecialistGoodHealth;
+	int* m_aiSpecialistBadHealth;
 
 	bool* m_abEverOwned;
 	bool* m_abTradeRoute;
