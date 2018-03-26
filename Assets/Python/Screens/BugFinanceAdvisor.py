@@ -69,6 +69,7 @@ class BugFinanceAdvisor:
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.FINANCE_ADVISOR)
 
 	def interfaceScreen (self):
+		if utils.isBarbarianGame(): return
 
 		self.iActiveLeader = CyGame().getActivePlayer()
 

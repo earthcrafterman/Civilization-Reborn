@@ -254,6 +254,9 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				setHasPromotion(PROMOTION_NAVIGATION2, true);
 			}
 		break;
+	case HUMANBARBARIAN:
+		setHasPromotion(PROMOTION_RAIDER, true);
+		break;
 	default:
 		break;
 	}

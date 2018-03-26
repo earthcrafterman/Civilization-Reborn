@@ -374,6 +374,7 @@ class CvRFCEventHandler:
 	def onCombatResult(self, argsList):
 		self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList) # includes Moorish Corsairs
+		self.up.barbarianUP(argsList)
 		
 		pWinningUnit, pLosingUnit = argsList
 		iWinningPlayer = pWinningUnit.getOwner()
@@ -469,7 +470,7 @@ class CvRFCEventHandler:
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
 		
 		iUnit = unit.getUnitType()
-		if (iPlayer == iVikings or iPlayer == iMoors) and iGold > 0 and iImprovement != -1 and iGold < 1000:
+		if iPlayer in [iVikings, iMoors, iHumanBarbarian] and iGold > 0 and iImprovement != -1 and iGold < 1000:
 			vic.onUnitPillage(iPlayer, iGold, iUnit)
 			
 	def onCityCaptureGold(self, argsList):
@@ -592,6 +593,8 @@ class CvRFCEventHandler:
 		
 		self.rnf.checkTurn(iGameTurn)
 		self.barb.checkTurn(iGameTurn)
+		if utils.isBarbarianGame():
+			self.barb.checkTakeOver()
 		self.rel.checkTurn(iGameTurn)
 		self.res.checkTurn(iGameTurn)
 		self.up.checkTurn(iGameTurn)
@@ -605,6 +608,9 @@ class CvRFCEventHandler:
 		
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
+			
+			if utils.isBarbarianGame() and iGameTurn >= getTurnForYear(tBirth[iHumanBarbarian]):
+				utils.doBarbarianTechs()
 			
 		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(600):
 			for iPlayer in range(iVikings):
@@ -628,6 +634,32 @@ class CvRFCEventHandler:
 			
 			if iPlayer < iNumPlayers and not gc.getPlayer(iPlayer).isHuman():
 				self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
+				
+		if utils.isHumanBarbarian(iPlayer) and gc.getGame().getGameTurn() >= tBirth[iHumanBarbarian]:
+			# Strike!
+			if pHumanBarbarian.getGold() == 0:
+				iGoldRate = pHumanBarbarian.calculateGoldRate()
+				if iGoldRate < 0:
+					CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BARBARIAN_STRIKE", ()), "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+					
+				lUnits = [unit for unit in PyPlayer(iPlayer).getUnitList() if unit.getUnitType() != iBarbarianCamp]
+				while iGoldRate < 0:
+					unit = utils.getRandomEntry(lUnits)
+					lUnits.remove(unit)
+					unit.kill(False, iBarbarian)
+					iGoldRate = pHumanBarbarian.calculateGoldRate()
+				
+			# Barbarian Great Genearal
+			iCombatExp = pHumanBarbarian.getCombatExperience()
+			iThresholdExp = pHumanBarbarian.greatPeopleThreshold(True)
+			if iThresholdExp - iCombatExp <= 0:
+				lCamps = PyPlayer(iSwahili).getUnitsOfType(iBarbarianCamp)
+				if lCamps:
+					camp = utils.getRandomEntry(lCamps)
+					iX = camp.getX()
+					iY = camp.getY()
+					pHumanBarbarian.createGreatPeople(iGreatGeneral, True, True, iX, iY)
+					CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BARBARIAN_GENERAL", ()), "", 0, "", ColorTypes(iYellow), -1, -1, True, True)
 
 	def onGreatPersonBorn(self, argsList):
 		'Great Person Born'

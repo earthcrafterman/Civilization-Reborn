@@ -38,17 +38,18 @@ iPrussia = iGermany
 iNumMajorPlayers = iNumPlayers
 iNumActivePlayers = iNumPlayers
 
-iIndependent = iNumPlayers
-iIndependent2 = iNumPlayers+1
-iNative = iNumPlayers+2
-iCeltia = iNumPlayers+3
-iSeljuks = iNumPlayers+4
-iNumTotalPlayers = iNumPlayers+5
-iBarbarian = iNumPlayers+5
+iHumanBarbarian = iNumPlayers
+iIndependent = iNumPlayers+1
+iIndependent2 = iNumPlayers+2
+iNative = iNumPlayers+3
+iCeltia = iNumPlayers+4
+iSeljuks = iNumPlayers+5
+iNumTotalPlayers = iNumPlayers+6
+iBarbarian = iNumPlayers+6
 iNumTotalPlayersB = iBarbarian+1
 
-(pIndependent, pIndependent2, pNative, pCeltia, pSeljuks, pBarbarian) = [gc.getPlayer(i) for i in range(iIndependent, iNumTotalPlayersB)]
-(teamIndependent, teamIndependent2, teamNative, teamCeltia, teamSeljuks, teamBarbarian) = [gc.getTeam(i) for i in range(iIndependent, iNumTotalPlayersB)]
+(pHumanBarbarian, pIndependent, pIndependent2, pNative, pCeltia, pSeljuks, pBarbarian) = [gc.getPlayer(i) for i in range(iHumanBarbarian, iNumTotalPlayersB)]
+(teamHumanBarbarian, teamIndependent, teamIndependent2, teamNative, teamCeltia, teamSeljuks, teamBarbarian) = [gc.getTeam(i) for i in range(iHumanBarbarian, iNumTotalPlayersB)]
 
 l0Array =       [0 for i in range(iNumPlayers)]
 l0ArrayActive = [0 for i in range(iNumPlayers)]
@@ -57,13 +58,13 @@ l0ArrayTotal =  [0 for i in range(iNumTotalPlayers)]
 lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
-iNumCivilizations = 57
+iNumCivilizations = 58
 (iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
 iCivChina, iCivColombia, iCivEgypt, iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRome, 
 iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, 
 iCivMaya, iCivMexico, iCivMongols, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands, iCivOttomans, iCivPersia, iCivPoland, 
 iCivPolynesia, iCivPortugal, iCivRome, iCivRussia, iCivSeljuks, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, iCivTibet, 
-iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
+iCivVikings, iCivZulu, iCivHumanBarbarian, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
 
 iCivTurkey = iCivOttomans
 iCivCongo = iCivKongo
@@ -292,6 +293,7 @@ tBirth = (
 1822,					# Brazil
 1867,	#Canada
 #1791,	#Canada
+-1000, # HumanBarbarian
 -3000, # 0,
 -3000, # 0,
 -3000, # 0,
@@ -395,6 +397,7 @@ iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
 iCivCanada : (1920, 1950, 2000),
+iCivHumanBarbarian : (-1, -1, -1),
 }
 
 # Leoreth: date-triggered respawn for certain civs
@@ -587,6 +590,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_MARATHON", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
 ("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1_MARATHON", "TXT_KEY_UHV_HBA2_MARATHON", "TXT_KEY_UHV_HBA3_MARATHON"),
 ),
 ( # Epic
 ("TXT_KEY_UHV_EGY1_EPIC", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
@@ -633,6 +637,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_EPIC", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
 ("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1_EPIC", "TXT_KEY_UHV_HBA2_EPIC", "TXT_KEY_UHV_HBA3_EPIC"),
 ),
 ( # Normal
 ("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2", "TXT_KEY_UHV_EGY3"),
@@ -679,6 +684,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
 ("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1", "TXT_KEY_UHV_HBA2", "TXT_KEY_UHV_HBA3"),
 )
 )
 
@@ -727,7 +733,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_MARATHON", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
-("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1_MARATHON", "TXT_KEY_UHV_HBA2_MARATHON", "TXT_KEY_UHV_HBA3_MARATHON"),
 ),
 ( # Epic
 ("TXT_KEY_UHV_EGY1_EPIC", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
@@ -773,7 +780,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_EPIC", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
-("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1_EPIC", "TXT_KEY_UHV_HBA2_EPIC", "TXT_KEY_UHV_HBA3_EPIC"),
 ),
 ( # Normal
 ("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2", "TXT_KEY_UHV_EGY3"),
@@ -819,7 +827,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
-("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
+("TXT_KEY_UHV_HBA1", "TXT_KEY_UHV_HBA2", "TXT_KEY_UHV_HBA3"),
 )
 )
 
@@ -912,6 +921,7 @@ iAmerica	:	"TXT_KEY_DOM_AMERICA",
 iArgentina	:	"TXT_KEY_DOM_ARGENTINA",
 iBrazil		:	"TXT_KEY_DOM_BRAZIL",
 iCanada		:	"TXT_KEY_DOM_CANADA",
+iHumanBarbarian	:	"TXT_KEY_DOM_BARBARIAN",
 }
 
 dawnOfMan600AD = {
@@ -1029,6 +1039,7 @@ tStartingGold = (
 1200,	# Argentina
 1600,	# Brazil
 1000,	# Canada
+1000,	# HumanBarbarian
 50,	# Independent
 50,	# Independent
 100,	# Native
@@ -1255,6 +1266,7 @@ tAIStopBirthThreshold = (
     60, #Argentina
     60, #Brazil
     60, #Canada
+	100,
     100,
     100,
     100,
@@ -1459,7 +1471,7 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 179
+iNumUnits = 181
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
 iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
 iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
@@ -1477,7 +1489,8 @@ iCog, iGalleass, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPrivateer, iOrang
 iShipOfTheLine, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, 
 iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, iFighter, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber, 
 iICBM, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy, iFemaleGreatProphet, 
-iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
+iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave,
+iBarbarianCamp, iNavalCamp) = range(iNumUnits)
 
 iMissionary = iJewishMissionary # generic
 

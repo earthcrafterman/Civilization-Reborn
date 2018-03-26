@@ -570,3 +570,34 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
+		
+	def barbarianUP(self, argsList):
+		pWinningUnit, pLosingUnit = argsList
+		if not utils.isBarbarianGame(): return
+		if pWinningUnit.getOwner() != iHumanBarbarian: return
+		
+		iUnitType = pLosingUnit.getUnitType()
+		cLosingUnit = PyHelpers.PyInfo.UnitInfo(iUnitType)
+		
+		if cLosingUnit.getUnitCombatType() == -1:
+			if utils.getBaseUnit(iUnitType) in lGreatPeopleUnits:
+				iGold = 100
+				pHumanBarbarian.changeGold(iGold)
+				CyInterface().addMessage(iHumanBarbarian, False, iDuration, CyTranslator().getText("TXT_KEY_BARBARIAN_GP_KILLING", (iGold, pLosingUnit.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+			elif not cLosingUnit.isAnimal():
+				iGold = 50
+				pHumanBarbarian.changeGold(iGold)
+				CyInterface().addMessage(iHumanBarbarian, False, iDuration, CyTranslator().getText("TXT_KEY_BARBARIAN_WORKER_KILLING", (iGold, pLosingUnit.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+				data.iBarbarianKillGold += iGold
+			return
+		
+		iGold = cLosingUnit.getProductionCost() * 2
+		if iGold > 0:
+			pHumanBarbarian.changeGold(iGold)
+			sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
+			if cLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
+				data.iBarbarianPiratingGold += iGold
+				CyInterface().addMessage(iHumanBarbarian, False, iDuration, CyTranslator().getText("TXT_KEY_VIKING_NAVAL_UP", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+			else:
+				data.iBarbarianKillGold += iGold
+				CyInterface().addMessage(iHumanBarbarian, False, iDuration, CyTranslator().getText("TXT_KEY_BARBARIAN_UNIT_KILLING", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 import CvScreenEnums
 import CvUtil
+from RFCUtils import utils
 
 from Consts import *
 
@@ -106,6 +107,8 @@ class CvEspionageAdvisor:
 
 
 	def interfaceScreen (self):
+		if utils.isBarbarianGame(): return
+
 		self.iActivePlayer = CyGame().getActivePlayer()
 		self.pActivePlayer = gc.getPlayer(self.iActivePlayer)
 		self.iActiveTeam = self.pActivePlayer.getTeam()

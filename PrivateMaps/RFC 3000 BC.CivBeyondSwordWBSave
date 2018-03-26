@@ -142,22 +142,25 @@ BeginTeam
 	TeamID=43, (Canada)
 EndTeam
 BeginTeam
-	TeamID=44, (Independent)
+	TeamID=44, (HumanBarbarian)
 EndTeam
 BeginTeam
-	TeamID=45, (Independent2)
+	TeamID=45, (Independent)
 EndTeam
 BeginTeam
-	TeamID=46, (Native)
+	TeamID=46, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=47, (Celtia)
+	TeamID=47, (Native)
 EndTeam
 BeginTeam
-	TeamID=48, (Seljuks)
+	TeamID=48, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=49, (Barbarian)
+	TeamID=49, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=50, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -718,6 +721,15 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=44
+	LeaderType=LEADER_BARBARIAN
+	CivType=CIVILIZATION_HUMAN_BARBARIAN
+	PlayableCiv=1
+	MinorNationStatus=1
+	StartingGold=500
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=45
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -726,7 +738,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
+	Team=46
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -735,7 +747,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
+	Team=47
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -744,7 +756,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	Team=48
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -752,7 +764,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	Color=PLAYERCOLOR_SELJUK
@@ -763,7 +775,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0

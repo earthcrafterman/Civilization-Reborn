@@ -5,6 +5,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 import math
+from RFCUtils import utils
 
 # globals
 gc = CyGlobalContext()
@@ -78,6 +79,7 @@ class CvForeignAdvisor:
 		return CyGInterfaceScreen(self.SCREEN_NAME + str(self.iScreen), CvScreenEnums.FOREIGN_ADVISOR)
 
 	def interfaceScreen (self, iScreen):
+		if utils.isBarbarianGame(): return
 	
 		if (iScreen < 0):
 			if (self.iScreen < 0):

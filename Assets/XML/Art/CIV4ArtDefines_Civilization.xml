@@ -237,7 +237,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BARBARIAN</Type>
 			<Button>,Art/Interface/Buttons/Civilizations/Barbarian.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,5</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Skull2.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Skull.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -340,6 +340,12 @@
 			<Type>ART_DEF_CIVILIZATION_POLYNESIA</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Polynesia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Flower.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_HUMANBARBARIAN</Type>
+			<Button>,-,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,5</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Skull2.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>

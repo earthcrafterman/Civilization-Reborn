@@ -4,6 +4,7 @@ import CvScreenEnums
 import CvScreensInterface
 from Consts import *
 import Stability
+from RFCUtils import utils
 
 # Globals
 gc = CyGlobalContext()
@@ -83,6 +84,7 @@ class CvCivicsScreen:
 
 
 	def interfaceScreen (self):
+		if utils.isBarbarianGame(): return
 		''
 		screen = self.getScreen()
 		if screen.isActive():

@@ -4,6 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import ScreenInput
 import CvScreenEnums
+from RFCUtils import utils
 
 #	IMPORTANT INFORMATION
 #	
@@ -31,7 +32,8 @@ class CvDomesticAdvisor:
 		
 	# Screen construction function
 	def interfaceScreen(self):
-	
+		if utils.isBarbarianGame(): return
+		
 		player = gc.getPlayer(gc.getGame().getActivePlayer())
 		
 		# Create a new screen, called DomesticAdvisur, using the file CvDomesticAdvisor.py for input

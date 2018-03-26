@@ -106,5 +106,10 @@
 			<Description>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_BARBARIAN_GAME</Type>
+			<Description>TXT_KEY_CONCEPT_BARBARIAN_GAME</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_BARBARIAN_GAME_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

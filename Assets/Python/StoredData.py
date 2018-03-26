@@ -176,6 +176,10 @@ class GameData:
 		self.bUnlimitedSwitching = False
 		self.bCheatMode = False
 		
+		self.lBarbarianBuyUnits = []
+		self.lBarbarianTakeOver = []
+		self.lBarbarianCamps = [0 for i in range(11)]
+		
 		# Religions
 		
 		self.iSeed = gc.getGame().getSorenRandNum(100, "Random delay")
@@ -238,6 +242,13 @@ class GameData:
 		self.iMexicanGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
+		
+		self.iBarbarianRazeGold = 0
+		self.iBarbarianRazes = 0
+		self.iBarbarianKillGold = 0
+		self.iBarbarianPillageGold = 0
+		self.iBarbarianPiratingGold = 0
+		self.iBarbarianSinks = 0
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0

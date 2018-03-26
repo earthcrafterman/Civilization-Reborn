@@ -921,7 +921,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		elif iDefaultUnit > -1 and iDefaultUnit != iUnit and not iUnit == iAztecSlave:
 			return 2
 		elif UnitInfo.getCombat() > 0 or UnitInfo.getAirCombat() != 0 or UnitInfo.isSuicide():
-			if not UnitInfo.isAnimal() and not UnitInfo.isFound():
+			if not UnitInfo.isAnimal() and not UnitInfo.isFound() and iUnit != iNavalCamp:
 				return 1
 
 		return 0

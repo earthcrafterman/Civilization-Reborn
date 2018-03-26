@@ -10,6 +10,7 @@ from Consts import iEconomics as iEconomicsTech
 from Consts import iBrazil
 from Consts import iSugar
 import companies
+from RFCUtils import utils
 
 PyPlayer = PyHelpers.PyPlayer
 
@@ -109,6 +110,7 @@ class CvCorporationScreen:
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.CORPORATION_SCREEN)
 
 	def interfaceScreen (self):
+		if utils.isBarbarianGame(): return
 
 		self.SCREEN_ART = ArtFileMgr.getInterfaceArtInfo("TECH_BG").getPath()
 		self.EXIT_TEXT = u"<font=4>" + localText.getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + "</font>"

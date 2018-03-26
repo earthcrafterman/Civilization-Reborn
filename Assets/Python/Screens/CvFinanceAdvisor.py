@@ -86,6 +86,7 @@ class CvFinanceAdvisor:
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.FINANCE_ADVISOR)
 
 	def interfaceScreen(self):
+		if utils.isBarbarianGame(): return
 	
 		iScreen = self.iDefaultScreen
 				

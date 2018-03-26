@@ -550,6 +550,8 @@ class CvInfoScreen:
 
 	# Screen construction function
 	def showScreen(self, iTurn, iTabID, iEndGame):
+		if iEndGame != 0 and utils.isBarbarianGame():
+			return
 
 #BUG Timer
 		self.timer = BugUtil.Timer("InfoScreen")

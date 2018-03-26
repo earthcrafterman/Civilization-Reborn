@@ -9,6 +9,7 @@ import CvScreenEnums
 import random
 from Consts import * #Rhye
 from CvPythonExtensions import *
+from RFCUtils import utils
 
 PyPlayer = PyHelpers.PyPlayer
 gc = CyGlobalContext()
@@ -62,6 +63,7 @@ class CvTopCivs:
 		self.H_EXIT = 30
 
 	def showScreen(self):
+		if utils.isBarbarianGame(): return
 			  
 		'Use a popup to display the opening text'
 		if ( CyGame().isPitbossHost() ):

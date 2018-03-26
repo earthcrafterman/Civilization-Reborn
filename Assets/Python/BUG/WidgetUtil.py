@@ -129,6 +129,14 @@ def getWidgetHelp(argsList):
 	if iData1 == 10001:
 		return CyTranslator().getText("TXT_KEY_ACTION_BYZANTINE_UP", ())
 		
+	# Merijn: Barbarian hire button
+	if iData1 == 10002:
+		return CyTranslator().getText("TXT_KEY_ACTION_BUY_UNITS", ())
+		
+	# Merijn: Barbarian buy xp button
+	if iData1 == 10003:
+		return CyTranslator().getText("TXT_KEY_ACTION_BUY_XP", (iData2,))
+		
 	if iData1 == 12001:
 		szText = BugUtil.getPlainText("TXT_KEY_BUG_TECH_PREFS_ALL") + "\n"
 		for pTech in TechPrefs.TechPrefs().getAllFlavorTechs(iData2):

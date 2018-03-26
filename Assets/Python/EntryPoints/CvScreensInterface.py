@@ -59,6 +59,7 @@ import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
 gc = CyGlobalContext()
+import Barbs
 
 def getStabilityLevel(argsList):
 	iPlayer = argsList[0]
@@ -1203,6 +1204,15 @@ def applyBriberyEvent(argsList):
 	
 def applyBriberyResultEvent(argsList):
 	data.currentCongress.applyBriberyResultEvent()
+	
+def applyBuyUnitsEvent(argsList):
+	utils.doBarbarianBuy(argsList[0], argsList[1], argsList[2])
+	
+def applyTakeOverEvent(argsList):
+	Barbs.Barbs().applyTakeOverEvent(argsList[0])
+	
+def applyCampSpawnEvent(argsList):
+	Barbs.Barbs().applyCampSpawnEvent(argsList[0])
 
 
 #######################################################################################

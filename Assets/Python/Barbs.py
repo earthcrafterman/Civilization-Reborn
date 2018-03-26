@@ -12,6 +12,7 @@ from StoredData import data
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
+localText = CyTranslator()
 
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
@@ -73,6 +74,35 @@ tMinorStates = (
 
 #handicap level modifier
 iHandicapOld = (gc.getGame().getHandicapType() - 1)
+
+
+iNumBarbAreas = 11
+(iEurope, iAfrica, iAsia, iMiddleEast, iNorthAmerica, iSouthAmerica, iCaribbean, iMediterranean, iNorthSea, iPersianGulf, iAsiaSea) = range(iNumBarbAreas)
+lLandAreas = [iEurope, iAfrica, iAsia, iMiddleEast, iNorthAmerica, iSouthAmerica]
+lNavalAreas = [iCaribbean, iMediterranean, iNorthSea, iPersianGulf, iAsiaSea]
+
+# Camp spawning areas
+dCampCoords = {
+iEurope : ((55, 47), (73, 55), ()),
+iAfrica : ((51, 17), (72, 32), ()),
+iMiddleEast : ((76, 33), (86, 50), ()),
+iAsia : ((91, 32), (107, 54), ()),
+iNorthAmerica : ((11, 43), (32, 51), ()),
+iSouthAmerica : ((24, 12), (41, 30), ()),
+iCaribbean : ((20, 32), (33, 42), ((20, 32), (20, 33), (21, 32), (22, 32))),
+iMediterranean : ((51, 37), (72, 46), ((68, 46), (69, 45), (69, 46), (70, 45), (70, 46), (71, 46), (72, 46))),
+iNorthSea : ((49, 51), (68, 61), ((62, 58), (67, 60))),
+iPersianGulf : ((71, 29), (89, 38), ((71, 29), (71, 37), (71, 38), (72, 38))),
+iAsiaSea : ((101, 23), (111, 38), ((109, 32))),
+}
+
+dBarbContinentsYear = {
+iNorthAmerica : 1500,
+iSouthAmerica : 1600,
+iCaribbean : 1500,
+iNorthSea : 600,
+iPersianGulf : -250,
+}
 
 class Barbs:
 		
@@ -305,6 +335,9 @@ class Barbs:
 				utils.makeUnit(iAucac, iNative, (24, 26), 1)
 				utils.makeUnit(iAucac, iNative, (25, 23), 1)
 				
+		if iGameTurn > getTurnForYear(tBirth[iHumanBarbarian]):
+			self.checkCampSpawn(iGameTurn)
+				
 	def foundMinorCities(self, iGameTurn):
 		for i in range(len(tMinorCities)):
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
@@ -468,10 +501,15 @@ class Barbs:
 			sAdj = utils.getRandomEntry(lAdj)
 	
 		if iTurn % utils.getTurns(iPeriod) == iRest:
-			spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
+			iGold = pHumanBarbarian.getGold()
+			iCost = gc.getUnitInfo(iUnitType).getProductionCost() * 2 * iNumUnits
+			if iGold >= iCost and iTurn > getTurnForYear(tBirth[iHumanBarbarian]) and not gc.getUnitInfo(iUnitType).isAnimal():
+				data.lBarbarianTakeOver.append((iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, sAdj, iCost))
+			else:
+				spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
 			
-	def possibleTiles(self, tTL, tBR, bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
-		return [tPlot for tPlot in utils.getPlotList(tTL, tBR) if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
+	def possibleTiles(self, tTL, tBR, tExceptions=(), bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
+		return [tPlot for tPlot in utils.getPlotList(tTL, tBR, tExceptions) if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
 		
 	def possibleTile(self, tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 		x, y = tPlot
@@ -576,3 +614,129 @@ class Barbs:
 			
 	def includesActiveHuman(self, lPlayers):
 		return utils.getHumanID() in lPlayers and tBirth[utils.getHumanID()] <= gc.getGame().getGameTurnYear()
+			
+	def checkTakeOver(self):
+		iGold = pHumanBarbarian.getGold()
+		lPossibleUnits = data.lBarbarianTakeOver
+		lUnits = []
+		
+		for tTakeover in lPossibleUnits:
+			iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, sAdj, iCost = tTakeover
+			if iCost > iGold:
+				spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
+			else:
+				lUnits.append(tTakeover)
+				
+		data.lBarbarianTakeOver = lUnits
+		
+		if data.lBarbarianTakeOver:
+			popup = CyPopupInfo()
+			popup.setText(localText.getText("TXT_KEY_BARBARIAN_TAKEOVER_TITLE", ()))
+			popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popup.setOnClickedPythonCallback("applyTakeOverEvent")
+			
+			popup.addPythonButton(localText.getText("TXT_KEY_NONE", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
+			
+			for tTakeover in data.lBarbarianTakeOver:
+				iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, sAdj, iCost = tTakeover
+				unit = gc.getUnitInfo(iUnitType)
+				sKey = "TXT_KEY_BARB_AREA_" + str(self.getBarbarianContinent(tTL, tBR))
+				sText = localText.getText("TXT_KEY_BUY_UNITS_COSTS", (unit.getDescription(), iNumUnits, localText.getText(sKey, ()), iCost,))
+				popup.addPythonButton(sText, unit.getButton())
+		
+			popup.addPopup(utils.getHumanID())
+		
+	def applyTakeOverEvent(self, iChoice):
+		if iChoice == 0:
+			lTakeOvers = data.lBarbarianTakeOver
+			for tTakeover in lTakeOvers:
+				iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, sAdj, iCost = tTakeover
+				spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
+			data.lBarbarianTakeOver = []
+		else:
+			iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, sAdj, iCost = data.lBarbarianTakeOver.pop(iChoice-1)
+			pHumanBarbarian.changeGold(-iCost)
+			spawnFunction(iHumanBarbarian, iUnitType, iNumUnits, tTL, tBR, sAdj)
+			self.checkTakeOver()
+			
+	def checkCampSpawn(self, iTurn):
+		if iTurn % utils.getTurns(25) == 0:
+			self.doCampSpawn()
+			
+	def doCampSpawn(self):
+		popup = CyPopupInfo()
+		popup.setText(localText.getText("TXT_KEY_BARBARIAN_CAMP_SPAWN", ()))
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyCampSpawnEvent")
+		
+		popup.addPythonButton(localText.getText("TXT_KEY_NONE", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
+			
+		lCamps = []
+		
+		for iArea in range(iNumBarbAreas):
+			if self.canCampSpawn(iArea):
+				lCamps.append(iArea)
+				
+				iCost = data.lBarbarianCamps[iArea] * 200
+				sKey = "TXT_KEY_BARB_AREA_" + str(iArea)
+				sText = localText.getText(sKey, ()) + ' ' + localText.getText("TXT_KEY_BUY_CAMPS_COSTS", (iCost,))
+				
+				if iArea in lLandAreas:
+					button = gc.getUnitInfo(iBarbarianCamp).getButton()
+				else:
+					button = gc.getUnitInfo(iNavalCamp).getButton()
+				
+				popup.addPythonButton(sText, button)
+		
+		if lCamps:
+			data.lBarbarianBuyUnits = lCamps
+			popup.addPopup(utils.getHumanID())
+		
+	def applyCampSpawnEvent(self, iChoice):
+		if iChoice > 0:
+			iArea = data.lBarbarianBuyUnits[iChoice-1]
+			tTL, tBR, tExceptions = dCampCoords[iArea]
+			bNaval = (iArea in lNavalAreas)
+			lPlots = self.possibleTiles(tTL, tBR, tExceptions, bWater=bNaval)
+			if not lPlots:
+				lPlots = self.possibleTiles(tTL, tBR, tExceptions, bWater=bNaval, bTerritory=True)
+			if lPlots:
+				tPlot = utils.getRandomEntry(lPlots)
+				
+				if bNaval:
+					utils.makeUnit(iNavalCamp, iHumanBarbarian, tPlot, 1)
+				else:
+					utils.makeUnit(iBarbarianCamp, iHumanBarbarian, tPlot, 1)
+			
+				pHumanBarbarian.changeGold(-data.lBarbarianCamps[iArea] * 200)
+				data.lBarbarianCamps[iArea] += 1
+		
+	def canCampSpawn(self, iArea):
+		iGold = pHumanBarbarian.getGold()
+		iCost = data.lBarbarianCamps[iArea] * 200
+		
+		if iCost > iGold: return False
+		
+		if iArea in dBarbContinentsYear.keys():
+			if gc.getGame().getGameTurn() < getTurnForYear(dBarbContinentsYear[iArea]):
+				return False
+		
+		return True
+		
+	def getBarbarianContinent(self, tTL, tBR):
+		x, y = utils.getRandomEntry(utils.getPlotList(tTL, tBR))
+		plot = gc.getMap().plot(x, y).getNearestLandPlot()
+		iRegion = plot.getRegionID()
+		if iRegion in lEurope:
+			return iEurope
+		if iRegion in lAfrica:
+			return iAfrica
+		if iRegion in lEastAsia or iRegion in lIndia or iRegion in [rSiberia, rCentralAsia]:
+			return iAsia
+		if iRegion in lMiddleEast:
+			return iMiddleEast
+		if iRegion in lNorthAmerica:
+			return iNorthAmerica
+		if iRegion in lSouthAmerica:
+			return iSouthAmerica
+			

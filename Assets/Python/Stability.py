@@ -88,8 +88,9 @@ def checkTurn(iGameTurn):
 		for iPlayer in range(iNumPlayers):
 			checkLostCitiesCollapse(iPlayer)
 			
-	if iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
-		data.iHumanStability = calculateStability(utils.getHumanID())
+	if not utils.isBarbarianGame():
+		if iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
+			data.iHumanStability = calculateStability(utils.getHumanID())
 		
 def endTurn(iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
@@ -124,7 +125,7 @@ def onCityRazed(iPlayer, city):
 	
 	if iOwner == iBarbarian: return
 
-	if utils.getHumanID() == iPlayer and iPlayer != iMongolia:
+	if utils.getHumanID() == iPlayer and iPlayer not in [iMongolia, iHumanBarbarian]:
 		iRazePenalty = -10
 		if city.getPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getPopulation()
@@ -239,6 +240,9 @@ def isImmune(iPlayer):
 		
 	# human player immunity if option is enabled
 	if iPlayer == utils.getHumanID() and data.bNoHumanStability:
+		return True
+		
+	if utils.isHumanBarbarian(iPlayer):
 		return True
 		
 	return False

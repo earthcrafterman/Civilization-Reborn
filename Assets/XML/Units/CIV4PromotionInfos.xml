@@ -2221,5 +2221,12 @@
 			</TerrainDoubleMoves>
 			<Button>Art/Interface/Buttons/Promotions/DesertAdaptation.dds</Button>
 		</PromotionInfo>
+		<PromotionInfo>
+			<Type>PROMOTION_RAIDER</Type>
+			<Description>TXT_KEY_PROMOTION_RAIDER</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<iPillageChange>100</iPillageChange>
+			<Button>Art/Interface/Buttons/Promotions/Raider.dds</Button>
+		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>

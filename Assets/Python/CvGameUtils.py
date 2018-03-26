@@ -7,6 +7,9 @@ import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
 from RFCUtils import utils
+from Consts import *
+import Areas
+import victory as vic
 
 # globals
 gc = CyGlobalContext()
@@ -326,6 +329,7 @@ class CvGameUtils:
 		"controls the gold result of capturing a city"
 		
 		pOldCity = argsList[0]
+		iConqueror = argsList[1]
 		
 		iCaptureGold = 0
 		
@@ -337,6 +341,25 @@ class CvGameUtils:
 		if (gc.getDefineINT("CAPTURE_GOLD_MAX_TURNS") > 0):
 			iCaptureGold *= cyIntRange((CyGame().getGameTurn() - pOldCity.getGameTurnAcquired()), 0, gc.getDefineINT("CAPTURE_GOLD_MAX_TURNS"))
 			iCaptureGold /= gc.getDefineINT("CAPTURE_GOLD_MAX_TURNS")
+			
+		if utils.isHumanBarbarian(iConqueror):
+			iPrevOwner = pOldCity.getOwner()
+			bCapital = False
+			if iPrevOwner < iNumPlayers:
+				iCaptureGold += 25
+				tCapital = Areas.getCapital(iPrevOwner)
+				bCapital = pOldCity.at(tCapital[0], tCapital[1])
+			iCaptureGold += pOldCity.getPopulation() * 50
+			if bCapital:
+				iCaptureGold += 150
+			if pOldCity.isHolyCity():
+				iCaptureGold += 250
+			iCaptureGold += pOldCity.getNumWorldWonders() * 50
+			iCaptureGold += pOldCity.getNumNationalWonders() * 10
+			for iGP in range(iSpecialistGreatProphet, iSpecialistGreatSpy+1):
+				iCaptureGold += pOldCity.getAddedFreeSpecialistCount(iGP) * 50
+				
+			vic.barbarianRaze(iConqueror, iCaptureGold, bCapital)
 
 ## Himeji Samurai Castle Start ##
 

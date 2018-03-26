@@ -17265,6 +17265,11 @@ int CvCity::getBestYieldAvailable(YieldTypes eYield) const
 
 bool CvCity::isAutoRaze() const
 {
+	if (getOwnerINLINE() == HUMANBARBARIAN)
+	{
+		return true;
+	}
+	
 	// Leoreth: don't raze holy cities
 	if (isHolyCity())
 	{

@@ -10,6 +10,7 @@ import time
 from RFCUtils import utils
 from StoredData import data
 from Consts import *
+import Popup
 
 # BUG - DLL - start
 import BugDll
@@ -2521,6 +2522,21 @@ class CvMainInterface:
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
+							
+					# Merijn: Barbarian buttons
+					if utils.isHumanBarbarian(pUnit.getOwner()):
+						# Merijn: Barbarian camp hire
+						if pUnit.getUnitType() in [iBarbarianCamp, iNavalCamp]:
+							screen.appendMultiListButton("BottomButtonContainer", ",-,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,15", 0, WidgetTypes.WIDGET_GENERAL, 10002, -1, False)
+							screen.show("BottomButtonContainer")
+							iCount += 1
+							
+						# Experience upgrade
+						elif gc.getUnitInfo(pUnit.getUnitType()).getCombat() > 0:
+							if utils.canBuyBarbarianExperience(pUnit):
+								screen.appendMultiListButton("BottomButtonContainer", ",-,Art/Interface/Buttons/Promotions_Atlas.dds,1,4", 0, WidgetTypes.WIDGET_GENERAL, 10003, utils.getExperienceBuyCost(pUnit), False)
+								screen.show("BottomButtonContainer")
+								iCount += 1
 
 		elif (CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY):
 		
@@ -5666,7 +5682,31 @@ class CvMainInterface:
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
 			utils.doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
+		
+		# Merijn: Barbarian unit hire
+		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10002:
+			iGold = gc.getActivePlayer().getGold()
+			lUnits = []
+			for iUnit in range(iNumUnits):
+				unit = gc.getUnitInfo(iUnit)
+				if unit.getCombat() <= 0: continue
+				if utils.getBaseUnit(iUnit) != iUnit: continue
+				if unit.isAnimal(): continue
+				if g_pSelectedUnit.getDomainType() == DomainTypes.DOMAIN_SEA and unit.getDomainType() != DomainTypes.DOMAIN_SEA: continue
+				if g_pSelectedUnit.getDomainType() == DomainTypes.DOMAIN_LAND and unit.getDomainType() != DomainTypes.DOMAIN_LAND: continue
+				if not pHumanBarbarian.canTrain(iUnit, False, False) and iUnit not in [iWarrior, iAxeman]: continue
+				if iUnit == iMilitia: continue
+				iCost = unit.getProductionCost() * 3
+				if iCost > iGold: continue
+				lUnits.append(iUnit)
+				
+			data.lBarbarianBuyUnits = lUnits
+			self.buyUnitsPopup(g_pSelectedUnit)
 
+		# Merijn: Barbarian buy xp
+		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10003:
+			utils.doBarbarianExperience(g_pSelectedUnit)
+			
 		return 0
 	
 # BUG - Raw Yields - start
@@ -5735,3 +5775,21 @@ class CvMainInterface:
 		if not paganReligionName: return ""
 	
 		return u"<font=2>%c</font>" % FontUtil.getChar(paganReligionName.lower())
+		
+	def buyUnitsPopup(self, camp):
+		popup = CyPopupInfo()
+		popup.setText(localText.getText("TXT_KEY_BARBARIAN_UNIT_BUY", ()))
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyBuyUnitsEvent")
+		popup.setData1(camp.getX())
+		popup.setData2(camp.getY())
+		
+		popup.addPythonButton(localText.getText("TXT_KEY_NONE", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
+		
+		for iUnit in data.lBarbarianBuyUnits:
+			unit = gc.getUnitInfo(iUnit)
+			iCost = unit.getProductionCost() * 3
+			popup.addPythonButton(unit.getDescription() + localText.getText("TXT_KEY_BUY_CAMPS_COSTS", (iCost,)), unit.getButton())
+			
+		popup.addPopup(utils.getHumanID())
+		

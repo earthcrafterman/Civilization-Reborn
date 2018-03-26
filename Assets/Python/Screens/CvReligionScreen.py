@@ -129,6 +129,7 @@ class CvReligionScreen:
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.RELIGION_SCREEN)
 
 	def interfaceScreen (self):
+		if utils.isBarbarianGame(): return
 
 		self.SCREEN_ART = ArtFileMgr.getInterfaceArtInfo("TECH_BG").getPath()
 		self.NO_STATE_BUTTON_ART = ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()

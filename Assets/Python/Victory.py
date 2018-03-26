@@ -6,6 +6,7 @@ from Consts import *
 from RFCUtils import utils
 import heapq
 import Areas
+import Modifiers
 
 ### GLOBALS ###
 
@@ -1404,6 +1405,29 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(2000):
 			expire(iCanada, 2)
 			
+	elif iPlayer == iHumanBarbarian:
+		# Lose if no camps are left
+		iNumCamps = pHumanBarbarian.getUnitClassCount(gc.getUnitInfo(iBarbarianCamp).getUnitClassType())
+		iNumCamps += pHumanBarbarian.getUnitClassCount(gc.getUnitInfo(iNavalCamp).getUnitClassType())
+		if iNumCamps < 1:
+			gc.getPlayer(iHumanBarbarian).killUnits()
+			
+		# first goal: get 5000 gold by razing cities and raze at least 10 capitals
+		# At onCityRazed
+		if isPossible(iHumanBarbarian, 0):
+			if data.iBarbarianRazeGold >= utils.getTurns(10000) and data.iBarbarianRazes >= 10:
+				win(iHumanBarbarian, 0)
+				
+		# second goal: Get 10000 gold by killing units and 5000 gold by pillaging and killing workers
+		if isPossible(iHumanBarbarian, 1):
+			if data.iBarbarianKillGold >= utils.getTurns(10000) and data.iBarbarianPillageGold >= utils.getTurns(5000):
+				win(iHumanBarbarian, 1)
+		
+		# third goal: get 5000 gold by blockading and sinking ships, kill at least 50 ships
+		if isPossible(iHumanBarbarian, 2):
+			if data.iBarbarianPiratingGold >= utils.getTurns(5000) and data.iBarbarianSinks >= 50:
+				win(iHumanBarbarian, 2)
+			
 			
 	# check religious victory (human only)
 	if utils.getHumanID() == iPlayer:
@@ -1448,17 +1472,24 @@ def checkHistoricalVictory(iPlayer):
 		
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			capital = pPlayer.getCapitalCity()
-			capital.setHasRealBuilding(iTriumphalArch, True)
 			
-			if pPlayer.isHuman():
-				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
+			# Human barbarian gets unit upkeep discount
+			if utils.isHumanBarbarian(iPlayer):
+				Modifiers.adjustModifier(iHumanBarbarian, Modifiers.iModifierUnitUpkeep, 50)
+				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE_BARBARIAN", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
 				
-				for iLoopPlayer in range(iNumPlayers):
-					if iLoopPlayer != iPlayer:
-						pLoopPlayer = gc.getPlayer(iLoopPlayer)
-						if pLoopPlayer.isAlive():
-							pLoopPlayer.AI_changeAttitudeExtra(iPlayer, -2)
+			else:
+				capital = pPlayer.getCapitalCity()
+				capital.setHasRealBuilding(iTriumphalArch, True)
+				
+				if pPlayer.isHuman():
+					CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
+					
+					for iLoopPlayer in range(iNumPlayers):
+						if iLoopPlayer != iPlayer:
+							pLoopPlayer = gc.getPlayer(iLoopPlayer)
+							if pLoopPlayer.isAlive():
+								pLoopPlayer.AI_changeAttitudeExtra(iPlayer, -2)
 			
 	if gc.getGame().getWinner() == -1:
 		if countAchievedGoals(iPlayer) == 3:
@@ -1849,6 +1880,12 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 				if data.iKoreanSinks >= 20:
 					win(iKorea, 2)
 					
+	#Barbarian 3rd: Get 5000 gold though piracy and sink 50 ships
+	elif utils.isHumanBarbarian(iWinningPlayer):
+		if isPossible(iHumanBarbarian, 2):
+			if pLosingUnitInfo.getDomainType() == iDomainSea:
+				data.iBarbarianSinks += 1
+					
 def onGreatPersonBorn(iPlayer, unit):
 	iUnitType = utils.getBaseUnit(unit.getUnitType())
 	pUnitInfo = gc.getUnitInfo(iUnitType)
@@ -1875,6 +1912,14 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 	elif iPlayer == iMoors:
 		if isPossible(iMoors, 2) and iUnit == iCorsair:
 			data.iMoorishGold += iGold
+			
+	elif utils.isHumanBarbarian(iPlayer):
+		if gc.getUnitInfo(iUnit).getDomainType == DomainTypes.DOMAIN_SEA:
+			if isPossible(iHumanBarbarian, 2):
+				data.iBarbarianPiratingGold += iGold
+		else:
+			if isPossible(iHumanBarbarian, 1):
+				data.iBarbarianPillageGold += iGold
 		
 def onCityCaptureGold(iPlayer, iGold):
 
@@ -1930,6 +1975,10 @@ def onBlockade(iPlayer, iGold):
 	if iPlayer == iMoors:
 		if isPossible(iMoors, 2):
 			data.iMoorishGold += iGold
+			
+	elif utils.isHumanBarbarian(iPlayer):
+		if isPossible(iHumanBarbarian, 2):
+			data.iBarbarianPiratingGold += iGold
 			
 def onFirstContact(iPlayer, iHasMetPlayer):
 
@@ -2991,6 +3040,15 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 			iCount += 1
 	return iCount
 	
+def barbarianRaze(iPlayer, iGold, bCapital):
+	#Barbarian 1st: Get 10000 gold from razing and raze 10 original capitals
+	# trigger in CvGameUtils.py @ doCityCaptureGold() because of additional raze gold
+	if utils.isHumanBarbarian(iPlayer):
+		if isPossible(iHumanBarbarian, 0):
+			data.iBarbarianRazeGold += iGold
+			if bCapital:
+				data.iBarbarianRazes += 1
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -3937,5 +3995,19 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iPeaceDeals = data.iCanadianPeaceDeals
 			aHelp.append(getIcon(iPeaceDeals >= 12) + localText.getText("TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS", (iPeaceDeals, 12)))
+			
+	elif iPlayer == iHumanBarbarian:
+		if iGoal == 0:
+			iRazeGold = data.iBarbarianRazeGold
+			iRazedCapitals = data.iBarbarianRazes
+			aHelp.append(getIcon(iRazeGold >= utils.getTurns(10000)) + localText.getText("TXT_KEY_VICTORY_RAZE_GOLD", (iRazeGold, utils.getTurns(10000))) + getIcon(iRazedCapitals >= 10) + localText.getText("TXT_KEY_VICTORY_CAPITALS_RAZED", (iRazedCapitals, 10)))
+		elif iGoal == 1:
+			iKillingGold = data.iBarbarianKillGold
+			iPillageGold = data.iBarbarianPillageGold
+			aHelp.append(getIcon(iPillageGold >= utils.getTurns(10000)) + localText.getText("TXT_KEY_VICTORY_KILLING_GOLD", (iKillingGold, utils.getTurns(10000))) + getIcon(iPillageGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_PILLAGE_GOLD", (iPillageGold, utils.getTurns(5000))))
+		elif iGoal == 2:
+			iPirateGold = data.iBarbarianPiratingGold
+			iBarbarianSinks = data.iBarbarianSinks
+			aHelp.append(getIcon(iPirateGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iPirateGold, utils.getTurns(5000))) + ' ' + getIcon(iBarbarianSinks >= 50) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iBarbarianSinks, 50)))
 			
 	return aHelp

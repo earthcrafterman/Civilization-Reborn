@@ -30,6 +30,7 @@ import DiplomacyUtil
 import FavoriteCivicDetector
 import FontUtil
 import TradeUtil
+from RFCUtils import utils
 
 # globals
 gc = CyGlobalContext()
@@ -208,6 +209,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 		self.iDefaultScreen = self.SCREEN_DICT["RELATIONS"]
 						
 	def interfaceScreen (self, iScreen):
+		if utils.isBarbarianGame(): return
 	
 #		self.ATTITUDE_DICT = {
 #			"COLOR_YELLOW": re.sub (":", "|", localText.getText ("TXT_KEY_ATTITUDE_FRIENDLY", ())),

@@ -1147,6 +1147,7 @@ class CvVictoryScreen:
 		screen.appendTableRow(szTable)
 
 		for iLoopVC in range(gc.getNumVictoryInfos()):
+			if utils.isBarbarianGame() and iLoopVC == 8: continue # No religious victory for barbs
 			victory = gc.getVictoryInfo(iLoopVC)
 			if gc.getGame().isVictoryValid(iLoopVC):
 

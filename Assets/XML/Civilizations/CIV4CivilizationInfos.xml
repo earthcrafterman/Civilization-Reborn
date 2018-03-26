@@ -5830,6 +5830,58 @@
 			<CivilizationActionSound>AS3D_ZULU_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_HUMAN_BARBARIAN</Type>
+			<Description>TXT_KEY_CIV_BARBARIAN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_BARBARIAN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_BARBARIAN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_BARBARIAN_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_BLACK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_HUMANBARBARIAN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
+			<Identifier>HBA</Identifier>
+			<StartingYear>-1000</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
+			<Cities>
+				<City>Tortuga</City>
+			</Cities>
+			<Buildings/>
+			<Units/>
+			<FreeUnitClasses/>
+			<FreeBuildingClasses/>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_BARBARIAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ENGLAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_AMERICA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_AMERICA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_INDEPENDENT</Type>
 			<Description>TXT_KEY_CIV_INDEPENDENT_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_INDEPENDENT_SHORT_DESC</ShortDescription>

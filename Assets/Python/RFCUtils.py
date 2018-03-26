@@ -1872,4 +1872,64 @@ class RFCUtils:
 		if len(lUnits) < iNumDefenders:
 			self.makeUnit(self.getBestDefender(iPlayer), iPlayer, tPlot, iNumDefenders - len(lUnits))
 			
+	def isBarbarianGame(self):
+		return self.getHumanID() == iHumanBarbarian
+		
+	def isHumanBarbarian(self, iPlayer):
+		return iPlayer == iHumanBarbarian and self.isBarbarianGame()
+		
+	def doBarbarianTechs(self):
+		for iTech in range(iNumTechs):
+			if teamHumanBarbarian.isHasTech(iTech): continue
+			iCount = 0
+			iAlive = 0
+			for iPlayer in range(iNumPlayers):
+				if gc.getPlayer(iPlayer).isAlive():
+					iAlive += 1
+					if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iTech):
+						iCount += 1
+			if (iCount * 100 / iAlive) >= 75:
+				gc.getTeam(gc.getPlayer(iHumanBarbarian).getTeam()).setHasTech(iTech, True, iHumanBarbarian, False, False)
+				
+	def doBarbarianExperience(self, unit):
+		iXP = unit.getExperience()
+		iUnitLevel = unit.getLevel()
+		iCost = self.getExperienceBuyCost(unit)
+		
+		unit.changeExperience(1, 100, False, False, False)
+		
+		iOwner = unit.getOwner()
+		gc.getPlayer(iOwner).changeGold(-iCost)
+		
+		if (iXP+1) >= (iUnitLevel*iUnitLevel+1):
+			unit.setPromotionReady(True)
+		
+	def canBuyBarbarianExperience(self, unit):
+		iXP = unit.getExperience()
+		if iXP >= 100:
+			return False
+	
+		iCost = self.getExperienceBuyCost(unit)
+		iGold = gc.getActivePlayer().getGold()
+		if iCost > iGold:
+			return False
+		plot = CyMap().plot(unit.getX(), unit.getY())
+		for i in range(plot.getNumUnits()):
+			unit = plot.getUnit(i)
+			if unit.getUnitType() == iBarbarianCamp:
+				return True
+			
+		return False
+		
+	def getExperienceBuyCost(self, unit):
+		iXP = unit.getExperience()
+		return (iXP+1) * 5
+		
+	def doBarbarianBuy(self, iChoice, x, y):
+		if iChoice == 0: return
+		iUnit = data.lBarbarianBuyUnits[iChoice-1]
+		iCost = gc.getUnitInfo(iUnit).getProductionCost() * 3
+		pHumanBarbarian.changeGold(-iCost)
+		self.makeUnit(data.lBarbarianBuyUnits[iChoice-1], iHumanBarbarian, (x, y), 1)
+	
 utils = RFCUtils()

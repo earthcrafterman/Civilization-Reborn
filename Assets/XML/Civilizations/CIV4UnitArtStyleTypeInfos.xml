@@ -832,5 +832,18 @@
 				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>
+		<UnitArtStyleTypeInfo>
+			<Type>ARTSTYLE_BARBARIAN</Type>
+			<StyleUnits>
+				<StyleUnit>
+					<UnitType>UNIT_NAVAL_CAMP</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_NAVAL_CAMP_EARLY</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_NAVAL_CAMP_MIDDLE</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_NAVAL_CAMP_MIDDLE</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+			</StyleUnits>
+		</UnitArtStyleTypeInfo>
 	</UnitArtStyleTypeInfos>
 </Civ4UnitArtStyleTypeInfos>

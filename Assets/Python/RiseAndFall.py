@@ -942,6 +942,11 @@ class RiseAndFall:
 				if iGameTurn == getTurnForYear(tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
 					
+		# Merijn: Human barbarian spawn
+		if iGameTurn == getTurnForYear(tBirth[iHumanBarbarian])-1:
+			if utils.isBarbarianGame():
+				self.spawnHumanBarbarian()
+					
 	def endTurn(self, iPlayer):
 		for tTimedConquest in data.lTimedConquests:
 			iConqueror, tPlot = tTimedConquest
@@ -1435,7 +1440,8 @@ class RiseAndFall:
 			self.setStateReligion(iCiv)
 			
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
-			self.newCivPopup(iCiv)
+			if not utils.isBarbarianGame():
+				self.newCivPopup(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
 		if pSeljuks.isAlive():
@@ -3087,6 +3093,9 @@ class RiseAndFall:
 				utils.makeUnit(iCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
 		
+		if utils.isBarbarianGame():
+			utils.makeUnit(iBarbarianCamp, iHumanBarbarian, (0, 0), 1)
+		
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
 				
@@ -3247,4 +3256,19 @@ class RiseAndFall:
 		if iHighestEntry > 0:
 			gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
 			
+	def spawnHumanBarbarian(self):
+		Civilizations.initPlayerTechs(iHumanBarbarian)
+		utils.doBarbarianTechs()
+		lPlots = utils.getPlotList((72, 50), (85, 59))
+		while len(lPlots) > 0:
+			tPlot = utils.getRandomEntry(lPlots)
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			
+			lPlots.remove(tPlot)
+			if not plot.isWater() and not plot.isPeak() and not plot.isUnit() and plot.getFeatureType() != iMarsh and  plot.getOwner() < 0:
+				utils.makeUnit(iBarbarianCamp, iHumanBarbarian, tPlot, 1)
+				utils.makeUnit(iAxeman, iHumanBarbarian, tPlot, 1)
+				break
+
 rnf = RiseAndFall()
