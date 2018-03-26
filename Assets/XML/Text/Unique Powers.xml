@@ -197,18 +197,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
 		<English>The Power of Maat:</English>
-		<French>Le Pouvoir du Pharaon :</French>
-		<German>Die Macht des Pharaos:</German>
-		<Italian>Il potere del faraone:</Italian>
-		<Spanish>El poder del fara&#243;n:</Spanish>
+		<French>Le Pouvoir du Maat :</French>
+		<German>Die Macht des Maat:</German>
+		<Italian>Il potere del maat:</Italian>
+		<Spanish>El poder del maat:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY</Tag>
-		<English>-10% Civic Upkeep per nation at war with (Max 30%)[NEWLINE]+5% Commerce per Luxury Type in Core Cities</English>
+		<English>Second copies of a resource in the capital grant -1 Civic Upkeep</English>
 		<French>Le droit h&#233;r&#233;ditaire et l'esclavage sont disponibles au d&#233;part</French>
 		<German>Aktivierung von Monarchie, Umverteilung und Vergötterung beim Spielstart</German>
 		<Italian>All'avvio sono abilitati governo ereditario e schiavit&#249;</Italian>
 		<Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UPKEEP_REDUCTION_MAAT</Tag>
+		<English>Ma'at</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ENG_TITLE</Tag>

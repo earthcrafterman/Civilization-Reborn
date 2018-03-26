@@ -2930,7 +2930,7 @@
 					<iHealthPercent>100</iHealthPercent>
 				</ImprovementHealth>
 				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_HAMLET</ImprovementType>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
 					<iHealthPercent>50</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>

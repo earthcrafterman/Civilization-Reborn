@@ -8,14 +8,6 @@ def getModifier(iPlayer, iModifier):
 			return tModifiers[iModifier][lOrder.index(iCivilization)] / 2
 		elif (iModifier == iModifierUnitCost or iModifier == iModifierBuildingCost) and utils.getHumanID() != iPlayer:
 			return tModifiers[iModifier][lOrder.index(iCivilization)] - 20
-		elif (iModifier == iModifierCivicUpkeep and iPlayer == iEgypt):
-			iWars = 0
-			for iLoopPlayer in range(iNumPlayers):
-				if teamEgypt.isAtWar(iLoopPlayer):
-					iWars += 1
-					if iWars >= 3:
-						break
-			return tModifiers[iModifier][lOrder.index(iCivilization)] - (10 * iWars)
 		else:
 			return tModifiers[iModifier][lOrder.index(iCivilization)]
 	return tDefaults[iModifier]

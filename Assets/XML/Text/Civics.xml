@@ -337,4 +337,8 @@
 		<Tag>TXT_KEY_CIVIC_CASTE_SYSTEM_STRATEGY</Tag>
 		<English>Faster improvement construction; extra food from Plantations</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UPKEEP_REDUCTION</Tag>
+		<English>Upkeep Reduction</English>
+	</TEXT>
 </Civ4GameText>

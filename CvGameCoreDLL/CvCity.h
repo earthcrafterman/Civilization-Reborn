@@ -1027,6 +1027,10 @@ public:
 	bool isAutoRaze() const;
 
 	//1SDAN
+	int getCivicUpkeepReduction() const;
+	void setCivicUpkeepReduction(int iNewValue);
+	void changeCivicUpkeepReduction(int iChange);
+
 	int getSpecialistGoodHealth(int iSpecialistType) const;
 	int* getSpecialistGoodHealthArray() const;
 	void setSpecialistGoodHealth(int eSpecialist, int iNewValue);
@@ -1279,6 +1283,9 @@ protected:
 	int m_iCultureTradeRouteModifier;
 
 	int m_iBuildingUnignorableBombardDefense;
+
+	// 1SDAN
+	int m_iCivicUpkeepReduction;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

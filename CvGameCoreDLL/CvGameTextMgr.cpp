@@ -15891,6 +15891,21 @@ void CvGameTextMgr::buildFinanceCivicUpkeepString(CvWStringBuffer& szBuffer, Pla
 			szCivicOptionCosts += NEWLINE + szTemp;
 		}
 	}
+	if (player.getCapitalCity()->getCivicUpkeepReduction() > 0)
+	{
+		if (player.getID() == EGYPT)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d%c: %s", player.getCapitalCity()->getCivicUpkeepReduction(), GC.getCommerceInfo(COMMERCE_GOLD).getChar(), gDLL->getText("TXT_KEY_CIVIC_UPKEEP_REDUCTION_MAAT").GetCString());
+			szCivicOptionCosts += NEWLINE + szTemp;
+		}
+		else
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d%c: %s", player.getCapitalCity()->getCivicUpkeepReduction(), GC.getCommerceInfo(COMMERCE_GOLD).getChar(), gDLL->getText("TXT_KEY_CIVIC_UPKEEP_REDUCTION").GetCString());
+			szCivicOptionCosts += NEWLINE + szTemp;
+		}
+	}
 
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CIVIC_UPKEEP_COST", szCivicOptionCosts.GetCString(), player.getCivicUpkeep()));

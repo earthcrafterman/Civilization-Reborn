@@ -13497,6 +13497,12 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 		iTotalUpkeep /= 3;
 	}
 
+	if (getCapitalCity() != NULL)
+	{
+		iTotalUpkeep -= getCapitalCity()->getCivicUpkeepReduction();
+		iTotalUpkeep = std::max(0, iTotalUpkeep);
+	}
+
 	return iTotalUpkeep;
 }
 

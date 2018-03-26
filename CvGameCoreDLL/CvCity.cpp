@@ -553,6 +553,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iCitySizeBoost = 0;
 	m_iSpecialistFreeExperience = 0;
 	m_iEspionageDefenseModifier = 0;
+	
+	// 1SDAN
+	m_iCivicUpkeepReduction = 0; // 1SDAN
 
 	// Leoreth
 	m_iSpecialistGoodHappiness = 0;
@@ -4279,11 +4282,6 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 		{
 			iBadValue += iValue;
 		}
-	}
-
-	if (getOwner() == EGYPT && plot()->isCore(EGYPT) && GC.getBonusInfo(eBonus).getHappiness() > 0)
-	{
-		changeBonusYieldRateModifier((YIELD_COMMERCE), (5 * iChange));
 	}
 
 	changeBonusGoodHappiness(iGoodValue * iChange);
@@ -11870,6 +11868,7 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 	if (iChange != 0)
 	{
 		bool bOldHasBonus = hasBonus(eIndex);
+		int iOldNumBonuses = getNumBonuses(eIndex);
 
 		m_paiNumBonuses[eIndex] += iChange;
 
@@ -11883,6 +11882,14 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 			{
 				processBonus(eIndex, -1);
 			}
+		}
+		if (getOwner() == EGYPT && iChange > 0 && iOldNumBonuses < 2 && getNumBonuses(eIndex) >= 2 && isCapital())
+		{
+			changeCivicUpkeepReduction(1);
+		}
+		else if (getOwner() == EGYPT && iChange < 0 && iOldNumBonuses <= 2 && getNumBonuses(eIndex) < 2 && isCapital())
+		{
+			changeCivicUpkeepReduction(-1);
 		}
 
 		if (isCorporationBonus(eIndex))
@@ -15463,6 +15470,9 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iSpecialistFreeExperience);
 	pStream->Read(&m_iEspionageDefenseModifier);
 
+	// 1SDAN
+	pStream->Read(&m_iCivicUpkeepReduction);
+
 	// Leoreth
 	pStream->Read(&m_iSpecialistGoodHappiness);
 	pStream->Read(&m_iSpecialistBadHappiness);
@@ -15738,6 +15748,9 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCitySizeBoost);
 	pStream->Write(m_iSpecialistFreeExperience);
 	pStream->Write(m_iEspionageDefenseModifier);
+
+	// 1SDAN
+	pStream->Write(m_iCivicUpkeepReduction);
 
 	// Leoreth
 	pStream->Write(m_iSpecialistGoodHappiness);
@@ -17508,6 +17521,21 @@ bool CvCity::isAutoRaze() const
 	}
 
 	return false;
+}
+
+int CvCity::getCivicUpkeepReduction() const
+{
+	return m_iCivicUpkeepReduction;
+}
+
+void CvCity::setCivicUpkeepReduction(int iNewValue)
+{
+	m_iCivicUpkeepReduction = iNewValue;
+}
+
+void CvCity::changeCivicUpkeepReduction(int iChange)
+{
+	setCivicUpkeepReduction(m_iCivicUpkeepReduction + iChange);
 }
 
 int CvCity::getSpecialistGoodHealth (int iSpecialistType) const
