@@ -1423,4 +1423,12 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS</Tag>
+		<English>Plaas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Plaas[COLOR_REVERT], the Boer replacement for the [COLOR_BUILDING_TEXT]Star Fort[COLOR_REVERT], provides two extra food.</English>
+	</TEXT>
 </Civ4GameText>

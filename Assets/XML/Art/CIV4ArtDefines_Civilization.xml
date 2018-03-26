@@ -342,5 +342,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Flower.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BOER</Type>
+			<Button>Art/Interface/Buttons/Civilizations/boer.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Boer.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

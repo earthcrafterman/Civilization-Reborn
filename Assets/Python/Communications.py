@@ -72,7 +72,8 @@ tPool3 = (iEgypt,
 	iArgentina,
 	iCanada,
 	iPolynesia,
-	iHarappa)
+	iHarappa,
+	iBoers)
 
 
 class Communications:

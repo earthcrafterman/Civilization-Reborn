@@ -5366,6 +5366,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == RADIO || iI == SYNTHETICS || iI == ELECTRICITY || iI == ENGINE)
 										iValue *= 2;
 									break;
+								case BOERS:
+									break;
 								default:
 									break;
 								}

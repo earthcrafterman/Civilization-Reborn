@@ -241,6 +241,9 @@ class CvRFCEventHandler:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
 		else:
 			utils.cityConquestCulture(city, iPlayer, iOwner)
+			
+		if iOwner == iBoers:
+			self.up.boersUP(city)
 
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList
@@ -278,6 +281,8 @@ class CvRFCEventHandler:
 
 		if iOwner == iTurkey:
 			self.up.turkishUP(city, iOwner, -1)
+		elif iOwner == iBoers:
+			self.up.boersUP(city)
 			
 		if iOwner == iCarthage:
 			if tCity == (58, 39):
@@ -505,6 +510,8 @@ class CvRFCEventHandler:
 			
 	def onUnitBuilt(self, argsList):
 		city, unit = argsList
+		
+		vic.onUnitBuilt(city, unit)
 		
 		if unit.getUnitType() == iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
 			utils.handleChineseCities(unit)

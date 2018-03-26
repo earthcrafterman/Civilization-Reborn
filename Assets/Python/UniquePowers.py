@@ -570,3 +570,9 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
+		
+	def boersUP(self, city):
+		lFreeBuildings = [iBarracks, iStable, iCourthouse, iJail, iMarket, iPostOffice, iGranary, iSmokehouse, iAqueduct, iForge, iLibrary]
+		for iBuilding in lFreeBuildings:
+			if not city.isHasRealBuilding(iBuilding):
+				city.setHasRealBuilding(iBuilding, True)

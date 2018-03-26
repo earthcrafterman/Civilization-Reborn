@@ -50,6 +50,7 @@ dDefaultInsertNames = {
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCO",
 	iMughals : "TXT_KEY_CIV_MUGHALS_DELHI",
 	iHarappa : "TXT_KEY_CIV_HARAPPA_INDUS",
+	iBoers : "TXT_KEY_CIV_BOER_SOUTH_AFRICA",
 }
 
 dDefaultInsertAdjectives = {
@@ -243,6 +244,10 @@ dSpecificVassalTitles = {
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
 	},
+	iBoers	: {
+		iEngland : "TXT_KEY_CIV_BOER_ENGLAND",
+		iNetherlands : "TXT_KEY_CIV_BOER_NETHERLANDS",
+	}
 }
 
 dMasterTitles = {
@@ -404,7 +409,7 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iBoers]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
@@ -479,6 +484,7 @@ dCapitals = {
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
 	iNetherlands : ["Brussels", "Antwerpen"],
+	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
 }
 
 dCapitalLocations = findCapitalLocations(dCapitals)
@@ -529,6 +535,7 @@ dStartingLeaders = [
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
+	iBoers : iKruger,
 	iCanada : iMacDonald,
 },
 # 600 AD
@@ -942,6 +949,8 @@ def republicName(iPlayer):
 	if iPlayer == iInca and data.players[iPlayer].iResurrections > 0: return None
 	
 	if iPlayer == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
+	
+	if iPlayer == iBoers: return "TXT_KEY_CIV_BOER_SOUTH_AFRICA"
 
 	return short(iPlayer)
 	
@@ -1933,6 +1942,20 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
 			
+	elif iPlayer == iBoers:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_BOER_UNION"
+		
+		if bEmpire:
+			return "TXT_KEY_CIV_BOER_UNION"
+		
+		if isCapital(iPlayer, ["Pretoria", "Johannesburg"]):
+			return "TXT_KEY_CIV_BOER_TRANSVAAL"
+		if isCapital(iPlayer, ["Bloemfontein"]):
+			return "TXT_KEY_CIV_BOER_ORANGE_FREE_STATE"
+		if isCapital(iPlayer, ["Pietermaritzburg", "Durban"]):
+			return "TXT_KEY_CIV_BOER_NATALIA"
+			
 	return None
 			
 ### Leader methods ###
@@ -2169,6 +2192,9 @@ def leader(iPlayer):
 	
 	elif iPlayer == iBrazil:
 		if iEra >= iGlobal: return iVargas
+		
+	elif iPlayer == iBoers:
+		if iEra >= iDigital: return iMandela
 		
 	elif iPlayer == iCanada:
 		if iEra >= iGlobal: return iTrudeau

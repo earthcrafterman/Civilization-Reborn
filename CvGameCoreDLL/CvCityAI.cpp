@@ -2649,6 +2649,14 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
 		break;
+	case BOERS:
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		aiUnitAIVal[UNITAI_ICBM] *= 4;
+		aiUnitAIVal[UNITAI_ICBM] /= 3;
+		break;
 	case NATIVE:
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 5;
 		aiUnitAIVal[UNITAI_CITY_COUNTER] /= 2;
@@ -3382,6 +3390,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case BRAZIL:
 										if (iI == CRISTO_REDENTOR) iTempValue *= 3;
 										if (iI == ITAIPU_DAM || iI == WEMBLEY) iTempValue *= 2;
+										break;
+									case BOERS:
 										break;
 									case CANADA:
 										if (iI == CN_TOWER) iTempValue *= 3;

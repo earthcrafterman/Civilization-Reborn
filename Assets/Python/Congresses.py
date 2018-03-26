@@ -1093,7 +1093,7 @@ class Congress:
 				if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
 				plot = gc.getMap().plot(x, y)
 				if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
-					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
+					if plot.getRegionID() in [rWestAfrica, rEthiopia, rAustralia, rOceania] or (plot.getRegionID() == rSouthAfrica and gc.getGame().getGameTurn() < tBirth[iBoers]):
 						iSettlerMapValue = plot.getSettlerValue(iPlayer)
 						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
 							closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
