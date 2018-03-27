@@ -49,8 +49,7 @@ def getEraNames(iCiv, iType, iEra):
 	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
 	
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
-	#lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
-	lAfter=['Uux']
+	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
 	
 	if len(lAfter) >= iSpread:
 		return lAfter[:iSpread]

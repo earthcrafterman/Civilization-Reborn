@@ -558,6 +558,10 @@ class RiseAndFall:
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
+		pTisfun = gc.getMap().plot(76, 40).getPlotCity()
+		pTisfun.setBuildingOriginalOwner(iHangingGardens, iBabylonia)
+		pTisfun.setBuildingOriginalOwner(iIshtarGate, iBabylonia)
+		
 	def adjust1700ADWonders(self):
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
 		pMilan.setBuildingOriginalOwner(iLeaningTower, iItaly)
@@ -1383,7 +1387,6 @@ class RiseAndFall:
 					self.moveOutInvaders(tTopLeft, tBottomRight)  
 					
 				if bBirthInCapital:
-					a = 1 / 0
 					utils.makeUnit(iCatapult, iCiv, (0, 0), 1)
 			
 				bDeleteEverything = False
@@ -3045,10 +3048,10 @@ class RiseAndFall:
 		utils.makeUnit(iHorseArcher, iChina, tCapital, 1)
 		utils.makeUnit(iWorker, iChina, tCapital, 2)
 		
-		tCapital = Areas.getCapital(iJapan)
-		tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
-		if tSeaPlot:
-			utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
+		#tCapital = Areas.getCapital(iJapan)
+		#tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
+		#if tSeaPlot:
+		#	utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
 			
 		#if utils.getHumanID() != iJapan:
 		#	utils.makeUnit(iCrossbowman, iJapan, tCapital, 2)

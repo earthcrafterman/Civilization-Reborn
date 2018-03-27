@@ -22803,6 +22803,17 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
+	EndUnit
+	BeginCity
+		CityOwner=9, (Rome)
+		CityName=Mediolanum
+		CityPopulation=2
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_AQUEDUCT
+	EndCity
 EndPlot
 BeginPlot
 	x=59,y=48
@@ -24793,7 +24804,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=45
-	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -25199,8 +25209,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=45
-	BonusType=BONUS_ALUMINUM
 	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -28863,6 +28873,16 @@ EndPlot
 BeginPlot
 	x=74,y=40
 	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=74,y=41
+	RiverNSDirection=2
+	isWOfRiver
+	RouteType=ROUTE_ROAD
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
@@ -28875,16 +28895,6 @@ BeginPlot
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
 	EndCity
-EndPlot
-BeginPlot
-	x=74,y=41
-	RiverNSDirection=2
-	isWOfRiver
-	BonusType=BONUS_WHEAT
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=42
@@ -29660,6 +29670,29 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=8, (Persia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+	EndUnit
+	BeginCity
+		CityOwner=8, (Persia)
+		CityName=Tisfun
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_PALACE
+		ReligionType=RELIGION_ZOROASTRIANISM
+	EndCity
 EndPlot
 BeginPlot
 	x=76,y=41
@@ -30038,29 +30071,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Tisfun
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_PALACE
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=77,y=41
@@ -30813,9 +30823,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=40
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+	EndUnit
+	BeginCity
+		CityOwner=8, (Persia)
+		CityName=Shush
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
+		ReligionType=RELIGION_ZOROASTRIANISM
+	EndCity
 EndPlot
 BeginPlot
 	x=79,y=41

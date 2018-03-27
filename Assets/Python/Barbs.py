@@ -57,6 +57,7 @@ tMinorCities = (
 (100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
+(350, (65, 45), iIndependent, 'Singidun', 2, iHeavySpearman, 2),	# Beograd
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
@@ -364,6 +365,14 @@ class Barbs:
 				lBuildings = [iDun]
 			if sName in ['Hancheng']:
 				lBuildings = [iLibrary, iHarbor, iWalls]
+			if sName in ['Uruk']:
+				lBuildings = [iGranary, iSmokehouse, iPaganTemple]
+			if sName in ['Yerushalayim']:
+				lBuildings = [iPaganTemple, iLibrary]
+			if sName in ['Mero&#235;']:
+				lBuildings = [iObelisk, iGranary]
+			if sName in ['Singidun']:
+				lBuildings = [iOrthodoxTemple, iOrthodoxMonastery, iBarracks, iWalls, iCastle]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
