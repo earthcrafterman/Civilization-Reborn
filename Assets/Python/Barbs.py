@@ -53,6 +53,7 @@ tMinorCities = (
 (100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
+(350, (65, 45), iIndependent, 'Singidun', 2, iHeavySpearman, 2),	# Beograd
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
@@ -169,8 +170,8 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
 
 		#Hephtalites
-		if utils.isYearIn(400, 550):
-			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
+		#if utils.isYearIn(400, 550):
+		#	self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
 		if utils.isYearIn(600, 1000):
@@ -202,12 +203,16 @@ class Barbs:
 		# Leoreth: begins 100 AD instead of 50 AD
 		#if utils.isYearIn(100, 470):
 		#	self.checkSpawn(iBarbarian, iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
-		if utils.isYearIn(300, 550):
+		if utils.isYearIn(300, 470):
 			self.checkSpawn(iBarbarian, iAxeman, 4 + iHandicap, (49, 41), (56, 52), self.spawnInvaders, iGameTurn, 5, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
 			self.checkSpawn(iBarbarian, iSwordsman, 4 + iHandicap, (49, 41), (57, 52), self.spawnInvaders, iGameTurn, 5, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
 			self.checkSpawn(iBarbarian, iHorseArcher, 3, (55, 49), (65, 53), self.spawnInvaders, iGameTurn, 5, 0, ["TXT_KEY_ADJECTIVE_HUNNIC"])
-		if utils.isYearIn(300, 700):
-			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (58, 50), (88, 53), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_HUNNIC"])
+		if utils.isYearIn(470, 700):
+			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (58, 50), (68, 53), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_HUNNIC"])
+
+		#citis: Lombards in Italy
+		if utils.isYearIn(568, 1100):
+			self.checkSpawn(iBarbarian, iHeavySwordsman, 4 + iHandicap, (60, 40), (63, 45), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_LOMBARD"])
 
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if utils.isYearIn(680, 1000):
@@ -222,7 +227,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		elif utils.isYearIn(300, 700):
 			#if utils.getScenario() == i3000BC:  #late start condition
-			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
+			self.checkSpawn(iBarbarian, iHorseArcher, 4 + iHandicap, (82, 43), (86, 48), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 		elif utils.isYearIn(700, 1040):
 			#if utils.getScenario() == i3000BC:  #late start condition
 			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
@@ -252,8 +257,8 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (54, 27), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
 			
 		#camels in arabia
-		if utils.isYearIn(190, 550):
-			self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
+		#if utils.isYearIn(190, 550):
+		#	self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
 		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iArabia]):
 			iNumUnits = iHandicap
 			if utils.getScenario() == i3000BC: iNumUnits += 1
@@ -386,7 +391,14 @@ class Barbs:
 				lBuildings = [iDun]
 			if sName in ['Hancheng']:
 				lBuildings = [iLibrary, iHarbor, iWalls]
-
+			if sName in ['Uruk']:
+				lBuildings = [iGranary, iSmokehouse, iPaganTemple]
+			if sName in ['Yerushalayim']:
+				lBuildings = [iPaganTemple, iLibrary]
+			if sName in ['Mero&#235;']:
+				lBuildings = [iObelisk, iGranary]
+			if sName in ['Singidun']:
+				lBuildings = [iOrthodoxTemple, iOrthodoxMonastery, iBarracks, iWalls, iCastle]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			

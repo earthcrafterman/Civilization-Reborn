@@ -216,8 +216,8 @@ class CvRFCEventHandler:
 				city.setOccupationTimer(0)
 
 			# Byzantium reduced to four cities: core shrinks to Constantinople
-			if iOwner == iByzantium and gc.getPlayer(iByzantium).getNumCities <= 4:
-				utils.setReborn(iByzantium, True)
+			#if iOwner == iByzantium and gc.getPlayer(iByzantium).getNumCities <= 4:
+			#	utils.setReborn(iByzantium, True)
 
 		if bTrade:
 			for i in range(iNumBuildings):
@@ -768,10 +768,6 @@ class CvRFCEventHandler:
 		# Italy's core extends when reaching the Industrial era
 		if iPlayer == iItaly and iEra == iIndustrial:
 			utils.setReborn(iItaly, True)
-
-		# Arabia's core moves to Iraq when Education is discovered
-		if iPlayer == iArabia and iTech == iEducation:
-			utils.setReborn(iArabia, True)
 
 		# Japan's core extends when reaching the Industrial era
 		if iPlayer == iJapan and iEra == iIndustrial:

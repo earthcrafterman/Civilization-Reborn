@@ -5339,6 +5339,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_CONTRACT</PrereqTech>
+			<PrereqBuilding>BUILDING_BARRACKS</PrereqBuilding>
 			<TechTypes>
 				<PrereqTech>TECH_TANNING</PrereqTech>
 			</TechTypes>
@@ -5669,7 +5670,7 @@
 					<iFeatureAttack>100</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
-			<iCombat>6</iCombat>
+			<iCombat>5</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -5681,7 +5682,7 @@
 			<iHillsAttack>75</iHillsAttack>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
-			<iPower>6</iPower>
+			<iPower>5</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -5879,7 +5880,7 @@
 			<iHillsAttack>75</iHillsAttack>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
-			<iPower>6</iPower>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -5973,7 +5974,7 @@
 			<iHillsAttack>75</iHillsAttack>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
-			<iPower>6</iPower>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>

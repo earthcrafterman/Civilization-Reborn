@@ -1070,5 +1070,13 @@
 			<NoShaderNIF>Art/Leaderheads/Curtin/curtin.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Curtin/bismarck_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KHOSROW</Type>
+			<Button>art/LeaderHeads/Khosrow/Khosrau_Button.dds</Button>
+			<NIF>art/LeaderHeads/Khosrow/Suryavarman.nif</NIF>
+			<KFM>art/LeaderHeads/Khosrow/Suryavarman.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Khosrow/Suryaverman_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Khosrow/Suryavarman_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

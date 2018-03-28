@@ -610,4 +610,8 @@
 		<Tag>TXT_KEY_LEADER_DJOSER</Tag>
 		<English>Djoser</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
+		<English>Khosrow I</English>
+	</TEXT>
 </Civ4GameText>

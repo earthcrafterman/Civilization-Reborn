@@ -1075,6 +1075,9 @@ public:
 	bool isHasConflicting(ReligionTypes eReligion) const;
 	int getReligionPopulation(ReligionTypes eReligion) const;
 
+	int getCultureRank() const;
+	void setCultureRank(int iNewValue);
+
 	void updateWorkedImprovements();
 	void updateWorkedImprovement(int iIndex, bool bNewValue);
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
@@ -1102,6 +1105,9 @@ public:
 	int calculateCultureSpecialistGreatPeopleRate() const;
 
 	void triggerMeltdown(BuildingTypes eBuilding);
+
+	bool hasBonusEffect(BonusTypes eBonus) const;
+	void processBonusEffect(BonusTypes eBonus, int iChange);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1283,6 +1289,8 @@ protected:
 
 	// 1SDAN
 	int m_iCivicUpkeepReduction;
+
+	int m_iCultureRank;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

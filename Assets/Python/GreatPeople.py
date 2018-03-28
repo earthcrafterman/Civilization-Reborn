@@ -24,7 +24,6 @@ def getAlias(iCiv, iType):
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivThailand: return iCivKhmer
 	elif iCiv == iCivIran: return iCivPersia
-
 	return iCiv
 
 def getType(iUnit):
@@ -50,8 +49,7 @@ def getEraNames(iCiv, iType, iEra):
 
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
 
-	#lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
-	lAfter=['Uux']
+	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
 
 	if len(lAfter) >= iSpread:
 		return lAfter[:iSpread]
@@ -1264,6 +1262,7 @@ iCivVikings : {
 		"Edvard Munch", # 19th norwegian
 		"Edvard Grieg", # 19th norwegian
 		iGlobal,
+		"Jean Sibelius", # 20th finnish
 		"fKaren Blixen", # 20th danish
 	],
 	iGreatScientist : [
@@ -1280,9 +1279,11 @@ iCivVikings : {
 		"Leifr Eiríksson", # 10th
 		"Håkon  Sigurdsson", # 10th
 		iRenaissance,
-		"iIndustrial Willoms", # 16th danish
+		"fSigbrit Willoms", # 16th danish
+		iIndustrial,
+		"Roald Amundsen", # 20th norwegian
 		iGlobal,
-		"Roald Amundsen", # 20th
+		"Ole Kirk Christiansen", # 20th danish
 	],
 	iGreatEngineer : [
 		"Hercules von Oberberg", # 16th
@@ -1310,6 +1311,16 @@ iCivVikings : {
 		iRenaissance,
 		"Lennart Torstensson", # 17th swedish
 		"fIngela Gathenhielm", # 18th
+	],
+	iGreatSpy : [
+		"fBrita Tott", # 15th swedish/danish
+		"fCharlotte Eckerman", # 18th swedish
+		u"fEva Löwen", # 18th swedish
+		iGlobal,
+		"Carlos Adlercreutz", # 20th swedish
+		"Kai Henning Bothildsen Nielsen", # 20th danish
+		u"fAstrid Døvle", # 20th norwegian
+		"Stig Bergling", # 20th swedish
 	],
 	iGreatSpy : [
 		"fBrita Tott", # 15th swedish/danish

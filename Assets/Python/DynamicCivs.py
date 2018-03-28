@@ -1267,7 +1267,8 @@ def specificAdjective(iPlayer):
 
 				if iGameTurn >= getTurnForYear(600):
 					return "TXT_KEY_CIV_CHINA_TANG"
-
+				
+				return "TXT_KEY_CIV_CHINA_JIN"
 			
 			if iEra <= iClassical:
 				if iGameTurn >= getTurnForYear(0):
@@ -1321,7 +1322,7 @@ def specificAdjective(iPlayer):
 
 				return "TXT_KEY_CIV_PERSIA_ACHAEMENID"
 
-			if iEra == iMedieval:
+			if getColumn(iPlayer) >= 6: 
 				return "TXT_KEY_CIV_PERSIA_SASSANID"
 
 		if iEra <= iClassical:
@@ -1678,12 +1679,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
 
 		#not bEmpire and iEra <= iMedieval and not bCityStates
-		if gc.getPlayer(iPlayer).getNumCities() >= 1:
-			if iEra == iClassical:
-				return "TXT_KEY_CIV_INDIA_NANDA"
-			else:
+		if gc.getPlayer(iPlayer).getNumCities() == 1:
+			return "TXT_KEY_CIV_INDIA_MAGADHA"
+
+		if iEra == iClassical:
+			if bResurrected:
 				return "TXT_KEY_CIV_INDIA_SHUNGA"
-		return "TXT_KEY_CIV_INDIA_MAGADHA"
+			else:
+				return "TXT_KEY_CIV_INDIA_NANDA"
 
 	elif iPlayer == iChina:
 		if bEmpire:
@@ -2118,6 +2121,8 @@ def leader(iPlayer):
 			if iEra >= iGlobal: return iKhomeini
 
 			return iAbbas
+
+		if getColumn(iPlayer) >= 6: return iKhosrow
 
 		if bEmpire:
 			return iDarius

@@ -214,7 +214,7 @@ void CvGame::init(HandicapTypes eHandicap)
 	{
 		if (getGameTurn() == 181)
 		{
-			setGameTurn(getGameTurnForYear(600, -3000, GC.getInitCore().getCalendar(), GC.getInitCore().getGameSpeed()));
+			setGameTurn(getGameTurnForYear(300, -3000, GC.getInitCore().getCalendar(), GC.getInitCore().getGameSpeed()));
 		}
 	}
 

@@ -3872,7 +3872,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 				{
-					if (hasBonus((BonusTypes)iI))
+					if (hasBonusEffect((BonusTypes)iI))
 					{
 						int iBonusHappinessChange = kBuilding.getBonusHappinessChanges(iI);
 						iValue += (std::min(iBonusHappinessChange, iAngryPopulation) * 8)
@@ -3931,7 +3931,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 				{
-					if (hasBonus((BonusTypes)iI))
+					if (hasBonusEffect((BonusTypes)iI))
 					{
 						int iBonusHealthChange = kBuilding.getBonusHealthChanges(iI);
 						iValue += (std::min(iBonusHealthChange, iBadHealth) * 12)
