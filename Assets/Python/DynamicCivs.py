@@ -1052,10 +1052,11 @@ def specificName(iPlayer):
 
 			if not isCapital(iPlayer, ["Konstantinoupolis"]):
 				return capitalName(iPlayer)
-
+			
 	elif iPlayer == iVikings:	
-		if (bEmpire and not isCapital(iPlayer, ["Stockholm", "Kalmar"])) or iEra > iRenaissance:
-			return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
+		if bEmpire:
+			if not isCapital(iPlayer, ["Stockholm", "Kalmar"]) or iEra > iRenaissance:
+				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
 
 		if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 			return "TXT_KEY_CIV_VIKINGS_NORWAY"

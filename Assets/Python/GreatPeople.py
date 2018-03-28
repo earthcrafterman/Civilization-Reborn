@@ -65,7 +65,7 @@ def getName(unit):
 	if not lAvailableNames: return None
 
 	return utils.getRandomEntry(lAvailableNames)
-
+	l
 def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 	sName = getName(unit)
 	if sName:
@@ -96,8 +96,6 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 						CyInterface().addMessage(iLoopPlayer, False, iDuration, sMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, unit.getButton(), ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), unit.getX(), unit.getY(), True, True)
 					else:
 						CyInterface().addMessage(iLoopPlayer, False, iDuration, sUnrevealedMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, "", ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), -1, -1, False, False)
-
-
 def setup():
 	for iCiv in dGreatPeople.keys():
 		for iType in dGreatPeople[iCiv].keys():

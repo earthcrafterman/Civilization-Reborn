@@ -80,7 +80,6 @@ tInflationRate = 			( 130,120,130,130,130,140,130,130,130,130,110,130, 90,125,12
 tGreatPeopleThreshold =		( 140,140,140,140,110,125,120,120,110,110,110,110,110,100,120,110, 90, 80, 85, 90, 90, 75, 75, 70, 75, 80, 80, 80, 80, 80, 75, 70, 65, 70, 70, 75, 80, 80, 85, 70, 80, 70, 65, 65, 70, 80, 80, 80, 75, 80, 75, 75,		100,100,100,100,100,100 )
 tGrowthThreshold =			( 150,120,150,150,130,150,120,120,130,120,110,100,112,110, 80,110, 80, 80, 80, 80, 80, 80, 80, 80, 70, 80, 80, 75, 75, 80, 80, 70, 70, 75, 70, 70, 70, 75, 75, 70, 75, 75, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70,		125,125,125,125,125,125 )
 
-
 tModifiers = (tCulture, tUnitUpkeep, tResearchCost, tDistanceMaintenance, tCitiesMaintenance, tCivicUpkeep, tHealth, tUnitCost, tWonderCost, tBuildingCost, tInflationRate, tGreatPeopleThreshold, tGrowthThreshold)
 
 tDefaults = (100, 100, 100, 100, 100, 100, 2, 100, 100, 100, 100, 100, 100)
