@@ -1461,48 +1461,21 @@ bool CyUnit::isMadeAttack()
 	return m_pUnit ? m_pUnit->isMadeAttack() : false;
 }
 
-int CyUnit::getMadeAttack()	 
-{
-	return m_pUnit ? m_pUnit->getMadeAttack() : false;
-}
-
-int CyUnit::getAttacksPerTurn()	 
-{
-	return m_pUnit ? m_pUnit->getAttacksPerTurn() : false;
-}
-
-void CyUnit::setMadeAttack(int iNewValue)
+void CyUnit::setMadeAttack(bool bNewValue)
 {
 	if (m_pUnit)
-		m_pUnit->setMadeAttack(iNewValue);
-}
-
-void CyUnit::changeMadeAttack(int iNewValue)
-{
-	if (m_pUnit)
-		m_pUnit->changeMadeAttack(iNewValue);
+		m_pUnit->setMadeAttack(bNewValue);
 }
 
 bool CyUnit::isMadeInterception()	 
 {
-	return m_pUnit ? m_pUnit->isMadeInterception() : false;
+return m_pUnit ? m_pUnit->isMadeInterception() : false;
 }
 
-int CyUnit::getMadeInterception()	 
-{
-	return m_pUnit ? m_pUnit->getMadeInterception() : false;
-}
-
-void CyUnit::setMadeInterception(int iNewValue)
+void CyUnit::setMadeInterception(bool bNewValue)
 {
 	if (m_pUnit)
-		m_pUnit->setMadeInterception(iNewValue);
-}
-
-void CyUnit::changeMadeInterception(int iNewValue)
-{
-	if (m_pUnit)
-		m_pUnit->changeMadeInterception(iNewValue);
+		m_pUnit->setMadeInterception(bNewValue);
 }
 
 bool CyUnit::isPromotionReady() 

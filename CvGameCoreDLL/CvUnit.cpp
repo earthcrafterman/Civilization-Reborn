@@ -410,9 +410,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iImmobileTimer = 0;
 
 	m_iStuckLoopCount = 0; // Leoreth
-	m_iMadeAttack = 0;
-	m_iMadeInterception = 0;
-
+	
+	m_bMadeAttack = false;
+	m_bMadeInterception = false;
 	m_bPromotionReady = false;
 	m_bDeathDelay = false;
 	m_bCombatFocus = false;
@@ -667,7 +667,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		return;
 	}
 
-	if (getMadeAttack() > 0 && nukeRange() != -1)
+	if (isMadeAttack() && nukeRange() != -1)
 	{
 		CvPlot* pTarget = getAttackPlot();
 		if (pTarget)
@@ -869,23 +869,7 @@ void CvUnit::doTurn()
 
 	if (hasMoved())
 	{
-		if (getMoves() == maxMoves())
-		{
-			if (isAlwaysHeal())
-			{
-				doHeal();
-			}
-		}
-		
-		else if (getAttacksPerTurn() > 1 && getMoves() <= maxMoves() / getAttacksPerTurn())
-		{
-			for (int iI = 0; iI < getAttacksPerTurn() - 1; iI++)
-			{
-				doHeal();
-			}
-		}
-
-		else if (getAttacksPerTurn() == 3 && getMoves() <= maxMoves() / 3 * 2)
+		if (isAlwaysHeal())
 		{
 			doHeal();
 		}
@@ -894,20 +878,19 @@ void CvUnit::doTurn()
 	{
 		if (isHurt())
 		{
-			for (int iI = 0; iI < getAttacksPerTurn(); iI++)
-				doHeal();
+			doHeal();
 		}
 
 		if (!isCargo())
 		{
-			changeFortifyTurns(getAttacksPerTurn());
+			changeFortifyTurns(1);
 		}
 	}
 
 	changeImmobileTimer(-1);
 
-	setMadeAttack(0);
-	setMadeInterception(0);
+	setMadeAttack(false);
+	setMadeInterception(false);
 
 	setReconPlot(NULL);
 
@@ -1131,7 +1114,7 @@ void CvUnit::updateAirCombat(bool bQuick)
 				return;
 			}
 
-			changeMadeAttack(1);
+			setMadeAttack(true);
 
 			setCombatUnit(pInterceptor, true);
 			pInterceptor->setCombatUnit(this, false);
@@ -1176,7 +1159,7 @@ void CvUnit::updateAirCombat(bool bQuick)
 		changeMoves(GC.getMOVE_DENOMINATOR());
 		if (DOMAIN_AIR != pInterceptor->getDomainType())
 		{
-			pInterceptor->setMadeInterception(-1);
+			pInterceptor->setMadeInterception(true);
 		}
 
 		if (isDead())
@@ -1459,7 +1442,7 @@ void CvUnit::updateCombat(bool bQuick)
 				return;
 			}
 
-			changeMadeAttack(1);
+			setMadeAttack(true);
 
 			//rotate to face plot
 			DirectionTypes newDirection = estimateDirection(this->plot(), pDefender->plot());
@@ -1691,18 +1674,8 @@ void CvUnit::updateCombat(bool bQuick)
 
 				if (!bAdvance)
 				{
-					if (getAttacksPerTurn() == 1)
-						changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
-					else if ((getAttacksPerTurn() == 2 && getMoves() < maxMoves() / 2) || (getAttacksPerTurn() == 3 && getMoves() < maxMoves() / 3))
-						setMoves(maxMoves() / getAttacksPerTurn());
-					else if (getAttacksPerTurn() == 3 && getMoves() < maxMoves() / 3 * 2)
-						setMoves(maxMoves() / 3 * 2);
+					changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
 					checkRemoveSelectionAfterAttack();
-				}
-
-				if (isAlwaysHeal())
-				{
-					doHeal();
 				}
 			}
 
@@ -3069,17 +3042,7 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 
 	CvPlot* pOldPlot = plot();
 
-	int mov = 0;
-
-	if (getMoves() < maxMoves() / getAttacksPerTurn())
-		mov = 1;
-	if (getAttacksPerTurn() == 3 && getMoves() < maxMoves() / 3 * 2)
-		mov = 2;
-
 	changeMoves(pPlot->movementCost(this, plot()));
-
-	if (isHurt() && isAlwaysHeal() && ((mov == 1 && getMoves() >= maxMoves() / getAttacksPerTurn()) || (mov == 2 && getMoves() >= maxMoves() / 3 * 2)))
-		doHeal();
 
 	setXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true, bShow && pPlot->isVisibleToWatchingHuman(), bShow);
 
@@ -4312,7 +4275,7 @@ bool CvUnit::nuke(int iX, int iY)
 		}
 	}
 
-	changeMadeAttack(1);
+	setMadeAttack(true);
 	setAttackPlot(pPlot, false);
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
@@ -4545,7 +4508,7 @@ bool CvUnit::paradrop(int iX, int iY)
 	CvPlot* pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
 	changeMoves(GC.getMOVE_DENOMINATOR() / 2);
-	changeMadeAttack(1);
+	setMadeAttack(true);
 
 	setXY(pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
@@ -4718,7 +4681,7 @@ bool CvUnit::airBomb(int iX, int iY)
 
 	setReconPlot(pPlot);
 
-	changeMadeAttack(1);
+	setMadeAttack(true);
 	changeMoves(GC.getMOVE_DENOMINATOR());
 
 	if (pPlot->isActiveVisible(false))
@@ -4841,7 +4804,7 @@ bool CvUnit::bombard()
 
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
-	changeMadeAttack(1);
+	setMadeAttack(true);
 	changeMoves(GC.getMOVE_DENOMINATOR());
 
 	CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_DEFENSES_IN_CITY_REDUCED_TO", pBombardCity->getNameKey(), pBombardCity->getDefenseModifier(false), GET_PLAYER(getOwnerINLINE()).getNameKey());
@@ -4947,7 +4910,7 @@ bool CvUnit::pillage()
 		CvUnit* pInterceptor = bestSeaPillageInterceptor(this, GC.getDefineINT("COMBAT_DIE_SIDES") / 2);
 		if (NULL != pInterceptor)
 		{
-			changeMadeAttack(1);
+			setMadeAttack(true);
 
 			int iWithdrawal = withdrawalProbability();
 			changeExtraWithdrawal(-iWithdrawal); // no withdrawal since we are really the defender
@@ -6889,7 +6852,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 			if (!testSpyIntercepted(eTargetPlayer, GC.getDefineINT("ESPIONAGE_SPY_MISSION_ESCAPE_MOD")))
 			{
 				setFortifyTurns(0);
-				changeMadeAttack(1);
+				setMadeAttack(true);
 				finishMoves();
 
 				// Leoreth: spies are exiled to the closest city, not the capital
@@ -6994,7 +6957,7 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 	if(GC.getGameINLINE().getSorenRandNum(100, "Spy Reveal identity") < withdrawalProbability())
 	{
 		setFortifyTurns(0);
-		changeMadeAttack(1);
+		setMadeAttack(true);
 		finishMoves();
 
 		CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
@@ -7974,15 +7937,7 @@ int CvUnit::baseMoves() const
 
 int CvUnit::maxMoves() const
 {
-	return baseMoves() * GC.getMOVE_DENOMINATOR();
-	/*
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_MARATHON"))
-		return baseMoves() * GC.getMOVE_DENOMINATOR();
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_EPIC"))
-		return baseMoves() * GC.getMOVE_DENOMINATOR() * 2;
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_NORMAL"))
-		return baseMoves() * GC.getMOVE_DENOMINATOR() * 3;
-	*/
+	return (baseMoves() * GC.getMOVE_DENOMINATOR());
 }
 
 
@@ -11546,59 +11501,23 @@ void CvUnit::changeImmobileTimer(int iChange)
 
 bool CvUnit::isMadeAttack() const
 {
-	return m_iMadeAttack == getAttacksPerTurn();
+	return m_bMadeAttack;
 }
 
-int CvUnit::getMadeAttack() const
+void CvUnit::setMadeAttack(bool bNewValue)
 {
-	return m_iMadeAttack;
-}
-
-int CvUnit::getAttacksPerTurn() const
-{
-	return 1;
-
-	/*
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_MARATHON"))
-		return 1;
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_EPIC"))
-		return 2;
-	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_NORMAL"))
-		return 3;
-	*/
-}
-
-void CvUnit::setMadeAttack(int iNewValue)
-{
-	m_iMadeAttack = iNewValue;
-}
-
-void CvUnit::changeMadeAttack(int iNewValue)
-{
-	setMadeAttack(m_iMadeAttack + iNewValue);
+	m_bMadeAttack = bNewValue;
 }
 
 
 bool CvUnit::isMadeInterception() const
 {
-	return m_iMadeInterception < getAttacksPerTurn();
+	return m_bMadeInterception;
 }
 
-
-int CvUnit::getMadeInterception() const
+void CvUnit::setMadeInterception(bool bNewValue)
 {
-	return m_iMadeInterception;
-}
-
-
-void CvUnit::setMadeInterception(int iNewValue)
-{
-	m_iMadeInterception = iNewValue;
-}
-
-void CvUnit::changeMadeInterception(int iNewValue)
-{
-	setMadeInterception(m_iMadeInterception + iNewValue);
+	m_bMadeInterception = bNewValue;
 }
 
 
@@ -12536,9 +12455,9 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBaseCombat);
 	pStream->Read((int*)&m_eFacingDirection);
 	pStream->Read(&m_iImmobileTimer);
-	pStream->Read(&m_iMadeAttack);
-	pStream->Read(&m_iMadeInterception);
 
+	pStream->Read(&m_bMadeAttack);
+	pStream->Read(&m_bMadeInterception);
 	pStream->Read(&m_bPromotionReady);
 	pStream->Read(&m_bDeathDelay);
 	pStream->Read(&m_bCombatFocus);
@@ -12644,9 +12563,9 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBaseCombat);
 	pStream->Write(m_eFacingDirection);
 	pStream->Write(m_iImmobileTimer);
-	pStream->Write(m_iMadeAttack);
-	pStream->Write(m_iMadeInterception);
-
+	
+	pStream->Write(m_bMadeAttack);
+	pStream->Write(m_bMadeInterception);
 	pStream->Write(m_bPromotionReady);
 	pStream->Write(m_bDeathDelay);
 	pStream->Write(m_bCombatFocus);
@@ -13080,7 +12999,7 @@ bool CvUnit::airStrike(CvPlot* pPlot)
 
 	setReconPlot(pPlot);
 
-	changeMadeAttack(1);
+	setMadeAttack(true);
 	changeMoves(GC.getMOVE_DENOMINATOR());
 
 	int iDamage = airCombatDamage(pDefender);
@@ -13227,8 +13146,9 @@ bool CvUnit::rangeStrike(int iX, int iY)
 
 	if (GC.getDefineINT("RANGED_ATTACKS_USE_MOVES") == 0)
 	{
-		changeMadeAttack(1);
+		setMadeAttack(true);
 	}
+
 	changeMoves(GC.getMOVE_DENOMINATOR());
 
 	iDamage = rangeCombatDamage(pDefender);

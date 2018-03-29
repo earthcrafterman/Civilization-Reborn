@@ -1157,7 +1157,7 @@ lEnemyCivsOnSpawn = [
 [], #India
 [iCeltia, iCeltia, iBabylonia, iBabylonia, iEgypt, iEgypt], #Carthage
 [], #Polynesia
-[iBabylonia,iBabylonia,iIndependent2,iIndependent2,iGreece,iCarthage,iEgypt], #Persia
+[iBabylonia,iBabylonia,iCarthage,iEgypt], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [iCeltia], # rome for testing
 [], #Tamils
@@ -1211,7 +1211,7 @@ lTotalWarOnSpawn = [
 [], #India
 [], #Phoenicia
 [], #Polynesia
-[iBabylonia, iIndependent2], #Persia
+[iBabylonia], #Persia
 [iGreece], #Rome
 [], #Tamils
 [], #Ethiopia

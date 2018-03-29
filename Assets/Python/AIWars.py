@@ -67,7 +67,7 @@ tGreecePersiaBR = (85, 45)
 
 tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 4, iAlexanderYear, 20)
 tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
-tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 4, iAlexanderYear, 20)
+tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
