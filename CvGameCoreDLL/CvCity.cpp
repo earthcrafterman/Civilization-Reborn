@@ -11893,34 +11893,10 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 			if (hasBonus(eIndex))
 			{
 				processBonus(eIndex, 1);
-
-				if (plot()->isCore(getOwner()))
-				{
-					if (GC.getBonusInfo(eIndex).getHealth() > 0)
-					{
-						changeBaseYieldRate(YIELD_FOOD, 1);
-					}
-					else if (GC.getBonusInfo(eIndex).getHealth() == 0 && GC.getBonusInfo(eIndex).getHappiness() == 0)
-					{
-						changeBaseYieldRate(YIELD_PRODUCTION, 1);
-					}
-				}
 			}
 			else
 			{
 				processBonus(eIndex, -1);
-
-				if (plot()->isCore(getOwner()))
-				{
-					if (GC.getBonusInfo(eIndex).getHealth() > 0)
-					{
-						changeBaseYieldRate(YIELD_FOOD, -1);
-					}
-					else if (GC.getBonusInfo(eIndex).getHealth() == 0 && GC.getBonusInfo(eIndex).getHappiness() == 0)
-					{
-						changeBaseYieldRate(YIELD_PRODUCTION, -1);
-					}
-				}
 			}
 		}
 

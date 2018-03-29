@@ -475,7 +475,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>Cottages yield Food equal to their Commerce Yield</English>
+		<English>+1 Food from Cottages +2 Food from Farms</English>
 		<French>-50% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
 		<German>-50% Forschungskosten bis zum Anfang des Mittelalters</German>
 		<Italian>-50% ai costi di ricerca fino alla fine del Medioevo</Italian>

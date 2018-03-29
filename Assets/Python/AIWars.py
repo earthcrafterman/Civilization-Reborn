@@ -223,11 +223,7 @@ class AIWars:
 			if iPlayer == iChina:
 				iBestInfantry = iSwordsman
 				iBestSiege = iCatapult
-			
-			if iPlayer == iGreece:
-				utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4 + iExtra)
-				utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + 4*iExtra)
-			else:
+				
 				utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 				utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
 			

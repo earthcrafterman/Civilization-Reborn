@@ -4,10 +4,12 @@ from RFCUtils import utils
 def getModifier(iPlayer, iModifier):
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 	if iCivilization in lOrder:
-		if iModifier == iModifierUnitUpkeep:
-			return tModifiers[iModifier][lOrder.index(iCivilization)] / 2
-		elif (iModifier == iModifierUnitCost or iModifier == iModifierBuildingCost) and utils.getHumanID() != iPlayer:
+		#if iModifier == iModifierUnitUpkeep:
+			#return tModifiers[iModifier][lOrder.index(iCivilization)] / 2
+		if (iModifier == iModifierUnitCost or iModifier == iModifierBuildingCost) and utils.getHumanID() != iPlayer:
 			return tModifiers[iModifier][lOrder.index(iCivilization)] - 20
+		elif gc.getGame().getGameTurnYear() < 0 and iModifier == iModifierResearchCost:
+			return tModifiers[iModifier][lOrder.index(iCivilization)] * 2 / 3
 		else:
 			return tModifiers[iModifier][lOrder.index(iCivilization)]
 	return tDefaults[iModifier]

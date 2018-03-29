@@ -7974,13 +7974,15 @@ int CvUnit::baseMoves() const
 
 int CvUnit::maxMoves() const
 {
+	return baseMoves() * GC.getMOVE_DENOMINATOR();
+	/*
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_MARATHON"))
 		return baseMoves() * GC.getMOVE_DENOMINATOR();
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_EPIC"))
 		return baseMoves() * GC.getMOVE_DENOMINATOR() * 2;
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_NORMAL"))
 		return baseMoves() * GC.getMOVE_DENOMINATOR() * 3;
-
+	*/
 }
 
 
@@ -11554,12 +11556,16 @@ int CvUnit::getMadeAttack() const
 
 int CvUnit::getAttacksPerTurn() const
 {
+	return 1;
+
+	/*
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_MARATHON"))
 		return 1;
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_EPIC"))
 		return 2;
 	if (GC.getGameINLINE().getGameSpeedType() == GC.getInfoTypeForString("GAMESPEED_NORMAL"))
 		return 3;
+	*/
 }
 
 void CvUnit::setMadeAttack(int iNewValue)

@@ -1165,7 +1165,7 @@ class RiseAndFall:
 			if city.getOwner() == utils.getHumanID():
 				x = city.getX()
 				y = city.getY()
-				utils.createGarrisons((x, y), iCiv, 2)
+				utils.createGarrisons((x, y), iCiv, 1)
 
 		# convert plot culture
 		self.convertSurroundingPlotCulture(iCiv, lRebirthPlots)
@@ -1843,7 +1843,7 @@ class RiseAndFall:
 
 			if iCultureChange > 0:
 				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
-				utils.ensureDefenders(iPlayer, (x, y), 4)
+				utils.ensureDefenders(iPlayer, (x, y), 2)
 				iConvertedCitiesCount += 1
 
 		self.warOnSpawn(iPlayer, lEnemies)
@@ -2570,11 +2570,11 @@ class RiseAndFall:
 		elif iCiv == iPersia:
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 6)
-			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
-			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
-			utils.makeUnit(iWarElephant, iCiv, tPlot, 2)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			utils.makeUnit(iImmortal, iCiv, tPlot, 2)
 			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
+			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
+			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			if gc.getMap().plot(73,38).isCity() and gc.getMap().plot(73,38).getOwner() == iEgypt and utils.getHumanID() != iEgypt:

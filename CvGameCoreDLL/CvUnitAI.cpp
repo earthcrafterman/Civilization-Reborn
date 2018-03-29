@@ -7694,7 +7694,7 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 	if ((pPlotCity != NULL) && (pPlotCity->getOwnerINLINE() == getOwnerINLINE()))
 	{
 		int iCityDefenderCount = pPlotCity->plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
-		if ((iCityDefenderCount - 1) < pPlotCity->AI_minDefenders() * 2)
+		if ((iCityDefenderCount - 1) < pPlotCity->AI_minDefenders())
 		{
 			if ((iCityDefenderCount <= 2) || (GC.getGame().getSorenRandNum(5, "AI shuffle defender") != 0))
 			{
@@ -7719,7 +7719,7 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 			if (AI_plotValid(pLoopCity->plot()))
 			{
 				int iDefendersHave = pLoopCity->plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
-				int iDefendersNeed = pLoopCity->AI_minDefenders() * 2;
+				int iDefendersNeed = pLoopCity->AI_minDefenders();
 				if (iDefendersHave < iDefendersNeed)
 				{
 					if (!(pLoopCity->plot()->isVisibleEnemyUnit(this)))

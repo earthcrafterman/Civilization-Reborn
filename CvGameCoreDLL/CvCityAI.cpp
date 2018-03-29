@@ -1356,7 +1356,7 @@ void CvCityAI::AI_chooseProduction()
 	}
 
 	//minimal defense.
-	if (plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) < (AI_minDefenders() * 2 + iPlotSettlerCount))
+	if (plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) < (AI_minDefenders() + iPlotSettlerCount))
 	{
 		if (AI_chooseUnit(UNITAI_CITY_DEFENSE))
 		{
@@ -5424,7 +5424,7 @@ int CvCityAI::AI_neededDefenders()
 
 	iDefenders = std::max(iDefenders, AI_minDefenders());
 
-	return iDefenders * 2;
+	return iDefenders;
 }
 
 int CvCityAI::AI_minDefenders()
@@ -5455,7 +5455,7 @@ int CvCityAI::AI_neededFloatingDefenders()
 
 void CvCityAI::AI_updateNeededFloatingDefenders()
 {
-	int iFloatingDefenders = GET_PLAYER(getOwnerINLINE()).AI_getTotalFloatingDefendersNeeded(area()) * 2;
+	int iFloatingDefenders = GET_PLAYER(getOwnerINLINE()).AI_getTotalFloatingDefendersNeeded(area());
 
 	int iTotalThreat = std::max(1, GET_PLAYER(getOwnerINLINE()).AI_getTotalAreaCityThreat(area()));
 
