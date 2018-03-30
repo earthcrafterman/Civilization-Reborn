@@ -3279,9 +3279,14 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 
 	iRegularCost *= GC.getMOVE_DENOMINATOR();
 
-	if (getTerrainType() == TERRAIN_COAST)
+	if (!pUnit->getUnitInfo().getTerrainImpassable(TERRAIN_OCEAN) || (pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN))))
 	{
-		if (!pUnit->getUnitInfo().getTerrainImpassable(TERRAIN_OCEAN) || (pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN))))
+		if (getTerrainType() == TERRAIN_COAST)
+		{
+			iRegularCost /= 4;
+		}
+
+		else if (getTerrainType() == TERRAIN_OCEAN)
 		{
 			iRegularCost /= 2;
 		}
