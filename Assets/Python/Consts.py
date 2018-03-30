@@ -247,10 +247,10 @@ lOlderNeighbours = [
 
 # converted to years - edead
 tBirth = (
--3000, # 0, #3000BC			# Egypt
+-3150, # 0, #3000BC			# Egypt
 -1050, # 0, #1050BC			# China, founding of Fenghao
--3000, # 0, #3000BC			# Babylonia
--3000,					# Harappa
+-4000, # 0, #3000BC			# Babylonia
+-4000,					# Harappa
 -1600, # 50, #1600BC			# Greece
 -600, # 0, #3000BC			# India
 -1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
@@ -261,9 +261,9 @@ tBirth = (
 100, # 121, #300BC			# Ethiopia
 -37,					# Korea
 65, # 145, #60AD			# Maya
-330,					# Byzantium
+310,					# Byzantium
 525, # 97, #660BC			# Japan
-551, # 177, #551AD			# Vikings
+790, # 177, #551AD			# Vikings
 620, # 183, #622AD			# Arabia
 630,					# Tibet
 650,					# Indonesia
@@ -305,7 +305,7 @@ tFall = (
 -343,					# Egypt
 1127,					# China
 -539,					# Babylonia
--1700,					# Harappa
+-2000,					# Harappa
 -146,					# Greece
 1200, 					# India
 -146,					# Phoenicia
@@ -494,7 +494,7 @@ iCivMexico,	# Aztecs
 )
 
 tResurrectionIntervals = (
-[(900, 1300), (1800, 2020)], #Egypt
+[(-1550, -1077), (900, 1300), (1800, 2020)], #Egypt
 [(600, 2020)], #China
 [(-3000, -500)], #Babylonia
 [],		# Harappa

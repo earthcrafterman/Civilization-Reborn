@@ -209,6 +209,7 @@ class RiseAndFall:
 					utils.colonialConquest(iPlayer, tPlot)
 		
 	def eventApply7629(self, netUserData, popupReturn):
+		return #deactivate
 		targetList = data.lByzantineBribes
 		iButton = popupReturn.getButtonClicked()
 		
@@ -267,7 +268,8 @@ class RiseAndFall:
 			self.adjust600ADWonders()
 			self.invalidateUHVs(300)
 			#setup stability
-			sta.setStabilityLevel(iPersia, iStabilitySolid)
+			for iPlayer in [iPersia]:
+				sta.setStabilityLevel(iPlayer, iStabilitySolid)
 			
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
@@ -414,7 +416,7 @@ class RiseAndFall:
 		gc.getPlayer(iPlayer1).AI_changeAttitudeExtra(iPlayer2, iValue)
 		gc.getPlayer(iPlayer2).AI_changeAttitudeExtra(iPlayer1, iValue)
 
-	def invalidateUHVs(self, iYear = -3000):
+	def invalidateUHVs(self, iYear = -4000):
 		for iPlayer in range(iNumPlayers):
 			if not gc.getPlayer(iPlayer).isPlayable():
 				for i in range(3):
@@ -620,7 +622,7 @@ class RiseAndFall:
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
-			if tBirth[iCiv] > -3000 and not gc.getPlayer(iCiv).isHuman():
+			if tBirth[iCiv] > -4000 and not gc.getPlayer(iCiv).isHuman():
 				data.players[iCiv].iBirthTurnModifier = gc.getGame().getSorenRandNum(11, "BirthTurnModifier") - 5 # -5 to +5
 		#now make sure that no civs spawn in the same turn and cause a double "new civ" popup
 		for iCiv in range(utils.getHumanID()+1, iNumPlayers):
@@ -902,7 +904,7 @@ class RiseAndFall:
 				
 				
 		if utils.getScenario() == i3000BC:
-			iFirstSpawn = iChina
+			iFirstSpawn = iEgypt
 		elif utils.getScenario() == i600AD:
 			iFirstSpawn = iByzantium
 		else:
@@ -1733,6 +1735,15 @@ class RiseAndFall:
 	def getConvertedCities(self, iPlayer, lPlots = []):
 		lCities = []
 		
+		if iPlayer == iByzantium:
+			#Set Jerusalem as the first flipped city, to make it the Orthodoxy founder
+			lPlots2 = [(73, 38)]
+			for tPlot in lPlots:
+				x, y = tPlot
+				if x != 73 or y != 38:
+					lPlots2.append(tPlot)
+			lPlots = lPlots2
+		
 		for city in utils.getAreaCities(lPlots):
 			if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
 			
@@ -2479,6 +2490,9 @@ class RiseAndFall:
 
 
 	def createStartingUnits(self, iCiv, tPlot):
+		if iCiv == iEgypt:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.createSettlers(iCiv, 1)
 		if iCiv == iChina:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.createSettlers(iCiv, 1)
@@ -2513,7 +2527,7 @@ class RiseAndFall:
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
+			#utils.makeUnit(iSpearman, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
@@ -2937,6 +2951,8 @@ class RiseAndFall:
 
 				
 	def createStartingWorkers( self, iCiv, tPlot ):
+		if iCiv == iEgypt:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iChina:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iIndia:
@@ -3103,12 +3119,12 @@ class RiseAndFall:
 			tCapital = Areas.getCapital(iPlayer)
 			
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
-				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
-				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
+				utils.makeUnit(iCatapult, iPlayer, (0, 0), 1)
 				
-			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
-				utils.makeUnit(iCityBuilder, iPlayer, tCapital, 1)
-				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
+			if iPlayer == iHarappa:
+				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
+				#utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
+				
 		
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
@@ -3176,11 +3192,11 @@ class RiseAndFall:
 		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
 			data.setPlayerEnabled(iPolynesia, False)
 			
-		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
-		if iRand <= 0:
-			data.setPlayerEnabled(iHarappa, False)
-		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
-			data.setPlayerEnabled(iHarappa, False)
+		#iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
+		#if iRand <= 0:
+		#	data.setPlayerEnabled(iHarappa, False)
+		#elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
+		#	data.setPlayerEnabled(iHarappa, False)
 		
 		if iHuman != iIndia and iHuman != iIndonesia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")

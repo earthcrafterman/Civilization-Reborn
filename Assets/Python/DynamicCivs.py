@@ -421,6 +421,7 @@ lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
 
 dEmpireThreshold = {
+	iBabylonia : 2,
 	iCarthage : 4,
 	iIndonesia : 4,
 	iKorea : 4,
@@ -439,7 +440,7 @@ dEmpireThreshold = {
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
-lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali]
+lRespawnNameChanges = [iEgypt, iHolyRome, iInca, iAztecs, iMali]
 lVassalNameChanges = [iInca, iAztecs, iMughals]
 lChristianityNameChanges = [iInca, iAztecs]
 
@@ -1273,6 +1274,8 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIAN"
 			
 	elif iPlayer == iGreece:
+		if iEra < iClassical:
+			return "TXT_KEY_CIV_GREECE_MYCENEAN"
 		if iCivicGovernment == iMonarchy and bEmpire and iEra == iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIAN"
 	
@@ -1600,6 +1603,10 @@ def defaultTitle(iPlayer):
 		if bEmpire:
 			title = "TXT_KEY_EMPIRE_ADJECTIVE"
 	
+	if iEra == iMedieval:
+		if bEmpire:
+			title = "TXT_KEY_EMPIRE_ADJECTIVE"
+	
 	return title
 	
 def specificTitle(iPlayer, lPreviousOwners=[]):
@@ -1634,6 +1641,8 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 					if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
 					return "TXT_KEY_SULTANATE_ADJECTIVE"
 				return "TXT_KEY_KINGDOM_ADJECTIVE"
+			elif iEra < iMedieval:
+				return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 				
 		if iGreece in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
@@ -1642,9 +1651,8 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CITY_STATES_ADJECTIVE"
 				
 		if iEra == iAncient:
-			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
-			if iAnarchyTurns == utils.getTurns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
-			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
+			if iAnarchyTurns < 1: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
+			return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
 		
 		if iEra == iClassical:
 			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
@@ -2056,7 +2064,7 @@ def leader(iPlayer):
 		
 		if bResurrected or utils.getScenario() >= i600AD: return iBaibars
 		
-		if getColumn(iPlayer) >= 4: return iCleopatra
+		if getColumn(iPlayer) >= 5: return iCleopatra
 		
 	elif iPlayer == iIndia:
 		if not bMonarchy and iEra >= iGlobal: return iGandhi

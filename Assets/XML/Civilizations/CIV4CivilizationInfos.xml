@@ -427,7 +427,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>BAB</Identifier>
-			<StartingYear>-3000</StartingYear>
+			<StartingYear>-4000</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1349,7 +1349,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_PESEDJET</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Pesedjet.dds</PaganReligionButton>
 			<Identifier>EGY</Identifier>
-			<StartingYear>-3000</StartingYear>
+			<StartingYear>-3150</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -2062,7 +2062,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>HAR</Identifier>
-			<StartingYear>-3000</StartingYear>
+			<StartingYear>-4000</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>

@@ -181,4 +181,8 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREECE_MYCENEAN</Tag>
+		<English>Mycenean</English>
+	</TEXT>
 </Civ4GameText>

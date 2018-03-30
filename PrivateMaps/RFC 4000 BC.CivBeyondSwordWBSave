@@ -4,7 +4,7 @@ BeginGame
 	Calendar=CALENDAR_DEFAULT
 	Option=GAMEOPTION_AGGRESSIVE_AI
 	Option=GAMEOPTION_NO_TECH_BROKERING
-	GameTurn=190
+	GameTurn=0
 	StartYear=-4000
 	Description=TXT_KEY_RHYES_WB_DESC
 	ModPath=Mods\RFC Dawn of Civilization
@@ -163,86 +163,92 @@ BeginPlayer
 	Team=0
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT
-	PlayableCiv=0
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=1
-	LeaderType=LEADER_TAIZONG
+	LeaderType=LEADER_QIN_SHI_HUANG
 	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
-	StartingGold=300
-	StateReligion=RELIGION_CONFUCIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=2
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA
-	PlayableCiv=0
+	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=3
 	LeaderType=LEADER_VATAVELLI
 	CivType=CIVILIZATION_HARAPPANS
-	PlayableCiv=0
+	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=4
 	LeaderType=LEADER_PERICLES
 	CivType=CIVILIZATION_GREECE
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=100
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=5
-	LeaderType=LEADER_CHANDRAGUPTA
+	LeaderType=LEADER_ASOKA
 	CivType=CIVILIZATION_INDIA
 	PlayableCiv=1
-	StartingGold=100
+	StartingGold=80
 	StateReligion=RELIGION_HINDUISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=6
 	LeaderType=LEADER_HANNIBAL
 	CivType=CIVILIZATION_PHOENICIA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=7
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
-	PlayableCiv=0
+	Color=PLAYERCOLOR_POLYNESIA
+	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=8
-	LeaderType=LEADER_KHOSROW
+	LeaderType=LEADER_CYRUS
 	CivType=CIVILIZATION_PERSIA
 	PlayableCiv=1
-	StartingGold=300
-	StateReligion=RELIGION_ZOROASTRIANISM
+	StartingGold=200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -250,27 +256,36 @@ BeginPlayer
 	LeaderType=LEADER_AUGUSTUS
 	CivType=CIVILIZATION_ROME
 	PlayableCiv=1
-	StartingGold=-400
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	StartingGold=100
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=10
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=200
+	StateReligion=RELIGION_HINDUISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=11
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=100
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -281,17 +296,20 @@ BeginPlayer
 	StartingGold=200
 	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=13
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -299,14 +317,13 @@ BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM
 	PlayableCiv=1
-	StartingGold=300
+	StartingGold=400
 	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -314,7 +331,7 @@ BeginPlayer
 	LeaderType=LEADER_TOKUGAWA
 	CivType=CIVILIZATION_JAPAN
 	PlayableCiv=1
-	StartingGold=300
+	StartingGold=100
 	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
@@ -342,12 +359,12 @@ BeginPlayer
 	CivType=CIVILIZATION_ARABIA
 	PlayableCiv=1
 	StartingGold=300
+	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
-	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -397,7 +414,7 @@ BeginPlayer
 	CivType=CIVILIZATION_SPAIN
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -411,7 +428,7 @@ BeginPlayer
 	CivType=CIVILIZATION_FRANCE
 	PlayableCiv=1
 	StartingGold=150
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -439,7 +456,7 @@ BeginPlayer
 	CivType=CIVILIZATION_ENGLAND
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -453,7 +470,7 @@ BeginPlayer
 	CivType=CIVILIZATION_HOLY_ROMAN
 	PlayableCiv=1
 	StartingGold=150
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -468,11 +485,11 @@ BeginPlayer
 	CivType=CIVILIZATION_RUSSIA
 	PlayableCiv=1
 	StartingGold=200
+	Handicap=HANDICAP_REGENT
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=27
@@ -494,7 +511,7 @@ BeginPlayer
 	CivType=CIVILIZATION_POLAND
 	PlayableCiv=1
 	StartingGold=100
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -508,7 +525,7 @@ BeginPlayer
 	CivType=CIVILIZATION_PORTUGAL
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -522,11 +539,11 @@ BeginPlayer
 	CivType=CIVILIZATION_INCA
 	PlayableCiv=1
 	StartingGold=700
+	Handicap=HANDICAP_REGENT
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
-	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=31
@@ -534,7 +551,7 @@ BeginPlayer
 	CivType=CIVILIZATION_ITALY
 	PlayableCiv=1
 	StartingGold=350
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -630,7 +647,7 @@ BeginPlayer
 	CivType=CIVILIZATION_NETHERLANDS
 	PlayableCiv=1
 	StartingGold=600
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -644,7 +661,7 @@ BeginPlayer
 	CivType=CIVILIZATION_GERMANY
 	PlayableCiv=1
 	StartingGold=800
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
@@ -687,7 +704,7 @@ BeginPlayer
 	CivType=CIVILIZATION_BRAZIL
 	PlayableCiv=1
 	StartingGold=1600
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
@@ -702,7 +719,7 @@ BeginPlayer
 	CivType=CIVILIZATION_CANADA
 	PlayableCiv=1
 	StartingGold=1000
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
@@ -717,7 +734,7 @@ BeginPlayer
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=100
+	StartingGold=50
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -726,7 +743,7 @@ BeginPlayer
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=100
+	StartingGold=50
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -735,7 +752,7 @@ BeginPlayer
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=300
+	StartingGold=100
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -755,7 +772,6 @@ BeginPlayer
 	PlayableCiv=0
 	MinorNationStatus=1
 	StartingGold=250
-	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -8936,19 +8952,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=35
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
-	EndUnit
-	BeginCity
-		CityOwner=46, (Native)
-		CityName=Yax Mutal
-		CityPopulation=2
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_MAYAN_BALL_COURT
-	EndCity
 EndPlot
 BeginPlot
 	x=22,y=36
@@ -9342,23 +9347,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=46, (Native)
-	EndUnit
-	BeginCity
-		CityOwner=46, (Native)
-		CityName=Chich'en Itz&#225;
-		CityPopulation=2
-		BuildingType=BUILDING_MAYAN_BALL_COURT
-		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
-		Player46Culture=10, (Native)
-	EndCity
 EndPlot
 BeginPlot
 	x=23,y=38
@@ -19648,24 +19638,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=51,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Marrakus
-		CityPopulation=2
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=51,y=38
@@ -19687,16 +19667,6 @@ BeginPlot
 	x=51,y=41
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Patricia
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-	EndCity
 EndPlot
 BeginPlot
 	x=51,y=42
@@ -20110,7 +20080,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -20495,25 +20464,13 @@ EndPlot
 BeginPlot
 	x=53,y=47
 	BonusType=BONUS_WINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=53,y=48
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Burdigala
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-	EndCity
 EndPlot
 BeginPlot
 	x=53,y=49
@@ -20550,19 +20507,6 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Londinium
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=53,y=55
@@ -20876,7 +20820,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=42
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -20884,7 +20827,6 @@ BeginPlot
 	x=54,y=43
 	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -20914,7 +20856,6 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -21271,24 +21212,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=44
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Barcelona
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=55,y=45
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -21300,7 +21228,6 @@ EndPlot
 BeginPlot
 	x=55,y=47
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -21663,20 +21590,9 @@ BeginPlot
 	x=56,y=46
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Massilia
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=56,y=47
@@ -21684,7 +21600,6 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -21693,14 +21608,12 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_WINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=56,y=49
 	BonusType=BONUS_PIG
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -22006,7 +21919,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_SHEEP
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -22043,7 +21956,6 @@ EndPlot
 BeginPlot
 	x=57,y=46
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -22359,35 +22271,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=37
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=58,y=38
 	BonusType=BONUS_STONE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=58,y=39
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Carthago
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_GREAT_COTHON
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=58,y=40
@@ -22423,7 +22320,6 @@ EndPlot
 BeginPlot
 	x=58,y=46
 	BonusType=BONUS_STONE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -22745,7 +22641,6 @@ EndPlot
 BeginPlot
 	x=59,y=37
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -22796,7 +22691,6 @@ EndPlot
 BeginPlot
 	x=59,y=46
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -22806,18 +22700,6 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Mediolanum
-		CityPopulation=2
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=59,y=48
@@ -23140,19 +23022,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Tripolis
-		CityPopulation=2
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-	EndCity
 EndPlot
 BeginPlot
 	x=60,y=38
@@ -23189,47 +23060,12 @@ BeginPlot
 	x=60,y=44
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-		Level=3, Experience=5
-		PromotionType=PROMOTION_CITY_GARRISON1
-		PromotionType=PROMOTION_CITY_GARRISON2
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-		Level=3, Experience=5
-		PromotionType=PROMOTION_CITY_GARRISON1
-		PromotionType=PROMOTION_CITY_GARRISON2
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=9, (Rome)
-		Level=3, Experience=5
-		PromotionType=PROMOTION_CITY_GARRISON1
-		PromotionType=PROMOTION_CITY_GARRISON2
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Roma
-		CityPopulation=4
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_ROMAN_FORUM
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_COLOSSEUM
-	EndCity
 EndPlot
 BeginPlot
 	x=60,y=45
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -23245,7 +23081,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -23568,7 +23403,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -23600,7 +23434,6 @@ EndPlot
 BeginPlot
 	x=61,y=43
 	BonusType=BONUS_PIG
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -23613,8 +23446,7 @@ EndPlot
 BeginPlot
 	x=61,y=45
 	BonusType=BONUS_IRON
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -23626,18 +23458,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=47
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Venetia
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=61,y=48
@@ -23959,7 +23782,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=36
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -23992,19 +23814,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=42
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Neapolis
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-	EndCity
 EndPlot
 BeginPlot
 	x=62,y=43
@@ -24042,19 +23854,8 @@ BeginPlot
 	x=62,y=49
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
-		PromotionType=PROMOTION_CITY_GARRISON1
-		PromotionType=PROMOTION_CITY_GARRISON2
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Vindobona
-		CityPopulation=2
-	EndCity
 EndPlot
 BeginPlot
 	x=62,y=50
@@ -24367,7 +24168,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=36
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -24399,7 +24199,6 @@ EndPlot
 BeginPlot
 	x=63,y=42
 	BonusType=BONUS_SHEEP
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -24761,7 +24560,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=36
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25170,7 +24968,6 @@ EndPlot
 BeginPlot
 	x=65,y=37
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25202,7 +24999,6 @@ EndPlot
 BeginPlot
 	x=65,y=43
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25213,8 +25009,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=45
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -25581,14 +25377,12 @@ BeginPlot
 	x=66,y=37
 	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=66,y=38
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25600,7 +25394,6 @@ EndPlot
 BeginPlot
 	x=66,y=40
 	BonusType=BONUS_MARBLE
-	ImprovementType=IMPROVEMENT_QUARRY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -25612,8 +25405,6 @@ EndPlot
 BeginPlot
 	x=66,y=42
 	BonusType=BONUS_IRON
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -25625,8 +25416,6 @@ EndPlot
 BeginPlot
 	x=66,y=44
 	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25949,6 +25738,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=29
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -25956,11 +25746,13 @@ BeginPlot
 	x=67,y=30
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=31
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -25993,23 +25785,8 @@ BeginPlot
 	x=67,y=36
 	RiverNSDirection=0
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Alexandreia
-		CityPopulation=3
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_GREAT_LIGHTHOUSE
-		BuildingType=BUILDING_GREAT_LIBRARY
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=67,y=37
@@ -26030,39 +25807,16 @@ BeginPlot
 	x=67,y=40
 	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 EndPlot
 BeginPlot
 	x=67,y=41
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=9, (Rome)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Athinai
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_PAGAN_TEMPLE
-		BuildingType=BUILDING_ACADEMY
-		BuildingType=BUILDING_PARTHENON
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-	EndCity
 EndPlot
 BeginPlot
 	x=67,y=42
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26073,7 +25827,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=44
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26443,9 +26196,7 @@ BeginPlot
 	RiverWEDirection=0
 	isWOfRiver
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
-	ImprovementType=IMPROVEMENT_FARM
 	PlotType=2
 EndPlot
 BeginPlot
@@ -26462,7 +26213,6 @@ BeginPlot
 	x=68,y=39
 	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
-	ImprovementType=IMPROVEMENT_ORCHARD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -26473,7 +26223,6 @@ EndPlot
 BeginPlot
 	x=68,y=41
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -26497,8 +26246,6 @@ EndPlot
 BeginPlot
 	x=68,y=45
 	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26807,21 +26554,6 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Dunqulah
-		CityPopulation=2
-		BuildingType=BUILDING_BARRACKS
-	EndCity
 EndPlot
 BeginPlot
 	x=69,y=31
@@ -26852,22 +26584,8 @@ BeginPlot
 	x=69,y=35
 	BonusType=BONUS_STONE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=9, (Rome)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Memphis
-		CityPopulation=2
-		BuildingType=BUILDING_PYRAMIDS
-		BuildingType=BUILDING_GREAT_SPHINX
-	EndCity
 EndPlot
 BeginPlot
 	x=69,y=36
@@ -26875,7 +26593,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -26893,15 +26610,6 @@ BeginPlot
 	x=69,y=39
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Heracleum
-		CityPopulation=1
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=69,y=40
@@ -26934,22 +26642,10 @@ BeginPlot
 	x=69,y=45
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Byzantium
-		CityPopulation=2
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_AMPHITHEATRE
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=69,y=46
 	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -27262,8 +26958,6 @@ EndPlot
 BeginPlot
 	x=70,y=34
 	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27276,7 +26970,6 @@ EndPlot
 BeginPlot
 	x=70,y=36
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27307,8 +27000,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=42
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27321,7 +27013,6 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27333,7 +27024,6 @@ EndPlot
 BeginPlot
 	x=70,y=46
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -27655,7 +27345,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=36
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -27677,7 +27366,6 @@ EndPlot
 BeginPlot
 	x=71,y=40
 	BonusType=BONUS_COPPER
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27696,8 +27384,7 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28002,22 +27689,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=29
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Aksum
-		CityPopulation=2
-		BuildingType=BUILDING_ETHIOPIAN_STELE
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=72,y=30
@@ -28057,7 +27730,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28069,7 +27741,6 @@ EndPlot
 BeginPlot
 	x=72,y=39
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28092,7 +27763,7 @@ BeginPlot
 	x=72,y=43
 	isNOfRiver
 	RiverWEDirection=3
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28101,17 +27772,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Ancyra
-		CityPopulation=2
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=72,y=45
@@ -28132,16 +27792,6 @@ BeginPlot
 	x=72,y=48
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Chersonesus
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=72,y=49
@@ -28467,35 +28117,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=38
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Aelia Capitolina
-		CityPopulation=3
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_JEWISH_SHRINE
-		ReligionType=RELIGION_JUDAISM
-		HolyCityReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=73,y=39
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=40
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28508,21 +28141,17 @@ EndPlot
 BeginPlot
 	x=73,y=42
 	BonusType=BONUS_WINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
-	ImprovementType=IMPROVEMENT_ORCHARD
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=43
-	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=73,y=44
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28884,8 +28513,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=40
-	RouteType=ROUTE_ROAD
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28893,20 +28520,10 @@ BeginPlot
 	x=74,y=41
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_WHEAT
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Damaskos
-		CityPopulation=3
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-	EndCity
 EndPlot
 BeginPlot
 	x=74,y=42
@@ -28927,8 +28544,7 @@ EndPlot
 BeginPlot
 	x=74,y=44
 	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28936,7 +28552,6 @@ BeginPlot
 	x=74,y=45
 	TerrainType=TERRAIN_COAST
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 EndPlot
 BeginPlot
@@ -29295,8 +28910,6 @@ EndPlot
 BeginPlot
 	x=75,y=42
 	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -29307,20 +28920,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=44
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Trapezounta
-		CityPopulation=3
-		BuildingType=BUILDING_AMPHITHEATRE
-		BuildingType=BUILDING_AQUEDUCT
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=75,y=45
@@ -29614,19 +29215,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=30
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Sana'a
-		CityPopulation=1
-		BuildingType=BUILDING_GRANARY
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=76,y=31
@@ -29687,29 +29278,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=8, (Persia)
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
+		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
 	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Tisfun
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_PALACE
-		ReligionType=RELIGION_ZOROASTRIANISM
-		ReligionType=RELIGION_JUDAISM
-	EndCity
 EndPlot
 BeginPlot
 	x=76,y=41
@@ -29721,7 +29297,6 @@ BeginPlot
 	x=76,y=42
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -29740,7 +29315,6 @@ EndPlot
 BeginPlot
 	x=76,y=45
 	BonusType=BONUS_IRON
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -30076,7 +29650,6 @@ BeginPlot
 	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
-	ImprovementType=IMPROVEMENT_QUARRY
 	PlotType=2
 EndPlot
 BeginPlot
@@ -30085,7 +29658,6 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -30094,7 +29666,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_OIL
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -30115,19 +29686,6 @@ BeginPlot
 	x=77,y=44
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Artaxata
-		CityPopulation=2
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_WALLS
-	EndCity
 EndPlot
 BeginPlot
 	x=77,y=45
@@ -30476,9 +30034,7 @@ BeginPlot
 	x=78,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
-	ImprovementType=IMPROVEMENT_PASTURE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -30488,8 +30044,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=42
-	BonusType=BONUS_COPPER
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -30840,27 +30394,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=40
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Shush
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=79,y=41
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
-	ImprovementType=IMPROVEMENT_FARM
 	PlotType=2
 EndPlot
 BeginPlot
@@ -31210,14 +30751,12 @@ EndPlot
 BeginPlot
 	x=80,y=39
 	BonusType=BONUS_DYE
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
-	ImprovementType=IMPROVEMENT_PLANTATION
 	PlotType=2
 EndPlot
 BeginPlot
 	x=80,y=40
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31229,7 +30768,6 @@ EndPlot
 BeginPlot
 	x=80,y=42
 	BonusType=BONUS_OIL
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -31563,16 +31101,6 @@ BeginPlot
 	x=81,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Kryptos Limen
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=81,y=35
@@ -31588,14 +31116,12 @@ EndPlot
 BeginPlot
 	x=81,y=37
 	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=81,y=38
 	BonusType=BONUS_DEER
-	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -31603,15 +31129,12 @@ EndPlot
 BeginPlot
 	x=81,y=39
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
-	RouteType=ROUTE_ROAD
 	PlotType=1
 EndPlot
 BeginPlot
 	x=81,y=40
 	BonusType=BONUS_IRON
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -31623,7 +31146,6 @@ EndPlot
 BeginPlot
 	x=81,y=42
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -31957,31 +31479,13 @@ EndPlot
 BeginPlot
 	x=82,y=37
 	BonusType=BONUS_IVORY
-	ImprovementType=IMPROVEMENT_CAMP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=82,y=38
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Sirajis
-		CityPopulation=5
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
-		BuildingType=BUILDING_ZOROASTRIAN_SHRINE
-		ReligionType=RELIGION_ZOROASTRIANISM
-		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player8Culture=10, (Persia)
-	EndCity
 EndPlot
 BeginPlot
 	x=82,y=39
@@ -32002,7 +31506,6 @@ EndPlot
 BeginPlot
 	x=82,y=42
 	BonusType=BONUS_CAMEL
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -32329,7 +31832,6 @@ EndPlot
 BeginPlot
 	x=83,y=36
 	BonusType=BONUS_PEARL
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32368,31 +31870,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=43
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=83,y=44
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=83,y=45
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Merv
-		CityPopulation=2
-		BuildingType=BUILDING_STABLE
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=83,y=46
@@ -32743,27 +32232,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=41
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Herat
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=84,y=42
-	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32790,7 +32264,6 @@ BeginPlot
 	x=84,y=46
 	isNOfRiver
 	RiverWEDirection=3
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -33175,7 +32648,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=46
-	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -33183,21 +32655,8 @@ BeginPlot
 	x=85,y=47
 	RiverNSDirection=0
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Samarkand
-		CityPopulation=2
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=85,y=48
@@ -33576,7 +33035,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=48
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -33901,24 +33359,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=40
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT, UnitOwner=8, (Persia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=8, (Persia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Persia)
-		CityName=Lavapuri
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=87,y=41
@@ -33969,7 +33411,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=48
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -34264,8 +33705,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=34
-	TerrainType=TERRAIN_GRASS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34284,8 +33725,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=37
-	BonusType=BONUS_HORSE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34345,9 +33784,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
-	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=88,y=48
@@ -34634,29 +34072,6 @@ BeginPlot
 	x=89,y=31
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Vijayanagara
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player45Culture=10, (Independent2)
-	EndCity
 EndPlot
 BeginPlot
 	x=89,y=32
@@ -34674,30 +34089,6 @@ BeginPlot
 	x=89,y=34
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Pratisthan
-		CityPopulation=3
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
-	EndCity
 EndPlot
 BeginPlot
 	x=89,y=35
@@ -34723,7 +34114,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=38
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34776,24 +34166,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Kashgar
-		CityPopulation=3
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		ReligionType=RELIGION_ZOROASTRIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=89,y=47
@@ -35084,6 +34458,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=31
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -35124,32 +34499,9 @@ BeginPlot
 	x=90,y=37
 	isNOfRiver
 	RiverWEDirection=3
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Ujjaini
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
-	EndCity
 EndPlot
 BeginPlot
 	x=90,y=38
@@ -35160,40 +34512,13 @@ EndPlot
 BeginPlot
 	x=90,y=39
 	BonusType=BONUS_IVORY
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=90,y=40
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=5, (India)
-	EndUnit
-	BeginCity
-		CityOwner=5, (India)
-		CityName=Indraprastha
-		CityPopulation=4
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_PAGAN_TEMPLE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		BuildingType=BUILDING_HINDU_TEMPLE
-		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_HINDUISM
-		Player5Culture=20, (India)
-	EndCity
 EndPlot
 BeginPlot
 	x=90,y=41
@@ -35239,7 +34564,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35510,7 +34834,6 @@ EndPlot
 BeginPlot
 	x=91,y=29
 	BonusType=BONUS_ALUMINUM
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -35545,31 +34868,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=34
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Golkonda
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player45Culture=50, (Independent2)
-	EndCity
 EndPlot
 BeginPlot
 	x=91,y=35
@@ -35641,7 +34941,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35657,7 +34956,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35951,33 +35249,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=32
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Kanchipuram
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
-	EndCity
 EndPlot
 BeginPlot
 	x=92,y=33
@@ -36074,7 +35347,6 @@ BeginPlot
 	x=92,y=48
 	isNOfRiver
 	RiverWEDirection=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36456,9 +35728,7 @@ BeginPlot
 	x=93,y=48
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36793,42 +36063,8 @@ BeginPlot
 	x=94,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=5, (India)
-	EndUnit
-	BeginCity
-		CityOwner=5, (India)
-		CityName=Pataliputra
-		CityPopulation=5
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_HINDU_TEMPLE
-		BuildingType=BUILDING_HINDU_MONASTERY
-		BuildingType=BUILDING_HINDU_SHRINE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_BUDDHIST_SHRINE
-		ReligionType=RELIGION_HINDUISM
-		HolyCityReligionType=RELIGION_HINDUISM
-		ReligionType=RELIGION_BUDDHISM
-		HolyCityReligionType=RELIGION_BUDDHISM
-		Player5Culture=50, (India)
-	EndCity
 EndPlot
 BeginPlot
 	x=94,y=41
@@ -36868,7 +36104,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=48
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -37167,33 +36402,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=37
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=5, (India)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=5, (India)
-	EndUnit
-	BeginCity
-		CityOwner=5, (India)
-		CityName=Kolkata
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player5Culture=50, (India)
-	EndCity
 EndPlot
 BeginPlot
 	x=95,y=38
@@ -37255,24 +36465,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=47
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Dunhuang
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		ReligionType=RELIGION_BUDDHISM
-	EndCity
 EndPlot
 BeginPlot
 	x=95,y=48
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -37635,7 +36832,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
-	ImprovementType=IMPROVEMENT_VILLAGE
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -37643,7 +36839,6 @@ EndPlot
 BeginPlot
 	x=96,y=48
 	BonusType=BONUS_COTTON
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -38001,7 +37196,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=47
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -38308,21 +37502,8 @@ BeginPlot
 	x=98,y=36
 	RiverNSDirection=2
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Pagan
-		CityPopulation=4
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_SHWEDAGON_PAYA
-		ReligionType=RELIGION_BUDDHISM
-		Player44Culture=10, (Independent)
-	EndCity
 EndPlot
 BeginPlot
 	x=98,y=37
@@ -38402,7 +37583,6 @@ EndPlot
 BeginPlot
 	x=98,y=47
 	BonusType=BONUS_OIL
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -38748,19 +37928,9 @@ BeginPlot
 	x=99,y=41
 	RiverNSDirection=2
 	isWOfRiver
-(	RouteType=ROUTE_ROAD)
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=44, (Independent))
-(	EndUnit)
-(	BeginCity)
-(		CityOwner=44, (Independent))
-(		CityName=Chengdu)
-(		CityPopulation=2)
-(		BuildingType=BUILDING_GRANARY)
-(		ReligionType=RELIGION_CONFUCIANISM)
-(	EndCity)
 EndPlot
 BeginPlot
 	x=99,y=42
@@ -38772,7 +37942,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_PIG
-	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -38792,7 +37961,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -39183,54 +38351,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=44
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
-(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
-(	EndUnit)
-	BeginCity
-		CityOwner=45, (China)
-		CityName=Chang'an, (Xi'an)
-		CityPopulation=1, (4)
-(		BuildingType=BUILDING_PALACE)
-(		BuildingType=BUILDING_BARRACKS)
-(		BuildingType=BUILDING_FORGE)
-(		BuildingType=BUILDING_CHINESE_TAIXUE)
-(		BuildingType=BUILDING_CONFUCIAN_TEMPLE)
-(		ReligionType=RELIGION_CONFUCIANISM)
-(		ReligionType=RELIGION_TAOISM)
-	EndCity
 EndPlot
 BeginPlot
 	x=100,y=45
-	BonusType=BONUS_COAL
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -39568,17 +38695,6 @@ BeginPlot
 	x=101,y=37
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Co Loa
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-	EndCity
 EndPlot
 BeginPlot
 	x=101,y=38
@@ -39613,21 +38729,20 @@ EndPlot
 BeginPlot
 	x=101,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=43
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=101,y=44
 	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40002,12 +39117,6 @@ BeginPlot
 	x=102,y=41
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	BeginCity, (Removed after game start)
-		CityOwner=45
-		CityName=Guiyang
-		CityPopulation=1
-		Player45Culture=250
-	EndCity
 	PlotType=1
 EndPlot
 BeginPlot
@@ -40030,7 +39139,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=44
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -40045,41 +39153,13 @@ EndPlot
 BeginPlot
 	x=102,y=46
 	BonusType=BONUS_PIG
-	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=102,y=47
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=45, (China)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=45, (China)
-	EndUnit
-	BeginCity
-		CityOwner=45, (China)
-		CityName=Beijing
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_CHINESE_TAIXUE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_TAOIST_SHRINE
-		BuildingType=BUILDING_GREAT_WALL
-		BuildingType=BUILDING_WALLS
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_CONFUCIANISM
-		ReligionType=RELIGION_TAOISM
-		HolyCityReligionType=RELIGION_TAOISM
-		Player45Culture=3000, (100)
-	EndCity
 EndPlot
 BeginPlot
 	x=102,y=48
@@ -40434,7 +39514,7 @@ EndPlot
 BeginPlot
 	x=103,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40447,26 +39527,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=44
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (China)
-	EndUnit
-	BeginCity
-		CityOwner=45, (China)
-		CityName=Kaifeng
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_CHINESE_TAIXUE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_CONFUCIANISM
-		ReligionType=RELIGION_TAOISM
-	EndCity
 EndPlot
 BeginPlot
 	x=103,y=45
@@ -40475,7 +39538,6 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -40850,7 +39912,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_DEER
-	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40863,7 +39924,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=45
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40878,14 +39938,12 @@ EndPlot
 BeginPlot
 	x=104,y=47
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=104,y=48
 	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -41213,23 +40271,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=39
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Guangzhou
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-	EndCity
 EndPlot
 BeginPlot
 	x=105,y=40
@@ -41259,30 +40302,8 @@ BeginPlot
 	x=105,y=43
 	isNOfRiver
 	RiverWEDirection=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (China)
-	EndUnit
-	BeginCity
-		CityOwner=45, (China)
-		CityName=Nanjing
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_CHINESE_TAIXUE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_MONASTERY
-		BuildingType=BUILDING_CONFUCIAN_SHRINE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_TAOIST_MONASTERY
-		ReligionType=RELIGION_CONFUCIANISM
-		HolyCityReligionType=RELIGION_CONFUCIANISM
-		ReligionType=RELIGION_TAOISM
-		Player45Culture=50, (Native)
-	EndCity
 EndPlot
 BeginPlot
 	x=105,y=44
@@ -41293,6 +40314,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
+	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -41313,27 +40335,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=49
-(	RouteType=ROUTE_ROAD)
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=49, (Barbarian))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=49, (Barbarian))
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=49, (Barbarian))
-(	EndUnit)
-(	BeginCity)
-(		CityOwner=49, (Barbarian))
-(		CityName=Simiyan hoton)
-(		CityPopulation=2)
-(		BuildingType=BUILDING_WALLS)
-(		BuildingType=BUILDING_GRANARY)
-(		BuildingType=BUILDING_CONFUCIAN_TEMPLE)
-(		ReligionType=RELIGION_CONFUCIANISM)
-(	EndCity)
 EndPlot
 BeginPlot
 	x=105,y=50
@@ -41652,7 +40655,6 @@ EndPlot
 BeginPlot
 	x=106,y=38
 	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41687,7 +40689,6 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -42049,20 +41050,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=42
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginCity
-		CityOwner=45, (Independent2)
-		CityName=Hangzhou
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_CONFUCIANISM
-	EndCity
 EndPlot
 BeginPlot
 	x=107,y=43
@@ -42436,7 +41426,6 @@ EndPlot
 BeginPlot
 	x=108,y=40
 	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42453,7 +41442,6 @@ EndPlot
 BeginPlot
 	x=108,y=43
 	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42475,7 +41463,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=47
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -42854,22 +41841,6 @@ BeginPlot
 	x=109,y=46
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
-	EndUnit
-		BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=44, (Independent)
-		CityName=Hancheng
-		CityPopulation=2
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		ReligionType=RELIGION_BUDDHISM
-	EndCity
 EndPlot
 BeginPlot
 	x=109,y=47
@@ -43231,6 +42202,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=44
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

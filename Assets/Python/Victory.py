@@ -196,6 +196,9 @@ tCanadaEastTL = (27, 50)
 tCanadaEastBR = (36, 59)
 tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50), (32, 51))
 
+# Roman empire
+tRomanEmpire = { iRome : ((44, 30), (75, 56))}
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -532,8 +535,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
 		if iGameTurn < getTurnForYear(320):
-			tRect = { iRome : ((44, 30), (75, 56))}
-			tPlots = Areas.getArea(iRome, tRect, {})
+			tPlots = Areas.getArea(iRome, tRomanEmpire, {})
 			bRomanEmpire = isControlled(iRome, tPlots)
 			if bRomanEmpire:
 				win(iRome, 1)
@@ -685,31 +687,40 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iByzantium:
 		
 		# first goal: have 5000 gold in 1000 AD
-		if iGameTurn == getTurnForYear(1000):
-			if pByzantium.getGold() >= utils.getTurns(5000):
+		if iGameTurn == getTurnForYear(600):
+			tPlots = Areas.getArea(iRome, tRomanEmpire, {})
+			tBase = len(utils.getAreaCities(tPlots))
+			tControlled = getNumCitiesInArea(iByzantium, tPlots)
+			bTheodossianWalls = (data.getWonderBuilder(iTheodosianWalls) == iByzantium)
+			bHagiaSophia = (data.getWonderBuilder(iHagiaSophia) == iByzantium)
+			if (100 * tControlled > 70 * tBase) and bTheodossianWalls and bHagiaSophia:
 				win(iByzantium, 0)
 			else:
 				lose(iByzantium, 0)
 				
 		# second goal: make Constantinople the world's largest and most cultured city in 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			bLargest = isBestCity(iByzantium, (68, 45), cityPopulation)
-			bCulture = isBestCity(iByzantium, (68, 45), cityCulture)
+			bLargest = isBestCity(iByzantium, (69, 45), cityPopulation)
+			bCulture = isBestCity(iByzantium, (69, 45), cityCulture)
 			if bLargest and bCulture:
-				win(iByzantium, 1)
-			else:
-				lose(iByzantium, 1)
-				
-		# third goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
-		if iGameTurn == getTurnForYear(1450):
-			bBalkans = getNumCitiesInArea(iByzantium, utils.getPlotList(tBalkansTL, tBalkansBR)) >= 3
-			bNorthAfrica = getNumCitiesInArea(iByzantium, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR)) >= 3
-			bNearEast = getNumCitiesInArea(iByzantium, utils.getPlotList(tNearEastTL, tNearEastBR)) >= 3
-			if bBalkans and bNorthAfrica and bNearEast:
 				win(iByzantium, 2)
 			else:
 				lose(iByzantium, 2)
-					
+				
+		# third goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
+		if iGameTurn < getTurnForYear(1000):
+			bSilk = countResources(iByzantium, iSilk) > 0
+			bDye = countResources(iByzantium, iDye) > 0
+			bCotton = countResources(iByzantium, iCotton) > 0
+			bIncense = countResources(iByzantium, iIncense) > 0
+			
+			if bSilk and bDye and bCotton and bIncense:
+				win(iByzantium, 1)
+		
+		if iGameTurn == getTurnForYear(1000):
+			expire(iByzantium, 1)
+	
+	
 	elif iPlayer == iJapan:
 	
 		# first goal: have an average culture of 6000 by 1600 AD without ever losing a city
@@ -3548,19 +3559,30 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iByzantium:
 		if iGoal == 0:
-			iTreasury = pByzantium.getGold()
-			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
+			tPlots = Areas.getArea(iRome, tRomanEmpire, {})
+			tBase = len(utils.getAreaCities(tPlots))
+			tControlled = getNumCitiesInArea(iByzantium, tPlots)
+			fPercentage = 100 * tControlled * 1.0 / (tBase * 1.0)
+			bTheodossianWalls = (data.getWonderBuilder(iTheodosianWalls) == iByzantium)
+			bHagiaSophia = (data.getWonderBuilder(iHagiaSophia) == iByzantium)
+			
+			aHelp.append(getIcon(fPercentage >= 70.0) + localText.getText("TXT_KEY_VICTORY_ROMAN_CITIES", (str(u"%.2f%%" % fPercentage), str(70))))
+			aHelp.append(getIcon(bTheodossianWalls) + localText.getText("TXT_KEY_VICTORY_THEODOSSIAN_WALLS", ()) + ' ' + getIcon(bHagiaSophia) + localText.getText("TXT_KEY_VICTORY_HAGIA_SOPHIA", ()))
+			
 		elif iGoal == 1:
-			pBestPopCity = getBestCity(iByzantium, (68, 45), cityPopulation)
-			bBestPopCity = isBestCity(iByzantium, (68, 45), cityPopulation)
-			pBestCultureCity = getBestCity(iByzantium, (68, 45), cityCulture)
-			bBestCultureCity = isBestCity(iByzantium, (68, 45), cityCulture)
-			aHelp.append(getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + getIcon(bBestCultureCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCultureCity.getName(),)))
+			bSilk = countResources(iByzantium, iSilk) > 0
+			bDye = countResources(iByzantium, iDye) > 0
+			bCotton = countResources(iByzantium, iCotton) > 0
+			bIncense = countResources(iByzantium, iIncense) > 0
+			
+			aHelp.append(getIcon(bSilk) + localText.getText("TXT_KEY_VICTORY_SILK", ()) + getIcon(bDye) + localText.getText("TXT_KEY_VICTORY_DYE", ()) + getIcon(bCotton) + localText.getText("TXT_KEY_VICTORY_COTTON", ()) + getIcon(bIncense) + localText.getText("TXT_KEY_VICTORY_INCENSE", ()))
+
 		elif iGoal == 2:
-			iBalkans = getNumCitiesInArea(iByzantium, utils.getPlotList(tBalkansTL, tBalkansBR))
-			iNorthAfrica = getNumCitiesInArea(iByzantium, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
-			iNearEast = getNumCitiesInArea(iByzantium, utils.getPlotList(tNearEastTL, tNearEastBR))
-			aHelp.append(getIcon(iBalkans >= 3) + localText.getText("TXT_KEY_VICTORY_BALKANS", (iBalkans, 3)) + ' ' + getIcon(iNorthAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA", (iNorthAfrica, 3)) + ' ' + getIcon(iNearEast >= 3) + localText.getText("TXT_KEY_VICTORY_NEAR_EAST", (iNearEast, 3)))
+			pBestPopCity = getBestCity(iByzantium, (69, 45), cityPopulation)
+			bBestPopCity = isBestCity(iByzantium, (69, 45), cityPopulation)
+			pBestCultureCity = getBestCity(iByzantium, (69, 45), cityCulture)
+			bBestCultureCity = isBestCity(iByzantium, (69, 45), cityCulture)
+			aHelp.append(getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + getIcon(bBestCultureCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCultureCity.getName(),)))
 
 	elif iPlayer == iJapan:
 		if iGoal == 0:

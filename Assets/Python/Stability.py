@@ -50,7 +50,9 @@ def checkTurn(iGameTurn):
 	for iPlayer in range(iNumPlayers):
 		if data.players[iPlayer].iTurnsToCollapse == 0:
 			data.players[iPlayer].iTurnsToCollapse = -1
-			completeCollapse(iPlayer)
+			#Byzantine UP: cannot collapse except lost core and barbarian collapse
+			if iPlayer != iByzantium:
+				completeCollapse(iPlayer)
 		elif data.players[iPlayer].iTurnsToCollapse > 0:
 			data.players[iPlayer].iTurnsToCollapse -= 1
 	
