@@ -391,7 +391,7 @@ class Barbs:
 				lBuildings = [iLibrary, iPaganTemple]
 			if sName == 'Ninua' or sName == 'Pratisthan':
 				lBuildings = [iPaganTemple]
-			if Name == 'Ankuwash':
+			if sName == 'Ankuwash':
 				lBuildings = [iPaganTemple, iBarracks, iMonument]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]
