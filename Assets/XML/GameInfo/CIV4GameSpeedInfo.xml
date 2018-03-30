@@ -34,43 +34,39 @@
 			<iInflationOffset>-360</iInflationOffset>
 			<iVictoryDelayPercent>300</iVictoryDelayPercent>
 			<GameTurnInfos>
-				<GameTurnInfo>
-					<iMonthIncrement>120</iMonthIncrement>
-					<iTurnsPerIncrement>90</iTurnsPerIncrement> <!-- 90 = 900 -->
+				<GameTurnInfo><!-- 4000BC - 625BC -->
+					<iMonthIncrement>81</iMonthIncrement>
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>96</iMonthIncrement>
-					<iTurnsPerIncrement>137</iTurnsPerIncrement> <!-- 137 = 1096 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>60</iMonthIncrement>
-					<iTurnsPerIncrement>316</iTurnsPerIncrement> <!-- 318 = 1580 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>48</iMonthIncrement>
-					<iTurnsPerIncrement>103</iTurnsPerIncrement> <!-- 103 = 412 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>36</iMonthIncrement>
-					<iTurnsPerIncrement>139</iTurnsPerIncrement> <!-- 139 = 417 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 625BC - 375AD -->
 					<iMonthIncrement>24</iMonthIncrement>
-					<iTurnsPerIncrement>149</iTurnsPerIncrement> <!-- 149 = 298 -->
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>12</iMonthIncrement>
-					<iTurnsPerIncrement>144</iTurnsPerIncrement> <!-- 144 = 144 -->
+				<GameTurnInfo><!-- 375AD - 1375AD -->
+					<iMonthIncrement>24</iMonthIncrement>
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>6</iMonthIncrement>
-					<iTurnsPerIncrement>270</iTurnsPerIncrement> <!-- 270 = 135 -->
+				<GameTurnInfo><!-- 1375AD - May 1708AD -->
+					<iMonthIncrement>8</iMonthIncrement>
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- May 1708AD - 1875AD -->
+					<iMonthIncrement>4</iMonthIncrement>
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<GameTurnInfo><!-- 1875AD - 2000AD -->
 					<iMonthIncrement>3</iMonthIncrement>
-					<iTurnsPerIncrement>152</iTurnsPerIncrement> <!-- 152 = 38 -->
+					<iTurnsPerIncrement>500</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<!-- 1500 turns = 5020 years -->
+				<GameTurnInfo><!-- 2000 - Sep 2016 -->
+					<iMonthIncrement>2</iMonthIncrement>
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<GameTurnInfo><!-- Sep 2016 - 2050 -->
+					<iMonthIncrement>1</iMonthIncrement>
+					<iTurnsPerIncrement>400</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<!-- 3500 turns = 6050 years -->
 			</GameTurnInfos>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -100,43 +96,35 @@
 			<iInflationOffset>-180</iInflationOffset>
 			<iVictoryDelayPercent>150</iVictoryDelayPercent>
 			<GameTurnInfos>
-				<GameTurnInfo>
-					<iMonthIncrement>240</iMonthIncrement>
-					<iTurnsPerIncrement>45</iTurnsPerIncrement> <!-- 45 = 900 -->
+				<GameTurnInfo><!-- 4000BC - 600BC -->
+					<iMonthIncrement>136</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>180</iMonthIncrement>
-					<iTurnsPerIncrement>74</iTurnsPerIncrement> <!-- 74 = 1110 -->
+				<GameTurnInfo><!-- 600BC - 400AD -->
+					<iMonthIncrement>40</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>120</iMonthIncrement>
-					<iTurnsPerIncrement>159</iTurnsPerIncrement> <!-- 159 = 1590 -->
+				<GameTurnInfo><!-- 400AD - 1400AD -->
+					<iMonthIncrement>40</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>96</iMonthIncrement>
-					<iTurnsPerIncrement>50</iTurnsPerIncrement> <!-- 50 = 400 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>60</iMonthIncrement>
-					<iTurnsPerIncrement>80</iTurnsPerIncrement> <!-- 80 = 400 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>48</iMonthIncrement>
-					<iTurnsPerIncrement>80</iTurnsPerIncrement> <!-- 80 = 320 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>24</iMonthIncrement>
-					<iTurnsPerIncrement>80</iTurnsPerIncrement> <!-- 80 = 160 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 1400AD - 1700AD -->
 					<iMonthIncrement>12</iMonthIncrement>
-					<iTurnsPerIncrement>98</iTurnsPerIncrement> <!-- 98 = 98 -->
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>6</iMonthIncrement>
-					<iTurnsPerIncrement>84</iTurnsPerIncrement> <!-- 42 = 42 -->
+				<GameTurnInfo><!-- 1700AD - 1900AD -->
+					<iMonthIncrement>8</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<!-- 750 turns = 5020 years -->
+				<GameTurnInfo><!-- 1900 - 2000 -->
+					<iMonthIncrement>4</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<GameTurnInfo><!-- 2000 - 2050 -->
+					<iMonthIncrement>2</iMonthIncrement>
+					<iTurnsPerIncrement>300</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<!-- 2100 turns = 6050 years -->
 			</GameTurnInfos>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
@@ -166,39 +154,35 @@
 			<iInflationOffset>-120</iInflationOffset>
 			<iVictoryDelayPercent>100</iVictoryDelayPercent>
 			<GameTurnInfos>
-				<GameTurnInfo>
-					<iMonthIncrement>240</iMonthIncrement>
-					<iTurnsPerIncrement>45</iTurnsPerIncrement> <!-- 30 = 900 -->
+				<GameTurnInfo><!-- 4000BC - 600BC -->
+					<iMonthIncrement>408</iMonthIncrement>
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>200</iMonthIncrement>
-					<iTurnsPerIncrement>66</iTurnsPerIncrement> <!-- 44 = 1100 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>150</iMonthIncrement>
-					<iTurnsPerIncrement>128</iTurnsPerIncrement> <!-- 120 = 1600 -->
-				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 600BC - 400AD -->
 					<iMonthIncrement>120</iMonthIncrement>
-					<iTurnsPerIncrement>80</iTurnsPerIncrement> <!-- 80 = 800 -->
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
-					<iMonthIncrement>60</iMonthIncrement>
-					<iTurnsPerIncrement>60</iTurnsPerIncrement> <!-- 60 = 300 -->
+				<GameTurnInfo><!-- 400AD - 1400AD -->
+					<iMonthIncrement>120</iMonthIncrement>
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 1400AD - 1700AD -->
 					<iMonthIncrement>36</iMonthIncrement>
-					<iTurnsPerIncrement>48</iTurnsPerIncrement> <!-- 48 = 144 -->
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 1700AD - 1900AD -->
 					<iMonthIncrement>24</iMonthIncrement>
-					<iTurnsPerIncrement>45</iTurnsPerIncrement> <!-- 45 = 90 -->
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<GameTurnInfo>
+				<GameTurnInfo><!-- 1900 - 2000 -->
 					<iMonthIncrement>12</iMonthIncrement>
-					<iTurnsPerIncrement>86</iTurnsPerIncrement> <!-- 86 = 86 -->
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
 				</GameTurnInfo>
-				<!-- 500 turns = 5020 years -->
+				<GameTurnInfo><!-- 2000 - 2050 -->
+					<iMonthIncrement>6</iMonthIncrement>
+					<iTurnsPerIncrement>100</iTurnsPerIncrement>
+				</GameTurnInfo>
+				<!-- 700 turns = 6050 years -->
 			</GameTurnInfos>
 		</GameSpeedInfo>
 	</GameSpeedInfos>

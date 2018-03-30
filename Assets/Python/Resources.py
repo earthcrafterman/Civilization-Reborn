@@ -169,6 +169,7 @@ class Resources:
 			self.createResource(56, 54, iFish) # Amsterdam
 			self.createResource(57, 52, iWheat) # Amsterdam
 			self.createResource(58, 52, iCow) # Amsterdam
+			self.removeResource(65, 40) #Silk resource is lost
 			
 		elif (iGameTurn == getTurnForYear(1600)):
 			self.createResource(29, 52, iCow) # Montreal

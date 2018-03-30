@@ -107,13 +107,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
-		<English>The Power of Bribery:</English>
-		<German>Die Macht der Bestechung:</German>
+		<English>The Power of Eternal Empire:</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
-		<English>Double gold value in trades, spies can bribe barbarian units</English>
-		<German>Doppelter Wert von Gold beim Handeln, Spione k&#246;nnen barbarische Einheiten bestechen</German>
+		<English>It is more difficult to collapse</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>

@@ -4,8 +4,8 @@ BeginGame
 	Calendar=CALENDAR_DEFAULT
 	Option=GAMEOPTION_AGGRESSIVE_AI
 	Option=GAMEOPTION_NO_TECH_BROKERING
-	GameTurn=160
-	StartYear=-3000
+	GameTurn=190
+	StartYear=-4000
 	Description=TXT_KEY_RHYES_WB_DESC
 	ModPath=Mods\DOC Community Mod Compilation
 EndGame
@@ -20733,6 +20733,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_AMPHITHEATRE
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -21454,6 +21455,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_AMPHITHEATRE
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -22557,6 +22559,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_COTHON
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -22988,6 +22991,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -23395,7 +23399,6 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_COLOSSEUM
-		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -23785,7 +23788,8 @@ EndPlot
 BeginPlot
 	x=61,y=45
 	BonusType=BONUS_IRON
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25759,6 +25763,7 @@ EndPlot
 BeginPlot
 	x=66,y=38
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -26178,6 +26183,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_LIBRARY
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -26199,6 +26205,7 @@ BeginPlot
 	x=67,y=40
 	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 EndPlot
 BeginPlot
@@ -27057,6 +27064,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28293,6 +28301,7 @@ EndPlot
 BeginPlot
 	x=72,y=39
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28737,12 +28746,14 @@ BeginPlot
 	BonusType=BONUS_WINE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
+	ImprovementType=IMPROVEMENT_ORCHARD
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=43
 	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -29173,6 +29184,8 @@ EndPlot
 BeginPlot
 	x=74,y=45
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 EndPlot
 BeginPlot
@@ -29569,6 +29582,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -29874,6 +29888,7 @@ BeginPlot
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -29956,6 +29971,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_PALACE
 		ReligionType=RELIGION_ZOROASTRIANISM
+		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
 BeginPlot
@@ -39519,6 +39535,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=43
+	BonusType=BONUS_IRON
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0

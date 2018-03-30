@@ -251,7 +251,7 @@ def revertCommunistNames(iCiv):
 tEraNames = (
 # ancient
 {
-	'Akkad'			:	'Babil&#251;'
+	#'Akkad'			:	'Babil&#251;'
 },
 # classical
 {
@@ -315,7 +315,7 @@ def getEraRename(sName, iEra):
 		return tEraNames[iEra][sName]
 	return None
 
-def onTechAcquired(iCiv):
+def onTechAcquired(iCiv, iTech):
 	pCiv = gc.getPlayer(iCiv)
 	lCities = utils.getCityList(iCiv)
 
@@ -328,7 +328,9 @@ def onTechAcquired(iCiv):
 			if not sOldIdentifier:
 				sOldIdentifier = sOldName
 			
-			sNewIdentifier = getEraRename(sOldIdentifier, iEra)			
+			sNewIdentifier = getEraRename(sOldIdentifier, iEra)
+			if iTech == iWriting and sOldName == 'Akkad':
+				sNewIdentifier = 'Babil&#251;'
 			if not sNewIdentifier: continue
 			
 			if sOldIdentifier == 'York' and city.getRegionID() == rBritain:

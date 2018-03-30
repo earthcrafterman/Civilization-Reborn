@@ -7689,12 +7689,6 @@
 			<iCityAttack>-25</iCityAttack>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
 			<iPower>10</iPower>
@@ -7710,6 +7704,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SHOCK</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>

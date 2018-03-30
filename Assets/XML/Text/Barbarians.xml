@@ -597,4 +597,12 @@
 		<Tag>TXT_KEY_ADJECTIVE_LOMBARD</Tag>
 		<English>Lombard</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_HYKSOS</Tag>
+		<English>Hyksos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_INDO_ARYAN</Tag>
+		<English>Indo-Aryan</English>
+	</TEXT>
 </Civ4GameText>

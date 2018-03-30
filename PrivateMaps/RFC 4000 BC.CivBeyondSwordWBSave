@@ -5,7 +5,7 @@ BeginGame
 	Option=GAMEOPTION_AGGRESSIVE_AI
 	Option=GAMEOPTION_NO_TECH_BROKERING
 	GameTurn=0
-	StartYear=-3000
+	StartYear=-4000
 	Description=TXT_KEY_RHYES_WB_DESC
 	ModPath=Mods\DOC Community Mod Compilation
 EndGame
@@ -25098,7 +25098,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=45
-	BonusType=BONUS_ALUMINUM
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -26282,7 +26282,7 @@ BeginPlot
 	x=68,y=36
 	RiverNSDirection=0
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -26641,19 +26641,6 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
-	EndUnit
-	BeginCity
-		CityOwner=50, (iIndependent2)
-		CityName=Mero&#235
-		BuildingType=BUILDING_PAGAN_TEMPLE
-		CityPopulation=3
-		Player50Culture=10, (iIndependent)
-	EndCity
 EndPlot
 BeginPlot
 	x=69,y=31
@@ -30550,25 +30537,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_PERSIAN_IMMORTAL, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginCity
-		CityOwner=49, (iIndependent)
-		CityName=Shushan
-		BuildingType=BUILDING_PAGAN_TEMPLE
-		CityPopulation=1
-		Player49Culture=10, (iIndependent)
-	EndCity
 EndPlot
 BeginPlot
 	x=79,y=41

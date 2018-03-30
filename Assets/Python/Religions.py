@@ -122,6 +122,10 @@ class Religions:
 		if iReligion == iOrthodoxy:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iOrthodoxy)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iOrthodoxy)
+			#special: spread Orthodoxy in capital of founder
+			city = gc.getPlayer(iFounder).getCapitalCity()
+			if city:
+				city.spreadReligion(iOrthodoxy)
 		
 		if iReligion == iCatholicism:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
@@ -396,17 +400,18 @@ class Religions:
 			
 	def spreadOrthodoxy(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iOrthodoxy): return
-		if iGameTurn > getTurnForYear(620): return
+		if iGameTurn > getTurnForYear(787): return
+		if iGameTurn % utils.getTurns(5) != 0:
+			return
+		lLateRomanEmpireCities = utils.getRegionCities([rIberia, rItaly, rBalkans, rAnatolia, rEgypt, rMesopotamia, rEurope, rBritain])
+		lCandidateCities = [city for city in lLateRomanEmpireCities if (city.isHasReligion(iJudaism) and not city.isHasReligion(iOrthodoxy) and not city.isHasReligion(iCatholicism))]
 		
-		if iGameTurn % utils.getTurns(10) != 0: return
-	
-		lLateRomanEmpireCities = utils.getRegionCities([rIberia, rItaly, rBalkans, rAnatolia, rEgypt, rMesopotamia])
-		lOrthodoxCities = [city for city in lLateRomanEmpireCities if city.isHasReligion(iOrthodoxy)]
+		if len(lCandidateCities) == 0:
+			lCandidateCities = [city for city in lLateRomanEmpireCities if (not city.isHasReligion(iOrthodoxy) and not city.isHasReligion(iCatholicism))]
 		
-		if 2 * len(lOrthodoxCities) < len(lLateRomanEmpireCities):
-			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lLateRomanEmpireCities, iOrthodoxy))
-			if pSpreadCity:
-				pSpreadCity.spreadReligion(iOrthodoxy)
+		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lCandidateCities, iOrthodoxy))
+		if pSpreadCity:
+			pSpreadCity.spreadReligion(iOrthodoxy)
 	
 ##BUDDHISM
 
@@ -520,8 +525,8 @@ class Religions:
 		if iTech == iEthics:
 			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iJudaism)
 		
-		if iTech == iTheology:
-			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iOrthodoxy)
+		#if iTech == iTheology:
+		#	self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem, False), iOrthodoxy)
 		
 		for iReligion in range(iNumReligions):
 			self.checkLateReligionFounding(iReligion, iTech)

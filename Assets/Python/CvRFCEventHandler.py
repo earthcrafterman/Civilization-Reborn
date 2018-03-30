@@ -184,8 +184,8 @@ class CvRFCEventHandler:
 					utils.relocateCapital(iPlayer, city)
 
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
-		if iPlayer == iTurkey and tCity == (68, 45):
-			utils.setReborn(iTurkey, True)
+		#if iPlayer == iTurkey and tCity == (68, 45):
+		#	utils.setReborn(iTurkey, True)
 
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
@@ -694,6 +694,10 @@ class CvRFCEventHandler:
 		self.pla.onFirstContact(iTeamX, iHasMetTeamY)
 
 		vic.onFirstContact(iTeamX, iHasMetTeamY)
+		
+		#citis: Byzantium steals the silk secret from China
+		if iHasMetTeamY == iByzantium and iTeamX == iChina and gc.getGame().getGameTurn() < getTurnForYear(1200):
+			self.res.createResource(65, 40, iSilk)
 
 	#Rhye - start
 	def onTechAcquired(self, argsList):
@@ -712,7 +716,7 @@ class CvRFCEventHandler:
 
 		if iGameTurn > getTurnForYear(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
-			cnm.onTechAcquired(iPlayer)
+			cnm.onTechAcquired(iPlayer, iTech)
 			dc.onTechAcquired(iPlayer, iTech)
 
 		if gc.getPlayer(iPlayer).isAlive() and iGameTurn > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:

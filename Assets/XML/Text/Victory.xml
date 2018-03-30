@@ -325,43 +325,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ1_TITLE</Tag>
-		<English>Crossroads of the World</English>
-		<German>Wegkreuzung der Welt</German>
+		<English>Roman Restoration</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ1</Tag>
-		<English>Have 5000 gold in 1000 AD</English>
-		<German>Besitzen Sie 5000 Gold im Jahr 1000 n. Chr.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BYZ1_EPIC</Tag>
-		<English>Have 7500 gold in 1000 AD</English>
-		<German>Besitzen Sie 7500 Gold im Jahr 1000 n. Chr.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_BYZ1_MARATHON</Tag>
-		<English>Have 15000 gold in 1000 AD</English>
-		<German>Besitzen Sie 15000 Gold im Jahr 1000 n. Chr.</German>
+		<English>Control at least 70% of cities of former Roman Empire, Theodossian Walls and Hagia Sophia in 600AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ2_TITLE</Tag>
-		<English>City of the World's Desire</English>
-		<German>Stadt der weltlichen Begierden</German>
+		<English>Crossroads of the world</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ2</Tag>
-		<English>Make Constantinople the world's largest and most cultured city in 1200 AD</English>
-		<German>Machen Sie Konstantinopel zur gr&#246;&#223;ten und kultiviertesten Stadt der Welt im Jahr 1200 n. Chr.</German>
+		<English>Aquire at least one of silk, dye, cotton and incense by 1000AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ3_TITLE</Tag>
-		<English>The Eternal Empire</English>
-		<German>Das ewige Imperium</German>
+		<English>City of the World's Desire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BYZ3</Tag>
-		<English>Control three cities in the Balkans, Northern Africa and the Near East in 1450 AD</English>
-		<German>Kontrollieren Sie drei St&#228;dte im Balkan, Nordafrika und dem Nahen Osten im Jahr 1450 n. Chr.</German>
+		<English>Make Constantinople the largest and most cultured city of the world in 1200 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN1_TITLE</Tag>
@@ -3240,5 +3224,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EASTERN_ANATIOLIA</Tag>
 		<English>Eastern Anatolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROMAN_CITIES</Tag>
+		<English>Roman Empire restored: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SILK</Tag>
+		<English>Silk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DYE</Tag>
+		<English>Dye</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COTTON</Tag>
+		<English>Cotton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INCENSE</Tag>
+		<English>Incense</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_THEODOSSIAN_WALLS</Tag>
+		<English>Theodossian Walls</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HAGIA_SOPHIA</Tag>
+		<English>Hagia Sophia</English>
 	</TEXT>
 </Civ4GameText>

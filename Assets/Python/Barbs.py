@@ -16,15 +16,15 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
-(-2600, (69, 39), iIndependent, 'Knossos', 2, -1, -1), 	# Minoans
-(-2500, (77, 42), iIndependent2, 'Ninua', 2, iMilitia, 3), 	# Assyrian Empire
+(-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
+(-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
+(-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
+(-2070, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
+(-2070, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
-(-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 2),	# Ankara
-(-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
-(-1100, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
-(-1100, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
+(-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 3),	# Ankara
+(-1500, (73, 38), iIndependent, 'Yerushalayim', 3, iArcher, 2),	# Jerusalem
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
 (-733, (61, 40), iGreece, 'Syrakousai', 2, -1, -1),		# Magna Graecia
@@ -118,7 +118,11 @@ class Barbs:
 			self.checkLimitedSpawn(iBarbarian, iLion, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 1)
 			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 3)
 
-			
+		#Hyksos
+		if utils.isYearIn(-1800, -1500):
+			self.checkSpawn(iBarbarian, iWarChariot, 2 + iHandicap, (67, 36), (71, 37), self.spawnInvaders, iGameTurn, 8 - iHandicap, 4, ["TXT_KEY_ADJECTIVE_HYKSOS"])
+		
+		
 		#celts
 		if utils.isYearIn(-650, 200):
 			self.checkSpawn(iCeltia, iGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 6, 0)
@@ -147,6 +151,10 @@ class Barbs:
 		elif utils.isYearIn(660, 1100):
 			self.checkSpawn(iBarbarian, iSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
 
+		# indo aryans
+		#if utils.isYearIn(-2100, -1000):
+		#	self.checkSpawn(iBarbarian, iChariot, iHandicap, (86, 37), (88, 43), self.spawnInvaders, iGameTurn, 10 - iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_ARYAN"])
+		
 		# Deccan barbarians
 		if utils.isYearIn(-300, 1200):
 			iUnit = iArcher
@@ -216,13 +224,19 @@ class Barbs:
 
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if utils.isYearIn(680, 1000):
-			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnInvaders, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
+			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnNomads, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
 		if utils.isYearIn(900, 1200):
 			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
-			
+		if utils.isYearIn(1200, 1400):
+			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnMinors, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_BULGAR"])
+		
+		if utils.getHumanID() == iByzantium:
+			if utils.isYearIn(680, 1400):
+				self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnInvaders, iGameTurn, 6, 5, ["TXT_KEY_ADJECTIVE_BULGAR"])
+		
 		#barbarians in central asia
-		if utils.isYearIn(-1600, -250):
-			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 4, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 10-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+		if utils.isYearIn(-2500, -609):
+			self.checkSpawn(iBarbarian, iVulture, 2 + iHandicap, (72, 38), (77, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 		elif utils.isYearIn(-250, 300):
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		elif utils.isYearIn(300, 700):
@@ -377,6 +391,8 @@ class Barbs:
 				lBuildings = [iLibrary, iPaganTemple]
 			if sName == 'Ninua' or sName == 'Pratisthan':
 				lBuildings = [iPaganTemple]
+			if Name == 'Ankuwash':
+				lBuildings = [iPaganTemple, iBarracks, iMonument]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]
 			if sName == 'Tsor':
@@ -548,8 +564,20 @@ class Barbs:
 			spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
 	
 	def possibleTiles(self, tTL, tBR, bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
-		return [tPlot for tPlot in utils.getPlotList(tTL, tBR) if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
-	
+		tArea = utils.getPlotList(tTL, tBR)
+		lCities = utils.getAreaCities(tArea)
+		bIndy = True
+		for city in lCities:
+			iOwner = city.getOwner()
+			if iOwner not in [iBarbarian, iIndependent, iIndependent2, iNative]:
+				bIndy = False
+				break
+		if len(lCities) == 0:
+			bIndy = False
+		if bIndy:
+			return []
+		return [tPlot for tPlot in tArea if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
+
 	def possibleTile(self, tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
