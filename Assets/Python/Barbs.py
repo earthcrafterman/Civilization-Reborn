@@ -17,14 +17,16 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
 (-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
+(-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
+(-2500, (77, 42), iIndependent2, 'Ninua', 2, iMilitia, 3), 	# Assyrian Empire
 (-2070, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
 (-2070, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
 (-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
-(-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 3),	# Ankara
+(-1600, (72, 44), iBarbarian, 'Ankuwash', 2, iHuluganni, 2),	# Ankara
 (-1500, (73, 38), iIndependent, 'Yerushalayim', 3, iArcher, 2),	# Jerusalem
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
@@ -377,8 +379,7 @@ class Barbs:
 			lBuildings = []
 			iCulture = 10 * (gc.getGame().getCurrentEra() + 1)
 			if sName == "Ankuwash": 
-				gc.getPlayer(iBarbarian).initUnit(iWorker, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
-				gc.getPlayer(iBarbarian).initUnit(iWorker, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
 				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
 				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
 				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)

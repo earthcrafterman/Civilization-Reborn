@@ -922,13 +922,6 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		
-		if (getX() == 72 && getY() == 44) 
-		{
-			pushOrder(ORDER_TRAIN, (UnitTypes)GC.getInfoTypeForString("UNIT_HITTITE_HULUGANNI"), UNITAI_ATTACK, false, false, false);
-			return;
-		}
-
 
 		bChooseUnit = false;
 		if (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") > AI_buildUnitProb())
