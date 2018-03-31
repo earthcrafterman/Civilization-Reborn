@@ -26669,9 +26669,6 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
 	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=49, (iIndependent)
-	EndUnit
 	BeginCity
 		CityOwner=49, (iIndependent)
 		CityName=Niwt-Rst

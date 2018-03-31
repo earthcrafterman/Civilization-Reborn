@@ -690,6 +690,9 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
+		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iEgypt]):
+			utils.convertPlotCulture(gc.getMap().plot(70, 34), iIndependent, 100, False)
+			utils.convertPlotCulture(gc.getMap().plot(68, 33), iIndependent, 100, False)
 
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
@@ -1838,7 +1841,7 @@ class RiseAndFall:
 			iOwner = city.getOwner()
 			iCultureChange = 0
 			
-			if iOwner == iIndependent and iPlayer == iEgypt and x == 69 and y == 33 and gc.getGame().getGameTurnYear() <= getTurnForYear(tBirth[iEgypt]) + 5: continue
+			if iOwner == iIndependent and iPlayer == iEgypt and x == 69 and y == 33 and gc.getGame().getGameTurn() == getTurnForYear(tBirth[iEgypt]) + 1: continue
 			
 			# Case 1: Minor civilization
 			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iSeljuks, iNative]:
