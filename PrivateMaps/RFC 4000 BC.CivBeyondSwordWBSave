@@ -26664,6 +26664,12 @@ BeginPlot
 		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=49, (iIndependent)
 	EndUnit
 	BeginCity

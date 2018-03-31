@@ -1837,7 +1837,9 @@ class RiseAndFall:
 			iHuman = utils.getHumanID()
 			iOwner = city.getOwner()
 			iCultureChange = 0
-
+			
+			if iOwner == iIndependent and iPlayer == iEgypt and x == 69 and y == 33 and gc.getGame().getGameTurnYear() <= getTurnForYear(tBirth[iEgypt]) + 5: continue
+			
 			# Case 1: Minor civilization
 			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iSeljuks, iNative]:
 				iCultureChange = 100
@@ -1884,6 +1886,7 @@ class RiseAndFall:
 		self.createAdditionalUnits(iPlayer, tPlot)
 
 	def convertSurroundingPlotCulture(self, iCiv, lPlots):
+		if iCiv == iEgypt and gc.getGame().getGameTurnYear() <= getTurnForYear(tBirth[iEgypt]) + 5: return
 		for (x, y) in lPlots:
 			pPLot = gc.getMap().plot(x, y)
 			if pPLot.isCore(pPLot.getOwner()) and not pPLot.isCore(iCiv): continue
@@ -2593,7 +2596,7 @@ class RiseAndFall:
 			if gc.getMap().plot(73,38).isCity() and gc.getMap().plot(73,38).getOwner() == iEgypt and utils.getHumanID() != iEgypt:
 				teamEgypt.declareWar(iCarthage, False, WarPlanTypes.WARPLAN_TOTAL)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
+			#utils.makeUnit(iSpearman, iCiv, tPlot, 1)
 			utils.makeUnit(iWorkboat, iCiv, (58, 40), 2)
 			pCarthage.initUnit(iGalley, 58, 40, UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 			utils.makeUnit(iSettler, iCiv, (58, 40), 1)
