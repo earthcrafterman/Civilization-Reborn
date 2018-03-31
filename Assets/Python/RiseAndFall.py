@@ -1886,7 +1886,6 @@ class RiseAndFall:
 		self.createAdditionalUnits(iPlayer, tPlot)
 
 	def convertSurroundingPlotCulture(self, iCiv, lPlots):
-		if iCiv == iEgypt and gc.getGame().getGameTurnYear() <= getTurnForYear(tBirth[iEgypt]) + 5: return
 		for (x, y) in lPlots:
 			pPLot = gc.getMap().plot(x, y)
 			if pPLot.isCore(pPLot.getOwner()) and not pPLot.isCore(iCiv): continue
