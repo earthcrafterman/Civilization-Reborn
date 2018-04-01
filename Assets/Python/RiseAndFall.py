@@ -264,9 +264,6 @@ class RiseAndFall:
 
 		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
-			if utils.getHumanID() != iEgypt:
-				gc.getMap().plot(70, 34).setRouteType(CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), 'ROUTE_ROAD'))
-
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
 			self.adjust600ADWonders()
@@ -690,14 +687,10 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
-		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iEgypt]):
-			utils.convertPlotCulture(gc.getMap().plot(70, 34), iIndependent, 100, False)
-			utils.convertPlotCulture(gc.getMap().plot(68, 33), iIndependent, 100, False)
-
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
+		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
 			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		if gc.getGame().getGameTurnYear() == -1000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iBabylonia):
@@ -953,8 +946,6 @@ class RiseAndFall:
 			if iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6:
 				self.initBirth(iGameTurn, tBirth[iLoopCiv], iLoopCiv)
 
-
-
 		if iGameTurn == getTurnForYear(600):
 			if utils.getScenario() == i600AD:  #late start condition
 				tTL, tBR = Areas.tBirthArea[iChina]
@@ -998,6 +989,7 @@ class RiseAndFall:
 					self.rebirthFirstTurn(iCiv)
 				if iGameTurn == getTurnForYear(tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
+					
 
 	def endTurn(self, iPlayer):
 		for tTimedConquest in data.lTimedConquests:
@@ -1365,6 +1357,12 @@ class RiseAndFall:
 
 		x, y = tCapital
 		bCapitalSettled = False
+		
+		
+		
+		if iCiv == iEgypt:
+			tCapital = (69,35)
+			bCapitalSettled = True
 		
 		if iCiv == iGermany:
 			self.germanCapital()
@@ -1841,16 +1839,14 @@ class RiseAndFall:
 			iOwner = city.getOwner()
 			iCultureChange = 0
 			
-			if iOwner == iIndependent and iPlayer == iEgypt and x == 69 and y == 33 and gc.getGame().getGameTurn() == getTurnForYear(tBirth[iEgypt]) + 1: continue
-			
 			# Case 1: Minor civilization
 			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iSeljuks, iNative]:
 				iCultureChange = 100
-
+			
 			# Case 2: Human city
 			elif iOwner == iHuman:
 				iNumHumanCities += 1
-
+			
 			# Case 3: Other
 			else:
 				iCultureChange = 100
@@ -2562,7 +2558,7 @@ class RiseAndFall:
 	def createStartingUnits(self, iCiv, tPlot):
 		if iCiv == iEgypt:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
-			utils.createSettlers(iCiv, 1)
+			utils.createSettlers(iCiv, 2)
 		if iCiv == iChina:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.createSettlers(iCiv, 1)

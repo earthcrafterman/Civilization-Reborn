@@ -43,22 +43,6 @@ def initScenarioTechs(iScenario):
 		if iCivilization in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
 
-		gc.getTeam(gc.getPlayer(iIndependent).getTeam()).setHasTech(iMasonry, True, iIndependent, False, False)
-		vic.onTechAcquired(iIndependent, iMasonry)
-		
-		gc.getTeam(gc.getPlayer(iIndependent).getTeam()).setHasTech(iMining, True, iIndependent, False, False)
-		vic.onTechAcquired(iIndependent, iMining)
-		
-		gc.getTeam(gc.getPlayer(iIndependent).getTeam()).setHasTech(iPottery, True, iIndependent, False, False)
-		vic.onTechAcquired(iIndependent, iPottery)
-		
-		gc.getTeam(gc.getPlayer(iIndependent).getTeam()).setHasTech(iPastoralism, True, iIndependent, False, False)
-		vic.onTechAcquired(iIndependent, iPastoralism)
-
-		if iPlayer == iEgypt and utils.getHumanID() != iEgypt:
-			gc.getTeam(gc.getPlayer(iEgypt).getTeam()).setHasTech(iMythology, True, iEgypt, False, False)
-			vic.onTechAcquired(iEgypt, iMythology)
-
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
 

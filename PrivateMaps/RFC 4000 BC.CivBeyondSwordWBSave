@@ -176,7 +176,7 @@ BeginTeam
 EndTeam
 BeginPlayer
 	Team=0
-	LeaderType=LEADER_DJOSER
+	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
@@ -26660,22 +26660,6 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=49, (iIndependent)
-	EndUnit
-	BeginCity
-		CityOwner=49, (iIndependent)
-		CityName=Niwt-Rst
-		CityPopulation=1
-		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player49Culture=10, (iIndependent)
-	EndCity
 	TeamReveal=0,
 EndPlot
 BeginPlot
