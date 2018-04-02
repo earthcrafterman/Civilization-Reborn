@@ -2526,7 +2526,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	}
 
 	if (getOwner() == EGYPT && !isHuman() && pPlot->getX() <= 65 && GC.getGameINLINE().getGameTurnYear() < -1200 &&
-		!pPlot->isCity() && (getUnitType() != GC.getInfoTypeForString("UNIT_WORKER") || GC.getInfoTypeForString("UNIT_SETTLER")))
+		!pPlot->isCity() && (getUnitType() != GC.getInfoTypeForString("UNIT_WORKER") || getUnitType() != GC.getInfoTypeForString("UNIT_SETTLER")))
 		return false;
 
 	if (!isHuman() && ((pPlot->getX() < 64 && pPlot->getX() <= getX()) || (pPlot->getY() > 49 && pPlot->getY() >= getY())) &&
@@ -4910,7 +4910,7 @@ bool CvUnit::pillage()
 		CvUnit* pInterceptor = bestSeaPillageInterceptor(this, GC.getDefineINT("COMBAT_DIE_SIDES") / 2);
 		if (NULL != pInterceptor)
 		{
-			setMadeAttack(true);
+			setMadeAttack(false);
 
 			int iWithdrawal = withdrawalProbability();
 			changeExtraWithdrawal(-iWithdrawal); // no withdrawal since we are really the defender
