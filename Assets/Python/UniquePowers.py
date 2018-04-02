@@ -83,6 +83,9 @@ class UniquePowers:
 	def setup(self):
 		# Babylonian UP: receive a free tech after discovering the first four techs
 		pBabylonia.setFreeTechsOnDiscovery(4)
+		
+		# Chinese UP: +10% commerce rate per stability level
+		pChina.changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, 20)
 
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
 		if iOwner == iMughals:

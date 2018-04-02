@@ -4682,6 +4682,11 @@ bool CvPlayer::canTradeNetworkWith(PlayerTypes ePlayer) const
 
 int CvPlayer::getNumAvailableBonuses(BonusTypes eBonus) const
 {
+	if (eBonus == NO_BONUS)
+	{
+		return 0;
+	}
+
 	CvPlotGroup* pPlotGroup;
 
 	pPlotGroup = ((getCapitalCity() != NULL) ? getCapitalCity()->plot()->getOwnerPlotGroup() : NULL);

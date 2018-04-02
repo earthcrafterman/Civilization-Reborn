@@ -2890,7 +2890,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 
 	//Leoreth: even more emphasis on city of own state religion, for more wars about Rome especially
-	if (pCity->isHolyCity(getStateReligion()))
+	if (getStateReligion() != NO_RELIGION && pCity->isHolyCity(getStateReligion()))
 	{
 	    iValue += 3;
 	}
@@ -7995,7 +7995,6 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 				pCoastalCity = pUnconnectedCoastalCity;
 			}
 
-
 			for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 			{
 				eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
@@ -8023,7 +8022,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 							}
 							else
 							{
-								if (getNumAvailableBonuses((BonusTypes)kLoopUnit.getPrereqOrBonuses(iJ)) > 0)
+								if (kLoopUnit.getPrereqOrBonuses(iJ) != NO_BONUS && getNumAvailableBonuses((BonusTypes)kLoopUnit.getPrereqOrBonuses(iJ)) > 0)
 								{
 									bHasOtherOrBonus = true;
 									break;
@@ -8387,14 +8386,14 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
-	iCityDifference = getNumCities() - GET_PLAYER(ePlayer).getNumCities();
+	iCityDifference = std::abs(getNumCities() - GET_PLAYER(ePlayer).getNumCities());
 	iTotalCities = getNumCities() + GET_PLAYER(ePlayer).getNumCities();
 
 	if (bVassal) iCityDifference = 0;
 
 	iValue = AI_bonusVal(eBonus, iChange);
 
-	iValue *= 100 + range(0, iCityDifference, iTotalCities / 2) * 20; //(getNumCities() + 3) * 30;
+	iValue *= 100 + std::max(0, std::min(iCityDifference, iTotalCities / 2)) * 20; //(getNumCities() + 3) * 30;
 	iValue /= 100;
 
 	// Leoreth: consider relative gain (negative because their loss is our gain)

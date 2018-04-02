@@ -137,6 +137,7 @@ iCivEthiopia :	Techs(column=4, exceptions=[iBloomery, iMathematics]),
 iCivPersia :	Techs([iFortification], column=6, exceptions = [iPolitics, iArtisanry, iEthics]),
 iCivRome :	Techs([iArchitecture, iPolitics, iEthics, iScholarship], column=5),
 iCivKorea :	Techs(column=6, exceptions=[iNobility, iEthics, iArchitecture]),
+
 },
 {
 iCivIndependent:Techs(column=10),
