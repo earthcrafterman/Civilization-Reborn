@@ -2411,8 +2411,8 @@ class RiseAndFall:
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
 			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
 		elif iCiv == iSwahili:
-			utils.makeUnit(iSpearman, iCiv, 3)
-			utils.makeUnit(iSwordsman, iCiv, 3)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 3)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 4)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
