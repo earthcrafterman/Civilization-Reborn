@@ -38,8 +38,6 @@
 #include "CvBugOptions.h"
 // BUG - Ignore Harmless Barbarians - end
 
-#include <algorithm>
-
 // Public Functions...
 
 CvPlayer::CvPlayer()
@@ -1372,8 +1370,6 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 	FAssertMsg(!(GC.getMapINLINE().plotINLINE(iX, iY)->isCity()), "No city is expected at this plot when initializing new city");
 
 	pCity->init(pCity->getID(), getID(), iX, iY, bBumpUnits, bUpdatePlotGroups);
-
-	updateCultureRanks();
 
 	return pCity;
 }
@@ -2934,8 +2930,6 @@ void CvPlayer::doTurn()
 	{
 		pLoopCity->doTurn();
 	}
-
-	updateCultureRanks();
 
 	// Leoreth: anarchy doesn't cost golden age turns
 	if (getGoldenAgeTurns() > 0 && !isAnarchy())
@@ -25695,33 +25689,4 @@ bool CvPlayer::canUseSlaves() const
 	if (isNoSlavery()) return false;
 
 	return true;
-}
-
-struct cultureRankCompare
-{
-	bool operator() (CvCity* left, CvCity* right)
-	{
-		return left->getCulture(left->getOwnerINLINE()) > right->getCulture(right->getOwnerINLINE());
-	}
-};
-
-void CvPlayer::updateCultureRanks() const
-{
-	std::vector<CvCity*> cities;
-
-	int iLoop;
-	CvCity* pLoopCity;
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		cities.push_back(pLoopCity);
-	}
-
-	cultureRankCompare cmp;
-	std::sort(cities.begin(), cities.end(), cmp);
-
-	int iCount = 0;
-	for (std::vector<CvCity*>::iterator it = cities.begin(); it != cities.end(); ++it)
-	{
-		(*it)->setCultureRank(iCount++);
-	}
 }

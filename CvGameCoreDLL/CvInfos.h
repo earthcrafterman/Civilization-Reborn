@@ -3201,7 +3201,6 @@ public:
 	int getAIObjective() const;			// Exposed to Python
 	int getHealth() const;							// Exposed to Python
 	int getHappiness() const;						// Exposed to Python
-	int getAffectedCities() const; // Leoreth
 	int getMinAreaSize() const;					// Exposed to Python
 	int getMinLatitude() const;					// Exposed to Python
 	int getMaxLatitude() const;					// Exposed to Python
@@ -3261,7 +3260,6 @@ protected:
 	int m_iAIObjective;
 	int m_iHealth;
 	int m_iHappiness;
-	int m_iAffectedCities; // Leoreth
 	int m_iMinAreaSize;
 	int m_iMinLatitude;
 	int m_iMaxLatitude;

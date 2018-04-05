@@ -8395,6 +8395,17 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	iValue *= 100 + std::max(0, std::min(iCityDifference, iTotalCities / 2)) * 20; //(getNumCities() + 3) * 30;
 	iValue /= 100;
+	
+	// Leoreth: consider relative gain (negative because their loss is our gain)
+	/*iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
+
+	iTheirValue *= 100 + range(0, -iCityDifference, iTotalCities / 2) * 20; //(GET_PLAYER(ePlayer).getNumCities() + 3) * 30;
+	iTheirValue /= 100;
+
+	iValue = iOurValue - iTheirValue;*/
+
+	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
+	//iValue /= 100;
 
 	// Leoreth: consider relative gain (negative because their loss is our gain)
 	/*iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
