@@ -402,7 +402,7 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iAtlantis, 0)
 			
 		# second goal: Make Atlantis the most cultured city in 0 AD
-		if iGameTurn == getTurnForYear(0):
+		if iGameTurn == getTurnForYear(-10):
 			if isBestCity(iAtlantis, (43, 38), cityCulture) and isBestCity(iAtlantis, (43, 38), cityPopulation):
 				win(iAtlantis, 1)
 			else:
@@ -413,7 +413,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if countWonders(iAtlantis) >= 7:
 				win(iAtlantis, 2)
 				
-		if iGameTurn == getTurnForYear(0):
+		if iGameTurn == getTurnForYear(-10):
 			expire(iAtlantis, 2)
 				
 	elif iPlayer == iCarthage:
