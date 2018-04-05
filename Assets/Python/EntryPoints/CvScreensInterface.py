@@ -1154,8 +1154,18 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iMongolia:
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
+			
+	elif iPlayer == iAtlantis:
+		if (x, y) in Areas.getCoreArea(iGreece, False):
+			return 70
+			
+		if (x, y) in Areas.getNormalArea(iEgypt, False):
+			return 13
+			
+		if (x, y) in Areas.getCoreArea(iVikings, False):
+			return 40
 				
-		# continue with ID 70
+		# continue with ID 71
 			
 	return -1
 		

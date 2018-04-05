@@ -414,5 +414,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ROSE_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_ATLANTIS_BLUE</Type> <!-- Atlantis -->
+			<ColorTypePrimary>COLOR_PLAYER_ATLANTIS_BLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_GOLDENROD</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_ATLANTIS_BLUE</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

@@ -1576,4 +1576,12 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ATLANTIS_TURMA</Tag>
+		<English>Turma</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ATLANTIS_TURMA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Turma[COLOR_REVERT], the Atlantean replacement for the the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't receive a city combat penalty and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
+	</TEXT>
 </Civ4GameText>

@@ -1300,6 +1300,7 @@ enum PlayerTypes				// Exposed to Python
 	HARAPPA,
 	GREECE,
 	INDIA,
+	ATLANTIS,
 	PHOENICIA,
 	POLYNESIA,
 	PERSIA,

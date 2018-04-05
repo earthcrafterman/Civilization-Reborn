@@ -2350,6 +2350,9 @@ class RiseAndFall:
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
 		elif iCiv == iGreece:
 			utils.makeUnit(iHoplite, iCiv, tPlot, 4)
+		elif iCiv == iAtlantis:
+			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(iTurma, iCiv, tPlot, 2)
 		elif iCiv == iPersia:
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 		elif iCiv == iCarthage:
@@ -2481,6 +2484,18 @@ class RiseAndFall:
 				pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
+		elif iCiv == iAtlantis:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(iTurma, iCiv, tPlot, 2)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboatAtlantis, iCiv, tSeaPlot, 1)
+				pAtlantis.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pAtlantis.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pAtlantis.initUnit(iWarGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pAtlantis.initUnit(iWarGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iPersia:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
@@ -2920,6 +2935,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iGreece:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iAtlantis:
+			utils.makeUnit(iWorkboatAtlantis, iCiv, tPlot, 2)
 		elif iCiv == iPersia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iCarthage:

@@ -3041,7 +3041,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					}
 				}
 
-				if (GC.getBuildInfo(eBuild).isKill())
+				if (GC.getBuildInfo(eBuild).isKill() || (pHeadSelectedUnit->getOwnerINLINE() == ATLANTIS && pMissionPlot->isWater()))
 				{
 					szBuffer.append(NEWLINE);
 					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_CONSUME_UNIT"));

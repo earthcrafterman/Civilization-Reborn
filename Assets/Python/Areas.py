@@ -106,6 +106,7 @@ tCapitals = (
 (87, 40), # Harappa
 (67, 41), # Athens
 (94, 40), # Pataliputra
+(43, 38), # Atlantis
 (73, 40), # Sur
 (4, 18), # Tonga
 (82, 38), # Persepolis
@@ -194,6 +195,7 @@ tBirthArea = (
 ((85, 37), 	(88, 41)), 	# Harappa
 ((65, 39), 	(70, 45)), 	# Greece
 ((87, 36), 	(96, 40)), 	# India
+((41, 36), 	(45, 40)), 	# Atlantis
 ((71, 39), 	(74, 41)), 	# Carthage
 ((3, 17), 	(7, 22)), 	# Polynesia
 ((79, 37), 	(85, 44)), 	# Persia
@@ -280,6 +282,7 @@ tCoreArea = (
 ((85, 37),	(88, 41)),	# Harappa
 ((64, 39),	(70, 45)),	# Greece
 ((90, 38),	(96, 40)),	# India
+((41, 36), 	(45, 40)), 	# Atlantis
 ((73, 39),	(74, 41)),	# Phoenicia
 ((4, 18),	(6, 21)),	# Polynesia
 ((79, 37),	(85, 44)),	# Persia
@@ -386,6 +389,7 @@ tNormalArea = (
 ((84, 35), 	(88, 42)), 	# Harappa
 ((64, 39), 	(68, 44)), 	# Greece
 ((89, 38), 	(96, 42)), 	# India
+((41, 36), 	(45, 40)), 	# Atlantis
 ((72, 39), 	(74, 41)), 	# Carthage
 ((3, 15), 	(13, 21)), 	# Polynesia
 ((79, 37), 	(86, 46)), 	# Persia
@@ -470,6 +474,7 @@ tBroaderArea = (
 ((90, 40), 	(90, 40)), 	# Harappa
 ((62, 39), 	(77, 47)), 	# Greece
 ((85, 28), 	(99, 43)), 	# India
+((41, 36), 	(45, 40)), 	# Atlantis
 ((71, 39), 	(74, 41)), 	# Carthage
 ((1, 15), 	(17, 38)), 	# Polynesia
 ((70, 37), 	(87, 49)), 	# Persia

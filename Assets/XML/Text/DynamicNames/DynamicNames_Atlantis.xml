@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Greece -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATLANTIS_DESC</Tag>
+		<English>The Atlanteans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATLANTIS_PEOPLES</Tag>
+		<English>Atlantean Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATLANTIS_DEFAULT</Tag>
+		<English>Atlantis</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATLANTIS_ADJECTIVE</Tag>
+		<English>Atlantean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATLANTIS_SHORT_DESC</Tag>
+		<English>Atlantis</English>
+	</TEXT>
+</Civ4GameText>

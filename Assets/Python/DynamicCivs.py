@@ -492,6 +492,7 @@ dStartingLeaders = [
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
 	iGreece : iPericles,
+	iAtlantis : iKleito,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,

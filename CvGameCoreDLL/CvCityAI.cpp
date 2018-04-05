@@ -2413,6 +2413,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLE] /= 50;
 		break;
+	case ATLANTIS:
+		aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
+		break;
 	case PHOENICIA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
@@ -3095,6 +3100,24 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 2;
 										}
+										else {
+											iTempValue *= 2;
+											iTempValue /= 3;
+											}
+										break;
+									case ATLANTIS:
+										if (iI == GREAT_LIBRARY) {
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										else if (iI == COLOSSUS) iTempValue *= 3;
+										else if (iI == ORACLE) iTempValue *= 3;
+										else if (iI == PARTHENON) iTempValue *= 3;
+										else if (iI == TEMPLE_OF_ARTEMIS) iTempValue *= 3;
+										else if (iI == STATUE_OF_ZEUS) iTempValue *= 3;
+										else if (iI == GREAT_COTHON) iTempValue /= 8;
+										else if (iI == PYRAMIDS) iTempValue /= 10;
+										else if (iI == HAGIA_SOPHIA) iTempValue *= 2;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;

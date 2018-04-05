@@ -982,5 +982,13 @@
 			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KLEITO</Type>
+			<Button>art/LeaderHeads/Kleito/hippo.dds</Button>
+			<NIF>art/LeaderHeads/Kleito/Hippo.nif</NIF>
+			<KFM>art/LeaderHeads/Kleito/isabella.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Kleito/Hippo.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Kleito/isabella_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

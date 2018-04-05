@@ -130,6 +130,30 @@
 		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL1_TITLE</Tag>
+		<English>Arkantos' Tale</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL1</Tag>
+		<English>Control 2 cities in Greece, Egypt and Scandinavia by 250 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL2_TITLE</Tag>
+		<English>Utopia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL2</Tag>
+		<English>Make Atlantis the most cultured and most populous city in 0 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL3_TITLE</Tag>
+		<English>Jewel of the sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATL3</Tag>
+		<English>Control 7 world wonders in 0 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>
 		<English>Floating Gardens</English>
 		<German>Schwimmende G&#228;rten</German>
@@ -3135,5 +3159,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ATLANTIS_CONTROL_GREECE</Tag>
+		<English>Greece: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ATLANTIS_CONTROL_SCANDINAVIA</Tag>
+		<English>Scandinavia: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

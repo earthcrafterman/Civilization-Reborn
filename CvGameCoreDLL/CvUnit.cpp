@@ -7135,9 +7135,10 @@ bool CvUnit::build(BuildTypes eBuild)
 
 	finishMoves(); // needs to be at bottom because movesLeft() can affect workRate()...
 
+	// Merijn: Atlantis UP
 	if (bFinished)
 	{
-		if (GC.getBuildInfo(eBuild).isKill())
+		if (GC.getBuildInfo(eBuild).isKill() || (getOwnerINLINE() == ATLANTIS && plot()->isWater()))
 		{
 			kill(true);
 		}

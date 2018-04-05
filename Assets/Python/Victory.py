@@ -389,6 +389,33 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIndia, 2)
 				
+	elif iPlayer == iAtlantis:
+		# first goal: Control 2 cities in Greece, Egypt and Scandinavia by 250 BC
+		if isPossible(iAtlantis, 0):
+			bGreece = getNumCitiesInArea(iAtlantis, Areas.getCoreArea(iGreece, False)) >= 2
+			bEgypt = getNumCitiesInArea(iAtlantis, Areas.getNormalArea(iEgypt, False)) >= 2
+			bScandinavia = getNumCitiesInArea(iAtlantis, Areas.getCoreArea(iVikings, False)) >= 2
+			if bGreece and bEgypt and bScandinavia:
+				win(iAtlantis, 0)
+			
+		if iGameTurn == getTurnForYear(-250):
+			expire(iAtlantis, 0)
+			
+		# second goal: Make Atlantis the most cultured city in 0 AD
+		if iGameTurn == getTurnForYear(0):
+			if isBestCity(iAtlantis, (43, 38), cityCulture) and isBestCity(iAtlantis, (43, 38), cityPopulation):
+				win(iAtlantis, 1)
+			else:
+				lose(iAtlantis, 1)
+		
+		# third goal: Control 7 world wonders by 0 AD
+		if isPossible(iAtlantis, 2):
+			if countWonders(iAtlantis) >= 7:
+				win(iAtlantis, 2)
+				
+		if iGameTurn == getTurnForYear(0):
+			expire(iAtlantis, 2)
+				
 	elif iPlayer == iCarthage:
 	
 		# first goal: build a Palace and the Great Cothon in Carthagee by 300 BC
@@ -3375,6 +3402,22 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iIndia)
 			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(20))))
+			
+	elif iPlayer == iAtlantis:
+		if iGoal == 0:
+			iCitiesGreece = getNumCitiesInArea(iAtlantis, Areas.getCoreArea(iGreece, False))
+			iCitiesEgypt = getNumCitiesInArea(iAtlantis, Areas.getNormalArea(iEgypt, False))
+			iCitiesScandinavia = getNumCitiesInArea(iAtlantis, Areas.getCoreArea(iVikings, False))
+			aHelp.append(getIcon(iCitiesGreece >= 2) + localText.getText("TXT_KEY_VICTORY_ATLANTIS_CONTROL_GREECE", (iCitiesGreece, 2)) + ' ' + getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)) + ' ' + getIcon(iCitiesScandinavia >= 2) + localText.getText("TXT_KEY_VICTORY_ATLANTIS_CONTROL_SCANDINAVIA", (iCitiesScandinavia, 2)))
+		elif iGoal == 1:
+			pBestPopCity = getBestCity(iAtlantis, (43, 38), cityPopulation)
+			bBestPopCity = isBestCity(iAtlantis, (43, 38), cityPopulation)
+			pBestCultureCity = getBestCity(iAtlantis, (43, 38), cityCulture)
+			bBestCultureCity = isBestCity(iAtlantis, (43, 38), cityCulture)
+			aHelp.append(getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + getIcon(bBestCultureCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCultureCity.getName(),)))
+		elif iGoal == 2:
+			iCounter = countWonders(iAtlantis)
+			aHelp.append(getIcon(iCounter >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 7)))
 
 	elif iPlayer == iCarthage:
 		if iGoal == 0:

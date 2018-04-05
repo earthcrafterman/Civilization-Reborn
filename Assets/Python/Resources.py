@@ -52,6 +52,18 @@ class Resources:
 		self.createResource(iX, iY, -1, textKey)
        	
 	def checkTurn(self, iGameTurn):
+		# Prepare Atlantis
+		if iGameTurn == getTurnForYear(tBirth[iAtlantis]) - 3:
+			gc.getMap().plot(43, 38).setPlotType(PlotTypes.PLOT_LAND, True, True)
+			gc.getMap().plot(43, 38).setCore(iAtlantis, True)
+			
+			self.createResource(41, 39, iIron)
+			self.createResource(42, 37, iHorse)
+			self.createResource(43, 37, iFish)
+			self.createResource(43, 39, iWine)
+			self.createResource(44, 36, iMarble)
+			self.createResource(44, 40, iPearls)
+			self.createResource(45, 38, iGems)
 		
 		# Gujarati horses appear later so Harappa cannot benefit too early
 		if iGameTurn == getTurnForYear(-1000):

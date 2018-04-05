@@ -2546,7 +2546,8 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 	}
 
-	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
+	// Merijn: Atlantis UP
+	if (GC.getImprovementInfo(eImprovement).isWater() != isWater() && !(eTeam == ATLANTIS) && isWater())
 	{
 		return false;
 	}
@@ -2864,6 +2865,12 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iTime = GC.getBuildInfo(eBuild).getTime();
+	
+	// Merijn: Atlantis UP
+	if (getOwnerINLINE() == ATLANTIS && isWater())
+	{
+		iTime = 0;
+	}
 
 	if (getFeatureType() != NO_FEATURE)
 	{
