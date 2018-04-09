@@ -377,9 +377,9 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
 				<CivicType>CIVIC_AUTHORITY</CivicType>
-				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_SLAVERY</CivicType>
 				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
