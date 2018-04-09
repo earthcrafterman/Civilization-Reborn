@@ -1363,26 +1363,9 @@ class RiseAndFall:
 
 		x, y = tCapital
 		bCapitalSettled = False
-		
-		
-		
-		if iCiv == iEgypt:
-			tCapital = (69,35)
-			bCapitalSettled = True
-		
-		if iCiv == iGermany:
-			self.germanCapital()
-			tCapital = (62, 53)
-			x, y = tCapital
-			bCapitalSettled = True
 
-		if iCiv == iItaly:
-			for (i, j) in utils.surroundingPlots(tCapital):
-				if gc.getMap().plot(i, j).isCity():
-					bCapitalSettled = True
-					tCapital = (i, j)
-					x, y = tCapital
-					break
+		if (self.adjacentCapital(x, y)):
+			bCapitalSettled = True
 
 		if iCurrentTurn == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay:
 			if iCiv in lConditionalCivs or bCapitalSettled:
@@ -3330,28 +3313,31 @@ class RiseAndFall:
 		plot = gc.getMap().plot(60, 56)
 		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
 
-	def germanCapital(self):
-		if gc.getMap().plot(62, 53).isCity() == False:
+	def adjacentCapital(self, x, y):
+		if gc.getMap().plot(x, y).isCity():
+			return true
+		else:
 			lCities = []
-			if gc.getMap().plot(62, 52).isCity():
-				lCities.append(gc.getMap().plot(62, 52).getPlotCity())
-			if gc.getMap().plot(61, 52).isCity():
-				lCities.append(gc.getMap().plot(61, 52).getPlotCity())
-			if gc.getMap().plot(61, 53).isCity():
-				lCities.append(gc.getMap().plot(61, 53).getPlotCity())
-			if gc.getMap().plot(61, 54).isCity():
-				lCities.append(gc.getMap().plot(61, 54).getPlotCity())
-			if gc.getMap().plot(62, 54).isCity():
-				lCities.append(gc.getMap().plot(62, 54).getPlotCity())
-			if gc.getMap().plot(63, 54).isCity():
-				lCities.append(gc.getMap().plot(63, 54).getPlotCity())
-			if gc.getMap().plot(63, 53).isCity():
-				lCities.append(gc.getMap().plot(63, 53).getPlotCity())
-			if gc.getMap().plot(63, 52).isCity():
-				lCities.append(gc.getMap().plot(63, 52).getPlotCity())
+			if gc.getMap().plot(x, y-1).isCity():
+				lCities.append(gc.getMap().plot(x, y-1).getPlotCity())
+			if gc.getMap().plot(x-1, y-1).isCity():
+				lCities.append(gc.getMap().plot(x-1, y-1).getPlotCity())
+			if gc.getMap().plot(x-1, y).isCity():
+				lCities.append(gc.getMap().plot(x-1, y).getPlotCity())
+			if gc.getMap().plot(x-1, y+1).isCity():
+				lCities.append(gc.getMap().plot(x-1, y+1).getPlotCity())
+			if gc.getMap().plot(x, y+1).isCity():
+				lCities.append(gc.getMap().plot(x, y+1).getPlotCity())
+			if gc.getMap().plot(x+1, y+1).isCity():
+				lCities.append(gc.getMap().plot(x+1, y+1).getPlotCity())
+			if gc.getMap().plot(x+1, y).isCity():
+				lCities.append(gc.getMap().plot(x+1, y).getPlotCity())
+			if gc.getMap().plot(x+1, y-1).isCity():
+				lCities.append(gc.getMap().plot(x+1, y-1).getPlotCity())
 
 			if len(lCities) == 1:
-				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (62, 53))
+				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (x, y))
+				return true
 			if len(lCities) > 1:
 				lbest = lCities[0]
 				ibestCulture = gc.getMap().plot(lbest.getX(), lbest.getY()).getCulture(lbest.getOwner())
@@ -3365,10 +3351,12 @@ class RiseAndFall:
 					elif city.getPopulation() == lbest.getPopulation() and culture == ibestCulture:
 						if gc.getGame().getSorenRandNum(2, 'random city') == 1:
 							lbest = city
-				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, (62, 53))
+				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, (x, y))
 				for city in lCities:
 					if city != lbest:
 						city.kill()
+				return true
+		return false
 
 	def MoveCity(self, pPlayer, city, plot):
 		pNewCity = pPlayer.initCity(plot[0], plot[1])
