@@ -687,6 +687,9 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
+		if gc.getGame().getGameTurn() == getTurnForYear(-4000):
+			utils.flipCity((77, 37), False, True, iBabylonia, ())
+
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 

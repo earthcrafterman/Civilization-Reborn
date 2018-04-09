@@ -29757,10 +29757,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_MILITIA, UnitOwner=51, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=2, (Babylonia)
+		CityOwner=51, (iIndependent2)
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
