@@ -402,6 +402,12 @@ void CyPlayer::doGoody(CyPlot* pPlot, CyUnit* pUnit)
 		m_pPlayer->doGoody(pPlot->getPlot(), pUnit->getUnit());
 }
 
+void CyPlayer::changeOverflowResearch(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeOverflowResearch(iChange);
+}
+
 bool CyPlayer::canFound(int iX, int iY)
 {
 	return m_pPlayer ? m_pPlayer->canFound(iX, iY) : false;

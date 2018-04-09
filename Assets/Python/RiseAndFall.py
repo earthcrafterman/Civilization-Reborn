@@ -690,11 +690,17 @@ class RiseAndFall:
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
+		if (gc.getGame().getGameTurnYear() == -3500 or gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
 			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
-		if gc.getGame().getGameTurnYear() == -1000 and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(73,40).isCity() and gc.getMap().plot(73, 40).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,40).getPlotCity().getOwner()).isVassal(iBabylonia):
-			teamBabylonia.declareWar(gc.getMap().plot(73, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pAssyria.isAlive() and utils.getHumanID() != iAssyria and not teamAssyria.isAtWar(iIndependent2):
+			teamAssyria.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+
+		if (gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -1000) and pAssyria.isAlive() and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamAssyria.isAtWar(iBabylonia) and not teamAssyria.isVassal(iBabylonia):
+			teamBabylonia.declareWar(iAssyria, False, WarPlanTypes.WARPLAN_TOTAL)
+			
+		if (gc.getGame().getGameTurnYear() == -1500) and pAssyria.isAlive() and pBabylonia.isAlive() and utils.getHumanID() != iAssyria and not teamAssyria.isAtWar(iBabylonia) and not teamBabylonia.isVassal(iAssyria):
+			teamAssyria.declareWar(iBabylonia, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:

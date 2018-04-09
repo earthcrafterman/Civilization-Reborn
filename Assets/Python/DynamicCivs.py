@@ -500,6 +500,7 @@ dStartingLeaders = [
 	iIndia : iAsoka,
 	iChina : iQinShiHuang,
 	iBabylonia : iSargon,
+	iAssyria : iAshurbanipal,
 	iHarappa : iVatavelli,
 	iGreece : iPericles,
 	iPersia : iCyrus,

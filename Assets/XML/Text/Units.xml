@@ -1696,4 +1696,8 @@
 		<Tag>TXT_KEY_UNITCOMBAT_RAIDER</Tag>
 		<English>Raider Ships</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIAN_RAM</Tag>
+		<English>Battering Ram</English>
+	</TEXT>
 </Civ4GameText>

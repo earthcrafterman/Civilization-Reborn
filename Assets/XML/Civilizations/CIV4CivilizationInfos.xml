@@ -297,6 +297,104 @@
 			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_ASSYRIA</Type>
+			<Description>TXT_KEY_CIV_ASSYRIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_ASSYRIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_ASSYRIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_ASSYRIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_PINK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_ASSYRIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<Identifier>ASY</Identifier>
+			<StartingYear>-4000</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Shuruppak</City>
+				<City>Sippar</City>
+				<City>Eridu</City>
+				<City>Eulbar</City>
+				<City>Ellipi</City>
+				<City>Zariqum</City>
+				<City>Samarra</City>
+				<City>Larsa</City>
+				<City>Adab</City>
+				<City>Telloh</City>
+				<City>Agade</City>
+				<City>Erech</City>
+				<City>Umma</City>
+				<City>Isin</City>
+				<City>Tutub</City>
+				<City>Apisala</City>
+				<City>Kutha</City>
+				<City>Zabalam</City>
+				<City>Hilla</City>
+				<City>Tell Wilaya</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingType>BUILDING_BABYLONIAN_GARDEN</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_BABYLONIAN_ZIGGURAT</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
+					<UnitType>UNIT_ASSYRIAN_RAM</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ASHURBANIPAL</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_BABYLONIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_BABYLON_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_BABYLON_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_AUSTRALIA</Type>
 			<Description>TXT_KEY_CIV_AUSTRALIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_AUSTRALIA_SHORT_DESC</ShortDescription>
@@ -6375,7 +6473,6 @@
 				<City>Sarmatian</City>
 				<City>Scythian</City>
 				<City>Visigoth</City>
-				<City>Assyrian</City>
 				<City>Hittite</City>
 				<City>Mauryan</City>
 				<City>Parthian</City>
@@ -6604,7 +6701,6 @@
 				<City>Sarmatian</City>
 				<City>Scythian</City>
 				<City>Visigoth</City>
-				<City>Assyrian</City>
 				<City>Hittite</City>
 				<City>Mauryan</City>
 				<City>Parthian</City>
@@ -7030,7 +7126,6 @@
 				<City>Sarmatian</City>
 				<City>Scythian</City>
 				<City>Visigoth</City>
-				<City>Assyrian</City>
 				<City>Hittite</City>
 				<City>Mauryan</City>
 				<City>Parthian</City>
@@ -7152,7 +7247,6 @@
 				<City>Sarmatian</City>
 				<City>Scythian</City>
 				<City>Visigoth</City>
-				<City>Assyrian</City>
 				<City>Hittite</City>
 				<City>Mauryan</City>
 				<City>Parthian</City>

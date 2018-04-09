@@ -5020,11 +5020,21 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case BABYLONIA:
 									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
 										iValue /= 5;
-									if (iI == WRITING || iI == CONTRACT || iI == CALENDAR)
+									if (iI == TANNING || iI == WRITING || iI == CONTRACT || iI == CALENDAR)
 										iValue *= 3;
 									if (iI == MASONRY || iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
 										iValue *= 2;
 									if (iI == MATHEMATICS || iI == ALLOYS || iI == BLOOMERY || iI == STEEL)
+										iValue /= 3;
+									break;
+								case ASSYRIA:
+									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
+										iValue /= 5;
+									if (iI == LEVERAGE || iI == SMELTING || iI == WRITING || iI == CONTRACT || iI == CALENDAR)
+										iValue *= 3;
+									if (iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
+										iValue *= 2;
+									if (iI == MATHEMATICS || iI == BLOOMERY || iI == STEEL)
 										iValue /= 3;
 									break;
 								case HARAPPA:

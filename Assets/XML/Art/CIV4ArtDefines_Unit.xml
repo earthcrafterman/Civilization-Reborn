@@ -6,7 +6,6 @@
 <!-- Unit art path information -->
 <Civ4ArtDefines xmlns="x-schema:CIV4ArtDefinesSchema.xml">
 	<UnitArtInfos>
-		
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_OCEAN_LINER</Type>
 			<Button>Art/Interface/Buttons/Units/SteamerButt.dds</Button>
@@ -45,6 +44,40 @@
 			</AudioRunSounds>
 			<SelectionSound>AS3D_UN_IRONCLAD_FORT</SelectionSound>
 			<ActionSound>AS3D_UN_IRONCLAD_FORT</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_ASSYRIAN_RAM</Type>
+			<Button>Art/Interface/Buttons/Units/ram.dds</Button>
+			<fScale>0.48</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/ram/ram.nif</NIF>
+			<KFM>Art/Units/ram/ram.kfm</KFM>
+			<SHADERNIF>Art/Units/ram/ram.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/CatapultShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<TrailDefinition>
+				<Texture>Art/Shared/wheeltread.dds</Texture>
+				<fWidth>1.0</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>0.0</fTaper>
+				<fFadeStartTime>0.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.5</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>1</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_WHEELS_2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_WHEELS_2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_CATAPULT_FORT</SelectionSound>
+			<ActionSound>AS3D_UN_CATAPULT_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LION</Type>

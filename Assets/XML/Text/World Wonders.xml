@@ -917,4 +917,20 @@
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL</Tag>
+		<English>Library of Ashurbanipal </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL_PEDIA</Tag>
+		<English>Library of Ashurbanipal </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL_STRATEGY</Tag>
+		<English>Library of Ashurbanipal </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL_HELP</Tag>
+		<English>Upon conquering a city, gain science equal to the former owner's local culture.</English>
+	</TEXT>
 </Civ4GameText>

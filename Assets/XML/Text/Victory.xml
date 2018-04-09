@@ -3222,6 +3222,14 @@
 		<English>The Levant</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ELAM</Tag>
+		<English>Elam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_URATU</Tag>
+		<English>Uratu</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EASTERN_ANATIOLIA</Tag>
 		<English>Eastern Anatolia</English>
 	</TEXT>
@@ -3252,5 +3260,37 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HAGIA_SOPHIA</Tag>
 		<English>Hagia Sophia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY1_TITLE</Tag>
+		<English>Four Corners of the World</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY1</Tag>
+		<English>Control Mesopotamia, Elam, the Levant, and Uratu in 1300 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY2_TITLE</Tag>
+		<English>Palace Without Rival</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY2</Tag>
+		<English>Build the Hanging Gardens and Library of Ashurbanipal by 650 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY3_TITLE</Tag>
+		<English>Infrastructure</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY3</Tag>
+		<English>Build 5 Aqueducts, 3 Gardens, and 2 Baths by 600 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BATHS</Tag>
+		<English>Baths: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_GARDENS</Tag>
+		<English>Gardens: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

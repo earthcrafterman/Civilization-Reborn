@@ -386,5 +386,9 @@
 			<Type>ART_DEF_MOVIE_HAGIA_SOPHIA</Type>
 			<Path>Art/Movies/Wonders/HagiaSophia.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LIBRARY_OF_ASHURBANIPAL</Type>
+			<Path>Art/Movies/Wonders/Library of Ashurbanipal.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

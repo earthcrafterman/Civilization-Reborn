@@ -309,4 +309,8 @@
 		<Tag>TXT_KEY_DOM_VIKINGS_1700AD</Tag>
 		<English>It is the year 1700 AD. Have fun.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ASSYRIA</Tag>
+		<English>It is the year 4000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Assyria, they will soon be conquered by the greatest empire of its time.</English>
+	</TEXT>
 </Civ4GameText>

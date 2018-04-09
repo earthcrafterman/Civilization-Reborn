@@ -109,6 +109,7 @@ public:
 	bool canReceiveGoody(CyPlot* pPlot, int /*GoodyTypes*/ eGoody, CyUnit* pUnit);
 	void receiveGoody(CyPlot* pPlot, int /*GoodyTypes*/ eGoody, CyUnit* pUnit);
 	void doGoody(CyPlot* pPlot, CyUnit* pUnit);
+	void changeOverflowResearch(int iChange);
 	bool canFound(int iX, int iY);
 	void found(int iX, int iY);
 	bool canTrain(int /*UnitTypes*/ eUnit, bool bContinue, bool bTestVisible);

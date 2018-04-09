@@ -18,6 +18,14 @@ localText = CyTranslator()
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
 lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
+#first Assyrian goal: Control Mesopotamia, Elam, the Levant, and Eastern Anatolia in 1300 BC
+tMesopotamiaTL = (75, 37)
+tMesopotamiaBR = (78, 43)
+tElamTL = (78, 39)
+tElamBR = (80, 41)
+tUratuTL = (73, 43)
+tUratuBR = (76, 46)
+
 #second Egyptian goal: Control the Levant, Nubia, and Eastern Anatolia in 1000 AD
 tLevantTL = (73, 37)
 tLevantBR = (74, 41)
@@ -174,7 +182,7 @@ tSouthAsiaBR = (110, 38)
 lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
-tSafavidMesopotamiaTL = (75, 39)
+tSafavidMesopotamiaTL = (75, 37)
 tSafavidMesopotamiaBR = (79, 43)
 tTransoxaniaTL = (82, 42)
 tTransoxaniaBR = (86, 49)
@@ -242,6 +250,7 @@ dEraGoals = {}
 
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
+	iAssyria: (1, [iHangingGardens, iAshurbanipalLibrary], True),
 	iGreece: (2, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
@@ -312,9 +321,9 @@ def checkTurn(iGameTurn, iPlayer):
 	if iPlayer == iEgypt:
 		#second Egyptian goal: Control the Levant, Nubia, and Eastern Anatolia in 1000 AD
 		if iGameTurn == getTurnForYear(-1000):
-			bLevant = isControlledOrVassalized(iEgypt, utils.getPlotList(tLevantTL, tLevantBR), True)
-			bNubia = isControlledOrVassalized(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR), True)
-			bEasternAnatolia = isControlledOrVassalized(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR), True)
+			bLevant = isControlled(iEgypt, utils.getPlotList(tLevantTL, tLevantBR))
+			bNubia = isControlled(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR))
+			bEasternAnatolia = isControlled(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR))
 			if bLevant and bNubia and bEasternAnatolia:
 				win(iEgypt, 0)
 			else:
@@ -367,6 +376,23 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iBabylonia, 2)
 			else:
 				lose(iBabylonia, 2)
+
+	elif iPlayer == iAssyria:
+		if iGameTurn == getTurnForYear(-1300):
+			bLevant = isControlled(iAssyria, utils.getPlotList(tLevantTL, tLevantBR))
+			bElam = isControlled(iAssyria, utils.getPlotList(tElamTL, tElamBR))
+			bMesopotamia = isControlled(iAssyria, utils.getPlotList(tMesopotamiaTL, tMesopotamiaBR))
+			bUratu = isControlled(iAssyria, utils.getPlotList(tUratuTL, tUratuBR))
+			if bLevant and bElam and bMesopotamia and bUratu:
+				win(iAssyria, 0)
+			else:
+				lose(iAssyria, 0)
+		
+		if iGameTurn == getTurnForYear(-650):
+			expire(iAssyria, 1)
+		
+		if iGameTurn == getTurnForYear(-600):
+			expire(iAssyria, 2)
 
 	elif iPlayer == iHarappa:
 
@@ -1758,6 +1784,14 @@ def onCityBuilt(iPlayer, city):
 				win(iSwahili, 2)
 				
 def onCityAcquired(iPlayer, iOwner, city, bConquest):
+	# Library of Ashurbanipal effect
+	if (bConquest and gc.getPlayer(iPlayer).isHasBuildingEffect(iAshurbanipalLibrary)):
+		player = gc.getPlayer(iPlayer)
+		culture = city.getCulture(iOwner)
+		print "asd " + str(iPlayer)
+		print "asd " + str(player)
+		print "asd " + str(culture)
+		player.changeOverflowResearch(culture)
 
 	if not gc.getGame().isVictoryValid(7): return
 
@@ -1945,6 +1979,16 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				bColosseum = getNumBuildings(iRome, iColosseum)
 				if iNumBarracks >= 5 and iNumAqueducts >= 4 and iNumAmphitheatres >= 3 and iNumForums >= 2 and bColosseum:
 					win(iRome, 0)
+
+	#third Assyrian goal: build 5 Aqueducts, 3 Gardens, and 2 Baths by 600 BC
+	elif iPlayer == iAssyria:
+		if isPossible(iAssyria, 2):
+			if iBuilding in [iAqueduct, iBath, iGarden]:
+				iNumBaths = getNumBuildings(iAssyria, iBarracks)
+				iNumAqueducts = getNumBuildings(iAssyria, iBath)
+				iNumGardens = getNumBuildings(iAssyria, iGarden)
+				if iNumAqueducts >= 5 and iNumGardens >= 3 and iNumBaths >= 2:
+					win(iAssyria, 0)
 
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
 	elif iPlayer == iKorea:
@@ -3578,9 +3622,9 @@ def getUHVHelp(iPlayer, iGoal):
 			bEasternAnatolia = False
 			
 			
-			bLevant = isControlledOrVassalized(iEgypt, utils.getPlotList(tLevantTL, tLevantBR), True)
-			bNubia = isControlledOrVassalized(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR), True)
-			bEasternAnatolia = isControlledOrVassalized(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR), True)
+			bLevant = isControlled(iEgypt, utils.getPlotList(tLevantTL, tLevantBR))
+			bNubia = isControlled(iEgypt, utils.getPlotList(tNubiaTL, tNubiaBR))
+			bEasternAnatolia = isControlled(iEgypt, utils.getPlotList(tEasternAnatoliaTL, tEasternAnatoliaBR))
 
 			aHelp.append(getIcon(bNubia) + localText.getText("TXT_KEY_VICTORY_NUBIA", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()) + ' ' + getIcon(bEasternAnatolia) + localText.getText("TXT_KEY_VICTORY_EASTERN_ANATIOLIA", ()))
 		elif iGoal == 1:
@@ -3634,6 +3678,30 @@ def getUHVHelp(iPlayer, iGoal):
 			bBestCity = isBestCity(iBabylonia, (76, 40), cityCulture)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCity.getName(),)))
 
+	elif iPlayer == iAssyria:
+		if iGoal == 0:
+			bLevant = False
+			bEasternAnatolia = False
+			bMesopotamia = False
+			bElam = False
+			
+			bLevant = isControlled(iAssyria, utils.getPlotList(tLevantTL, tLevantBR))
+			bElam = isControlled(iAssyria, utils.getPlotList(tElamTL, tElamBR))
+			bMesopotamia = isControlled(iAssyria, utils.getPlotList(tMesopotamiaTL, tMesopotamiaBR))
+			bUratu = isControlled(iAssyria, utils.getPlotList(tUratuTL, tUratuBR))
+			
+			aHelp.append(getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()) + ' ' + getIcon(bElam) + localText.getText("TXT_KEY_VICTORY_ELAM", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()) + ' ' + getIcon(bUratu) + localText.getText("TXT_KEY_VICTORY_URATU", ()))
+
+		elif iGoal == 1:
+			bGardens = data.getWonderBuilder(iHangingGardens) == iAssyria
+			bLibrary = data.getWonderBuilder(iGreatLibrary) == iAssyria
+			aHelp.append(getIcon(bGardens) + localText.getText("TXT_KEY_BUILDING_HANGING_GARDENS", ()) + getIcon(bLibrary) + localText.getText("TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL", ()))
+
+		if iGoal == 2:
+			iNumBaths = getNumBuildings(iAssyria, iBath)
+			iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
+			iNumGardens = getNumBuildings(iAssyria, iGarden)
+			aHelp.append(getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumGardens >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_GARDENS", (iNumGardens, 3)) + ' ' + getIcon(iNumBaths >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 2)))
 	elif iPlayer == iGreece:
 		if iGoal == 0:
 			bMathematics = data.lFirstDiscovered[iMathematics] == iGreece

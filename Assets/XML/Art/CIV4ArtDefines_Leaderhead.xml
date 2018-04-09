@@ -23,6 +23,14 @@
 			<BackgroundKFM>art/LeaderHeads/Alexander_the _Great/alexander_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ASHURBANIPAL</Type>
+			<Button>art/leaderheads/Ashurbanipal/Ashurbanipal.dds</Button>
+			<NIF>art/leaderheads/Ashurbanipal/ashurbanipal.nif</NIF>
+			<KFM>art/leaderheads/Ashurbanipal/brennus.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Ashurbanipal/ashurbanipal.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Ashurbanipal/brennus_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ASOKA</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_India_Asoka.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,12</Button>
 			<NIF>art/LeaderHeads/Asoka/asoka.nif</NIF>

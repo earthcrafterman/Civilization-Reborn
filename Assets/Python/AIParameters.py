@@ -49,6 +49,7 @@ def onTechAcquired(iPlayer, iTech):
 	
 dTakenTilesThreshold = {
 iCivBabylonia : 14,
+iCivAssyria : 14,
 iCivCarthage : 12,
 iCivKorea : 20,
 iCivMaya : 12,
@@ -71,6 +72,7 @@ iCivAustralia : 11,
 
 dDistanceSubtrahend = {
 iCivBabylonia : 3,
+iCivAssyria : 3,
 iCivHarappa : 3,
 iCivGreece : 3,
 iCivIndia : 3,

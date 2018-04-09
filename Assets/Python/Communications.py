@@ -16,6 +16,7 @@ PyPlayer = PyHelpers.PyPlayer
 tPool1 = (iEgypt, -1, -1, -1, -1, -1,
 	iChina, -1, -1, -1, -1, -1,
 	iBabylonia, -1, -1, -1, -1, -1,
+	iAssyria, -1, -1, -1, -1, -1,
 	iGreece, -1, -1, -1, -1, -1,
 	iIndia, -1, -1, -1, -1, -1)
 
@@ -24,7 +25,7 @@ tPool2 = (iEgypt, -1,
 	iChina, -1,
 	iRome, -1,
 	iBabylonia, iMaya,
-	iGreece, -1,
+	iGreece, iAssyria, -1,
 	iIndia, iEthiopia,
 	iJapan, -1,
 	iPersia, -1)
@@ -40,6 +41,7 @@ tPool3 = (iEgypt,
 	iRome,
 	iVikings,
 	iBabylonia,
+	iAssyria,
 	iAztecs,
 	iEthiopia,
 	iNetherlands,
@@ -164,6 +166,9 @@ class Communications:
 
 		if city.getOwner() == iBabylonia and utils.getHumanID() != iBabylonia and city.getX() == 73 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= -300 and gc.getMap().plot(73, 38).isCity() and gc.getMap().plot(73, 38).getPlotCity().getOwner() != iBabylonia and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isAtWar(iBabylonia) and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isVassal(iBabylonia):
 			teamBabylonia.declareWar(gc.getMap().plot(73,38).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+
+		if city.getOwner() == iAssyria and utils.getHumanID() != iAssyria and city.getX() == 73 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= -300 and gc.getMap().plot(73, 38).isCity() and gc.getMap().plot(73, 38).getPlotCity().getOwner() != iAssyria and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isAtWar(iAssyria) and not gc.getTeam(gc.getMap().plot(73,38).getPlotCity().getOwner()).isVassal(iAssyria):
+			teamAssyria.declareWar(gc.getMap().plot(73,38).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
 
 		#When AI Persia captures Akkad
 		if city.getOwner() == iPersia and utils.getHumanID() != iPersia and city.getX() == 76 and city.getY() == 40 and gc.getGame().getGameTurnYear() <= 100:

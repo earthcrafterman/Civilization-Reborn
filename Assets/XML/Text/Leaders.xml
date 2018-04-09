@@ -610,4 +610,8 @@
 		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
 		<English>Khosrow I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ASHURBANIPAL</Tag>
+		<English>Ashurbanipal</English>
+	</TEXT>
 </Civ4GameText>
