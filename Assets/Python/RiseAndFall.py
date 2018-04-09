@@ -692,7 +692,7 @@ class RiseAndFall:
 
 		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1:
 			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
-				unit = gc.getMap().plot(i, j).getUnit(iUnit)
+				unit = gc.getMap().plot(78, 43).getUnit(iUnit)
 				if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
 					unit.kill(False, unit.getOwner())
 			for (i, j) in utils.surroundingPlots(((78, 43))):
