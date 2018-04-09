@@ -1364,7 +1364,7 @@ class RiseAndFall:
 		x, y = tCapital
 		bCapitalSettled = False
 
-		if (self.adjacentCapital(x, y)):
+		if (self.adjacentCapital(x, y, iCiv)):
 			bCapitalSettled = True
 			cnm.onCityBuilt(gc.getMap().plot(x,y).getPlotCity())
 			dc.checkName(iCiv)
@@ -2554,6 +2554,9 @@ class RiseAndFall:
 		if iCiv == iChina:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.createSettlers(iCiv, 1)
+		if iCiv == iAssyria:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
@@ -3077,6 +3080,8 @@ class RiseAndFall:
 	def createStartingWorkers( self, iCiv, tPlot ):
 		if iCiv == iEgypt:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
+		if iCiv == iAssyria:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iChina:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		if iCiv == iIndia:
@@ -3315,7 +3320,7 @@ class RiseAndFall:
 		plot = gc.getMap().plot(60, 56)
 		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
 
-	def adjacentCapital(self, x, y):
+	def adjacentCapital(self, x, y, iCiv):
 		if gc.getMap().plot(x, y).isCity():
 			return true
 		else:
@@ -3340,16 +3345,16 @@ class RiseAndFall:
 					elif city.getPopulation() == lbest.getPopulation() and culture == ibestCulture:
 						if gc.getGame().getSorenRandNum(2, 'random city') == 1:
 							lbest = city
-				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, (x, y))
+				self.MoveCity(gc.getPlayer(lbest.getOwner()), lbest, iCiv, (x, y))
 				for city in lCities:
 					if city != lbest:
 						city.kill()
 				return true
 		return false
 
-	def MoveCity(self, pPlayer, city, plot):
+	def MoveCity(self, pPlayer, city, iCiv, plot):
 		pNewCity = pPlayer.initCity(plot[0], plot[1])
-		sName = cnm.getFoundName(iGermany, (plot))
+		sName = cnm.getFoundName(gc.getPlayer(iCiv), (plot))
 		if not sName:
 			sName = city.getName()
 		city.setName("ToBeRazed", False)
@@ -3361,7 +3366,10 @@ class RiseAndFall:
 		for iUnit in range(gc.getMap().plot(plot[0], plot[1]).getNumUnits()):
 			unit = gc.getMap().plot(plot[0], plot[1]).getUnit(iUnit)
 			if loopUnit.isNone(): continue
-			unit.setXY(plot[0], plot[1], True, True, False)
+			if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+				unit.kill(False, unit.getOwner())
+			else:
+				unit.setXY(plot[0], plot[1], True, True, False)
 
 	def copyCityStats(self, pOldCity, pNewCity, bMove):
 		pNewCity.setPopulation(pOldCity.getPopulation())

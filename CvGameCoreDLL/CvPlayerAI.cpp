@@ -5032,7 +5032,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 5;
 									if (iI == LEVERAGE || iI == SMELTING || iI == WRITING || iI == CONTRACT || iI == CALENDAR)
 										iValue *= 3;
-									if (iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
+									if (iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION || iI == CEREMONY || iI == SAILING)
 										iValue *= 2;
 									if (iI == MATHEMATICS || iI == BLOOMERY || iI == STEEL)
 										iValue /= 3;

@@ -203,6 +203,8 @@ BeginPlayer
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA
 	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -29402,9 +29404,6 @@ BeginPlot
 		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
-	EndUnit
-	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
 	EndUnit
 EndPlot
@@ -29758,10 +29757,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginCity
-		CityOwner=51, (iIndependent2)
+		CityOwner=2, (Babylonia)
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
@@ -29808,14 +29807,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=3, (Assyria)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent)
 	EndUnit
-	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=3, (Assyria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=3, (Assyria)
-	EndUnit
+	BeginCity
+		CityOwner=50, (iIndependent)
+		CityName=Ninua
+		CityPopulation=2
+		BuildingType=BUILDING_PAGAN_TEMPLE
+		Player51Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=77,y=43

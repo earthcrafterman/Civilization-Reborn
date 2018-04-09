@@ -309,7 +309,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>ASY</Identifier>
-			<StartingYear>-4000</StartingYear>
+			<StartingYear>-2500</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>

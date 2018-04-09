@@ -263,7 +263,7 @@ tBirth = (
 -3150, # 0, #3000BC			# Egypt
 -1050, # 0, #1050BC			# China, founding of Fenghao
 -4000, # 0, #3000BC			# Babylonia
--4000, # 0, #4000BC			# Assyria
+-2500, # 0, #4000BC			# Assyria
 -4000,					# Harappa
 -1600, # 50, #1600BC			# Greece
 -600, # 0, #3000BC			# India
