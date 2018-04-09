@@ -690,7 +690,7 @@ class RiseAndFall:
 		if gc.getGame().getGameTurn() == getTurnForYear(-4000):
 			utils.flipCity((77, 37), False, True, iBabylonia, ())
 
-		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1:
+		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 2 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]):
 			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
 				unit = gc.getMap().plot(78, 43).getUnit(iUnit)
 				if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
