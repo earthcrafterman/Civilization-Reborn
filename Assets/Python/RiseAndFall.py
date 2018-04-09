@@ -1366,6 +1366,8 @@ class RiseAndFall:
 
 		if (self.adjacentCapital(x, y)):
 			bCapitalSettled = True
+			cnm.onCityBuilt(gc.getMap().plot(x,y).getPlotCity())
+			dc.checkName(iCiv)
 
 		if iCurrentTurn == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay:
 			if iCiv in lConditionalCivs or bCapitalSettled:
@@ -3318,22 +3320,9 @@ class RiseAndFall:
 			return true
 		else:
 			lCities = []
-			if gc.getMap().plot(x, y-1).isCity():
-				lCities.append(gc.getMap().plot(x, y-1).getPlotCity())
-			if gc.getMap().plot(x-1, y-1).isCity():
-				lCities.append(gc.getMap().plot(x-1, y-1).getPlotCity())
-			if gc.getMap().plot(x-1, y).isCity():
-				lCities.append(gc.getMap().plot(x-1, y).getPlotCity())
-			if gc.getMap().plot(x-1, y+1).isCity():
-				lCities.append(gc.getMap().plot(x-1, y+1).getPlotCity())
-			if gc.getMap().plot(x, y+1).isCity():
-				lCities.append(gc.getMap().plot(x, y+1).getPlotCity())
-			if gc.getMap().plot(x+1, y+1).isCity():
-				lCities.append(gc.getMap().plot(x+1, y+1).getPlotCity())
-			if gc.getMap().plot(x+1, y).isCity():
-				lCities.append(gc.getMap().plot(x+1, y).getPlotCity())
-			if gc.getMap().plot(x+1, y-1).isCity():
-				lCities.append(gc.getMap().plot(x+1, y-1).getPlotCity())
+			for (i, j) in utils.surroundingPlots((x, y)):
+				if gc.getMap().plot(i, j).isCity():
+					lCities.append(gc.getMap().plot(i, j).getPlotCity())
 
 			if len(lCities) == 1:
 				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (x, y))
