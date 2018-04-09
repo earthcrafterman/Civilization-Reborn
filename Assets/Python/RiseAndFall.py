@@ -690,6 +690,17 @@ class RiseAndFall:
 		if gc.getGame().getGameTurn() == getTurnForYear(-4000):
 			utils.flipCity((77, 37), False, True, iBabylonia, ())
 
+		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1:
+			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
+				unit = gc.getMap().plot(i, j).getUnit(iUnit)
+				if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+					unit.kill(False, unit.getOwner())
+			for (i, j) in utils.surroundingPlots(((78, 43))):
+				for iUnit in range(gc.getMap().plot(i, j).getNumUnits()):
+					unit = gc.getMap().plot(i, j).getUnit(iUnit)
+					if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
+						unit.kill(False, unit.getOwner())
+
 		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
@@ -3368,7 +3379,6 @@ class RiseAndFall:
 		pOldPlot.setImprovementType(-1)
 		for iUnit in range(gc.getMap().plot(plot[0], plot[1]).getNumUnits()):
 			unit = gc.getMap().plot(plot[0], plot[1]).getUnit(iUnit)
-			if loopUnit.isNone(): continue
 			if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
 				unit.kill(False, unit.getOwner())
 			else:
