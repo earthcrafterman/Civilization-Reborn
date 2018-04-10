@@ -6253,6 +6253,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		else if (isHumanVictoryWonder(eBuilding, PYRAMIDS, EGYPT)) return false;
 
+		else if (isHumanVictoryWonder(eBuilding, ASHURBANIPAL_LIBRARY, ASSYRIA)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, HANGING_GARDENS, ASSYRIA)) return false;
+
 		else if (isHumanVictoryWonder(eBuilding, LA_MEZQUITA, MOORS)) return false;
 
 		else if (isHumanVictoryWonder(eBuilding, GREAT_COTHON, PHOENICIA)) return false;
