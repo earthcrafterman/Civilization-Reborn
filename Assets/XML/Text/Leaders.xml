@@ -303,7 +303,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_LORENZO</Tag>
-		<English>Lorenzo de' Medici</English>
+		<English>Enrico Dandolo</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MARIA_II</Tag>
@@ -541,5 +541,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
 		<English>Khosrow I</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_PHILIP_AUGUSTUS</Tag>
+		<English>Philip Augustus</English>
 	</TEXT>
 </Civ4GameText>

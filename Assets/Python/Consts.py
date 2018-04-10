@@ -262,23 +262,23 @@ tBirth = (
 -37,					# Korea
 65, # 145, #60AD			# Maya
 310,					# Byzantium
-525, # 97, #660BC			# Japan
+794, # 97, #660BC			# Japan
 790, # 177, #551AD			# Vikings
 620, # 183, #622AD			# Arabia
 630,					# Tibet
 650,					# Indonesia
 711,					# Moors
-722, # 193, #718AD			# Spain
+1065, # 193, #718AD			# Spain
 481, # 196, #751AD			# France
 800, # 187, #657AD			# Khmer
-820, # 203, #829AD			# England
-840, # 205, #843AD			# Holy Rome
-860, # 207, #860AD			# Russia
+1075, # 203, #829AD			# England
+843, # 205, #843AD			# Holy Rome
+882, # 207, #860AD			# Russia
 989, # 220, #989AD			# Mali
 1025,					# Poland
 1130, # 234, #1128AD			# Portugal
 1150, # 236, #1150AD			# Inca
-1167, # Italy				# Italy
+697, # Italy				# Italy, Venice
 1190, # 240, #1190AD			# Mongolia
 1195, # 241, #1195AD			# Aztecs
 1206,					# Mughals
@@ -316,7 +316,7 @@ tFall = (
 960,					# Ethiopia
 1255, #Mongol invasion			# Korea
 900,					# Maya
-1453, #fourth crusade			# Byzantium
+1204, #fourth crusade			# Byzantium
 2020,					# Japan
 1300,					# Vikings
 900,					# Arabia
@@ -333,7 +333,7 @@ tFall = (
 1650,					# Poland
 2020,					# Portugal
 1533,					# Inca
-2020,					# Italy
+1797,					# Italy
 1368,					# Mongolia
 1521,					# Aztecs
 1640,					# Mughals
@@ -520,12 +520,12 @@ tResurrectionIntervals = (
 [(1950, 2020)], #Khmer
 [(1700, 2020)], #England
 [(1800, 2020)], #Holy Rome
-[(1280, 1550), (1700, 2020)], #Russia
+[(1480, 2020)], #Russia
 [(1340, 1590)], #Mali
 [(1920, 2020)], #Poland
 [(1700, 2020)], #Portugal
 [(1800, 1930)], #Inca
-[(1820, 2020)], #Italy
+[(1861, 2020)], #Italy
 [(1910, 2020)], #Mongolia
 [], 		#Aztec
 [(1940, 2020)], #Mughals
@@ -1087,9 +1087,9 @@ lEnemyCivsOnSpawn = [
 [iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iEthiopia,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
 [iKhmer], #Indonesia
-[], #Moors
+[iFrance], #Moors
 [], #Spain
-[], #France
+[iRome], #France
 [], #Khmer
 [], #England
 [iRome,iArabia], #Holy Rome
@@ -1135,9 +1135,9 @@ lTotalWarOnSpawn = [
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
 [], #Tibet
 [], #Indonesia
-[], #Moors
+[iFrance], #Moors
 [iMoors], #Spain
-[], #France
+[iRome], #France
 [], #Khmer
 [], #England
 [iRome], #Holy Rome
@@ -1552,6 +1552,11 @@ iSovereignty, iConquest, iTributaries, iIsolationism, iColonialism, iNationhood,
 iNumCivicCategories = 6
 (iCivicsGovernment, iCivicsLegitimacy, iCivicsSociety, iCivicsEconomy, iCivicsReligion, iCivicsTerritory) = range(iNumCivicCategories)
 
+#Sizes
+iNumSizes = 3
+(iSizeSmall, iSizeMedium, iSizeLarge) = range(iNumSizes)
+#citis: interpretation: iSizeMedium corresponds approximately to the civ controlling its core
+
 #Specialists
 iNumSpecialists = 16
 (iSpecialistCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman,
@@ -1587,10 +1592,15 @@ lNewWorld = [rAustralia, rOceania, rCanada, rAlaska, rUnitedStates, rCaribbean, 
 lEurope = [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
 lMiddleEast = [rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb, rPersia, rCentralAsia]
 lIndia = [rIndia, rDeccan]
-lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
+lEastAsia = [rChina, rKorea, rJapan, rManchuria, rTibet, rSiberia]
 lAfrica = [rEgypt, rMaghreb, rEthiopia, rSouthAfrica, rWestAfrica]
 lSouthAmerica = [rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
 lNorthAmerica = [rCanada, rAlaska, rUnitedStates]
+lSouthEastAsia = [rIndochina, rIndonesia]
+lOceania = [rAustralia, rOceania]
+
+iNumContinents = 9
+(iEurope, iMiddleEast, iIndia, iEastAsia, iSouthEastAsia, iAfrica, iSouthAmerica, iNorthAmerica, iOceania) = range(iNumContinents)
 
 iArea_Europe = 1000
 iArea_MiddleEast = 1001
@@ -1656,7 +1666,7 @@ iVictorySecularism = 11
 
 #leaders
 
-iNumLeaders = 122
+iNumLeaders = 123
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
 iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
 iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
@@ -1669,7 +1679,7 @@ iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandrag
 iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, 
 iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, 
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge, iKhosrow) = range(iNumLeaders)
+iGeorge, iKhosrow, iPhilipAugustus) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
@@ -1693,7 +1703,7 @@ tTradingCompanyPlotLists = (
 
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
-lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
+lMongolCivs = [iPersia, iTurkey, iArabia, iRussia, -1] #iPersia, iArabia, iTurkey, iRussia
 
 (i3000BC, i600AD, i1700AD) = range(3)
 
@@ -1711,4 +1721,61 @@ lReligionMapTexts = ["TXT_KEY_CULTURELEVEL_NONE", "TXT_KEY_WB_RELIGIONMAP_MINORI
 
 lNetworkEvents = {
 	"CHANGE_COMMERCE_PERCENT" :	1200,
+}
+
+# citis: polities
+iNumPolities = 174
+(iPolityOldEgypt, iPolityMiddleEgypt, iPolityNewEgypt, iPolityFatimids, iPolityMamluks, iPolityAyyubids, iPolityEgypt, #7
+iPolityZhou, iPolityQin, iPolityHan, iPolityJin, iPolityTang, iPolitySong, iPolityMing, iPolityQing, iPolityChina, #9
+iPolityAkkadia, iPolityAssyria, iPolityBabylonia, iPolityNeoAssyria, iPolityNeoBabylonia, iPolityIraq, #6
+iPolityHVC, iPolityDelhi, iPolityMughals, iPolityPakistan, #4
+iPolityMyceneans, iPolityGreece, iPolityMacedonia, iPolityEasternRome, iPolityByzantium, iPolityNicaea, #6
+iPolityMagadha, iPolityNanda, iPolityMaurya, iPolityGupta, iPolityPala, iPolityMaratha, iPolityIndia, #7
+iPolityPhoenicia, iPolityCarthage, iPolityAfrica, iPolityTunis, iPolityLebanon, #5
+iPolityTonga, iPolityHawaii, iPolitySamoa, iPolityNiue, iPolityPolynesia, #5
+iPolityMedia, iPolityAchaemenids, iPolityParthia, iPolitySassanids, iPolitySafavids, iPolityAsharids, iPolityQajars, iPolityPahlavis, iPolityIran, #9
+iPolityRome, iPolityWesternRome, iPolityVenice, iPolityItaly, #4
+iPolityChola, iPolityBahmani, iPolityVijayanagar, iPolityMysore, iPolityTamil, #5
+iPolityAksum, iPolityAdal, iPolityEthiopia, #3
+iPolitySamhan, iPolityGoguryeo, iPolityGojoseon, iPolityGoryeo, iPolityJoseon, iPolityKorea, #6
+iPolityMaya, iPolityYucatan, iPolityNewGranada, iPolityColombia, iPolitySouthAmerica, #5
+iPolityKamakura, iPolityAshikaga, iPolityTokugawa, iPolityJapan, #4
+iPolityVikings, iPolityKalmarUnion, iPolityDenmark, iPolityNorway, iPolitySweden, iPolityDenmarkNorway, #6
+iPolityRashiduns, iPolityAbbasids, iPolityUmmayads, iPolitySaudis, iPolityArabLeague, #5
+iPolityTibet, #1
+iPolitySrivijaya, iPolityMajapahit, iPolityMataram, iPolityIndonesia, #4
+iPolityCordoba, iPolityAndalus, iPolityAlmohads, iPolityMorocco, #4
+iPolityCastile, iPolityAragon, iPolitySpain, iPolityIberia, #4
+iPolityFrancia, iPolityBurgundy, iPolityFrance, iPolityFrenchCommune, #4
+iPolityKhmer, iNanazhao, iPolityCambodia, iPolityVietnam, iPolityBurma, #5
+iPolityEngland, iPolityAngevins, iPolityBritain, iPolityScotland, iPolityUK, #5
+iPolityGermany, iPolityHRE, iPolityHabsburgs, iPolityPrussia, iPolityHungary, iPolityAustria, iPolityAustriaHungary, iPolityThirdReich, #8
+iPolityKiev, iPolityNogorod, iPolityMuscovy, iPolityRussia, iPolitySovietUnion, #5
+iPolityMali, iPolitySonghai, #2
+iPolityKrakow, iPolityPoland, iPolityLithuania, iPolityPolandLithuania, iPolityIntermarium, #5
+iPolityPortugal, iPolityPortugalicia, #2
+iPolityInca, iPolityPeru, iPolityBolivia, #3
+iPolityMongolia, iPolityTimurids, iPolityGoldenHorde, iPolityIlkhanate, iPolityYuan, iPolityChagatai, #6
+iPolityAztecs, iPolityMexico, #2
+iPolitySeljucs, iPolityOttomans, iPolityTurkey, #3
+iPolityAyutthaya, iPolityThailand, iPolitySiam, #3
+iPolityCongo, iPolityZaire, #2
+iPolityNetherlands, iPolityBelgium, #2
+iPolityUSA, iPolityCSA, iPolityUSSA, iPolityNWO, #4
+iPolityPlata, iPolityArgentina, #2
+iPolityBrazil, #1
+iPolityCanada) = range(iNumPolities) #1
+
+iNumNameTypes = 4
+(iTypeDynastic, iTypeCapital, iTypeNational, iTypeNationalAdjective) = range(iNumNameTypes)
+
+iNumPolityFields = 7
+(iFieldAdjective, iFieldName, iFieldTitle, iFieldNameType, iFieldCapitalLocation, iFieldLeader, iFieldCore) = range(iNumPolityFields)
+dPolities = {
+	iPolityFrancia : ["TXT_KEY_CIV_FRANCE_FRANKISH", "TXT_KEY_CIV_FRANCE_FRANCIA", -1, iTypeNationalAdjective, -1, iCharlemagne, {"tRectangle" : ((55, 49), (59, 53)), 'lExceptions' : []}],
+	iPolityBurgundy : ["TXT_KEY_CIV_FRANCE_BURGUNDIAN", "TXT_KEY_CIV_FRANCE_BURGUNDY", -1, iTypeNational, (56, 47), -1, {'tRectangle' : ((55, 46), (57, 49)), 'lExceptions' : []}],
+	iPolityFrance : ["TXT_KEY_CIV_FRANCE_ADJECTIVE", "TXT_KEY_CIV_FRANCE_SHORT_DESC", -1, iTypeNational, (55, 50), iPhilipAugustus, {'tRectangle' : ((51, 46), (57, 51)), 'lExceptions' : [(51, 46), (52, 46), (55, 46), (57, 46)]}],
+	iPolityFrenchCommune : [-1, -1, "TXT_KEY_CIV_FRANCE_COMMUNE", iTypeCapital, -1, -1, {'tRectangle' : ((54, 49), (56, 51)), 'lExceptions' : []}],
+	iPolityVenice : ["TXT_KEY_CIV_ITALY_VENICE_ADJECTIVE", -1, -1, iTypeCapital, (61, 47), iLorenzo, {"tRectangle" : ((61, 46), (62, 48)), 'lExceptions' : []}]
+	
 }

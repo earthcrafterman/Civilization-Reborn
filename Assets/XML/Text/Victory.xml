@@ -604,32 +604,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
-		<English>Ancien Regime</English>
+		<English>The French Revolution</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1</Tag>
-		<English>Have 25000 culture in Paris in 1700 AD</English>
-		<German>Haben Sie im Jahr 1700 n. Chr. 25.000 Kulturpunkte in Paris</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FRA1_EPIC</Tag>
-		<English>Have 37500 culture in Paris in 1700 AD</English>
-		<German>Haben Sie im Jahr 1700 n. Chr. 37.500 Kulturpunkte in Paris</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_FRA1_MARATHON</Tag>
-		<English>Have 75000 culture in Paris in 1700 AD</English>
-		<German>Haben Sie im Jahr 1700 n. Chr. 75.000 Kulturpunkte in Paris</German>
+		<English>Ensure there are no monarchies or colonial powers in Europe by 1820 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA2_TITLE</Tag>
-		<English>The Napoleonic Empire</English>
-		<German>Das Napoleonische Reich</German>
+		<English>Ecole Polytechnique</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA2</Tag>
-		<English>Control or vassalize 40% of Europe and North America in 1800 AD</English>
-		<German>Kontrollieren oder vassalisieren Sie im Jahr 1800 n. Chr. 40% von Europa und Nordamerika</German>
+		<English>Be the first to discover Measurement, Thermodynamics, Ballistics, Electricity and Film</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA3_TITLE</Tag>
@@ -638,8 +625,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA3</Tag>
-		<English>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
-		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, die Freiheitsstatue und den Eiffelturm</German>
+		<English>Build Notre Dame, Versailles, the Eiffel Tower, a National Gallery and National Park in Paris by 1900AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER1_TITLE</Tag>
@@ -3056,5 +3042,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HAGIA_SOPHIA</Tag>
 		<English>Hagia Sophia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROYALISTS</Tag>
+		<English>Cities under royalists' control: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

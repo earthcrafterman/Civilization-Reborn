@@ -6,6 +6,7 @@ from Consts import *
 from RFCUtils import utils
 import heapq
 import Areas
+import DynamicCivs as dc
 
 ### GLOBALS ###
 
@@ -207,6 +208,7 @@ dTechGoals = {
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (2, [iPrinting]),
+	iFrance: (1, [iMeasurement, iThermodynamics, iBallistics, iElectricity, iFilm]),
 	iPoland: (1, [iCivilLiberties]),
 }
 
@@ -906,27 +908,45 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iFrance:
 	
 		# first goal: have 25000 culture in Paris in 1700 AD
-		if iGameTurn == getTurnForYear(1700):
-			if getCityCulture(iFrance, (55, 50)) >= utils.getTurns(25000):
+		if iGameTurn == getTurnForYear(1820):
+			bSuccess = True
+			lCities = utils.getAllCities()
+			for city in lCities:
+				region = city.getRegionID()
+				if region in lEurope:
+					iOwner = city.getOwner()
+					if dc.isColonialEmpire(iOwner) or dc.isMonarchy(iOwner):
+						bSuccess = False
+						break
+					
+			if bSuccess:
 				win(iFrance, 0)
 			else:
 				lose(iFrance, 0)
 				
 		# second goal: control 40% of Europe and North America in 1800 AD
-		if iGameTurn == getTurnForYear(1800):
-			iEurope, iTotalEurope = countControlledTiles(iFrance, tEuropeTL, tEuropeBR, True)
-			iEasternEurope, iTotalEasternEurope = countControlledTiles(iFrance, tEasternEuropeTL, tEasternEuropeBR, True)
-			iNorthAmerica, iTotalNorthAmerica = countControlledTiles(iFrance, tNorthAmericaTL, tNorthAmericaBR, True)
-			
-			fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
-			fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
-			
-			if fEurope >= 40.0 and fNorthAmerica >= 40.0:
-				win(iFrance, 1)
-			else:
-				lose(iFrance, 1)
+		#if iGameTurn == getTurnForYear(1800):
+		#	iEurope, iTotalEurope = countControlledTiles(iFrance, tEuropeTL, tEuropeBR, True)
+		#	iEasternEurope, iTotalEasternEurope = countControlledTiles(iFrance, tEasternEuropeTL, tEasternEuropeBR, True)
+		#	iNorthAmerica, iTotalNorthAmerica = countControlledTiles(iFrance, tNorthAmericaTL, tNorthAmericaBR, True)
+		#	
+		#	fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
+		#	fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
+		#	
+		#	if fEurope >= 40.0 and fNorthAmerica >= 40.0:
+		#		win(iFrance, 1)
+		#	else:
+		#		lose(iFrance, 1)
 				
 		# third goal: build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
+		if iGameTurn < getTurnForYear(1900):
+			bNotreDame = isBuildingInCity((55, 50), iNotreDame)
+			bVersailles = isBuildingInCity((55, 50), iVersailles)
+			bEiffelTower = isBuildingInCity((55, 50), iEiffelTower)
+			bNationalGallery = isBuildingInCity((55, 50), iNationalGallery)
+			bNationalPark = isBuildingInCity((55, 50), iNationalPark)
+			if bNotreDame and bVersailles and bEiffelTower and bNationalGallery and bNationalPark:
+				win(iFrance, 2)
 		if iGameTurn == getTurnForYear(1900):
 			expire(iFrance, 2)
 			
@@ -3679,21 +3699,34 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iFrance:
 		if iGoal == 0:
-			iCulture = getCityCulture(iFrance, (55, 50))
-			aHelp.append(getIcon(iCulture >= utils.getTurns(25000)) + localText.getText("TXT_KEY_VICTORY_CITY_CULTURE", ("Paris", iCulture, utils.getTurns(25000))))
-		elif iGoal == 1:
-			iEurope, iTotalEurope = countControlledTiles(iFrance, tEuropeTL, tEuropeBR, True)
-			iEasternEurope, iTotalEasternEurope = countControlledTiles(iFrance, tEasternEuropeTL, tEasternEuropeBR, True)
-			iNorthAmerica, iTotalNorthAmerica = countControlledTiles(iFrance, tNorthAmericaTL, tNorthAmericaBR, True)
-			fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
-			fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
-			aHelp.append(getIcon(fEurope >= 40.0) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), str(40))) + ' ' + getIcon(fNorthAmerica >= 40.0) + localText.getText("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fNorthAmerica), str(40))))
-		elif iGoal == 2:
-			bNotreDame = data.getWonderBuilder(iNotreDame) == iFrance
-			bVersailles = data.getWonderBuilder(iVersailles) == iFrance
-			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iFrance
-			bEiffelTower = data.getWonderBuilder(iEiffelTower) == iFrance
-			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()))
+			royalists = 0
+			total = 0
+			lCities = utils.getAllCities()
+			for city in lCities:
+				region = city.getRegionID()
+				if region in lEurope:
+					total += 1
+					iOwner = city.getOwner()
+					if dc.isColonialEmpire(iOwner) or dc.isMonarchy(iOwner):
+						royalists += 1
+			aHelp.append(localText.getText("TXT_KEY_VICTORY_ROYALISTS", (royalists, total)))
+		if iGoal == 1:
+			bMeasurement = data.lFirstDiscovered[iMeasurement] == iFrance
+			bThermodynamics = data.lFirstDiscovered[iThermodynamics] == iFrance
+			bBallistics = data.lFirstDiscovered[iBallistics] == iFrance
+			bElectricity = data.lFirstDiscovered[iElectricity] == iFrance
+			bFilm = data.lFirstDiscovered[iFilm] == iFrance
+			aHelp.append(getIcon(bMeasurement) + localText.getText("TXT_KEY_TECH_MEASUREMENT", ()) + ' ' + getIcon(bThermodynamics) + localText.getText("TXT_KEY_TECH_THERMODYNAMICS", ()) + ' ' + getIcon(bBallistics) + localText.getText("TXT_KEY_TECH_BALLISTICS", ()))
+			aHelp.append(getIcon(bElectricity) + localText.getText("TXT_KEY_TECH_ELECTRICITY", ()) + ' ' + getIcon(bFilm) + localText.getText("TXT_KEY_TECH_FILM", ()))
+		if iGoal == 2:
+			bNotreDame = isBuildingInCity((55, 50), iNotreDame)
+			bVersailles = isBuildingInCity((55, 50), iVersailles)
+			bEiffelTower = isBuildingInCity((55, 50), iEiffelTower)
+			bNationalGallery = isBuildingInCity((55, 50), iNationalGallery)
+			bNationalPark = isBuildingInCity((55, 50), iNationalPark)
+			
+			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()))
+			aHelp.append(getIcon(bNationalGallery) + localText.getText("TXT_KEY_BUILDING_NATIONAL_GALLERY", ()) + getIcon(bNationalPark) + localText.getText("TXT_KEY_BUILDING_NATIONAL_PARK", ()))
 
 	elif iPlayer == iKhmer:
 		if iGoal == 0:

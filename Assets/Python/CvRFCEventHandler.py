@@ -332,13 +332,13 @@ class CvRFCEventHandler:
 				
 			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
 			
-		if iOwner == iItaly and tCity == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
-			city.setPopulation(7)
+		#if iOwner == iItaly and tCity == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
+		#	city.setPopulation(7)
 			
-			for iBuilding in [iLibrary, iPharmacy, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
-				city.setHasRealBuilding(iBuilding, True)
+		#	for iBuilding in [iLibrary, iPharmacy, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
+		#		city.setHasRealBuilding(iBuilding, True)
 				
-			gc.getPlayer(iItaly).AI_updateFoundValues(False)
+		#	gc.getPlayer(iItaly).AI_updateFoundValues(False)
 
 		vic.onCityBuilt(iOwner, city)
 			

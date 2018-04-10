@@ -3239,12 +3239,6 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
-					<iUnitCombatMod>100</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
 			<iConscription>3</iConscription>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
@@ -3269,6 +3263,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FORMATION</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PIKEMAN</Class>
@@ -6039,16 +6039,6 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCityDefense>25</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
@@ -6067,6 +6057,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SKIRMISH</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_CROSSBOWMAN</Class>
@@ -7086,6 +7082,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COVER</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
@@ -9654,7 +9656,7 @@
 				</UnitAI>
 			</NotUnitAIs>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
-			<iCost>100</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>

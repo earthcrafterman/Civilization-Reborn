@@ -171,7 +171,7 @@ BeginPlayer
 	LeaderType=LEADER_TAIZONG
 	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
-	StartingGold=300
+	StartingGold=20
 	StateReligion=RELIGION_CONFUCIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
@@ -206,14 +206,14 @@ BeginPlayer
 	LeaderType=LEADER_CHANDRAGUPTA
 	CivType=CIVILIZATION_INDIA
 	PlayableCiv=1
-	StartingGold=100
+	StartingGold=20
 	StateReligion=RELIGION_HINDUISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -407,17 +407,17 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=22
-	LeaderType=LEADER_LOUIS_XIV
+	LeaderType=LEADER_CHARLEMAGNE
 	CivType=CIVILIZATION_FRANCE
 	PlayableCiv=1
-	StartingGold=150
-	StateReligion=RELIGION_CATHOLICISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	StartingGold=20
+	StateReligion=RELIGION_ORTHODOXY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -439,7 +439,7 @@ BeginPlayer
 	CivType=CIVILIZATION_ENGLAND
 	PlayableCiv=1
 	StartingGold=200
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -453,7 +453,7 @@ BeginPlayer
 	CivType=CIVILIZATION_HOLY_ROMAN
 	PlayableCiv=1
 	StartingGold=150
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
@@ -530,15 +530,15 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=31
-	LeaderType=LEADER_CAVOUR
+	LeaderType=LEADER_LORENZO
 	CivType=CIVILIZATION_ITALY
 	PlayableCiv=1
 	StartingGold=350
-	StateReligion=RELIGION_CATHOLICISM
+	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -22060,6 +22060,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=49
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
@@ -22068,6 +22069,7 @@ EndPlot
 BeginPlot
 	x=57,y=50
 	RiverNSDirection=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -22075,6 +22077,7 @@ EndPlot
 BeginPlot
 	x=57,y=51
 	RiverNSDirection=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -22082,6 +22085,7 @@ EndPlot
 BeginPlot
 	x=57,y=52
 	isNOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -22816,6 +22820,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MONUMENT
 		ReligionType=RELIGION_JUDAISM
 	EndCity
 EndPlot
@@ -23245,7 +23250,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -23629,15 +23633,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Rome)
-	EndUnit
-	BeginCity
-		CityOwner=9, (Rome)
-		CityName=Venetia
-		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
-	EndCity
 EndPlot
 BeginPlot
 	x=61,y=48
@@ -24046,14 +24041,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
-		PromotionType=PROMOTION_CITY_GARRISON1
-		PromotionType=PROMOTION_CITY_GARRISON2
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=49, (Barbarian)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=49, (Barbarian)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=49, (Barbarian)
 		CityName=Vindobona
 		CityPopulation=2
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_PAGAN_TEMPLE
+		BuildingType=BUILDING_WALLS
+		Player49Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -26440,7 +26440,7 @@ BeginPlot
 	x=68,y=36
 	RiverNSDirection=0
 	isNOfRiver
-	RiverWEDirection=0
+	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
@@ -36818,7 +36818,6 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		BuildingType=BUILDING_HINDU_SHRINE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
@@ -40071,7 +40070,6 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_TAOIST_SHRINE
 		BuildingType=BUILDING_GREAT_WALL
 		BuildingType=BUILDING_WALLS
 		ReligionType=RELIGION_BUDDHISM

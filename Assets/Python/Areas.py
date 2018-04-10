@@ -68,8 +68,9 @@ def getRebirthArea(iPlayer):
 	if iPlayer in dRebirthArea: return getArea(iPlayer, dRebirthArea, dRebirthAreaExceptions)
 	return getBirthArea(iPlayer)
 	
-def updateCore(iPlayer):
-	lCore = getCoreArea(iPlayer)
+def updateCore(iPlayer, lCore = []):
+	if len(lCore) == 0:
+		lCore = getCoreArea(iPlayer)
 	for x in range(iWorldX):
 		for y in range(iWorldY):
 			plot = gc.getMap().plot(x, y)
@@ -126,12 +127,12 @@ tCapitals = (
 (102, 33), # Angkor
 (53, 54), # London
 (59, 51), # Frankfurt
-(73, 54), # Moskow
+(69, 52), # Kiev
 (51, 30), # Djenne
 (65, 51), # Krakow
 (49, 43), # Lisboa
 (28, 22), # Cuzco
-(59, 46), # Florence
+(61, 47), # Venice
 (99, 51), # Karakorum
 (18, 37), # Tenochtitlan
 (90, 40), # Delhi
@@ -208,18 +209,18 @@ tBirthArea = (
 ((67, 30), 	(80, 40)), 	# Arabia
 ((92, 41), 	(98, 45)), 	# Tibet
 ((98, 24), 	(107, 31)), 	# Indonesia
-((51, 37), 	(58, 43)), 	# Moors
+((51, 37), 	(57, 43)), 	# Moors
 ((49, 43), 	(53, 46)), 	# Spain
-((51, 46), 	(57, 52)), 	# France
+((55, 49), 	(59, 53)), 	# France
 ((100, 32), 	(103, 36)), 	# Khmer
-((50, 53), 	(54, 60)), 	# England
+((50, 50), 	(54, 57)), 	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
 ((67, 50), 	(74, 58)), 	# Russia
 ((50, 29), 	(55, 32)), 	# Mali
 ((63, 50), 	(67, 55)), 	# Poland
 ((44, 42), 	(50, 44)), 	# Portugal
 ((26, 20), 	(29, 24)), 	# Inca
-((58, 45), 	(63, 47)), 	# Italy
+((60, 46), 	(62, 48)), 	# Italy
 ((87, 46), 	(105, 54)), 	# Mongolia
 ((15, 36), 	(20, 41)), 	# Aztecs
 ((86, 38), 	(91, 43)), 	# Mughals
@@ -238,6 +239,7 @@ dChangedBirthArea = {
 iPersia :	((70, 37), 	(85, 44)), 	# Persia
 iRome :		((59, 41), 	(63, 47)), 	# Rome
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
+iHolyRome:	((58, 44), 	(64, 54)),	#includes Papal states
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
 iTurkey : 	((67, 41), 	(76, 48)), 	# 2 more west
@@ -257,7 +259,7 @@ iIndonesia : [(100, 31), (100, 30), (101, 29), (101, 30)],
 iMoors : [(58, 43), (58, 42)],
 iSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 43), (50, 44), (50, 42)],
 iFrance : [(55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46), (57, 46), (56, 52), (57, 52)],
-iHolyRome : [(64, 51), (64, 52), (64, 53), (64, 54)],
+iHolyRome : [(61, 46), (61, 47), (62, 46), (62, 47), (63, 47), (63, 46), (64, 44), (64, 45), (64, 46), (64, 47), (64, 51), (64, 52), (64, 53), (64, 54)],
 iRussia : [(68, 58), (69, 58), (70, 58), (65, 55), (66, 55), (66, 56)],
 iPoland : [(63, 50), (64, 50)],
 iItaly : [(63,47), (63,46)],
@@ -306,7 +308,7 @@ tCoreArea = (
 ((63, 50),	(67, 55)),	# Poland
 ((44, 42),	(50, 44)),	# Portugal
 ((26, 20),	(28, 22)),	# Inca
-((58, 45),	(62, 47)),	# Italy
+((60, 46), 	(62, 48)),	# Italy
 ((95, 47),	(105, 52)),	# Mongolia
 ((16, 35),	(19, 38)),	# Aztecs
 ((86, 38),	(91, 43)),	# Mughals

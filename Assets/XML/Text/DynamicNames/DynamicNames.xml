@@ -465,4 +465,32 @@
 		<Tag>TXT_KEY_COLONIAL_EMPIRE</Tag>
 		<English>%s2 Colonial Empire</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMIRATE_OF</Tag>
+		<English>Emirate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMIRATE_ADJECTIVE</Tag>
+		<English>%s2 Emirate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DUCHY_OF</Tag>
+		<English>Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DUCHY_ADJECTIVE</Tag>
+		<English>%s2 Duchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAND_DUCHY_OF</Tag>
+		<English>Grand Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAND_DUCHY_ADJECTIVE</Tag>
+		<English>%s2 Grand Duchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOST_SERENE_REPUBLIC_OF</Tag>
+		<English>Most Serene Republic of %s1</English>
+	</TEXT>
 </Civ4GameText>
