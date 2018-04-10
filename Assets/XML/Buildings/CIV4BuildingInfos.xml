@@ -9085,7 +9085,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDENS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HANGING_GARDENS</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_CALENDAR</PrereqTech>
+			<PrereqTech>TECH_DIVINATION</PrereqTech>
 			<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
