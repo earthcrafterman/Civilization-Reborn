@@ -901,6 +901,29 @@ def getUHVTileInfo(argsList):
 	y = argsList[1]
 	iPlayer = argsList[2]
 	
+	if iPlayer == iAssyria:
+		if utils.isPlotInArea((x, y), vic.tMesopotamiaTL, vic.tMesopotamiaBR):
+			return 4
+		
+		if utils.isPlotInArea((x, y), vic.tElamTL, vic.tElamBR):
+			return 76
+		
+		if utils.isPlotInArea((x, y), vic.tUratuTL, vic.tUratuBR):
+			return 77
+		
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 78
+
+	if iPlayer == iEgypt:
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 78
+		
+		if utils.isPlotInArea((x, y), vic.tNubiaTL, vic.tNubiaBR):
+			return 79
+		
+		if utils.isPlotInArea((x, y), vic.tEasternAnatoliaTL, vic.tEasternAnatoliaBR):
+			return 80
+
 	if iPlayer == iGreece:
 		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0

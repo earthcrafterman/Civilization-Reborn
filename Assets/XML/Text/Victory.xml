@@ -519,15 +519,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1</Tag>
-		<English>Control Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
+		<English>Control Nubia, the Levant, and Central Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1_EPIC</Tag>
-		<English>Control Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
+		<English>Control Nubia, the Levant, and Central Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY1_MARATHON</Tag>
-		<English>Control Nubia, the Levant, and Eastern Anatolia in 1000 BC</English>
+		<English>Control Nubia, the Levant, and Central Anatolia in 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY2_TITLE</Tag>
@@ -3227,11 +3227,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_URATU</Tag>
-		<English>Uratu</English>
+		<English>Urartu</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EASTERN_ANATIOLIA</Tag>
-		<English>Eastern Anatolia</English>
+		<English>Central Anatolia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROMAN_CITIES</Tag>
@@ -3267,7 +3267,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ASY1</Tag>
-		<English>Control Mesopotamia, Elam, the Levant, and Uratu in 1300 BC</English>
+		<English>Control Mesopotamia, Elam, the Levant, and Urartu in 1300 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ASY2_TITLE</Tag>

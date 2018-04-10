@@ -533,4 +533,24 @@
 		<Tag>TXT_KEY_UHV_AREA_75</Tag>
 		<English>Baltic Coast</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_76</Tag>
+		<English>Elam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_77</Tag>
+		<English>Urartu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_78</Tag>
+		<English>Levant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_79</Tag>
+		<English>Nubia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_80</Tag>
+		<English>Central Anatolia</English>
+	</TEXT>
 </Civ4GameText>
