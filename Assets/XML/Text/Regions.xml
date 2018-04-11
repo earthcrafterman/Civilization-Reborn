@@ -553,4 +553,8 @@
 		<Tag>TXT_KEY_UHV_AREA_80</Tag>
 		<English>Central Anatolia</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_81</Tag>
+		<English>Sargon's Legend</English>
+	</TEXT>
 </Civ4GameText>

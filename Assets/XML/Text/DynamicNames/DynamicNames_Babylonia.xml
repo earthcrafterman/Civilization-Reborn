@@ -198,11 +198,27 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-        <Tag>TXT_KEY_CIV_BABYLONIA_AKKADIA</Tag>
-        <English>Akkadia</English>
-    </TEXT>
-    <TEXT>
-        <Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN</Tag>
-        <English>Akkadian</English>
-    </TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIA</Tag>
+		<English>Akkadia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN</Tag>
+		<English>Akkadian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN_DESC</Tag>
+		<English>The Akkadians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN_SHORT_DESC</Tag>
+		<English>Akkadia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_AKKADIAN_ADJECTIVE</Tag>
+		<English>
+			<Text>Akkadian:Akkadians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+	</TEXT>
 </Civ4GameText>

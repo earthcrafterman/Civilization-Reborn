@@ -687,8 +687,18 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
-		if gc.getGame().getGameTurn() == getTurnForYear(-4000):
-			utils.flipCity((77, 37), False, True, iBabylonia, ())
+		if gc.getGame().getGameTurn() == getTurnForYear(-4000) and utils.getHumanID() != iBabylonia:
+			teamBabylonia.setHasTech(iTanning, true, iBabylonia, false, false)
+			utils.makeUnit(iAsharittuBowman, iBabylonia, (76, 40), 3)
+
+		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent):
+				teamBabylonia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
+				
+		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getGame().getGameTurnYear() >= -3000 and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent2):
+				teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+
+		if gc.getGame().getGameTurnYear() <= -1700 and gc.getGame().getGameTurnYear() >= -2200 and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
+			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 2 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]):
 			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
@@ -700,21 +710,6 @@ class RiseAndFall:
 					unit = gc.getMap().plot(i, j).getUnit(iUnit)
 					if unit.getOwner() in [iIndependent, iIndependent2, iBarbarian]:
 						unit.kill(False, unit.getOwner())
-
-		if (gc.getGame().getGameTurnYear() == -1700 or gc.getGame().getGameTurnYear() == -2200) and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
-			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
-
-		if (gc.getGame().getGameTurnYear() == -3500 or gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamBabylonia.isAtWar(iIndependent2):
-			teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
-
-		if (gc.getGame().getGameTurnYear() == -3000 or gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -2000 or gc.getGame().getGameTurnYear() == -1000) and pAssyria.isAlive() and utils.getHumanID() != iAssyria and not teamAssyria.isAtWar(iIndependent2):
-			teamAssyria.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
-
-		if (gc.getGame().getGameTurnYear() == -2500 or gc.getGame().getGameTurnYear() == -1000) and pAssyria.isAlive() and pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and not teamAssyria.isAtWar(iBabylonia) and not teamAssyria.isVassal(iBabylonia):
-			teamBabylonia.declareWar(iAssyria, False, WarPlanTypes.WARPLAN_TOTAL)
-			
-		if (gc.getGame().getGameTurnYear() == -1500) and pAssyria.isAlive() and pBabylonia.isAlive() and utils.getHumanID() != iAssyria and not teamAssyria.isAtWar(iBabylonia) and not teamBabylonia.isVassal(iAssyria):
-			teamAssyria.declareWar(iBabylonia, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:

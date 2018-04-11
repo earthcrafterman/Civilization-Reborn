@@ -350,6 +350,13 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		iExtraPopulation += 1;
 	}
 
+	// Babylonian UP
+	if (GC.getGameINLINE().getGameTurnYear() <= -2200 && getOwner() == BABYLONIA && plot()->getSettlerValue(BABYLONIA) >= 400)
+		for (int i = -1; i < 2; i++)
+			for (int ii = -1; ii < 2; ii++)
+				if (GC.getMapINLINE().plot(plot()->getX() + i, plot()->getY() + ii)->getSettlerValue(BABYLONIA) >= 400)
+					GC.getMapINLINE().plot(plot()->getX() + i, plot()->getY() + ii)->setSargon(true);
+
 	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPopulation);
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPop);
 	//Rhye - end switch
@@ -5047,7 +5054,7 @@ int CvCity::getCulturePercentAnger() const
 	//iTotalCulture = plot()->countTotalCulture();
 	iTotalCulture = countTotalCultureTimes100() / 100;
 
-	if (iTotalCulture == 0)
+	if (iTotalCulture == 0 || (getOwner() == BABYLONIA && plot()->isSargon()))
 	{
 		return 0;
 	}

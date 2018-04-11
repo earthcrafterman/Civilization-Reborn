@@ -901,6 +901,10 @@ def getUHVTileInfo(argsList):
 	y = argsList[1]
 	iPlayer = argsList[2]
 	
+	if iPlayer == iBabylonia:
+		if gc.getMap().plot(x, y).isSargon():
+			return 81
+	
 	if iPlayer == iAssyria:
 		if utils.isPlotInArea((x, y), vic.tMesopotamiaTL, vic.tMesopotamiaBR):
 			return 4

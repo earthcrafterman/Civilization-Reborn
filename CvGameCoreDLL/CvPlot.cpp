@@ -221,6 +221,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bPlotLayoutDirty = false;
 	m_bLayoutStateWorked = false;
 	m_bWithinGreatWall = false;
+	m_bSargon = false;
 
 	m_eOwner = NO_PLAYER;
 	m_ePlotType = PLOT_OCEAN;
@@ -9772,6 +9773,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
 	pStream->Read(&m_bWithinGreatWall); // Leoreth
+	pStream->Read(&m_bSargon); // Leoreth
 
 	pStream->Read(&m_eOwner);
 	pStream->Read(&m_ePlotType);
@@ -10029,6 +10031,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
 	pStream->Write(m_bWithinGreatWall);
+	pStream->Write(m_bSargon);
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePlotType);
@@ -11398,7 +11401,6 @@ void CvPlot::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
 	m_aiReligionSpreadFactor[eReligion] = iNewValue;
 }
 
-
 // Leoreth
 bool CvPlot::isWithinGreatWall() const
 {
@@ -11409,6 +11411,17 @@ bool CvPlot::isWithinGreatWall() const
 void CvPlot::setWithinGreatWall(bool bNewValue)
 {
 	m_bWithinGreatWall = bNewValue;
+}
+// Leoreth
+bool CvPlot::isSargon() const
+{
+	return m_bSargon;
+}
+
+// Leoreth
+void CvPlot::setSargon(bool bNewValue)
+{
+	m_bSargon = bNewValue;
 }
 
 // Leoreth

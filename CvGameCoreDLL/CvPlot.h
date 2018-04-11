@@ -522,6 +522,8 @@ public:
 
 	bool isWithinGreatWall() const;
 	void setWithinGreatWall(bool bNewValue);
+	bool isSargon() const;
+	void setSargon(bool bNewValue);
 	void cameraLookAt();
 	bool canUseSlave(PlayerTypes ePlayer) const;
 	int calculateCultureCost() const;
@@ -605,6 +607,7 @@ protected:
 
 	// Leoreth
 	bool m_bWithinGreatWall;
+	bool m_bSargon;
 
 	int* m_aiReligionInfluence;
 

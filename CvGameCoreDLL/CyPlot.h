@@ -280,6 +280,7 @@ public:
 
 	bool isWithinGreatWall();
 	void setWithinGreatWall(bool bNewValue);
+	bool isSargon();
 	void cameraLookAt();
 	void updateCulture();
 

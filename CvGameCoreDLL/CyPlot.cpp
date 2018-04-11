@@ -1119,6 +1119,11 @@ void CyPlot::setWithinGreatWall(bool bNewValue)
 		m_pPlot->setWithinGreatWall(bNewValue);
 }
 
+bool CyPlot::isSargon()
+{
+	return m_pPlot ? m_pPlot->isSargon() : -1;
+}
+
 void CyPlot::cameraLookAt()
 {
 	if (m_pPlot) m_pPlot->cameraLookAt();

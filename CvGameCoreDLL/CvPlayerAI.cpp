@@ -5020,7 +5020,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case BABYLONIA:
 									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
 										iValue /= 5;
-									if (iI == TANNING || iI == WRITING || iI == CONTRACT || iI == CALENDAR)
+									if (iI == TANNING)
+										iValue *= 5;
+									if (iI == WRITING || iI == CONTRACT || iI == CALENDAR)
 										iValue *= 3;
 									if (iI == MASONRY || iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
 										iValue *= 2;

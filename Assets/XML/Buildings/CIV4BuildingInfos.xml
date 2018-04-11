@@ -9085,7 +9085,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDENS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HANGING_GARDENS</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_DIVINATION</PrereqTech>
+			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -9133,7 +9133,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_ORACLE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
-			<PrereqBonuses>BONUS_FISH</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

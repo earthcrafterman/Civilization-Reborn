@@ -200,8 +200,11 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=2
-	LeaderType=LEADER_HAMMURABI
+	LeaderType=LEADER_GILGAMESH
 	CivType=CIVILIZATION_BABYLONIA
+	CivDesc=TXT_KEY_CIV_BABYLONIA_AKKADIAN_DESC
+	CivShortDesc=TXT_KEY_CIV_BABYLONIA_AKKADIAN_SHORT_DESC
+	CivAdjective=TXT_KEY_CIV_BABYLONIA_AKKADIAN_ADJECTIVE
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
@@ -28255,6 +28258,22 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginCity
+		CityOwner=51, (iIndependent2)
+		CityName=Sidon
+		CityPopulation=2
+		BuildingType=BUILDING_PAGAN_TEMPLE
+		Player51Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=73,y=41
@@ -29757,14 +29776,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=51, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=51, (iIndependent2)
+		CityOwner=50, (iIndependent2)
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
-		Player51Culture=30
+		Player50Culture=30
 	EndCity
 EndPlot
 BeginPlot
@@ -29809,12 +29828,15 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent)
+	EndUnit
 	BeginCity
 		CityOwner=50, (iIndependent)
 		CityName=Ninua
 		CityPopulation=2
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player51Culture=10
+		Player50Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -30538,6 +30560,22 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+	EndUnit
+	BeginCity
+		CityOwner=51, (iIndependent2)
+		CityName=Susa
+		CityPopulation=2
+		BuildingType=BUILDING_PAGAN_TEMPLE
+		Player51Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=79,y=41

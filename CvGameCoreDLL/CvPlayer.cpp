@@ -1442,6 +1442,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
+	if (GC.getGameINLINE().getGameTurnYear() <= -2200 && getID() == BABYLONIA && pOldCity->plot()->getSettlerValue(BABYLONIA) >= 400)
+			for (int i = -1; i < 2; i++)
+				for (int ii = -1; ii < 2; ii++)
+					if (GC.getMapINLINE().plot(pOldCity->plot()->getX() + i, pOldCity->plot()->getY() + ii)->getSettlerValue(BABYLONIA) >= 400)
+						GC.getMapINLINE().plot(pOldCity->plot()->getX() + i, pOldCity->plot()->getY() + ii)->setSargon(true);
+
 	if (bConquest)
 	{
 		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
@@ -1836,7 +1842,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		iTeamCulturePercent = pNewCity->calculateTeamCulturePercent(getTeam());
 
-		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
+		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD") && !(getID() == BABYLONIA && pNewCity->plot()->isSargon()))
 		{
             // Leoreth - UP replaced
 			//Rhye - start UP (Babylonian)
