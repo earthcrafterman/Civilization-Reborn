@@ -5624,6 +5624,123 @@
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_VIETNAM</Type>
+			<Description>TXT_KEY_CIV_VIETNAM_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_VIETNAM_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_VIETNAM_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_ORANGE_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_VIETNAM</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<Identifier>VIE</Identifier>
+			<StartingYear>-257</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Sai Gon</City>
+				<City>Da Lat</City>
+				<City>Thang Hoa</City>
+				<City>Nha Trang</City>
+				<City>My Tho</City>
+				<City>Long Xuyen</City>
+				<City>Rach Gia</City>
+				<City>Vinh</City>
+				<City>Hai Phong</City>
+				<City>Hong Gai</City>
+				<City>Ha Giang</City>
+				<City>Buon Me Thuot</City>
+				<City>Qui Nhon</City>
+				<City>Cam Lam</City>
+				<City>Lang Son</City>
+				<City>Hoa Binh</City>
+				<City>Lai Chau</City>
+				<City>Song Doc</City>
+				<City>Tay Ninh</City>
+				<City>Bien Hoa</City>
+				<City>Pleiku</City>
+				<City>Viet Tri</City>
+				<City>Nam Dinh</City>
+				<City>Vung Tau</City>
+				<City>Thai Nguyen</City>
+				<City>Ha Long</City>
+				<City>Hoi An</City>
+				<City>Vinh Long</City>
+				<City>Mong Cai</City>
+				<City>Thu Dau Mot</City>
+				<City>Kim Bong</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
+					<BuildingType>BUILDING_VIETNAM_DINH</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitType>UNIT_VIETNAM_RATTAN_ARCHER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TRUNG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CHIEU_HOANG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HO_CHI_MINH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_THAILAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>
 			<Description>TXT_KEY_CIV_VIKING_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_VIKING_SHORT_DESC</ShortDescription>

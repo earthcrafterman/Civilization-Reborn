@@ -236,6 +236,7 @@ class GameData:
 		self.iCongoSlaveCounter = 0
 		self.iDutchColonies = 0
 		self.iMexicanGreatGenerals = 0
+		self.iVietnamGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
 		

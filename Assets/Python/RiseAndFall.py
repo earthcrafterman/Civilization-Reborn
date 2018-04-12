@@ -2367,6 +2367,9 @@ class RiseAndFall:
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+		elif iCiv == iVietnam:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			for iUnit in [iHorseArcher, iCrossbowman]:
 				utils.makeUnit(iUnit, iCiv, tPlot, 2)
@@ -2550,6 +2553,15 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iVietnam:
+			utils.createSettlers(iCiv, 2)
+			utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iVietnam)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
 			utils.createMissionaries(iCiv, 1)
@@ -2931,6 +2943,8 @@ class RiseAndFall:
 		elif iCiv == iTamils:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iVietnam:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)

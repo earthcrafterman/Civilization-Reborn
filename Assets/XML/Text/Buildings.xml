@@ -1423,4 +1423,12 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH</Tag>
+		<English>Dinh</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Dinh[COLOR_REVERT], the Vietnamese replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], gives all eligible units built in this city the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</English>
+	</TEXT>
 </Civ4GameText>

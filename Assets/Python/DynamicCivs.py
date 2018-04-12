@@ -324,6 +324,7 @@ dForeignAdjectives = {
 		iMongolia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA",
 		iTurkey : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TURKEY",
 		iTibet : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET",
+		iVietnam : "TXT_KEY_CIV_CHINESE_ADJECTIVE_VIETNAM",
 	},
 }
 
@@ -391,6 +392,7 @@ dForeignNames = {
 	iFrance : {
 		iKhmer : "TXT_KEY_CIV_FRENCH_NAME_KHMER",
 		iMughals : "TXT_KEY_CIV_FRENCH_NAME_MUGHALS",
+		iVietnam : "TXT_KEY_CIV_FRENCH_NAME_VIETNAM",
 	},
 	iEngland : {
 		iKhmer : "TXT_KEY_CIV_ENGLISH_NAME_KHMER",
@@ -404,7 +406,7 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iVietnam]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
@@ -470,7 +472,7 @@ dCapitals = {
 	iBabylonia : ["Ninua", "Kalhu"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
-	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
+	iKhmer : ["Pagan", "Dali", "Angkor"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
 	iItaly : ["Fiorenza", "Roma"],
@@ -499,6 +501,7 @@ dStartingLeaders = [
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
+	iVietnam : iTrung,
 	iKorea : iWangKon,
 	iMaya : iPacal,
 	iByzantium : iJustinian,
@@ -1010,6 +1013,18 @@ def specificName(iPlayer):
 	elif iPlayer == iEthiopia:
 		if not gc.getGame().isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
+			
+	elif iPlayer == iVietnam:
+		if iEra >= iDigital:
+			return "TXT_KEY_CIV_VIETNAM_SHORT_DESC"
+		
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_VIETNAM_VIET_NAM"
+			
+		if iEra >= iMedieval:
+			return "TXT_KEY_CIV_VIETNAM_DAI_VIET"
+			
+		return "TXT_KEY_CIV_VIETNAM_AU_LAC"
 			
 	elif iPlayer == iKorea:
 		if iEra == iClassical:
@@ -1666,6 +1681,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iPlayer == iVietnam:
+		pass
 	
 	elif iPlayer == iKorea:
 		if iEra >= iIndustrial:
@@ -1725,9 +1743,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iKhmer:
 		if iEra <= iRenaissance and isCapital(iPlayer, ["Angkor"]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
-			
-		if isCapital(iPlayer, ["Hanoi"]):
-			return "TXT_KEY_CIV_KHMER_DAI_VIET"
 			
 	elif iPlayer == iIndonesia:
 		if iReligion == iIslam:
@@ -2036,6 +2051,11 @@ def leader(iPlayer):
 		
 	elif iPlayer == iEthiopia:
 		if iEra >= iIndustrial: return iHaileSelassie
+		
+	elif iPlayer == iVietnam:
+		if iEra >= iGlobal: return iHoChiMinh
+		
+		if iEra >= iMedieval: return iChieuHoang
 		
 	elif iPlayer == iTamils:
 		if iEra >= iRenaissance: return iKrishnaDevaRaya

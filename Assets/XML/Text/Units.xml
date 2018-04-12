@@ -1576,4 +1576,12 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER</Tag>
+		<English>Rattan Archer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rattan Archer[COLOR_REVERT], the Vietnamese replacement for the the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has an additional first strike, has a higher withdraw chance and does collateral damage to more units.</English>
+	</TEXT>
 </Civ4GameText>

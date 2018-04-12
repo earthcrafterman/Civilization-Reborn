@@ -151,7 +151,7 @@ lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 tSouthAsiaTL = (88, 24)
 tSouthAsiaBR = (110, 38)
-lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand, iVietnam]
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
 tSafavidMesopotamiaTL = (75, 39)
@@ -580,6 +580,24 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iEthiopia, 2)
 			else:
 				lose(iEthiopia, 2)
+				
+	elif iPlayer == iVietnam:
+		# first goal: have 8000 culture by 1200 AD
+		if isPossible(iVietnam, 0):
+			if pVietnam.countTotalCulture() >= utils.getTurns(8000):
+				win(iVietnam, 0)
+				
+		if iGameTurn == getTurnForYear(1200):
+			expire(iVietnam, 0)
+			
+		# second goal: create three great generals by 1500 AD
+		if iGameTurn == getTurnForYear(1500):
+			expire(iVietnam, 1)
+			
+		# third goal: never lose a single city until 1950 AD
+		if iGameTurn == getTurnForYear(1950):
+			if isPossible(iVietnam, 2):
+				win(iVietnam, 2)
 				
 	elif iPlayer == iKorea:
 	
@@ -1536,6 +1554,10 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	if iOwner == iJapan:
 		expire(iJapan, 0)
 	
+	# third Vietnamese goal: never lose a single city until 1950 AD
+	if iOwner == iVietnam:
+		expire(iVietnam, 2)
+	
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
@@ -1864,6 +1886,15 @@ def onGreatPersonBorn(iPlayer, unit):
 				
 				if data.iMexicanGreatGenerals >= 3:
 					win(iAztecs, 1)
+					
+	# second Vietnamese goal: get three great generals by 1500 AD
+	if iPlayer == iVietnam:
+		if isPossible(iVietnam, 1):
+			if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral):
+				data.iVietnamGreatGenerals += 1
+				
+				if data.iVietnamGreatGenerals >= 3:
+					win(iVietnam, 1)
 					
 def onUnitPillage(iPlayer, iGold, iUnit):
 
@@ -3471,6 +3502,14 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
 			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
+
+	elif iPlayer == iVietnam:
+		if iGoal == 0:
+			iCulture = pVietnam.countTotalCulture()
+			aHelp.append(getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
+		elif iGoal == 1:
+			iGenerals = data.iVietnamGreatGenerals
+			aHelp.append(getIcon(iGenerals >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS", (iGenerals, 3)))
 
 	elif iPlayer == iKorea:
 		if iGoal == 0:

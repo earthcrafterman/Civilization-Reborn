@@ -538,4 +538,16 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TRUNG</Tag>
+		<English>Trung Sisters</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CHIEU_HOANG</Tag>
+		<English>Chieu Hoang</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HO_CHI_MINH</Tag>
+		<English>Ho Chi Minh</English>
+	</TEXT>
 </Civ4GameText>

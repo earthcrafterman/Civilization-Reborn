@@ -876,6 +876,11 @@ iCivEthiopia : {
 		"Yohannes", # 19th
 	],
 },
+iCivVietnam : {
+	iGreatGeneral : [
+		"Le Loi", # 15th
+	],
+},
 iCivKorea : {
 	iGreatProphet : [
 		"Jinul", # 12th
