@@ -16,24 +16,26 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-4000, (72, 44), iIndependent, 'Hattusa', 2, iArcher, 2), 	# Hattians
+(-4000, (72, 44), iIndependent2, 'Hattusa', 2, iArcher, 2), 	# Hattians
 (-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
 (-3600, (69, 32), iIndependent2, 'Niwt-Rst', 1, iArcher, 1), 	# Upper Egypt
 (-3600, (69, 35), iIndependent2, 'Ineb-Hedj', 1, iArcher, 1), 	# Lower Egypt
 (-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
-(-2600, (69, 39), iIndependent2, 'Knossos', 2, -1, -1), 	# Minoans
+(-2600, (69, 39), iIndependent2, 'Knossos', 2, iMilitia, 1), 	# Minoans
 #(-2500, (77, 42), iIndependent2, 'Ninua', 2, iMilitia, 3), 	# Assyrian Empire
 (-2070, (104, 45), iIndependent, 'Zou', 2, -1, -1), 	# Qufu
 (-2070, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
+(-1800, (58, 43), iIndependent, 'Nuragic', 1, iArcher, 1),	# Nuragic
 (-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
 (-1500, (73, 38), iIndependent, 'Yerushalayim', 3, iArcher, 2),	# Jerusalem
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
 (-733, (61, 40), iGreece, 'Syrakousai', 2, -1, -1),		# Magna Graecia
-(-650, (90, 37), iIndependent, 'Ujjain', 2, iMilitia, 1),	# Avanti
+(-733, (62, 42), iGreece, 'Poseidonia', 2, -1, -1),		# Magna Graecia
+(-650, (90, 37), iIndependent, 'Ujjain', 2, iArcher, 1),	# Avanti
 (-550, (82, 38), iPersia, 'Parsa', 1, iArcher, 2),	# Parsa
 (-550, (95, 37), iIndependent2, 'Tosali', 2, iArcher, 2),	# Kalinga
 (-550, (87, 42), iIndependent2, 'Taxila', 2, iArcher, 1),	# Taxila
@@ -59,23 +61,28 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (350, (65, 45), iIndependent, 'Singidun', 2, iHeavySpearman, 2),	# Beograd
+(470, (53, 51), iIndependent2, 'Caen', 2, -1, -1),	# Caen
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
-(830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
+(862, (70, 56), iIndependent, 'Novgorod', 2, iHeavySpearman, 2),# Novgorod
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
-(900, (69, 52), iIndependent, 'Kyiv', 2, iCrossbowman, 2),		# Kiev
+(910, (50, 45), iIndependent2, 'Le&#243;n', 1, iHeavySpearman, 2),			# Leon
+(943, (52, 58), iIndependent2, 'Scuin', 1, iLongbowman, 2),		# Kingdom of Alba
+(990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, iHorseArcher, 1),		# Kazan
+(1255, (65, 55), iBarbarian, 'K&#246;nigsberg', 2, iLancer, 3),		# Kazan
 (1400, (104, 33), iIndependent, 'Saigon', 5, iCrossbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, iPombos, 1),	# Mbanza Kongo
+#(1902, (62, 20), iArabia, 'Riyadh', 1, iPombos, 1),	# Mbanza Kongo
 )
 
 # do some research on dates here
@@ -168,7 +175,7 @@ class Barbs:
 			if iGameTurn >= getTurnForYear(0): iStrength += 1
 			if iGameTurn >= getTurnForYear(200): iUnit = iSwordsman
 			
-			self.checkSpawn(iBarbarian, iUnit, iStrength, (87, 23), (96, 37), self.spawnInvaders, iGameTurn, 8-iHandicap, 0, ["Hindi"])
+			self.checkSpawn(iBarbarian, iUnit, iStrength, (87, 30), (96, 37), self.spawnInvaders, iGameTurn, 8-iHandicap, 0, ["Hindi"])
 			
 		# elephants in india pre-khmer
 		if utils.isYearIn(-210, 700):
@@ -176,15 +183,15 @@ class Barbs:
 
 		#Indo-Scythians
 		if utils.isYearIn(-200, 400):
-			self.checkSpawn(iBarbarian, iHorseman, 2, (84, 40), (89, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"])
+			self.checkSpawn(iBarbarian, iHorseman, 2, (84, 40), (90, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"])
 
 		#Kushana
-		if utils.isYearIn(30, 220):
-			self.checkSpawn(iBarbarian, iAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
+		if utils.isYearIn(30, 375):
+			self.checkSpawn(iBarbarian, iAsvaka, 3+iHandicap, (84, 40), (90, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
 
 		#Hephtalites
-		#if utils.isYearIn(400, 550):
-		#	self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
+		if utils.isYearIn(440, 670):
+			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (90, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
 		if utils.isYearIn(600, 1000):
@@ -211,25 +218,24 @@ class Barbs:
 
 		#barbarians in europe
 		if utils.isYearIn(210, 470):
-			self.checkSpawn(iBarbarian, iAxeman, 3 + iHandicap, (50, 45), (63, 52), self.spawnInvaders, iGameTurn, 10, 0, ["TXT_KEY_ADJECTIVE_GERMANIC"])
-			self.checkSpawn(iBarbarian, iAxeman, 2 + iHandicap, (64, 49), (69, 55), self.spawnInvaders, iGameTurn, 12, 2, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+			self.checkSpawn(iBarbarian, iAxeman, 3 + iHandicap, (50, 45), (63, 52), self.spawnInvaders, iGameTurn, 6, 0, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+			self.checkSpawn(iBarbarian, iAxeman, 2 + iHandicap, (64, 49), (69, 55), self.spawnInvaders, iGameTurn, 7, 2, ["TXT_KEY_ADJECTIVE_GERMANIC"])
 		# Leoreth: begins 100 AD instead of 50 AD
 		#if utils.isYearIn(100, 470):
 		#	self.checkSpawn(iBarbarian, iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
-		if utils.isYearIn(300, 470):
-			self.checkSpawn(iBarbarian, iAxeman, 4 + iHandicap, (49, 41), (56, 52), self.spawnInvaders, iGameTurn, 5, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
-			self.checkSpawn(iBarbarian, iSwordsman, 4 + iHandicap, (49, 41), (57, 52), self.spawnInvaders, iGameTurn, 5, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
+		# Migration period:
+		if utils.isYearIn(375, 568):
+			self.checkSpawn(iBarbarian, iAxeman, 4 + iHandicap, (49, 41), (55, 46), self.spawnInvaders, iGameTurn, 5, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
+			self.checkSpawn(iBarbarian, iSwordsman, 4 + iHandicap, (49, 41), (55, 46), self.spawnInvaders, iGameTurn, 5, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
 			self.checkSpawn(iBarbarian, iHorseArcher, 3, (55, 49), (65, 53), self.spawnInvaders, iGameTurn, 5, 0, ["TXT_KEY_ADJECTIVE_HUNNIC"])
-		if utils.isYearIn(470, 700):
-			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (58, 50), (68, 53), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_HUNNIC"])
 
 		#citis: Lombards in Italy
-		if utils.isYearIn(568, 1100):
+		if utils.isYearIn(568, 843):
 			self.checkSpawn(iBarbarian, iHeavySwordsman, 4 + iHandicap, (60, 40), (63, 45), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_LOMBARD"])
 
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if utils.isYearIn(680, 1000):
-			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnNomads, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
+			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (66, 45), (69, 48), self.spawnNomads, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
 		if utils.isYearIn(900, 1200):
 			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
 		if utils.isYearIn(1200, 1400):
@@ -398,13 +404,12 @@ class Barbs:
 				lBuildings = [iPaganTemple]
 			if sName == 'Ankuwash':
 				lBuildings = [iPaganTemple, iBarracks, iMonument]
+			if sName == 'Nuragic':
+				lBuildings = [iPaganTemple, iMonument, iLibrary]
 			if sName == 'Kolkata':
 				lBuildings = [iPaganTemple, iLibrary]
 			if sName == 'Tsor':
 				lBuildings = [iJewishTemple, iMonument]
-				lReligions = [iJudaism]
-			if sName == 'Ankuwash':
-				lBuildings = [iPaganTemple, iJewishTemple, iMonument]
 				lReligions = [iJudaism]
 			if sName == 'Syrakousai':
 				lBuildings = [iPaganTemple, iHarbor]
@@ -418,8 +423,13 @@ class Barbs:
 				lBuildings = [iPaganTemple, iLibrary]
 			if sName in ['Mero&#235;']:
 				lBuildings = [iObelisk, iGranary]
-			if sName in ['Singidun']:
+			if sName in ['Singidun', 'Le&#243;n', 'Scuin']:
 				lBuildings = [iOrthodoxTemple, iOrthodoxMonastery, iBarracks, iWalls, iCastle]
+			if sName in ['Novgorod']:
+				lReligions = [iOrthodoxy]
+				lBuildings = [iOrthodoxTemple, iWalls, iCastle, iGranary, iMarket]
+			if sName in ['K&#246;nigsberg']:
+				lBuildings = [iCatholicChurch, iCatholicMonastery, iBarracks, iWalls, iCastle]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
@@ -431,8 +441,8 @@ class Barbs:
 	def canFoundCity(self, sName):
 		if sName == 'Kanchipuram' and utils.getHumanID() == iTamils: return False
 		elif sName == 'Tanjapuri' and gc.getPlayer(iTamils).isAlive(): return False
-		elif sName == 'Hamburg' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 == 0): return False
-		elif sName == 'L&#252;beck' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 != 0): return False
+		#elif sName == 'Hamburg' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 == 0): return False
+		#elif sName == 'L&#252;beck' and (utils.getHumanID() == iHolyRome or data.iSeed % 4 != 0): return False
 		elif sName == 'Rasa' and gc.getPlayer(iTibet).isAlive(): return False
 		elif sName == 'Quelimane' and gc.getPlayer(iSwahili).isAlive(): return False
 		elif sName == 'Mombasa' and gc.getPlayer(iSwahili).isAlive(): return False

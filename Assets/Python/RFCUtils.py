@@ -1725,7 +1725,18 @@ class RFCUtils:
 			if plot.getRegionID() in lRegions and plot.isCity():
 				lCities.append(plot.getPlotCity())
 		return lCities
-		
+	
+	def getContinent(self, iRegion):
+		if iRegion in lEurope: return cEurope
+		elif iRegion in lMiddleEast: return cMiddleEast
+		elif iRegion in lIndia: return cIndia
+		elif iRegion in lEastAsia: return cEastAsia
+		elif iRegion in lSouthEastAsia: return cSouthEastAsia
+		elif iRegion in lAfrica: return cAfrica
+		elif iRegion in lSouthAmerica: return cSouthAmerica
+		elif iRegion in lNorthAmerica: return cNorthAmerica
+		elif iRegion in lOceania: return cOceania
+	
 	def getAdvisorString(self, iBuilding):
 		''
 		iAdvisor = gc.getBuildingInfo(iBuilding).getAdvisorType()

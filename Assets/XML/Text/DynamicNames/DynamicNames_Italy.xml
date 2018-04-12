@@ -3,7 +3,7 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PEOPLES</Tag>
-		<English>Lombard Peoples</English>
+		<English>Venetian Peoples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DEFAULT</Tag>
@@ -96,5 +96,9 @@
 		<German>Italien</German>
 		<Italian>L'Italia</Italian>
 		<Spanish>Italia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_VENICE_ADJECTIVE</Tag>
+		<English>Venetian</English>
 	</TEXT>
 </Civ4GameText>

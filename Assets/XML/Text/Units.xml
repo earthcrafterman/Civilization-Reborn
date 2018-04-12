@@ -1242,7 +1242,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SPANISH_CONQUISTADOR_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Conquistador[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Exploration[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] technology, receives a defensive bonus, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT] except for the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Militia[COLOR_REVERT].</English>
+		<English>The [COLOR_UNIT_TEXT]Conquistador[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Exploration[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] technology, receives a defensive bonus, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT] except for the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SETTLER_STRATEGY</Tag>
@@ -1330,7 +1330,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MILITIA_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Militia[COLOR_REVERT] have a defensive bonus in cities.</English>
+		<English>[COLOR_UNIT_TEXT]Mobs[COLOR_REVERT] are cheap Civilian Units that count as Military for Happiness and Culture.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_ELEPHANT_STRATEGY</Tag>
@@ -1554,7 +1554,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MILITIA</Tag>
-		<English>Militia</English>
+		<English>Mob</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARQUEBUSIER</Tag>

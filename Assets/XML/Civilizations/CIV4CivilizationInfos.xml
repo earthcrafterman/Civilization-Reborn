@@ -680,7 +680,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitClassType>UNITCLASS_BEAR</UnitClassType>
 					<UnitType>UNIT_BABYLONIAN_ASHARITTU_BOWMAN</UnitType>
 				</Unit>
 			</Units>
@@ -1997,7 +1997,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>FRA</Identifier>
-			<StartingYear>750</StartingYear>
+			<StartingYear>481</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>5</LoadingTime>
@@ -2072,6 +2072,10 @@
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CHARLEMAGNE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_PHILIP_AUGUSTUS</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
@@ -7451,10 +7455,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARIOT</UnitClassType>
-					<UnitType>UNIT_HITTITE_HULUGANNI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses/>

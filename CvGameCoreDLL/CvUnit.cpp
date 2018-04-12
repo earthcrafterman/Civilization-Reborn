@@ -2529,10 +2529,6 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		!pPlot->isCity() && (getUnitType() != GC.getInfoTypeForString("UNIT_WORKER") || getUnitType() != GC.getInfoTypeForString("UNIT_SETTLER")))
 		return false;
 
-	if (!isHuman() && ((pPlot->getX() < 64 && pPlot->getX() <= getX()) || (pPlot->getY() > 49 && pPlot->getY() >= getY())) &&
-		getOwner() == BARBARIAN && getUnitType() == GC.getInfoTypeForString("UNIT_HITTITE_HULUGANNI"))
-		return false;
-
 	if (pPlot->isImpassable())
 	{
 		if (!canMoveImpassable())

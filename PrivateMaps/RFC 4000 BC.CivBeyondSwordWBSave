@@ -454,17 +454,17 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=23
-	LeaderType=LEADER_LOUIS_XIV
+	LeaderType=LEADER_CHARLEMAGNE
 	CivType=CIVILIZATION_FRANCE
 	PlayableCiv=1
-	StartingGold=150
+	StartingGold=20
 	StateReligion=RELIGION_ORTHODOXY
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -591,7 +591,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=33
-	LeaderType=LEADER_CAVOUR
+	LeaderType=LEADER_LORENZO
 	CivType=CIVILIZATION_ITALY
 	PlayableCiv=1
 	StartingGold=350
@@ -599,7 +599,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -22074,6 +22074,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=49
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
@@ -22081,6 +22082,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=50
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
@@ -22088,6 +22090,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=51
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
@@ -22095,6 +22098,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=52
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	isNOfRiver
 	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
@@ -22400,20 +22404,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=42
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=58,y=43
 	TerrainType=TERRAIN_PLAINS
 	BonusType=BONUS_SILVER
 	PlotType=2
 EndPlot
 BeginPlot
-	x=58,y=43
+	x=58,y=44
 	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-EndPlot
-BeginPlot
-	x=58,y=44
-	TerrainType=TERRAIN_COAST
-	PlotType=3
 EndPlot
 BeginPlot
 	x=58,y=45
@@ -29420,11 +29424,19 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_ARCHER, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_BABYLONIAN_ASHARITTU_BOWMAN, UnitOwner=2, (Babylonia)
 	EndUnit
+	BeginCity
+		CityOwner=2, (iBabylonia)
+		CityName=Akkad
+		CityPopulation=1
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+	EndCity
 EndPlot
 BeginPlot
 	x=76,y=41
@@ -29776,14 +29788,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
+		UnitType=UNIT_MILITIA, UnitOwner=55, (iBarbarian)
 	EndUnit
 	BeginCity
-		CityOwner=50, (iIndependent2)
+		CityOwner=55, (iBarbarian)
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
-		Player50Culture=30
+		Player55Culture=30
 	EndCity
 EndPlot
 BeginPlot
@@ -29825,9 +29837,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent)
-	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=50, (Independent)
 	EndUnit
@@ -30561,20 +30570,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=51, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=50, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=51, (iIndependent2)
+		CityOwner=50, (iIndependent2)
 		CityName=Susa
 		CityPopulation=2
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player51Culture=10
+		Player50Culture=10
 	EndCity
 EndPlot
 BeginPlot

@@ -271,7 +271,6 @@ def checkBarbarianCollapse(iPlayer):
 		
 def checkLostCitiesCollapse(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
 	
 	if isImmune(iPlayer): return
 		
@@ -311,8 +310,7 @@ def checkLostCoreCollapse(iPlayer):
 def determineStabilityLevel(iCurrentLevel, iStability, overTurns = 0):
 	iThreshold = 10 * iCurrentLevel - 10
 	
-	if overTurns > 0:
-		iThreshold += 5 + overTurns
+	iThreshold += 3 * overTurns
 	
 	if iStability >= iThreshold: return min(iStabilitySolid, iCurrentLevel + 1)
 	elif iStability < iThreshold - 10: return max(iStabilityCollapsing, iCurrentLevel - 1)
@@ -572,6 +570,13 @@ def secedeCity(city, iNewOwner):
 	return lRelocatedUnits
 
 def completeCollapse(iPlayer):
+	
+	#citis: AI Byzantium is even harder to collapse
+	iYear = gc.getGame().getGameTurnYear()
+	if iPlayer == iByzantium and utils.getHumanID() != iByzantium:
+		collapseToCore(iPlayer)
+		return
+	
 	lCities = utils.getCityList(iPlayer)
 	
 	# before cities are seceded, downgrade their cottages
@@ -601,6 +606,11 @@ def completeCollapse(iPlayer):
 	CyInterface().addMessage(utils.getHumanID(), False, iDuration, sText, "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 	
 def collapseToCore(iPlayer):
+	#citis: AI Byzantium is even harder to collapse
+	iYear = gc.getGame().getGameTurnYear()
+	if iPlayer == iByzantium and iYear < 1204 and utils.getHumanID() != iByzantium:
+		return
+
 	lAhistoricalCities = []
 	lNonCoreCities = []
 	
@@ -719,7 +729,6 @@ def calculateStability(iPlayer):
 		if plot.isCore(iPlayer):
 			iCorePopulation += iCorePopulationModifier * iPopulation / 100
 			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
-			if iPlayer == iRome: iCorePopulation *= 2
 		else:
 			iOwnCulture = plot.getCulture(iPlayer)
 			

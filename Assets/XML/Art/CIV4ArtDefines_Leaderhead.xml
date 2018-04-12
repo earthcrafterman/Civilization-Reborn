@@ -1086,5 +1086,13 @@
 			<NoShaderNIF>art/LeaderHeads/Khosrow/Suryaverman_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Khosrow/Suryavarman_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_PHILIP_AUGUSTUS</Type>
+			<Button>,Art/interface/LeaderHeads/Btn_LH_Mongol_Genghis.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,1</Button>
+			<NIF>art/LeaderHeads/Richelieu/King_Dutch.nif</NIF>
+			<KFM>art/LeaderHeads/Richelieu/King_Dutch.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Richelieu/King_Dutch.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Richelieu/King_Dutch_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

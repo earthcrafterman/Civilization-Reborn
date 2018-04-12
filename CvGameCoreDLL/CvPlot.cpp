@@ -3480,16 +3480,10 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				if (iI < NUM_MAJOR_PLAYERS) if (isCore((PlayerTypes)iI)) iCulture *= 4;
 
 				// Independents get the same advantage over a civ's core if that civ is dead
+				// 1SDAN All the time
 				if (iI == INDEPENDENT || iI == INDEPENDENT2)
 				{
-					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
-					{
-						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > GET_PLAYER((PlayerTypes)iJ).getBirthYear() && !GET_PLAYER((PlayerTypes)iI).isAlive())
-						{
-							iCulture *= 4;
-							break;
-						}
-					}
+					iCulture *= 4;
 				}
 
 				bool bCanCover = false;
@@ -7054,7 +7048,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		int iAppliedImprovement = -1;
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields on small islands, except food
-		if (GC.getMap().getArea(getArea())->getNumTiles() <= 5)
+		// 1SDAN Also on Sardinia or Corsica
+		if ((getX() == 58 && (getY() == 43 || getY() == 44)) || GC.getMap().getArea(getArea())->getNumTiles() <= 5)
 		{
 			if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
 			{

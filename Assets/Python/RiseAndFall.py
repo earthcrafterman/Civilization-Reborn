@@ -687,15 +687,96 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
-		if gc.getGame().getGameTurn() == getTurnForYear(-4000) and utils.getHumanID() != iBabylonia:
-			teamBabylonia.setHasTech(iTanning, true, iBabylonia, false, false)
-			utils.makeUnit(iAsharittuBowman, iBabylonia, (76, 40), 3)
+		if gc.getGame().getGameTurn() == getTurnForYear(-600) and utils.getHumanID() != iCarthage:
+			if gc.getMap().plot(61, 40).isCity() and gc.getMap().plot(61, 40).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(61, 40).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(61, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(60, 40).getNumUnits()):
+					unit = gc.getMap().plot(60, 40).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(61, 40, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (60, 40), 2)
+				utils.makeUnit(iLightSwordsman, iCarthage, (60, 40), 2)
+				utils.makeUnit(iCatapult, iCarthage, (60, 40), 2)
+			
+			elif gc.getMap().plot(62, 41).isCity() and gc.getMap().plot(62, 41).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(62, 41).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(62, 41).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(61, 40).getNumUnits()):
+					unit = gc.getMap().plot(61, 40).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(62, 41, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (61, 40), 2)
+				utils.makeUnit(iArcher, iCarthage, (61, 40), 2)
+				utils.makeUnit(iCatapult, iCarthage, (61, 40), 2)
+			
+			elif gc.getMap().plot(60, 40).isCity() and gc.getMap().plot(60, 40).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(62, 40).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(60, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(61, 40).getNumUnits()):
+					unit = gc.getMap().plot(61, 40).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(60, 40, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (61, 40), 2)
+				utils.makeUnit(iArcher, iCarthage, (61, 40), 2)
+				utils.makeUnit(iCatapult, iCarthage, (61, 40), 2)
+			
+			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(58, 43).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(58, 44).getNumUnits()):
+					unit = gc.getMap().plot(58, 44).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(58, 43, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 1)
+				utils.makeUnit(iArcher, iCarthage, (58, 44), 1)
+				utils.makeUnit(iCatapult, iCarthage, (58, 44), 1)
+			
+			if gc.getMap().plot(58, 44).isCity() and gc.getMap().plot(58, 44).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(58, 44).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(58, 44).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(58, 43).getNumUnits()):
+					unit = gc.getMap().plot(58, 43).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(58, 44, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 43), 1)
+				utils.makeUnit(iArcher, iCarthage, (58, 43), 1)
+				utils.makeUnit(iCatapult, iCarthage, (58, 43), 1)
+		
+		if gc.getGame().getGameTurn() == getTurnForYear(-510) and utils.getHumanID() != iCarthage:
+			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() == iIndependent and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
+				utils.flipCity((58, 43), True, True, iCarthage, [])
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 43), 1)
+				utils.makeUnit(iArcher, iCarthage, (58, 43), 2)
+			
+			if gc.getMap().plot(58, 44).isCity() and gc.getMap().plot(58, 44).getPlotCity().getOwner() == iIndependent and not gc.getTeam(gc.getMap().plot(58, 44).getPlotCity().getOwner()).isVassal(iCarthage):
+				utils.flipCity((58, 44), True, True, iCarthage, [])
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 1)
+				utils.makeUnit(iArcher, iCarthage, (58, 44), 2)
 
-		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent):
-				teamBabylonia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
-				
-		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getGame().getGameTurnYear() >= -3000 and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent2):
-				teamBabylonia.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
+			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() not in [iIndependent, iCarthage] and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(58, 43).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(58, 44).getNumUnits()):
+					unit = gc.getMap().plot(58, 44).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(58, 43, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 2)
+				utils.makeUnit(iArcher, iCarthage, (58, 44), 2)
+				utils.makeUnit(iCatapult, iCarthage, (58, 44), 2)
+
+			if gc.getMap().plot(58, 44).isCity() and gc.getMap().plot(58, 44).getPlotCity().getOwner() not in [iIndependent, iCarthage] and not gc.getTeam(gc.getMap().plot(58, 44).getPlotCity().getOwner()).isVassal(iCarthage):
+				teamCarthage.declareWar(gc.getMap().plot(58, 44).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
+				for iUnit in range(gc.getMap().plot(58, 43).getNumUnits()):
+					unit = gc.getMap().plot(58, 43).getUnit(iUnit)
+					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
+						unit.setXY(58, 44, True, True, False)
+				utils.makeUnit(iLightSwordsman, iCarthage, (58, 43), 1)
+				utils.makeUnit(iArcher, iCarthage, (58, 43), 1)
+				utils.makeUnit(iCatapult, iCarthage, (58, 43), 1)
+
+		if gc.getGame().getGameTurn() == 1 and utils.getHumanID() != iBabylonia:
+			for iUnit in range(gc.getMap().plot(76, 40).getNumUnits()):
+				unit = gc.getMap().plot(76, 40).getUnit(iUnit)
+				if unit.getUnitType() == gc.getInfoTypeForString("UNIT_BABYLONIAN_ASHARITTU_BOWMAN"):
+					unit.setXY(77, 37, True, True, False)
+
+		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(77,37).isCity() and gc.getMap().plot(77,37).getPlotCity().getOwner() == iBabylonia and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent):
+			teamBabylonia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
 
 		if gc.getGame().getGameTurnYear() <= -1700 and gc.getGame().getGameTurnYear() >= -2200 and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
 			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
@@ -961,16 +1042,16 @@ class RiseAndFall:
 			if iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6:
 				self.initBirth(iGameTurn, tBirth[iLoopCiv], iLoopCiv)
 
-		if iGameTurn == getTurnForYear(600):
-			if utils.getScenario() == i600AD:  #late start condition
-				tTL, tBR = Areas.tBirthArea[iChina]
-				if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further north
-				lPlots = utils.getPlotList(tTL, tBR)
-				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, lPlots)
-				self.convertSurroundingPlotCulture(iChina, lPlots)
-				utils.flipUnitsInArea(lPlots, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
-				utils.flipUnitsInArea(lPlots, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ
-				utils.flipUnitsInArea(lPlots, iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+		#if iGameTurn == getTurnForYear(600):
+		#	if utils.getScenario() == i600AD:  #late start condition
+		#		tTL, tBR = Areas.tBirthArea[iChina]
+		#		if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further north
+		#		lPlots = utils.getPlotList(tTL, tBR)
+		#		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, lPlots)
+		#		self.convertSurroundingPlotCulture(iChina, lPlots)
+		#		utils.flipUnitsInArea(lPlots, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+		#		utils.flipUnitsInArea(lPlots, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+		#		utils.flipUnitsInArea(lPlots, iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
 
 		#kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
@@ -1585,24 +1666,24 @@ class RiseAndFall:
 				if iCiv == iTurkey:
 					data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
 
-				if iCiv == iItaly:
-					utils.removeCoreUnits(iItaly)
-					cityList = utils.getCitiesInCore(iItaly, False)
-					i, j = Areas.getCapital(iRome)
-					pRomePlot = gc.getMap().plot(i, j)
-					if pRomePlot.isCity():
-						cityList.append(pRomePlot.getPlotCity())
-					for city in cityList:
-						if city.getPopulation() < 5: city.setPopulation(5)
-						city.setHasRealBuilding(iGranary, True)
-						city.setHasRealBuilding(iLibrary, True)
-						city.setHasRealBuilding(iCourthouse, True)
-						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
-
-				lPlots = utils.surroundingPlots(tCapital, 3)
-				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned
+				#if iCiv == iItaly:
+				#	utils.removeCoreUnits(iItaly)
+				#	cityList = utils.getCitiesInCore(iItaly, False)
+				#	i, j = Areas.getCapital(iRome)
+				#	pRomePlot = gc.getMap().plot(i, j)
+				#	if pRomePlot.isCity():
+				#		cityList.append(pRomePlot.getPlotCity())
+				#	for city in cityList:
+				#		if city.getPopulation() < 5: city.setPopulation(5)
+				#		city.setHasRealBuilding(iGranary, True)
+				#		city.setHasRealBuilding(iLibrary, True)
+				#		city.setHasRealBuilding(iCourthouse, True)
+				#		if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
+										
+				lPlots = utils.surroundingPlots(tCapital, 0)
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
 				self.assignTechs(iCiv)
 				data.players[iCiv].iPlagueCountdown = -iImmunity
 				utils.clearPlague(iCiv)
@@ -1641,19 +1722,19 @@ class RiseAndFall:
 
 
 	def birthInForeignBorders(self, iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
-		if iCiv == iItaly:
-			utils.removeCoreUnits(iItaly)
-			cityList = self.getCitiesInCore(iItaly, False)
-			x, y = Areas.getCapital(iRome)
-			pRomePlot = gc.getMap().plot(x, y)
-			if pRomePlot.isCity():
-				cityList.append(pRomePlot.getPlotCity())
-			for pCity in cityList:
-				if city.getPopulation() < 5: city.setPopulation(5)
-				city.setHasRealBuilding(iGranary, True)
-				city.setHasRealBuilding(iLibrary, True)
-				city.setHasRealBuilding(iCourthouse, True)
-				if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
+		#if iCiv == iItaly:
+		#	utils.removeCoreUnits(iItaly)
+		#	cityList = self.getCitiesInCore(iItaly, False)
+		#	x, y = Areas.getCapital(iRome)
+		#	pRomePlot = gc.getMap().plot(x, y)
+		#	if pRomePlot.isCity():
+		#		cityList.append(pRomePlot.getPlotCity())
+		#	for pCity in cityList:
+		#		if city.getPopulation() < 5: city.setPopulation(5)
+		#		city.setHasRealBuilding(iGranary, True)
+		#		city.setHasRealBuilding(iLibrary, True)
+		#		city.setHasRealBuilding(iCourthouse, True)
+		#		if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 
 		iNumCities = gc.getPlayer(iCiv).getNumCities()
 
@@ -1792,7 +1873,7 @@ class RiseAndFall:
 			lPlots = lPlots2
 
 		for city in utils.getAreaCities(lPlots):
-			if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
+			#if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
 
 			if city.getOwner() != iPlayer:
 				lCities.append(city)
@@ -2109,13 +2190,13 @@ class RiseAndFall:
 
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
-			if iTeamX in [iPersia, iByzantium, iRussia]:
+			if iTeamX in lMongolCivs:
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols(iTeamX):
 
 					data.setFirstContactMongols(iTeamX, False)
 
 					teamTarget = gc.getTeam(iTeamX)
-						
+					iNumTargets = 3
 					if iTeamX == iArabia:
 						tTL = (73, 31)
 						tBR = (84, 43)
@@ -2124,16 +2205,17 @@ class RiseAndFall:
 						tTL = (73, 37)
 						tBR = (86, 48)
 						iDirection = DirectionTypes.DIRECTION_NORTH
-					elif iTeamX == iByzantium:
+					elif iTeamX == iTurkey:
 						tTL = (68, 41)
 						tBR = (77, 46)
+						iNumTargets = 1
 						iDirection = DirectionTypes.DIRECTION_EAST
 					elif iTeamX == iRussia:
 						tTL = (68, 48)
 						tBR = (81, 62)
 						iDirection = DirectionTypes.DIRECTION_EAST
 
-					lTargetList = utils.getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
+					lTargetList = utils.getBorderPlots(iTeamX, tTL, tBR, iDirection, iNumTargets)
 					
 					if not lTargetList: return
 
@@ -2599,11 +2681,14 @@ class RiseAndFall:
 				teamEgypt.declareWar(iCarthage, False, WarPlanTypes.WARPLAN_TOTAL)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			#utils.makeUnit(iSpearman, iCiv, tPlot, 1)
-			utils.makeUnit(iWorkboat, iCiv, (58, 40), 2)
+			utils.makeUnit(iWorkboat, iCiv, (58, 40), 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCarthage)
+			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 			pCarthage.initUnit(iGalley, 58, 40, UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 			utils.makeUnit(iSettler, iCiv, (58, 40), 1)
+			utils.makeUnit(iArcher, iCiv, (58, 40), 1)
 			pCarthage.initUnit(iGalley, 58, 40, UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-			utils.makeUnit(iArcher, iCiv, (58, 40), 3)
+			utils.makeUnit(iWorker, iCiv, (58, 40), 2)
 			pCarthage.initUnit(iWarGalley, 58, 40, UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iPolynesia:
 			tSeaPlot = (4, 19)
@@ -2759,43 +2844,38 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iCiv, tPlot, 1)
 			if utils.getHumanID() != iSpain:
 				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
-			utils.createMissionaries(iCiv, 1)
+				#utils.createMissionaries(iCiv, 1)
+				utils.makeUnit(iCatholicMissionary, iCiv, tPlot, 1)
 			if utils.getScenario() == i600AD: #late start condition
 				utils.makeUnit(iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
 		elif iCiv == iFrance:
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
-			utils.createMissionaries(iCiv, 1)
+			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+			if utils.getHumanID() != iCiv:
+				utils.createMissionaries(iCiv, 1)
 		elif iCiv == iEngland:
-			#if utils.getHumanID() != iEngland:
-			#	utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
-			#	utils.createSettlers(iCiv, 2)
-			#	utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			#else:
-			#	utils.createSettlers(iCiv, 3)
-			#	utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			
-			utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			
-			utils.createMissionaries(iCiv, 1)
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:
-				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
-				pEngland.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tPlot, 1)
-				utils.makeUnit(iCrossbowman, iCiv, tPlot, 1)
-				utils.makeUnit(iGalley, iCiv, tSeaPlot, 2)
+			if utils.getHumanID() != iEngland:
+				utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
+				utils.createMissionaries(iCiv, 1)
+				tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+				if tSeaPlot:
+					utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
+					pEngland.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+					utils.makeUnit(iSettler, iCiv, tPlot, 1)
+					utils.makeUnit(iCrossbowman, iCiv, tPlot, 1)
+					utils.makeUnit(iGalley, iCiv, tSeaPlot, 2)
 		elif iCiv == iHolyRome:
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnitAI(iSwordsman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-			utils.makeUnitAI(iLancer, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-			utils.makeUnitAI(iCatapult, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-			utils.createMissionaries(iCiv, 1)
+			#utils.makeUnitAI(iLancer, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+			#utils.makeUnitAI(iCatapult, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+			#utils.createMissionaries(iCiv, 1)
 		elif iCiv == iRussia:
 			utils.createSettlers(iCiv, 4)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
@@ -2831,15 +2911,15 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, 2)
 		elif iCiv == iPoland:
 			iNumSettlers = 1
-			if utils.getHumanID() == iPoland: iNumSettlers = 2
+			#if utils.getHumanID() == iPoland: iNumSettlers = 2
 			utils.createSettlers(iCiv, iNumSettlers)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(iLancer, iCiv, tPlot, 2)
+			#utils.makeUnit(iLancer, iCiv, tPlot, 2)
 			if utils.getHumanID() != iPoland:
-				utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
-			utils.makeUnit(iLancer, iCiv, tPlot, 1)
-			utils.createMissionaries(iCiv, 1)
+				#utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
+				utils.createMissionaries(iCiv, 1)
+			#utils.makeUnit(iLancer, iCiv, tPlot, 1)
 		elif iCiv == iTurkey:
 			utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
@@ -2872,15 +2952,16 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iCiv, tPlot, 1)
 		elif iCiv == iItaly:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
-			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
-			utils.makeUnit(iTrebuchet, iCiv, tPlot, 3)
-			utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnitAI(iHeavySpearman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			#utils.makeUnit(iTrebuchet, iCiv, tPlot, 3)
+			if utils.getHumanID() != iCiv:
+				utils.createMissionaries(iCiv, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
-				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
+				#utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iCog, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iHeavyGalley, iCiv, tSeaPlot, 1)
+				#utils.makeUnit(iHeavyGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iMongolia:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
@@ -3133,11 +3214,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iFrance:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-		elif iCiv == iEngland:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-			#if utils.getHumanID() != iEngland:
-			#	utils.makeUnit(iWorker, iCiv, tPlot, 2)
-			#else: utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		#elif iCiv == iEngland:
+		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iHolyRome:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iRussia:
@@ -3150,13 +3228,13 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iPoland:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-			if utils.getHumanID() != iPoland:
-				iRand = gc.getGame().getSorenRandNum(5, 'Random city spot')
-				if iRand == 0: tCityPlot = (65, 55) # Memel
-				elif iRand == 1: tCityPlot = (65, 54) # Koenigsberg
-				else: tCityPlot = (64, 54) # Gdansk
-				utils.makeUnit(iSettler, iCiv, tCityPlot, 1)
-				utils.makeUnit(iLongbowman, iCiv, tCityPlot, 1)
+			#if utils.getHumanID() != iPoland:
+			#	iRand = gc.getGame().getSorenRandNum(5, 'Random city spot')
+			#	if iRand == 0: tCityPlot = (65, 55) # Memel
+			#	elif iRand == 1: tCityPlot = (65, 54) # Koenigsberg
+			#	else: tCityPlot = (64, 54) # Gdansk
+			#	utils.makeUnit(iSettler, iCiv, tCityPlot, 1)
+			#	utils.makeUnit(iLongbowman, iCiv, tCityPlot, 1)
 		elif iCiv == iTurkey:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 3)
@@ -3164,8 +3242,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iInca:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
-		elif iCiv == iItaly:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		#elif iCiv == iItaly:
+		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 		elif iCiv == iAztecs:

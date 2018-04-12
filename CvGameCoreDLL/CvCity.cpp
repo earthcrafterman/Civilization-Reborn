@@ -1961,7 +1961,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		}
 	}
 
-	if (eUnit == GC.getInfoTypeForString("UNIT_HITTITE_HULUGANNI") && (getX() != 72 || getY() != 44))
+	if (getOwner() == BABYLONIA && !isHuman() && eUnit == GC.getInfoTypeForString("UNIT_ARCHER") && GC.getGameINLINE().getGameTurnYear() < -2200)
 		return false;
 
 	if (!(GET_PLAYER(getOwnerINLINE()).canTrain(eUnit, bContinue, bTestVisible, bIgnoreCost)))
