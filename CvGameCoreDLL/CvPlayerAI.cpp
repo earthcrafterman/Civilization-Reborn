@@ -5118,6 +5118,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == THEOLOGY)
 										iValue *= 2;*/
 									break;
+								case VIETNAM:
+									if (iI == CURRENCY || iI == COMMUNE || iI == HERITAGE)
+										iValue *= 2;
+									if (iI == FORTIFICATION)
+										iValue *= 4;
+									if (iI == OPTICS)
+										iValue /= 2;
+									break;
                                 case KOREA:
                                     if (iI == OPTICS)
                                         iValue /= 4;

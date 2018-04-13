@@ -79,6 +79,14 @@ iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
+iChinaVietnamYear1 = 50
+iChinaVietnamYear2 = 1400
+tChinaVietnamTL = (100, 35)
+tChinaVietnamBR = (103, 38)
+
+tConquestChinaVietnam1 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
+tConquestChinaVietnam2 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
+
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iChineseUnificationYear = -300
@@ -89,7 +97,7 @@ tConquestQinChina = (10, iChina, iIndependent, tChinaTL, tChinaBR, 2, iChineseUn
 tConquestQinChina2 = (10, iChina, iIndependent2, tChinaTL, tChinaBR, 2, iChineseUnificationYear + 50, 10) #Chian deletes the conquerors
 
 
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestQinChina, tConquestQinChina2]
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestQinChina, tConquestQinChina2, tConquestChinaVietnam1, tConquestChinaVietnam2]
 
 class AIWars:
 		
@@ -139,6 +147,9 @@ class AIWars:
 		self.checkConquest(tConquestQinChina2)
 		
 		
+		self.checkConquest(tConquestChinaVietnam1)
+		self.checkConquest(tConquestChinaVietnam2)
+		
 		if iGameTurn == data.iNextTurnAIWar:
 			self.planWars(iGameTurn)
 			
@@ -162,6 +173,9 @@ class AIWars:
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
 		
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
+		
+		# Only Chinsesd conquerors for human Vietnam
+		if iPreferredTarget == iVietnam and utils.getHumanID() != iVietnam: return
 		
 		self.spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
 		data.lConquest[iID] = True

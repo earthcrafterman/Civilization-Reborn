@@ -731,6 +731,14 @@
 		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_VIE_TITLE</Tag>
+		<English>The Power of Guerilla Warfare:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIE</Tag>
+		<English>Units in cities, wooded plots and on hills have 2 first extra strikes</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raid:</English>
 		<French>Le Pouvoir du Pillage :</French>

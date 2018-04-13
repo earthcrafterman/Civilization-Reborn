@@ -618,4 +618,16 @@
 		<Tag>TXT_KEY_LEADER_PHILIP_AUGUSTUS</Tag>
 		<English>Philip Augustus</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TRUNG</Tag>
+		<English>Trung Sisters</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CHIEU_HOANG</Tag>
+		<English>Chieu Hoang</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HO_CHI_MINH</Tag>
+		<English>Ho Chi Minh</English>
+	</TEXT>
 </Civ4GameText>

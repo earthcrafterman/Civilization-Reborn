@@ -2489,6 +2489,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case ETHIOPIA:
 		break;
+	case VIETNAM:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
+		aiUnitAIVal[UNITAI_COLLATERAL] *= 3;
+		aiUnitAIVal[UNITAI_COLLATERAL] /= 2;
+		break;
     case KOREA:
         aiUnitAIVal[UNITAI_EXPLORE] /= 2;
         aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
@@ -3265,6 +3271,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == KHAJURAHO) iTempValue *= 2;
 										break;
 									case ETHIOPIA:
+										break;
+									case VIETNAM:
 										break;
                                     case KOREA:
                                         break;

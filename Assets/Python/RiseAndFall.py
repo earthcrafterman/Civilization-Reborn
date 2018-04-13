@@ -2529,6 +2529,9 @@ class RiseAndFall:
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+		elif iCiv == iVietnam:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			for iUnit in [iHorseArcher, iCrossbowman]:
 				utils.makeUnit(iUnit, iCiv, tPlot, 2)
@@ -2672,7 +2675,6 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(iImmortal, iCiv, tPlot, 2)
-			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 		elif iCiv == iCarthage:
@@ -2740,6 +2742,16 @@ class RiseAndFall:
 			tSeaPlot = (74, 29)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iVietnam:
+			utils.createSettlers(iCiv, 2)
+			utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iVietnam)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
 			#utils.createMissionaries(iCiv, 1)
@@ -3191,6 +3203,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iVietnam:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		#elif iCiv == iKorea:
 		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
@@ -3417,7 +3431,7 @@ class RiseAndFall:
 					lCities.append(gc.getMap().plot(i, j).getPlotCity())
 
 			if len(lCities) == 1:
-				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], (x, y))
+				self.MoveCity(gc.getPlayer(lCities[0].getOwner()), lCities[0], iCiv, (x, y))
 				return true
 			if len(lCities) > 1:
 				lbest = lCities[0]

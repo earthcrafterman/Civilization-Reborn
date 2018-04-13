@@ -1157,6 +1157,55 @@ iCivEthiopia : {
 		"Aman Andom", # 20th
 	],
 },
+iCivVietnam : {
+	iGreatProphet : [
+		u"Pháp Hiên", # 7th
+		iMedieval,
+		u"Giác Hài", # 11th
+		u"Tuê Trung", # 13th
+		iGlobal,
+		u"Ngô Van Chiêu", # 20th
+	],
+	iGreatArtist : [
+		u"Dang Dung", # 14th
+		iIndustrial,
+		u"fDoàn Thi Diem", # 18th
+		u"Nguyen Du", # 18th
+		u"fHó Xuân Huong", # 18th
+		u"Nguyen Công Trú", # 19th
+		u"fNguyen Thi Bích", # 19th
+	],
+	iGreatScientist : [
+		u"Chu Van An", # 14th
+		iRenaissance,
+		u"Ngô Si Liên", # 15th
+		u"fNguyen Thi Duê", # 17th
+		iIndustrial,
+		u"Lê Quý Dôn", # 18th
+	],
+	iGreatEngineer : [
+		u"Nguyen An", # 15th
+	],
+	iGreatStatesman : [
+		u"Lý Nhân Tông", # 11th
+		u"Nguyen Trãi", # 15th
+		u"Lê Thánh Tông", # 15th
+		iRenaissance,
+		u"Nguyen Bình Khiêm", # 16th
+		iIndustrial,
+		u"Phan Dinh Phùng", # 19th
+	],
+	iGreatGeneral : [
+		u"fTrieu Thi Trinh", # 3rd
+		u"Lý Thuòng Kiêt", # 11th
+		iRenaissance,
+		u"Le Loi", # 15th
+	],
+	iGreatSpy : [
+		u"Pham Ngoc Thào", # 20th
+		u"Pham Xuan An", # 20th
+	],
+},
 iCivKorea : {
 	iGreatProphet : [
 		"Jinul", # 12th

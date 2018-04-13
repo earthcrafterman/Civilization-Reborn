@@ -1861,6 +1861,38 @@
 		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_TITLE</Tag>
+		<English>Water Puppetry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1</Tag>
+		<English>Have 8000 culture in 1200 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_EPIC</Tag>
+		<English>Have 12000 culture in 1200 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_MARATHON</Tag>
+		<English>Have 24000 culture in 1200 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE2_TITLE</Tag>
+		<English>The Tale of Le Loi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE2</Tag>
+		<English>Create three great generals by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE3_TITLE</Tag>
+		<English>Vietcong</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE3</Tag>
+		<English>Never lose a single city until 1950 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
 		<English>Norman Conquests</English>
 		<German>Normannische Eroberungen</German>

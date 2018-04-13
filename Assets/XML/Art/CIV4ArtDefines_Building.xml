@@ -2767,5 +2767,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Riksbank/button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VIETNAM_DINH</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Dinh/Asian_Courthouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Dinh/Button_Dinh.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

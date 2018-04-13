@@ -1307,6 +1307,7 @@ enum PlayerTypes				// Exposed to Python
 	ROME,
 	TAMILS,
 	ETHIOPIA,
+	VIETNAM,
 	KOREA,
 	MAYA,
 	BYZANTIUM,
