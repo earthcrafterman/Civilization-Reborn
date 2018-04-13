@@ -547,7 +547,7 @@ iCivMexico,	# Aztecs
 tResurrectionIntervals = (
 [(-1550, -1077), (900, 1300), (1800, 2020)], #Egypt
 [(600, 2020)], #China
-[(-3000, -500)], #Babylonia
+[(-3000, -2500), (-1300, -500)], #Babylonia
 [(-3000, -700)], #Assyria
 [],		# Harappa
 [(1820, 2020)], #Greece
