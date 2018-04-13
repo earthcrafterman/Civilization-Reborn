@@ -684,10 +684,12 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1500):
 			expire(iVietnam, 1)
 			
-		# third goal: never lose a single city until 1950 AD
+		# third goal: never lose a single city until 1950 AD and allow no foreign powers in South Asia in 1950 AD
 		if iGameTurn == getTurnForYear(1950):
-			if isPossible(iVietnam, 2):
+			if isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs):
 				win(iVietnam, 2)
+			else:
+				lose(iVietnam, 2)
 
 	elif iPlayer == iKorea:
 	
@@ -3892,6 +3894,9 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			iGenerals = data.iVietnamGreatGenerals
 			aHelp.append(getIcon(iGenerals >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS", (iGenerals, 3)))
+		elif iGoal == 2:
+			bSouthAsia = isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs)
+			aHelp.append(getIcon(bSouthAsia) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES", ()))
 
 	elif iPlayer == iKorea:
 		if iGoal == 1:
