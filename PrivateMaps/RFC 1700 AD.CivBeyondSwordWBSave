@@ -285,7 +285,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=11
+	Team=12
 	LeaderType=LEADER_TRUNG
 	CivType=CIVILIZATION_VIETNAM
 	PlayableCiv=0

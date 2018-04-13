@@ -1076,7 +1076,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in utils.surroundingPlots(vic.tVienna):
 			return 52
 			
-	elif iPlayer == iThailand:
+	elif iPlayer in [iThailand, iVietnam]:
 		if utils.isPlotInArea((x, y), vic.tSouthAsiaTL, vic.tSouthAsiaBR):
 			return 53
 			
