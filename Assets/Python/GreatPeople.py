@@ -2701,6 +2701,8 @@ iCivTibet : {
 		"Ngawang Namgyal", # 17th
 	],
 },
+iCivPhilippines :{
+},
 iCivPoland : {
 	iGreatProphet : [
 		"Wojciech", # 10th

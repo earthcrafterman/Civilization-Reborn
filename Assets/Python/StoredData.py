@@ -184,6 +184,7 @@ class GameData:
 		
 		self.iImmigrationTimer = 0
 		self.iRomanVictories = 0
+		self.lPhilippineEmbassies = []
 		
 		self.lByzantineBribes = []
 		

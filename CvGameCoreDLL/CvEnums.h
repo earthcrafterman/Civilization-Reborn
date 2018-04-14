@@ -1322,6 +1322,7 @@ enum PlayerTypes				// Exposed to Python
 	HOLY_ROME,
 	RUSSIA,
 	MALI,
+	PHILIPPINES,
 	POLAND,
 	PORTUGAL,
 	INCA,

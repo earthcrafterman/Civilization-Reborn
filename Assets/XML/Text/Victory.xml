@@ -1552,6 +1552,38 @@
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI1_TITLE</Tag>
+		<English>Txxx</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI1</Tag>
+		<English>Control 7 Embassies in 1400 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI2_TITLE</Tag>
+		<English>More traders than warriors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI2</Tag>
+		<English>Acquire 8 different happiness resources by 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_TITLE</Tag>
+		<English>Piloncitos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3</Tag>
+		<English>Have 5000 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_EPIC</Tag>
+		<English>Have 7500 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_MARATHON</Tag>
+		<English>Have 15000 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
 		<English>The Folwark System</English>
 		<German>Das Folwark-System</German>
@@ -3135,5 +3167,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_EMBASSIES</Tag>
+		<English>Embassies: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EMBASSIES_CIVS</Tag>
+		<English>Civs with embassy: %s1</English>
 	</TEXT>
 </Civ4GameText>

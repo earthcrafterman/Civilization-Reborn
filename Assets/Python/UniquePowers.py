@@ -64,6 +64,9 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
+			
+		if iGameTurn >= getTurnForYear(tBirth[iPhilippines]) and pPhilippines.isAlive():
+			utils.doPhilippineEmbassy()
 		
 		data.bBabyloniaTechReceived = False
 					
@@ -570,3 +573,4 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
+		

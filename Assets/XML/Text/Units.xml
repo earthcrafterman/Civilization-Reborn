@@ -1576,4 +1576,12 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY</Tag>
+		<English>Balangay</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Balangay[COLOR_REVERT], the Philippine replacement for the the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT], is cheaper and has a higher withdraw chance.</English>
+	</TEXT>
 </Civ4GameText>

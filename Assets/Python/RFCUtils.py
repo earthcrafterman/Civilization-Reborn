@@ -1504,6 +1504,36 @@ class RFCUtils:
 
 		popup.launch(False)
 		
+	def canEstablishEmbassy(self, unit):
+		plot = unit.plot()
+		
+		if not plot.isCity(): return False
+		
+		city = plot.getPlotCity()
+		iOwner = city.getOwner()
+		if iOwner == iPhilippines or iOwner in data.lPhilippineEmbassies: return False
+		
+		if teamPhilippines.isOpenBorders(iOwner) and gc.getPlayer(iOwner).AI_getAttitude(iPhilippines) >= AttitudeTypes.ATTITUDE_PLEASED: return True
+		
+		return False
+		
+	def doPhilippineEmbassy(self, unit = None):
+		lOldEmbassies = data.lPhilippineEmbassies
+		if unit is not None:
+			lOldEmbassies.append(unit.plot().getPlotCity().getOwner())
+			unit.finishMoves()
+		if lOldEmbassies:
+			lNewEmbassies = []
+			for iCiv in lOldEmbassies:
+				pCiv = gc.getPlayer(iCiv)
+				if pCiv.isAlive() and pCiv.AI_getAttitude(iPhilippines) >= AttitudeTypes.ATTITUDE_PLEASED:
+					lNewEmbassies.append(iCiv)
+			data.lPhilippineEmbassies = lNewEmbassies
+			if lNewEmbassies:
+				iNumEmbassies = len(lNewEmbassies)
+				capital = gc.getPlayer(iPhilippines).getCapitalCity()
+				capital.setBuildingCommerceChange (gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, iNumEmbassies*2)
+		
 	def linreg(self, lTuples):
 		n = len(lTuples)
 		

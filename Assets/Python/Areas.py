@@ -127,6 +127,7 @@ tCapitals = (
 (53, 54), # London
 (59, 51), # Frankfurt
 (73, 54), # Moskow
+(109, 33), # Tondo (Manila)
 (51, 30), # Djenne
 (65, 51), # Krakow
 (49, 43), # Lisboa
@@ -215,6 +216,7 @@ tBirthArea = (
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
 ((67, 50), 	(74, 58)), 	# Russia
+((107, 30),	(111, 36)),	# Philippines
 ((50, 29), 	(55, 32)), 	# Mali
 ((63, 50), 	(67, 55)), 	# Poland
 ((44, 42), 	(50, 44)), 	# Portugal
@@ -301,6 +303,7 @@ tCoreArea = (
 ((50, 53),	(54, 60)),	# England
 ((58, 48),	(64, 54)),	# HolyRome
 ((68, 49),	(75, 59)),	# Russia
+((108, 30),	(110, 36)),	# Philippines
 ((50, 29), 	(55, 32)), 	# Mali
 ((63, 50),	(67, 55)),	# Poland
 ((44, 42),	(50, 44)),	# Portugal
@@ -407,6 +410,7 @@ tNormalArea = (
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(65, 54)), 	# Holy Rome
 ((68, 49), 	(83, 62)), 	# Russia
+((107, 30),	(111, 36)),	# Philippines
 ((48, 28), 	(57, 34)), 	# Mali
 ((63, 50), 	(69, 55)), 	# Poland
 ((44, 41), 	(50, 44)), 	# Portugal
@@ -491,6 +495,7 @@ tBroaderArea = (
 ((48, 53), 	(54, 60)), 	# England
 ((58, 43), 	(64, 54)), 	# Holy Rome
 ((65, 48), 	(92, 59)), 	# Russia
+((107, 30),	(111, 36)),	# Philippines
 ((48, 26), 	(59, 34)), 	# Mali
 ((63, 50), 	(67, 55)), 	# Poland
 ((49, 40), 	(51, 45)), 	# Portugal
