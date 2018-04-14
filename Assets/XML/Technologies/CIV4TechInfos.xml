@@ -2075,7 +2075,7 @@
 			<Description>TXT_KEY_TECH_GUNPOWDER</Description>
 			<Civilopedia>TXT_KEY_TECH_GUNPOWDER_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iCost>1000</iCost>
+			<iCost>900</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>36</iAsset>
@@ -2111,7 +2111,7 @@
 			<Description>TXT_KEY_TECH_COMPANIES</Description>
 			<Civilopedia>TXT_KEY_TECH_COMPANIES_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iCost>950</iCost>
+			<iCost>900</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>36</iAsset>
@@ -2133,6 +2133,9 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COMPASS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_COMMUNE</PrereqTech>
 				<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
@@ -2148,7 +2151,7 @@
 			<Description>TXT_KEY_TECH_FINANCE</Description>
 			<Civilopedia>TXT_KEY_TECH_FINANCE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iCost>950</iCost>
+			<iCost>900</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>36</iAsset>
@@ -2386,9 +2389,6 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_COMPASS</PrereqTech>
-			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_COMPANIES</PrereqTech>
 				<PrereqTech>TECH_FINANCE</PrereqTech>
@@ -2504,6 +2504,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COMPANIES</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_HUMANITIES</PrereqTech>
 				<PrereqTech>TECH_PRINTING</PrereqTech>

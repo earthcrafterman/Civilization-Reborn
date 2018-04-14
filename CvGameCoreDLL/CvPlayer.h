@@ -1316,8 +1316,6 @@ public:
 
 	bool canUseSlaves() const;
 
-	void updateCultureRanks() const;
-
 	bool m_bTurnPlayed;
 
 protected:

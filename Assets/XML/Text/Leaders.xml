@@ -546,4 +546,12 @@
 		<Tag>TXT_KEY_LEADER_PHILIP_AUGUSTUS</Tag>
 		<English>Philip Augustus</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ABDULAZIZ</Tag>
+		<English>Ibn Saud</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DHARMAPALA</Tag>
+		<English>Dharmapala</English>
+	</TEXT>
 </Civ4GameText>

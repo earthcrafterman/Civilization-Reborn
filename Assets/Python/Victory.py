@@ -223,6 +223,7 @@ dWonderGoals = {
 	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
+	iIndonesia : (0, [iBorobudur], True),
 	iMali: (1, [iUniversityOfSankore], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iLeaningTower], True),
 	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
@@ -775,21 +776,21 @@ def checkTurn(iGameTurn, iPlayer):
 		# first goal: be the most advanced civilization in 1300 AD
 		if iGameTurn == getTurnForYear(1300):
 			if isBestPlayer(iArabia, playerTechs):
-				win(iArabia, 0)
+				win(iArabia, 1)
 			else:
-				lose(iArabia, 0)
+				lose(iArabia, 1)
 				
 		# second goal: control or vassalize Spain, the Maghreb, Egypt, Mesopotamia and Persia in 1300 AD
-		if iGameTurn == getTurnForYear(1300):
+		if iGameTurn == getTurnForYear(750):
 			bEgypt = isControlledOrVassalized(iArabia, Areas.getCoreArea(iEgypt, False))
 			bMaghreb = isControlledOrVassalized(iArabia, utils.getPlotList(tCarthageTL, tCarthageBR))
 			bMesopotamia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iBabylonia, False))
 			bPersia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iPersia, False))
 			bSpain = isControlledOrVassalized(iArabia, Areas.getNormalArea(iSpain, False))
 			if bSpain and bMaghreb and bEgypt and bMesopotamia and bPersia:
-				win(iArabia, 1)
+				win(iArabia, 0)
 			else:
-				lose(iArabia, 1)
+				lose(iArabia, 0)
 		
 		# third goal: spread Islam to 30% of the cities in the world
 		if isPossible(iArabia, 2):
@@ -799,12 +800,12 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iTibet:
 	
 		# first goal: acquire five cities by 1000 AD
-		if iGameTurn == getTurnForYear(1000):
+		if iGameTurn == getTurnForYear(850):
 			expire(iTibet, 0)
 			
 		# second goal: spread Buddhism to 25% by 1400 AD
 		if isPossible(iTibet, 1):
-			if gc.getGame().calculateReligionPercent(iBuddhism) >= 25.0:
+			if gc.getGame().calculateReligionPercent(iBuddhism) >= 24.0:
 				win(iTibet, 1)
 				
 		if iGameTurn == getTurnForYear(1400):
@@ -815,17 +816,17 @@ def checkTurn(iGameTurn, iPlayer):
 			if countCitySpecialists(iTibet, Areas.getCapital(iPlayer), iSpecialistGreatProphet) >= 5:
 				win(iTibet, 2)
 				
-		if iGameTurn == getTurnForYear(1700):
+		if iGameTurn == getTurnForYear(1500):
 			expire(iTibet, 2)
 			
 	elif iPlayer == iIndonesia:
 	
 		# first goal: have the largest population in the world in 1300 AD
-		if iGameTurn == getTurnForYear(1300):
-			if isBestPlayer(iIndonesia, playerRealPopulation):
-				win(iIndonesia, 0)
-			else:
-				lose(iIndonesia, 0)
+		#if iGameTurn == getTurnForYear(1300):
+		#	if isBestPlayer(iIndonesia, playerRealPopulation):
+		#		win(iIndonesia, 0)
+		#	else:
+		#		lose(iIndonesia, 0)
 				
 		# second goal: acquire 10 different happiness resources by 1500 AD
 		if isPossible(iIndonesia, 1):
@@ -1607,8 +1608,11 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
 		if isPossible(iTibet, 0):
-			if pTibet.getNumCities() >= 5:
-				win(iTibet, 0)
+			pKashgar = gc.getMap().plot(89, 46).getPlotCity()
+			pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
+			if pKashgar and pPataliputra:
+				if pKashgar.getOwner() == iPlayer and pPataliputra.getOwner() == iPlayer:
+					win(iTibet, 0)
 					
 	# first English goal: colonize every continent by 1730 AD
 	elif iPlayer == iEngland:
@@ -3632,10 +3636,10 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (iRaidGold, utils.getTurns(3000))))
 
 	elif iPlayer == iArabia:
-		if iGoal == 0:
+		if iGoal == 1:
 			iMostAdvancedCiv = getBestPlayer(iArabia, playerTechs)
 			aHelp.append(getIcon(iMostAdvancedCiv == iArabia) + localText.getText("TXT_KEY_VICTORY_MOST_ADVANCED_CIV", (str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),)))
-		elif iGoal == 1:
+		elif iGoal == 0:
 			bEgypt = isControlledOrVassalized(iArabia, Areas.getCoreArea(iEgypt, False))
 			bMaghreb = isControlledOrVassalized(iArabia, utils.getPlotList(tCarthageTL, tCarthageBR))
 			bMesopotamia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iBabylonia, False))
@@ -3649,20 +3653,25 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iTibet:
 		if iGoal == 0:
-			iNumCities = pTibet.getNumCities()
-			aHelp.append(getIcon(iNumCities >= 5) + localText.getText("TXT_KEY_VICTORY_CITIES_ACQUIRED", (iNumCities, 5)))
+			pKashgar = gc.getMap().plot(89, 46).getPlotCity()
+			pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
+			bKashgar = False
+			bPataliputra = False
+			if pKashgar and pPataliputra:
+				bKashgar = pKashgar.getOwner() == iPlayer
+				bPataliputra = pPataliputra.getOwner() == iPlayer
+			aHelp.append(getIcon(bKashgar) + localText.getText("TXT_KEY_VICTORY_KASHGAR", ()) + getIcon(bPataliputra) + localText.getText("TXT_KEY_VICTORY_PATALIPUTRA", ()))
 		elif iGoal == 1:
 			fReligionPercent = gc.getGame().calculateReligionPercent(iBuddhism)
-			aHelp.append(getIcon(fReligionPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(iBuddhism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(25))))
+			aHelp.append(getIcon(fReligionPercent >= 24.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(iBuddhism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(25))))
 		elif iGoal == 2:
 			iCounter = countCitySpecialists(iTibet, Areas.getCapital(iTibet), iSpecialistGreatProphet)
 			aHelp.append(getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", ("Lhasa", iCounter, 5)))
 
 	elif iPlayer == iIndonesia:
 		if iGoal == 0:
-			iHighestCiv = getBestPlayer(iIndonesia, playerRealPopulation)
-			bHighest = (iHighestCiv == iIndonesia)
-			aHelp.append(getIcon(bHighest) + localText.getText("TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV", ()) + localText.getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
+			bBorobudur = data.getWonderBuilder(iBorobudur) == iIndonesia
+			aHelp.append(getIcon(bBorobudur) + localText.getText("TXT_KEY_BUILDING_BOROBUDUR", ()))
 		elif iGoal == 1:
 			iCounter = countHappinessResources(iIndonesia)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 10)))

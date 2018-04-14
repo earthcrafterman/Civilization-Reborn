@@ -5925,6 +5925,10 @@
 					<FeatureType>FEATURE_MARSH</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
+				<FeatureAttack>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
 			</FeatureImpassables>
 			<FeatureAttacks>
 				<FeatureAttack>
@@ -6887,12 +6891,22 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<iWithdrawalProb>30</iWithdrawalProb>
-			<iPlainsAttack>50</iPlainsAttack>
-			<iPlainsDefense>50</iPlainsDefense>
+			<iWithdrawalProb>0</iWithdrawalProb>
+			<iPlainsAttack>0</iPlainsAttack>
+			<iPlainsDefense>0</iPlainsDefense>
 			<iCultureGarrison>5</iCultureGarrison>
 			<iAsset>2</iAsset>
 			<iPower>8</iPower>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FLANKING1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DISENGAGE1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -7048,7 +7062,7 @@
 			</UnitAIs>
 			<PrereqTech>TECH_NOBILITY</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
-			<iCost>70</iCost>
+			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -7063,13 +7077,31 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<iWithdrawalProb>30</iWithdrawalProb>
-			<iCityAttack>50</iCityAttack>
-			<iPlainsAttack>50</iPlainsAttack>
-			<iPlainsDefense>50</iPlainsDefense>
+			<iWithdrawalProb>0</iWithdrawalProb>
+			<iCityAttack>0</iCityAttack>
+			<iPlainsAttack>0</iPlainsAttack>
+			<iPlainsDefense>0</iPlainsDefense>
 			<iCultureGarrison>5</iCultureGarrison>
 			<iAsset>2</iAsset>
 			<iPower>8</iPower>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FLANKING1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FLANKING2</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_CITY_RAIDER1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COVER</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -11252,7 +11284,6 @@
 			<Civilopedia>TXT_KEY_UNIT_CARAVEL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_CARAVEL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<bRivalTerritory>1</bRivalTerritory>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bMechanized>1</bMechanized>

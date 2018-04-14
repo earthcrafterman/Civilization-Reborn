@@ -291,7 +291,8 @@ tEraNames = (
 	'Dagou'			:	'Gaoxiong',
 	'Ayutthaya'		:	'Bangkok',
 	'York'			:	'Toronto',
-	'V&#232;neta'		:	'Venezia'
+	'V&#232;neta'		:	'Venezia',
+	'Al-Diriyah'		:	'Riyadh'
 },
 # modern
 {
@@ -4568,6 +4569,7 @@ dIdentifiers = {
 	"Ar-Riyad"		:	"Riyadh",
 	"Riyad"			:	"Riyadh",
 	"Riyadh"		:	"Riyadh",
+	'Al-Diriyah'		:	"Riyadh",
 	"Daqin"			:	"Roma",
 	"Hrwm"			:	"Roma",
 	"Rom"			:	"Roma",

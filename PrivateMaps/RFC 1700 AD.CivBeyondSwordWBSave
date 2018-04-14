@@ -43009,7 +43009,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=43
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=1,34,44,45,
 EndPlot
@@ -49393,6 +49393,7 @@ EndPlot
 BeginPlot
 	x=106,y=23
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_PEARL
 	PlotType=3
 	TeamReveal=38,44,
 EndPlot

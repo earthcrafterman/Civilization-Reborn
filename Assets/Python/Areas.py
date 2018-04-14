@@ -52,8 +52,14 @@ def getBirthExceptions(iPlayer):
 	return []
 	
 def getCoreArea(iPlayer, bReborn=None):
-	return getArea(iPlayer, tCoreArea, dCoreAreaExceptions, bReborn, dChangedCoreArea, dChangedCoreAreaExceptions)
-	
+	lPlots = []
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			plot = gc.getMap().plot(x, y)
+			if plot.isCore(iPlayer):
+				lPlots.append((x, y))
+	return lPlots
+				
 def getNormalArea(iPlayer, bReborn=None):
 	return getArea(iPlayer, tNormalArea, dNormalAreaExceptions, bReborn, dChangedNormalArea, dChangedNormalAreaExceptions)
 
@@ -70,7 +76,7 @@ def getRebirthArea(iPlayer):
 	
 def updateCore(iPlayer, lCore = []):
 	if len(lCore) == 0:
-		lCore = getCoreArea(iPlayer)
+		lCore = getArea(iPlayer, tCoreArea, dCoreAreaExceptions, isReborn(iPlayer), dChangedCoreArea, dChangedCoreAreaExceptions)
 	for x in range(iWorldX):
 		for y in range(iWorldY):
 			plot = gc.getMap().plot(x, y)
@@ -254,7 +260,7 @@ iGreece : [(64, 45), (65, 45), (66, 45)],
 iPersia : [(85, 37), (85, 38), (85, 39), (70, 37), (70, 38), (70, 39), (70, 40), (70, 41), (71, 37), (71, 38), (71, 39), (71, 40), (71, 41), (72, 37), (72, 38), (72, 39), (72, 40), (72, 41), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (74, 37), (74, 38), (74, 39), (74, 40), (74, 41), (75, 37), (75, 38), (75, 39), (75, 40), (75, 41), (76, 37), (76, 38), (76, 39), (76, 40), (76, 41), (77, 37), (77, 38), (77, 39), (77, 40), (77, 41), (78, 37), (78, 38), (78, 39), (78, 40), (78, 41)],
 iTamils : [(90, 33), (90, 34), (91, 34)],
 iArabia : [(82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)],
-iTibet : [(98, 42)],
+iTibet : [(98, 44)],
 iIndonesia : [(100, 31), (100, 30), (101, 29), (101, 30)],
 iMoors : [(58, 43), (58, 42)],
 iSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 43), (50, 44), (50, 42)],

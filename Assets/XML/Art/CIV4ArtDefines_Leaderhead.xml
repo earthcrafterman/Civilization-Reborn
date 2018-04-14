@@ -998,5 +998,13 @@
 			<NoShaderNIF>art/LeaderHeads/Richelieu/King_Dutch.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Richelieu/King_Dutch_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ABDULAZIZ</Type>
+			<Button>art/LeaderHeads/IbnSaud/IbnSaud_button.dds</Button>
+			<NIF>art/LeaderHeads/IbnSaud/IbnSaud.nif</NIF>
+			<KFM>art/LeaderHeads/IbnSaud/John II.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/IbnSaud/IbnSaud.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/IbnSaud/IbnSaud_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

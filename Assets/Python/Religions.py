@@ -98,7 +98,7 @@ class Religions:
 		self.spreadIslamIndonesia(iGameTurn)
 		
 		self.spreadHinduismDelhi(iGameTurn)
-		self.spreadBuddhismKorea(iGameTurn)
+		self.spreadBuddhism(iGameTurn)
 		
 		self.spreadOrthodoxy(iGameTurn)
 
@@ -121,11 +121,8 @@ class Religions:
 		if iReligion == iOrthodoxy:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iOrthodoxy)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iOrthodoxy)
-			#special: spread Orthodoxy in capital of founder
-			city = gc.getPlayer(iFounder).getCapitalCity()
-			if city:
-				city.spreadReligion(iOrthodoxy)
-		
+			self.foundReligion(tJerusalem, iOrthodoxy)
+			
 		if iReligion == iCatholicism:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
@@ -314,15 +311,23 @@ class Religions:
 			pSpreadCity.spreadReligion(iHinduism)
 
 ## BUDDHISM
-	def spreadBuddhismKorea(self, iGameTurn):
+	def spreadBuddhism(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iBuddhism): return
-		if iGameTurn > getTurnForYear(-30): return
 		
-		lKoreanCities = utils.getRegionCities([rKorea])
+		#Korea
+		if iGameTurn <= getTurnForYear(-30):			
+			lKoreanCities = utils.getRegionCities([rKorea])
+			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lKoreanCities, iBuddhism))
+			if pSpreadCity:
+				pSpreadCity.spreadReligion(iBuddhism)
 		
-		pSpreadCity = utils.getRandomEntry(self.getTargetCities(lKoreanCities, iBuddhism))
-		if pSpreadCity:
-			pSpreadCity.spreadReligion(iBuddhism)
+		#Indonesia
+		if iGameTurn <= getTurnForYear(850):
+		
+			lIndonesianCities = utils.getRegionCities([rIndonesia])
+			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lIndonesianCities, iBuddhism))
+			if pSpreadCity:
+				pSpreadCity.spreadReligion(iBuddhism)
 
 ## ISLAM
 

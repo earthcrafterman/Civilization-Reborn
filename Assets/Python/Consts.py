@@ -265,9 +265,9 @@ tBirth = (
 794, # 97, #660BC			# Japan
 790, # 177, #551AD			# Vikings
 620, # 183, #622AD			# Arabia
-630,					# Tibet
+618,					# Tibet
 650,					# Indonesia
-711,					# Moors
+756,					# Moors
 1065, # 193, #718AD			# Spain
 481, # 196, #751AD			# France
 800, # 187, #657AD			# Khmer
@@ -312,15 +312,15 @@ tFall = (
 1200,					# Polynesia
 651,					# Persia
 235, # crisis of the third century	# Rome
-1279,					# Tamils
+1070,					# Tamils
 960,					# Ethiopia
 1255, #Mongol invasion			# Korea
 900,					# Maya
 1204, #fourth crusade			# Byzantium
 2020,					# Japan
 1300,					# Vikings
-900,					# Arabia
-1500,					# Tibet
+909,					# Arabia
+1259,					# Tibet
 1500,					# Indonesia
 1500,					# Moors
 2020,					# Spain
@@ -504,19 +504,19 @@ tResurrectionIntervals = (
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
-[(-300, 600), (1300, 1650)], #Tamils
+[(1300, 1650)], #Tamils
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [(0, 800)], #Maya
 [(1100, 1453)], #Byzantium
 [(1800, 2020)], #Japan
 [(1520, 2020)], #Vikings
-[(1900, 2020)], #Arabia
+[(1744, 2020)], #Arabia
 [],		#Tibet
 [(1900, 2020)], #Indonesia
 [(1000, 2020)],	#Moors
 [(1700, 2020)], #Spain
-[(1700, 2020)], #France
+[(1453, 2020)], #France
 [(1950, 2020)], #Khmer
 [(1700, 2020)], #England
 [(1800, 2020)], #Holy Rome
@@ -1077,7 +1077,7 @@ lEnemyCivsOnSpawn = [
 [iBabylonia,iCarthage], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [iCeltia], # rome for testing
-[], #Tamils
+[iIndia, iIndia, iIndia], #Tamils
 [], #Ethiopia
 [], #Korea
 [], #Maya
@@ -1085,7 +1085,7 @@ lEnemyCivsOnSpawn = [
 [], #Japan
 [iEngland,iFrance,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iEthiopia,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
-[], #Tibet
+[iIndia, iIndia, iIndia], #Tibet
 [iKhmer], #Indonesia
 [iFrance], #Moors
 [], #Spain
@@ -1125,15 +1125,15 @@ lTotalWarOnSpawn = [
 [], #Polynesia
 [iBabylonia, iCarthage], #Persia
 [iGreece], #Rome
-[], #Tamils
+[iIndia], #Tamils
 [], #Ethiopia
 [], #Korea
 [], #Maya
 [iGreece], #Byzantium
 [], #Japan
-[], #Vikings
+[iFrance], #Vikings
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
-[], #Tibet
+[iIndia], #Tibet
 [], #Indonesia
 [iFrance], #Moors
 [iMoors], #Spain
@@ -1600,7 +1600,7 @@ lSouthEastAsia = [rIndochina, rIndonesia]
 lOceania = [rAustralia, rOceania]
 
 iNumContinents = 9
-(iEurope, iMiddleEast, iIndia, iEastAsia, iSouthEastAsia, iAfrica, iSouthAmerica, iNorthAmerica, iOceania) = range(iNumContinents)
+(iEurope, iMiddleEast, iContinentIndia, iEastAsia, iSouthEastAsia, iAfrica, iSouthAmerica, iNorthAmerica, iOceania) = range(iNumContinents)
 
 iArea_Europe = 1000
 iArea_MiddleEast = 1001
@@ -1666,7 +1666,7 @@ iVictorySecularism = 11
 
 #leaders
 
-iNumLeaders = 123
+iNumLeaders = 125
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
 iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
 iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
@@ -1679,7 +1679,7 @@ iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandrag
 iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, 
 iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, 
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge, iKhosrow, iPhilipAugustus) = range(iNumLeaders)
+iGeorge, iKhosrow, iPhilipAugustus, iAbdulaziz, iDharmapala) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
@@ -1724,7 +1724,7 @@ lNetworkEvents = {
 }
 
 # citis: polities
-iNumPolities = 174
+iNumPolities = 177
 (iPolityOldEgypt, iPolityMiddleEgypt, iPolityNewEgypt, iPolityFatimids, iPolityMamluks, iPolityAyyubids, iPolityEgypt, #7
 iPolityZhou, iPolityQin, iPolityHan, iPolityJin, iPolityTang, iPolitySong, iPolityMing, iPolityQing, iPolityChina, #9
 iPolityAkkadia, iPolityAssyria, iPolityBabylonia, iPolityNeoAssyria, iPolityNeoBabylonia, iPolityIraq, #6
@@ -1741,9 +1741,9 @@ iPolitySamhan, iPolityGoguryeo, iPolityGojoseon, iPolityGoryeo, iPolityJoseon, i
 iPolityMaya, iPolityYucatan, iPolityNewGranada, iPolityColombia, iPolitySouthAmerica, #5
 iPolityKamakura, iPolityAshikaga, iPolityTokugawa, iPolityJapan, #4
 iPolityVikings, iPolityKalmarUnion, iPolityDenmark, iPolityNorway, iPolitySweden, iPolityDenmarkNorway, #6
-iPolityRashiduns, iPolityAbbasids, iPolityUmmayads, iPolitySaudis, iPolityArabLeague, #5
+iPolityRashiduns, iPolityAbbasids, iPolityUmmayads, iPolityDiriyah, iPolityNedj, iPolitySaudis, iPolityArabLeague, #5
 iPolityTibet, #1
-iPolitySrivijaya, iPolityMajapahit, iPolityMataram, iPolityIndonesia, #4
+iPolitySrivijaya, iPolityMelayu, iPolityMajapahit, iPolityMataram, iPolityIndonesia, #4
 iPolityCordoba, iPolityAndalus, iPolityAlmohads, iPolityMorocco, #4
 iPolityCastile, iPolityAragon, iPolitySpain, iPolityIberia, #4
 iPolityFrancia, iPolityBurgundy, iPolityFrance, iPolityFrenchCommune, #4
@@ -1766,16 +1766,44 @@ iPolityPlata, iPolityArgentina, #2
 iPolityBrazil, #1
 iPolityCanada) = range(iNumPolities) #1
 
-iNumNameTypes = 4
-(iTypeDynastic, iTypeCapital, iTypeNational, iTypeNationalAdjective) = range(iNumNameTypes)
+iNumNameTypes = 6
+(iTypeDynastic, iTypeCapital, iTypeNational, iTypeNationalAdjective, iTypeNationalShort, iTypeRegionalOrganisation) = range(iNumNameTypes)
+#Dynastic: named after dynasty, affects only title, prefers adjective case
+#Capital: named after capital, prefers of case
+#National: named after nation
+#National Adjective: named after nation, prefers adjective case
+#National Short: named after nation, prefers of case
 
 iNumPolityFields = 7
 (iFieldAdjective, iFieldName, iFieldTitle, iFieldNameType, iFieldCapitalLocation, iFieldLeader, iFieldCore) = range(iNumPolityFields)
 dPolities = {
+	#France:
 	iPolityFrancia : ["TXT_KEY_CIV_FRANCE_FRANKISH", "TXT_KEY_CIV_FRANCE_FRANCIA", -1, iTypeNationalAdjective, -1, iCharlemagne, {"tRectangle" : ((55, 49), (59, 53)), 'lExceptions' : []}],
 	iPolityBurgundy : ["TXT_KEY_CIV_FRANCE_BURGUNDIAN", "TXT_KEY_CIV_FRANCE_BURGUNDY", -1, iTypeNational, (56, 47), -1, {'tRectangle' : ((55, 46), (57, 49)), 'lExceptions' : []}],
 	iPolityFrance : ["TXT_KEY_CIV_FRANCE_ADJECTIVE", "TXT_KEY_CIV_FRANCE_SHORT_DESC", -1, iTypeNational, (55, 50), iPhilipAugustus, {'tRectangle' : ((51, 46), (57, 51)), 'lExceptions' : [(51, 46), (52, 46), (55, 46), (57, 46)]}],
 	iPolityFrenchCommune : [-1, -1, "TXT_KEY_CIV_FRANCE_COMMUNE", iTypeCapital, -1, -1, {'tRectangle' : ((54, 49), (56, 51)), 'lExceptions' : []}],
+
+	#Arabia:
+	iPolityRashiduns: ["TXT_KEY_CIV_ARABIA_RASHIDUN", -1, -1, iTypeDynastic, (75, 33), iHarun, {'tRectangle' : ((73, 32), (76, 36)), 'lExceptions' : []}],
+	iPolityUmmayads: ["TXT_KEY_CIV_ARABIA_UMMAYAD", -1, -1, iTypeDynastic, (74, 41), -1, {'tRectangle' : ((72, 37), (78, 42)), 'lExceptions' : []}],
+	iPolityAbbasids: ["TXT_KEY_CIV_ARABIA_ABBASID", -1, -1, iTypeDynastic, (76, 40), iSaladin, {'tRectangle' : ((72, 37), (78, 42)), 'lExceptions' : []}],
+	iPolityDiriyah : ["TXT_KEY_CIV_ARABIA_NEDJ", "TXT_KEY_CIV_ARABIA_NEDJ", -1, iTypeCapital, (77, 34), iAbdulaziz, {'tRectangle' : ((75, 33), (77, 37)), 'lExceptions' : [(75, 33), (75, 34), (77, 37)]}],
+	iPolityNedj : ["TXT_KEY_CIV_ARABIA_NEDJ", "TXT_KEY_CIV_ARABIA_NEDJ", -1, iTypeNational, (77, 34), iAbdulaziz, {'tRectangle' : ((75, 33), (77, 37)), 'lExceptions' : [(75, 33), (75, 34), (77, 37)]}],
+	iPolitySaudis: ["TXT_KEY_CIV_ARABIA_SAUDI_ADJECTIVE", -1, -1, iTypeDynastic, (77, 34), iAbdulaziz, {'tRectangle' : ((75, 33), (77, 37)), 'lExceptions' : [(75, 33), (75, 34), (77, 37)]}],
+	iPolityArabLeague: [-1, -1, "TXT_KEY_CIV_ARABIA_REPUBLIC", iTypeRegionalOrganisation, (77, 35), -1, {'tRectangle' : ((72, 30), (82, 37)), 'lExceptions' : [(72, 30), (72, 31), (72, 32), (73, 30), (82, 37)]}],
+	
+	#Tibet:
+	iPolityTibet : ["TXT_KEY_CIV_TIBET_ADJECTIVE", "TXT_KEY_CIV_TIBET_SHORT_DESC", -1, iTypeNational, (96, 43), iSongtsen, {'tRectangle' : ((92, 41), (98, 45)), 'lExceptions' : [(92, 41)]}],
+	
+	#Indonesia:
+	iPolitySrivijaya : ["TXT_KEY_CIV_INDONESIA_SRIVIJAYA_ADJECTIVE", "TXT_KEY_CIV_INDONESIA_SRIVIJAYA", -1, iTypeNationalShort, (100, 26), iDharmasetu, {'tRectangle' : ((98, 26), (101, 30)), 'lExceptions' : [(100, 30), (101, 29), (101, 30)]}],
+	iPolityMelayu : ["TXT_KEY_CIV_INDONESIA_MELAYU_ADJECTIVE", -1, -1, iTypeDynastic, (100, 26), -1, {'tRectangle' : ((98, 26), (101, 30)), 'lExceptions' : [(100, 30), (101, 29), (101, 30)]}],
+	iPolityMajapahit : ["TXT_KEY_CIV_INDONESIA_MAJAPAHIT_ADJECTIVE", "TXT_KEY_CIV_INDONESIA_MAJAPAHIT", -1, iTypeNationalShort, (106, 25), iHayamWuruk, {'tRectangle' : ((103, 24), (107, 25)), 'lExceptions' : []}],
+	iPolityMataram : ["TXT_KEY_CIV_INDONESIA_MATARAM", "TXT_KEY_CIV_INDONESIA_MATARAM", -1, iTypeCapital, -1, -1, {'tRectangle' : ((103, 24), (107, 25)), 'lExceptions' : []}],
+	iPolityIndonesia : ["TXT_KEY_CIV_INDONESIA_ADJECTIVE", "TXT_KEY_CIV_INDONESIA_SHORT_DESC", -1, iTypeNational,(104, 25), iSuharto, {'tRectangle' : ((98, 24), (107, 30)), 'lExceptions' : [(100, 30), (101, 29), (101, 30), (104, 27), (104, 28), (105, 27), (105, 28), (105, 29), (106, 27), (106, 28), (106, 29), (106, 30)]}],
+	
+	
+	#Italy:
 	iPolityVenice : ["TXT_KEY_CIV_ITALY_VENICE_ADJECTIVE", -1, -1, iTypeCapital, (61, 47), iLorenzo, {"tRectangle" : ((61, 46), (62, 48)), 'lExceptions' : []}]
 	
 }

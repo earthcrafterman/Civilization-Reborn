@@ -1721,7 +1721,7 @@ class RFCUtils:
 	def getContinent(self, iRegion):
 		if iRegion in lEurope: return iEurope
 		elif iRegion in lMiddleEast: return iMiddleEast
-		elif iRegion in lIndia: return iIndia
+		elif iRegion in lIndia: return iContinentIndia
 		elif iRegion in lEastAsia: return iEastAsia
 		elif iRegion in lSouthEastAsia: return iSouthEastAsia
 		elif iRegion in lAfrica: return iAfrica

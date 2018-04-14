@@ -59,7 +59,7 @@ tMinorCities = (
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (350, (65, 45), iIndependent, 'Singidun', 2, iHeavySpearman, 2),	# Beograd
 (470, (53, 51), iIndependent2, 'Caen', 2, -1, -1),	# Caen
-(633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
+(610, (92, 43), iBarbarian, 'Kyunglung', 1, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
@@ -79,7 +79,7 @@ tMinorCities = (
 (1255, (65, 55), iBarbarian, 'K&#246;nigsberg', 2, iLancer, 3),		# Kazan
 (1400, (104, 33), iIndependent, 'Saigon', 5, iCrossbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, iPombos, 1),	# Mbanza Kongo
-#(1902, (62, 20), iArabia, 'Riyadh', 1, iPombos, 1),	# Mbanza Kongo
+(1744, (77, 34), iArabia, 'Al-Diriyah', 3, iMusketman, 3),	# Nadj
 )
 
 # do some research on dates here
@@ -155,7 +155,7 @@ class Barbs:
 		#tibet
 		if utils.isYearIn(-350, 200):
 			self.checkSpawn(iBarbarian, iLightSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
-		elif utils.isYearIn(200, 1100):
+		elif utils.isYearIn(200, 630):
 			self.checkSpawn(iBarbarian, iSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
 
 		# indo aryans
@@ -172,8 +172,8 @@ class Barbs:
 			
 			self.checkSpawn(iBarbarian, iUnit, iStrength, (87, 30), (96, 37), self.spawnInvaders, iGameTurn, 8-iHandicap, 0, ["Hindi"])
 			
-		# elephants in india pre-khmer
-		if utils.isYearIn(-210, 700):
+		# elephants in india pre-tibet
+		if utils.isYearIn(-210, 620):
 			self.checkSpawn(iBarbarian, iWarElephant, 1, (86, 31), (100, 41), self.spawnInvaders, iGameTurn, 8-iHandicap, 4)
 
 		#Indo-Scythians
