@@ -65945,8 +65945,8 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>NONE</FavoriteCivic>
-			<FavoriteReligion>NONE</FavoriteReligion>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -66308,7 +66308,7 @@
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				</ImprovementWeightModifier>
 				<ImprovementWeightModifier>
