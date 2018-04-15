@@ -1727,15 +1727,15 @@ class RFCUtils:
 		return lCities
 	
 	def getContinent(self, iRegion):
-		if iRegion in lEurope: return cEurope
-		elif iRegion in lMiddleEast: return cMiddleEast
-		elif iRegion in lIndia: return cIndia
-		elif iRegion in lEastAsia: return cEastAsia
-		elif iRegion in lSouthEastAsia: return cSouthEastAsia
-		elif iRegion in lAfrica: return cAfrica
-		elif iRegion in lSouthAmerica: return cSouthAmerica
-		elif iRegion in lNorthAmerica: return cNorthAmerica
-		elif iRegion in lOceania: return cOceania
+		if iRegion in lEurope: return iEurope
+		elif iRegion in lMiddleEast: return iMiddleEast
+		elif iRegion in lIndia: return iContinentIndia
+		elif iRegion in lEastAsia: return iEastAsia
+		elif iRegion in lSouthEastAsia: return iSouthEastAsia
+		elif iRegion in lAfrica: return iAfrica
+		elif iRegion in lSouthAmerica: return iSouthAmerica
+		elif iRegion in lNorthAmerica: return iNorthAmerica
+		elif iRegion in lOceania: return iOceania
 	
 	def getAdvisorString(self, iBuilding):
 		''

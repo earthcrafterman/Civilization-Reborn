@@ -385,4 +385,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_SAUDI_ADJECTIVE</Tag>
+		<English>Saudi</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_NEDJ</Tag>
+		<English>Nedj</English>
+	</TEXT>
 </Civ4GameText>

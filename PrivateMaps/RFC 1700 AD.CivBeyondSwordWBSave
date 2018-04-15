@@ -4,8 +4,8 @@ BeginGame
 	Calendar=CALENDAR_DEFAULT
 	Option=GAMEOPTION_AGGRESSIVE_AI
 	Option=GAMEOPTION_NO_TECH_BROKERING
-	GameTurn=321
-	StartYear=-3000
+	GameTurn=400
+	StartYear=-4000
 	Description=TXT_KEY_RHYES_WB_DESC
 	ModPath=Mods\DOC Community Mod Compilation
 EndGame
@@ -43321,7 +43321,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=43
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=1,38,52,53,
 EndPlot
@@ -49706,6 +49706,7 @@ EndPlot
 BeginPlot
 	x=106,y=23
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_PEARL
 	PlotType=3
 	TeamReveal=43,52,
 EndPlot

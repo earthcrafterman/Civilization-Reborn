@@ -301,6 +301,7 @@ tEraNames = (
 	'York'			:	'Toronto',
 	'V&#232;neta'		:	'Venezia',
 	'Co Loa'		:	'Hanoi',
+	'Al-Diriyah'		:	'Riyadh'
 },
 # modern
 {
@@ -4947,6 +4948,7 @@ dIdentifiers = {
 	"Ar-Riyad"		:	"Riyadh",
 	"Riyad"			:	"Riyadh",
 	"Riyadh"		:	"Riyadh",
+	'Al-Diriyah'		:	"Riyadh",
 	"Daqin"			:	"Roma",
 	"Hrwm"			:	"Roma",
 	"Rom"			:	"Roma",

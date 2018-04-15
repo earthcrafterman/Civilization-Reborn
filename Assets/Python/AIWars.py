@@ -73,7 +73,7 @@ iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 20)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
@@ -145,6 +145,7 @@ class AIWars:
 		self.checkConquest(tConquestSpainMoors)
 		self.checkConquest(tConquestQinChina)
 		self.checkConquest(tConquestQinChina2)
+		self.checkConquest(tConquestCholaSumatra)
 		
 		
 		self.checkConquest(tConquestChinaVietnam1)
@@ -168,7 +169,7 @@ class AIWars:
 		if gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
 		
 		iGameTurn = gc.getGame().getGameTurn()
-		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
+		iStartTurn = getTurnForYear(iYear)
 		
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
 		

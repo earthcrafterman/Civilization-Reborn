@@ -300,7 +300,7 @@ def checkLostCoreCollapse(iPlayer):
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
-		if iPlayer in [iPhoenicia, iKhmer] and not utils.isReborn(iPlayer):
+		if iPlayer in [iPhoenicia] and not utils.isReborn(iPlayer):
 			pPlayer.setReborn(True)
 			return
 	

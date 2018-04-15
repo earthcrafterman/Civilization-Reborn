@@ -6251,7 +6251,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>TIB</Identifier>
-			<StartingYear>630</StartingYear>
+			<StartingYear>618</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>20</LoadingTime>
 				<LoadingTime>2</LoadingTime>

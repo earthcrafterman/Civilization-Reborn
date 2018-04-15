@@ -634,4 +634,12 @@
 		<Tag>TXT_KEY_LEADER_SUPPI</Tag>
 		<English>Suppiluliuma</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ABDULAZIZ</Tag>
+		<English>Ibn Saud</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DHARMAPALA</Tag>
+		<English>Dharmapala</English>
+	</TEXT>
 </Civ4GameText>

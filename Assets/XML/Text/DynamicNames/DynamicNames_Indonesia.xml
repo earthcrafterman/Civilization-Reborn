@@ -63,4 +63,16 @@
 		<English>Indonesia</English>
 		<German>Indonesien</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDONESIA_SRIVIJAYA_ADJECTIVE</Tag>
+		<English>Srivijayan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDONESIA_MAJAPAHIT_ADJECTIVE</Tag>
+		<English>Majapahit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDONESIA_MELAYU_ADJECTIVE</Tag>
+		<English>Melayu</English>
+	</TEXT>
 </Civ4GameText>

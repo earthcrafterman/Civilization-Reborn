@@ -510,7 +510,7 @@ class RiseAndFall:
 				pPlot.setOwner(-1)
 
 		pIndependent.found(99, 41)
-		utils.makeUnit(iChokonu, iIndependent, (99, 41), 1)
+		utils.makeUnit(iArcher, iIndependent, (99, 41), 4)
 		pChengdu = gc.getMap().plot(99, 41).getPlotCity()
 		pChengdu.setName("Chengdu", False)
 		pChengdu.setPopulation(2)
@@ -596,10 +596,10 @@ class RiseAndFall:
 
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
-
-		pConstantinople = gc.getMap().plot(68, 45).getPlotCity()
-		pConstantinople.setBuildingOriginalOwner(iTheodosianWalls, iByzantium)
-		pConstantinople.setBuildingOriginalOwner(iHagiaSophia, iByzantium)
+		
+		#pConstantinople = gc.getMap().plot(68, 45).getPlotCity()
+		#pConstantinople.setBuildingOriginalOwner(iTheodosianWalls, iByzantium)
+		#pConstantinople.setBuildingOriginalOwner(iHagiaSophia, iByzantium)
 
 		pJakarta = gc.getMap().plot(104, 25).getPlotCity()
 		pJakarta.setBuildingOriginalOwner(iBorobudur, iIndonesia)
@@ -856,7 +856,14 @@ class RiseAndFall:
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
 			#utils.makeUnit(iAtlasElephant, iCarthage, (58, 39), 2)
-			
+		
+		if iGameTurn == getTurnForYear(380):
+			if utils.getHumanID() in [iArabia, iTurkey, iHolyRome]:
+				pConstantinople = gc.getMap().plot(69, 45).getPlotCity()
+				if pConstantinople:
+					pConstantinople.setHasRealBuilding(iTheodosianWalls, True)
+					pConstantinople.setHasRealBuilding(iHagiaSophia, True)
+		
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
 				sta.completeCollapse(iRome)
@@ -1034,7 +1041,7 @@ class RiseAndFall:
 		if utils.getScenario() == i3000BC:
 			iFirstSpawn = iEgypt
 		elif utils.getScenario() == i600AD:
-			iFirstSpawn = iByzantium
+			iFirstSpawn = iTamils #citis should be Byzantium
 		else:
 			iFirstSpawn = iAmerica
 
@@ -1935,7 +1942,7 @@ class RiseAndFall:
 
 			if iCultureChange > 0:
 				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
-				utils.ensureDefenders(iPlayer, (x, y), 2)
+				utils.ensureDefenders(iPlayer, (x, y), 1)
 				iConvertedCitiesCount += 1
 
 		self.warOnSpawn(iPlayer, lEnemies)
@@ -2808,7 +2815,7 @@ class RiseAndFall:
 		elif iCiv == iTibet:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			utils.makeUnit(iKhampa, iCiv, tPlot, 2)
+			utils.makeUnitAI(iKhampa, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
 			utils.createMissionaries(iCiv, 1)
 		elif iCiv == iKhmer:
 			utils.createSettlers(iCiv, 1)
@@ -2825,17 +2832,18 @@ class RiseAndFall:
 		elif iCiv == iIndonesia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.createMissionaries(iCiv, 1)
+			#utils.createMissionaries(iCiv, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
-				pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
+				if utils.getHumanID() != iCiv:
+					utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+					pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+					pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+					utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+					utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
+					utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+					utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
 		elif iCiv == iMoors:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -2877,7 +2885,7 @@ class RiseAndFall:
 			if utils.getHumanID() != iCiv:
 				utils.createMissionaries(iCiv, 1)
 		elif iCiv == iEngland:
-			utils.createSettlers(iCiv, 2)
+			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			if utils.getHumanID() != iEngland:
 				utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
@@ -3227,11 +3235,11 @@ class RiseAndFall:
 		elif iCiv == iArabia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iTibet:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iKhmer:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iIndonesia:
-			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iMoors:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iSpain:
@@ -3312,9 +3320,9 @@ class RiseAndFall:
 	def create600ADstartingUnits( self ):
 
 		tCapital = Areas.getCapital(iChina)
-		utils.makeUnitAI(iSpearman, iChina, tCapital, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+		#utils.makeUnitAI(iSpearman, iChina, tCapital, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 		utils.makeUnit(iChokonu, iChina, tCapital, 2)
-		utils.makeUnit(iHorseArcher, iChina, tCapital, 1)
+		#utils.makeUnit(iHorseArcher, iChina, tCapital, 1)
 		utils.makeUnit(iWorker, iChina, tCapital, 2)
 		
 		#tCapital = Areas.getCapital(iJapan)
@@ -3404,13 +3412,13 @@ class RiseAndFall:
 			utils.makeUnit(iCamelArcher, iArabia, tCapital, 2)
 			utils.makeUnit(iSwordsman, iArabia, tCapital, 2)
 
-		if bBaghdad:
-			utils.makeUnit(iSettler, iArabia, tBaghdad, 1)
-			utils.makeUnit(iWorker, iArabia, tBaghdad, 1)
-
-		if bCairo:
-			utils.makeUnit(iSettler, iArabia, tCairo, 1)
-			utils.makeUnit(iWorker, iArabia, tCairo, 1)
+		#if bBaghdad:
+		#	utils.makeUnit(iSettler, iArabia, tBaghdad, 1)
+		#	utils.makeUnit(iWorker, iArabia, tBaghdad, 1)
+		
+		#if bCairo:
+		#	utils.makeUnit(iSettler, iArabia, tCairo, 1)
+		#	utils.makeUnit(iWorker, iArabia, tCairo, 1)
 
 		if len(lCities) < 2:
 			utils.makeUnit(iSettler, iArabia, tMecca, 2 - len(lCities))
