@@ -866,7 +866,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=55
-	LeaderType=LEADER_BRENNUS
+	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
 	MinorNationStatus=1

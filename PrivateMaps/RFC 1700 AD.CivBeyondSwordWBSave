@@ -384,9 +384,6 @@ EndPlayer
 BeginPlayer
 	Team=19
 	LeaderType=LEADER_CHRISTIAN_IV
-	CivDesc=TXT_KEY_CIV_VIKINGS_DENMARK_DESC
-	CivShortDesc=TXT_KEY_CIV_VIKINGS_DENMARK_SHORT_DESC
-	CivAdjective=TXT_KEY_CIV_VIKINGS_DENMARK_ADJECTIVE
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
 	StartingGold=150
@@ -396,7 +393,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	AttitudePlayer=29, AttitudeExtra=-2, (Russia)
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	AttitudePlayer=39, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -518,7 +515,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
-	AttitudePlayer=19, AttitudeExtra=-2, (Vikings)
+	AttitudePlayer=42, AttitudeExtra=-2, (Sweden)
 	AttitudePlayer=39, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -633,6 +630,7 @@ BeginPlayer
 	AttitudePlayer=27, AttitudeExtra=-2, (England)
 	AttitudePlayer=28, AttitudeExtra=-4, (Holy Rome)
 	AttitudePlayer=29, AttitudeExtra=-4, (Russia)
+	AttitudePlayer=42, AttitudeExtra=-2, (Sweden)
 	AttitudePlayer=43, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -680,6 +678,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	AttitudePlayer=29, AttitudeExtra=-2, (Russia)
 	AttitudePlayer=39, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
