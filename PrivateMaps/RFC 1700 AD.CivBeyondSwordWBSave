@@ -472,7 +472,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=27
-	LeaderType=LEADER_SRI_BATA_SHAJA
+	LeaderType=LEADER_LAPU_LAPU
 	CivType=CIVILIZATION_PHILIPPINES
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
