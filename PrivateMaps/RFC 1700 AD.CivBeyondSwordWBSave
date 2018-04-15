@@ -404,7 +404,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=24, AttitudeExtra=-4, (England)
 	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
-	AttitudePlayer=38, AttitudeExtra=2, (Netherlands)
+	AttitudePlayer=39, AttitudeExtra=2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -503,7 +503,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=22, AttitudeExtra=2, (Spain)
 	AttitudePlayer=24, AttitudeExtra=2, (England)
-	AttitudePlayer=38, AttitudeExtra=-2, (Netherlands)
+	AttitudePlayer=39, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
