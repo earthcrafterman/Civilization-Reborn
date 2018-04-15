@@ -220,7 +220,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -250,8 +250,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -345,7 +345,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	AttitudePlayer=26, AttitudeExtra=-2, (Russia)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -389,7 +389,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=29, AttitudeExtra=2, (Portugal)
+	AttitudePlayer=30, AttitudeExtra=2, (Portugal)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -406,8 +406,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=24, AttitudeExtra=-4, (England)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
-	AttitudePlayer=38, AttitudeExtra=2, (Netherlands)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=39, AttitudeExtra=2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -431,9 +431,9 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=23, AttitudeExtra=-4, (France)
-	AttitudePlayer=29, AttitudeExtra=2, (Portugal)
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=30, AttitudeExtra=2, (Portugal)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -451,7 +451,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -467,7 +467,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	AttitudePlayer=16, AttitudeExtra=-2, (Vikings)
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -513,7 +513,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=22, AttitudeExtra=2, (Spain)
 	AttitudePlayer=24, AttitudeExtra=2, (England)
-	AttitudePlayer=38, AttitudeExtra=-2, (Netherlands)
+	AttitudePlayer=39, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -581,7 +581,7 @@ BeginPlayer
 	AttitudePlayer=24, AttitudeExtra=-2, (England)
 	AttitudePlayer=25, AttitudeExtra=-4, (Holy Rome)
 	AttitudePlayer=26, AttitudeExtra=-4, (Russia)
-	AttitudePlayer=38, AttitudeExtra=-2, (Netherlands)
+	AttitudePlayer=39, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -627,8 +627,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=23, AttitudeExtra=2, (France)
-	AttitudePlayer=29, AttitudeExtra=-2, (Portugal)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=30, AttitudeExtra=-2, (Portugal)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer

@@ -66308,7 +66308,7 @@
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				</ImprovementWeightModifier>
 				<ImprovementWeightModifier>
@@ -66862,7 +66862,7 @@
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				</ImprovementWeightModifier>
 				<ImprovementWeightModifier>
