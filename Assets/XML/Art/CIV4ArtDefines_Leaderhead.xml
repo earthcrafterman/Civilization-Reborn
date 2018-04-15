@@ -1118,5 +1118,13 @@
 			<NoShaderNIF>Art/Leaderheads/Ho Chi Minh/HoChiMinh.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Ho Chi Minh/genghis_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SUPPI</Type>
+			<Button>art/leaderheads/Suppiluliuma/Suppi.dds</Button>
+			<NIF>art/leaderheads/Suppiluliuma/kublai_khan.nif</NIF>
+			<KFM>art/leaderheads/Suppiluliuma/kublai_khan.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Suppiluliuma/kublai_khan_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Suppiluliuma/Kublai_Khan_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

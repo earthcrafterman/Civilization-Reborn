@@ -2510,6 +2510,9 @@ class RiseAndFall:
 		if iCiv == iIndia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
+		if iCiv == iHittite:
+			utils.makeUnit(iHuluganni, iCiv, tPlot, 2)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 		elif iCiv == iGreece:
 			utils.makeUnit(iHoplite, iCiv, tPlot, 4)
 		elif iCiv == iPersia:
@@ -2658,9 +2661,13 @@ class RiseAndFall:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
+		if iCiv == iHittite:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			teamHittite.declareWar(iIndependent, False, WarPlanTypes.NO_WARPLAN)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			#utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
 			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
@@ -3183,13 +3190,15 @@ class RiseAndFall:
 	def createStartingWorkers( self, iCiv, tPlot ):
 		if iCiv == iEgypt:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
-		if iCiv == iAssyria:
+		elif iCiv == iAssyria:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
-		if iCiv == iChina:
+		elif iCiv == iChina:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
-		if iCiv == iIndia:
+		elif iCiv == iIndia:
 			#utils.makeUnit(iPunjabiWorker, iCiv, tPlot, 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 6)
+		elif iCiv == iHittite:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iGreece:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iPersia:

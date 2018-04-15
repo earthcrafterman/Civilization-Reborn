@@ -1239,5 +1239,12 @@
 			<fBlue>0</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_LIGHT_PALE_ORANGE</Type>
+			<fRed>0.9</fRed>
+			<fGreen>0.6</fGreen>
+			<fBlue>0.2</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

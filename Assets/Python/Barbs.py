@@ -16,10 +16,11 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-4000, (72, 44), iIndependent2, 'Hattusa', 2, iArcher, 2), 	# Hattians
+(-4000, (72, 43), iIndependent2, 'Kultepe', 2, iArcher, 2), 	# Hattians
 (-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
 (-3600, (69, 32), iIndependent2, 'Niwt-Rst', 1, iArcher, 1), 	# Upper Egypt
 (-3600, (69, 35), iIndependent2, 'Ineb-Hedj', 1, iArcher, 1), 	# Lower Egypt
+(-3000, (69, 43), iIndependent, 'Troy', 1, iArcher, 2),	# Troy
 (-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, iMilitia, 1), 	# Minoans
@@ -28,8 +29,10 @@ tMinorCities = (
 (-2070, (102, 47), iIndependent2, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
+(-1800, (75, 44), iIndependent, 'Rhizos', 1, iChariot, 2),	# Colchis
+(-1800, (76, 46), iIndependent, 'Aia', 1, iChariot, 3),	# Colchis
 (-1800, (58, 43), iIndependent, 'Nuragic', 1, iArcher, 1),	# Nuragic
-(-1600, (70, 42), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
+(-1600, (70, 41), iIndependent, 'Halikarnassos', 1, iArcher, 2),	# Ankara
 (-1500, (73, 38), iIndependent, 'Yerushalayim', 3, iArcher, 2),	# Jerusalem
 (-900, (90, 40), iIndependent, 'Indraprastha', 2, iArcher, 1),	# Panchala
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),		# Milan
@@ -387,12 +390,6 @@ class Barbs:
 			lReligions = []
 			lBuildings = []
 			iCulture = 10 * (gc.getGame().getCurrentEra() + 1)
-			if sName == "Ankuwash": 
-				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
-				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
-				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
-				gc.getPlayer(iBarbarian).initUnit(iArcher, 72, 44, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
-
 			bForceSpawn = True
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
@@ -400,10 +397,8 @@ class Barbs:
 			if sName == 'Buda': bForceSpawn = True
 			if sName == 'Zou' or sName == 'Zhongdu' or sName == 'Fenghao' or sName == 'Yuecheng':
 				lBuildings = [iLibrary, iPaganTemple]
-			if sName == 'Ninua' or sName == 'Pratisthan':
+			if sName == 'Ninua' or sName == 'Pratisthan' or 'Aia' or 'Rhizos':
 				lBuildings = [iPaganTemple]
-			if sName == 'Ankuwash':
-				lBuildings = [iPaganTemple, iBarracks, iMonument]
 			if sName == 'Nuragic':
 				lBuildings = [iPaganTemple, iMonument, iLibrary]
 			if sName == 'Kolkata':

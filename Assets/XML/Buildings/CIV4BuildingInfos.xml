@@ -1626,6 +1626,38 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
+			<Type>BUILDING_KARUM</Type>
+			<Description>TXT_KEY_BUILDING_KARUM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KARUM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KARUM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VIKING_TRADING_POST</ArtDefineTag>
+			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
+			<PrereqTech>TECH_PROPERTY</PrereqTech>
+			<iCost>80</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iTradeRoutes>1</iTradeRoutes>
+			<iHappiness>-1</iHappiness>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_IRON</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_LIGHTHOUSE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
 			<Type>BUILDING_VIKING_TRADING_POST</Type>
 			<Description>TXT_KEY_BUILDING_VIKING_TRADING_POST</Description>
 			<Civilopedia>TXT_KEY_BUILDING_VIKING_TRADING_POST_PEDIA</Civilopedia>

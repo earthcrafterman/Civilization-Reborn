@@ -778,4 +778,12 @@
 		<Tag>TXT_KEY_UP_ASY</Tag>
 		<English>Buildings are not destroyed in conquered cities.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HTT_TITLE</Tag>
+		<English>The Power of the Lydians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HTT</Tag>
+		<English>When the Hittites would suffer a Complete Collapse, they Collapse to Core instead.</English>
+	</TEXT>
 </Civ4GameText>

@@ -6,7 +6,6 @@
 <!-- Unit Infos -->
 <Civ4UnitInfos xmlns="x-schema:CIV4UnitSchema.xml">
 	<UnitInfos>
-		
 		<UnitInfo>
 			<Class>UNITCLASS_OCEAN_LINER</Class>
 			<Type>UNIT_OCEAN_LINER</Type>
@@ -6769,7 +6768,9 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<iCost>30</iCost>
+			<PrereqTech>TECH_LEVERAGE</PrereqTech>
+			<BonusType>BONUS_HORSE</BonusType>
+			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -6788,7 +6789,7 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>5</iCombat>
+			<iCombat>2</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -6798,12 +6799,12 @@
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 			</FlankingStrikes>
-			<iWithdrawalProb>20</iWithdrawalProb>
-			<iPlainsAttack>50</iPlainsAttack>
-			<iPlainsDefense>50</iPlainsDefense>
+			<iHillsAttack>50</iHillsAttack>
+			<iCityAttack>200</iCityAttack>
+			<iPlainsAttack>100</iPlainsAttack>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>2</iAsset>
-			<iPower>5</iPower>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -6811,8 +6812,12 @@
 				<iMeleeWaveSize>3</iMeleeWaveSize>
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
-					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_HITTITE_HULUGANNI</EarlyArtDefineTag>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CHARIOT</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_CHARIOT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>

@@ -2447,6 +2447,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
         aiUnitAIVal[UNITAI_SETTLE] /= 50;
 		break;
+	case HITTITE:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		break;
 	case GREECE:
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
@@ -3159,6 +3165,26 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue *= 3;
 														iTempValue /= 2;
 										} else {
+											iTempValue /= 4;
+										}
+										break;
+									case HITTITE:
+										if (iI == HANGING_GARDENS || iI == ASHURBANIPAL_LIBRARY) iTempValue /= 5;
+										else if (iI == SPIRAL_MINARET || iI == ISHTAR_GATE) iTempValue /= 5;
+										else if (iI == GREAT_WALL) iTempValue /= 6;
+										else if (iI == ORACLE) iTempValue /= 4;
+										else if (iI == MAUSOLEUM_OF_MAUSSOLLOS) iTempValue *= 3;
+										else if (iI == GREAT_LIBRARY) iTempValue /= 5;
+										else if (iI == COLOSSUS) iTempValue *= 2;
+										else if (iI == PARTHENON) iTempValue /= 4;
+										else if (iI == TEMPLE_OF_ARTEMIS) iTempValue *= 3;
+										else if (iI == STATUE_OF_ZEUS) iTempValue /= 4;
+										else if (iI == GREAT_COTHON) iTempValue /= 5;
+										else if (iI == PYRAMIDS) iTempValue /= 5;
+										else if (iI == GREAT_SPHINX) iTempValue *= 2;
+										else if (iI == HAGIA_SOPHIA) iTempValue *= 3;
+										else 
+										{
 											iTempValue /= 4;
 										}
 										break;

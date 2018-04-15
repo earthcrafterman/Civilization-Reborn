@@ -418,6 +418,37 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-800):
 			expire(iHarappa, 2)
 
+	elif iPlayer == iHittite:
+		#first goal: Control 20 trade routes by 1300 BC
+		if isPossible(iHittite, 0):
+			iNumRoutes = 0
+			for city in utils.getCityList(iHittite):
+				iNumRoutes += city.getTradeRoutes()
+			if iNumRoutes >= 20:
+				win(iHittite, 0)
+		
+		if iGameTurn == getTurnForYear(-1200):
+			expire(iHittite, 0)
+		
+		#second goal: Control 3 Iron, Copper, and Horses in 546 BC
+		if iGameTurn == getTurnForYear(-546):
+			iNumIron = countResources(iHittite, iIron)
+			iNumCopper = countResources(iHittite, iCopper)
+			iNumHorse = countResources(iHittite, iHorse)
+			if iNumIron >= 3 and iNumCopper >= 3 and iNumHorse >= 3:
+				win(iHittite, 1)
+			else:
+				lose(iHittite, 1)
+		
+		#third goal: Be the first Mediterranean Empire in control of Iron.
+		if countResources(iPlayer, iIron) > 0:
+				win(iHittite, 2)
+		
+		for iPlayer in range(iNumMajorPlayers):
+			if iPlayer == iIndia or iPlayer == iChina or iPlayer == iPersia or iPlayer == iHarappa: continue
+			if countResources(iPlayer, iIron) > 0:
+				lose(iHittite, 2)
+
 	elif iPlayer == iGreece:
 
 		# first goal: be the first to discover Mathematics, Literature, Aesthetics, Medicine and Philosophy
@@ -3756,6 +3787,24 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
 			iNumGardens = getNumBuildings(iAssyria, iGarden)
 			aHelp.append(getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumGardens >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_GARDENS", (iNumGardens, 3)) + ' ' + getIcon(iNumBaths >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 2)))
+	
+	elif iPlayer == iHittite:
+		if iGoal == 0:
+			iNumRoutes = 0
+			for city in utils.getCityList(iHittite):
+				iNumRoutes += city.getTradeRoutes()
+			aHelp.append(getIcon(iNumRoutes >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_ROUTES", (iNumRoutes, 20)))
+
+		if iGoal == 1:
+			iNumIron = countResources(iHittite, iIron)
+			iNumCopper = countResources(iHittite, iCopper)
+			iNumHorse = countResources(iHittite, iHorse)
+			aHelp.append(getIcon(iNumIron >= 3) + localText.getText("TXT_KEY_VICTORY_IRON_CONTROLLED", (iNumIron, 3)) + ' ' + getIcon(iNumCopper >= 3) + localText.getText("TXT_KEY_VICTORY_COPPER_CONTROLLED", (iNumCopper, 3)) + ' ' + getIcon(iNumHorse >= 3) + localText.getText("TXT_KEY_VICTORY_HORSE_CONTROLLED", (iNumHorse, 3)))
+
+		if iGoal == 2:
+			iNumIron = countResources(iHittite, iIron)
+			aHelp.append(getIcon(iNumIron >= 3 and not isLost(iHittite, 2)) + localText.getText("TXT_KEY_VICTORY_FIRST_MEDITERRANEAN_IRON_CONTROLLED", ()))
+
 	elif iPlayer == iGreece:
 		if iGoal == 0:
 			bMathematics = data.lFirstDiscovered[iMathematics] == iGreece

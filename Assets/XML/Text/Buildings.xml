@@ -1523,4 +1523,12 @@
 		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dinh[COLOR_REVERT], the Vietnamese replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], gives all eligible units built in this city the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARUM</Tag>
+		<English>Karum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARUM_STRATEGY</Tag>
+		<English>Karum</English>
+	</TEXT>
 </Civ4GameText>

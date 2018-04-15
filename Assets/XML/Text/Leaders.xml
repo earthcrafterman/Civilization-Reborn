@@ -630,4 +630,8 @@
 		<Tag>TXT_KEY_LEADER_HO_CHI_MINH</Tag>
 		<English>Ho Chi Minh</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SUPPI</Tag>
+		<English>Suppiluliuma</English>
+	</TEXT>
 </Civ4GameText>

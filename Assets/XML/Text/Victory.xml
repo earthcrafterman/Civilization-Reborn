@@ -3315,4 +3315,48 @@
 		<Tag>TXT_KEY_VICTORY_ROYALISTS</Tag>
 		<English>Cities under royalists' control: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT1_TITLE</Tag>
+		<English>Trading Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT1</Tag>
+		<English>Control 20 Trade Routes by 1200 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_ROUTES</Tag>
+		<English>Trade Routes Controlled: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT2_TITLE</Tag>
+		<English>Implements of War</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT2</Tag>
+		<English>Control 3 Iron, Copper, and Horses resources in 546 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT3_TITLE</Tag>
+		<English>The Iron Age</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HTT3</Tag>
+		<English>Be the first Mediterranean Empire in control of an Iron resource.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IRON_CONTROLLED</Tag>
+		<English>Iron Resources Controlled: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HORSE_CONTROLLED</Tag>
+		<English>Horse Resources Controlled: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COPPER_CONTROLLED</Tag>
+		<English>Copper Resources Controlled: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_MEDITERRANEAN_IRON_CONTROLLED</Tag>
+		<English>First Mediterranean Empire with Iron</English>
+	</TEXT>
 </Civ4GameText>

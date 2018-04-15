@@ -1086,6 +1086,11 @@ def specificName(iPlayer):
 		if gc.getPlayer(iPlayer).getCapitalCity().getName() == "Akkad":
 			return "TXT_KEY_CIV_BABYLONIA_AKKADIA"
 
+	if iPlayer == iHittite:
+		if bResurrected:
+			return "TXT_KEY_CIV_LYDIAN_SHORT_DESC"
+		return "TXT_KEY_CIV_HITTITE_SHORT_DESC"
+		
 	elif iPlayer == iGreece:
 		if iCivicGovernment == iMonarchy and bEmpire and iEra == iClassical:
 			return "TXT_KEY_CIV_GREECE_MACEDONIA"
@@ -1350,6 +1355,11 @@ def specificAdjective(iPlayer):
 					return "TXT_KEY_CIV_EGYPT_FATIMID"
 
 				return "TXT_KEY_CIV_EGYPT_AYYUBID"
+
+	if iPlayer == iHittite:
+		if bResurrected:
+			return "TXT_KEY_CIV_LYDIANS_ADJECTIVE"
+		return "TXT_KEY_CIV_HITTITES_ADJECTIVE"
 
 	elif iPlayer == iIndia:
 		if bMonarchy and not bCityStates:

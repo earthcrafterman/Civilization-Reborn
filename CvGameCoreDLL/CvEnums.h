@@ -1299,6 +1299,7 @@ enum PlayerTypes				// Exposed to Python
 	BABYLONIA,
 	ASSYRIA,
 	HARAPPA,
+	HITTITE,
 	GREECE,
 	INDIA,
 	PHOENICIA,

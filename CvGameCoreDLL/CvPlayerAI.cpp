@@ -5044,6 +5044,28 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == MYTHOLOGY || iI == DIVINATION || iI == CEREMONY)
 										iValue /= 5;
+								case HITTITE:
+									if (iI == THEOLOGY)
+									{
+										iValue *= 2;
+										iValue /= 3;
+									}
+									if (iI == CEMENT)
+										iValue *= 2;
+									if (iI == WRITING || iI == PHILOSOPHY || iI == AESTHETICS || iI == DIVINATION || iI == PROPERTY || iI == LITERATURE || iI == MEDICINE)
+										iValue *= 3;
+									if (iI == BLOOMERY || iI == SHIPBUILDING || iI == SAILING)
+										iValue *= 4;
+									if (iI == ARITHMETICS || iI == MATHEMATICS)
+										iValue *= 2;
+									if (iI == CALENDAR)
+										iValue /= 3;
+									if (iI == MACHINERY || iI == PAPER || iI == PRINTING)
+										iValue /= 2;
+									if (iI == RIDING)
+										iValue /= 5;
+									//1800 - end
+									break;
 								case GREECE:
 									if (iI == THEOLOGY)
 									{

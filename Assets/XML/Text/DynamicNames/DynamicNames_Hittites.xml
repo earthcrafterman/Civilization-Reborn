@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by XMLSPY 2004 Professional Ed. Release 2, Installed Multi + SMP for 3 users (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+<!-- ##### Hittites - Begin ##### -->
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITE_PEOPLES</Tag>
+		<English>Hittite Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_DESC</Tag>
+		<English>The Hittites</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_SHORT_DESC</Tag>
+		<English>Hittite</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITES_ADJECTIVE</Tag>
+		<English>Hittite</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LYDIANS_DESC</Tag>
+		<English>The Lydians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LYDIANS_SHORT_DESC</Tag>
+		<English>Lydia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LYDIANS_ADJECTIVE</Tag>
+		<English>Lydian</English>
+	</TEXT>
+</Civ4GameText>

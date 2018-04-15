@@ -395,4 +395,12 @@
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BEN_GURION_1</Tag>
 		<English>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SUPPI_1</Tag>
+		<English>O King, I did not reject anything your father asked for, and your father never neglected none of the wishes I expressed, but granted me everything. Why have you, my brother, refused to send me what your father during his lifetime has sent me? I am [OUR_NAME] of the [OUR_EMPIRE].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ASHURBANIPAL_1</Tag>
+		<English>He who in his heart utters improprieties against the king - his foundation is but wind, the hem of his garment is but litter. Gather, all the gods of heaven and earth, bless king Ashurbanipal, the circumspect man! I am [OUR_NAME] of the [OUR_EMPIRE].</English>
+	</TEXT>
 </Civ4GameText>
