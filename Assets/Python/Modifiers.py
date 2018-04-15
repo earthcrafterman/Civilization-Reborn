@@ -55,6 +55,7 @@ iModifierInflationRate, iModifierGreatPeopleThreshold, iModifierGrowthThreshold)
 
 lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivAssyria, iCivHarappa, iCivHittite, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivEthiopia, iCivVietnam, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivTamils, iCivEngland, iCivHolyRome, iCivRussia, iCivSwahili, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivSweden, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivAustralia, iCivBoers, iCivCanada, iCivIsrael, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
 
+
 ### Modifiers (by civilization!) ###
 
 # 							  EGY CHI BAB ASY HAR HTT GRE IND CAR PLY PER ROM ETH VIE KOR MAY BYZ JAP VIK ARA TIB INO MOO SPA FRA KHM TAM ENG HRE RUS SWA MAL POL POR INC ITA MON AZT MUG TUR THA CON IRA SWE NET GER AME ARG MEX COL BRA AUS BOE CAN ISR		IND IND NAT CEL SEL BAR 
