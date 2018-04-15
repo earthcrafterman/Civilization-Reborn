@@ -2357,6 +2357,29 @@ iCivSwahili : {
 		"Fumo Liyongo",
 	],
 },
+iCivSwahili : {
+	iGreatProphet : [
+		"Placeholder",
+	],
+	iGreatArtist : [
+		"Placeholder",
+	],
+	iGreatScientist : [
+		"Placeholder",
+	],
+	iGreatMerchant : [
+		"Sultan al-Hasan ibn Sulaiman",
+	],
+	iGreatEngineer : [
+		"Placeholder",
+	],
+	iGreatStatesman : [
+		"Muhammad ibn Rukn ad Din",
+	],
+	iGreatGeneral : [
+		"Fumo Liyongo",
+	],
+},
 iCivMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th
