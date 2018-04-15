@@ -543,6 +543,7 @@ dStartingLeaders = [
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iPersia : iAbbas,
+	iVietnam : iHoChiMinh,
 	iJapan : iOdaNobunaga,
 	iVikings : iGustav,
 	iSpain : iPhilip,

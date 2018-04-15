@@ -183,7 +183,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
-	AttitudePlayer=12, AttitudeExtra=2, (Korea)
+	AttitudePlayer=12, AttitudeExtra=-2, (Vietnam)
+	AttitudePlayer=13, AttitudeExtra=2, (Korea)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -220,7 +221,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -250,8 +251,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -286,9 +287,18 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=12
-	LeaderType=LEADER_TRUNG
+	LeaderType=LEADER_HO_CHI_MINH
 	CivType=CIVILIZATION_VIETNAM
-	PlayableCiv=0
+	PlayableCiv=1
+	StateReligion=RELIGION_BUDDHISM
+	StartingGold=200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_MERITOCRACY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
+	AttitudePlayer=1, AttitudeExtra=-2, (China)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -351,8 +361,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	AttitudePlayer=26, AttitudeExtra=-2, (Russia)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=27, AttitudeExtra=-2, (Russia)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -396,7 +406,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=29, AttitudeExtra=2, (Portugal)
+	AttitudePlayer=30, AttitudeExtra=2, (Portugal)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -412,9 +422,9 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=24, AttitudeExtra=-4, (England)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
-	AttitudePlayer=38, AttitudeExtra=2, (Netherlands)
+	AttitudePlayer=25, AttitudeExtra=-4, (England)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=39, AttitudeExtra=2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -437,10 +447,10 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=23, AttitudeExtra=-4, (France)
-	AttitudePlayer=29, AttitudeExtra=2, (Portugal)
-	AttitudePlayer=34, AttitudeExtra=-2, (Mughals)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=24, AttitudeExtra=-4, (France)
+	AttitudePlayer=30, AttitudeExtra=2, (Portugal)
+	AttitudePlayer=35, AttitudeExtra=-2, (Mughals)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -458,7 +468,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -473,8 +483,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
-	AttitudePlayer=16, AttitudeExtra=-2, (Vikings)
-	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
+	AttitudePlayer=17, AttitudeExtra=-2, (Vikings)
+	AttitudePlayer=36, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -511,9 +521,9 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=22, AttitudeExtra=2, (Spain)
-	AttitudePlayer=24, AttitudeExtra=2, (England)
-	AttitudePlayer=38, AttitudeExtra=-2, (Netherlands)
+	AttitudePlayer=23, AttitudeExtra=2, (Spain)
+	AttitudePlayer=25, AttitudeExtra=2, (England)
+	AttitudePlayer=39, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -559,7 +569,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	AttitudePlayer=5, AttitudeExtra=-2, (India)
 	AttitudePlayer=8, AttitudeExtra=-2, (Iran)
-	AttitudePlayer=24, AttitudeExtra=-2, (England)
+	AttitudePlayer=25, AttitudeExtra=-2, (England)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -576,12 +586,12 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	AttitudePlayer=8, AttitudeExtra=-4, (Iran)
-	AttitudePlayer=16, AttitudeExtra=-2, (Vikings)
-	AttitudePlayer=23, AttitudeExtra=-2, (France)
-	AttitudePlayer=24, AttitudeExtra=-2, (England)
-	AttitudePlayer=25, AttitudeExtra=-4, (Holy Rome)
-	AttitudePlayer=26, AttitudeExtra=-4, (Russia)
-	AttitudePlayer=38, AttitudeExtra=-2, (Netherlands)
+	AttitudePlayer=17, AttitudeExtra=-2, (Vikings)
+	AttitudePlayer=24, AttitudeExtra=-2, (France)
+	AttitudePlayer=25, AttitudeExtra=-2, (England)
+	AttitudePlayer=26, AttitudeExtra=-4, (Holy Rome)
+	AttitudePlayer=27, AttitudeExtra=-4, (Russia)
+	AttitudePlayer=39, AttitudeExtra=-2, (Netherlands)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -626,9 +636,9 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=23, AttitudeExtra=2, (France)
-	AttitudePlayer=29, AttitudeExtra=-2, (Portugal)
-	AttitudePlayer=35, AttitudeExtra=-2, (Turkey)
+	AttitudePlayer=24, AttitudeExtra=2, (France)
+	AttitudePlayer=30, AttitudeExtra=-2, (Portugal)
+	AttitudePlayer=36, AttitudeExtra=-2, (Turkey)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -47048,19 +47058,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
+		CityOwner=12, (Vietnam)
 		CityName=Hanoi
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -47074,7 +47084,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=100, (Independent)
+		Player12Culture=100, (Vietnam)
 	EndCity
 	TeamReveal=1,22,30,37,39,45,46,
 EndPlot
@@ -48541,16 +48551,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Vietnam)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
+		CityOwner=12, (Vietnam)
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -48564,7 +48574,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=50, (Independent)
+		Player12Culture=50, (Vietnam)
 	EndCity
 	TeamReveal=1,22,30,37,39,45,
 EndPlot
