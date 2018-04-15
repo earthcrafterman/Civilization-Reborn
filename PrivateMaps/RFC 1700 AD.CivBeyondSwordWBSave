@@ -47073,6 +47073,7 @@ BeginPlot
 		CityOwner=12, (Vietnam)
 		CityName=Hanoi
 		CityPopulation=7
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
