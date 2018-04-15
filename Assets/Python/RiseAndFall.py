@@ -1454,7 +1454,7 @@ class RiseAndFall:
 		x, y = tCapital
 		bCapitalSettled = False
 
-		if (self.adjacentCapital(x, y, iCiv)):
+		if data.players[iCiv].iFlipsDelay == 0 and self.adjacentCapital(x, y, iCiv): #city hasn't already been founded)
 			bCapitalSettled = True
 			cnm.onCityBuilt(gc.getMap().plot(x,y).getPlotCity())
 			dc.checkName(iCiv)
