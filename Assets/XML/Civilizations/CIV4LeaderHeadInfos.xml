@@ -76630,7 +76630,7 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_CHIEU_HOANG</Type> <!-- Hatshepsut -->
-			<Description>TXT_KEY_CHIEU_HOANG</Description>
+			<Description>TXT_KEY_LEADER_CHIEU_HOANG</Description>
 			<Civilopedia>TXT_KEY_LEADER_CHIEU_HOANG_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_CHIEU_HOANG</ArtDefineTag>
 			<iWonderConstructRand>40</iWonderConstructRand>
