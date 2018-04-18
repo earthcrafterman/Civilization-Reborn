@@ -667,17 +667,7 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-	
-	def spawnCollapse(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
-		'''Leoreth: represents large invasion forces and migration movements
-			    inside of territory, not in jungles, in groups, target cities'''
-			    
-		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True)
-		tPlot = utils.getRandomEntry(lPlots)
-		
-		if tPlot:
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
-	
+
 	def spawnInvaders(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents large invasion forces and migration movements
 			    inside of territory, not in jungles, in groups, target cities'''
