@@ -23,15 +23,15 @@
 		<English>Hittite</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_LYDIANS_DESC</Tag>
-		<English>The Lydians</English>
+		<Tag>TXT_KEY_CIV_HITTITE_DESC</Tag>
+		<English>The Hittites</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_LYDIANS_SHORT_DESC</Tag>
-		<English>Lydia</English>
+		<Tag>TXT_KEY_CIV_HITTITE_SHORT_DESC</Tag>
+		<English>Hittite</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_LYDIANS_ADJECTIVE</Tag>
-		<English>Lydian</English>
+		<Tag>TXT_KEY_CIV_HITTITE_ADJECTIVE</Tag>
+		<English>Hittite</English>
 	</TEXT>
 </Civ4GameText>
