@@ -1744,6 +1744,8 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	elif iPlayer == iArabia:
 		utils.setReborn(iArabia, True)
 	
+	elif iPlayer == iPhilippines: # For Spanish CNM
+		utils.setReborn(iPhilippines, True)
 		
 	# others revert to their old cores instead
 	if iPlayer in [iArabia, iMongolia]:

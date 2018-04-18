@@ -1149,6 +1149,29 @@ def checkTurn(iGameTurn, iPlayer):
 
 		if iGameTurn == getTurnForYear(1950):
 			expire(iRussia, 2)
+		
+	elif iPlayer == iPhilippines:
+		# first goal: control 7 embassies in 1400 AD
+		if iGameTurn == getTurnForYear(1400):
+			if len(data.lPhilippineEmbassies) >= 7:
+				win(iPhilippines, 0)
+			else:
+				lose(iPhilippines, 0)
+				
+		# second goal: acquire 8 different happiness resources by 1550 AD
+		if isPossible(iPhilippines, 1):
+			if countHappinessResources(iPhilippines) >= 8:
+				win(iPhilippines, 1)
+				
+		if iGameTurn == getTurnForYear(1500):
+			expire(iPhilippines, 1)
+			
+		# third goal: Have 5000 gold in 1600 AD
+		if iGameTurn == getTurnForYear(1600):
+			if pPhilippines.getGold() >= utils.getTurns(5000):
+				win(iPhilippines, 2)
+			else:
+				lose(iPhilippines, 2)
 			
 	elif iPlayer == iSwahili:
 		# first goal: acquire 4000 gold by trade by 1500 AD
@@ -4186,11 +4209,22 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
 			aHelp.append(getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_COMMUNIST_BROTHERS", (iCount, 5)))
-	
+
 	elif iPlayer == iSwahili:
 		if iGoal == 0:
 			iTradeGold = data.iSwahiliTradeGold
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
+
+	elif iPlayer == iPhilippines:
+		if iGoal == 0:
+			iNumEmbassies = len(data.lPhilippineEmbassies)
+			aHelp.append(getIcon(iNumEmbassies >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_EMBASSIES", (iNumEmbassies, 7)))
+		elif iGoal == 1:
+			iCounter = countHappinessResources(iPhilippines)
+			aHelp.append(getIcon(iCounter >= 8) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 8)))
+		elif iGoal == 2:
+			iTreasury = pPhilippines.getGold()
+			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
 
 	elif iPlayer == iMali:
 		if iGoal == 1:

@@ -1531,4 +1531,12 @@
 		<Tag>TXT_KEY_BUILDING_KARUM_STRATEGY</Tag>
 		<English>Karum</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT</Tag>
+		<English>Port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Port[COLOR_REVERT], the Philipine replacement for the [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT], increases the city's wealth output.</English>
+	</TEXT>
 </Civ4GameText>

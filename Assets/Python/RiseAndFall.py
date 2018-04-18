@@ -2582,12 +2582,15 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
-		elif iCiv == iNetherlands:
-			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
-			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
+		elif iCiv == iPhilippines:
+			utils.makeUnit(iArcher, iCiv, tPlot, 3)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 		elif iCiv == iSwahili:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
+		elif iCiv == iNetherlands:
+			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
+			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 4)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2933,6 +2936,17 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iGalley, iCiv, tSeaPlot, 2)
+		elif iCiv == iPhilippines:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				pPhilippines.initUnit(iBalangay, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iLongbowman, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iBalangay, iCiv, tSeaPlot, 1)
 		elif iCiv == iMali:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 5)
@@ -3256,6 +3270,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iSwahili:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iPhilippines:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iMali:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iPoland:

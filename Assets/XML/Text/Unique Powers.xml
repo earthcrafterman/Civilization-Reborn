@@ -578,6 +578,18 @@
 		<English>No penalties for cultural expansion over Ocean tiles</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_PHI_TITLE</Tag>
+		<English>The Power of Embassies:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PHI</Tag>
+		<English>Naval units can establish embassies. Embassies provide 2 [ICON_GOLD] in your capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_ESTABLISH_EMBASSY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Establish Embassy[COLOR_REVERT][NEWLINE]Provides 2[ICON_GOLD] in your capital. Cannot lose contact with this civ.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
 		<English>The Power of Golden Liberty:</English>
 		<German>Die Macht der Goldenen Freiheit:</German>

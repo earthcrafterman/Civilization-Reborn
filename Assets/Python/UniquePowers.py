@@ -67,6 +67,9 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iSwahili]) and pSwahili.isAlive():
 			self.swahiliDhow()
+
+		if iGameTurn >= getTurnForYear(tBirth[iPhilippines]) and pPhilippines.isAlive():
+			utils.doPhilippineEmbassy()
 		
 		data.bBabyloniaTechReceived = False
 
@@ -588,7 +591,7 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
-		
+
 	def boersUP(self, city):
 		lFreeBuildings = [iBarracks, iStable, iCourthouse, iJail, iMarket, iPostOffice, iGranary, iSmokehouse, iAqueduct, iForge, iLibrary]
 		for iBuilding in lFreeBuildings:

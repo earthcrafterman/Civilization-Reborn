@@ -100,88 +100,91 @@ BeginTeam
 	TeamID=29, (Russia)
 EndTeam
 BeginTeam
-	TeamID=30, (Swahili)
+	TeamID=30, (Phillipines)
 EndTeam
 BeginTeam
-	TeamID=31, (Mali)
+	TeamID=31, (Swahili)
 EndTeam
 BeginTeam
-	TeamID=32, (Poland)
+	TeamID=32, (Mali)
 EndTeam
 BeginTeam
-	TeamID=33, (Portugal)
+	TeamID=33, (Poland)
 EndTeam
 BeginTeam
-	TeamID=34, (Inca)
+	TeamID=34, (Portugal)
 EndTeam
 BeginTeam
-	TeamID=35, (Italy)
+	TeamID=35, (Inca)
 EndTeam
 BeginTeam
-	TeamID=36, (Mongols)
+	TeamID=36, (Italy)
 EndTeam
 BeginTeam
-	TeamID=37, (Aztecs)
+	TeamID=37, (Mongols)
 EndTeam
 BeginTeam
-	TeamID=38, (Mughals)
+	TeamID=38, (Aztecs)
 EndTeam
 BeginTeam
-	TeamID=39, (Turkey)
+	TeamID=39, (Mughals)
 EndTeam
 BeginTeam
-	TeamID=40, (Thailand)
+	TeamID=40, (Turkey)
 EndTeam
 BeginTeam
-	TeamID=41, (Congo)
+	TeamID=41, (Thailand)
 EndTeam
 BeginTeam
-	TeamID=42, (Sweden)
+	TeamID=42, (Congo)
 EndTeam
 BeginTeam
-	TeamID=43, (Netherlands)
+	TeamID=43, (Sweden)
 EndTeam
 BeginTeam
-	TeamID=44, (Germany)
+	TeamID=44, (Netherlands)
 EndTeam
 BeginTeam
-	TeamID=45, (America)
+	TeamID=45, (Germany)
 EndTeam
 BeginTeam
-	TeamID=46, (Argentina)
+	TeamID=46, (America)
 EndTeam
 BeginTeam
-	TeamID=47, (Brazil)
+	TeamID=47, (Argentina)
 EndTeam
 BeginTeam
-	TeamID=48, (Australia)
+	TeamID=48, (Brazil)
 EndTeam
 BeginTeam
-	TeamID=49, (Boers)
+	TeamID=49, (Australia)
 EndTeam
 BeginTeam
-	TeamID=50, (Canada)
+	TeamID=50, (Boers)
 EndTeam
 BeginTeam
-	TeamID=51, (Israel)
+	TeamID=51, (Canada)
 EndTeam
 BeginTeam
-	TeamID=52, (Independent)
+	TeamID=52, (Israel)
 EndTeam
 BeginTeam
-	TeamID=53, (Independent2)
+	TeamID=53, (Independent)
 EndTeam
 BeginTeam
-	TeamID=54, (Native)
+	TeamID=54, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=55, (Celtia)
+	TeamID=55, (Native)
 EndTeam
 BeginTeam
-	TeamID=56, (Seljuks)
+	TeamID=56, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=57, (Barbarian)
+	TeamID=57, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=58, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -533,6 +536,19 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=30
+	LeaderType=LEADER_LAPU_LAPU
+	CivType=CIVILIZATION_PHILIPPINES
+	PlayableCiv=1
+	StartingGold=600
+	StateReligion=RELIGION_BUDDHISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=31
 	LeaderType=LEADER_SHIRAZI
 	CivType=CIVILIZATION_SWAHILI
 	PlayableCiv=1
@@ -546,7 +562,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=31
+	Team=32
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI
 	PlayableCiv=1
@@ -560,7 +576,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=32
+	Team=33
 	LeaderType=LEADER_SOBIESKI
 	CivType=CIVILIZATION_POLAND
 	PlayableCiv=1
@@ -574,7 +590,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=33
+	Team=34
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL
 	PlayableCiv=1
@@ -588,7 +604,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=34
+	Team=35
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA
 	PlayableCiv=1
@@ -600,7 +616,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=35
+	Team=36
 	LeaderType=LEADER_LORENZO
 	CivType=CIVILIZATION_ITALY
 	PlayableCiv=1
@@ -614,7 +630,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=36
+	Team=37
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL
 	PlayableCiv=1
@@ -627,7 +643,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=37
+	Team=38
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC
 	PlayableCiv=1
@@ -640,7 +656,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=38
+	Team=39
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
 	PlayableCiv=1
@@ -655,7 +671,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=39
+	Team=40
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN
 	PlayableCiv=1
@@ -670,7 +686,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=40
+	Team=41
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
 	PlayableCiv=1
@@ -684,7 +700,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=41
+	Team=42
 	LeaderType=LEADER_MBEMBA
 	CivType=CIVILIZATION_CONGO
 	PlayableCiv=1
@@ -696,7 +712,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=42
+	Team=43
 	LeaderType=LEADER_GUSTAV
 	CivType=CIVILIZATION_SWEDEN
 	PlayableCiv=1
@@ -710,7 +726,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=43
+	Team=44
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS
 	PlayableCiv=1
@@ -724,7 +740,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=44
+	Team=45
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
 	PlayableCiv=1
@@ -739,7 +755,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
+	Team=46
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA
 	PlayableCiv=1
@@ -753,7 +769,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
+	Team=47
 	LeaderType=LEADER_SAN_MARTIN
 	CivType=CIVILIZATION_ARGENTINA
 	PlayableCiv=1
@@ -767,7 +783,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	Team=48
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
 	PlayableCiv=1
@@ -782,7 +798,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_MENZIES
 	CivType=CIVILIZATION_AUSTRALIA
 	PlayableCiv=1
@@ -796,7 +812,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_KRUGER
 	CivType=CIVILIZATION_BOER
 	PlayableCiv=1
@@ -810,7 +826,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=50
+	Team=51
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
 	PlayableCiv=1
@@ -825,7 +841,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=51
+	Team=52
 	LeaderType=LEADER_BEN_GURION
 	CivType=CIVILIZATION_ISRAEL
 	PlayableCiv=1
@@ -840,7 +856,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=52
+	Team=53
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -849,7 +865,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=53
+	Team=54
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -858,7 +874,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=54
+	Team=55
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -867,7 +883,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=55
+	Team=56
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -875,7 +891,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=56
+	Team=57
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	Color=PLAYERCOLOR_SELJUK
@@ -887,7 +903,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=57
+	Team=58
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
@@ -9145,10 +9161,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=54, (Native)
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=55, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=54, (Native)
+		CityOwner=55, (Native)
 		CityName=Yax Mutal
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
@@ -9550,18 +9566,18 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=54, (Native)
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=55, (Native)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=54, (Native)
+		UnitType=UNIT_WORKER, UnitOwner=55, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=54, (Native)
+		CityOwner=55, (Native)
 		CityName=Chich'en Itz&#225;
 		CityPopulation=2
 		BuildingType=BUILDING_MAYAN_BALL_COURT
 		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
-		Player54Culture=10, (Native)
+		Player55Culture=10, (Native)
 	EndCity
 EndPlot
 BeginPlot
@@ -24262,19 +24278,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=57, (Barbarian)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=58, (Barbarian)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=57, (Barbarian)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=58, (Barbarian)
 	EndUnit
 	BeginCity
-		CityOwner=57, (Barbarian)
+		CityOwner=58, (Barbarian)
 		CityName=Vindobona
 		CityPopulation=2
 		BuildingType=BUILDING_MONUMENT
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		BuildingType=BUILDING_WALLS
-		Player57Culture=10
+		Player58Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -30452,13 +30468,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=53, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=53, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Artaxata
 		CityPopulation=2
 		BuildingType=BUILDING_MONUMENT
@@ -34644,19 +34660,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Lothal
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -34664,7 +34680,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player52Culture=10, (Independent)
+		Player53Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35020,19 +35036,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Vijayanagara
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35040,7 +35056,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player53Culture=10, (Independent2)
+		Player54Culture=10, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35060,16 +35076,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Pratisthan
 		CityPopulation=3
 		BuildingType=BUILDING_STABLE
@@ -35081,7 +35097,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player52Culture=50, (Independent)
+		Player53Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35166,13 +35182,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Kashgar
 		CityPopulation=3
 		BuildingType=BUILDING_WALLS
@@ -35514,19 +35530,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Ujjaini
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35534,7 +35550,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player52Culture=50, (Independent)
+		Player53Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35902,19 +35918,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Madurai
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35922,7 +35938,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player52Culture=10, (Independent)
+		Player53Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35960,26 +35976,26 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Golkonda
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player53Culture=50, (Independent2)
+		Player54Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -36368,19 +36384,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=52, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -36389,7 +36405,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player52Culture=50, (Independent)
+		Player53Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -37674,10 +37690,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=52, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Dunhuang
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -38727,16 +38743,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=52, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Pagan
 		CityPopulation=4
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player52Culture=10, (Independent)
+		Player53Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -39167,10 +39183,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 (	BeginUnit)
-(		UnitType=UNIT_CROSSBOWMAN, UnitOwner=52, (Independent))
+(		UnitType=UNIT_CROSSBOWMAN, UnitOwner=53, (Independent))
 (	EndUnit)
 (	BeginCity)
-(		CityOwner=52, (Independent))
+(		CityOwner=53, (Independent))
 (		CityName=Chengdu)
 (		CityPopulation=2)
 (		BuildingType=BUILDING_GRANARY)
@@ -39629,7 +39645,7 @@ BeginPlot
 (		UnitType=UNIT_WORKER, UnitOwner=1, (China))
 (	EndUnit)
 	BeginCity
-		CityOwner=53, (China)
+		CityOwner=54, (China)
 		CityName=Chang'an, (Xi'an)
 		CityPopulation=1, (4)
 (		BuildingType=BUILDING_PALACE)
@@ -39984,13 +40000,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=52, (Independent)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=53, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=52, (Independent)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Co Loa
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
@@ -40422,10 +40438,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	BeginCity, (Removed after game start)
-		CityOwner=53
+		CityOwner=54
 		CityName=Guiyang
 		CityPopulation=1
-		Player53Culture=250
+		Player54Culture=250
 	EndCity
 	PlotType=1
 EndPlot
@@ -40474,13 +40490,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=53, (China)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=54, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=53, (China)
+		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=54, (China)
 	EndUnit
 	BeginCity
-		CityOwner=53, (China)
+		CityOwner=54, (China)
 		CityName=Beijing
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -40496,7 +40512,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player53Culture=3000, (100)
+		Player54Culture=3000, (100)
 	EndCity
 EndPlot
 BeginPlot
@@ -40869,10 +40885,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (China)
 	EndUnit
 	BeginCity
-		CityOwner=53, (China)
+		CityOwner=54, (China)
 		CityName=Kaifeng
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -41635,10 +41651,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=53, (Independent2)
+		UnitType=UNIT_SPEARMAN, UnitOwner=54, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Guangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -41681,10 +41697,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (China)
 	EndUnit
 	BeginCity
-		CityOwner=53, (China)
+		CityOwner=54, (China)
 		CityName=Nanjing
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -41699,7 +41715,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player53Culture=50, (Native)
+		Player54Culture=50, (Native)
 	EndCity
 EndPlot
 BeginPlot
@@ -41735,16 +41751,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=57, (Barbarian))
+(		UnitType=UNIT_ARCHER, UnitOwner=58, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=57, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=58, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=57, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=58, (Barbarian))
 (	EndUnit)
 (	BeginCity)
-(		CityOwner=57, (Barbarian))
+(		CityOwner=58, (Barbarian))
 (		CityName=Simiyan hoton)
 (		CityPopulation=2)
 (		BuildingType=BUILDING_WALLS)
@@ -42472,7 +42488,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=53, (Independent2)
+		CityOwner=54, (Independent2)
 		CityName=Hangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -42829,7 +42845,7 @@ EndPlot
 BeginPlot
 	x=108,y=35
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=108,y=36
@@ -43274,13 +43290,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=52, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=53, (Independent)
 	EndUnit
 		BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=52, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=53, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=52, (Independent)
+		CityOwner=53, (Independent)
 		CityName=Hancheng
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -43595,6 +43611,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=33
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

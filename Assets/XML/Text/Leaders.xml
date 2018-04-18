@@ -642,4 +642,8 @@
 		<Tag>TXT_KEY_LEADER_DHARMAPALA</Tag>
 		<English>Dharmapala</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_LAPU_LAPU</Tag>
+		<English>Lapu-Lapu</English>
+	</TEXT>
 </Civ4GameText>

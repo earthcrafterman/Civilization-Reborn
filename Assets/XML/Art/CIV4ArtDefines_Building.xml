@@ -2777,5 +2777,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Dinh/Button_Dinh.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PHILIPPINES_PORT</Type>
+			<LSystem>LSYSTEM_HARBOR</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Port/port.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Port/button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

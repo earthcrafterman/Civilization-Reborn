@@ -2623,6 +2623,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case MALI:
 		break;
+	case PHILIPPINES:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		break;
 	case POLAND:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 3;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
@@ -3403,6 +3408,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case MALI:
 										if (iI == UNIVERSITY_OF_SANKORE)	iTempValue *= 4;
+										break;
+									case PHILIPPINES:
 										break;
 									case TURKEY:
 										if (iI == HAGIA_SOPHIA) iTempValue *= 2;

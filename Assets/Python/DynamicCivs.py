@@ -415,8 +415,7 @@ lMonarchyOf = [iEthiopia, iKorea]
 lMonarchyAdj = [iChina, iIndia, iRome]
 lDuchy = [iHolyRome, iPoland, iRussia]
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iVietnam]
-
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iPhilippines, iVietnam]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
@@ -492,6 +491,7 @@ dCapitals = {
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
 	iNetherlands : ["Brussels", "Antwerpen"],
+	iPhilippines : ["Tondo", "Butuan"],
 	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
 }
 
@@ -530,6 +530,7 @@ dStartingLeaders = [
 	iHolyRome : iBarbarossa,
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
+	iPhilippines : iLapuLapu,
 	iSwahili : iShirazi,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
@@ -1248,6 +1249,16 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_RUSSIA_MUSCOVY"
 
 			return capitalName(iPlayer)
+
+	elif iPlayer == iPhilippines:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_PHILIPPINES_THE"
+	
+		if isCapital(iPlayer, ["Tondo"]):
+			return "TXT_KEY_CIV_PHILIPPINES_TONDO"
+			
+		if isCapital(iPlayer, ["Butuan"]):
+			return "TXT_KEY_CIV_PHILIPPINES_BUTUAN"
 
 	elif iPlayer == iInca:
 		if bResurrected:
@@ -2137,6 +2148,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 
 		if isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
+			
+	elif iPlayer == iPhilippines:
+		if iReligion == iHinduism:
+			return "TXT_KEY_CIV_PHILIPPINES_RAJAHNATE"
 
 	elif iPlayer == iNetherlands:
 		if bCityStates:

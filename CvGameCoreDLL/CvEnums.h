@@ -1324,6 +1324,7 @@ enum PlayerTypes				// Exposed to Python
 	ENGLAND,
 	HOLY_ROME,
 	RUSSIA,
+	PHILIPPINES,
 	SWAHILI,
 	MALI,
 	POLAND,
