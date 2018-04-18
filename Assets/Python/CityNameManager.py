@@ -29,6 +29,9 @@ def isResurrected(iCiv):
 	return (data.players[iCiv].iResurrections > 0)
 
 def getLanguages(iCiv):
+	if not isinstance(iCiv, int):
+		iCiv = iCiv.getID()
+		
 	pCiv = gc.getPlayer(iCiv)
 
 	if iCiv == iEgypt:
