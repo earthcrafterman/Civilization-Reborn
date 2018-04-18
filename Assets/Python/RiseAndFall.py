@@ -2659,7 +2659,7 @@ class RiseAndFall:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iAssyria:
-			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 4)
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:

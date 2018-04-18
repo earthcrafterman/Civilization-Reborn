@@ -16,11 +16,11 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
-(-4000, (72, 43), iIndependent2, 'Kultepe', 2, iArcher, 2), 	# Hattians
+(-4000, (72, 43), iIndependent2, 'Kanes', 2, iArcher, 2), 	# Hattians
 (-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
 (-3600, (69, 32), iIndependent2, 'Niwt-Rst', 1, iArcher, 1), 	# Upper Egypt
 (-3600, (69, 35), iIndependent2, 'Ineb-Hedj', 1, iArcher, 1), 	# Lower Egypt
-(-3000, (69, 43), iIndependent, 'Troy', 1, iArcher, 2),	# Troy
+(-3000, (69, 43), iIndependent, 'Wilusha', 1, iArcher, 2),	# Troy
 (-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, iMilitia, 1), 	# Minoans
@@ -663,6 +663,16 @@ class Barbs:
 			    outside of territory, not in jungles, in small groups, target cities'''
 		
 		lPlots = self.possibleTiles(tTL, tBR, bTerritory=False)
+		tPlot = utils.getRandomEntry(lPlots)
+		
+		if tPlot:
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+	
+	def spawnCollapse(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
+		'''Leoreth: represents large invasion forces and migration movements
+			    inside of territory, not in jungles, in groups, target cities'''
+			    
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True)
 		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:

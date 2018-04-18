@@ -8340,6 +8340,10 @@ int CvCity::getTradeRouteModifier() const
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 			if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
 				iResult += 10;*/
+	
+	//Hittite UP
+	if (getOwner() == HITTITE && plot()->isCore(HITTITE))
+		iResult += 100;
 
 	return iResult;
 }
@@ -13496,6 +13500,9 @@ int CvCity::getTradeRoutes() const
 		iTradeRoutes += GET_PLAYER(getOwnerINLINE()).getCoastalTradeRoutes();
 	}
 	iTradeRoutes += getExtraTradeRoutes();
+	
+	if (getOwner() == HITTITE && plot()->isCore(HITTITE))
+		iTradeRoutes += 1;
 
 	return std::min(iTradeRoutes, GC.getDefineINT("MAX_TRADE_ROUTES"));
 }

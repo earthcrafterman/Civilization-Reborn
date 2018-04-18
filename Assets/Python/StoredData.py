@@ -217,7 +217,7 @@ class GameData:
 		
 		# Plague
 		
-		self.lGenericPlagueDates = [-1] * 5
+		self.lGenericPlagueDates = [-1] * 4
 		
 		self.bNoPlagues = False
 		

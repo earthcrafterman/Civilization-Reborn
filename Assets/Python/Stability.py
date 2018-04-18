@@ -570,13 +570,6 @@ def secedeCity(city, iNewOwner):
 	return lRelocatedUnits
 
 def completeCollapse(iPlayer):
-	#Hittite UP
-	if iPlayer == iHittite:
-		balanceStability(iVassal, iStabilityShaky)
-		collapseToCore(iPlayer)
-		data.players[iPlayer].iResurrections += 1
-		return
-	
 	#citis: AI Byzantium is even harder to collapse
 	iYear = gc.getGame().getGameTurnYear()
 	if iPlayer == iByzantium and utils.getHumanID() != iByzantium:

@@ -77807,7 +77807,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>

@@ -48,8 +48,6 @@ class Plague:
 		undoPlague = gc.getGame().getSorenRandNum(8, 'undo')
 		if undoPlague <= 3:
 			data.lGenericPlagueDates[undoPlague] = -1
-		
-		data.lGenericPlagueDates[4] = getTurnForYear(-1300) + utils.variation(5)
 
 
 	def checkTurn(self, iGameTurn):

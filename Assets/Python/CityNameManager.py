@@ -5646,8 +5646,9 @@ tRenames = (
 {
 	
 },
+#Language: Hittite
 {
-	
+	"Kanes"			:	"Hattusa"
 },
 #Language: Persian
 {
@@ -5684,6 +5685,7 @@ tRenames = (
 },
 #Language: Greek
 {
+	"Wilusha"		:	"Troia",
 	"Abdju"			:	"Abydos",
 	"Akka"			:	"Akre",
 	"Alexandreia"		:	"Alexandreia",
@@ -5776,6 +5778,7 @@ tRenames = (
 },
 #Language: Latin
 {
+	"Wilusha"			:	"Illium",
 	"Abdju"			:	"Abydos",
 	"Nikopolis"		:	"Actia Nicopolis",
 	"Adiacium"		:	"Adiacium",
