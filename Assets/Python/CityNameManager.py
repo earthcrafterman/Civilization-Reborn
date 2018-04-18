@@ -29,10 +29,7 @@ def isResurrected(iCiv):
 	return (data.players[iCiv].iResurrections > 0)
 
 def getLanguages(iCiv):
-	if type(iCiv) == type(int):
-		pCiv = gc.getPlayer(iCiv)
-	else:
-		pCiv = iCiv
+	pCiv = gc.getPlayer(iCiv)
 
 	if iCiv == iEgypt:
 		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
