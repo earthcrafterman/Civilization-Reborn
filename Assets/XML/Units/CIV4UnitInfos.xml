@@ -5110,11 +5110,11 @@
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_BEAR</Class>
+			<Class>UNITCLASS_ARCHER</Class>
 			<Type>UNIT_BABYLONIAN_ASHARITTU_BOWMAN</Type>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BABYLONIAN_ASHARITTU_BOWMAN</Description>
 			<Civilopedia>TXT_KEY_UNIT_BABYLONIAN_ASHARITTU_BOWMAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BABYLONIAN_ASHARITTU_BOWMAN_STRATEGY</Strategy>
@@ -5134,21 +5134,15 @@
 					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</UnitAIs>
-			<NotUnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_COUNTER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-				<UnitAI>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
-			</NotUnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
 			<PrereqTech>TECH_TANNING</PrereqTech>
 			<iCost>25</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -5175,7 +5169,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
@@ -5185,10 +5179,11 @@
 			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCityAttack>50</iCityAttack>
+			<iCityDefense>50</iCityDefense>
 			<iHillsAttack>25</iHillsAttack>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>1</iAsset>
-			<iPower>4</iPower>
+			<iPower>3</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -6770,7 +6765,7 @@
 			</UnitAIs>
 			<PrereqTech>TECH_LEVERAGE</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
-			<iCost>50</iCost>
+			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>

@@ -775,12 +775,6 @@ class RiseAndFall:
 				if unit.getUnitType() == gc.getInfoTypeForString("UNIT_BABYLONIAN_ASHARITTU_BOWMAN"):
 					unit.setXY(77, 37, True, True, False)
 
-		if pBabylonia.isAlive() and utils.getHumanID() != iBabylonia and gc.getMap().plot(77,37).isCity() and gc.getMap().plot(77,37).getPlotCity().getOwner() == iBabylonia and gc.getGame().getGameTurnYear() <= -2200 and not teamBabylonia.isAtWar(iIndependent):
-			teamBabylonia.declareWar(iIndependent, False, WarPlanTypes.WARPLAN_TOTAL)
-
-		if gc.getGame().getGameTurnYear() <= -1700 and gc.getGame().getGameTurnYear() >= -2200 and pEgypt.isAlive() and utils.getHumanID() != iEgypt and not teamEgypt.isAtWar(iIndependent2):
-			teamEgypt.declareWar(iIndependent2, False, WarPlanTypes.WARPLAN_TOTAL)
-
 		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 2 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]):
 			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
 				unit = gc.getMap().plot(78, 43).getUnit(iUnit)
@@ -2663,7 +2657,7 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iAssyria:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
-			utils.makeUnit(iArcher, iCiv, tPlot, 4)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.createSettlers(iCiv, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)

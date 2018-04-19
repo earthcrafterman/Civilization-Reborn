@@ -390,11 +390,11 @@ dVictoryYears = {
 iCivEgypt : (-1000, -100, 170),
 iCivChina : (1000, -1, 1800),
 iCivBabylonia : (-1, -850, -700),
-iCivAssyria : (-1300, -650, -600),
+iCivAssyria : (-700, -650, -600),
 iCivHarappa : (-1600, -1500, -800),
 iCivHittite: (-1200, -546, -1),
 iCivGreece : (-1, -330, -250),
-iCivIndia : (-100, 700, 1200),
+iCivIndia : (350, 850, 1200),
 iCivCarthage : (-300, -100, 200),
 iCivPolynesia : (800, 1000, 1200),
 iCivPersia : (140, 350, 350),
@@ -1218,8 +1218,8 @@ iNetherlands : 200,
 lEnemyCivsOnSpawn = [
 [], #Egypt
 [iIndependent,iIndependent2], #China
-[iIndependent,iIndependent2, iAssyria], #Babylonia
-[iIndependent,iIndependent2, iBabylonia, iBabylonia], #Assyria
+[], #Babylonia
+[], #Assyria
 [], #Harappa
 [iBabylonia, iBabylonia], #Hittite
 [iCeltia, iHittite, iHittite], #Greece
@@ -1277,7 +1277,7 @@ lTotalWarOnSpawn = [
 [], #Egypt
 [], #China
 [], #Babylonia
-[iBabylonia], #Assyria
+[], #Assyria
 [], #Harappa
 [iIndependent, iIndependent, iBabylonia], #Hittite
 [], #Greece
