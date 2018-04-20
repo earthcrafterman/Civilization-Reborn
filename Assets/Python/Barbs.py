@@ -265,16 +265,15 @@ class Barbs:
 
 		#American natives
 		if utils.isYearIn(600, 1100):
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), 5)
 			if utils.getScenario() == i3000BC:  #late start condition
-				self.checkSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkCampUnitSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), 5)
 			else:  #late start condition
-				self.checkSpawn(iNative, iJaguar, 2, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkCampUnitSpawn(iNative, iJaguar, 2, (15, 38), (24, 47), 5)
 		if utils.isYearIn(1300, 1600):
-			self.checkSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), 20)
 		if utils.isYearIn(1400, 1800):
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
-			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
+			self.checkCampUnitSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), 20)
 		if utils.isYearIn(1300, 1600):
 			if iGameTurn % 18 == 0:
 				if not gc.getMap().plot(27, 29).isUnit():
@@ -285,11 +284,29 @@ class Barbs:
 		
 		if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
 			if utils.isYearIn(1700, 1900):
-				self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
+				self.checkCampUnitSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), 20)
 			
 			if utils.isYearIn(1500, 1850):
-				self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
+				self.checkCampUnitSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), 20)
 				
+		if utils.isYearIn(600, 1900):
+			iMaxCamps = 1
+			if data.iFirstNewWorldColony >= 0:
+				iMaxCamps += 2
+				if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
+					iMaxCamps += 1
+			if iGameTurn >= getTurnForYear(1750):
+				iMaxCamps += 1
+				if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
+					iMaxCamps += 1
+			
+			if iGameTurn < getTurnForYear(1400):
+				self.checkCampSpawn(iNative, iCampUnit, (15, 38), (24, 47), False, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 7)
+			elif iGameTurn < getTurnForYear(1700):
+				self.checkCampSpawn(iNative, iCampUnit, (11, 44), (33, 51), False, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 9)
+			else:
+				self.checkCampSpawn(iNative, iCampUnit, (11, 44), (33, 51), True, iGameTurn, 10, data.iSeed % 10, iMaxCamps, 14)
+
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
 			self.checkSpawn(iNative, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
@@ -576,3 +593,49 @@ class Barbs:
 			
 	def includesActiveHuman(self, lPlayers):
 		return utils.getHumanID() in lPlayers and tBirth[utils.getHumanID()] <= gc.getGame().getGameTurnYear()
+
+	# Merijn: Camp functions
+	def checkCampSpawn(self, iPlayer, iUnitType, tTL, tBR, bInvasion, iTurn, iPeriod, iRest, iMaxCamps, iStrength):
+		#CyInterface().addMessage(utils.getHumanID(), False, iDuration/2, "Camp spawn check", "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+		if iTurn % utils.getTurns(iPeriod) == iRest:
+			iNumCamps = len(PyPlayer(iPlayer).getUnitsOfType(iCampUnit))
+			if iNumCamps < iMaxCamps:
+				self.placeCamp(iPlayer, iUnitType, tTL, tBR, bInvasion, iStrength)
+				
+			# code that allows multiple camp areas (currently unused)
+			# campList = PyPlayer(iPlayer).getUnitsOfType(iCampUnit)
+			# lPlotList = utils.getPlotList(tTL, tBR)
+			
+			# iNumCamps = 0
+			# if campList:
+				# for camp in campList:
+					# x = camp.getX()
+					# y = camp.getY()
+					# if (x, y) in lPlotList:
+						# iNumCamps += 1
+						
+			# if iNumCamps < iMaxCamps:
+				# self.placeCamp(iPlayer, iUnitType, tTL, tBR, bInvasion, iStrength)
+
+	def checkCampUnitSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, iChance):
+		campList = PyPlayer(iPlayer).getUnitsOfType(iCampUnit)
+		lPlotList = utils.getPlotList(tTL, tBR)
+		
+		if campList:
+			for camp in campList:
+				x = camp.getX()
+				y = camp.getY()
+				if (x, y) in lPlotList:
+					if gc.getGame().getSorenRandNum(100, 'Random entry') < iChance:
+						utils.makeUnitAI(iUnitType, iPlayer, (x, y), UnitAITypes.UNITAI_ATTACK, iNumUnits)
+						CyInterface().addMessage(utils.getHumanID(), False, iDuration/2, "Camp units spawn", "", 0, "", ColorTypes(iLime), -1, -1, True, True)
+							
+	def placeCamp(self, iPlayer, iUnitType, tTL, tBR, bInvasion, iStrength):
+		lPlots = self.possibleTiles(tTL, tBR)
+		if not lPlots and bInvasion:
+			lPlots = self.possibleTiles(tTL, tBR, bTerritory=True)
+
+		tPlot = utils.getRandomEntry(lPlots)
+		if tPlot:
+			camp = gc.getPlayer(iPlayer).initUnit(iUnitType, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			camp.setBaseCombatStr(iStrength)
