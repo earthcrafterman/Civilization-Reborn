@@ -422,9 +422,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iHittite:
 		#first goal: Control 20 trade routes by 1300 BC
 		if isPossible(iHittite, 0):
-			iNumRoutes = 0
-			for city in utils.getCityList(iHittite):
-				iNumRoutes += city.getTradeRoutes()
+			iNumRoutes = pHittite.getTradeRoutes()
 			if iNumRoutes >= 20:
 				win(iHittite, 0)
 		
@@ -3790,11 +3788,6 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iAssyria:
 		if iGoal == 0:
-			bLevant = False
-			bEasternAnatolia = False
-			bMesopotamia = False
-			bElam = False
-			
 			bLevant = isControlled(iAssyria, utils.getPlotList(tLevantTL, tLevantBR))
 			bElam = isControlled(iAssyria, utils.getPlotList(tElamTL, tElamBR))
 			bMesopotamia = isControlled(iAssyria, utils.getPlotList(tMesopotamiaTL, tMesopotamiaBR))
@@ -3815,9 +3808,7 @@ def getUHVHelp(iPlayer, iGoal):
 	
 	elif iPlayer == iHittite:
 		if iGoal == 0:
-			iNumRoutes = 0
-			for city in utils.getCityList(iHittite):
-				iNumRoutes += city.getTradeRoutes()
+			iNumRoutes = pHittite.getTradeRoutes()
 			aHelp.append(getIcon(iNumRoutes >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_ROUTES", (iNumRoutes, 20)))
 
 		if iGoal == 1:
@@ -3828,7 +3819,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 		if iGoal == 2:
 			iNumIron = countResources(iHittite, iIron)
-			aHelp.append(getIcon(iNumIron >= 3 and not isLost(iHittite, 2)) + localText.getText("TXT_KEY_VICTORY_FIRST_MEDITERRANEAN_IRON_CONTROLLED", ()))
+			aHelp.append(getIcon(iNumIron > 0) + localText.getText("TXT_KEY_VICTORY_FIRST_MEDITERRANEAN_IRON_CONTROLLED", ()))
 
 	elif iPlayer == iGreece:
 		if iGoal == 0:
