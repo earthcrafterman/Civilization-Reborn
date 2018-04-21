@@ -55,6 +55,7 @@ iPoland		: 80,
 iPortugal	: 95,
 iItaly		: 90,
 iCongo		: 80,
+iSweden		: 20,
 iGermany	: 25,
 iAmerica	: 20,
 }
