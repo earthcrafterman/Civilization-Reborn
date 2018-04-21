@@ -5179,7 +5179,6 @@
 			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCityAttack>50</iCityAttack>
-			<iCityDefense>50</iCityDefense>
 			<iHillsAttack>25</iHillsAttack>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>1</iAsset>
