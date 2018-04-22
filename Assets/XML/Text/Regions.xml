@@ -509,4 +509,20 @@
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_70</Tag>
+		<English>Hejaz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_71</Tag>
+		<English>Levant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_72</Tag>
+		<English>Lower Nile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_73</Tag>
+		<English>Lower Nile, North Africa</English>
+	</TEXT>
 </Civ4GameText>

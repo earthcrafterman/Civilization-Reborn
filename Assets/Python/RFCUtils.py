@@ -1567,6 +1567,10 @@ class RFCUtils:
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 		if iPlayer == iIndia and gc.getPlayer(iMughals).isAlive(): return False
 		
+		# Egypt cannot respawn when Mamluks are alive and vice versa
+		if iPlayer == iEgypt and gc.getPlayer(iMamluks).isAlive(): return False
+		if iPlayer == iMamluks and gc.getPlayer(iEgypt).isAlive(): return False
+		
 		# Exception during Japanese UHV
 		if self.getHumanID() == iJapan and iGameTurn >= getTurnForYear(1920) and iGameTurn <= getTurnForYear(1945):
 			if iPlayer in [iChina, iKorea, iIndonesia, iThailand]:

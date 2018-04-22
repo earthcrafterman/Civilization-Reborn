@@ -538,4 +538,8 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MUSTASIM</Tag>
+		<English>Mustasim</English>
+	</TEXT>
 </Civ4GameText>

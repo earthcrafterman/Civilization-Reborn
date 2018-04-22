@@ -1890,6 +1890,8 @@ iCivRussia : {
 		"Vasily Chuikov", # 20th
 	],
 },
+iCivMamluks : {
+},
 iCivMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th

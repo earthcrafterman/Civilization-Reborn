@@ -5252,6 +5252,17 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
+								case MAMLUKS:
+									/*if (iI == FISSION) {
+										iValue *= 4;
+										iValue /= 3;
+									}*/
+									if (iI == SCHOLARSHIP || iI == ALCHEMY)
+										iValue *= 3;
+									else if (iI == FINANCE || iI == FIREARMS || iI == COMPANIES)
+										iValue /= 5;
+									else if (iI == PAPER)
+										iValue /= 2;
 								case MALI:
 									if (iI == EDUCATION)
 										iValue *= 3;
@@ -11591,7 +11602,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == MAMLUKS)
 				{
 					iValue /= 2;
 				}

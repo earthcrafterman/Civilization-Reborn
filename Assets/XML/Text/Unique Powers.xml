@@ -428,6 +428,14 @@
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MAM_TITLE</Tag>
+		<English>The Power of Madaris:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAM</Tag>
+		<English>+2 [ICON_RESEARCH] to science buildings</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
 		<French>Le Pouvoir de la Richesse :</French>

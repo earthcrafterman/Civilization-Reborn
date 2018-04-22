@@ -95,6 +95,10 @@
 		<DefineName>PLAYER_REBIRTH_COLOMBIA</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>PLAYER_OCCURRENCE_MAMLUKS</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
 
 <!-- BULL User Settings
 	This file is used only when BULL is running without BUG, but it will cause no harm to include it with BUG.

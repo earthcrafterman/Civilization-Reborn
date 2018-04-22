@@ -1155,7 +1155,25 @@ def getUHVTileInfo(argsList):
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
 				
-		# continue with ID 70
+	elif iPlayer == iMamluks:
+		if utils.isPlotInArea((x, y), vic.tLowerNileTL, vic.tLowerNileBR) and gc.getMap().plot(x, y).isRiver():
+			if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+				return 73
+			return 72
+		
+		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+			return 22
+		
+		if utils.isPlotInArea((x, y), vic.tHejazTL, vic.tHejazBR, vic.tHejazExceptions):
+			return 70
+		
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 71
+		
+		if (x, y) in Areas.getCoreArea(iBabylonia, False):
+			return 4
+		
+		# continue with ID 74
 			
 	return -1
 		

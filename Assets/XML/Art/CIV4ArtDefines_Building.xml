@@ -2697,5 +2697,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MAMLUK_SOUQ</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>15.00</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Souq_mamluk/humanbazaar.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Souq_mamluk/button_souq.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

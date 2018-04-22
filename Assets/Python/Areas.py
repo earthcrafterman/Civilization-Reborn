@@ -127,6 +127,7 @@ tCapitals = (
 (53, 54), # London
 (59, 51), # Frankfurt
 (73, 54), # Moskow
+(69, 35), # Cairo
 (51, 30), # Djenne
 (65, 51), # Krakow
 (49, 43), # Lisboa
@@ -169,7 +170,6 @@ iTurkey : (68, 45),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
-iEgypt : (69, 35),	# Cairo
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
@@ -215,6 +215,7 @@ tBirthArea = (
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
 ((67, 50), 	(74, 58)), 	# Russia
+((66, 31),	(71, 37)),	# Mamluks
 ((50, 29), 	(55, 32)), 	# Mali
 ((63, 50), 	(67, 55)), 	# Poland
 ((44, 42), 	(50, 44)), 	# Portugal
@@ -301,6 +302,7 @@ tCoreArea = (
 ((50, 53),	(54, 60)),	# England
 ((58, 48),	(64, 54)),	# HolyRome
 ((68, 49),	(75, 59)),	# Russia
+((67, 32),	(71, 36)),	# Mamluks
 ((50, 29), 	(55, 32)), 	# Mali
 ((63, 50),	(67, 55)),	# Poland
 ((44, 42),	(50, 44)),	# Portugal
@@ -353,6 +355,7 @@ iSpain : [(49, 43), (49, 44), (50, 43), (50, 44)],
 iFrance : [(51, 46), (52, 46), (55, 46), (57, 46)],
 iHolyRome : [(64, 51), (64, 52), (64, 53), (64, 54)],
 iRussia : [(68, 49), (68, 59), (69, 49), (69, 59), (70, 59), (71, 49)],
+iMamluks : [(71, 32)],
 iPoland : [(63, 50), (64, 50)],
 iMongolia : [(102, 47), (103, 47)],
 iMughals : [(86, 43)],
@@ -407,6 +410,7 @@ tNormalArea = (
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(65, 54)), 	# Holy Rome
 ((68, 49), 	(83, 62)), 	# Russia
+((65, 30), 	(72, 37)), 	# Mamluks
 ((48, 28), 	(57, 34)), 	# Mali
 ((63, 50), 	(69, 55)), 	# Poland
 ((44, 41), 	(50, 44)), 	# Portugal
@@ -491,6 +495,7 @@ tBroaderArea = (
 ((48, 53), 	(54, 60)), 	# England
 ((58, 43), 	(64, 54)), 	# Holy Rome
 ((65, 48), 	(92, 59)), 	# Russia
+((60, 26), 	(74, 38)), 	# Mamluks
 ((48, 26), 	(59, 34)), 	# Mali
 ((63, 50), 	(67, 55)), 	# Poland
 ((49, 40), 	(51, 45)), 	# Portugal

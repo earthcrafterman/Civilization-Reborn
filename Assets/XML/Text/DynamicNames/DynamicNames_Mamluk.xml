@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Egypt -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_DESC</Tag>
+		<English>The Mamluks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_PEOPLES</Tag>
+		<English>Fatimid peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_DEFAULT</Tag>
+		<English>%s1 Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_MAMLUK</Tag>
+		<English>Mamluk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_FATIMID</Tag>
+		<English>Fatimid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_AYYUBID</Tag>
+		<English>Ayyubid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_ADJECTIVE</Tag>
+		<English>Mamluk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_SHORT_DESC</Tag>
+		<English>Mamluks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAMLUKS_EGYPT</Tag>
+		<English>Egypt</English>
+	</TEXT>
+</Civ4GameText>

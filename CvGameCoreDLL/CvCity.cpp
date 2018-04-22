@@ -10272,6 +10272,15 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 					iCommerce += (GC.getCorporationInfo((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce())).getHeadquarterCommerce(eIndex) * GC.getGameINLINE().countCorporationLevels((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce()))) * getNumActiveBuilding(eBuilding);
 				}
 			}
+			
+			// Mamluk UP: 2 science to science buildings
+			if (getOwnerINLINE() == MAMLUKS && eIndex == COMMERCE_RESEARCH)
+			{
+				if (iCommerce > 0 || kBuilding.getCommerceModifier(COMMERCE_RESEARCH) > 0)
+				{
+					iCommerce += 2;
+				}
+			}
 
 			if ((GC.getBuildingInfo(eBuilding).getCommerceChangeDoubleTime(eIndex) != 0) &&
 				(getBuildingOriginalTime(eBuilding) != MIN_INT) &&
@@ -10378,6 +10387,14 @@ int CvCity::getAdditionalBaseCommerceRateByBuildingImpl(CommerceTypes eIndex, Bu
 		if (kBuilding.getGlobalCorporationCommerce() != NO_CORPORATION)
 		{
 			iExtraRate += GC.getCorporationInfo((CorporationTypes)(kBuilding.getGlobalCorporationCommerce())).getHeadquarterCommerce(eIndex) * GC.getGameINLINE().countCorporationLevels((CorporationTypes)(kBuilding.getGlobalCorporationCommerce()));
+		}
+		// Mamluk UP: 2 science to science buildings
+		if (getOwnerINLINE() == MAMLUKS && eIndex == COMMERCE_RESEARCH)
+		{
+			if (iExtraRate > 0 || kBuilding.getCommerceModifier(COMMERCE_RESEARCH) > 0)
+			{
+				iExtraRate += 2;
+			}
 		}
 		// ignore double-time check since this assumes you are building it this turn
 

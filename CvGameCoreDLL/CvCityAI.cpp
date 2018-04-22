@@ -2556,6 +2556,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		break;
+	case MAMLUKS:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
 	case MALI:
 		break;
 	case POLAND:
@@ -3273,6 +3278,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 4;
 										}
+										break;
+									case MAMLUKS:
+										if (iI == LA_MEZQUITA || iI == TOPKAPI_PALACE || iI == UNIVERSITY_OF_SANKORE || iI == SPIRAL_MINARET || iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE || iI == DOME_OF_THE_ROCK) iTempValue /= 2;
 										break;
 									case MALI:
 										if (iI == UNIVERSITY_OF_SANKORE)	iTempValue *= 4;

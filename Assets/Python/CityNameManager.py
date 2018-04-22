@@ -31,9 +31,7 @@ def isResurrected(iCiv):
 def getLanguages(iCiv):
 	pCiv = gc.getPlayer(iCiv)
 
-	if iCiv == iEgypt:
-		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
-		return (iLangEgyptian,)
+	if iCiv == iEgypt: return (iLangEgyptian,)
 	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iBabylonia: return (iLangBabylonian,)
 	elif iCiv == iHarappa: return (iLangHarappan, iLangIndian)
@@ -64,6 +62,7 @@ def getLanguages(iCiv):
 	elif iCiv == iEngland: return (iLangEnglish,)
 	elif iCiv == iHolyRome: return (iLangGerman,)
 	elif iCiv == iRussia: return (iLangRussian,)
+	elif iCiv == iMamluks: return (iLangEgyptianArabic, iLangArabian)
 	elif iCiv == iMali: return (iLangMalian,)
 	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
 	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)

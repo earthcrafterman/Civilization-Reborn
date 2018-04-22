@@ -1576,4 +1576,12 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAMLUK_ROYAL_MAMLUK</Tag>
+		<English>Royal Mamluk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAMLUK_ROYAL_MAMLUK_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Royal Mamluk[COLOR_REVERT], the Mamluk replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Light Cavarly Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
+	</TEXT>
 </Civ4GameText>
