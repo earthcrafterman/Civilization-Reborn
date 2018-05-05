@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Tag>
 		<English>Riksbank</English>
+		<French>Riksbank</French>
+		<German>Riksbank</German>
+		<Italian>Riksbank</Italian>
+		<Spanish>Riksbank</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Tag>
 		<English>The Swedish [COLOR_BUILDING_TEXT]Riksbank[COLOR_REVERT] greatly increases a city's production of wealth and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

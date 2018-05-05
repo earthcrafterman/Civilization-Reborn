@@ -374,7 +374,7 @@ class RiseAndFall:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
 			
 	def prepareColonists(self):
-		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
+		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings, iSweden]:
 			data.players[iPlayer].iExplorationTurn = getTurnForYear(1700)
 			
 		data.players[iVikings].iColonistsAlreadyGiven = 1
@@ -383,6 +383,7 @@ class RiseAndFall:
 		data.players[iEngland].iColonistsAlreadyGiven = 3
 		data.players[iPortugal].iColonistsAlreadyGiven = 6
 		data.players[iNetherlands].iColonistsAlreadyGiven = 4
+		data.players[iSweden].iColonistsAlreadyGiven = 1
 		
 	def assign3000BCGold(self):
 		for iPlayer in range(iNumTotalPlayers):

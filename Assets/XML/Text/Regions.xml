@@ -512,9 +512,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Skagerrak and Kattegat</English>
+		<French>Skagerrak et Kattegat</French>
+		<German>Skagerrak und Kattegat</German>
+		<Italian>Skagerrak e Kattegat</Italian>
+		<Spanish>Skagerrak y Kattegat</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_71</Tag>
 		<English>Baltic Coast</English>
+		<French>C&#244;te Baltique</French>
+		<German>Ostseeküste</German>
+		<Italian>Costa del Mar Baltico</Italian>
+		<Spanish>Costa b&#225;ltica</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -83,18 +83,30 @@
 		<French>Peuplade Su&#233;doise</French>
 		<German>Schwedische Völker</German>
 		<Italian>Popoli Svedesi</Italian>
-		<Spanish/>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_KALMAR_UNION</Tag>
 		<English>Kalmar Union</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_AND_NORWAY</Tag>
 		<English>Sweden-Norway</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DEFAULT</Tag>
 		<English>Kingdom of %s1s</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
