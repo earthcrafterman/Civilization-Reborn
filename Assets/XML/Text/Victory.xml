@@ -1224,26 +1224,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM1_TITLE</Tag>
 		<English>Furusiyya</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM1</Tag>
 		<English>Control Northern Africa, Hejaz, the Levant and Mesopotamia by 1300 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM2_TITLE</Tag>
 		<English>Eye of the Sun</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM2</Tag>
 		<English>Make Cairo the most populous city in the world and have at least 30 population on the Lower Nile in 1380 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM3_TITLE</Tag>
 		<English>Zenith of culture and science</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAM3</Tag>
 		<English>Have the highest total culture and research output in 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
@@ -3163,25 +3187,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NORTH_AFRICA_MAM</Tag>
 		<English>North Africa</English>
+		<French>Afrique du Nord</French>
+		<German>Nordafrika</German>
+		<Italian>Africa del Nord</Italian>
+		<Spanish>&#193;frica del Norte</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HEJAZ</Tag>
 		<English>Hejaz</English>
+		<French>Hedjaz</French>
+		<German>Hedschas</German>
+		<Italian>Hegiaz</Italian>
+		<Spanish>Hiyaz</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_LEVANT</Tag>
 		<English>Levant</English>
+		<French>Levante</French>
+		<German>Levante</German>
+		<Italian>Levante</Italian>
+		<Spanish>Levante</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NILE_POPULATION</Tag>
 		<English>Population in cities on the Lower Nile: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_CULTURE_OUTPUT_CIV</Tag>
 		<English>Civilization with highest culture output: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_RESEARCH_OUTPUT_CIV</Tag>
 		<English>Civilization with highest research output: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

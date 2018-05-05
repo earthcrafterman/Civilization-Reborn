@@ -430,10 +430,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAM_TITLE</Tag>
 		<English>The Power of Madaris:</English>
+		<French>Translation</French>
+		<German>Translation</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAM</Tag>
 		<English>+2 [ICON_RESEARCH] to science buildings</English>
+		<French>Translation</French>
+		<German>Translation</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>

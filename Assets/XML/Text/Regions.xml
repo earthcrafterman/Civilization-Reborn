@@ -512,17 +512,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Hejaz</English>
+		<French>Hedjaz</French>
+		<German>Hedschas</German>
+		<Italian>Hegiaz</Italian>
+		<Spanish>Hiyaz</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_71</Tag>
 		<English>Levant</English>
+		<French>Levante</French>
+		<German>Levante</German>
+		<Italian>Levante</Italian>
+		<Spanish>Levante</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_72</Tag>
 		<English>Lower Nile</English>
+		<French>Nil inf&#233;rieur</French>
+		<German>Niedriger Nil</German>
+		<Italian>Nilo inferiore</Italian>
+		<Spanish>Nilo inferior</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_73</Tag>
 		<English>Lower Nile, North Africa</English>
+		<French>Nil inf&#233;rieur, Afrique du Nord</French>
+		<German>Niedriger Nil, Nordafrika</German>
+		<Italian>Nilo inferiore, Africa del Nord</Italian>
+		<Spanish>Nilo inferior, &#193;frica del Norte</Spanish>
 	</TEXT>
 </Civ4GameText>

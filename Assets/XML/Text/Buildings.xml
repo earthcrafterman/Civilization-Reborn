@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAMLUK_SOUQ</Tag>
 		<English>Souq</English>
+		<French>Souk</French>
+		<German>Suq</German>
+		<Italian>Suq</Italian>
+		<Spanish>Zoco</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAMLUK_SOUQ_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Souq[COLOR_REVERT], the Mamluk replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases the culture output of the city..</English>
+		<English>The [COLOR_BUILDING_TEXT]Souq[COLOR_REVERT], the Mamluk replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases the culture output of the city.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
