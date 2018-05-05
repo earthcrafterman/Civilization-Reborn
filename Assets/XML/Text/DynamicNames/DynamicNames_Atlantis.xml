@@ -4,21 +4,41 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATLANTIS_DESC</Tag>
 		<English>The Atlanteans</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATLANTIS_PEOPLES</Tag>
 		<English>Atlantean Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATLANTIS_DEFAULT</Tag>
 		<English>Atlantis</English>
+		<French>Atlantide</French>
+		<German>Atlantis</German>
+		<Italian>Atlantide</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATLANTIS_ADJECTIVE</Tag>
 		<English>Atlantean</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATLANTIS_SHORT_DESC</Tag>
 		<English>Atlantis</English>
+		<French>Atlantide</French>
+		<German>Atlantis</German>
+		<Italian>Atlantide</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
