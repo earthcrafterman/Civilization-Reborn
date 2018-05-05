@@ -405,7 +405,7 @@ dForeignNames = {
 }
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
-lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
 lSocialistRepublicAdj = [iPersia, iItaly, iAztecs, iArgentina]

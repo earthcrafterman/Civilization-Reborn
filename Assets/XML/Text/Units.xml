@@ -1579,10 +1579,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER</Tag>
 		<English>Digger</English>
+		<French>Digger</French>
+		<German>Digger</German>
+		<Italian>Digger</Italian>
+		<Spanish>Digger</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RABBIT</Tag>
@@ -1595,5 +1603,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RABBIT_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Rabbits[COLOR_REVERT] are Barbarian units that spawn in Australia from 1860 AD.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

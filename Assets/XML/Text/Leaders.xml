@@ -541,9 +541,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CURTIN</Tag>
 		<English>Curtin</English>
+		<French>Curtin</French>
+		<German>Curtin</German>
+		<Italian>Curtin</Italian>
+		<Spanish>Curtin</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MENZIES</Tag>
 		<English>Menzies</English>
+		<French>Menzies</French>
+		<German>Menzies</German>
+		<Italian>Menzies</Italian>
+		<Spanish>Menzies</Spanish>
 	</TEXT>
 </Civ4GameText>

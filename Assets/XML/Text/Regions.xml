@@ -512,13 +512,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Australia</English>
+		<French>Australie</French>
+		<German>Australien</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_71</Tag>
 		<English>New Guinea</English>
+		<English>Australia</English>
+		<French>Nouvelle Guin&#233;e</French>
+		<German>Neu Guinea</German>
+		<Italian>AustraliaNuova Guinea</Italian>
+		<Spanish>Nueva Guinea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_72</Tag>
 		<English>Pacific Islands</English>
+		<French>&#206;les du Pacifique</French>
+		<German>Pazifische Inseln</German>
+		<Italian>Isole del Pacifico</Italian>
+		<Spanish>Islas del Pacifico</Spanish>
 	</TEXT>
 </Civ4GameText>
