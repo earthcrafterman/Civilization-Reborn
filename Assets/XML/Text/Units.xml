@@ -1579,9 +1579,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BOER_COMMANDO</Tag>
 		<English>Kommando</English>
+		<French>Kommando</French>
+		<German>Kommando</German>
+		<Italian>Kommando</Italian>
+		<Spanish>Kommando</Spanish>
 	</TEXT>	
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BOER_COMMANDO_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Kommando[COLOR_REVERT], the Boer replacement for the the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOER_PLAAS</Tag>
 		<English>Plaas</English>
+		<French>Plaas</French>
+		<German>Plaas</German>
+		<Italian>Plaas</Italian>
+		<Spanish>Plaas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Plaas[COLOR_REVERT], the Boer replacement for the [COLOR_BUILDING_TEXT]Star Fort[COLOR_REVERT], provides two extra food.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -246,26 +246,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE1_TITLE</Tag>
 		<English>The Boer Wars</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE1</Tag>
-		<English>Allow no European Colonies in South Africa by 1920 AD</English>
+		<English>Allow no European Colonies in Southern Africa by 1920 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE2_TITLE</Tag>
 		<English>A monopoly is forever</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE2</Tag>
 		<English>Secure or get by trade 5 gems resources by 1950 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE3_TITLE</Tag>
 		<English>The Incident</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BOE3</Tag>
 		<English>Build an ICBM by 1980 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA1_TITLE</Tag>
@@ -3163,9 +3187,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AFRICAN_COLONIES</Tag>
 		<English>No European colonies in South Africa</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES</Tag>
 		<English>Available gems resources: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

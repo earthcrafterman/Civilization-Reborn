@@ -541,9 +541,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KRUGER</Tag>
 		<English>Kruger</English>
+		<French>Kruger</French>
+		<German>Kruger</German>
+		<Italian>Kruger</Italian>
+		<Spanish>Kruger</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MANDELA</Tag>
 		<English>Mandela</English>
+		<French>Mandela</French>
+		<German>Mandela</German>
+		<Italian>Mandela</Italian>
+		<Spanish>Mandela</Spanish>
 	</TEXT>
 </Civ4GameText>

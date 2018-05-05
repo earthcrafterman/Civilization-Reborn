@@ -511,6 +511,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
-		<English>South Africa</English>
+		<English>Southern Africa</English>
+		<French>Afrique du sud</French>
+		<German>S&#252;dafrika</German>
+		<Italian>Africa meridionale</Italian>
+		<Spanish>Africa del Sur</Spanish>
 	</TEXT>
 </Civ4GameText>
