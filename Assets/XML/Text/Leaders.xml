@@ -541,13 +541,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SHIRAZI</Tag>
 		<English>Shirazi</English>
+		<French>Shirazi</French>
+		<German>Shirazi</German>
+		<Italian>Shirazi</Italian>
+		<Spanish>Shirazi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_DAWUD</Tag>
 		<English>Dawud</English>
+		<French>Dawud</French>
+		<German>Dawud</German>
+		<Italian>Dawud</Italian>
+		<Spanish>Dawud</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BARGHASH</Tag>
 		<English>Barghash</English>
+		<French>Barghash</French>
+		<German>Barghash</German>
+		<Italian>Barghash</Italian>
+		<Spanish>Barghash</Spanish>
 	</TEXT>
 </Civ4GameText>

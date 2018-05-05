@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA</Tag>
 		<English>Ziara</English>
+		<French>Ziara</French>
+		<German>Ziara</German>
+		<Italian>Ziara</Italian>
+		<Spanish>Ziara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ziara[COLOR_REVERT], the Swahili replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants one free trade route.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

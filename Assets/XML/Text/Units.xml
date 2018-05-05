@@ -1579,13 +1579,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW</Tag>
 		<English>Dhow</English>
+		<French>Dhow</French>
+		<German>Dau</German>
+		<Italian>Dau</Italian>
+		<Spanish>Dhow</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Dhow[COLOR_REVERT], the Swahili replacement for the the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], provides gold when stationed in foreign coastal cities.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_HELP</Tag>
 		<English>[ICON_BULLET]2 [ICON_GOLD] when stationed in a foreign coastal city (max one unit per city)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

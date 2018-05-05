@@ -512,5 +512,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Australia</English>
+		<French>Australie</French>
+		<German>Australien</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
 	</TEXT>
 </Civ4GameText>
