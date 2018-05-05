@@ -3187,25 +3187,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GIVEN_UNITS</Tag>
 		<English>Units given: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_UNIT_RECEIVERS</Tag>
 		<English>Unit receiving civs: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_AUSTRALIA</Tag>
 		<English>Australia: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_NEW_ZEALAND</Tag>
 		<English>New Zealand: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_GUINEA</Tag>
 		<English>New Guinea: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_PACIFIC</Tag>
 		<English>Pacific Islands: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
