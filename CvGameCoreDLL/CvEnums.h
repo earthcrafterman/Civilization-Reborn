@@ -1220,6 +1220,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	CASTILLA,
 	WILLIAM,
 	GEORGE,
+	KANGXI,
+	CIXI,
 	NUM_LEADERHEADS
 };
 
@@ -1333,6 +1335,7 @@ enum PlayerTypes				// Exposed to Python
 	THAILAND,
 	CONGO,
 	NETHERLANDS,
+	MANCHURIA,
 	GERMANY,
 	AMERICA,
 	ARGENTINA,

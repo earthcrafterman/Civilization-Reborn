@@ -1664,6 +1664,111 @@ iCivEngland : {
 		"Bernard Law Montgomery", # 20th
 	],
 },
+iCivManchuria : {
+	iGreatProphet : [
+		"Lao Tzu", # 6th BC
+		"Kong Fuzi", # 5th BC
+		"Meng Zi", # 4th BC
+		"Zhuangzi", # 4th BC
+		"Han Fei", # 3rd BC
+		iMedieval,
+		"fLin Moniang", # 10th
+		"fSun Bu'er", # 12th
+		"Qiu Chuji", # 12th
+		iGlobal,
+		"Xiong Shili", # 20th
+	],
+	iGreatArtist : [
+		"Ling Lun", # legendary
+		"Su Shi", # 11th BC
+		iClassical,
+		"Li Bo", # 8th BC
+		"Du Fu", # 8th BC
+		"Wang Xizhi", # 4th BC
+		"fCai Wenji", # 1st
+		iMedieval,
+		"fShangguan Wan'er", # 7th
+		"Luo Guanzhong", # 14th
+		iRenaissance,
+		"Wu Cheng'en", # 16th
+		"Cao Xueqin", # 18th
+		iGlobal,
+		"Qi Baishi", # 20th
+		"Lu Xun", # 20th
+	],
+	iGreatScientist : [
+		"Li Fan", # 1st
+		"fBan Zhao", # 1st
+		"Liu Hui", # 3rd
+		"Zu Chongzhi", # 5th
+		iMedieval,
+		"Shen Kuo", # 11th
+		"Zhu Shijie", # 14th
+		iRenaissance,
+		"fTan Yunxian", # 16th
+		"Xu Guangqi", # 17th
+		"fWang Zhenyi", # 18th
+		iGlobal,
+		"Li Yuanzhe", # 20th
+		"Chen Ning Yang", # 20th
+		"fTu Youyou", # 20th
+	],
+	iGreatMerchant : [
+		"Zhang Qian", # 2nd BC
+		iMedieval,
+		"Xuanzang", # 7th
+		"Wang Anshi", # 11th
+		iRenaissance,
+		"Zheng He", # 15th
+		"Pan Qiguan", # 18th
+		iGlobal,
+		"Zeng Junchen", # 20th
+		"Deng Xiaoping", # 20th
+	],
+	iGreatEngineer : [
+		"fLeizu", # 27th BC
+		iClassical,
+		"Cai Lun", # 1st
+		"Zhang Heng", # 2nd
+		iMedieval,
+		"Bi Sheng", # 11th
+		"Wang Zhen", # 14th
+		iGlobal,
+		"Li Siguang", # 20th
+		"fWu Jianxiong", # 20th
+	],
+	iGreatStatesman : [
+		"Li Si", # 3rd BC
+		"Xiao He", # 2nd BC
+		iMedieval,
+		"Fang Yuanling", # 7th
+		"Di Renjie", # 7th
+		iRenaissance,
+		"Zhang Juzheng", # 16th
+		iIndustrial,
+		"Li Hongzhang", # 19th
+		"Sun Yat-sen", # 19th
+		iGlobal,
+		"Zhou Enlai", # 20th
+		"fJiang Qing", # 20th
+	],
+	iGreatGeneral : [
+		"fFu Hao", # 13th BC
+		iClassical,
+		"Sun Tzu", # 6th BC
+		"Cao Cao", # 2nd
+		"Zhuge Liang", # 3rd
+		iMedieval,
+		"fPingyang Gongzhu", # 7th
+		"Guo Ziyi", # 8th
+		iRenaissance,
+		"Shi Lang", # 17th
+		iIndustrial,
+		"fChing Shih", # 19th
+		iGlobal,
+		"Zhang Zuolin", # 20th
+	],
+},
 iCivGermany : {
 	iGreatProphet : [
 		"fHildegard von Bingen", # 12th

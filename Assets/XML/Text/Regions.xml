@@ -509,4 +509,12 @@
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_70</Tag>
+		<English>China and Manchuria</English>
+		<French>China and Manchuria</French>
+		<German>China and Manchuria</German>
+		<Italian>China and Manchuria</Italianh>
+		<Spanish>China and Manchuria</Spanish>
+	</TEXT>
 </Civ4GameText>

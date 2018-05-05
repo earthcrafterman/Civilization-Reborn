@@ -444,6 +444,22 @@
 		<Spanish>+1 intercambio en cada casilla de tierra</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MAN_TITLE</Tag>
+		<English>The Power of Prosperity:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAN</Tag>
+		<English>Improved resources adjacent to cities provide additional food and production</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
 		<English>The Power of Astronomy:</English>
 		<French>Le Pouvoir de l'Astronomie :</French>

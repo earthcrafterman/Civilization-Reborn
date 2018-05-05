@@ -982,5 +982,21 @@
 			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KANGXI</Type>
+			<Button>Art/LeaderHeads/Kangxi/Kangxi.dds</Button>
+			<NIF>art/LeaderHeads/Kangxi/alexander.nif</NIF>
+			<KFM>art/LeaderHeads/Kangxi/alexander.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Kangxi/alexander_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Kangxi/alexander_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CIXI</Type>
+			<Button>Art/LeaderHeads/Cixi/Btn_LH_Cixi.dds</Button>
+			<NIF>Art/LeaderHeads/Cixi/Cixi.nif</NIF>
+			<KFM>Art/LeaderHeads/Cixi/asoka.kfm</KFM>
+			<NoShaderNIF/>
+			<BackgroundKFM>Art/LeaderHeads/Cixi/asoka_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

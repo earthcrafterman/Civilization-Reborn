@@ -7067,6 +7067,40 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production
+		// if (ePlayer == MANCHURIA)
+		{
+			if (getBonusType() != NO_BONUS && getImprovementType() != NO_IMPROVEMENT)
+			{
+				if (GC.getImprovementInfo(getImprovementType()).isImprovementBonusMakesValid(getBonusType()))
+				{
+					bool bAdjacentCity = false;
+					for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+					{
+						CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+						if ((pAdjacentPlot != NULL) && pAdjacentPlot->isCity())
+						{
+							CvCity* pAdjacentCityCity = pAdjacentPlot->getPlotCity();
+							if (pAdjacentCityCity->getOwnerINLINE() == ePlayer)
+							{
+								bAdjacentCity = true;
+								break;
+							}
+						}
+					}
+
+					if (bAdjacentCity)
+					{
+						if (eYield == YIELD_FOOD || eYield == YIELD_PRODUCTION)
+						{
+							iYield += 1;
+						}
+					}
+				}
+			}
+		}
+
 		// Leoreth: Moai Statues effect
 		/*if (isWater() && GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)MOAI_STATUES))
 		{

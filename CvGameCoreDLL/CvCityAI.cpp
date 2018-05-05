@@ -2626,6 +2626,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		break;
+	case MANCHURIA:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		break;
 	case GERMANY:
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
 		aiUnitAIVal[UNITAI_ATTACK_AIR] *= 2;
@@ -3354,6 +3358,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 4;
 										}
+										break;
+									case MANCHURIA:
+										if (iI == FORBIDDEN_PALACE || iI == GRAND_CANAL) iTempValue *= 4;
+										else if (iI == GREAT_WALL) iTempValue *= 8;
+										else if (iI == TERRACOTTA_ARMY || iI == PORCELAIN_TOWER) iTempValue *= 2;
+										else if (iI == HANGING_GARDENS || iI == HIMEJI_CASTLE || iI == BOROBUDUR || iI == BRANDENBURG_GATE) iTempValue /= 3;
 										break;
 									case GERMANY:
 										if (iI == IRONWORKS) { //Iron Works

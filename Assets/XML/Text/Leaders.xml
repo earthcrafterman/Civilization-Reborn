@@ -538,4 +538,12 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CIXI</Tag>
+		<English>Cixi</English>
+		<French>Cixi</French>
+		<German>Cixi</German>
+		<Italian>Cixi</Italianh>
+		<Spanish>Cixi</Spanish>
+	</TEXT>
 </Civ4GameText>

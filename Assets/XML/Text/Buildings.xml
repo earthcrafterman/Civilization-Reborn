@@ -1423,4 +1423,20 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO</Tag>
+		<English>Piaohao</English>
+		<French>Piaohao</French>
+		<German>Piaohao</German>
+		<Italian>Piaohao</Italianh>
+		<Spanish>Piaohao</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Piaohao[COLOR_REVERT], the Manchurian replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], stores food.</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italianh>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
 </Civ4GameText>

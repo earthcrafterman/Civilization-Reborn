@@ -1275,6 +1275,23 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1775):
 			expire(iNetherlands, 2)
 			
+	elif iPlayer == iManchuria:
+		# first goal: Have 30% of the world population in China and Manchuria in 1800 AD
+		if iGameTurn == getTurnForYear(1800):
+			if getPopulationPercent(iManchuria, lambda city: gc.getMap().plot(city.getX(), city.getY()).getSettlerValue(iManchuria) >= 90) >= 25.0:
+				win(iManchuria, 0)
+			else:
+				lose(iManchuria, 0)
+				
+		# second goal: Have the highest food, production and commerce output in 1850 AD
+		if iGameTurn == getTurnForYear(1850):
+			if isBestPlayer(iManchuria, playerFoodOutput) and isBestPlayer(iManchuria, playerProductionOutput) and isBestPlayer(iManchuria, playerCommerceOutput):
+				win(iManchuria, 0)
+			else:
+				lose(iManchuria, 0)
+		
+		# third goal: Be the first to discover eight Industrial and eight Global technologies
+		
 	elif iPlayer == iGermany:
 	
 		# first goal: settle seven great people in Berlin in 1900 AD
@@ -1611,6 +1628,12 @@ def onTechAcquired(iPlayer, iTech):
 			if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
 				if iPlayer == iGermany: win(iGermany, 2)
 				else: lose(iGermany, 2)
+				
+		# third Manchurian goal: be the first to discover ten Industrial and ten Global technologies
+		if isPossible(iManchuria, 2):
+			if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
+				if iPlayer == iManchuria: win(iManchuria, 2)
+				else: lose(iManchuria, 2)
 			
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
@@ -2389,16 +2412,32 @@ def playerTechs(iPlayer):
 def playerRealPopulation(iPlayer):
 	return gc.getPlayer(iPlayer).getRealPopulation()
 	
+def playerFoodOutput(iPlayer):
+	return gc.getPlayer(iPlayer).calculateTotalYield(YieldTypes.YIELD_FOOD)
+	
+def playerProductionOutput(iPlayer):
+	return gc.getPlayer(iPlayer).calculateTotalYield(YieldTypes.YIELD_PRODUCTION)
+	
+def playerCommerceOutput(iPlayer):
+	return gc.getPlayer(iPlayer).calculateTotalYield(YieldTypes.YIELD_COMMERCE)
+	
 def getNumBuildings(iPlayer, iBuilding):
 	return gc.getPlayer(iPlayer).countNumBuildings(iBuilding)
 	
-def getPopulationPercent(iPlayer):
+def getPopulationPercent(iPlayer, cityFunction = None):
 	iTotalPopulation = gc.getGame().getTotalPopulation()
-	iOurPopulation = gc.getTeam(iPlayer).getTotalPopulation()
+	if iTotalPopulation == 0: return 0.0
 	
-	if iTotalPopulation <= 0: return 0.0
+	iPopulation = 0
 	
-	return iOurPopulation * 100.0 / iTotalPopulation
+	if cityFunction is None:
+		iPopulation = gc.getTeam(iPlayer).getTotalPopulation()
+	else:
+		for city in utils.getCityList(iPlayer):
+			if cityFunction(city):
+				iPopulation += city.getPopulation()
+	
+	return 100.0 * iPopulation / iTotalPopulation
 	
 def getLandPercent(iPlayer):
 	iTotalLand = gc.getMap().getLandPlots()
@@ -3859,6 +3898,20 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iNumSpices = pNetherlands.getNumAvailableBonuses(iSpices)
 			aHelp.append(getIcon(iNumSpices >= 7) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES", (iNumSpices, 7)))
+
+	elif iPlayer == iManchuria:
+		if iGoal == 0:
+			popPercent = getPopulationPercent(iManchuria, lambda city: gc.getMap().plot(city.getX(), city.getY()).getSettlerValue(iManchuria) >= 90)
+			aHelp.append(getIcon(popPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION_AREA", (str(u"%.2f%%" % popPercent), str(25), localText.getText("TXT_KEY_UHV_AREA_70", ()))))
+		elif iGoal == 1:
+			iMostFoodCiv = getBestPlayer(iManchuria, playerFoodOutput)
+			iMostProductionCiv = getBestPlayer(iManchuria, playerProductionOutput)
+			iMostCommerceCiv = getBestPlayer(iManchuria, playerCommerceOutput)
+			aHelp.append(getIcon(iMostFoodCiv == iManchuria) + localText.getText("TXT_KEY_VICTORY_MOST_FOOD_CIV", (str(gc.getPlayer(iMostFoodCiv).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(iMostProductionCiv == iManchuria) + localText.getText("TXT_KEY_VICTORY_MOST_PRODUCTION_CIV", (str(gc.getPlayer(iMostProductionCiv).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(iMostCommerceCiv == iManchuria) + localText.getText("TXT_KEY_VICTORY_MOST_COMMERCE_CIV", (str(gc.getPlayer(iMostCommerceCiv).getCivilizationShortDescriptionKey()),)))
+		elif iGoal == 2:
+			iIndustrialTechs = countFirstDiscovered(iGermany, iIndustrial)
+			iGlobalTechs = countFirstDiscovered(iGermany, iGlobal)
+			aHelp.append(getIcon(iIndustrialTechs >= 8) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iIndustrial).getText(), iIndustrialTechs, 8)) + ' ' + getIcon(iGlobalTechs >= 8) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iGlobal).getText(), iGlobalTechs, 8)))
 
 	elif iPlayer == iGermany:
 		if iGoal == 0:

@@ -5337,6 +5337,30 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									}
 									break;
+								case MANCHURIA:
+									if (iI == DIVINATION || iI == SAILING)
+										iValue /= 2;
+									if (iI == AESTHETICS || iI == CONTRACT)
+										iValue *= 4;
+									if (iI == WRITING && (!(GET_PLAYER((PlayerTypes)BABYLONIA).isHuman()) || GET_TEAM((TeamTypes)BABYLONIA).isHasTech((TechTypes)WRITING)))
+										iValue *= 4;	// fair conditions for the Babylonian UHV, otherwise even more luck dependent
+									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING || iI == COMPASS)
+										iValue *= 2;
+									if (iI == FIREARMS)
+										iValue /= 5;
+									if (iI == CIVIL_SERVICE) {
+										iValue *= 3;
+										iValue /= 2;
+									}
+									if (iI == CONSTRUCTION)
+										iValue *= 2;
+									if (iI == COMPANIES)
+										iValue /= 4;
+									if (iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY || iI == THEOLOGY || iI == FINANCE || iI == EDUCATION || iI == LOGISTICS || iI == COMBINED_ARMS)
+										iValue /= 4;
+									if (iI == CIVIL_LIBERTIES || iI == HUMANITIES || iI == ACADEMIA)
+										iValue /= 10;
+									break;
 								case GERMANY:
 									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY || iI == SOCIOLOGY)
 										iValue *= 2;

@@ -273,10 +273,10 @@ class RiseAndFall:
 			self.adjust1700ADCulture()
 			self.adjust1700ADWonders()
 			
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iTurkey]:
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iTurkey, iManchuria]:
 				utils.setReborn(iPlayer, True)
 			
-			pChina.updateTradeRoutes()
+			pManchuria.updateTradeRoutes()
 		
 		self.invalidateUHVs()
 		
@@ -337,7 +337,7 @@ class RiseAndFall:
 			
 			for tPlot in lRemoveWall:
 				x, y = tPlot
-				gc.getMap().plot(x, y).setOwner(iChina)
+				gc.getMap().plot(x, y).setOwner(iManchuria)
 		
 		for (x, y) in utils.getPlotList(tTL, tBR, lExceptions):
 			plot = gc.getMap().plot(x, y)
@@ -424,7 +424,7 @@ class RiseAndFall:
 			
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
-			pChengdu.setCulture(iChina, 100, True)
+			pChengdu.setCulture(iManchuria, 100, True)
 
 	def flipStartingTerritory(self):
 	
@@ -442,7 +442,7 @@ class RiseAndFall:
 			tTibetBR = (97, 45)
 			tManchuriaTL = (105, 51)
 			tManchuriaBR = (109, 55)
-			self.startingFlip(iChina, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
+			self.startingFlip(iManchuria, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
 			
 			# Russia (Sankt Peterburg)
 			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
@@ -602,6 +602,21 @@ class RiseAndFall:
 		
 		pMecca = gc.getMap().plot(75, 33).getPlotCity()
 		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
+		
+		pXian = gc.getMap().plot(100, 44).getPlotCity()
+		pXian.setBuildingOriginalOwner(iTerracottaArmy, iChina)
+		
+		pKaifeng = gc.getMap().plot(103, 44).getPlotCity()
+		pKaifeng.setBuildingOriginalOwner(iGrandCanal, iChina)
+		pKaifeng.setBuildingOriginalOwner(iConfucianShrine, iChina)
+		
+		pShanghai = gc.getMap().plot(106, 44).getPlotCity()
+		pShanghai.setBuildingOriginalOwner(iPorcelainTower, iChina)
+		
+		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
+		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
+		pBeijing.setBuildingOriginalOwner(iForbiddenPalace, iChina)
+		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
@@ -2442,6 +2457,8 @@ class RiseAndFall:
 			utils.makeUnit(iChangSuek, iCiv, tPlot, 2)
 		elif iCiv == iCongo:
 			utils.makeUnit(iPombos, iCiv, tPlot, 3)
+		elif iCiv == iManchuria:
+			utils.makeUnit(iEightBanner, iCiv, tPlot, 4)
 		elif iCiv == iGermany:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(iCannon, iCiv, tPlot, 3)
@@ -2796,6 +2813,11 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iPombos, iCiv, tPlot, 2)
+		elif iCiv == iManchuria:
+			utils.createSettlers(iCiv, 2)
+			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
+			utils.makeUnit(iEightBanner, iCiv, tPlot, 5)
+			utils.makeUnit(iBombard, iCiv, tPlot, 3)
 		elif iCiv == iGermany:
 			utils.createSettlers(iCiv, 4)
 			utils.createMissionaries(iCiv, 2)
@@ -2993,6 +3015,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCongo:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iManchuria:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iGermany:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iAmerica:
