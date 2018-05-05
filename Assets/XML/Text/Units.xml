@@ -1579,9 +1579,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY</Tag>
 		<English>Balangay</English>
+		<French>Balangay</French>
+		<German>Balangay</German>
+		<Italian>Balangay</Italian>
+		<Spanish>Balangay</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Balangay[COLOR_REVERT], the Philippine replacement for the the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT], is cheaper and has a higher withdraw chance.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

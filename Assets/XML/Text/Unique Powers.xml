@@ -560,10 +560,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PHI_TITLE</Tag>
 		<English>The Power of Embassies:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PHI</Tag>
 		<English>Naval units can establish embassies. Embassies provide 2 [ICON_GOLD] in your capital</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_ESTABLISH_EMBASSY</Tag>

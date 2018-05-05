@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT</Tag>
 		<English>Port</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Port[COLOR_REVERT], the Philipine replacement for the [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT], increases the city's wealth output.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
