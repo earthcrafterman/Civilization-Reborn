@@ -1579,9 +1579,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER</Tag>
 		<English>Rattan Archer</English>
+		<French>Archer de rotin</French>
+		<German>Rattan Bogensch&#252;tze</German>
+		<Italian>Arciere in rattan</Italian>
+		<Spanish>Arquero de rat&#225;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Rattan Archer[COLOR_REVERT], the Vietnamese replacement for the the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has an additional first strike, has a higher withdraw chance and does collateral damage to more units.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

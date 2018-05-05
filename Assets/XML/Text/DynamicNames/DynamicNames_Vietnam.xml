@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_DESC</Tag>
 		<English>The Vietnamese</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_PEOPLES</Tag>
 		<English>Viet Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_DEFAULT</Tag>
@@ -36,29 +44,57 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Tag>
 		<English>Vietnamese</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_SHORT_DESC</Tag>
 		<English>Vietnam</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_AU_LAC</Tag>
 		<English>Au Lac</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_NAM_VIET</Tag>
 		<English>Nam Viet</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_DAI_VIET</Tag>
 		<English>Dai Viet</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_VIET_NAM</Tag>
 		<English>Viet Nam</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIETNAM_COMMUNIST</Tag>
 		<English>Democratic Republic of Vietnam</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

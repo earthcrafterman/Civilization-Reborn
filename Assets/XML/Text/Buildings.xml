@@ -1426,9 +1426,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH</Tag>
 		<English>Dinh</English>
+		<French>Dinh</French>
+		<German>Dinh</German>
+		<Italian>Dinh</Italian>
+		<Spanish>Dinh</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dinh[COLOR_REVERT], the Vietnamese replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], gives all eligible units built in this city the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

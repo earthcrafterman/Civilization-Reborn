@@ -541,13 +541,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TRUNG</Tag>
 		<English>Trung Sisters</English>
+		<French>Soeurs Trung</French>
+		<German>Trung-Schwestern</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CHIEU_HOANG</Tag>
 		<English>Chieu Hoang</English>
+		<French>Chieu Hoang</French>
+		<German>Chieu Hoang</German>
+		<Italian>Chieu Hoang</Italian>
+		<Spanish>Chieu Hoang</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HO_CHI_MINH</Tag>
 		<English>Ho Chi Minh</English>
+		<French>Ho Chi Minh</French>
+		<German>Ho Chi Minh</German>
+		<Italian>Ho Chi Minh</Italian>
+		<Spanish>Ho Chi Minh</Spanish>
 	</TEXT>
 </Civ4GameText>
