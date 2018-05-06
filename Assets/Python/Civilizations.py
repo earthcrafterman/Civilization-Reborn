@@ -135,7 +135,7 @@ iCivVikings :	Techs([iGuilds], column=6),
 {
 iCivIndependent:Techs(column=10),
 iCivIndependent2:Techs(column=10),
-iCivManchuria :	Techs([iHorticulture, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics, iAcademia]),
+iCivManchuria :	Techs([iHorticulture, iUrbanPlanning, iCombinedArms], column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
 iCivTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivIran :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),

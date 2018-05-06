@@ -7068,7 +7068,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production
-		// if (ePlayer == MANCHURIA)
+		if (ePlayer == MANCHURIA)
 		{
 			if (getBonusType() != NO_BONUS && getImprovementType() != NO_IMPROVEMENT)
 			{
