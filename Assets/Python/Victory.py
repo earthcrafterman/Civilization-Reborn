@@ -991,9 +991,9 @@ def checkTurn(iGameTurn, iPlayer):
 			
 	elif iPlayer == iMamluks:
 		if isPossible(iMamluks, 0):
-			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
-			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions))
-			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR))
+			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR), True)
+			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions), True)
+			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR), True)
 			bMesopotamia = isControlled(iMamluks, Areas.getCoreArea(iBabylonia, False))
 			if bNorthAfrica and bHejaz and bLevant and bMesopotamia:
 				win(iMamluks, 0)
@@ -2783,10 +2783,11 @@ def countCityWonders(iPlayer, tPlot, bIncludeObsolete=False):
 		
 	return iCount
 	
-def isCultureControlled(iPlayer, lPlots):
+def isCultureControlled(iPlayer, lPlots, bIgnoreWater = False):
 	for tPlot in lPlots:
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
+		if bIncludeWater and plot.isWater(): continue
 		if plot.getOwner() != -1 and plot.getOwner() != iPlayer:
 			return False
 	return True
@@ -3739,9 +3740,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iMamluks:
 		if iGoal == 0:
-			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
-			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions))
-			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR))
+			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR), True)
+			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions), True)
+			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR), True)
 			bMesopotamia = isControlled(iMamluks, Areas.getCoreArea(iBabylonia, False))
 			aHelp.append(getIcon(bNorthAfrica) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA_MAM", ()) + ' ' + getIcon(bHejaz) + localText.getText("TXT_KEY_VICTORY_HEJAZ", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()) + ' ' + getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()))
 		elif iGoal == 1:
