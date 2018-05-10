@@ -1224,50 +1224,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN1_TITLE</Tag>
 		<English>The Malthusian Limit</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>The Malthusian Limit</French>
+		<German>The Malthusian Limit</German>
+		<Italian>The Malthusian Limit</Italian>
+		<Spanish>The Malthusian Limit</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN1</Tag>
 		<English>Have 25% of the world population in China and Manchuria in 1800 AD</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Have 25% of the world population in China and Manchuria in 1800 AD</French>
+		<German>Have 25% of the world population in China and Manchuria in 1800 AD</German>
+		<Italian>Have 25% of the world population in China and Manchuria in 1800 AD</Italian>
+		<Spanish>Have 25% of the world population in China and Manchuria in 1800 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN2_TITLE</Tag>
 		<English>Celestial Empire</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Celestial Empire</French>
+		<German>Celestial Empire</German>
+		<Italian>Celestial Empire</Italian>
+		<Spanish>Celestial Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN2</Tag>
 		<English>Have the highest food, production and commerce output in 1850 AD</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Have the highest food, production and commerce output in 1850 AD</French>
+		<German>Have the highest food, production and commerce output in 1850 AD</German>
+		<Italian>Have the highest food, production and commerce output in 1850 AD</Italian>
+		<Spanish>Have the highest food, production and commerce output in 1850 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN3_TITLE</Tag>
 		<English>Westernization Movement</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Westernization Movement</French>
+		<German>Westernization Movement</German>
+		<Italian>Westernization Movement</Italian>
+		<Spanish>Westernization Movement</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAN3</Tag>
-		<English>Be the first to discover eight Industrial and eight Global technologies</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<English>Be the first to complete all Industrial technologies and eight Global technologies</English>
+		<French>Be the first to complete all Industrial technologies and eight Global technologies</French>
+		<German>Be the first to complete all Industrial technologies and eight Global technologies</German>
+		<Italian>Be the first to complete all Industrial technologies and eight Global technologies</Italian>
+		<Spanish>Be the first to complete all Industrial technologies and eight Global technologies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
@@ -2953,10 +2953,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION_AREA</Tag>
 		<English>Percentage of world population %s3: %s1 / %s2%%</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Percentage of world population %s3: %s1 / %s2%%</French>
+		<German>Percentage of world population %s3: %s1 / %s2%%</German>
+		<Italian>Percentage of world population %s3: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of world population %s3: %s1 / %s2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
@@ -3195,25 +3195,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_FOOD_CIV</Tag>
 		<English>Highest food output: %s1</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Highest food output: %s1</French>
+		<German>Highest food output: %s1</German>
+		<Italian>Highest food output: %s1</Italian>
+		<Spanish>Highest food output: %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_PRODUCTION_CIV</Tag>
 		<English>Highest production output: %s1</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Highest production output: %s1</French>
+		<German>Highest production output: %s1</German>
+		<Italian>Highest production output: %s1</Italian>
+		<Spanish>Highest production output: %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_COMMERCE_CIV</Tag>
 		<English>Highest commerces output: %s1</English>
-		<French>No Translantion</French>
-		<German>No Translantion</German>
-		<Italian>No Translantion</Italian>
-		<Spanish>No Translantion</Spanish>
+		<French>Highest production output: %s1</French>
+		<German>Highest production output: %s1</German>
+		<Italian>Highest production output: %s1</Italian>
+		<Spanish>Highest production output: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALL_ERA_TECHS</Tag>
+		<English>All %s1 technologies</English>
+		<French>All %s1 technologies</French>
+		<German>All %s1 technologies</German>
+		<Italian>All %s1 technologies</Italian>
+		<Spanish>All %s1 technologies</Spanish>
 	</TEXT>
 </Civ4GameText>
