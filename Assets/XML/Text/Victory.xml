@@ -1446,7 +1446,7 @@
 		<Spanish>Acquire 2000 gold by selling resources by 1750 AD</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_COL3_EPIC</Tag>
+		<Tag>TXT_KEY_UHV_NIG2_EPIC</Tag>
 		<English>Acquire 4000 gold by selling resources by 1750 AD</English>
 		<French>Acquire 4000 gold by selling resources by 1750 AD</French>
 		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 4000 Gold durch den Verkauf von Ressourcen</German>
@@ -1454,7 +1454,7 @@
 		<Spanish>Acquire 4000 gold by selling resources by 1750 AD</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_COL3_MARATHON</Tag>
+		<Tag>TXT_KEY_UHV_NIG2_MARATHON</Tag>
 		<English>Acquire 6000 gold by selling resources by 1750 AD</English>
 		<French>Acquire 6000 gold by selling resources by 1750 AD</French>
 		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 6000 Gold durch den Verkauf von Ressourcen</German>
