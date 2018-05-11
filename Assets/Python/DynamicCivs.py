@@ -146,6 +146,7 @@ dSpecificVassalTitles = {
 		iMali : "TXT_KEY_CIV_FRENCH_MALI",
 		iPortugal : "TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF",
 		iInca : "TXT_KEY_CIV_FRENCH_INCA",
+		iNigeria : "TXT_KEY_CIV_FRENCH_NIGERIA",
 		iAztecs : "TXT_KEY_CIV_FRENCH_AZTECS",
 		iMughals : "TXT_KEY_MANDATE_OF",
 		iCongo : "TXT_KEY_ADJECTIVE_TITLE",
@@ -166,6 +167,7 @@ dSpecificVassalTitles = {
 		iIndonesia : "TXT_KEY_CIV_ENGLISH_INDONESIA",
 		iFrance : "TXT_KEY_CIV_ENGLISH_FRANCE",
 		iHolyRome : "TXT_KEY_CIV_ENGLISH_HOLY_ROME",
+		iNigeria : "TXT_KEY_CIV_ENGLISH_NIGERIA",
 		iGermany : "TXT_KEY_CIV_ENGLISH_GERMANY",
 		iNetherlands : "TXT_KEY_CIV_ENGLISH_NETHERLANDS",
 		iMali : "TXT_KEY_CIV_ENGLISH_MALI",
@@ -432,6 +434,7 @@ dEmpireThreshold = {
 	iTibet : 2,
 	iPolynesia : 3,
 	iTamils : 3,
+	iNigeria : 3,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -478,6 +481,7 @@ dCapitals = {
 	iArabia : ["Dimashq"],
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
+	iNigeria : ["Oyo", "Ife", "Njimi", "Igbo-Ukwu", "Wukari"],
 	iNetherlands : ["Brussels", "Antwerpen"],
 }
 
@@ -519,6 +523,7 @@ dStartingLeaders = [
 	iPortugal : iAfonso,
 	iInca : iHuaynaCapac,
 	iItaly : iLorenzo,
+	iNigeria : iOduduwa,
 	iMongolia : iGenghisKhan,
 	iAztecs : iMontezuma,
 	iMughals : iTughluq,
@@ -1134,6 +1139,27 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_ITALY_TUSCANY"
 				
 			return capitalName(iPlayer)
+			
+	elif iPlayer == iNigeria:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_NIGERIA_NIGERIA"
+			
+		if isCapital(iPlayer, ["Oyo"]):
+			return "TXT_KEY_CIV_NIGERIA_OYO"
+			
+		if isCapital(iPlayer, ["Ife"]):
+			return "TXT_KEY_CIV_NIGERIA_IFE"
+			
+		if isCapital(iPlayer, ["Njimi"]):
+			return "TXT_KEY_CIV_NIGERIA_KANEM"
+			
+		if isCapital(iPlayer, ["Igbo-Ukwu"]):
+			return "TXT_KEY_CIV_NIGERIA_NRI"
+			
+		if isCapital(iPlayer, ["Wukari"]):
+			return "TXT_KEY_CIV_NIGERIA_KWARARAFA"
+			
+		return "TXT_KEY_CIV_NIGERIA_BENIN"
 			
 	elif iPlayer == iThailand:
 		if iEra <= iRenaissance:
@@ -1867,6 +1893,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
+	elif iPlayer == iNigeria:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if isCapital(iPlayer, ["Wukari"]):
+			return "TXT_KEY_CONFEDERATION_OF"
+			
+		if iGameTurn >= getTurnForYear(1300):
+			return "TXT_KEY_KINGDOM_OF"
+			
 	elif iPlayer == iMongolia:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
@@ -2127,6 +2163,11 @@ def leader(iPlayer):
 		if isFascist(iPlayer): return iMussolini
 	
 		if iEra >= iIndustrial: return iCavour
+		
+	elif iPlayer == iNigeria:
+		if iEra >= iIndustrial: return iAminatu
+		
+		if iEra >= iRenaissance: return iEwuare
 		
 	elif iPlayer == iMongolia:
 		if iGameTurn >= getTurnForYear(1400): return iKublaiKhan

@@ -5305,6 +5305,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue /= 4;
                                     }
 									break;
+								case NIGERIA:
+									break;
 								case MONGOLIA:
 									if (iI == PAPER)
 									{

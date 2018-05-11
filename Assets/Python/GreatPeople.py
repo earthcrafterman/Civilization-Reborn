@@ -2159,6 +2159,8 @@ iCivItaly : {
 		"Giovanni Messe", # 20th
 	],
 },
+iCivNigeria : {
+},
 iCivMongols : {
 	iGreatProphet : [
 		"Abaqa", # 13th

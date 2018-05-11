@@ -12,10 +12,6 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 
-iNumCompanies = 9
-
-(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
-
 tCompanyTechs = (iCompass, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 

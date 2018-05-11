@@ -538,4 +538,28 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ODUDUWA</Tag>
+		<English>Oduduwa</English>
+		<French>Oduduwa</French>
+		<German>Oduduwa</German>
+		<Italian>Oduduwa</Italian>
+		<Spanish>Oduduwa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_EWUARE</Tag>
+		<English>Ewuare</English>
+		<French>Ewuare</French>
+		<German>Ewuare</German>
+		<Italian>Ewuare</Italian>
+		<Spanish>Ewuare</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AMINATU</Tag>
+		<English>Aminatu</English>
+		<French>Aminatu</French>
+		<German>Aminatu</German>
+		<Italian>Aminatu</Italian>
+		<Spanish>Aminatu</Spanish>
+	</TEXT>
 </Civ4GameText>

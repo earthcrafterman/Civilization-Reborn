@@ -10869,7 +10869,14 @@ int CvUnit::getFortifyTurns() const
 
 void CvUnit::setFortifyTurns(int iNewValue)
 {
-	iNewValue = range(iNewValue, 0, GC.getDefineINT("MAX_FORTIFY_TURNS"));
+	int iMaxFortifyTurns = GC.getDefineINT("MAX_FORTIFY_TURNS");
+	
+	if (getOwnerINLINE() == NIGERIA && isFortifyable())
+	{
+		iMaxFortifyTurns *= 2;
+	}
+	
+	iNewValue = range(iNewValue, 0, iMaxFortifyTurns);
 
 	if (iNewValue != getFortifyTurns())
 	{

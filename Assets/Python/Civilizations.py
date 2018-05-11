@@ -105,6 +105,7 @@ iCivPoland : 	Techs([iFeudalism, iFortification, iCivilService, iTheology], colu
 iCivSeljuks :	Techs([iFeudalism, iFortification, iMachinery, iAlchemy, iTheology], column=6),
 iCivPortugal :	Techs([iPatronage], column=7),
 iCivInca : 	Techs([iMathematics, iContract, iLiterature, iPriesthood], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
+iCivNigeria :	Techs([iPaper, iCompass], column=7, exceptions=[iTheology]),
 iCivMongols :	Techs([iPaper, iCompass], column=7, exceptions=[iTheology]),
 iCivAztecs :	Techs([iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
 iCivItaly : 	Techs([iCommune, iPaper, iCompass, iDoctrine], column=7),

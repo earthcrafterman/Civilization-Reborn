@@ -1220,6 +1220,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	CASTILLA,
 	WILLIAM,
 	GEORGE,
+	ODUDUWA,
+	EWUARE,
+	AMINATU,
 	NUM_LEADERHEADS
 };
 
@@ -1326,6 +1329,7 @@ enum PlayerTypes				// Exposed to Python
 	PORTUGAL,
 	INCA,
 	ITALY,
+	NIGERIA,
 	MONGOLIA,
 	AZTECS,
 	MUGHALS,

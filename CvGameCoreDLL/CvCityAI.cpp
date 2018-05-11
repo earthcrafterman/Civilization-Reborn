@@ -2598,6 +2598,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
         aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
         aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		break;
+	case NIGERIA:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
 	case MONGOLIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		break;
@@ -3306,6 +3310,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                         {
                                             iTempValue *= 3;
                                         }
+										break;
+									case NIGERIA:
 										break;
 									case MONGOLIA:
 										break;

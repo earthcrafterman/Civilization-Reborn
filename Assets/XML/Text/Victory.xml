@@ -1414,6 +1414,70 @@
 		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG1_TITLE</Tag>
+		<English>Ifianyako</English>
+		<French>Ifianyako</French>
+		<German>Ifianyako</German>
+		<Italian>Ifianyako</Italian>
+		<Spanish>Ifianyako</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG1</Tag>
+		<English>Have the largest army of Africa in 1600 AD</English>
+		<French>Have the largest army of Africa in 1600 AD</French>
+		<German>Have the largest army of Africa in 1600 AD</German>
+		<Italian>Have the largest army of Africa in 1600 AD</Italian>
+		<Spanish>Have the largest army of Africa in 1600 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2_TITLE</Tag>
+		<English>&#210;kp&#242;h&#242;</English>
+		<French>&#210;kp&#242;h&#242;</French>
+		<German>&#210;kp&#242;h&#242;</German>
+		<Italian>&#210;kp&#242;h&#242;</Italian>
+		<Spanish>&#210;kp&#242;h&#242;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2</Tag>
+		<English>Acquire 2000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 2000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 2000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 2000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 2000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_EPIC</Tag>
+		<English>Acquire 4000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 4000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 4000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 4000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 4000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_MARATHON</Tag>
+		<English>Acquire 6000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 6000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 6000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 6000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 6000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG3_TITLE</Tag>
+		<English>Nollywood and Oil Delta</English>
+		<French>Nollywood and Oil Delta</French>
+		<German>Nollywood and Oil Delta</German>
+		<Italian>Nollywood and Oil Delta</Italian>
+		<Spanish>Nollywood and Oil Delta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG3</Tag>
+		<English>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</English>
+		<French>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</French>
+		<German>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</German>
+		<Italian>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</Italian>
+		<Spanish>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
 		<English>The First Empire</English>
 		<German>Das erste Gro&#223;reich</German>
@@ -3135,5 +3199,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_ARMY_AFRICA</Tag>
+		<English>Largest army in Africa: %s1</English>
+		<French>Largest army in Africa: %s1</French>
+		<German>Largest army in Africa: %s1</German>
+		<Italian>Largest army in Africa: %s1</Italian>
+		<Spanish>Largest army in Africa: %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

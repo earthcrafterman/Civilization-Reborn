@@ -537,6 +537,22 @@
 		<German>Städte erhalten die Hälfte der Baukosten als Kultur, wenn ein Gebäude errichtet wird</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_NIG_TITLE</Tag>
+		<English>The Power of the Shield of the Warrior King:</English>
+		<French>NThe Power of the Shield of the Warrior King:</French>
+		<German>The Power of the Shield of the Warrior King:</German>
+		<Italian>The Power of the Shield of the Warrior King:</Italian>
+		<Spanish>The Power of the Shield of the Warrior King:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NIG</Tag>
+		<English>Fortified units can get up to 50% defense bonus</English>
+		<French>Fortified units can get up to 50% defense bonus</French>
+		<German>Fortified units can get up to 50% defense bonus</German>
+		<Italian>Fortified units can get up to 50% defense bonus</Italian>
+		<Spanish>Fortified units can get up to 50% defense bonus</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
 		<English>The Power of Satrapy:</English>
 		<French>Le Pouvoir de la Satrapie :</French>

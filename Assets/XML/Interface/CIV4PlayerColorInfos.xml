@@ -129,7 +129,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARK_GREEN</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
