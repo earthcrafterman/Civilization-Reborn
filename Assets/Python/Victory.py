@@ -1107,7 +1107,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iNigeria:
 		# first goal: Have the largest army of Africa in 1600 AD
 		if iGameTurn == getTurnForYear(1600):
-			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapital().getRegionID() in lAfrica]
+			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
 			if isBestPlayer(iNigeria, playerArmySize, lAfricaCivs):
 				win(iNigeria, 0)
 			else:
@@ -3801,7 +3801,7 @@ def getUHVHelp(iPlayer, iGoal):
 			
 	elif iPlayer == iNigeria:
 		if iGoal == 0:
-			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapital().getRegionID() in lAfrica]
+			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
 			iLargestArmy = getBestPlayer(iNigeria, playerArmySize, lAfricaCivs)
 			aHelp.append(getIcon(iLargestArmy == iNigeria) + localText.getText("TXT_KEY_VICTORY_LARGEST_ARMY_AFRICA", (str(gc.getPlayer(iLargestArmy).getCivilizationShortDescriptionKey()),)))
 		elif iGoal == 1:
