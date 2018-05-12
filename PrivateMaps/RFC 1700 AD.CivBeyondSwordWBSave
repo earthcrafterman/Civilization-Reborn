@@ -525,7 +525,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=32
-	LeaderType=LEADER_LEADER_AMINATU
+	LeaderType=LEADER_AMINATU
 	CivType=CIVILIZATION_NIGERIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
