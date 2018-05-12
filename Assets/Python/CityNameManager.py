@@ -7073,4 +7073,7 @@ tRenames = (
 #Language: Harappan
 {
 },
+#Language: Nigerian
+{
+},
 )
