@@ -3390,7 +3390,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == ITAIPU_DAM || iI == WEMBLEY) iTempValue *= 2;
 										break;
 									case AUSTRALIA:
-										if (iI == WEMBLEY) iTempValue *= 2;
+										if (iI == WEMBLEY || iI == SYDNEY_OPERA) iTempValue *= 2;
 										break;
 									case CANADA:
 										if (iI == CN_TOWER) iTempValue *= 3;
