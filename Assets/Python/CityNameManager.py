@@ -7068,4 +7068,7 @@ tRenames = (
 #Language: Harappan
 {
 },
+#Language: Philippine
+{
+},
 )

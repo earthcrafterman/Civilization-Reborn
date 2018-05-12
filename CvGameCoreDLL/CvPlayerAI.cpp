@@ -5252,15 +5252,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
-								case MALI:
-									if (iI == EDUCATION)
-										iValue *= 3;
-									break;
 								case PHILIPPINES:
 									if (iI == LOGISTICS)
 										iValue *= 3;
 									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == OPTICS || iI == COMPASS)
 										iValue *= 4;
+									break;
+								case MALI:
+									if (iI == EDUCATION)
+										iValue *= 3;
 									break;
 								case TURKEY:
 									if (iI == GUNPOWDER || iI == FIREARMS || iI == COMBINED_ARMS)
