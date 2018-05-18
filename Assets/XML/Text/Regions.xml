@@ -509,4 +509,20 @@
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_70</Tag>
+		<English>Subequatorial Africa</English>
+		<French>No Translation</French>
+		<German>Sub&#228;quatorialafrika</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_71</Tag>
+		<English>Sub Saharan Africa</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
 </Civ4GameText>

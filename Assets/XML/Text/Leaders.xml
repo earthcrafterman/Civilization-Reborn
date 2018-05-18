@@ -538,4 +538,20 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_RUSVINGO</Tag>
+		<English>Rusvingo</English>
+		<French>Rusvingo</French>
+		<German>Rusvingo</German>
+		<Italian>Rusvingo</Italian>
+		<Spanish>Rusvingo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MUTOTA</Tag>
+		<English>Mutota</English>
+		<French>Mutota</French>
+		<German>Mutota</German>
+		<Italian>Mutota</Italian>
+		<Spanish>Mutota</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -1220,6 +1220,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	CASTILLA,
 	WILLIAM,
 	GEORGE,
+	RUSVINGO,
+	MUTOTA,
 	NUM_LEADERHEADS
 };
 
@@ -1323,6 +1325,7 @@ enum PlayerTypes				// Exposed to Python
 	RUSSIA,
 	MALI,
 	POLAND,
+	ZIMBABWE,
 	PORTUGAL,
 	INCA,
 	ITALY,

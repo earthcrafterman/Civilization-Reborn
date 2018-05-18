@@ -1576,4 +1576,20 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZIMBABWE_ROZWI_WARRIOR</Tag>
+		<English>Rozwi Warrior</English>
+		<French>Rozwi Warrior</French>
+		<German>Rozwi Warrior</German>
+		<Italian>Rozwi Warrior</Italian>
+		<Spanish>Rozwi Warrior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZIMBABWE_ROZWI_WARRIOR_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rozwi Warrior[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -188,6 +188,11 @@ tCanadaEastTL = (27, 50)
 tCanadaEastBR = (36, 59)
 tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50), (32, 51))
 
+# first Zimbabwean goal: have monopoly on gold, silver, gems and ivory in sub-Sahara
+tSubSaharaTL = (48, 10)
+tSubSaharaBR = (79, 30)
+tSubSaharaExceptions = ((76, 30), (77, 30))
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -211,6 +216,7 @@ dWonderGoals = {
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
 	iMali: (1, [iUniversityOfSankore], False),
+	iZimbabwe: (0, [iGreatZimbabwe], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iLeaningTower], True),
 	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
 	iAmerica: (1, [iStatueOfLiberty, iEmpireStateBuilding, iPentagon, iUnitedNations], True),
@@ -1019,6 +1025,39 @@ def checkTurn(iGameTurn, iPlayer):
 		# third goal: build three Christian Cathedrals by 1600 AD
 		if iGameTurn == getTurnForYear(1600):
 			expire(iPoland, 2)
+			
+	elif iPlayer == iZimbabwe:
+	
+		# first goal: build four castles and kraals and Great Zimbabwe in 1400 AD
+		if iGameTurn == getTurnForYear(1400):
+			if isPossible(iZimbabwe, 1):
+				iCastles = getNumBuildings(iZimbabwe, iCastle)
+				iKraals = getNumBuildings(iZimbabwe, iKraal)
+				bGreatZimbabwe = data.getWonderBuilder(iGreatZimbabwe) == iZimbabwe
+				if iCastles >= 4 and iKraals >= 4 and bGreatZimbabwe:
+					win(iZimbabwe, 0)
+				else:
+					lose(iZimbabwe, 0)
+	
+		# second goal: Have a monopoly on Ivory and Gold in Sub-Saharan Africa in 1500 AD
+		if iGameTurn == getTurnForYear(1500):
+			lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
+			bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
+			bSilverMonopoly = isMonopoly(iZimbabwe, iSilver, lSubSaharanAfrica)
+			bGemsMonopoly = isMonopoly(iZimbabwe, iGems, lSubSaharanAfrica)
+			bIvoryMonopoly = isMonopoly(iZimbabwe, iIvory, lSubSaharanAfrica)
+			if bGoldMonopoly and bSilverMonopoly and bGemsMonopoly and bIvoryMonopoly:
+				win(iZimbabwe, 1)
+			else:
+				lose(iZimbabwe, 1)
+		
+		# third goal: allow no European colonies in Subequatorial Africa in 1700 AD
+		if iGameTurn == getTurnForYear(1700):
+			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
+			if bSubequatorialAfrica:
+				win(iZimbabwe, 2)
+			else:
+				lose(iZimbabwe, 2)
 			
 	elif iPlayer == iPortugal:
 	
@@ -2991,6 +3030,26 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 			iCount += 1
 	return iCount
 	
+def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
+	if gc.getPlayer(iPlayer).getNumAvailableBonuses(iBonus) <= 0:
+		return False
+		
+	lAllowedOwners = [iPlayer, -1]
+	if bIncludeVassals:
+		for iLoopPlayer in range(iNumPlayer):
+			if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
+				lAllowedOwners.append(iLoopPlayer)
+		
+	for x, y in lPlots:
+		plot = gc.getMap().plot(x, y)
+		if plot.getBonusType(-1) == iBonus:
+			iOwner = plot.getOwner()
+			if iOwner < iNumPlayers and iOwner not in lAllowedOwners:
+				if gc.getImprovementInfo(plot.getImprovementType()).isImprovementBonusMakesValid(iBonus):
+					return False
+		
+	return True
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -3716,6 +3775,23 @@ def getUHVHelp(iPlayer, iGoal):
 			iProtestant = getNumBuildings(iPoland, iProtestantCathedral)
 			iCathedrals = iCatholic + iOrthodox + iProtestant
 			aHelp.append(getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))
+
+	elif iPlayer == iZimbabwe:
+		if iGoal == 0:
+			lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
+			bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
+			bSilverMonopoly = isMonopoly(iZimbabwe, iSilver, lSubSaharanAfrica)
+			bGemsMonopoly = isMonopoly(iZimbabwe, iGems, lSubSaharanAfrica)
+			bIvoryMonopoly = isMonopoly(iZimbabwe, iIvory, lSubSaharanAfrica)
+			aHelp.append(getIcon(bGoldMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iGold).getDescription(),)) + ' ' + getIcon(bSilverMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iSilver).getDescription(),)) + ' ' + getIcon(bGemsMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iGems).getDescription(),)) + ' ' + getIcon(bIvoryMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iIvory).getDescription(),)))
+		elif iGoal == 1:
+			iNumCastles = getNumBuildings(iZimbabwe, iCastle)
+			iNumKraals = getNumBuildings(iZimbabwe, iKraal)
+			bGreatZimbabwe = data.getWonderBuilder(iGreatZimbabwe) == iZimbabwe
+			aHelp.append(getIcon(iNumCastles >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_CASTLES", (iNumCastles, 4)) + ' ' + getIcon(iNumKraals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_KRAALS", (iNumKraals, 4)) + ' ' + getIcon(bGreatZimbabwe) + localText.getText("TXT_KEY_BUILDING_GREAT_ZIMBABWE", ()))
+		elif iGoal == 2:
+			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
+			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT_ZIMBABWE", ()))
 
 	elif iPlayer == iPortugal:
 		if iGoal == 0:
