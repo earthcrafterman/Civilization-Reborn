@@ -3778,17 +3778,17 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iZimbabwe:
 		if iGoal == 0:
+			iNumCastles = getNumBuildings(iZimbabwe, iCastle)
+			iNumKraals = getNumBuildings(iZimbabwe, iKraal)
+			bGreatZimbabwe = data.getWonderBuilder(iGreatZimbabwe) == iZimbabwe
+			aHelp.append(getIcon(iNumCastles >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_CASTLES", (iNumCastles, 4)) + ' ' + getIcon(iNumKraals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_KRAALS", (iNumKraals, 4)) + ' ' + getIcon(bGreatZimbabwe) + localText.getText("TXT_KEY_BUILDING_GREAT_ZIMBABWE", ()))
+		elif iGoal == 1:
 			lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
 			bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
 			bSilverMonopoly = isMonopoly(iZimbabwe, iSilver, lSubSaharanAfrica)
 			bGemsMonopoly = isMonopoly(iZimbabwe, iGems, lSubSaharanAfrica)
 			bIvoryMonopoly = isMonopoly(iZimbabwe, iIvory, lSubSaharanAfrica)
 			aHelp.append(getIcon(bGoldMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iGold).getDescription(),)) + ' ' + getIcon(bSilverMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iSilver).getDescription(),)) + ' ' + getIcon(bGemsMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iGems).getDescription(),)) + ' ' + getIcon(bIvoryMonopoly) + localText.getText("TXT_KEY_VICTORY_MONOPOLY", (gc.getBonusInfo(iIvory).getDescription(),)))
-		elif iGoal == 1:
-			iNumCastles = getNumBuildings(iZimbabwe, iCastle)
-			iNumKraals = getNumBuildings(iZimbabwe, iKraal)
-			bGreatZimbabwe = data.getWonderBuilder(iGreatZimbabwe) == iZimbabwe
-			aHelp.append(getIcon(iNumCastles >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_CASTLES", (iNumCastles, 4)) + ' ' + getIcon(iNumKraals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_KRAALS", (iNumKraals, 4)) + ' ' + getIcon(bGreatZimbabwe) + localText.getText("TXT_KEY_BUILDING_GREAT_ZIMBABWE", ()))
 		elif iGoal == 2:
 			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
 			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT_ZIMBABWE", ()))
