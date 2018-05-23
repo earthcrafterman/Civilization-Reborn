@@ -2787,7 +2787,7 @@ def isCultureControlled(iPlayer, lPlots, bIgnoreWater = False):
 	for tPlot in lPlots:
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
-		if bIncludeWater and plot.isWater(): continue
+		if bIgnoreWater and plot.isWater(): continue
 		if plot.getOwner() != -1 and plot.getOwner() != iPlayer:
 			return False
 	return True
