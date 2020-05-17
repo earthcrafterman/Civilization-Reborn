@@ -572,6 +572,7 @@ dStartingLeaders = [
 	iNubia : iPiye,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
+	iOlmecs : iTezcatlipoca,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,

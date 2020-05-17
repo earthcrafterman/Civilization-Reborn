@@ -108,6 +108,7 @@ tCapitals = (
 (66, 31), # Kerma
 (100, 44), # Chang'an
 (67, 41), # Athens
+(20, 35), # La Venta
 (94, 40), # Pataliputra
 (73, 40), # Sur
 (62, 49), # Hallstatt
@@ -118,7 +119,7 @@ tCapitals = (
 (91, 30), # Thanjavur
 (72, 30), # Aksum
 (101, 37), # Co Loa (Hanoi)
-(18, 37), # Tenotihuacan (Tollan)
+(18, 37), # Teotihuacan (Tollan)
 (4, 59), # Naparyaarmiut
 (27, 47), # Erie
 (109, 46), # Seoul
@@ -231,6 +232,7 @@ tBirthArea = (
 ((66, 25), 	(69, 31)), 	# Nubia
 ((99, 43), 	(107, 47)), 	# China
 ((65, 39), 	(70, 45)), 	# Greece
+((19, 35), 	(21, 35)), 	# Olmecs
 ((87, 36), 	(96, 40)), 	# India
 ((71, 39), 	(74, 41)), 	# Carthage
 ((50, 46),	(66, 51)),	# Celtia
@@ -369,6 +371,7 @@ tCoreArea = (
 ((66, 29),	(70, 31)),	# Nubia
 ((99, 43),	(107, 47)),	# China
 ((64, 39),	(70, 45)),	# Greece
+((19, 35), 	(20, 35)), 	# Olmecs
 ((90, 38),	(96, 40)),	# India
 ((73, 39),	(74, 41)),	# Phoenicia
 ((56, 47),	(62, 50)),	# Celtia
@@ -529,6 +532,7 @@ tNormalArea = (
 ((66, 27), 	(71, 31)), 	# Nubia
 ((99, 39), 	(108, 50)), 	# China
 ((64, 39), 	(68, 44)), 	# Greece
+((19, 36), 	(14, 21)), 	# Olmecs
 ((89, 38), 	(96, 42)), 	# India
 ((72, 39), 	(74, 41)), 	# Carthage
 ((48, 55), 	(49, 58)), 	# Celtia
@@ -648,6 +652,7 @@ tBroaderArea = (
 ((66, 29), 	(69, 31)), 	# Nubia
 ((95, 39), 	(108, 50)), 	# China
 ((62, 39), 	(77, 47)), 	# Greece
+((17, 34), 	(22, 37)), 	# Olmecs
 ((85, 28), 	(99, 43)), 	# India
 ((71, 39), 	(74, 41)), 	# Carthage
 ((48, 55), 	(54, 60)), 	# Celtia

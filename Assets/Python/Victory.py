@@ -302,6 +302,7 @@ dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
+	iOlmecs: (2, [iCompass]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (1, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
@@ -569,6 +570,27 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIndia, 2)
 				
+	elif iPlayer == iOlmecs:
+		
+		# first goal: build 4 culture-producing buildings by 400 BC
+		if isPossible(iOlmecs, 0):
+			iCultureBuildingCount = 0
+			for city in utils.getCityList(iOlmecs):
+				iCultureBuildingCount += countCultureBuildings(city)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
+			
+			if iCultureBuildingCount >= 4:
+				win(iOlmecs, 0)
+		
+		if iGameTurn == getTurnForYear(-400):
+			expire(iOlmecs, 0)
+		
+		# second goal: discover Arithmetics, Writing and Calendar by 400 BC
+		if iGameTurn == getTurnForYear(-400):
+			expire(iOlmecs, 1)
+		
+		# third goal: be the first to discover Compass
+	
 	elif iPlayer == iCarthage:
 	
 		# first goal: build a Palace and the Great Cothon in Carthagee by 300 BC
@@ -2706,6 +2728,18 @@ def onTechAcquired(iPlayer, iTech):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkEraGoal(iLoopPlayer, lEras): win(iLoopPlayer, iGoal)
 				
+	# second Olmec goal: discover two of Arithmetics, Writing and Calendar by 400 BC
+	if iPlayer == iOlmecs:
+		lRequiredTechs = [iArithmetics, iWriting, iCalendar]
+		if isPossible(iOlmecs, 1):
+			iCount = 0
+			if iTech in lRequiredTechs:
+				for iRequiredTech in lRequiredTechs:
+					if teamOlmecs.isHasTech(iRequiredTech):
+						iCount += 1
+				if iCount >= 2:
+					win(iOlmecs, 1)
+
 	# first Maya goal: discover Calendar by 200 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
@@ -3519,6 +3553,10 @@ def checkReligiousGoal(iPlayer, iGoal):
 			elif paganReligion == "Teotl":
 				if iPlayer == iTeotihuacan:
 					if data.iTeotlSacrifices >= 200:
+						return 1
+				elif iPlayer == iOlmecs:
+					capital = pPlayer.getCapitalCity()
+					if capital and countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatArtist) >= 3:
 						return 1
 				elif data.iTeotlSacrifices >= 10:
 					return 1
@@ -4937,6 +4975,11 @@ def getPaganGoalHelp(iPlayer):
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
 		if iPlayer == iTeotihuacan:
 			return getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 200))
+		if iPlayer == iOlmecs:
+			capital = pPlayer.getCapitalCity()
+			iCount = 0
+			if capital: iCount = countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatSpy)
+			return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_CAPITAL_GREAT_ARTISTS", (iCount, 3))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":
@@ -5116,6 +5159,19 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iIndia)
 			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 
+	elif iPlayer == iOlmecs:
+		if iGoal == 0:
+			iCultureBuildingCount = 0
+			for city in utils.getCityList(iOlmecs):
+				iCultureBuildingCount += countCultureBuildings(city)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
+			aHelp.append(getIcon(iCultureBuildingCount >= 4) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount, 4)))
+		if iGoal == 1:
+			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
+			bWriting = teamOlmecs.isHasTech(iWriting)
+			bCalendar = teamOlmecs.isHasTech(iCalendar)
+			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
+		
 	elif iPlayer == iCarthage:
 		if iGoal == 0:
 			bPalace = isBuildingInCity((58, 39), iPalace)

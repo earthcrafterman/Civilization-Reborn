@@ -1180,7 +1180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
 		<English>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</English>
-		<French>La population juive de %s1 a quitté %s2 afin d'accomplir son alya à %s3!</French>
+		<French>La population juive de %s1 a quitt&#233; %s2 afin d'accomplir son alya à %s3!</French>
 		<German>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</German>
 		<Italian>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Italian>
 		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
@@ -1408,5 +1408,21 @@
 		<German>+1 Food from Mines.</German>
 		<Italian>+1 Food from Mines.</Italian>
 		<Spanish>+1 Food from Mines.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OLM_TITLE</Tag>
+		<English>The Power of Nixtamal:</English>
+		<French>Le pouvoir du nixtamal :</French>
+		<German>Die Macht des Nixtamal-:</German>
+		<Italian>Il potere del Nixtamal:</Italian>
+		<Spanish>El poder del Nixtamal:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OLM</Tag>
+		<English>Excess Food provides extra Commerce.</English>
+		<French>La nourriture en exc&#232;s fournit du commerce additionnel.</French>
+		<German>Excess Food provides extra Commerce.</German>
+		<Italian>Excess Food provides extra Commerce.</Italian>
+		<Spanish>Excess Food provides extra Commerce.</Spanish>
 	</TEXT>
 </Civ4GameText>
