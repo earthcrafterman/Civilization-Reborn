@@ -164,6 +164,14 @@ class CvRFCEventHandler:
 							if city.getX() <= 50:
 								utils.setReborn(iEngland, True)
 		
+		if iPlayer == iYuezhi:
+			if tCity in Areas.getCoreArea(iYuezhi, True):
+				if not pYuezhi.isReborn():
+					utils.setReborn(iYuezhi, True)
+				if city.getY() <= 43 and not pYuezhi.isHuman():
+					if (pYuezhi.getCapitalCity().getX(), pYuezhi.getCapitalCity().getY()) in Areas.getCoreArea(iYuezhi, False):
+						utils.moveCapital(iYuezhi, tCity)
+		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
 			if iPlayer == iOttomans and tCity == (68, 45):
@@ -326,6 +334,14 @@ class CvRFCEventHandler:
 			
 		elif iOwner == iBoers:
 			self.up.boersUP(city)
+
+		if iOwner == iYuezhi:
+			if tCity in Areas.getCoreArea(iYuezhi, True):
+				if not pYuezhi.isReborn():
+					utils.setReborn(iYuezhi, True)
+				if city.getY() <= 43 and not pYuezhi.isHuman():
+					if (pYuezhi.getCapitalCity().getX(), pYuezhi.getCapitalCity().getY()) in Areas.getCoreArea(iYuezhi, False):
+						utils.moveCapital(iYuezhi, tCity)
 
 		if iOwner == iCarthage:
 			if tCity == (58, 39):

@@ -1287,6 +1287,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	RED_HORN,
 	AUA,
 	SAGUAMANCHICA,
+	KANISHKA,
 	NUM_LEADERHEADS
 };
 
@@ -1375,6 +1376,7 @@ enum PlayerTypes				// Exposed to Python
 	PERSIA,
 	ROME,
 	MAYA,
+	YUEZHI,
 	TAMILS,
 	ETHIOPIA,
 	VIETNAM,

@@ -220,7 +220,8 @@ class RFCUtils:
 				if unit.getOwner() == iOldOwner:
 					unit.kill(False, iBarbarian)
 					if iNewOwner < iNumActivePlayers or iUnitType > iSettler:
-						lFlipUnits.append(iUnitType)
+						if not unit.isCargo():
+							lFlipUnits.append(iUnitType)
 			data.lFlippingUnits = lFlipUnits
 
 	#RiseAndFall

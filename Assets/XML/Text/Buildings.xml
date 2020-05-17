@@ -3421,4 +3421,20 @@
 		<Italian>[ICON_BULLET]+1 Gold per Gold Resource</Italian>
 		<Spanish>[ICON_BULLET]+1 Gold per Gold Resource</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_YUEZHI_GANDHARA_SCHOOL</Tag>
+		<English>Gandhara School</English>
+		<French>Gandhara School</French>
+		<German>Gandhara School</German>
+		<Italian>Gandhara School</Italian>
+		<Spanish>Gandhara School</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_YUEZHI_GANDHARA_SCHOOL_HELP</Tag>
+		<English>[ICON_BULLET]+25% Production of religious buildings</English>
+		<French>[ICON_BULLET]+25% Production of religious buildings</French>
+		<German>[ICON_BULLET]+25% Production of religious buildings</German>
+		<Italian>[ICON_BULLET]+25% Production of religious buildings</Italian>
+		<Spanish>[ICON_BULLET]+25% Production of religious buildings</Spanish>
+	</TEXT>
 </Civ4GameText>

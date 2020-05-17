@@ -1409,4 +1409,20 @@
 		<Italian>+1 Food from Mines.</Italian>
 		<Spanish>+1 Food from Mines.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_YUE_TITLE</Tag>
+		<English>The Power of Syncretism:</English>
+		<French>Le pouvoir de syncretisme:</French>
+		<German>Die Macht des Synkretismus:</German>
+		<Italian>Il potere della sincretismo:</Italian>
+		<Spanish>El poder de la sincretismo:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_YUE</Tag>
+		<English>+1 Culture, Gold, and Happiness from Religions.</English>
+		<French>+1 Culture, Gold, and Happiness from Religions.</French>
+		<German>+1 Culture, Gold, and Happiness from Religions.</German>
+		<Italian>+1 Culture, Gold, and Happiness from Religions.</Italian>
+		<Spanish>+1 Culture, Gold, and Happiness from Religions.</Spanish>
+	</TEXT>
 </Civ4GameText>

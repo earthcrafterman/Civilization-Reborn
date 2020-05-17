@@ -3800,6 +3800,15 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// Leoreth: Yuezhi UP: +25% production of religious buildings
+	if (getOwnerINLINE() == YUEZHI)
+	{
+		if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+		{
+			iMultiplier += 25;
+		}
+	}
+
 	// 1SDAN: Nubian UP: +50% production of ancient era buildings with Stone
 	if (getOwnerINLINE() == NUBIA)
 	{
@@ -5893,6 +5902,11 @@ int CvCity::happyLevel(bool bSpecial) const
 		iHappiness += std::max(0, goodHealth(false) - badHealth());
 	}
 
+	// 1SDAN: Yuezhi UP: +1 Culture, Gold, and Happiness from Religions.
+	if (getOwnerINLINE() == YUEZHI)
+	{
+		iHappiness += getReligionCount();
+	}
 	return std::max(0, iHappiness);
 }
 
@@ -10897,6 +10911,12 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 				iBaseCommerceRate += 100 * pUnit->getLevel();
 			}
 		}
+	}
+
+	// 1SDAN: Yuezhi UP: +1 Culture, Gold, and Happiness from Religions.
+	if (getOwnerINLINE() == YUEZHI && (eIndex == COMMERCE_CULTURE || eIndex == COMMERCE_GOLD))
+	{
+		iBaseCommerceRate += 100 * getReligionCount();
 	}
 
 	return iBaseCommerceRate;

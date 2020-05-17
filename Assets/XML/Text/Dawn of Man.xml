@@ -781,4 +781,8 @@
 		<Tag>TXT_KEY_DOM_MUISCA</Tag>
 		<English>It is the year 800 AD. The formation end of the Hererra period heralds in a new age for the peopel of the Altiplano Cundiboyacense. The rise of the Muisca Confederation marks the start in a new golden age of American trade.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_YUEZHI</Tag>
+		<English>It is the year 400 BC. As the interchange between Indian and Greek cultures grows, the nomadic Yuezhi begin gathering power from within their homelands of the arid Gansu Grasslands. Syncretizing faiths both near and far, the Yuezhi culture seems set to spread unlike that of any nomads' before it.</English>
+	</TEXT>
 </Civ4GameText>

@@ -29,8 +29,6 @@ tMinorCities = (
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Alb�n
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
-(-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
@@ -166,10 +164,6 @@ class Barbs:
 		#Indo-Scythians
 		if utils.isYearIn(-200, 400):
 			self.checkSpawn(iBarbarian, iHorseman, 2, (84, 40), (89, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"])
-
-		#Kushana
-		if utils.isYearIn(30, 220):
-			self.checkSpawn(iBarbarian, iAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
 
 		#Hephtalites
 		if utils.isYearIn(400, 550):

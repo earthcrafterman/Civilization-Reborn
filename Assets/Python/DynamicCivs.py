@@ -578,6 +578,7 @@ dStartingLeaders = [
 	iCeltia : iBrennus,
 	iRome : iJuliusCaesar,
 	iMaya : iPacal,
+	iYuezhi : Kanishka,
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iEzana,

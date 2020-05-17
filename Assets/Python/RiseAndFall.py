@@ -1031,7 +1031,9 @@ class RiseAndFall:
 		
 		# disable Mexico and Colombia
 		if iCiv == iAztecs and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: return
-		if iCiv == iMaya and gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: return
+		if iCiv == iMaya:
+			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: return
+			if pMuisca.isAlive(): return
 		
 		# reset contacts and make peace
 		for iOtherCiv in range(iNumPlayers):
@@ -1355,10 +1357,6 @@ class RiseAndFall:
 				else:
 					if data.getStabilityLevel(iArabia) > iStabilityUnstable:
 						return
-					
-			elif iCiv == iMaya and pMuisca.isAlive():
-				return
-						
 
 			elif iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
@@ -2537,6 +2535,9 @@ class RiseAndFall:
 		elif iCiv == iMaya:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
+		elif iCiv == iYuezhi:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iAsvaka, iCiv, tPlot, 2)
 		elif iCiv == iJapan:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
@@ -2779,6 +2780,10 @@ class RiseAndFall:
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
+		elif iCiv == iYuezhi:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iAsvaka, iCiv, tPlot, 3)
 		elif iCiv == iJapan:
 			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 1)
@@ -3351,6 +3356,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
+		elif iCiv == iYuezhi:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iJapan:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iTamils:
