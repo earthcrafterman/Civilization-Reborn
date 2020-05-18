@@ -168,6 +168,8 @@ class CvRFCEventHandler:
 			if tCity in Areas.getCoreArea(iYuezhi, True):
 				if not pYuezhi.isReborn():
 					utils.setReborn(iYuezhi, True)
+					dc.nameChange(iYuezhi)
+					dc.adjectiveChange(iYuezhi)
 				if city.getY() <= 43 and not pYuezhi.isHuman():
 					if (pYuezhi.getCapitalCity().getX(), pYuezhi.getCapitalCity().getY()) in Areas.getCoreArea(iYuezhi, False):
 						utils.moveCapital(iYuezhi, tCity)
@@ -339,6 +341,8 @@ class CvRFCEventHandler:
 			if tCity in Areas.getCoreArea(iYuezhi, True):
 				if not pYuezhi.isReborn():
 					utils.setReborn(iYuezhi, True)
+					dc.nameChange(iYuezhi)
+					dc.adjectiveChange(iYuezhi)
 				if city.getY() <= 43 and not pYuezhi.isHuman():
 					if (pYuezhi.getCapitalCity().getX(), pYuezhi.getCapitalCity().getY()) in Areas.getCoreArea(iYuezhi, False):
 						utils.moveCapital(iYuezhi, tCity)

@@ -465,13 +465,13 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad, iCeltia]
-lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad, iCeltia, iMississippi, iMuisca]
+lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iNorteChico, iChimu, iTiwanaku, iWari, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary, iInuit]
 
-lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
+lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iMuisca]
 lSocialistRepublicAdj = [iPersia, iTurks, iKhazars, iItaly, iAztecs, iArgentina, iAustralia]
 
-lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad]
+lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad, iMississippi]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus, iHungary]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
@@ -523,6 +523,7 @@ dNameChanges = {
 	iBurma : "TXT_KEY_CIV_BURMA_MYANMAR_SHORT_DESC",
 	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC",
 	iMississippi : "TXT_KEY_CIV_HOPEWELL_SHORT_DESC",
+	iYuezhi : "TXT_KEY_CIV_KUSHAN_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -535,6 +536,7 @@ dAdjectiveChanges = {
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iKievanRus : "TXT_KEY_CIV_UKRAINE_ADJECTIVE",
 	iMississippi : "TXT_KEY_CIV_HOPEWELL_ADJECTIVE",
+	iYuezhi : "TXT_KEY_CIV_KUSHAN_ADJECTIVE",
 }
 
 dCapitals = {
@@ -572,6 +574,7 @@ dStartingLeaders = [
 	iNubia : iPiye,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
+	iOlmecs : iTezcatlipoca,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,

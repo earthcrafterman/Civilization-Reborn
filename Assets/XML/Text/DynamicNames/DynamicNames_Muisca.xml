@@ -42,6 +42,14 @@
 		<Spanish>Muisca Confederation</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_FASCIST</Tag>
+		<English>Muisca Empire</English>
+		<French>Muisca Empire</French>
+		<German>Muisca Empire</German>
+		<Italian>Muisca Empire</Italian>
+		<Spanish>Muisca Empire</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MUISCA_ADJECTIVE</Tag>
 		<English>Muisca</English>
 		<French>Muisca</French>

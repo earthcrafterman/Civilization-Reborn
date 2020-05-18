@@ -10214,6 +10214,12 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 	{
 		iYieldRateTimes100 += 100 * (getReligionCount() - (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) ? 1 : 0));
 	}
+	
+	// Steb: Olmec UP: Excess Food provides extra Commerce when not consuming Food for Production.
+	if (eIndex == YIELD_COMMERCE && getOwnerINLINE() == OLMECS)
+	{
+		iYieldRateTimes100 += 100 * max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true)));
+	}
 
 	return (iYieldRateTimes100 / 100);
 }

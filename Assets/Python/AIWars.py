@@ -76,11 +76,17 @@ tConquestGreeceMesopotamia = (6, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGre
 tConquestGreeceEgypt = (7, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
 tConquestGreecePersia = (8, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
+iYuezhiTurkestanYear = 30
+tYuezhiTurkestanTL = (82, 40)
+tYuezhiTurkestanBR = (88, 50)
+
+tYuezhiTurkestan = (9, iYuezhi, iPersia, tYuezhiTurkestanTL, tYuezhiTurkestanBR, 4, iYuezhiTurkestanYear, 10)
+
 iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (9, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (10, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
@@ -91,10 +97,10 @@ iChinaVietnamYear2 = 1400
 tChinaVietnamTL = (100, 35)
 tChinaVietnamBR = (103, 38)
 
-tConquestChinaVietnam1 = (10, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
-tConquestChinaVietnam2 = (11, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
+tConquestChinaVietnam1 = (11, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
+tConquestChinaVietnam2 = (12, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
 
-tConquestSpainMoors = (12, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
+tConquestSpainMoors = (13, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iTurksPersiaYear = 1000
 tTurksPersiaTL = (78, 37)
@@ -108,21 +114,21 @@ iTurksAnatoliaYear = 1100
 tTurksAnatoliaTL = (69, 37)
 tTurksAnatoliaBR = (78, 45)
 
-tConquestTurksPersia = (13, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
-tConquestTurksOman = (14, iTurks, iOman, tTurksOmanTL, tTurksOmanBR, 1, iTurksOmanYear, 10)
-tConquestTurksAnatolia = (15, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
+tConquestTurksPersia = (14, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksOman = (15, iTurks, iOman, tTurksOmanTL, tTurksOmanBR, 1, iTurksOmanYear, 10)
+tConquestTurksAnatolia = (16, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
 iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (79, 37)
 tMongolsPersiaBR = (85, 49)
 
-tConquestMongolsPersia = (16, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (17, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
 iConquestEnglandIrelandYear = 1171
 tConquestEnglandIrelandTL = (48, 55)
 tConquestEnglandIrelandBR = (49, 58)
 
-tConquestEnglandIreland = (17, iEngland, iCeltia, tConquestEnglandIrelandTL, tConquestEnglandIrelandBR, 1, iConquestEnglandIrelandYear, 10)
+tConquestEnglandIreland = (18, iEngland, iCeltia, tConquestEnglandIrelandTL, tConquestEnglandIrelandBR, 1, iConquestEnglandIrelandYear, 10)
 
 lConquests = [
 tConquestRomeCarthage, #0
@@ -134,15 +140,16 @@ tConquestRomeEgypt, #5
 tConquestGreeceMesopotamia, #6
 tConquestGreeceEgypt, #7
 tConquestGreecePersia, #8
-tConquestCholaSumatra, #9
-tConquestChinaVietnam1, #10
-tConquestChinaVietnam2, #11
-tConquestSpainMoors, #12
-tConquestTurksPersia, #13
-tConquestTurksOman, #14
-tConquestTurksAnatolia, #15
-tConquestMongolsPersia, #16
-tConquestEnglandIreland, #17
+tYuezhiTurkestan, #9
+tConquestCholaSumatra, #10
+tConquestChinaVietnam1, #11
+tConquestChinaVietnam2, #12
+tConquestSpainMoors, #13
+tConquestTurksPersia, #14
+tConquestTurksOman, #15
+tConquestTurksAnatolia, #16
+tConquestMongolsPersia, #17
+tConquestEnglandIreland, #18
 ]
 
 class AIWars:
@@ -275,6 +282,9 @@ class AIWars:
 			if iPlayer == iEngland and utils.getHumanID() != iPlayer:
 				iExtra += 1
 				
+			if iPlayer == iYuezhi and utils.getHumanID() != iPlayer:
+				iExtra += 1
+				
 			if iPlayer == iTurks and city.getRegionID() == rArabia:
 				iExtra = 0
 			
@@ -303,6 +313,9 @@ class AIWars:
 				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 * iExtra)
 				
 			if iPlayer == iTurks:
+				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
+				
+			if iPlayer == iYuezhi:
 				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 	
 	def forgetMemory(self, iTech, iPlayer):

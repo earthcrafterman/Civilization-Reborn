@@ -1287,6 +1287,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	RED_HORN,
 	AUA,
 	SAGUAMANCHICA,
+	TEZCATLIPOCA,
 	KANISHKA,
 	NUM_LEADERHEADS
 };
@@ -1369,6 +1370,7 @@ enum PlayerTypes				// Exposed to Python
 	NUBIA,
 	CHINA,
 	GREECE,
+	OLMECS,
 	INDIA,
 	PHOENICIA,
 	CELTIA,

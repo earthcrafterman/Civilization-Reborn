@@ -2053,6 +2053,9 @@ class RiseAndFall:
 					if iNewWorldCiv == iNorteChico:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
+					elif iNewWorldCiv == iOlmecs:
+						tContactZoneTL = (15, 31)
+						tContactZoneBR = (25, 39)
 					elif iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
 						tContactZoneBR = (34, 42)
@@ -2155,7 +2158,7 @@ class RiseAndFall:
 						elif iNewWorldCiv == iAztecs or iNewWorldCiv == iTeotihuacan:
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-						elif iNewWorldCiv == iMaya:
+						elif iNewWorldCiv == iMaya or iNewWorldCiv == iOlmecs:
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 						
@@ -2740,6 +2743,9 @@ class RiseAndFall:
 				pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
+		elif iCiv == iOlmecs:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 1)
 		elif iCiv == iPersia:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
@@ -2765,7 +2771,7 @@ class RiseAndFall:
 		elif iCiv == iPolynesia:
 			tSeaPlot = (4, 19)
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)
-			utils.makeUnit(iWaka, iCiv, tSeaPlot, 1)
+			utils.makeUnitAI(iWaka, iCiv, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 			utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		elif iCiv == iRome:
@@ -2783,7 +2789,6 @@ class RiseAndFall:
 		elif iCiv == iYuezhi:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
-			utils.makeUnit(iAsvaka, iCiv, tPlot, 3)
 		elif iCiv == iJapan:
 			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 1)
