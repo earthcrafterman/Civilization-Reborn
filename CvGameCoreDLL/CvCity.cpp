@@ -5901,12 +5901,6 @@ int CvCity::happyLevel(bool bSpecial) const
 	{
 		iHappiness += std::max(0, goodHealth(false) - badHealth());
 	}
-
-	// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
-	if (getOwnerINLINE() == YUEZHI)
-	{
-		iHappiness += getReligionCount();
-	}
 	return std::max(0, iHappiness);
 }
 
@@ -8602,6 +8596,12 @@ void CvCity::updateReligionHappiness()
 		}
 	}
 
+	// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
+	if (getOwnerINLINE() == YUEZHI)
+	{
+		iNewReligionGoodHappiness += getReligionCount();
+	}
+
 	if (getReligionGoodHappiness() != iNewReligionGoodHappiness)
 	{
 		m_iReligionGoodHappiness = iNewReligionGoodHappiness;
@@ -10919,12 +10919,6 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 		}
 	}
 
-	// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
-	if (getOwnerINLINE() == YUEZHI && (eIndex == COMMERCE_CULTURE || eIndex == COMMERCE_GOLD))
-	{
-		iBaseCommerceRate += 100 * getReligionCount();
-	}
-
 	return iBaseCommerceRate;
 }
 
@@ -11498,6 +11492,12 @@ void CvCity::updateReligionCommerce(CommerceTypes eIndex)
 	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
 		iNewReligionCommerce += getReligionCommerceByReligion(eIndex, ((ReligionTypes)iI));
+	}
+
+	// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
+	if (getOwnerINLINE() == YUEZHI && (eIndex == COMMERCE_CULTURE || eIndex == COMMERCE_GOLD))
+	{
+		iNewReligionCommerce += 100 * getReligionCount();
 	}
 
 	if (getReligionCommerce(eIndex) != iNewReligionCommerce)
@@ -14003,6 +14003,12 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		updateMaintenance();
 		updateReligionHappiness();
 		updateReligionCommerce();
+
+		// Yuezhi UP: +1 Food (Max 2), Culture, Gold, and Happiness from Religions.
+		if (getOwnerINLINE() == YUEZHI)
+		{
+			plot()->updateYield();
+		}
 
 		AI_setAssignWorkDirty(true);
 

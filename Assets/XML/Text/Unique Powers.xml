@@ -1419,11 +1419,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_YUE</Tag>
-		<English>+1 Culture, Gold, Food, and Happiness from Religions.</English>
-		<French>+1 Culture, Gold, Food, and Happiness from Religions.</French>
-		<German>+1 Culture, Gold, Food, and Happiness from Religions.</German>
-		<Italian>+1 Culture, Gold, Food, and Happiness from Religions.</Italian>
-		<Spanish>+1 Culture, Gold, Food, and Happiness from Religions.</Spanish>
+		<English>+1 Food (Max 2), Culture, Gold, and Happiness from Religions.</English>
+		<French>+1 Food (Max 2), Culture, Gold, and Happiness from Religions.</French>
+		<German>+1 Food (Max 2), Culture, Gold, and Happiness from Religions.</German>
+		<Italian>+1 Food (Max 2), Culture, Gold, and Happiness from Religions.</Italian>
+		<Spanish>+1 Food (Max 2), Culture, Gold, and Happiness from Religions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OLM_TITLE</Tag>

@@ -7315,7 +7315,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
 		if (isCity() && ePlayer == YUEZHI && eYield == YIELD_FOOD)
 		{
-			iYield += getPlotCity()->getReligionCount();
+			iYield += min(getPlotCity()->getReligionCount(), 2);
 		}
 
 		// Inuit UP: Trade routes do not require roads. Extra Commerce on coastal city tiles.
