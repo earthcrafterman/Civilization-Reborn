@@ -1359,6 +1359,14 @@
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_YUEZHI</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for Religious Building</English>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for Religious Building</French>
+		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for Religious Building</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for Religious Building</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for Religious Building</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_ROME</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</English>
 		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] parce que le b&#226;timent actuel est d&#233;j&#224; dans votre capitale</French>

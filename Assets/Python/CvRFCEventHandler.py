@@ -164,7 +164,7 @@ class CvRFCEventHandler:
 							if city.getX() <= 50:
 								utils.setReborn(iEngland, True)
 		
-		if iPlayer == iYuezhi:
+		if iPlayer == iYuezhi and utils.getOwnedCoreCities(iYuezhi) > 0:
 			if tCity in Areas.getCoreArea(iYuezhi, True):
 				if not pYuezhi.isReborn():
 					utils.setReborn(iYuezhi, True)
@@ -337,7 +337,7 @@ class CvRFCEventHandler:
 		elif iOwner == iBoers:
 			self.up.boersUP(city)
 
-		if iOwner == iYuezhi:
+		if iOwner == iYuezhi and utils.getOwnedCoreCities(iYuezhi) > 0:
 			if tCity in Areas.getCoreArea(iYuezhi, True):
 				if not pYuezhi.isReborn():
 					utils.setReborn(iYuezhi, True)
