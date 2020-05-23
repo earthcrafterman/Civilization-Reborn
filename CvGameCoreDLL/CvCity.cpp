@@ -11497,7 +11497,7 @@ void CvCity::updateReligionCommerce(CommerceTypes eIndex)
 	// 1SDAN: Yuezhi UP: +1 Culture, Gold, Food, and Happiness from Religions.
 	if (getOwnerINLINE() == YUEZHI && (eIndex == COMMERCE_CULTURE || eIndex == COMMERCE_GOLD))
 	{
-		iNewReligionCommerce += 100 * getReligionCount();
+		iNewReligionCommerce += getReligionCount();
 	}
 
 	if (getReligionCommerce(eIndex) != iNewReligionCommerce)
