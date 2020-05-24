@@ -2789,6 +2789,8 @@ class RiseAndFall:
 		elif iCiv == iYuezhi:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iAsvaka, iCiv, tPlot, 1)
+			utils.makeUnit(iCatapult, iCiv, tPlot, 1)
 		elif iCiv == iJapan:
 			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 1)

@@ -1052,6 +1052,8 @@ def calculateStability(iPlayer):
 				iOnlyStateReligionRatio = 100 * iOnlyStateReligionPopulation / iTotalPopulation
 				iReligionStability += iOnlyStateReligionRatio / 20
 	
+	if iPlayer == iYuezhi and iReligionStability < 0: iReligionStability /= 2
+	
 	lParameters[iParameterReligion] = iReligionStability
 		
 	iDomesticStability += iReligionStability

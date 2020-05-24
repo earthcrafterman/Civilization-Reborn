@@ -14004,12 +14004,6 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		updateReligionHappiness();
 		updateReligionCommerce();
 
-		// Yuezhi UP: +1 Food (Max 2), Culture, Gold, and Happiness from Religions.
-		if (getOwnerINLINE() == YUEZHI)
-		{
-			plot()->updateYield();
-		}
-
 		AI_setAssignWorkDirty(true);
 
 		setInfoDirty(true);

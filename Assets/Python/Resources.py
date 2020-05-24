@@ -93,22 +93,25 @@ class Resources:
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
-		elif iGameTurn == getTurnForYear(-200): 
+		elif iGameTurn == getTurnForYear(tBirth[iYuezhi]) - 1:
 			for i in range( len(lSilkRoute) ):
 				gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
-
-		#Orka: Silk Road
-		elif iGameTurn == getTurnForYear(300): 
-			for i in range( len(lSubSaharanRoute) ):
-				gc.getMap().plot(lSubSaharanRoute[i][0], lSubSaharanRoute[i][1]).setRouteType(iRoad)
-		
-		#Orka: Silk Road
-		elif iGameTurn == getTurnForYear(-100):
+				
 			gc.getMap().plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 			gc.getMap().plot(88, 47).setRouteType(iRoad)
 			
 			self.createResource(88, 47, iSilk)
 			self.createResource(85, 46, iSilk)
+
+		#Exhaustion of Yuezhi Horse and Plains
+		elif iGameTurn == getTurnForYear(30):
+			gc.getMap().plot(94, 47).setTerrainType(iPlains, True, True)
+			self.removeResource(94, 47)
+
+		#Orka: Sub Saharan Route
+		elif iGameTurn == getTurnForYear(300): 
+			for i in range( len(lSubSaharanRoute) ):
+				gc.getMap().plot(lSubSaharanRoute[i][0], lSubSaharanRoute[i][1]).setRouteType(iRoad)
 
 		#Leoreth: Hanseong's pig appears later so China isn't that eager to found Sanshan
 		elif iGameTurn == getTurnForYear(-50):
