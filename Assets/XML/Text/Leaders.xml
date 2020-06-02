@@ -1537,4 +1537,12 @@
 		<Italian>Tezcatlipoca</Italian>
 		<Spanish>Tezcatlipoca</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MODU_CHANYU</Tag>
+		<English>Modu Chanyu</English>
+		<French>Modu Chanyu</French>
+		<German>Modu Chanyu</German>
+		<Italian>Modu Chanyu</Italian>
+		<Spanish>Modu Chanyu</Spanish>
+	</TEXT>
 </Civ4GameText>

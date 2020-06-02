@@ -914,6 +914,10 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(-100):
 			if pMamluks.isHuman() and pEgypt.isAlive():
 				sta.completeCollapse(iEgypt)
+				
+		if iGameTurn == getTurnForYear(330):
+			if pMongolia.isHuman() and pXiongnu.isAlive():
+				sta.completeCollapse(iXiongnu)
 			
 		#Colonists
 		if iGameTurn == getTurnForYear(-850):
@@ -1345,6 +1349,23 @@ class RiseAndFall:
 				lCities = utils.getAreaCities(utils.getPlotList(tMiddleEastTL, tMiddleEastBR))
 				
 				if iTurks not in [city.getOwner() for city in lCities] and iTurks not in [city.getPreviousOwner() for city in lCities]:
+					return
+					
+			elif iCiv == iMongolia:
+				if pXiongnu.isAlive():
+					return
+					
+			elif iCiv == iInca:
+				if pWari.isAlive():
+					if utils.getHumanID() != iWari:
+						if data.getStabilityLevel(iWari) > iStabilityShaky:
+							return
+					else:
+						if data.getStabilityLevel(iWari) > iStabilityUnstable:
+							return
+							
+			elif iCiv == iMongolia:
+				if pXiongnu.isAlive():
 					return
 					
 			elif iCiv == iMamluks:
@@ -2547,6 +2568,9 @@ class RiseAndFall:
 		elif iCiv == iTamils:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+		elif iCiv == iXiongnu:
+			utils.makeUnit(iGuli, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 1)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iShotelai, iCiv, tPlot, 2)
@@ -2818,6 +2842,17 @@ class RiseAndFall:
 				utils.makeUnit(iWarGalley, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iSettler, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iTamils, tSeaPlot, 1)
+		elif iCiv == iXiongnu:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
+			utils.makeUnit(iGuli, iCiv, tPlot, 6)
+			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
+			if utils.getHumanID() != iXiongnu:
+				utils.makeUnitAI(iGuli, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+				utils.makeUnitAI(iCatapult, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+				utils.makeUnitAI(iSkirmisher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+				utils.makeUnitAI(iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
 		elif iCiv == iEthiopia:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
@@ -3369,6 +3404,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iTamils:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iXiongnu:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iVietnam:

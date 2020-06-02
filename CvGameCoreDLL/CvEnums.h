@@ -1289,6 +1289,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	SAGUAMANCHICA,
 	TEZCATLIPOCA,
 	KANISHKA,
+	MODU_CHANYU,
 	NUM_LEADERHEADS
 };
 
@@ -1380,6 +1381,7 @@ enum PlayerTypes				// Exposed to Python
 	MAYA,
 	YUEZHI,
 	TAMILS,
+	XIONGNU,
 	ETHIOPIA,
 	VIETNAM,
 	TEOTIHUACAN,

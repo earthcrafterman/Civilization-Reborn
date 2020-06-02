@@ -205,6 +205,10 @@ class Resources:
 			self.createResource(58, 52, iCow) # Amsterdam
 			
 		elif (iGameTurn == getTurnForYear(1600)):
+			#South Sudanese Cow
+			gc.getMap().plot(68, 27).setTerrainType(iPlains, True, True)
+			gc.getMap().plot(68, 27).setFeatureType(-1, 0)
+			
 			self.createResource(25, 47, iIron) # Indianapolis
 			self.createResource(30, 54, iIron) # Quebec
 			self.createResource(22, 53, iCopper) # Kenora
@@ -311,6 +315,10 @@ class Resources:
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 
 		elif iGameTurn == getTurnForYear(1850):
+			#South Sudanese Oil
+			gc.getMap().plot(69, 27).setTerrainType(iPlains, True, True)
+			gc.getMap().plot(69, 27).setFeatureType(-1, 0)
+			
 			self.createResource(12, 45, iWine) # California
 			self.createResource(31, 10, iWine) # Andes
 			self.createResource(113, 11, iWine) # Barossa Valley, Australia

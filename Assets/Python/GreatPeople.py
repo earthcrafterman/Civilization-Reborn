@@ -1060,6 +1060,8 @@ iCivMaya : {
 },
 iCivYuezhi : {
 },
+iCivXiongnu : {
+},
 iCivEthiopia : {
 	iGreatProphet : [
 		"Gabra Manfas Qeddus", # legendary

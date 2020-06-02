@@ -1441,4 +1441,20 @@
 		<Italian>Excess Food provides extra Commerce.</Italian>
 		<Spanish>Excess Food provides extra Commerce.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_XGU_TITLE</Tag>
+		<English>The Power of Nomads:</English>
+		<French>Le pouvoir des nomades :</French>
+		<German>Die Macht des Nomaden:</German>
+		<Italian>Il potere del nomadi:</Italian>
+		<Spanish>El poder del nomadas:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_XGU</Tag>
+		<English>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</English>
+		<French>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</French>
+		<German>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</German>
+		<Italian>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</Italian>
+		<Spanish>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</Spanish>
+	</TEXT>
 </Civ4GameText>

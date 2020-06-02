@@ -7427,4 +7427,68 @@
 		<Italian>Temples</Italian>
 		<Spanish>Temples</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU1_TITLE</Tag>
+		<English>Heqin</English>
+		<French>Heqin</French>
+		<German>Heqin</German>
+		<Italian>Heqin</Italian>
+		<Spanish>Heqin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU1</Tag>
+		<English>Succesfully demand tribute from 5 different civilizations by 210 CE</English>
+		<French>Succesfully demand tribute from 5 different civilizations by 210 CE</French>
+		<German>Succesfully demand tribute from 5 different civilizations by 210 CE</German>
+		<Italian>Succesfully demand tribute from 5 different civilizations by 210 CE</Italian>
+		<Spanish>Succesfully demand tribute from 5 different civilizations by 210 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU2_TITLE</Tag>
+		<English>The Great Nomadic Empire</English>
+		<French>The Great Nomadic Empire</French>
+		<German>The Great Nomadic Empire</German>
+		<Italian>The Great Nomadic Empire</Italian>
+		<Spanish>The Great Nomadic Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU2</Tag>
+		<English>Be the largest civilization in the world in 210 CE</English>
+		<French>Be the largest civilization in the world in 210 CE</French>
+		<German>Be the largest civilization in the world in 210 CE</German>
+		<Italian>Be the largest civilization in the world in 210 CE</Italian>
+		<Spanish>Be the largest civilization in the world in 210 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU3_TITLE</Tag>
+		<English>Lost Hunnic Connection</English>
+		<French>Lost Hunnic Connection</French>
+		<German>Lost Hunnic Connection</German>
+		<Italian>Lost Hunnic Connection</Italian>
+		<Spanish>Lost Hunnic Connection</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_XGU3</Tag>
+		<English>Conquer a city in Europe and India by 560 CE</English>
+		<French>Conquer a city in Europe and India by 560 CE</French>
+		<German>Conquer a city in Europe and India by 560 CE</German>
+		<Italian>Conquer a city in Europe and India by 560 CE</Italian>
+		<Spanish>Conquer a city in Europe and India by 560 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DEMANDS</Tag>
+		<English>Demands</English>
+		<French>Demands</French>
+		<German>Demands</German>
+		<Italian>Demands</Italian>
+		<Spanish>Demands</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_CIV</Tag>
+		<English>Largest Civilization: %s1</English>
+		<French>Largest Civilization: %s1</French>
+		<German>Largest Civilization: %s1</German>
+		<Italian>Largest Civilization: %s1</Italian>
+		<Spanish>Largest Civilization: %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

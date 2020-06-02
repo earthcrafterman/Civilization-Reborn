@@ -161,6 +161,7 @@ iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exc
 iCivMaya :	Techs([iProperty, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivYuezhi :	Techs([iMathematics], column=3, exceptions=[iWriting, iShipbuilding, iSeafaring, iAlloys]),
 iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
+iCivXiongnu :	Techs([iMathematics, iBloomery, iGeneralship, iContract], column=3, exceptions=[iWriting, iShipbuilding, iSeafaring]),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivVietnam :	Techs([iAlloys, iWriting, iCalendar, iPriesthood, iBloomery], column=2),
 iCivTeotihuacan :	Techs([iProperty, iLeverage, iCeremony], column=1, exceptions=[iSailing]),
@@ -436,6 +437,8 @@ dTechPreferences = {
 		iScientificMethod: -20,
 		iAcademia: -20,
 		iReplaceableParts: -20,
+	},
+	iCivXiongnu : {
 	},
 	iCivVietnam : {
 		iCurrency : 20,
@@ -972,10 +975,14 @@ dBuildingPreferences = {
 		iTempleOfKukulkan: 40,
 	},
 	iCivYuezhi : {
+		iSalsalBuddha : 40,
 	},
 	iCivTamils : {
 		iJetavanaramaya: 30,
 		iKhajuraho: 20,
+	},
+	iCivXiongnu : {
+		iSalsalBuddha : 20,
 	},
 	iCivEthiopia : {
 		iMonolithicChurch: 40,

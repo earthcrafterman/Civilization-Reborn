@@ -118,6 +118,7 @@ tCapitals = (
 (22, 35), # Tikal
 (95, 47), # Dunhuang
 (91, 30), # Thanjavur
+(100, 51), # Luut Hot
 (72, 30), # Aksum
 (101, 37), # Co Loa (Hanoi)
 (18, 37), # Teotihuacan (Tollan)
@@ -244,6 +245,7 @@ tBirthArea = (
 ((20, 35), 	(23, 37)), 	# Maya
 ((95, 46),	(99, 48)),	# Yuezhi
 ((90, 27), 	(93, 32)), 	# Tamils
+((95, 49), 	(104, 52)), 	# Xiongnu
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 39)),	# Vietnam
 ((15, 36), 	(20, 41)), 	# Teotihuacan
@@ -384,6 +386,7 @@ tCoreArea = (
 ((21, 35),	(23, 37)),	# Maya
 ((95, 46),	(99, 48)),	# Yuezhi
 ((90, 27),	(93, 32)),	# Tamils
+((95, 49), 	(105, 52)), 	# Xiongnu
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 38)),	# Vietnam
 ((17, 36),	(19, 37)),	# Teotihuacan
@@ -549,6 +552,7 @@ tNormalArea = (
 ((20, 32), 	(23, 37)), 	# Maya
 ((88, 45),	(99, 48)),	# Yuezhi
 ((90, 28), 	(93, 34)), 	# Tamils
+((95, 49), 	(104, 52)), 	# Xiongnu
 ((68, 25), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
 ((15, 35), 	(20, 40)), 	# Teotihuacan
@@ -671,6 +675,7 @@ tBroaderArea = (
 ((19, 30), 	(26, 37)), 	# Maya
 ((95, 46),	(99, 48)),	# Yuezhi
 ((90, 28), 	(93, 34)), 	# Tamils
+((95, 49), 	(104, 52)), 	# Xiongnu
 ((67, 21), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
 ((14, 32), 	(24, 43)), 	# Teotihuacan

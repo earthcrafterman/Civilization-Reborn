@@ -414,7 +414,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 							continue
 							
 			# always raze Harappan cities
-			if iPlayer in [iHarappa, iNorteChico, iMississippi, iOlmecs] and utils.getHumanID() != iPlayer:
+			if (iPlayer in [iHarappa, iNorteChico, iMississippi, iOlmecs] or (iPlayer == iXiongnu and city.getY() > 50 and city.plot().isCore(iPlayer))) and utils.getHumanID() != iPlayer:
 				lRemovedCities.append(city)
 				continue
 						
@@ -688,7 +688,7 @@ def downgradeCottages(iPlayer):
 			elif iImprovement == iCottage: plot.setImprovementType(-1)
 			
 			# Destroy all Harappan improvements
-			if iPlayer in [iCeltia, iHarappa, iNorteChico, iMississippi] and utils.getHumanID() != iPlayer:
+			if (iPlayer in [iCeltia, iHarappa, iNorteChico, iMississippi] or (iPlayer == iXiongnu and plot.getY() > 50 and plot.isCore(iPlayer))) and utils.getHumanID() != iPlayer:
 				if iImprovement >= 0:
 					plot.setImprovementType(-1)
 			

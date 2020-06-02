@@ -48,7 +48,7 @@ iRomeCeltiaGaulYear = -50
 tRomeCeltiaGaulTL = (51, 46)
 tRomeCeltiaGaulBR = (67, 52)
 
-iRomeCeltiaBritainYear = -50
+iRomeCeltiaBritainYear = 50
 tRomeCeltiaBritainTL = (48, 53)
 tRomeCeltiaBritainBR = (54, 60)
 
@@ -61,8 +61,8 @@ tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
 tConquestRomeCeltsGaul = (3, iRome, iCeltia, tRomeCeltiaGaulTL, tRomeCeltiaGaulBR, 4, iRomeCeltiaGaulYear, 10)
-tConquestRomeCeltsBritain = (4, iRome, iCeltia, tRomeCeltiaBritainTL, tRomeCeltiaBritainBR, 1, iRomeCeltiaBritainYear, 10)
-tConquestRomeEgypt = (5, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+tConquestRomeCeltsBritain = (5, iRome, iCeltia, tRomeCeltiaBritainTL, tRomeCeltiaBritainBR, 1, iRomeCeltiaBritainYear, 10)
 
 iAlexanderYear = -340
 tGreeceMesopotamiaTL = (70, 38)
@@ -135,8 +135,8 @@ tConquestRomeCarthage, #0
 tConquestRomeGreece, #1
 tConquestRomeAnatolia, #2
 tConquestRomeCeltsGaul, #3
-tConquestRomeCeltsBritain, #4
-tConquestRomeEgypt, #5
+tConquestRomeEgypt, #4
+tConquestRomeCeltsBritain, #5
 tConquestGreeceMesopotamia, #6
 tConquestGreeceEgypt, #7
 tConquestGreecePersia, #8

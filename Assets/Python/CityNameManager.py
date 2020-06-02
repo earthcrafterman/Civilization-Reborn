@@ -60,6 +60,7 @@ def getLanguages(iCiv):
 		return (iLangMayan, iLangAztec)
 	elif iCiv == iYuezhi: return (iLangYuezhi, iLangIndian, iLangChinese)
 	elif iCiv == iTamils: return (iLangIndian,)
+	elif iCiv == iXiongnu: return (iLangYuezhi, iLangChinese, iLangMongolian)
 	elif iCiv == iEthiopia: return (iLangEthiopian,)
 	elif iCiv == iVietnam: return (iLangVietnamese, iLangKhmer,)
 	elif iCiv == iTeotihuacan: return (iLangTeotihuacan, iLangAztec, iLangMayan)
@@ -160,6 +161,9 @@ def getFoundName(iCiv, tPlot):
 			
 				if iCiv == iWari:
 					if tPlot == (27, 22): return "Wari"
+			
+				if iCiv == iXiongnu:
+					if sName == "Ordu Baliq": return "Luut Hot"
 			
 				if iCiv in [iNorteChico, iWari, iChimu]:
 					if tPlot == (24, 25): return "Chan Chan"

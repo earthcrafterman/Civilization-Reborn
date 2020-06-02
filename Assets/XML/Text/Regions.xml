@@ -1614,4 +1614,16 @@
 		<Italian>Hindu Kush</Italian>
 		<Spanish>Hindu Kush</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_110</Tag>
+		<English>India</English>
+		<French>
+			<Text>Inde</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>India</German>
+		<Italian>India</Italian>
+		<Spanish>India</Spanish>
+	</TEXT>
 </Civ4GameText>

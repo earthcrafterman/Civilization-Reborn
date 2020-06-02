@@ -357,6 +357,7 @@ def onTributeAccepted(argsList):
 	#BugUtil.debug("DiplomacyUtil::onTributeAccepted %s" %(str(argsList)))
 	eTargetPlayer, eDemandPlayer, pTrade = argsList
 	szItems = ""
+		
 	for i in range(pTrade.getCount()):
 		szItems = szItems + TradeUtil.format(eTargetPlayer, pTrade.getTrade(i))
 	BugUtil.debug("DiplomacyUtil - %s agrees to give tribute (%s) to %s",
