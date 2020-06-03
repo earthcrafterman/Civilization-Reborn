@@ -558,7 +558,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=30
-	LeaderType=LEADER_SALADIN
+	LeaderType=LEADER_HARUN
 	CivType=CIVILIZATION_ARABIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
@@ -798,7 +798,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=50
-	LeaderType=LEADER_BAIBARS
+	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_MAMLUKS
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT

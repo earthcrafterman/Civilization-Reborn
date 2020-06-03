@@ -555,7 +555,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=30
-	LeaderType=LEADER_SALADIN
+	LeaderType=LEADER_HARUN
 	CivType=CIVILIZATION_ARABIA
 	PlayableCiv=0
 	StartingGold=300
@@ -824,7 +824,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=50
-	LeaderType=LEADER_BAIBARS
+	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_MAMLUKS
 	PlayableCiv=0
 	StartingGold=300
