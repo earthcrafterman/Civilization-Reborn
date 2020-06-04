@@ -2508,7 +2508,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 
 	// 1SDAN: Shwedagon Paya and Borobudur requires Rainforest or Jungle in city radius
-	if (eBuilding == SHWEDAGON_PAYA || eBuilding == BOROBUDUR)
+	if (eBuilding == SHWEDAGON_PAYA || eBuilding == BOROBUDUR || eBuilding == PRAMBANAN || eBuilding == WAT_PREAH_PISNULOK || eBuilding == EMERALD_BUDDHA)
 	{
 		bool bFound = false;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)

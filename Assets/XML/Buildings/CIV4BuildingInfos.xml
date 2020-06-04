@@ -2111,6 +2111,7 @@
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
 			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -11738,6 +11739,8 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
+			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>400</iCost>
@@ -11995,6 +11998,7 @@
 			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BOROBUDUR_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
@@ -12007,6 +12011,8 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
+			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>50</iAIWeight>
 			<iCost>400</iCost>
@@ -14075,6 +14081,7 @@
 			<Description>TXT_KEY_BUILDING_EMERALD_BUDDHA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_EMERALD_BUDDHA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_EMERALD_BUDDHA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BOROBUDUR_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_EMERALD_BUDDHA</ArtDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
@@ -14086,6 +14093,8 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNoUnhappiness>1</bNoUnhappiness>
+			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>800</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>

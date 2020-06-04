@@ -1391,11 +1391,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN_HELP</Tag>
-		<English>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</English>
-		<French>[ICON_BULLET]Toutes les villes stockent 25% de [ICON_FOOD] en plus apr&#232;s la croissance</French>
-		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</German>
-		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Italian>
-		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Spanish>
+		<English>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth. Requires Jungle or Rainforest in city radius</English>
+		<French>[ICON_BULLET]Toutes les villes stockent 25% de [ICON_FOOD] en plus apr&#232;s la croissance. Requires Jungle or Rainforest in city radius</French>
+		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth. Requires Jungle or Rainforest in city radius</German>
+		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth. Requires Jungle or Rainforest in city radius</Italian>
+		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth. Requires Jungle or Rainforest in city radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Tag>
