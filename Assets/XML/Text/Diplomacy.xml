@@ -711,6 +711,15 @@
         <French>Vous pouvez discuter terreur et prophétie avec moi ou simplement vous convertir maintenant. Qu'en pensez vous, [CT_NAME]?</French>
         <Spanish>Puede debatir el todopoderoso y al profeta conmigo o puede simplemente convertirse ahora. ¿Qué dice, [CT_NAME]?</Spanish>
     </TEXT>
+    <TEXT>
+        <Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MINDAUGAS_1</Tag>
+        <English>I, [OUR_NAME], offer the [CT_EMPIRE] friendship. A person who gives is a person who has. Will you receive this gift, [CT_NAME]?</English>
+        <French>Moi, [OUR_NAME], offre l'amitié des lituaniens. Celui qui donne est celui qui possède. Recevrez-vous ce présent, [CT_NAME] ?</French>
+        <German>Ich, [OUR_NAME], biete die Freundschaft vom [CT_EMPIRE]. Eine Person die gibt ist eine Person die hat. Wirst Du dieses Geschenk annehmen, [CT_NAME]?</German>
+        <Italian>Io, [OUR_NAME], offro l'amicizia di [CT_EMPIRE]. Una persona che dona è una persona che possiede. Accoglierai questo dono, [CT_NAME]?</Italian>
+        <Polish>Ja, [OUR_NAME], oferuję [CT_EMPIRE] przyjaéń. osoba która daj jest osobá która ma. Otrzymasz ten prezent, [CT_NAME]?</Polish>
+        <Russian>Я, [OUR_NAME], предлагаю [CT_EMPIRE] дружбу. Тот кто дает, это тот кто имеет. Примешь этот дар [CT_NAME]?</Russian>
+    </TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>

@@ -2691,6 +2691,9 @@ class RiseAndFall:
 			utils.makeUnit(iLancer, iCiv, tPlot, 2)
 		elif iCiv == iNigeria:
 			utils.makeUnit(iYanLifida, iCiv, tPlot, 4)
+		elif iCiv == iLithuania:
+			utils.makeUnit(iVytis, iCiv, tPlot, 3)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 3)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iMangudai, iCiv, tPlot, 2) 
@@ -3172,6 +3175,15 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnit(iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(iYanLifida, iCiv, tPlot, 3)
+		elif iCiv == iLithuania:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iVytis, iCiv, tPlot, 3)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 3)
+			if utils.getHumanID() != iLithuania:
+				utils.makeUnit(iArcher, iCiv, tPlot, 1)
+				utils.makeUnit(iVytis, iCiv, tPlot, 2)
+				utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
 		elif iCiv == iMongolia:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
@@ -3494,6 +3506,8 @@ class RiseAndFall:
 		elif iCiv == iItaly:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iNigeria:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iLithuania:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)

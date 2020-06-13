@@ -797,4 +797,8 @@
 		<Tag>TXT_KEY_DOM_XIONGNU</Tag>
 		<English>It is the year 300 BC. The unification of the dispirate tribes of the Mongolian-Manchurian grasslands under Modu Chanyu affords the Xiongnu Confederation a great enough manpower to extend its influence into the neighboring regions and beyond.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_LITHUANIA</Tag>
+		<English>It is the year 1180 AD. As the Lithuan raids on their neighboring Slavic provinces begin to increase in frequency and success, the region begins to see a level of wealth and organization it has never seen before. The imminent formation of a Lithuanian State will surely and radically change the political landscape of Eastern Europe for centuries to come.</English>
+	</TEXT>
 </Civ4GameText>

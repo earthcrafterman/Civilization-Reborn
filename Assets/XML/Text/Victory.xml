@@ -3968,6 +3968,14 @@
 		<Spanish>Acquire and work 3 Crab, Whale, and Fish Resources</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_ROMUVA</Tag>
+		<English>Control Saint Peter's Basilica</English>
+		<French>Control Saint Peter's Basilica</French>
+		<German>Control Saint Peter's Basilica</German>
+		<Italian>Control Saint Peter's Basilica</Italian>
+		<Spanish>Control Saint Peter's Basilica</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
 		<English>Don't allow more than half of your cities to have a religion</English>
 		<French>Ne pas permettre &#224; plus de la moiti&#233; de vos villes d'avoir une religion</French>
@@ -7490,5 +7498,53 @@
 		<German>Largest Civilization: %s1</German>
 		<Italian>Largest Civilization: %s1</Italian>
 		<Spanish>Largest Civilization: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT1_TITLE</Tag>
+		<English>Yagaylo's Legacy</English>
+		<French>Yagaylo's Legacy</French>
+		<German>Yagaylo's Legacy</German>
+		<Italian>Yagaylo's Legacy</Italian>
+		<Spanish>Yagaylo's Legacy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT1</Tag>
+		<English>Control more territory than any European civ in 1500 AD</English>
+		<French>Control more territory than any European civ in 1500 AD</French>
+		<German>Control more territory than any European civ in 1500 AD</German>
+		<Italian>Control more territory than any European civ in 1500 AD</Italian>
+		<Spanish>Control more territory than any European civ in 1500 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT2_TITLE</Tag>
+		<English>Act of Kreva</English>
+		<French>Act of Kreva</French>
+		<German>Act of Kreva</German>
+		<Italian>Act of Kreva</Italian>
+		<Spanish>Act of Kreva</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT2</Tag>
+		<English>Gift 7 units to Poland and have friendly relations with them in 1600 AD</English>
+		<French>Gift 7 units to Poland and have friendly relations with them in 1600 AD</French>
+		<German>Gift 7 units to Poland and have friendly relations with them in 1600 AD</German>
+		<Italian>Gift 7 units to Poland and have friendly relations with them in 1600 AD</Italian>
+		<Spanish>Gift 7 units to Poland and have friendly relations with them in 1600 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT3_TITLE</Tag>
+		<English>Defiance of the Three</English>
+		<French>Defiance of the Three</French>
+		<German>Defiance of the Three</German>
+		<Italian>Defiance of the Three</Italian>
+		<Spanish>Defiance of the Three</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_LIT3</Tag>
+		<English>Control or Vassalize Austria, Prussia, and Russia in 1918 AD</English>
+		<French>Control or Vassalize Austria, Prussia, and Russia in 1918 AD</French>
+		<German>Control or Vassalize Austria, Prussia, and Russia in 1918 AD</German>
+		<Italian>Control or Vassalize Austria, Prussia, and Russia in 1918 AD</Italian>
+		<Spanish>Control or Vassalize Austria, Prussia, and Russia in 1918 AD</Spanish>
 	</TEXT>
 </Civ4GameText>

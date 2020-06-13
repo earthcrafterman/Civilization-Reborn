@@ -2543,6 +2543,14 @@
 		<Spanish>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_LITHUANIA_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% from different State Religion</English>
+		<French>[ICON_BULLET]%D1_Bonus%% from different State Religion</French>
+		<German>[ICON_BULLET]%D1_Bonus%% from different State Religion</German>
+		<Italian>[ICON_BULLET]%D1_Bonus%% from different State Religion</Italian>
+		<Spanish>[ICON_BULLET]%D1_Bonus%% from different State Religion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PLAINS_ATTACK_TEXT</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</English>
 		<French>[ICON_BULLET]%D1_Bonus%% d'attaque en terrain d&#233;gag&#233;</French>

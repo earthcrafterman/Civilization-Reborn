@@ -4001,4 +4001,20 @@
 		<Italian>Guli</Italian>
 		<Spanish>Guli</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LITHUANIAN_VYTIS</Tag>
+		<English>Vytis</English>
+		<French>Vytis</French>
+		<German>Vytis</German>
+		<Italian>Vytis</Italian>
+		<Spanish>Vytis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LITHUANIAN_VYTIS_HELP</Tag>
+		<English>[ICON_BULLET]+25% vs Civilizations of other faiths until the end of the Middle Ages</English>
+		<French>[ICON_BULLET]+25% vs Civilizations of other faiths until the end of the Middle Ages</French>
+		<German>[ICON_BULLET]+25% vs Civilizations of other faiths until the end of the Middle Ages</German>
+		<Italian>[ICON_BULLET]+25% vs Civilizations of other faiths until the end of the Middle Ages</Italian>
+		<Spanish>[ICON_BULLET]+25% vs Civilizations of other faiths until the end of the Middle Ages</Spanish>
+	</TEXT>
 </Civ4GameText>

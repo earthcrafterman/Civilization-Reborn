@@ -1626,4 +1626,20 @@
 		<Italian>India</Italian>
 		<Spanish>India</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_111</Tag>
+		<English>Prussia</English>
+		<French>Prussia</French>
+		<German>Prussia</German>
+		<Italian>Prussia</Italian>
+		<Spanish>Prussia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_112</Tag>
+		<English>Austria</English>
+		<French>Austria</French>
+		<German>Austria</German>
+		<Italian>Austria</Italian>
+		<Spanish>Austria</Spanish>
+	</TEXT>
 </Civ4GameText>

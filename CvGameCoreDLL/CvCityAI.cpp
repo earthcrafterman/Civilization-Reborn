@@ -3413,7 +3413,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	}
 
 	// Leoreth: do not build pagan wonders if you prefer having a state religion
-	if (kBuilding.isPagan() && GC.getLeaderHeadInfo(kOwner.getLeader()).getFavoriteReligion() != NO_RELIGION)
+	if (getOwnerINLINE() != LITHUANIA && kBuilding.isPagan() && GC.getLeaderHeadInfo(kOwner.getLeader()).getFavoriteReligion() != NO_RELIGION)
 	{
 		return 0;
 	}

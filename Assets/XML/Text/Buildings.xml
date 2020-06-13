@@ -3457,4 +3457,20 @@
 		<Italian>Ger-Tereg</Italian>
 		<Spanish>Ger-Tereg</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LITHUANIAN_SEIMELIS</Tag>
+		<English>Seimelis</English>
+		<French>Seimelis</French>
+		<German>Seimelis</German>
+		<Italian>Seimelis</Italian>
+		<Spanish>Seimelis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ROMUVA_SACRED_GROVE</Tag>
+		<English>Sacred Grove</English>
+		<French>Sacred Grove</French>
+		<German>Sacred Grove</German>
+		<Italian>Sacred Grove</Italian>
+		<Spanish>Sacred Grove</Spanish>
+	</TEXT>
 </Civ4GameText>

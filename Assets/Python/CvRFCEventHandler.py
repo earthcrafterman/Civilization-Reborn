@@ -163,6 +163,23 @@ class CvRFCEventHandler:
 						if city.plot().getRegionID() == rBritain:
 							if city.getX() <= 50:
 								utils.setReborn(iEngland, True)
+								
+		# Poland and Lithuania's Cores expand upon conquering the other
+		if pPoland.isReborn():
+			if not vic.isControlled(iPoland, Areas.getCoreArea(iLithuania, False)):
+				setReborn(iPoland, False)
+				
+		if not pPoland.isReborn():
+			if vic.isControlled(iPoland, Areas.getCoreArea(iLithuania, False)):
+				setReborn(iPoland, True)
+				
+		if pLithuania.isReborn():
+			if not vic.isControlled(iLithuania, Areas.getCoreArea(iPoland, False)):
+				setReborn(iLithuania, False)
+				
+		if not pLithuania.isReborn():
+			if vic.isControlled(iLithuania, Areas.getCoreArea(iPoland, False)):
+				setReborn(iLithuania, True)
 		
 		if iPlayer == iYuezhi and utils.getOwnedCoreCities(iYuezhi) > 0:
 			if tCity in Areas.getCoreArea(iYuezhi, True):

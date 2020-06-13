@@ -3465,6 +3465,8 @@ iCivItaly : {
 },
 iCivNigeria : {
 },
+iCivLithuania : {
+},
 iCivMongols : {
 	iGreatProphet : [
 		"Abaqa", # 13th
