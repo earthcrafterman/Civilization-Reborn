@@ -184,7 +184,7 @@ BeginTeam
 	TeamID=57, (Nigeria)
 EndTeam
 BeginTeam
-	TeamID=58, (Lithuania)
+	TeamID=57, (Lithuania)
 EndTeam
 BeginTeam
 	TeamID=59, (Mongols)
@@ -30560,7 +30560,7 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
-		Player69Culture=100, (Germany)
+		Player69Culture=50, (Germany)
 	EndCity
 	TeamReveal=28,66,44,63,52,69,78,
 EndPlot
@@ -31107,9 +31107,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=57
-	ImprovementType=IMPROVEMENT_FORT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_SWEDEN_KAROLIN, UnitOwner=66, (Sweden)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWEDEN_KAROLIN, UnitOwner=66, (Sweden)
+	EndUnit
+	BeginCity
+		CityOwner=66, (Sweden)
+		CityName=Tallin
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
+		Player66Culture=100, (Sweden)
+	EndCity
 	TeamReveal=28,66,63,52,69,78,
 EndPlot
 BeginPlot
@@ -31611,15 +31632,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=28,66,44,63,52,69,78,
-EndPlot
-BeginPlot
-	x=67,y=55
-	isNOfRiver
-	RiverWEDirection=3
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=52, (Poland)
 	EndUnit
@@ -31646,6 +31658,15 @@ BeginPlot
 		ReligionType=RELIGION_CATHOLICISM
 		Player52Culture=100, (Poland)
 	EndCity
+	TeamReveal=28,66,44,63,52,69,78,
+EndPlot
+BeginPlot
+	x=67,y=55
+	isNOfRiver
+	RiverWEDirection=3
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=28,66,44,63,52,69,78,
 EndPlot
 BeginPlot
@@ -32284,7 +32305,6 @@ BeginPlot
 	x=68,y=55
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=28,66,63,52,69,78,
@@ -44845,6 +44865,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=47
+	BonusType=BONUS_HORSE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=1,77,

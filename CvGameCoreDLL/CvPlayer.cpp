@@ -25964,6 +25964,11 @@ bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscover
 	CvCity* pCity;
 	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
 	{
+		if (eReligion != PROTESTANTISM && pCity->getRegionID() >= REGION_CANADA && pCity->getRegionID() <= REGION_COLOMBIA)
+		{
+			continue;
+		}
+
 		if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL)
 		{
 			return true;

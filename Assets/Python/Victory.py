@@ -3197,7 +3197,7 @@ def onPlayerSlaveTrade(iPlayer, iSlaves, iGold):
 			if iGold > 0:
 				data.iChadSlaves += iSlaves
 				
-			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 10:
+			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 5:
 				win(iChad, 1)
 		
 def onPlayerBonusTrade(iPlayer, iStrategicBonuses, iGold):
@@ -3207,7 +3207,7 @@ def onPlayerBonusTrade(iPlayer, iStrategicBonuses, iGold):
 			if iGold > 0:
 				data.iChadStrategicBonuses += iStrategicBonuses
 				
-			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 10:
+			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 5:
 				win(iChad, 1)
 				
 def onTradeMission(iPlayer, iX, iY, iGold):
@@ -3271,6 +3271,13 @@ def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 		if isPossible(iChad, 0):
 			if (iX, iY) in Areas.getCoreArea(iMamluks, False):
 				data.iChadDiplomacyMissions += 1
+				
+			elif gc.getMap().plot(iX, iY).isPlotCity():
+				iOwner = c.getMap().plot(iX, iY).isPlotCity().getOwner()
+				for city in utils.getCityList(iOwner):
+					if (city.getX(), city.getY()) in Areas.getCoreArea(iMamluks, False):
+						data.iChadDiplomacyMissions += 1
+						break
 					
 			if data.iChadTradeMissions >= 3 and data.iChadDiplomacyMissions >= 1:
 				win(iChad, 0)
@@ -5780,7 +5787,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			aHelp.append(getIcon(data.iChadDiplomacyMissions >= 1) + localText.getText("TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS", (data.iChadDiplomacyMissions, 1)) + ' ' + getIcon(data.iChadTradeMissions >= 3) + localText.getText("TXT_KEY_VICTORY_TRADE_MISSIONS", (data.iChadTradeMissions, 3)))
 		if iGoal == 1:
-			aHelp.append(getIcon(data.iChadSlaves >= 5) + localText.getText("TXT_KEY_VICTORY_SLAVES_SOLD", (data.iChadSlaves, 5)) + ' ' + getIcon(data.iChadStrategicBonuses >= 10) + localText.getText("TXT_KEY_VICTORY_STRATEGIC_BONUSES_BOUGHT", (data.iChadStrategicBonuses, 10)))
+			aHelp.append(getIcon(data.iChadSlaves >= 5) + localText.getText("TXT_KEY_VICTORY_SLAVES_SOLD", (data.iChadSlaves, 5)) + ' ' + getIcon(data.iChadStrategicBonuses >= 5) + localText.getText("TXT_KEY_VICTORY_STRATEGIC_BONUSES_BOUGHT", (data.iChadStrategicBonuses, 5)))
 		if iGoal == 2:
 			lAfricaCivs = getCivsWithHoldingsInRegion(lAfrica)
 			iBestAfricanHoldingArmy = getBestPlayer(iChad, playerArmyPower, lAfricaCivs)

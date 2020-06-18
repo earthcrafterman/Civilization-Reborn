@@ -307,7 +307,7 @@ class RiseAndFall:
 			self.adjust1700ADWonders()
 			self.adjust1700ADGreatPeople()
 			
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria, iKhmer, iKhazars]:
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria, iKhmer, iKhazars, iPoland]:
 				utils.setReborn(iPlayer, True)
 			
 			pManchuria.updateTradeRoutes()
@@ -403,7 +403,7 @@ class RiseAndFall:
 		for x, y in [(64, 53), (66, 55)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
 			
-		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
+		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54), (67, 56), (68, 56), (68, 57)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
 			
 	def prepareColonists(self):

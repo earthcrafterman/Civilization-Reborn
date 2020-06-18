@@ -6589,11 +6589,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHA1</Tag>
-		<English>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</English>
-		<French>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</French>
-		<German>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</German>
-		<Italian>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</Italian>
-		<Spanish>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</Spanish>
+		<English>Conduct one Diplomatic Mission with the owner of an Egyptian city and 3 Trade Missions in your state religion's Holy City by 1259</English>
+		<French>Conduct one Diplomatic Mission with the owner of an Egyptian city and 3 Trade Missions in your state religion's Holy City by 1259</French>
+		<German>Conduct one Diplomatic Mission with the owner of an Egyptian city and 3 Trade Missions in your state religion's Holy City by 1259</German>
+		<Italian>Conduct one Diplomatic Mission with the owner of an Egyptian city and 3 Trade Missions in your state religion's Holy City by 1259</Italian>
+		<Spanish>Conduct one Diplomatic Mission with the owner of an Egyptian city and 3 Trade Missions in your state religion's Holy City by 1259</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHA2_TITLE</Tag>
@@ -6605,11 +6605,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHA2</Tag>
-		<English>Sell 5 Slaves and buy 10 Strategic Resources by 1380</English>
-		<French>Sell 5 Slaves and buy 10 Strategic Resources by 1380</French>
-		<German>Sell 5 Slaves and buy 10 Strategic Resources by 1380</German>
-		<Italian>Sell 5 Slaves and buy 10 Strategic Resources by 1380</Italian>
-		<Spanish>Sell 5 Slaves and buy 10 Strategic Resources by 1380</Spanish>
+		<English>Sell 5 Slaves and buy 5 Strategic Resources by 1380</English>
+		<French>Sell 5 Slaves and buy 5 Strategic Resources by 1380</French>
+		<German>Sell 5 Slaves and buy 5 Strategic Resources by 1380</German>
+		<Italian>Sell 5 Slaves and buy 5 Strategic Resources by 1380</Italian>
+		<Spanish>Sell 5 Slaves and buy 5 Strategic Resources by 1380</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHA3_TITLE</Tag>
