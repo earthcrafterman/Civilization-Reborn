@@ -10190,8 +10190,7 @@ int CvPlayer::getBuildingFoodProductionCount() const
 // 1SDAN
 bool CvPlayer::isBuildingFoodProduction() const
 {
-	// Kievan Rus UP: Cities produce buildings with food
-	return getID() == KIEVAN_RUS ? true : (getBuildingFoodProductionCount() > 0);
+	return getBuildingFoodProductionCount() > 0;
 }
 
 // 1SDAN
