@@ -4878,7 +4878,7 @@ def getURVHelp(iPlayer, iGoal):
 	elif iVictoryType == iOrthodoxy:
 		if iGoal == 0:
 			iOrthodoxCathedrals = getNumBuildings(iPlayer, iOrthodoxCathedral)
-			aHelp.append(getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", ("TXT_KEY_BUILDING_STRING", iOrthodoxCathedrals, 4)))
+			aHelp.append(getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL", iOrthodoxCathedrals, 4)))
 		elif iGoal == 1:
 			lCultureCities = getBestCities(cityCulture)[:5]
 			iCultureCities = countBestCitiesReligion(iOrthodoxy, cityCulture, 5)
