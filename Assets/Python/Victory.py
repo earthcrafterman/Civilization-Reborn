@@ -6129,7 +6129,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iLithuania:
 		if iGoal == 0:
-			iLeadingCiv = getBestPlayer(iPlayer, getLandPercent)
+			iLeadingCiv = getBestPlayer(iPlayer, getLandPercent, lCivGroups[0])
 			iLeaderScore = getLandPercent(iLeadingCiv)
 			aHelp.append(getIcon(iLeadingCiv == iLithuania) + localText.getText("TXT_KEY_VICTORY_LARGEST_CIV", (gc.getPlayer(iLeadingCiv).getCivilizationShortDescription(0),)) + " (" + str(int(iLeaderScore)) + ")")
 		if iGoal == 1:

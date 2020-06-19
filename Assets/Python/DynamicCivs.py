@@ -551,6 +551,7 @@ dCapitals = {
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
 	iItaly : ["Fiorenza", "Roma"],
+	iLithuania : ["Tallinn", "Riga", "Klaipeda", "Kaunas"],
 	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
 	iArabia : ["Dimashq"],
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
@@ -1420,6 +1421,16 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_NIGERIA_KWARARAFA"
 			
 		return "TXT_KEY_CIV_NIGERIA_BENIN"
+			
+	elif iPlayer == iLithuania:
+		if isCapital(iPlayer, ["Klaipeda", "Kaunas"]):
+			return "TXT_KEY_CIV_LITHUANIA_SHORT_DESC"
+			
+		if isCapital(iPlayer, ["Tallinn"]):
+			return "TXT_KEY_CIV_LITHUANIA_ESTONIA"
+			
+		if isCapital(iPlayer, ["Riga"]):
+			return "TXT_KEY_CIV_LITHUANIA_LATVIA"
 			
 	elif iPlayer == iThailand:
 		if iEra <= iRenaissance:

@@ -236,6 +236,7 @@ iCivTamils :	Techs([iArtisanry, iArchitecture], column=5, exceptions=[iGeneralsh
 iCivEthiopia :	Techs([iFortification], column=6, exceptions=[iArtisanry]),
 iCivInuit : Techs([iSmelting, iAlloys, iSeafaring, iShipbuilding], column=1, exceptions=[iPastoralism, iAgriculture]),
 iCivMississippi :	Techs([iTanning, iMining, iPottery, iSmelting, iMasonry, iAlloys, iMythology, iSailing, iDivination]),
+iCivPolynesia :	Techs([iLeverage, iCeremony, iDivination, iSeafaring, iShipbuilding], column=1, exceptions=[iMining]),
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
 iCivTiwanaku :	Techs([iWriting, iCalendar, iPriesthood, iConstruction, iAlloys, iCement], column=2),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),

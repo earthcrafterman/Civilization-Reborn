@@ -3892,7 +3892,7 @@
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
-			<fInterfaceScale>1</fInterfaceScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Sacred Grove/leafy01_01.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Sacred Grove/Button.dds</Button>

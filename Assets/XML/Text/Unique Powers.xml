@@ -1458,7 +1458,7 @@
 		<Spanish>Cavalry units starts with the Mobility promotion, + 25% production for Light Cavalry units.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_XGU_TITLE</Tag>
+		<Tag>TXT_KEY_UP_LIT_TITLE</Tag>
 		<English>The Power of the Pagans:</English>
 		<French>Le pouvoir des paiens:</French>
 		<German>Die Macht der Heiden:</German>
@@ -1466,7 +1466,7 @@
 		<Spanish>El poder los paganos:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_XGU</Tag>
+		<Tag>TXT_KEY_UP_LIT</Tag>
 		<English>All cities are pagan and no religious disunity from the most popular religion while running a Pagan State Religion.</English>
 		<French>All cities are pagan and no religious disunity from the most popular religion while running a Pagan State Religion.</French>
 		<German>All cities are pagan and no religious disunity from the most popular religion while running a Pagan State Religion.</German>

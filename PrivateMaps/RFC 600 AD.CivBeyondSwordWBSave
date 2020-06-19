@@ -351,7 +351,10 @@ BeginPlayer
 	Team=11
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=100
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -2735,7 +2738,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=18
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORK_BOAT, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORK_BOAT, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLYNESIAN_WAKA, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Polynesia)
+		CityName=Mu'a
+		CityPopulation=2
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_HARBOR
+		Player11Culture=100, (Polynesia)
+	EndCity
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -3119,8 +3146,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=21
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Polynesia)
+		CityName=Manu'a
+		CityPopulation=2
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_HARBOR
+		Player11Culture=50, (Polynesia)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -3462,8 +3499,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=19
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=11, (Polynesia)
+	EndUnit
+	BeginCity
+		CityOwner=11, (Polynesia)
+		CityName=Niue
+		CityPopulation=2
+		BuildingType=BUILDING_POLYNESIAN_MALAE
+		BuildingType=BUILDING_HARBOR
+		Player11Culture=50, (Polynesia)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -30432,6 +30479,7 @@ BeginPlot
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
+		Player12Culture=75, (Persia)
 	EndCity
 EndPlot
 BeginPlot
@@ -30876,8 +30924,9 @@ BeginPlot
 		CityOwner=12, (Persia)
 		CityName=Tisfun
 		CityPopulation=4
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
-		Player12Culture=10, (Persia)
+		Player12Culture=75, (Persia)
 	EndCity
 EndPlot
 BeginPlot
@@ -32693,8 +32742,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=34
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=12, (Persia)
+	EndUnit
+	BeginCity
+		CityOwner=12, (Persia)
+		CityName=Arabaya
+		CityPopulation=1
+		BuildingType=BUILDING_GRANARY
+		Player12Culture=25, (Persia)
+	EndCity
 	PlotType=1
 EndPlot
 BeginPlot
@@ -32740,7 +32798,7 @@ BeginPlot
 		BuildingType=BUILDING_GONDESHAPUR
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player12Culture=10, (Persia)
+		Player12Culture=100, (Persia)
 	EndCity
 EndPlot
 BeginPlot
@@ -33524,7 +33582,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_SALSAL_BUDDHA
-		Player12Culture=10, (Persia)
+		Player12Culture=50, (Persia)
 	EndCity
 EndPlot
 BeginPlot

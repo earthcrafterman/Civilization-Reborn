@@ -85,4 +85,20 @@
 		<Italian>Lithuania</Italian>
 		<Spanish>Lithuania</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LITHUANIA_ESTONIA</Tag>
+		<English>Estonia</English>
+		<French>Estonia</French>
+		<German>Estonia</German>
+		<Italian>Estonia</Italian>
+		<Spanish>Estonia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LITHUANIA_LATVIA</Tag>
+		<English>Latvia</English>
+		<French>Latvia</French>
+		<German>Latvia</German>
+		<Italian>Latvia</Italian>
+		<Spanish>Latvia</Spanish>
+	</TEXT>
 </Civ4GameText>
