@@ -6084,12 +6084,20 @@
 		<Spanish>Largest army in Africa: %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_MONOPOLY</Tag>
-		<English>Monopolized %s1</English>
-		<French>Monopolized %s1</French>
-		<German>Monopolized %s1</German>
-		<Italian>Monopolized %s1</Italian>
-		<Spanish>Monopolized %s1</Spanish>
+		<Tag>TXT_KEY_VICTORY_MONOPOLY_OWN</Tag>
+		<English>Control %s1</English>
+		<French>Control %s1</French>
+		<German>Control %s1</German>
+		<Italian>Control %s1</Italian>
+		<Spanish>Control %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MONOPOLY_OTHERS_NOT_OWN</Tag>
+		<English>No other civ controlling improved %s1</English>
+		<French>No other civ controlling improved %s1</French>
+		<German>No other civ controlling improved %s1</German>
+		<Italian>No other civ controlling improved %s1</Italian>
+		<Spanish>No other civ controlling improved %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT_ZIMBABWE</Tag>
